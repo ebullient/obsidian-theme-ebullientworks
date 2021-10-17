@@ -1,0 +1,22 @@
+{
+  "name": "obsidian-theme-ebullientworks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An Obsidian Theme",
+  "author": "Erin Schnabel",
+  "license": "MIT",
+  "homepage": "https://github.com/ebullient",
+  "scripts": {
+    "build": "npx sass --no-source-map src/ebullientworks.scss obsidian.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebullient/obsidian-theme-ebullientworks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ebullient/obsidian-theme-ebullientworks/issues"
+  },
+  "devDependencies": {
+    "sass": "^1.43.2"
+  }
+}
