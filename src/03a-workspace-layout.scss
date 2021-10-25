@@ -1,0 +1,232 @@
+// side-dock flair
+.theme-dark {
+  --side-dock-text-on-accent: var(--text-on-accent);
+  --side-dock-text-on-accent-hover: var(--purple-3);
+  --side-dock-accent: var(--purple-5);
+  --side-dock-accent-hover: rgba(255, 255, 255, .2);
+}
+.theme-light {
+  --side-dock-text-on-accent: var(--gray-dark-3);
+  --side-dock-text-on-accent-hover: var(--purple-5);
+  --side-dock-accent: var(--purple-0);
+  --side-dock-accent-hover: rgba(255, 255, 255, .7);
+}
+// ------------------------------------------------------
+// Cursor
+// ------------------------------------------------------
+.menu-item,
+.view-action,
+.workspace-ribbon-collapse-btn,
+.side-bar-item.mod-clickable,
+.side-dock-ribbon-tab,
+.side-dock-ribbon-action,
+.side-dock-collapse-btn,
+.nav-action-button,
+.nav-file-title,
+.nav-folder-title,
+.search-result-file-match,
+.titlebar-button {
+    cursor: default;
+}
+// ------------------------------------------------------
+// Side-dock and tab containers
+// ------------------------------------------------------
+.view-action:hover {
+  color: var(--text-accent-hover);
+}
+.side-dock-ribbon-action,
+.workspace-ribbon-collapse-btn,
+.workspace-tab-header,
+.workspace-tab-header.is-active {
+  color: var(--side-dock-text-on-accent);
+}
+.workspace-tab-header:hover,
+.side-dock-ribbon-tab:hover,
+.side-dock-ribbon-action:hover,
+.workspace-ribbon-collapse-btn:hover {
+  color: var(--side-dock-text-on-accent-hover);
+}
+// Sidebar Icons: Remove Animation*/
+.workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-container-before,
+.workspace-tab-container-after {
+    transition: none;
+}
+// Sidebar collapse arrows*/
+.workspace-tabs .collapse-icon svg {
+  transition: transform 100ms ease-in-out;
+}
+.collapse-icon {
+  margin-top: -.1em;
+}
+// ------------------------------------------------------
+// Navigation / File explorer
+// ------------------------------------------------------
+.nav-header,
+.nav-folder,
+.nav-folder-children,
+.nav-folder-title,
+.nav-file,
+.nav-files-container,
+.nav-file-title,
+.nav-file-title-content {
+  -webkit-font-smoothing: antialiased;
+}
+.nav-header {
+  margin-top: 5px;
+  padding: 0px 5px;
+}
+.nav-buttons-container {
+  height: 28px;
+  padding: 0px 1px 0px 0px;
+  justify-content: space-evenly;
+}
+.nav-action-button {
+  height: 28px;
+  margin: 0px;
+  border-radius: 0;
+  padding: 5px 4px 0 4px;
+}
+.nav-action-button svg {
+  height: 80%;
+}
+// Vault name
+.nav-folder.mod-root > {
+  .nav-file-title,
+  .nav-folder-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+  }
+}
+// Avoid horizontal scroll
+.nav-files-container {
+  overflow-x: hidden;
+}
+// use ellipsis for long titles
+.nav-folder-title,
+.nav-file-title,
+.nav-file-title-content {
+  font-weight: normal;
+  max-width: 98%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+//  Move File Extension to Right
+.nav-folder-title-content,
+.nav-file-title-content {
+    width: 100%;
+    line-height: 20px;
+}
+.workspace-leaf-content[data-type="file-explorer"] .nav-file-title {
+    flex-direction: row-reverse;
+}
+// Nav Folder Lines
+.nav-folder,
+.nav-file {
+    margin: 0 -2px;
+    margin-right: 0px;
+    border-left: 1px solid var(--side-dock-accent);
+}
+// Align Folder Line
+.nav-folder-children {
+    padding-left: 18px;
+}
+// Nav Hover Line Colors
+.nav-folder:hover,
+.nav-file:hover {
+    border-color: var(--side-dock-accent-hover);
+}
+// File selected
+.nav-file-title.is-active:not(.is-folder-note) {
+    font-style: italic;
+}
+// --------------------------------------------------------
+// Tree-view panes (Tag pane, Outline, Backlinks, Search)
+// --------------------------------------------------------
+.outline {
+  margin: .2em .5em;
+  user-select: text;
+}
+.search-input-container {
+  margin: 5px 14px 5px 14px;
+}
+// Word Wrap for all tree-view items
+.tree-item-inner {
+  word-wrap: break-word;
+  width: 100%;
+}
+// TODO: check this CSS against nav settings above
+// Tree view lines
+.tag-container .tree-item-children,
+.outline .tree-item-children {
+  margin-left: .7em;
+  border-left: 1px solid var(--side-dock-accent);
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+}
+// Tree view lines: hover color
+.tag-container .tree-item-children:hover,
+.outline .tree-item-children:hover {
+  border-left: 1px solid var(--side-dock-accent-hover);
+}
+// font appearance/padding for each item
+.search-result-container .tree-item-self,
+.backlink-pane .tree-item-self,
+.tag-container .tree-item-self,
+.outline .tree-item-self {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  padding: 1px 4px 1px 20px;
+}
+.tree-item-self .tree-item-icon {
+  align-items: flex-start;
+}
+.tree-item-self .tree-item-icon > svg {
+  margin-top: .5em;
+}
+// Flair (e.g. tag count, backlinks count)
+.tree-item-flair,
+.file-tree .tree-item-flair,
+.file-tree .mod-changed .tree-item-flair,
+.file-tree .mod-deleted .tree-item-flair,
+.file-tree .mod-to-delete .tree-item-flair,
+.tree-item-self:hover .tree-item-flair {
+  color: var(--side-dock-text-on-accent);
+  background-color: var(--side-dock-accent);
+}
+.file-tree .mod-changed .tree-item-flair {
+  background-color: var(--interactive-accent);
+}
+.file-tree .mod-new .tree-item-flair {
+  background-color: var(--background-modifier-success);
+}
+.file-tree .mod-deleted .tree-item-flair,
+.file-tree .mod-to-delete .tree-item-flair {
+  background-color: var(--background-modifier-error);
+}
+// --------------------------------------------------------
+// Active/Hovered items
+// --------------------------------------------------------
+.nav-file-title.is-active,
+.nav-folder-title.is-active,
+.nav-action-button.is-active {
+  color: var(--side-dock-text-on-accent);
+  background-color: var(--side-dock-accent);
+  border-radius: 3px;
+}
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover,
+.nav-action-button:hover,
+.nav-action-button.is-active:hover,
+.tree-item-self.is-clickable:hover,
+.search-result-file-match:hover {
+  color: var(--side-dock-text-on-accent);
+  background-color: var(--side-dock-accent-hover);
+  border-radius: 3px;
+}

@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nothing+You+Could+Do&display=swap');
 
 :root {
-    --default-font: 'PT Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+  --default-font: 'PT Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
 
-    --font-tags: Architects Daughter, Helvetica Neue, Helvetica, Arial, sans-serif; 
-    --font-header: var(--font-tags);
+  --font-tags: Architects Daughter, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-header: var(--font-tags);
 
-    --font-monospace: 'Fira Code', 'Source Code Pro', monospace;
-    --cm-font-monospace: var(--font-monospace) !important;  
+  --font-monospace: 'Fira Code', 'Source Code Pro', monospace;
+  --cm-font-monospace: var(--font-monospace) !important;
 }

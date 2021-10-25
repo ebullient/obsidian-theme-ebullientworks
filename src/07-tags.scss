@@ -1,0 +1,25 @@
+.theme-dark {
+  --tags: var(--pink-4);
+}
+.theme-light {
+  --tags: var(--pink-4);
+}
+
+.cm-s-obsidian span.cm-hashtag,
+.view-content .tag:not(.token) {
+  color: var(--tags);
+  font-family: var(--font-tags);
+}
+
+.CodeMirror-line span.cm-hashtag,
+.cm-s-obsidian .cm-header.cm-hashtag,
+.markdown-preview-section a.tag,
+.view-content .markdown-preview-view h1 a.tag,
+.view-content .markdown-preview-view h2 a.tag,
+.view-content .markdown-preview-view h3 a.tag,
+.view-content .markdown-preview-view h4 a.tag,
+.view-content .markdown-preview-view h5 a.tag,
+.view-content .markdown-preview-view h6 a.tag {
+  font-size: .8rem !important;
+  text-decoration: none;
+}

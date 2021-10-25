@@ -1,63 +1,77 @@
 :root {
-  --gray-light-5: #fafafa;  //* 250, 250, 250 */
-  --gray-light-4: #f5f5f5;  //* 245, 245, 245 */
-  --gray-light-3: #eeeeee;  //* 238, 238, 238 */
-  --gray-light-2: #e0e0e0;  //* 224, 224, 224 */
-  --gray-light-1: #bdbdbd;  //* 189, 189, 189 */
-  --gray: #9e9e9e;          //* 158, 158, 158 */
-  --gray-dark-1: #757575;   //* 117, 117, 117 */
-  --gray-dark-2: #616161;   //* 66, 66, 66 */
-  --gray-dark-3: #424242;   //* 33, 33, 33 */
-  --gray-dark-4: #212121;   //* 33, 33, 33 */
-  --gray-dark-5: #1b1b1b;   //* 27, 27, 27 */
 
-  --honeydew: #D6EADAff;
-  --cambridge-blue: #ABC5B0ff;
-  --morning-blue: #809F87ff;
-  --amazon: #557A5Dff;
-  --hunter-green: #2A5433ff;
+  // Grayscale Design palette: https://grayscale.design/app?lums=93.72,91.59,87.95,83.18,76.99,69.05,59.94,47.16,34.89,25.18,17.24,11.05,6.39,2.80,0.20&palettes=&filters=&names=&labels=
 
-  --papaya-whip: #FFF2D9ff;
-  --papaya-whip-rgb: 255, 242, 217;
-  --deep-champagne: #FFD993ff;
-  --deep-champagne-rgb: 255, 217, 147;
-  --maximum-yellow-red: #F2C46Eff;
-  --sunray: #E4AE4Aff;
-  --gamboge: #D79925ff;
-  --harvest-gold: #C98300ff;
+  --gray-light-7: rgb(248, 248, 248);
+  --gray-light-6: rgb(245, 245, 245);
+  --gray-light-5: rgb(241, 241, 241);
+  --gray-light-4: rgb(235, 235, 235);
+  --gray-light-3: rgb(227, 227, 227);
+  --gray-light-2: rgb(217, 217, 217);
+  --gray-light-1: rgb(203, 203, 203);
+  --gray: rgb(183, 183, 183);
+  --gray-dark-1: rgb(159, 159, 159);
+  --gray-dark-2: rgb(137, 137, 137);
+  --gray-dark-3: rgb(115, 115, 115);
+  --gray-dark-4: rgb(93, 93, 93);
+  --gray-dark-5: rgb(77, 77, 77);
+  --gray-dark-6: rgb(63, 63, 63);
+  --gray-dark-7: rgb(49, 49, 49);
+  --gray-dark-8: rgb(33, 33, 33);
+  --gray-dark-9: rgb(7, 7, 7);
 
-  --orchid-pink: #F5C2CFff;
-  --mauvelous: #DE98AAff;
-  --cinnamon-satin: #C76E85ff;
-  --irresistible: #B0445Fff;
-  --big-dip-oruby: #991A3Aff;
-  --big-dip-oruby-rgb: 153, 26, 58;
+// Subset for colors: https://grayscale.design/app?lums=85.18,71.05,48.16,25.18,11.05&palettes=&filters=&names=&labels=
+// Grayscale Design palette: https://grayscale.design/app?lums=71.05,60.94,48.16,35.39,17.24,6.39,2.80&palettes=%231D3461,%23FFC145,%23809F87,%23C76E85,%235BAFAB,%23A17E9B&filters=0%7C0,0%7C0,0%7C0,0%7C0,0%7C0,0%7C0&names=blue,yellow,green,pink,teal,purple&labels=,,,,,
 
-  --magnolia: #F9F4F9;
-  --magnolia-rgb: 249, 244, 249;
-  --thistle: #E4CBE0ff;
-  --lilac: #C3A4BEff;
-  --mountbatten-pink: #A17E9Bff;
-  --antique-fuchsia: #805779ff;
-  --dark-byzantium: #5E3056ff;
+  --yellow-bright: 255, 232, 185;
+  --yellow-0: rgb(255, 214, 132);
+  --yellow-1: rgb(255, 195, 75);
+  --yellow-2: rgb(251, 167, 0);
+  --yellow-3: rgb(219, 146, 0);
+  --yellow-4: rgb(157, 105, 0);
 
-  --uranian-blue: #ADD1E8ff;
-  --dark-sky-blue: #87B8D7ff;
-  --air-superiority-blue: #629FC5ff;
-  --steel-blue: #3C85B4ff;
-  --honolulu-blue: #166CA2ff;
+  --green-0: rgb(211, 222, 214);
+  --green-1: rgb(194, 209, 198);
+  --green-1-rgb: 194, 209, 198;
+  --green-2: rgb(169, 190, 174);
+  --green-3: rgb(139, 167, 145);
+  --green-4: rgb(92, 122, 99);
+  --green-4-rgb: 92, 122, 99;
+  --green-5: rgb(57, 76, 62);
+  --green-6: rgb(38, 50, 41);
 
-  --celeste: #A6F2EEff;
-  --middle-blue-green: #80D0CCff;
-  --verdigris: #5BAFABff;
-  --dark-cyan: #358D89ff;
-  --skobeloff: #0F6B67ff;
+  --teal-0: rgb(195, 226, 224);
+  --teal-1: rgb(169, 213, 211);
+  --teal-2: rgb(134, 196, 193);
+  --teal-3: rgb(89, 174, 170);
+  --teal-4: rgb(61, 126, 123);
+  --teal-5: rgb(38, 78, 76);
+  --teal-6: rgb(25, 51, 50);
 
-  --alice-blue: #E0E7EDff;
-  --silver-sand: #B7C2CCff;
-  --silver-sand-rgb: 183, 194, 204;
-  --cadet-grey: #8F9EAAff;
-  --slate-gray: #667989ff;
-  --black-coral: #3D5467ff;
-  --black-coral-rgb: 61, 84, 103;
+  --blue-0: rgb(202, 222, 239);
+  --blue-1: rgb(180, 209, 232);
+  --blue-2: rgb(148, 189, 223);
+  --blue-3: rgb(111, 166, 211);
+  --blue-4: rgb(53, 120, 175);
+  --blue-5: rgb(33, 75, 109);
+  --blue-6: rgb(22, 49, 72);
+
+  --purple-0: rgb(227, 216, 225);
+  --purple-0-rgb: 227, 216, 225;
+  --purple-1: rgb(216, 201, 213);
+  --purple-2: rgb(199, 178, 195);
+  --purple-3: rgb(180, 152, 175);
+  --purple-4: rgb(142, 103, 135);
+  --purple-4-rgb: 142, 103, 135;
+  --purple-5: rgb(88, 64, 84);
+  --purple-6: rgb(57, 42, 55);
+
+  --pink-0: rgb(239, 213, 220);
+  --pink-1: rgb(232, 196, 206);
+  --pink-2: rgb(223, 171, 185);
+  --pink-3: rgb(211, 141, 160);
+  --pink-4: rgb(187, 79, 108);
+  --pink-5: rgb(120, 46, 66);
+  --pink-5-rgb: 120, 46, 66;
+  --pink-6: rgb(79, 31, 44);
 }

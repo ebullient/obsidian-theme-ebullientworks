@@ -1,2 +1,36 @@
+/* @settings
+
+name: Ebullientworks theme settings
+id: ebullientworks-theme
+settings:
+    -
+        id: ebullientworks-show-edit-mode-external-links
+        title: Show external links in edit mode
+        description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default. This setting is ignored if the CodeMirror options plugin is present and configured to hide external links.
+        type: class-toggle
+        default: false
+*/
 @import '01-colors.scss';
 @import '02-fonts.scss';
+
+@import '03-core-theme-dark.scss';
+@import '03-core-theme-light.scss';
+@import '03a-workspace-layout.scss';
+@import '03b-workspace-view.scss';
+@import '03c-modal-input.scss';
+
+@import '04-headings.scss';
+@import '05-text-links.scss';
+
+@import '06-lists-checkboxes.scss';
+@import '07-tags.scss';
+@import '08-blockquote.scss';
+@import '09-codeblocks.scss';
+@import '10-images-embeds.scss';
+
+// Plugins
+@import '11-admonition.scss';
+@import '12-calendar-day-planner-tracker.scss';
+@import '13-timelines.scss';
+
+

@@ -1,0 +1,69 @@
+// ------------------------------------------------------
+// Floating images
+// ------------------------------------------------------
+img,
+div {
+  &[alt~='float-right'] {
+    float: right;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  &[alt~='float-left'] {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 1rem;
+  }
+  // Use an anchor tag: ![Image](image.jpg#portrait)
+  &[src$="#portrait"] {
+    float: right;
+    margin-left: 5px;
+    width: 200px;
+  }
+}
+// ------------------------------------------------------
+// Naked embeds
+// ------------------------------------------------------
+.markdown-embed-title {
+  display:none;
+}
+.markdown-preview-view .markdown-embed {
+  border:none;
+  padding:0;
+  margin:0;
+}
+.markdown-preview-view .markdown-embed-content {
+  max-height: unset;
+}
+.markdown-preview-view .markdown-embed-content>:first-child {
+  margin-top: 0;
+}
+.markdown-preview-view .markdown-embed-content>:last-child {
+  margin-bottom: 0;
+}
+// ------------------------------------------------------
+// Bounded popover
+// ------------------------------------------------------
+// TODO: understand behavior on height/scroll
+.popover.hover-popover .markdown-embed {
+  height: auto;
+  max-height: 500px;
+  overflow: auto;
+}
+// ------------------------------------------------------
+// Scaled iframes
+// cssclass: embedframe
+// <div class='scaled-iframe'><iframe src="..." ></iframe></div>
+// ------------------------------------------------------
+.embedframe iframe {
+  width: 125%;
+  height: 750px;
+  -webkit-transform: scale(.8);
+  transform: scale(.8);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.embedframe .scaled-iframe {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}

@@ -1,0 +1,56 @@
+.markdown-preview-section {
+  .admonition-title {
+    font-family: var(--font-header);
+    font-size: 1em;
+  }
+  .admonition-title-icon {
+    font-family: var(--font-header);
+    min-width: .9em;
+  }
+  .admonition-content-holder .admonition-content {
+    margin: 2px .5em;
+  }
+  // ------------------------------------------------------
+  // Reference Admonition
+  // Create admonition of type 'reference' (book icon suggested)
+  // ```ad-reference
+  // Title:: Title of referenced thing
+  // Source:: https://....
+  // ```
+  // ------------------------------------------------------
+  .admonition-reference {
+    .admonition-content {
+      white-space: pre-line;
+      font-family: var(--font-monospace);
+      font-size: .7rem;
+      color: var(--text-muted);
+    }
+    .admonition-content a.external-link {
+      background-size: 10px;
+    }
+  }
+  // ------------------------------------------------------
+  // TOC Admonition
+  // List with compressed padding that floats to the right
+  // Create admonition of type 'toc' (outline icon suggested)
+  // ```ad-toc
+  // - List of links to document sections
+  // ```
+  // ------------------------------------------------------
+  .admonition-toc {
+    &.admonition {
+      float: right;
+      padding-right: .5em;
+      margin-left: .5em;
+      min-width: 150px;
+    }
+    .admonition-content-holder .admonition-content ul {
+      display: block;
+      margin-block-start: .5em;
+      margin-block-end: .5em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 30px;
+    }
+  }
+}

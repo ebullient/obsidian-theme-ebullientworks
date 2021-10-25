@@ -1,0 +1,109 @@
+.theme-dark {
+  --strong-em: var(--yellow-2);
+  --strong: var(--blue-3);
+  --em: var(--pink-3);
+
+  --link: var(--gray-light-1);
+  --link-underline: var(--teal-4);
+  --link-hover: var(--teal-3);
+  --link-hidden: var(--teal-6);
+}
+.theme-light {
+  --strong-em: var(--yellow-3);
+  --strong: var(--blue-4);
+  --em: var(--pink-4);
+
+  --link: var(--gray-dark-3);
+  --link-underline: var(--teal-2);
+  --link-hover: var(--teal-3);
+  --link-hidden: var(--teal-1);
+}
+
+.cm-s-obsidian .cm-strong,
+.view-content strong {
+  color: var(--strong);
+  font-weight: 600;
+}
+
+.cm-s-obsidian .cm-em,
+.view-content em {
+  color: var(--em);
+}
+
+.cm-s-obsidian .cm-strong.cm-em,
+.cm-s-obsidian .cm-em.cm-strong,
+.view-content strong em {
+  color: var(--strong-em);
+}
+// Highlight
+.markdown-preview-view mark,
+.cm-s-obsidian span.cm-highlight {
+  color: var(--text-highlight-fg);
+}
+
+
+// Reference: css styles for links in base
+// .rich-link -- color
+// .cm-link -- text-decoration
+// .cm-s-default .cm-link -- color(#00c)
+// .cm-s-obsidian .hmd-link-icon:after -- color(#009), text-shadow
+// .cm-s-obsidian span.cm-link -- color(text-accent)
+// .cm-s-obsidian span.cm-hmd-internal-link -- color(text-accent)
+// .cm-s-obsidian span.cm-formatting-link -- color(text-faint)
+// .cm-s-obsidian span.cm-hmd-internal-link:hover -- text-decoration(underline)
+// .markdown-preview-view .internal-link -- text-decoration(underline)
+// .markdown-preview-view .internal-link.is-unresolved -- opacity
+// .markdown-preview-view mark .internal-link -- color(text-normal), background-color(highlight)
+// .markdown-embed-link, .file-embed-link -- color(text-faint)
+// .markdown-embed-link:hover, .file-embed-link:hover -- color(text-accent)
+// ---
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline var(--link-underline);
+}
+a,
+.cm-s-obsidian span.cm-url,
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-preview-view .internal-link {
+color: var(--link);
+text-decoration: underline var(--link-underline);
+}
+.cm-s-obsidian span.cm-string.cm-url {
+color: var(--link-hidden);
+}
+// Formatting characters [around](links)
+.cm-s-obsidian span.cm-formatting-link.cm-link,
+.cm-s-obsidian span.cm-formatting-link-string {
+  font-weight: normal;
+  color: var(--text-faint);
+}
+/* Collapse external links / markdown links in edit mode */
+// body:not(.ebullientworks-show-edit-mode-links) {
+//   div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting){
+//     font-size: 0;
+//   }
+//   div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting)::after {
+//     content: '·';
+//     font-size: 1rem;
+//   }
+// }
+
+// HR tags
+.markdown-preview-view hr {
+  border: none;
+  border-top: 1px dotted var(--interactive-normal);
+  color: var(--interactive-hover);
+  overflow: visible;
+  text-align: center;
+  height: 2px;
+  margin: 12px 0;
+}
+.markdown-preview-view hr:after {
+  background: var(--background-primary);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  content: ' ✧ ✧ ✧ ';
+  padding: 0 .8em;
+  position: relative;
+  top: -13px;
+}

@@ -1,0 +1,159 @@
+:root {
+  --header-width: 30px;
+  --desktop-header-font-size: 12px;
+}
+.theme-light {
+  --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-1));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-3));
+  --border-bottom: 1px solid rgba(0, 0, 0, .2);
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-1));
+  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-3));
+}
+.theme-dark {
+  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
+  --border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
+  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
+}
+// --------------------------------------------------
+// Common: inset title shading, monospace font
+// Override common settings
+// --------------------------------------------------
+.view-header {
+  background: var(--inactive-leaf-bg);
+  border-bottom: var(--border-bottom);
+}
+.workspace-leaf.mod-active .view-header {
+  background: var(--active-leaf-bg) ;
+  border-bottom: var(--border-bottom);
+}
+.view-header-title {
+  color: var(--text-on-accent);
+  font-weight: 500;
+  font-family: var(--font-monospace);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--text-on-accent);
+}
+.view-header-title-container:after,
+.workspace-leaf.mod-active .view-header-title-container:after,
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
+  background: none;
+}
+// ---- Thinner resize handle --------------
+.workspace-leaf-resize-handle:hover {
+  background-color: var(--interactive-accent);
+}
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+  height: 2px;
+  border: none;
+}
+.workspace-split.mod-left-split > hr.workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > hr.workspace-leaf-resize-handle,
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+  width: 2px;
+  border: none;
+}
+// Fix the padding to account for skinnier handle
+.workspace-split.mod-vertical > .workspace-leaf,
+.workspace-split.mod-left-split .workspace-tabs {
+  padding-right: 2px;
+}
+//---------------------------------------
+// Mobile
+//---------------------------------------
+body.is-mobile {
+  .view-header-title {
+    -webkit-mask-image: none;
+    font-size: 16px;
+  }
+}
+//---------------------------------------
+// Desktop
+//---------------------------------------
+body:not(.is-mobile) {
+  .workspace-split.mod-horizontal.mod-left-split,
+  .workspace-split.mod-horizontal.mod-right-split {
+    min-width: 200px;
+  }
+  //A bit of separation for multiple groups in sidebars
+  .workspace-tabs + .workspace-tabs {
+    border-top: 1px solid var(--background-secondary-alt);
+  }
+  .workspace-tab-header,
+  .workspace-tab-header-inner,
+  .workspace-tab-container-before,
+  .workspace-tab-container-after {
+      transition: none;
+  }
+  // Sidebar collapse arrows
+  .workspace-tabs .collapse-icon svg {
+    transition: transform 100ms ease-in-out;
+  }
+  .collapse-icon {
+    margin-top: -.1em;
+  }
+  .view-header {
+    height: var(--header-width);
+  }
+  .view-header-title {
+    font-size: var(--desktop-header-font-size);
+    line-height: var(--header-width);
+  }
+  .view-content {
+    width: 100%;
+    height: calc(100% - var(--header-width));
+  }
+  .view-header-icon svg,
+  .view-action svg {
+    width: auto !important;
+    height: calc(var(--header-width) - 10) !important;
+  }
+}
+//---------------------------------------
+// Sliding panes
+//---------------------------------------
+// Hide the gradient of the title pane
+body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
+  box-shadow: none !important;
+  border-left: var(--border-bottom);
+
+  > .workspace-leaf-content > .view-header {
+    .view-header-title-container:before,
+    .view-header-title-container:after {
+      background: none !important;
+    }
+    .view-header {
+      border-left: none;
+      border-right: none;
+    }
+  }
+}
+body.plugin-sliding-panes-rotate-header {
+  .view-header-icon svg,
+  .view-action svg {
+    width: 16px !important;
+    height: auto !important;
+  }
+  .view-header-title {
+    line-height: calc(var(--header-width) - 6px);
+  }
+  .view-header {
+    background: var(--rotated-inactive-leaf-bg);
+    border-right: var(--border-bottom);
+    border-left: var(--border-bottom);
+  }
+  .workspace-leaf.mod-active .view-header {
+    background: var(--rotated-active-leaf-bg) ;
+    border-right: var(--border-bottom);
+    border-left: var(--border-bottom);
+  }
+}
+
+

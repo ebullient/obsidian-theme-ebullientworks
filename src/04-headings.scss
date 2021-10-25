@@ -1,0 +1,119 @@
+.theme-dark {
+  --text-title-h1: var(--yellow-1);
+  --text-title-h2: var(--green-3);
+  --text-title-h3: var(--teal-3);
+  --text-title-h4: var(--blue-3);
+  --text-title-h5: var(--purple-3);
+  --text-title-h6: var(--pink-3);
+}
+.theme-light {
+  --text-title-h1: var(--yellow-3);
+  --text-title-h2: var(--green-4);
+  --text-title-h3: var(--teal-4);
+  --text-title-h4: var(--blue-4);
+  --text-title-h5: var(--purple-4);
+  --text-title-h6: var(--pink-4);
+}
+
+.workspace {
+  .cm-header,
+  .view-content h1,
+  .view-content h2,
+  .view-content h3,
+  .view-content h4,
+  .view-content h5,
+  .view-content h6 {
+    font-family: var(--font-header);
+    font-weight: 500;
+  }
+}
+
+
+.cm-header-1,
+.view-content h1 {
+  color: var(--text-title-h1);
+  font-variant: common-ligatures small-caps;
+  line-height: 1.2em;
+}
+
+blockquote .cm-header-1,
+blockquote h1 {
+  color: var(--text-title-h2);
+  font-variant: common-ligatures;
+}
+
+.cm-header-2,
+.view-content h2 {
+  color: var(--text-title-h2);
+}
+
+.cm-header-3,
+.view-content h3 {
+  color: var(--text-title-h3);
+}
+
+.cm-header-4,
+.view-content h4 {
+  color: var(--text-title-h4);
+}
+
+.cm-header-5,
+.view-content h5 {
+  color: var(--text-title-h5);
+}
+
+.cm-header-6,
+.view-content .markdown-preview-view h6 {
+  color: var(--text-title-h6);
+}
+
+.view-content .markdown-preview-view h1:before,
+.view-content .markdown-preview-view h2:before,
+.view-content .markdown-preview-view h3:before,
+.view-content .markdown-preview-view h4:before,
+.view-content .markdown-preview-view h5:before,
+.view-content .markdown-preview-view h6:before {
+  content: "\00a7\00a0";
+  font-size: .6em;
+}
+
+.view-content .markdown-preview-view h1 code,
+.view-content .markdown-preview-view h2 code,
+.view-content .markdown-preview-view h3 code,
+.view-content .markdown-preview-view h4 code,
+.view-content .markdown-preview-view h5 code,
+.view-content .markdown-preview-view h6 code {
+  font-weight: normal;
+  font-size: 75%;
+}
+
+.cm-s-obsidian .cm-inline-code.cm-header {
+    font-weight: normal;
+    font-size: 90%;
+}
+
+.view-content .markdown-preview-view h1 a.tag,
+.view-content .markdown-preview-view h2 a.tag,
+.view-content .markdown-preview-view h3 a.tag,
+.view-content .markdown-preview-view h4 a.tag,
+.view-content .markdown-preview-view h5 a.tag,
+.view-content .markdown-preview-view h6 a.tag {
+  font-weight: normal;
+  font-size: 65%;
+  font-variant: common-ligatures;
+}
+
+.cm-s-obsidian .cm-header.cm-hashtag {
+  font-weight: normal;
+  font-size: 90%;
+  font-variant: common-ligatures;
+}
+
+.view-content .markdown-preview-view h1,
+.view-content .markdown-preview-view h2,
+.view-content .markdown-preview-view h3,
+.view-content .markdown-preview-view h4,
+.view-content .markdown-preview-view h5,
+.view-content .markdown-preview-view h6 {
+  margin: 10px 0 5px 0;
+}

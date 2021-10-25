@@ -1,0 +1,67 @@
+.theme-light {
+  --modal-nav-bg: var(--purple-0);
+  --modal-nav-hover: var(--background-secondary);
+  --modal-nav-accent: var(--purple-3);
+  --modal-content-bg: var(--background-secondary);
+  --modal-checked-bg: var(--green-2);
+}
+.theme-dark {
+  --modal-nav-bg: var(--purple-6);
+  --modal-nav-hover: var(--purple-5);
+  --modal-nav-accent: var(--purple-4);
+  --modal-content-bg: var(--background-primary);
+  --modal-checked-bg: var(--green-4);
+}
+// -------------------------------------
+// Modal dialog & Prompts
+// -------------------------------------
+// Text Input Field
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  font-size: 0.8em;
+}
+.search-input-container input {
+  padding: 2px 20px 2px 6px;
+}
+.search-input-clear-button {
+  right: 5px;
+  top: 3px;
+}
+// Don't apply special fonts to modals / community panels
+.modal-container {
+  .vertical-tab-header,
+  .vertical-tab-nav-item,
+  .community-plugin-search {
+    background-color: var(--modal-nav-bg);
+  }
+  .vertical-tab-nav-item.is-active {
+    border-left-color: var(--modal-nav-accent);
+  }
+  .community-plugin-item:hover,
+  .horizontal-tab-nav-item:hover,
+  .vertical-tab-nav-item:hover,
+  .vertical-tab-nav-item.is-active {
+    background-color: var(--modal-nav-hover);
+  }
+  .vertical-tab-content {
+    background-color: var(--modal-content-bg);
+  }
+  .checkbox-container.is-enabled {
+    background: var(--modal-checked-bg);
+  }
+  .community-plugin {
+    .setting-item-control button,
+    .flair.mod-pop {
+      background-color: var(--background-modifier-cover);
+    }
+  }
+  .modal.mod-settings .setting-item button,
+  .community-plugin-details button {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+  }
+}
+

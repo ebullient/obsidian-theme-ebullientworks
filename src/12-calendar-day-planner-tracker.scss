@@ -1,0 +1,57 @@
+.theme-dark {
+  --calendar-year: var(--purple-3);
+  --calendar-month: var(--green-3);
+  --calendar-dividing-line: var(--purple-1);
+  --day-planner-timeline-fg: var(--blue-1);
+}
+.theme-light {
+  --calendar-year: var(--purple-4);
+  --calendar-month: var(--green-4);
+  --calendar-dividing-line: var(--purple-1);
+  --day-planner-timeline-fg: var(--blue-1);
+}
+// ------------------------------------------------------
+// Calendar, Fantasy Calendar
+// ------------------------------------------------------
+#calendar-container span.year {
+  color: var(--calendar-year);
+}
+#calendar-container span.month {
+  color: var(--calendar-month);
+}
+// ------------------------------------------------------
+// Tracker
+// ------------------------------------------------------
+.block-language-tracker {
+  .tracker-month-header-month,
+  .tracker-month-title-arrow {
+    fill: var(--calendar-month);
+  }
+  // month display matches Calendar colors
+  .tracker-month-header-year {
+    fill: var(--calendar-year);
+  }
+  .tracker-month-dividing-line {
+    fill: var(--calendar-dividing-line);
+  }
+  .tracker-month-weekday,
+  .tracker-month-label {
+    fill: var(--text-faint);
+    fill-opacity: 1.0 !important; // bug
+  }
+}
+// ------------------------------------------------------
+// Day Planner
+// ------------------------------------------------------
+.day-planner-progress-bar {
+  background-color: var(--side-dock-fg-faint);
+}
+#day-planner-timeline-container {
+  .event_item_contents > {
+    .ei_Copy,
+    .ei_Title {
+      color: var(--day-planner-timeline-fg);
+    }
+  }
+}
+
