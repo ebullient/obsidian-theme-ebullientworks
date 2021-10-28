@@ -3,11 +3,11 @@
   --desktop-header-font-size: 12px;
 }
 .theme-light {
-  --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-1));
-  --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-3));
+  --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
   --border-bottom: 1px solid rgba(0, 0, 0, .2);
-  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-1));
-  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-3));
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
+  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
 }
 .theme-dark {
   --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
@@ -99,6 +99,7 @@ body:not(.is-mobile) {
   }
   .view-header {
     height: var(--header-width);
+    align-items: center;
   }
   .view-header-title {
     font-size: var(--desktop-header-font-size);
@@ -108,10 +109,22 @@ body:not(.is-mobile) {
     width: 100%;
     height: calc(100% - var(--header-width));
   }
+  .view-action,
+  .view-actions,
+  .view-header-icon {
+    top: unset;
+  }
+  .view-action {
+    margin: 0px 4px;
+  }
+  .view-actions,
+  .view-header-icon {
+    padding: 0px 4px;
+  }
   .view-header-icon svg,
   .view-action svg {
     width: auto !important;
-    height: calc(var(--header-width) - 10) !important;
+    height: 14px !important;
   }
 }
 //---------------------------------------
@@ -144,15 +157,20 @@ body.plugin-sliding-panes-rotate-header {
   .view-header-title {
     line-height: calc(var(--header-width) - 6px);
   }
-  .view-header {
-    background: var(--rotated-inactive-leaf-bg);
-    border-right: var(--border-bottom);
-    border-left: var(--border-bottom);
-  }
-  .workspace-leaf.mod-active .view-header {
-    background: var(--rotated-active-leaf-bg) ;
-    border-right: var(--border-bottom);
-    border-left: var(--border-bottom);
+  .horizontal-main-container {
+    .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
+    .view-header {
+      background: var(--rotated-inactive-leaf-bg);
+      border-right: var(--border-bottom);
+      border-left: var(--border-bottom);
+    }
+
+    .workspace-leaf.mod-active .view-header,
+    .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+      background: var(--rotated-active-leaf-bg) ;
+      border-right: var(--border-bottom);
+      border-left: var(--border-bottom);
+    }
   }
 }
 

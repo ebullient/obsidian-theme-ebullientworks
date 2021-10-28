@@ -6,7 +6,7 @@
   --link: var(--gray-light-1);
   --link-underline: var(--teal-4);
   --link-hover: var(--teal-3);
-  --link-hidden: var(--teal-6);
+  --link-hidden: var(--teal-5);
 }
 .theme-light {
   --strong-em: var(--yellow-3);
@@ -41,7 +41,6 @@
   color: var(--text-highlight-fg);
 }
 
-
 // Reference: css styles for links in base
 // .rich-link -- color
 // .cm-link -- text-decoration
@@ -66,8 +65,8 @@ a,
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link,
 .markdown-preview-view .internal-link {
-color: var(--link);
-text-decoration: underline var(--link-underline);
+  color: var(--link);
+  text-decoration: underline var(--link-underline);
 }
 .cm-s-obsidian span.cm-string.cm-url {
 color: var(--link-hidden);
@@ -78,16 +77,17 @@ color: var(--link-hidden);
   font-weight: normal;
   color: var(--text-faint);
 }
+
 /* Collapse external links / markdown links in edit mode */
-// body:not(.ebullientworks-show-edit-mode-links) {
-//   div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting){
-//     font-size: 0;
-//   }
-//   div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting)::after {
-//     content: '·';
-//     font-size: 1rem;
-//   }
-// }
+body:not(.ebullientworks-show-edit-mode-links) {
+  div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting){
+    font-size: 0;
+  }
+  div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting)::after {
+    content: '·';
+    font-size: 1rem;
+  }
+}
 
 // HR tags
 .markdown-preview-view hr {
