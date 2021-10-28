@@ -4,11 +4,13 @@
 .theme-light {
   --pre-code: var(--blue-5);
 }
+
 .cm-s-obsidian span.cm-inline-code,
 .cm-s-obsidian .HyperMD-codeblock,
 .markdown-preview-view code {
   color: var(--pre-code);
 }
+
 // Specificity
 .theme-dark,
 .theme-light {
@@ -41,6 +43,3 @@
     border-bottom: 2px solid var(--background-primary-alt);
   }
 }
-
-
-
