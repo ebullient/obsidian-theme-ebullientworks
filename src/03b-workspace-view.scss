@@ -3,6 +3,7 @@
   --desktop-header-font-size: 12px;
 }
 .theme-light {
+  --active-leaf-action-hover: var(--purple-0);
   --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
   --sharp-border: 1px solid rgba(0, 0, 0, .2);
@@ -10,6 +11,7 @@
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
 }
 .theme-dark {
+  --active-leaf-action-hover: var(--purple-0);
   --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
@@ -40,6 +42,9 @@
 }
 .workspace-leaf.mod-active .view-header-title {
   color: var(--text-on-accent);
+}
+.view-action:hover {
+  color: var(--active-leaf-action-hover);
 }
 .view-header-title-container:after,
 .workspace-leaf.mod-active .view-header-title-container:after,
@@ -125,8 +130,8 @@ body:not(.is-mobile) {
   }
   .view-header-icon svg,
   .view-action svg {
-    width: auto !important;
-    height: 14px !important;
+    width: auto;
+    height: 14px;
   }
 }
 //---------------------------------------
@@ -151,27 +156,29 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
   }
 }
 body.plugin-sliding-panes-rotate-header {
-  .view-header-icon svg,
-  .view-action svg {
-    width: 16px !important;
-    height: auto !important;
-  }
   .view-header-title {
     line-height: calc(var(--leaf-header-width) - 6px);
   }
-  .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content {
-    padding-left: var(--leaf-header-width);
-  }
-  .horizontal-main-container {
-    .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
+  .horizontal-main-container > .workspace {
+    .mod-root > .workspace-leaf > .workspace-leaf-content {
+      padding-left: var(--leaf-header-width);
+    }
+
+    > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
     .view-header {
       background: var(--rotated-inactive-leaf-bg);
       border-right: var(--sharp-border);
       border-left: var(--sharp-border);
+
+      .view-header-icon svg,
+      .view-action svg {
+        width: 16px;
+        height: auto;
+      }
     }
 
     .workspace-leaf.mod-active .view-header,
-    .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+    > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
       background: var(--rotated-active-leaf-bg) ;
       border-right: var(--sharp-border);
       border-left: var(--sharp-border);
