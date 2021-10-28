@@ -4,6 +4,7 @@
 .theme-light {
   --pre-code: var(--blue-5);
 }
+.cm-s-obsidian span.cm-inline-code,
 .cm-s-obsidian .HyperMD-codeblock,
 .markdown-preview-view code {
   color: var(--pre-code);
@@ -23,6 +24,7 @@
     border-radius: 4px;
     border: 1px solid var(--background-primary-alt);
   }
+  .cm-s-obsidian span.cm-inline-code,
   .cm-s-obsidian div.HyperMD-codeblock-begin-bg,
   .cm-s-obsidian div.HyperMD-codeblock-end-bg,
   .cm-s-obsidian div.HyperMD-codeblock-bg {

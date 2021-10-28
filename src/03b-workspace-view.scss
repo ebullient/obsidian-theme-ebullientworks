@@ -157,7 +157,7 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 }
 body.plugin-sliding-panes-rotate-header {
   .view-header-title {
-    line-height: calc(var(--leaf-header-width) - 6px);
+    line-height: calc(var(--leaf-header-width) - 2px);
   }
   .horizontal-main-container > .workspace {
     .mod-root > .workspace-leaf > .workspace-leaf-content {
@@ -169,10 +169,11 @@ body.plugin-sliding-panes-rotate-header {
       background: var(--rotated-inactive-leaf-bg);
       border-right: var(--sharp-border);
       border-left: var(--sharp-border);
+      width: var(--leaf-header-width);
 
       .view-header-icon svg,
       .view-action svg {
-        width: 16px;
+        width: 14px;
         height: auto;
       }
     }

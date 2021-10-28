@@ -23,21 +23,30 @@
   padding-inline-start: 20px;
 }
 
+/*line height for lists in preview*/
+.mobile {
+  .markdown-preview-view ol,
+  .markdown-preview-view ul {
+    display: block;
+    line-height: var(--line-height);
+  }
+}
+
 /* Notation checkboxes */
 .markdown-preview-view input.task-list-item-checkbox {
   -webkit-appearance: none;
   box-sizing: border-box;
   border: 1px solid var(--text-normal);
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   margin: 0;
   margin-right: 4px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   transition: background-color 200ms ease-out 0s;
   cursor: pointer;
   filter: none;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .markdown-preview-view input.task-list-item-checkbox:checked {
@@ -48,15 +57,15 @@
 .markdown-preview-view input.task-list-item-checkbox:checked::before {
   position: absolute;
   text-align: center;
-  font-weight: 900;
-  line-height: 15px;
-  left: 2px;
-  right: 2px;
+  font-weight: 600;
+  line-height: 12px;
+  font-size: 12px;
+  left: 1px;
+  right: 1px;
 }
 
 .markdown-preview-view ul > li.task-list-item {
   font-weight: normal;
-  line-height: 1rem;
   color: var(--text-normal);
 }
 
@@ -90,7 +99,7 @@
 .markdown-preview-view li[data-task="R"] > input.task-list-item-checkbox:checked::before,
 .markdown-preview-view li[data-task="R"] > p > input.task-list-item-checkbox:checked::before {
   content: "👀";
-  font-size: 0.8em;
+  font-size: 0.7em;
   color: var(--text-normal);
 }
 /* '!' for important task ('- [!]') */
