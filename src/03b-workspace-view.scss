@@ -1,18 +1,18 @@
 :root {
-  --header-width: 30px;
+  --leaf-header-width: 30px;
   --desktop-header-font-size: 12px;
 }
 .theme-light {
   --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
-  --border-bottom: 1px solid rgba(0, 0, 0, .2);
+  --sharp-border: 1px solid rgba(0, 0, 0, .2);
   --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
 }
 .theme-dark {
   --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
-  --border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
   --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
 }
@@ -20,13 +20,15 @@
 // Common: inset title shading, monospace font
 // Override common settings
 // --------------------------------------------------
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header,
 .view-header {
   background: var(--inactive-leaf-bg);
-  border-bottom: var(--border-bottom);
+  border-bottom: var(--sharp-border);
 }
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header,
 .workspace-leaf.mod-active .view-header {
   background: var(--active-leaf-bg) ;
-  border-bottom: var(--border-bottom);
+  border-bottom: var(--sharp-border);
 }
 .view-header-title {
   color: var(--text-on-accent);
@@ -98,16 +100,16 @@ body:not(.is-mobile) {
     margin-top: -.1em;
   }
   .view-header {
-    height: var(--header-width);
+    height: var(--leaf-header-width);
     align-items: center;
   }
   .view-header-title {
     font-size: var(--desktop-header-font-size);
-    line-height: var(--header-width);
+    line-height: var(--leaf-header-width);
   }
   .view-content {
     width: 100%;
-    height: calc(100% - var(--header-width));
+    height: calc(100% - var(--leaf-header-width));
   }
   .view-action,
   .view-actions,
@@ -135,7 +137,7 @@ body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
 body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
   box-shadow: none !important;
-  border-left: var(--border-bottom);
+  border-left: var(--sharp-border);
 
   > .workspace-leaf-content > .view-header {
     .view-header-title-container:before,
@@ -155,21 +157,24 @@ body.plugin-sliding-panes-rotate-header {
     height: auto !important;
   }
   .view-header-title {
-    line-height: calc(var(--header-width) - 6px);
+    line-height: calc(var(--leaf-header-width) - 6px);
+  }
+  .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content {
+    padding-left: var(--leaf-header-width);
   }
   .horizontal-main-container {
     .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
     .view-header {
       background: var(--rotated-inactive-leaf-bg);
-      border-right: var(--border-bottom);
-      border-left: var(--border-bottom);
+      border-right: var(--sharp-border);
+      border-left: var(--sharp-border);
     }
 
     .workspace-leaf.mod-active .view-header,
     .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
       background: var(--rotated-active-leaf-bg) ;
-      border-right: var(--border-bottom);
-      border-left: var(--border-bottom);
+      border-right: var(--sharp-border);
+      border-left: var(--sharp-border);
     }
   }
 }
