@@ -87,6 +87,9 @@ body:not(.is-mobile) {
   .workspace-split.mod-horizontal.mod-right-split {
     min-width: 200px;
   }
+  .workspace-split.mod-horizontal.mod-right-split {
+    border-left: var(--sharp-border);
+  }
   //A bit of separation for multiple groups in sidebars
   .workspace-tabs + .workspace-tabs {
     border-top: 1px solid var(--background-secondary-alt);
@@ -158,6 +161,9 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 body.plugin-sliding-panes-rotate-header {
   .view-header-title {
     line-height: calc(var(--leaf-header-width) - 2px);
+  }
+  .workspace-split.mod-horizontal.mod-left-split {
+    border-right: none;
   }
   .horizontal-main-container > .workspace {
     .mod-root > .workspace-leaf > .workspace-leaf-content {
