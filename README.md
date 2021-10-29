@@ -17,6 +17,8 @@ Some light styling has also been applied for the following community plugins:
 - timelines
 - tracker
 
+![](https://raw.githubusercontent.com/ebullient/obsidian-theme-ebullientworks/main/images/theme-colors.jpg)
+
 ## Credits
 
 - [Spectrum](https://github.com/Braweria/Spectrum)
