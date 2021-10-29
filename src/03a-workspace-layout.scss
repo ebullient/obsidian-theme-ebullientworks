@@ -3,13 +3,13 @@
   --side-dock-text-on-accent: var(--text-on-accent);
   --side-dock-text-on-accent-hover: var(--purple-3);
   --side-dock-accent: var(--purple-5);
-  --side-dock-accent-hover: rgba(255, 255, 255, .2);
+  --side-dock-accent-hover: var(--green-4);
 }
 .theme-light {
-  --side-dock-text-on-accent: var(--gray-dark-3);
+  --side-dock-text-on-accent: var(--gray-dark-4);
   --side-dock-text-on-accent-hover: var(--purple-5);
   --side-dock-accent: var(--purple-0);
-  --side-dock-accent-hover: rgba(255, 255, 255, .7);
+  --side-dock-accent-hover: var(--green-1);
 }
 // ------------------------------------------------------
 // Cursor
@@ -217,8 +217,10 @@
   background-color: var(--side-dock-accent);
   border-radius: 3px;
 }
+.menu-item.selected:not(.is-disabled):not(.is-label),
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover,
+.nav-file:hover,
 .nav-action-button:hover,
 .nav-action-button.is-active:hover,
 .tree-item-self.is-clickable:hover,

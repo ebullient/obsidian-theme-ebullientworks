@@ -173,14 +173,14 @@ settings:
   --side-dock-text-on-accent: var(--text-on-accent);
   --side-dock-text-on-accent-hover: var(--purple-3);
   --side-dock-accent: var(--purple-5);
-  --side-dock-accent-hover: rgba(255, 255, 255, .2);
+  --side-dock-accent-hover: var(--green-4);
 }
 
 .theme-light {
-  --side-dock-text-on-accent: var(--gray-dark-3);
+  --side-dock-text-on-accent: var(--gray-dark-4);
   --side-dock-text-on-accent-hover: var(--purple-5);
   --side-dock-accent: var(--purple-0);
-  --side-dock-accent-hover: rgba(255, 255, 255, .7);
+  --side-dock-accent-hover: var(--green-1);
 }
 
 .menu-item,
@@ -389,8 +389,10 @@ settings:
   border-radius: 3px;
 }
 
+.menu-item.selected:not(.is-disabled):not(.is-label),
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover,
+.nav-file:hover,
 .nav-action-button:hover,
 .nav-action-button.is-active:hover,
 .tree-item-self.is-clickable:hover,
@@ -652,6 +654,97 @@ input[type=number] {
 }
 .modal-container .prompt .suggestion-item.is-selected {
   background-color: var(--text-selection);
+}
+
+.graph-controls .checkbox-container {
+  background-color: var(--modal-checkbox-bg);
+}
+.graph-controls .checkbox-container.is-enabled {
+  background-color: var(--modal-checked-bg);
+}
+
+.theme-dark {
+  --graph-fill: var(--purple-4);
+  --graph-line: var(--green-6);
+  --graph-highlight-fill: var(--purple-3);
+  --graph-highlight-line: var(--green-3);
+  --graph-fill-tag: var(--green-4);
+  --graph-fill-attachment: var(--teal-4);
+  --graph-fill-focused: var(--yellow-1);
+  --graph-fill-1: var(--yellow-3);
+  --graph-fill-2: var(--green-5);
+  --graph-fill-3: var(--teal-5);
+  --graph-fill-4: var(--blue-5);
+  --graph-fill-5: var(--purple-5);
+  --graph-fill-6: var(--pink-5);
+}
+
+.theme-light {
+  --graph-fill: var(--purple-2);
+  --graph-line: var(--gray-light-2);
+  --graph-highlight-fill: var(--purple-3);
+  --graph-highlight-line: var(--green-3);
+  --graph-fill-tag: var(--green-2);
+  --graph-fill-attachment: var(--teal-2);
+  --graph-fill-focused: var(--yellow-1);
+  --graph-fill-1: var(--yellow-2);
+  --graph-fill-2: var(--teal-2);
+  --graph-fill-3: var(--blue-2);
+  --graph-fill-4: var(--pink-2);
+  --graph-fill-5: var(--purple-1);
+  --graph-fill-6: var(--green-1);
+}
+
+.graph-view.color-line {
+  color: var(--graph-line);
+}
+
+.graph-view.color-fill {
+  color: var(--graph-fill);
+}
+
+.graph-view.color-fill-focused {
+  color: var(--graph-fill-focused) !important;
+}
+
+.graph-view.color-fill-tag {
+  color: var(--graph-fill-tag) !important;
+}
+
+.graph-view.color-fill-attachment {
+  color: var(--graph-fill-attachment) !important;
+}
+
+.graph-view.color-fill-1 {
+  color: var(--graph-fill-1);
+}
+
+.graph-view.color-fill-2 {
+  color: var(--graph-fill-2);
+}
+
+.graph-view.color-fill-3 {
+  color: var(--graph-fill-3);
+}
+
+.graph-view.color-fill-4 {
+  color: var(--graph-fill-4);
+}
+
+.graph-view.color-fill-5 {
+  color: var(--graph-fill-5);
+}
+
+.graph-view.color-fill-6 {
+  color: var(--graph-fill-6);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--graph-highlight-fill);
+}
+
+.graph-view.color-line-highlight {
+  color: var(--graph-highlight-line);
 }
 
 .theme-dark {

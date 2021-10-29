@@ -74,4 +74,11 @@ input[type='number'] {
     background-color: var(--text-selection);
   }
 }
-
+.graph-controls {
+  .checkbox-container {
+    background-color: var(--modal-checkbox-bg);
+  }
+  .checkbox-container.is-enabled {
+    background-color: var(--modal-checked-bg);
+  }
+}
