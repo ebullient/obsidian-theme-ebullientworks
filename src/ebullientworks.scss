@@ -6,7 +6,7 @@ settings:
     -
         id: ebullientworks-show-edit-mode-external-links
         title: Show external links in edit mode
-        description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default. This setting is ignored if the CodeMirror options plugin is present and configured to hide external links.
+        description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
         type: class-toggle
         default: false
 */
