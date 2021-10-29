@@ -1,12 +1,15 @@
 # Welcome to Ebullientworks Obsidian Theme 👋
 
+![](https://raw.githubusercontent.com/ebullient/obsidian-theme-ebullientworks/main/images/ebullientworks-theme.jpg)
+
 This is a dark and light theme for [Obsidian.md](https://obsidian.md), a note taking app. 
 
-As with most, I've begged/borrowed/stolen CSS snippets from just about everywhere. I started from vanilla and tried to be judicious about it to keep things lean.
+
+I've begged/borrowed/stolen CSS snippets from just about everywhere, but I started from vanilla and tried to be judicious about what to include to keep things lean. Modals and other panels are also styled, as are calendar, some parts of tracker, and some parts of Day Planner. 
 
 
 ## Credits
 
 - [Spectrum](https://github.com/Braweria/Spectrum)
 - [ITS Theme](https://github.com/SlRvb/Obsidian--ITS-Theme)
-- Snippets from everywhere, including all the credits given in the above two themes
+- Snippets from everywhere, including the forums and all the sources noted in the above two themes
