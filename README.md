@@ -4,7 +4,7 @@
 
 This is a dark and light theme for [Obsidian.md](https://obsidian.md), a note taking app. 
 
-I've begged/borrowed/stolen CSS snippets from just about everywhere, but I started from vanilla and tried to be judicious about what to include to keep things lean. Modals and other panels are also styled. All colors are sourced from [this palette](colors.md)
+I've begged/borrowed/stolen CSS snippets from just about everywhere, but I started from vanilla and tried to be judicious about what to include to keep things lean. Modals and other panels are also styled. All colors are sourced from [this palette](http://htmlpreview.github.io/?https://github.com/ebullient/obsidian-theme-ebullientworks/blob/main/colors.html)
 
 Headers are styled and sized (for mobile and not) with and without Sliding panes (and rotated headers).
 
