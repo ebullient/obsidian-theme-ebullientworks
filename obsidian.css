@@ -117,7 +117,7 @@ settings:
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-light-1);
   --interactive-normal: var(--green-4);
-  --interactive-hover: var(--purple-1);
+  --interactive-hover: var(--purple-4);
   --interactive-accent: var(--green-4);
   --interactive-accent-rgb: var(--purple-4-rgb);
   --interactive-accent-hover: var(--blue-1);
@@ -490,6 +490,12 @@ body:not(.is-mobile) .workspace-split.mod-horizontal.mod-left-split,
 body:not(.is-mobile) .workspace-split.mod-horizontal.mod-right-split {
   min-width: 200px;
 }
+body:not(.is-mobile) .workspace-split.mod-horizontal.mod-left-split {
+  border-right: var(--sharp-border);
+}
+body:not(.is-mobile) .workspace-split.mod-horizontal.mod-right-split {
+  border-left: var(--sharp-border);
+}
 body:not(.is-mobile) .workspace-tabs + .workspace-tabs {
   border-top: 1px solid var(--background-secondary-alt);
 }
@@ -558,6 +564,9 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
 
 body.plugin-sliding-panes-rotate-header .view-header-title {
   line-height: calc(var(--leaf-header-width) - 2px);
+}
+body.plugin-sliding-panes-rotate-header .workspace-split.mod-horizontal.mod-left-split {
+  border-right: none;
 }
 body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .mod-root > .workspace-leaf > .workspace-leaf-content {
   padding-left: var(--leaf-header-width);
@@ -652,15 +661,20 @@ input[type=number] {
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);
 }
-.modal-container .prompt .suggestion-item.is-selected {
-  background-color: var(--text-selection);
-}
 
 .graph-controls .checkbox-container {
   background-color: var(--modal-checkbox-bg);
 }
 .graph-controls .checkbox-container.is-enabled {
   background-color: var(--modal-checked-bg);
+}
+
+.suggestion-container {
+  border: 1px solid var(--modal-nav-accent);
+}
+
+.suggestion-item.is-selected {
+  background-color: var(--text-selection);
 }
 
 .theme-dark {

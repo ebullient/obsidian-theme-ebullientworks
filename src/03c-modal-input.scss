@@ -70,9 +70,6 @@ input[type='number'] {
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
   }
-  .prompt .suggestion-item.is-selected {
-    background-color: var(--text-selection);
-  }
 }
 .graph-controls {
   .checkbox-container {
@@ -81,4 +78,10 @@ input[type='number'] {
   .checkbox-container.is-enabled {
     background-color: var(--modal-checked-bg);
   }
+}
+.suggestion-container {
+  border: 1px solid var(--modal-nav-accent);
+}
+.suggestion-item.is-selected {
+  background-color: var(--text-selection);
 }

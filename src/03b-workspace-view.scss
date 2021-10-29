@@ -87,6 +87,9 @@ body:not(.is-mobile) {
   .workspace-split.mod-horizontal.mod-right-split {
     min-width: 200px;
   }
+  .workspace-split.mod-horizontal.mod-left-split {
+    border-right: var(--sharp-border);
+  }
   .workspace-split.mod-horizontal.mod-right-split {
     border-left: var(--sharp-border);
   }
