@@ -4,14 +4,41 @@
 name: Ebullientworks theme settings
 id: ebullientworks-theme
 settings:
-    -
-        id: ebullientworks-show-edit-mode-external-links
-        title: Show external links in edit mode
-        description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
-        type: class-toggle
-        default: false
+  -
+    id: ebullientworks-show-edit-mode-external-links
+    title: Show external links in edit mode
+    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+    type: class-toggle
+    default: false
+  -
+    title: Headings
+    description: Font for text headings (h1 to h6)
+    id: font-header
+    type: variable-text
+    default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+  -
+    title: Tags
+    description: Font for displaying inline #tags (edit and preview mode).
+    id: font-tags
+    type: variable-text
+    default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+  -
+    title: Text
+    description: Default text font for preview and edit mode.
+    id: default-font
+    type: variable-text
+    default: "'PT Sans', Helvetica Neue, Helvetica, Arial, sans-serif"
+  -
+    title: Monospace
+    id: font-monospace
+    type: variable-text
+    default: "'Fira Code', 'Source Code Pro', Jetbrains Mono, SFMono-Regular, Consolas, 'Roboto Mono', monospace"
 */
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nothing+You+Could+Do&display=swap");
+:root {
+  --line-height: 1.5em;
+}
+
 :root {
   --gray-light-7: rgb(248, 248, 248);
   --gray-light-6: rgb(245, 245, 245);
@@ -82,9 +109,7 @@ settings:
   --default-font: "PT Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-tags: Architects Daughter, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-header: var(--font-tags);
-  --cm-font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono, SFMono-Regular, Consolas, "Roboto Mono", monospace;
-  --font-monospace: var(--cm-font-monospace);
-  --line-height: 1.5em;
+  --font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono, SFMono-Regular, Consolas, "Roboto Mono", monospace;
 }
 
 .theme-dark {
