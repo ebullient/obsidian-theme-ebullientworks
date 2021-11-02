@@ -1,4 +1,78 @@
+:root {
+  --admonition-color: var(--green-4-rgb);
+  --admonition-warning: 234, 175, 0; // yellow-3
+  --admonition-success: 139, 167, 145; // green-3
+  --admonition-note: 180, 209, 232; // blue-1
+  --admonition-info: 111, 166, 211; // blue-3
+  --admonition-quote: 53, 120, 175; // blue-4
+  --admonition-tip: 134, 196, 193; // teal-2
+  --admonition-question: 89, 174, 170; // teal-3
+  --admonition-abstract: 216, 201, 213; // purple-1
+  --admonition-bug: 180, 152, 175; // purple-3
+  --admonition-example: 142, 103, 135; // purple-4
+  --admonition-failure: 187, 79, 108; // pink-4
+  --admonition-danger: 211, 141, 160; // pink-3
+  --admonition-reference: 183, 183, 183; // gray
+  --admonition-toc: 235, 235, 235; // gray-light-4
+}
+
+@mixin admonition-color($rgb-color) {
+  border-left: 0.2rem solid rgb($rgb-color);
+  .admonition-title {
+    background-color: rgba($rgb-color, 0.2);
+    .admonition-title-icon {
+      color: rgb($rgb-color);
+    }
+  }
+}
+
 .markdown-preview-section {
+  .admonition {
+    @include admonition-color(var(--admonition-color));
+  }
+  .admonition.admonition-note {
+    @include admonition-color(var(--admonition-note));
+  }
+  .admonition.admonition-abstract {
+    @include admonition-color(var(--admonition-abstract));
+  }
+  .admonition.admonition-info {
+    @include admonition-color(var(--admonition-info));
+  }
+  .admonition.admonition-tip {
+    @include admonition-color(var(--admonition-tip));
+  }
+  .admonition.admonition-success {
+    @include admonition-color(var(--admonition-success));
+  }
+  .admonition.admonition-question {
+    @include admonition-color(var(--admonition-question));
+  }
+  .admonition.admonition-warning {
+    @include admonition-color(var(--admonition-warning));
+  }
+  .admonition.admonition-failure {
+    @include admonition-color(var(--admonition-failure));
+  }
+  .admonition.admonition-danger {
+    @include admonition-color(var(--admonition-danger));
+  }
+  .admonition.admonition-bug {
+    @include admonition-color(var(--admonition-bug));
+  }
+  .admonition.admonition-example {
+    @include admonition-color(var(--admonition-example));
+  }
+  .admonition.admonition-quote {
+    @include admonition-color(var(--admonition-quote));
+  }
+  .admonition.admonition-reference {
+    @include admonition-color(var(--admonition-reference));
+  }
+  .admonition.admonition-toc {
+    @include admonition-color(var(--admonition-toc));
+  }
+
   .admonition-title {
     font-family: var(--font-header);
     font-size: 1em;
@@ -9,6 +83,7 @@
   }
   .admonition-content-holder .admonition-content {
     margin: 2px .5em;
+    padding-left: .5em;
   }
   // ------------------------------------------------------
   // Reference Admonition
@@ -54,3 +129,4 @@
     }
   }
 }
+
