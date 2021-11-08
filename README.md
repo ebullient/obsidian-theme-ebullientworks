@@ -34,7 +34,6 @@ This theme does support style settings. Settable attributes:
     - Text (default font for text)
     - Monospace 
 
-
 ## Admonitions
 
 As of version 6.5.1, you can disable the color picker for admonitions (globally or per-admonition) to have colors picked up from CSS styles instead. All of the default admonitions, in addition to two additional custom types, have been styled.
@@ -49,11 +48,9 @@ Those two custom types are:
     Styled to create a floating (hover:right) section for Table of Contents
     To use this style, create a `toc` admonition (I recommend you use the list icon, but take your pick).
     
-Here is what they all look like (unstyled edit mode on the left): 
+Here is what they look like (unstyled edit mode on the left): 
 
 ![](images/admonitions.png)
-
-
 
 ## Credits
 

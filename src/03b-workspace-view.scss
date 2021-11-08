@@ -1,21 +1,24 @@
 :root {
   --leaf-header-width: 30px;
   --desktop-header-font-size: 12px;
+  --active-leaf-action-hover: var(--yellow-1);
 }
 .theme-light {
-  --active-leaf-action-hover: var(--purple-0);
-  --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
-  --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
-  --sharp-border: 1px solid rgba(0, 0, 0, .2);
-  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
-  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
+  --leaf-fg: var(--gray-light-4);
+  --sharp-border: 1px solid rgba(0, 0, 0, .1);
+  --resize-handle-bg: var(--background-secondary-alt);
+  --active-leaf-bg: linear-gradient(to top, var(--purple-5), var(--purple-4) 2%, var(--purple-3) 15%, var(--purple-3));
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-5), var(--purple-4) 2%, var(--purple-3) 15%, var(--purple-3));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
+  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
 }
 .theme-dark {
-  --active-leaf-action-hover: var(--purple-0);
-  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
-  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
+  --leaf-fg: var(--text-on-accent);
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
+  --resize-handle-bg: rgba(0, 0, 0, 0.5);
+  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
   --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
 }
 // --------------------------------------------------
@@ -32,17 +35,20 @@
   background: var(--active-leaf-bg) ;
   border-bottom: var(--sharp-border);
 }
+.view-action,
+.view-header-icon,
+.view-header-title,
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--leaf-fg);
+}
 .view-header-title {
-  color: var(--text-on-accent);
   font-weight: 500;
   font-family: var(--font-monospace);
   overflow-x: hidden;
   overflow-y: hidden;
   text-overflow: ellipsis;
 }
-.workspace-leaf.mod-active .view-header-title {
-  color: var(--text-on-accent);
-}
+.view-header-icon:hover,
 .view-action:hover {
   color: var(--active-leaf-action-hover);
 }
@@ -52,6 +58,9 @@
   background: none;
 }
 // ---- Thinner resize handle --------------
+.workspace-leaf-resize-handle {
+  background-color: var(--resize-handle-bg);
+}
 .workspace-leaf-resize-handle:hover {
   background-color: var(--interactive-accent);
 }
@@ -88,10 +97,10 @@ body:not(.is-mobile) {
     min-width: 200px;
   }
   .workspace-split.mod-horizontal.mod-left-split {
-    border-right: var(--sharp-border);
+    border-right: none;
   }
   .workspace-split.mod-horizontal.mod-right-split {
-    border-left: var(--sharp-border);
+    border-left: none;
   }
   //A bit of separation for multiple groups in sidebars
   .workspace-tabs + .workspace-tabs {
@@ -145,21 +154,18 @@ body:not(.is-mobile) {
 //---------------------------------------
 // Hide the gradient of the title pane
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
   box-shadow: none !important;
-  border-left: var(--sharp-border);
 
   > .workspace-leaf-content > .view-header {
     .view-header-title-container:before,
     .view-header-title-container:after {
       background: none !important;
     }
-    .view-header {
-      border-left: none;
-      border-right: none;
-    }
   }
+}
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf:not(:first-of-type) {
+  border-left: var(--sharp-border);
 }
 body.plugin-sliding-panes-rotate-header {
   .view-header-title {
@@ -172,12 +178,11 @@ body.plugin-sliding-panes-rotate-header {
     .mod-root > .workspace-leaf > .workspace-leaf-content {
       padding-left: var(--leaf-header-width);
     }
-
     > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
     .view-header {
       background: var(--rotated-inactive-leaf-bg);
-      border-right: var(--sharp-border);
-      border-left: var(--sharp-border);
+      border-right: none;
+      border-left: none;
       width: var(--leaf-header-width);
 
       .view-header-icon svg,
@@ -187,11 +192,10 @@ body.plugin-sliding-panes-rotate-header {
       }
     }
 
-    .workspace-leaf.mod-active .view-header,
     > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
       background: var(--rotated-active-leaf-bg) ;
-      border-right: var(--sharp-border);
-      border-left: var(--sharp-border);
+      border-right: none;
+      border-left: none;
     }
   }
 }

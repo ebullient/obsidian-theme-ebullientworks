@@ -7,6 +7,11 @@
   --link-underline: var(--teal-4);
   --link-hover: var(--teal-3);
   --link-hidden: var(--teal-5);
+
+  .search-result-file-matched-text {
+    background-color: var(--background-secondary);
+    color: var(--text-highlight-bg);
+  }
 }
 .theme-light {
   --strong-em: var(--yellow-3);

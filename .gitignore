@@ -1,3 +1,4 @@
 /node_modules
 package-lock.json
 vault
+.DS_Store

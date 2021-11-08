@@ -119,7 +119,7 @@ settings:
   --background-primary-alt: var(--gray-dark-6);
   --background-secondary: var(--gray-dark-7);
   --background-secondary-alt: var(--gray-dark-8);
-  --background-modifier-border: var(--gray-dark-7);
+  --background-modifier-border: var(--gray-dark-8);
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -197,14 +197,14 @@ settings:
 
 .theme-dark {
   --side-dock-text-on-accent: var(--text-on-accent);
-  --side-dock-text-on-accent-hover: var(--purple-3);
+  --side-dock-text-on-accent-hover: var(--yellow-1);
   --side-dock-accent: var(--purple-5);
   --side-dock-accent-hover: var(--green-4);
 }
 
 .theme-light {
   --side-dock-text-on-accent: var(--gray-dark-4);
-  --side-dock-text-on-accent-hover: var(--purple-5);
+  --side-dock-text-on-accent-hover: var(--yellow-4);
   --side-dock-accent: var(--purple-0);
   --side-dock-accent-hover: var(--green-1);
 }
@@ -431,23 +431,26 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 :root {
   --leaf-header-width: 30px;
   --desktop-header-font-size: 12px;
+  --active-leaf-action-hover: var(--yellow-1);
 }
 
 .theme-light {
-  --active-leaf-action-hover: var(--purple-0);
-  --active-leaf-bg: linear-gradient(to top, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
-  --inactive-leaf-bg: linear-gradient(to top, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
-  --sharp-border: 1px solid rgba(0, 0, 0, .2);
-  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-4), var(--purple-3) 2%, var(--purple-2) 15%, var(--purple-2));
-  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray), var(--gray-light-1) 2%, var(--gray-light-2) 15%, var(--gray-light-2));
+  --leaf-fg: var(--gray-light-4);
+  --sharp-border: 1px solid rgba(0, 0, 0, .1);
+  --resize-handle-bg: var(--background-secondary-alt);
+  --active-leaf-bg: linear-gradient(to top, var(--purple-5), var(--purple-4) 2%, var(--purple-3) 15%, var(--purple-3));
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-5), var(--purple-4) 2%, var(--purple-3) 15%, var(--purple-3));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
+  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
 }
 
 .theme-dark {
-  --active-leaf-action-hover: var(--purple-0);
-  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
-  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
+  --leaf-fg: var(--text-on-accent);
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
+  --resize-handle-bg: rgba(0, 0, 0, 0.5);
+  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
   --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
 }
 
@@ -463,8 +466,14 @@ body:not(.is-grabbing) .nav-folder-title:hover,
   border-bottom: var(--sharp-border);
 }
 
+.view-action,
+.view-header-icon,
+.view-header-title,
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--leaf-fg);
+}
+
 .view-header-title {
-  color: var(--text-on-accent);
   font-weight: 500;
   font-family: var(--font-monospace);
   overflow-x: hidden;
@@ -472,10 +481,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
   text-overflow: ellipsis;
 }
 
-.workspace-leaf.mod-active .view-header-title {
-  color: var(--text-on-accent);
-}
-
+.view-header-icon:hover,
 .view-action:hover {
   color: var(--active-leaf-action-hover);
 }
@@ -484,6 +490,10 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .workspace-leaf.mod-active .view-header-title-container:after,
 .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
   background: none;
+}
+
+.workspace-leaf-resize-handle {
+  background-color: var(--resize-handle-bg);
 }
 
 .workspace-leaf-resize-handle:hover {
@@ -517,10 +527,10 @@ body:not(.is-mobile) .workspace-split.mod-horizontal.mod-right-split {
   min-width: 200px;
 }
 body:not(.is-mobile) .workspace-split.mod-horizontal.mod-left-split {
-  border-right: var(--sharp-border);
+  border-right: none;
 }
 body:not(.is-mobile) .workspace-split.mod-horizontal.mod-right-split {
-  border-left: var(--sharp-border);
+  border-left: none;
 }
 body:not(.is-mobile) .workspace-tabs + .workspace-tabs {
   border-top: 1px solid var(--background-secondary-alt);
@@ -568,24 +578,18 @@ body:not(.is-mobile) .view-action svg {
 }
 
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
   box-shadow: none !important;
-  border-left: var(--sharp-border);
 }
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
 body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after,
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after,
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after {
   background: none !important;
 }
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header,
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header {
-  border-left: none;
-  border-right: none;
+
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf:not(:first-of-type) {
+  border-left: var(--sharp-border);
 }
 
 body.plugin-sliding-panes-rotate-header .view-header-title {
@@ -600,8 +604,8 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
 body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
 body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header {
   background: var(--rotated-inactive-leaf-bg);
-  border-right: var(--sharp-border);
-  border-left: var(--sharp-border);
+  border-right: none;
+  border-left: none;
   width: var(--leaf-header-width);
 }
 body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon svg,
@@ -611,11 +615,10 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   width: 14px;
   height: auto;
 }
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .workspace-leaf.mod-active .view-header,
 body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
   background: var(--rotated-active-leaf-bg);
-  border-right: var(--sharp-border);
-  border-left: var(--sharp-border);
+  border-right: none;
+  border-left: none;
 }
 
 .theme-light {
@@ -913,6 +916,10 @@ blockquote h1 {
   --link-underline: var(--teal-4);
   --link-hover: var(--teal-3);
   --link-hidden: var(--teal-5);
+}
+.theme-dark .search-result-file-matched-text {
+  background-color: var(--background-secondary);
+  color: var(--text-highlight-bg);
 }
 
 .theme-light {
