@@ -36,7 +36,7 @@ settings:
   -
     title: Primary accent color
     id: ebullientworks-primary-accent
-    description: Choose the primary accent color
+    description: Choose the primary accent color. You should define a snippet if you select primary-accent-custom. See the Theme's README.
     type: class-select
     allowEmpty: false
     default: primary-accent-purple
@@ -46,10 +46,11 @@ settings:
         - primary-accent-green
         - primary-accent-teal
         - primary-accent-blue
+        - primary-accent-custom
   -
     title: Secondary accent color
     id: ebullientworks-secondary-accent
-    description: Choose the secondary accent color
+    description: Choose the secondary accent color. You should define a snippet if you select secondary-accent-custom. See the Theme's README.
     type: class-select
     allowEmpty: false
     default: secondary-accent-green
@@ -59,6 +60,7 @@ settings:
         - secondary-accent-green
         - secondary-accent-teal
         - secondary-accent-blue
+        - secondary-accent-custom
  */
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nothing+You+Could+Do&display=swap");
 :root {
@@ -1700,15 +1702,21 @@ div[src$="#portrait"] {
 .markdown-preview-section .admonition.admonition-example .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-example));
 }
+.rendered-widget .admonition.admonition-excerpt,
 .rendered-widget .admonition.admonition-quote,
+.markdown-preview-section .admonition.admonition-excerpt,
 .markdown-preview-section .admonition.admonition-quote {
   border-left: 0.2rem solid rgb(var(--admonition-quote));
 }
+.rendered-widget .admonition.admonition-excerpt .admonition-title,
 .rendered-widget .admonition.admonition-quote .admonition-title,
+.markdown-preview-section .admonition.admonition-excerpt .admonition-title,
 .markdown-preview-section .admonition.admonition-quote .admonition-title {
   background-color: rgba(var(--admonition-quote), 0.2);
 }
+.rendered-widget .admonition.admonition-excerpt .admonition-title .admonition-title-icon,
 .rendered-widget .admonition.admonition-quote .admonition-title .admonition-title-icon,
+.markdown-preview-section .admonition.admonition-excerpt .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-quote .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-quote));
 }

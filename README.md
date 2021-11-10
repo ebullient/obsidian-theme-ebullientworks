@@ -19,7 +19,7 @@ Some light styling has also been applied for the following community plugins:
 
 ## Colors
 
-![](https://raw.githubusercontent.com/ebullient/obsidian-theme-ebullientworks/main/images/theme-colors.jpg)
+![](images/theme-colors.jpg)
 
 ## Style Settings
 
@@ -33,6 +33,52 @@ This theme does support style settings. Settable attributes:
     - Tags
     - Text (default font for text)
     - Monospace 
+
+- Choose primary / secondary accent color
+    This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
+### Creating your own accent colors
+
+The colors used by this palette are selected by applying a grayscale filter to a selected hue. 
+Use the following URL to apply the same grayscale filter to a color of your choice: 
+https://grayscale.design/app?lums=71.05,60.94,48.16,35.39,17.24,6.39,2.80&palettes=%23A17E9B&filters=0%7C0&names=purple&labels=
+
+Then create a snippet that contains your customized colors. 
+
+For example, let's use a REALLY BOLD RED: `#ae2012`.
+If we visit the link above, we can scroll down a bit until we see a button "Add a color", and we paste this value (including the `#` in that field). This will show us something like this: 
+![](images/create-a-custom-accent-color.png)
+
+Scroll down until you see `Step 3`, which is the step you need to export your colors. You'll want to use the CSS variables.
+
+If we want to use this red as the primary color: 
+```
+.primary-accent-custom {
+  --primary-accent-0: rgb(250, 210, 206); /* red-100 */
+  --primary-accent-1: rgb(248, 192, 187);
+  --primary-accent-2: rgb(245, 163, 156);
+  --primary-accent-3: rgb(241, 127, 117);
+  --primary-accent-4: rgb(222, 40, 23);
+  --primary-accent-4-rgb: 222, 40, 23;
+  --primary-accent-5: rgb(142, 25, 15);
+  --primary-accent-6: rgb(95, 17, 10); /* red-700 */
+}
+```
+
+If we want to use this red as the secondary color:
+```
+.secondary-accent-custom {
+  --secondary-accent-0: rgb(250, 210, 206); /* red-100 */
+  --secondary-accent-1: rgb(248, 192, 187);
+  --secondary-accent-1-rgb: 248, 192, 187;
+  --secondary-accent-2: rgb(245, 163, 156);
+  --secondary-accent-3: rgb(241, 127, 117);
+  --secondary-accent-4: rgb(222, 40, 23);
+  --secondary-accent-5: rgb(142, 25, 15);
+  --secondary-accent-6: rgb(95, 17, 10); /* red-700 */
+}
+```
+
+Place the file containing this snippet in the .obsidian/snippets directory, and make sure to enable it. Provided you've selected the "custom" entry in the primary/secondary style settings drop-down, you should be off to the races.
 
 ## Admonitions
 
