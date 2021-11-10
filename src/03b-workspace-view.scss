@@ -4,11 +4,11 @@
   --active-leaf-action-hover: var(--yellow-1);
 }
 .theme-light {
-  --leaf-fg: var(--gray-light-4);
+  --leaf-fg: var(--gray-light-5);
   --sharp-border: 1px solid rgba(0, 0, 0, .1);
   --resize-handle-bg: var(--background-secondary-alt);
-  --active-leaf-bg: linear-gradient(to top, var(--purple-5), var(--purple-4) 2%, var(--purple-3) 15%, var(--purple-3));
-  --rotated-active-leaf-bg: linear-gradient(to left, var(--purple-5), var(--purple-4) 2%, var(--purple-3) 15%, var(--purple-3));
+  --active-leaf-bg: linear-gradient(to top, var(--primary-accent-5), var(--primary-accent-4) 2%, var(--primary-accent-3) 15%, var(--primary-accent-3));
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--primary-accent-5), var(--primary-accent-4) 2%, var(--primary-accent-3) 15%, var(--primary-accent-3));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
 }
@@ -16,8 +16,8 @@
   --leaf-fg: var(--text-on-accent);
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
   --resize-handle-bg: rgba(0, 0, 0, 0.5);
-  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
-  --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--purple-6) 2%, var(--purple-5) 15%, var(--purple-5));
+  --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--primary-accent-6) 2%, var(--primary-accent-5) 15%, var(--primary-accent-5));
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--primary-accent-6) 2%, var(--primary-accent-5) 15%, var(--primary-accent-5));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
 }

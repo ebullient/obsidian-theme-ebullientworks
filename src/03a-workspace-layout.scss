@@ -2,14 +2,14 @@
 .theme-dark {
   --side-dock-text-on-accent: var(--text-on-accent);
   --side-dock-text-on-accent-hover: var(--yellow-1);
-  --side-dock-accent: var(--purple-5);
-  --side-dock-accent-hover: var(--green-4);
+  --side-dock-accent: var(--primary-accent-5);
+  --side-dock-accent-hover: var(--secondary-accent-4);
 }
 .theme-light {
   --side-dock-text-on-accent: var(--gray-dark-4);
   --side-dock-text-on-accent-hover: var(--yellow-4);
-  --side-dock-accent: var(--purple-0);
-  --side-dock-accent-hover: var(--green-1);
+  --side-dock-accent: var(--primary-accent-0);
+  --side-dock-accent-hover: var(--secondary-accent-1);
 }
 // ------------------------------------------------------
 // Cursor

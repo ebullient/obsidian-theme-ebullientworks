@@ -13,7 +13,7 @@
     border-color: transparent var(--gray-dark-2) transparent transparent;
   }
   .timeline-container::after {
-    border: 4px solid var(--purple-4);
+    border: 4px solid var(--primary-accent-4);
   }
 }
 .theme-light {
@@ -31,7 +31,7 @@
     border-color: transparent var(--gray-light-1) transparent transparent;
   }
   .timeline-container::after {
-    border: 4px solid var(--purple-2);
+    border: 4px solid var(--primary-accent-2);
   }
   .timeline::after {
     background-color: var(--blue-1);

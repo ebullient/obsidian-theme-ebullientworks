@@ -1,18 +1,25 @@
 .theme-light {
-  --modal-nav-bg: var(--green-0);
+  --modal-nav-bg: var(--primary-accent-2);
   --modal-nav-hover: var(--background-secondary);
-  --modal-nav-accent: var(--purple-3);
+  --modal-nav-accent: var(--primary-accent-3);
   --modal-content-bg: var(--background-primary);
-  --modal-checkbox-bg: var(--purple-0);
-  --modal-checked-bg: var(--green-2);
+  --modal-checkbox-bg: var(--secondary-accent-0);
+  --modal-checked-bg: var(--secondary-accent-2);
+
+  .vertical-tab-header-group-title {
+    color: var(--gray-dark-6);
+  }
+  .vertical-tab-nav-item {
+    color: var(--gray-dark-6);
+  }
 }
 .theme-dark {
-  --modal-nav-bg: var(--purple-6);
-  --modal-nav-hover: var(--purple-5);
-  --modal-nav-accent: var(--purple-4);
+  --modal-nav-bg: var(--primary-accent-6);
+  --modal-nav-hover: var(--primary-accent-5);
+  --modal-nav-accent: var(--primary-accent-4);
   --modal-content-bg: var(--background-primary);
-  --modal-checkbox-bg: var(--green-6);
-  --modal-checked-bg: var(--green-4);
+  --modal-checkbox-bg: var(--secondary-accent-6);
+  --modal-checked-bg: var(--secondary-accent-4);
 }
 // -------------------------------------
 // Modal dialog & Prompts

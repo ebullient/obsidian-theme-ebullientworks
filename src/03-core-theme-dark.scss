@@ -28,14 +28,14 @@
     --text-highlight-fg: var(--gray-dark-7);
     --text-highlight-bg: rgba(252, 232, 131, .9);
     --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-    --text-selection: rgba(var(--green-4-rgb), 0.7);
+    --text-selection: var(--secondary-accent-6);
 
     /** Text on accent should work as foreground for all interactive elements */
     --text-on-accent: var(--gray-light-1);           //  Program Title bar text
-    --interactive-normal: var(--green-4);           // Button background Color
-    --interactive-hover: var(--purple-4);            // Button hover text; pin
-    --interactive-accent: var(--green-4);           // Workspace Note Title Underline
-    --interactive-accent-rgb: var(--purple-4-rgb);   // Publish item select, Resize Handle
+    --interactive-normal: var(--secondary-accent-4);           // Button background Color
+    --interactive-hover: var(--primary-accent-4);            // Button hover text; pin
+    --interactive-accent: var(--secondary-accent-4);           // Workspace Note Title Underline
+    --interactive-accent-rgb: var(--primary-accent-4-rgb);   // Publish item select, Resize Handle
     --interactive-accent-hover: var(--blue-1);       // Menu Button Hover
     --interactive-success: var(--green-3);
 

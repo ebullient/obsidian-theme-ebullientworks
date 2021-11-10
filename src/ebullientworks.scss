@@ -32,7 +32,33 @@ settings:
     id: font-monospace
     type: variable-text
     default: "'Fira Code', 'Source Code Pro', Jetbrains Mono, SFMono-Regular, Consolas, 'Roboto Mono', monospace"
-*/
+  -
+    title: Primary accent color
+    id: ebullientworks-primary-accent
+    description: Choose the primary accent color
+    type: class-select
+    allowEmpty: false
+    default: primary-accent-purple
+    options:
+        - primary-accent-purple
+        - primary-accent-pink
+        - primary-accent-green
+        - primary-accent-teal
+        - primary-accent-blue
+  -
+    title: Secondary accent color
+    id: ebullientworks-secondary-accent
+    description: Choose the secondary accent color
+    type: class-select
+    allowEmpty: false
+    default: secondary-accent-green
+    options:
+        - secondary-accent-purple
+        - secondary-accent-pink
+        - secondary-accent-green
+        - secondary-accent-teal
+        - secondary-accent-blue
+ */
 :root {
   --line-height: 1.5em;
 }
