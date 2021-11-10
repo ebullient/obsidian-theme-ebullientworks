@@ -26,6 +26,7 @@
   }
 }
 
+.rendered-widget,
 .markdown-preview-section {
   .admonition {
     @include admonition-color(var(--admonition-color));

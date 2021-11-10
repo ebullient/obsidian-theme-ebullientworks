@@ -84,7 +84,7 @@ color: var(--link-hidden);
 }
 
 /* Collapse external links / markdown links in edit mode */
-body:not(.ebullientworks-show-edit-mode-links) {
+body.style-active-selection:not(.ebullientworks-show-edit-mode-links) {
   div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting){
     font-size: 0;
   }
