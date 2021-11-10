@@ -58,7 +58,7 @@ If we want to use this red as the primary color:
   --primary-accent-2: rgb(245, 163, 156);
   --primary-accent-3: rgb(241, 127, 117);
   --primary-accent-4: rgb(222, 40, 23);
-  --primary-accent-4-rgb: 222, 40, 23;
+  --primary-accent-4-rgb: 222, 40, 23; /* Note removal of rgb() function */
   --primary-accent-5: rgb(142, 25, 15);
   --primary-accent-6: rgb(95, 17, 10); /* red-700 */
 }
@@ -69,12 +69,12 @@ If we want to use this red as the secondary color:
 .secondary-accent-custom {
   --secondary-accent-0: rgb(250, 210, 206); /* red-100 */
   --secondary-accent-1: rgb(248, 192, 187);
-  --secondary-accent-1-rgb: 248, 192, 187;
+  --secondary-accent-1-rgb: 248, 192, 187;  /* Note removal of rgb() function */
   --secondary-accent-2: rgb(245, 163, 156);
   --secondary-accent-3: rgb(241, 127, 117);
   --secondary-accent-4: rgb(222, 40, 23);
   --secondary-accent-5: rgb(142, 25, 15);
-  --secondary-accent-6: rgb(95, 17, 10); /* red-700 */
+  --secondary-accent-6: rgb(95, 17, 10);    /* red-700 */
 }
 ```
 
