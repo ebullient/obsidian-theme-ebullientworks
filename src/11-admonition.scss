@@ -64,6 +64,7 @@
   .admonition.admonition-example {
     @include admonition-color(var(--admonition-example));
   }
+  .admonition.admonition-excerpt,
   .admonition.admonition-quote {
     @include admonition-color(var(--admonition-quote));
   }
