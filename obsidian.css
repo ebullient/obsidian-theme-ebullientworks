@@ -137,6 +137,23 @@ settings:
   --pink-5: rgb(120, 46, 66);
   --pink-5-rgb: 120, 46, 66;
   --pink-6: rgb(79, 31, 44);
+  /* Defaults: purple/green */
+  --primary-accent-0: var(--purple-0);
+  --primary-accent-1: var(--purple-1);
+  --primary-accent-2: var(--purple-2);
+  --primary-accent-3: var(--purple-3);
+  --primary-accent-4: var(--purple-4);
+  --primary-accent-4-rgb: var(--purple-4-rgb);
+  --primary-accent-5: var(--purple-5);
+  --primary-accent-6: var(--purple-6);
+  --secondary-accent-0: var(--green-0);
+  --secondary-accent-1: var(--green-1);
+  --secondary-accent-1-rgb: var(--green-1-rgb);
+  --secondary-accent-2: var(--green-2);
+  --secondary-accent-3: var(--green-3);
+  --secondary-accent-4: var(--green-4);
+  --secondary-accent-5: var(--green-5);
+  --secondary-accent-6: var(--green-6);
 }
 
 .primary-accent-green {
@@ -264,7 +281,7 @@ settings:
   --background-primary-alt: var(--gray-dark-6);
   --background-secondary: var(--gray-dark-7);
   --background-secondary-alt: var(--gray-dark-8);
-  --background-modifier-border: var(--gray-dark-8);
+  --background-modifier-border: var(--gray-dark-9);
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -305,7 +322,7 @@ settings:
   --background-primary-alt: var(--gray-light-5);
   --background-secondary: var(--gray-light-6);
   --background-secondary-alt: var(--gray-light-2);
-  --background-modifier-border: var(--gray-light-1);
+  --background-modifier-border: var(--gray-light-3);
   --background-modifier-form-field: white;
   --background-modifier-form-field-highlighted: white;
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
@@ -774,6 +791,9 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   --modal-checkbox-bg: var(--secondary-accent-0);
   --modal-checked-bg: var(--secondary-accent-2);
 }
+.theme-light .modal {
+  background-color: var(--gray-light-5);
+}
 .theme-light .vertical-tab-header-group-title {
   color: var(--gray-dark-6);
 }
@@ -837,6 +857,7 @@ input[type=number] {
   background-color: var(--background-modifier-cover);
 }
 .modal-container .mod-settings .setting-item button,
+.modal-container .modal.mod-settings button:not(.mod-cta):not(.mod-warning),
 .modal-container .modal .community-plugin-details button:not(.mod-cta):not(.mod-warning) {
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);

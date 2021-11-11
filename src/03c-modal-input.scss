@@ -6,6 +6,9 @@
   --modal-checkbox-bg: var(--secondary-accent-0);
   --modal-checked-bg: var(--secondary-accent-2);
 
+  .modal {
+    background-color: var(--gray-light-5);
+  }
   .vertical-tab-header-group-title {
     color: var(--gray-dark-6);
   }
@@ -73,6 +76,7 @@ input[type='number'] {
     }
   }
   .mod-settings .setting-item button,
+  .modal.mod-settings button:not(.mod-cta):not(.mod-warning),
   .modal .community-plugin-details button:not(.mod-cta):not(.mod-warning) {
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);

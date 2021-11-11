@@ -81,6 +81,24 @@
   --pink-5: rgb(120, 46, 66);
   --pink-5-rgb: 120, 46, 66;
   --pink-6: rgb(79, 31, 44);
+
+  /* Defaults: purple/green */
+  --primary-accent-0: var(--purple-0);
+  --primary-accent-1: var(--purple-1);
+  --primary-accent-2: var(--purple-2);
+  --primary-accent-3: var(--purple-3);
+  --primary-accent-4: var(--purple-4);
+  --primary-accent-4-rgb: var(--purple-4-rgb);
+  --primary-accent-5: var(--purple-5);
+  --primary-accent-6: var(--purple-6);
+  --secondary-accent-0: var(--green-0);
+  --secondary-accent-1: var(--green-1);
+  --secondary-accent-1-rgb: var(--green-1-rgb);
+  --secondary-accent-2: var(--green-2);
+  --secondary-accent-3: var(--green-3);
+  --secondary-accent-4: var(--green-4);
+  --secondary-accent-5: var(--green-5);
+  --secondary-accent-6: var(--green-6);
 }
 .primary-accent-green {
   --primary-accent-0: var(--green-0);
