@@ -1,6 +1,6 @@
 {
   "name": "obsidian-theme-ebullientworks",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "description": "An Obsidian Theme",
   "author": "Erin Schnabel",
@@ -8,7 +8,7 @@
   "homepage": "https://github.com/ebullient",
   "scripts": {
     "build": "npx sass --no-source-map src/ebullientworks.scss obsidian.css",
-    "dev": "npx sass --no-source-map src/ebullientworks.scss vault/.obsidian/themes/ebullientworks.css",
+    "dev": "npx sass --no-source-map src/ebullientworks.scss vault/.obsidian/themes/Ebullientworks.css",
     "version": "auto-changelog -p --ignore-commit-pattern changelog.* && git add CHANGELOG.md"
   },
   "repository": {
