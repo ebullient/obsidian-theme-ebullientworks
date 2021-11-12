@@ -116,3 +116,22 @@ blockquote h1 {
 .view-content .markdown-preview-view h6 {
   margin: 10px 0 5px 0;
 }
+
+// HR tags
+.markdown-preview-view hr {
+  border: none;
+  border-top: 1px dotted var(--interactive-normal);
+  color: var(--interactive-hover);
+  overflow: visible;
+  text-align: center;
+  height: 2px;
+  margin: 12px 0;
+}
+.markdown-preview-view hr:after {
+  background: var(--background-primary);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  content: ' ✧ ✧ ✧ ';
+  padding: 0 .8em;
+  position: relative;
+  top: -13px;
+}
