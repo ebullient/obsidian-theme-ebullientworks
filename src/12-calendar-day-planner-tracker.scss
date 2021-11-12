@@ -3,12 +3,28 @@
   --calendar-month: var(--secondary-accent-3);
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--blue-1);
+
+  .day.today {
+    color: var(--primary-accent-3);
+    font-weight: bold;
+  }
+  .day.today:hover {
+    color: var(--gray-light-5);
+  }
 }
 .theme-light {
   --calendar-year: var(--primary-accent-4);
   --calendar-month: var(--secondary-accent-4);
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--blue-1);
+
+  .day.today {
+    color: var(--primary-accent-4);
+    font-weight: bold;
+  }
+  .day.today:hover {
+    color: var(--gray-dark-5);
+  }
 }
 // ------------------------------------------------------
 // Calendar, Fantasy Calendar
