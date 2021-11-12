@@ -11,6 +11,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-floating-frontmatter
+    title: Float front-matter in a box to the right
+    description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    type: class-toggle
+    default: false
+  -
     title: Headings
     description: Font for text headings (h1 to h6)
     id: font-header
@@ -62,7 +68,7 @@ settings:
         - secondary-accent-blue
         - secondary-accent-custom
  */
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nothing+You+Could+Do&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 :root {
   --line-height: 1.5em;
 }
@@ -268,7 +274,7 @@ settings:
 
 /* Want a different font? This is the file to change! (02-fonts.scss) */
 :root {
-  --default-font: "PT Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  --default-font: "IBM Plex Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-tags: Architects Daughter, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-header: var(--font-tags);
   --font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono, SFMono-Regular, Consolas, "Roboto Mono", monospace;
@@ -308,7 +314,7 @@ settings:
   --interactive-hover: var(--primary-accent-4);
   --interactive-accent: var(--secondary-accent-4);
   --interactive-accent-rgb: var(--primary-accent-4-rgb);
-  --interactive-accent-hover: var(--blue-1);
+  --interactive-accent-hover: var(--blue-4);
   --interactive-success: var(--green-3);
   --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
   --scrollbar-bg: rgba(255, 255, 255, 0.05);
@@ -839,6 +845,7 @@ input[type=number] {
 .modal-container .community-plugin-item:hover,
 .modal-container .horizontal-tab-nav-item:hover,
 .modal-container .vertical-tab-nav-item:hover,
+.modal-container .community-theme.is-selected,
 .modal-container .vertical-tab-nav-item.is-active {
   background-color: var(--modal-nav-hover);
 }
@@ -1080,6 +1087,25 @@ blockquote h1 {
   margin: 10px 0 5px 0;
 }
 
+.markdown-preview-view hr {
+  border: none;
+  border-top: 1px dotted var(--interactive-normal);
+  color: var(--interactive-hover);
+  overflow: visible;
+  text-align: center;
+  height: 2px;
+  margin: 12px 0;
+}
+
+.markdown-preview-view hr:after {
+  background: var(--background-primary);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  content: " ✧ ✧ ✧ ";
+  padding: 0 0.8em;
+  position: relative;
+  top: -13px;
+}
+
 .theme-dark {
   --strong-em: var(--yellow-2);
   --strong: var(--blue-3);
@@ -1157,25 +1183,6 @@ body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.C
 body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting)::after {
   content: "·";
   font-size: 1rem;
-}
-
-.markdown-preview-view hr {
-  border: none;
-  border-top: 1px dotted var(--interactive-normal);
-  color: var(--interactive-hover);
-  overflow: visible;
-  text-align: center;
-  height: 2px;
-  margin: 12px 0;
-}
-
-.markdown-preview-view hr:after {
-  background: var(--background-primary);
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  content: " ✧ ✧ ✧ ";
-  padding: 0 0.8em;
-  position: relative;
-  top: -13px;
 }
 
 .theme-dark {
@@ -1794,9 +1801,12 @@ div[src$="#portrait"] {
 .rendered-widget .admonition-toc.admonition,
 .markdown-preview-section .admonition-toc.admonition {
   float: right;
-  padding-right: 0.5em;
   margin-left: 0.5em;
   min-width: 150px;
+}
+.rendered-widget .admonition-toc .admonition-content-holder,
+.markdown-preview-section .admonition-toc .admonition-content-holder {
+  padding-right: 0.5em;
 }
 .rendered-widget .admonition-toc .admonition-content-holder .admonition-content ul,
 .markdown-preview-section .admonition-toc .admonition-content-holder .admonition-content ul {
@@ -1814,12 +1824,26 @@ div[src$="#portrait"] {
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--blue-1);
 }
+.theme-dark .day.today {
+  color: var(--primary-accent-3);
+  font-weight: bold;
+}
+.theme-dark .day.today:hover {
+  color: var(--gray-light-5);
+}
 
 .theme-light {
   --calendar-year: var(--primary-accent-4);
   --calendar-month: var(--secondary-accent-4);
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--blue-1);
+}
+.theme-light .day.today {
+  color: var(--primary-accent-4);
+  font-weight: bold;
+}
+.theme-light .day.today:hover {
+  color: var(--gray-dark-5);
 }
 
 #calendar-container span.year {
@@ -1906,4 +1930,37 @@ div[src$="#portrait"] {
 
 .timeline-card a.internal-link {
   text-decoration: none;
+}
+
+.ebullientworks-floating-frontmatter .frontmatter-container {
+  float: right;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  border: none !important;
+  background-color: transparent;
+}
+.ebullientworks-floating-frontmatter .frontmatter-container-header,
+.ebullientworks-floating-frontmatter .frontmatter-section {
+  visibility: hidden;
+}
+.ebullientworks-floating-frontmatter .frontmatter-container::before {
+  content: "✧";
+  font-size: 20px;
+  color: var(--primary-accent-3);
+  float: right;
+}
+.ebullientworks-floating-frontmatter .frontmatter-container:hover {
+  border: 1px solid var(--background-modifier-border);
+  background-color: var(--background-primary-alt);
+  width: unset;
+  height: unset;
+  z-index: 3;
+}
+.ebullientworks-floating-frontmatter .frontmatter-container:hover .frontmatter-container-header,
+.ebullientworks-floating-frontmatter .frontmatter-container:hover .frontmatter-section {
+  visibility: visible;
 }

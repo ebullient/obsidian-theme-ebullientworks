@@ -10,6 +10,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-floating-frontmatter
+    title: Float front-matter in a box to the right
+    description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    type: class-toggle
+    default: false
+  -
     title: Headings
     description: Font for text headings (h1 to h6)
     id: font-header
@@ -75,7 +81,7 @@ settings:
 @import '03c-modal-input.scss';
 @import '03d-graph-view.scss';
 
-@import '04-headings.scss';
+@import '04-headings-hr.scss';
 @import '05-text-links.scss';
 
 @import '06-lists-checkboxes.scss';
@@ -84,9 +90,9 @@ settings:
 @import '09-codeblocks.scss';
 @import '10-images-embeds.scss';
 
-// Plugins
 @import '11-admonition.scss';
 @import '12-calendar-day-planner-tracker.scss';
 @import '13-timelines.scss';
+@import '14-frontmatter.scss';
 
 

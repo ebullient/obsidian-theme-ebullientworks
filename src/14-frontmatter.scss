@@ -1,0 +1,35 @@
+.ebullientworks-floating-frontmatter {
+  .frontmatter-container {
+    float: right;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    border: none !important;
+    background-color: transparent;
+  }
+  .frontmatter-container-header,
+  .frontmatter-section {
+    visibility: hidden;
+  }
+  .frontmatter-container::before {
+    content: "✧";
+    font-size: 20px;
+    color: var(--primary-accent-3);
+    float: right;
+  }
+  .frontmatter-container:hover {
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-primary-alt);
+    width: unset;
+    height: unset;
+    z-index: 3;
+
+    .frontmatter-container-header,
+    .frontmatter-section {
+      visibility: visible;
+    }
+  }
+}
