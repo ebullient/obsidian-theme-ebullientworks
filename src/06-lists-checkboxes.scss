@@ -1,20 +1,18 @@
+:root {
+  --checkbox-checked: var(--green-3);
+  --checkbox-deferred: var(--blue-3);
+  --checkbox-important: var(--pink-4);
+  --checkbox-review: var(--green-4);
+  --checkbox-in-progress: var(--teal-3);
+  --checkbox-question: var(--yellow-3);
+}
 .theme-dark {
-  --checkbox-checked-bg: var(--green-4);
-  --checkbox-cancelled-bg: var(--gray-dark-3);
-  --checkbox-deferred-bg: var(--teal-3);
-  --checkbox-question-bg: var(--yellow-3);
-  --checkbox-pr-review-bg: var(--green-4);
-  --checkbox-in-progress-bg: var(--teal-3);
-  --checkbox-important-bg: var(--pink-4);
+  --checkbox-cancelled: var(--gray-dark-3);
+  --checkbox-hover: var(--gray-dark-2);
 }
 .theme-light {
-  --checkbox-cancelled-bg: var(--gray-light-1);
-  --checkbox-checked-bg: var(--green-2);
-  --checkbox-deferred-bg: var(--blue-2);
-  --checkbox-important-bg: var(--pink-2);
-  --checkbox-pr-review-bg: var(--green-4);
-  --checkbox-in-progress-bg: var(--teal-1);
-  --checkbox-question-bg: var(--yellow-1);
+  --checkbox-cancelled: var(--gray-light-1);
+  --checkbox-hover: var(--gray-light-1);
 }
 
 .markdown-preview-view ul {
@@ -49,11 +47,6 @@
   border-radius: 2px;
 }
 
-.markdown-preview-view input.task-list-item-checkbox:checked {
-  /* border: none; */
-  background-color: var(--checkbox-checked-bg);
-}
-
 .markdown-preview-view input.task-list-item-checkbox:checked::before {
   position: absolute;
   text-align: center;
@@ -64,104 +57,160 @@
   right: 1px;
 }
 
-.markdown-preview-view ul > li.task-list-item {
+.markdown-preview-view li.task-list-item {
   font-weight: normal;
   color: var(--text-normal);
 }
 
 /* '✓' for completed task ('- [x]') */
-.markdown-preview-view li[data-task="X"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="X"] > p > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="x"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="x"] > p > input.task-list-item-checkbox:checked::before {
-  content: "✓";
-  color: var(--text-normal);
-}
-/* '-' for cancelled task ('- [-]') */
-.markdown-preview-view li[data-task="-"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="-"] > p > input.task-list-item-checkbox:checked::before {
-  content: "−";
-  color: var(--text-normal);
-}
-/* '>' for deferred task ('- [>]') */
-.markdown-preview-view li[data-task=">"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task=">"] > p > input.task-list-item-checkbox:checked::before {
-  content: ">";
-  color: var(--text-normal);
-}
-/* '?' for question/more info task ('- [?]') */
-.markdown-preview-view li[data-task="?"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="?"] > p > input.task-list-item-checkbox:checked::before {
-  content: "?";
-  color: var(--text-normal);
-}
-/* 'R' for PR info task ('- [R]') */
-.markdown-preview-view li[data-task="R"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="R"] > p > input.task-list-item-checkbox:checked::before {
-  content: "👀";
-  font-size: 0.7em;
-  color: var(--text-normal);
-}
-/* '!' for important task ('- [!]') */
-.markdown-preview-view li[data-task="!"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view li[data-task="!"] > p > input.task-list-item-checkbox:checked::before {
-  content: "‼️";
-  color: var(--text-normal);
-}
-/* "/" Half done */
-.markdown-preview-view ul > li[data-task="/"] > .task-list-item-checkbox:checked::before {
-  content: "/";
-  color: var(--text-normal);
+.markdown-preview-view li[data-task="X"] >,
+.markdown-preview-view li[data-task="x"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: "✓";
+    color: var(--checkbox-checked);
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-checked);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    color: var(--checkbox-checked);
+  }
 }
 
-/* greyed-out background colour for cancelled/non-task ('- [-]') */
-.markdown-preview-view li[data-task="-"] > input.task-list-item-checkbox:checked,
-.markdown-preview-view li[data-task="-"] > p > input.task-list-item-checkbox:checked {
-  background-color: var(--checkbox-cancelled-bg);
+/* '-' for cancelled task ('- [-]') */
+.markdown-preview-view li[data-task="-"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: "−";
+    color: var(--checkbox-cancelled);
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-cancelled);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    color: var(--checkbox-cancelled);
+  }
 }
-/* yellow background colour for question/more info task ('- [?]') */
-.markdown-preview-view li[data-task="?"] > input.task-list-item-checkbox:checked,
-.markdown-preview-view li[data-task="?"] > p > input.task-list-item-checkbox:checked {
-  background-color: var(--checkbox-question-bg);
+
+/* '>' for deferred task ('- [>]') */
+.markdown-preview-view li[data-task=">"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: ">";
+    color: var(--checkbox-deferred);
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-deferred);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    color: var(--checkbox-deferred);
+  }
 }
-/* green background colour for PR info task ('- [R]') */
-.markdown-preview-view li[data-task="R"] > input.task-list-item-checkbox:checked,
-.markdown-preview-view li[data-task="R"] > p > input.task-list-item-checkbox:checked {
-  background-color: var(--checkbox-pr-review-bg);
+
+/* '?' for question/more info task ('- [?]') */
+.markdown-preview-view li[data-task="?"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: "?";
+    color: var(--checkbox-question);
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-question);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    color: var(--checkbox-question);
+  }
 }
-/* red background colour for important task ('- [!]') */
-.markdown-preview-view li[data-task="!"] > input.task-list-item-checkbox:checked,
-.markdown-preview-view li[data-task="!"] > p > input.task-list-item-checkbox:checked {
-  background-color: var(--checkbox-important-bg);
+
+/* 'R' for PR info task ('- [R]') */
+.markdown-preview-view li[data-task="R"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: "👀";
+    font-size: 0.7em;
+    color: var(--checkbox-review);
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-review);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    color: var(--checkbox-review);
+  }
 }
-/* blue background colour for deferred task ('- [>]') */
-.markdown-preview-view li[data-task=">"] > input.task-list-item-checkbox:checked,
-.markdown-preview-view li[data-task=">"] > p > input.task-list-item-checkbox:checked {
-  background-color: var(--checkbox-deferred-bg);
+
+/* '!' for important task ('- [!]') */
+.markdown-preview-view li[data-task="!"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: "‼️";
+    color: var(--checkbox-important);
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-important);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    color: var(--checkbox-important);
+  }
 }
+
 /* "/" Half done */
-.markdown-preview-view ul > li[data-task="/"] > .task-list-item-checkbox:checked {
-  background: linear-gradient(135deg, var(--background-primary) 50%, var(--checkbox-in-progress-bg) 50%);
-}
-.markdown-preview-view ul > li[data-task="/"] > .task-list-item-checkbox:checked::before {
-  content: "\00a0";
-  font-family: var(--font-monospace);
-  line-height: 18px;
+.markdown-preview-view li[data-task="/"] > {
+  input.task-list-item-checkbox:checked::before,
+  p > input.task-list-item-checkbox:checked::before {
+    content: "\00a0";
+    font-family: var(--font-monospace);
+    line-height: 18px;
+  }
+
+  input.task-list-item-checkbox,
+  p > input.task-list-item-checkbox {
+    border-color: var(--checkbox-in-progress);
+  }
+
+  input.task-list-item-checkbox:checked,
+  p > input.task-list-item-checkbox:checked {
+    background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
+  }
 }
 
 /* text style tasks that should still have readable text */
-.markdown-preview-view ul > li[data-task="x"].task-list-item.is-checked,
-.markdown-preview-view ul > li[data-task="X"].task-list-item.is-checked,
-.markdown-preview-view ul > li[data-task=">"].task-list-item.is-checked,
-.markdown-preview-view ul > li[data-task="?"].task-list-item.is-checked,
-.markdown-preview-view ul > li[data-task="R"].task-list-item.is-checked,
-.markdown-preview-view ul > li[data-task="/"].task-list-item.is-checked,
-.markdown-preview-view ul > li[data-task="!"].task-list-item.is-checked {
+.markdown-preview-view li[data-task="x"].task-list-item.is-checked,
+.markdown-preview-view li[data-task="X"].task-list-item.is-checked,
+.markdown-preview-view li[data-task=">"].task-list-item.is-checked,
+.markdown-preview-view li[data-task="?"].task-list-item.is-checked,
+.markdown-preview-view li[data-task="R"].task-list-item.is-checked,
+.markdown-preview-view li[data-task="/"].task-list-item.is-checked,
+.markdown-preview-view li[data-task="!"].task-list-item.is-checked {
   color: var(--text-normal);
   text-decoration: none;
 }
 /* text style for important task ('- [!]') */
-.markdown-preview-view ul > li[data-task="!"].task-list-item.is-checked {
+.markdown-preview-view li[data-task="!"].task-list-item.is-checked {
   font-weight: 900;
 }
 .markdown-preview-view li[data-task="X"] > input.task-list-item-checkbox:checked:hover,
@@ -182,6 +231,6 @@
 .markdown-preview-view li[data-task="!"] > p > input.task-list-item-checkbox:checked:hover,
 .markdown-preview-view input.task-list-item-checkbox:hover {
   color: var(--text-on-accent);
-  background-color: var(--interactive-accent);
+  background-color: var(--checkbox-hover);
+  border-color: var(--text-on-accent);
 }
-
