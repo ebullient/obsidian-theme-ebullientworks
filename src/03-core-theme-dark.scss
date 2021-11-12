@@ -31,12 +31,12 @@
     --text-selection: var(--secondary-accent-6);
 
     /** Text on accent should work as foreground for all interactive elements */
-    --text-on-accent: var(--gray-light-1);           //  Program Title bar text
-    --interactive-normal: var(--secondary-accent-4);           // Button background Color
+    --text-on-accent: var(--gray-light-1);                   //  Program Title bar text
+    --interactive-normal: var(--secondary-accent-4);         // Button background Color
     --interactive-hover: var(--primary-accent-4);            // Button hover text; pin
-    --interactive-accent: var(--secondary-accent-4);           // Workspace Note Title Underline
+    --interactive-accent: var(--secondary-accent-4);         // Workspace Note Title Underline
     --interactive-accent-rgb: var(--primary-accent-4-rgb);   // Publish item select, Resize Handle
-    --interactive-accent-hover: var(--blue-1);       // Menu Button Hover
+    --interactive-accent-hover: var(--blue-4);               // Menu Button Hover
     --interactive-success: var(--green-3);
 
     --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
