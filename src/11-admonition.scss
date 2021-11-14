@@ -30,6 +30,7 @@
 .markdown-preview-section {
   .admonition {
     @include admonition-color(var(--admonition-color));
+    background-color: var(--background-primary-alt);
   }
   .admonition.admonition-note {
     @include admonition-color(var(--admonition-note));
