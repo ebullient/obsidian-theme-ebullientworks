@@ -25,7 +25,8 @@
   }
   pre.frontmatter:hover {
     border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-primary-alt);
+    background-color: var(--background-secondary);
+    filter: drop-shadow(-.2rem .2rem .2rem var(--background-secondary-alt));
     width: unset;
     height: unset;
     z-index: 3;
@@ -59,7 +60,8 @@
   }
   .frontmatter-container:hover {
     border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-primary-alt);
+    background-color: var(--background-secondary);
+    filter: drop-shadow(-.2rem .2rem .2rem var(--background-secondary-alt));
     width: unset;
     height: unset;
     z-index: 3;
