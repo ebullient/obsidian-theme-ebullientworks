@@ -33,7 +33,7 @@ settings:
     description: Default text font for preview and edit mode.
     id: default-font
     type: variable-text
-    default: "'PT Sans', Helvetica Neue, Helvetica, Arial, sans-serif"
+    default: "'IBM Plex Sans', Helvetica Neue, Helvetica, Arial, sans-serif"
   -
     title: Monospace
     id: font-monospace
@@ -90,7 +90,8 @@ settings:
   --gray-dark-6: rgb(63, 63, 63);
   --gray-dark-7: rgb(49, 49, 49);
   --gray-dark-8: rgb(33, 33, 33);
-  --gray-dark-9: rgb(7, 7, 7);
+  --gray-dark-9: rgb(27, 27, 27);
+  --gray-dark-10: rgb(7, 7, 7);
   --yellow-bright: 255, 232, 185;
   --yellow-1: rgb(255, 216, 99);
   --yellow-2: rgb(255, 196, 19);
@@ -284,10 +285,10 @@ settings:
 .theme-dark {
   /** Core styles **/
   --background-primary: var(--gray-dark-8);
-  --background-primary-alt: var(--gray-dark-6);
+  --background-primary-alt: var(--gray-dark-9);
   --background-secondary: var(--gray-dark-7);
   --background-secondary-alt: var(--gray-dark-8);
-  --background-modifier-border: var(--gray-dark-9);
+  --background-modifier-border: black;
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -307,7 +308,7 @@ settings:
   --text-highlight-fg: var(--gray-dark-7);
   --text-highlight-bg: rgba(252, 232, 131, .9);
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-  --text-selection: var(--secondary-accent-6);
+  --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-light-1);
   --interactive-normal: var(--secondary-accent-4);
@@ -1605,6 +1606,7 @@ div[src$="#portrait"] {
 .rendered-widget .admonition,
 .markdown-preview-section .admonition {
   border-left: 0.2rem solid rgb(var(--admonition-color));
+  background-color: var(--background-primary-alt);
 }
 .rendered-widget .admonition .admonition-title,
 .markdown-preview-section .admonition .admonition-title {
@@ -1948,6 +1950,39 @@ div[src$="#portrait"] {
   text-decoration: none;
 }
 
+.ebullientworks-floating-frontmatter pre.frontmatter {
+  float: right;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  border: none !important;
+  background-color: transparent;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter .code {
+  visibility: hidden;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter button {
+  display: none;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter::before {
+  content: "✧";
+  font-size: 20px;
+  color: var(--primary-accent-3);
+  float: right;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter:hover {
+  border: 1px solid var(--background-modifier-border);
+  background-color: var(--background-primary-alt);
+  width: unset;
+  height: unset;
+  z-index: 3;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter:hover .code {
+  visibility: visible;
+}
 .ebullientworks-floating-frontmatter .frontmatter-container {
   float: right;
   position: absolute;
@@ -1959,8 +1994,8 @@ div[src$="#portrait"] {
   border: none !important;
   background-color: transparent;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container-header,
-.ebullientworks-floating-frontmatter .frontmatter-section {
+.ebullientworks-floating-frontmatter .frontmatter-container .frontmatter-container-header,
+.ebullientworks-floating-frontmatter .frontmatter-container .frontmatter-section {
   visibility: hidden;
 }
 .ebullientworks-floating-frontmatter .frontmatter-container::before {
