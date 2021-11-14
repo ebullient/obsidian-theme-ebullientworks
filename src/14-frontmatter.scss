@@ -1,4 +1,40 @@
 .ebullientworks-floating-frontmatter {
+  pre.frontmatter {
+    float: right;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    border: none !important;
+    background-color: transparent;
+
+    .code {
+      visibility: hidden;
+    }
+    button {
+      display: none;
+    }
+  }
+  pre.frontmatter::before {
+    content: "✧";
+    font-size: 20px;
+    color: var(--primary-accent-3);
+    float: right;
+  }
+  pre.frontmatter:hover {
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-primary-alt);
+    width: unset;
+    height: unset;
+    z-index: 3;
+
+    .code {
+      visibility: visible;
+    }
+  }
+
   .frontmatter-container {
     float: right;
     position: absolute;
@@ -9,10 +45,11 @@
     overflow: hidden;
     border: none !important;
     background-color: transparent;
-  }
-  .frontmatter-container-header,
-  .frontmatter-section {
-    visibility: hidden;
+
+    .frontmatter-container-header,
+    .frontmatter-section {
+      visibility: hidden;
+    }
   }
   .frontmatter-container::before {
     content: "✧";
