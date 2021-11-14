@@ -1,12 +1,12 @@
 .theme-dark {
     /** Core styles **/
     --background-primary: var(--gray-dark-8);           //  Note background
-    --background-primary-alt: var(--gray-dark-6);       //  Note title background
+    --background-primary-alt: var(--gray-dark-9);       //  Note title background
 
     --background-secondary: var(--gray-dark-7);         //  Sidebar/modal background, active/hover tab nav items, tab content, drag ghost, menu item hover
     --background-secondary-alt: var(--gray-dark-8);     //  muted button, checkbox container, kbd, modal border, modal button, tab nav items, vertical tab header, clickable tree item, card, drag ghost border
 
-    --background-modifier-border: var(--gray-dark-9);   //  Border outline of quotes, tables, line breaks
+    --background-modifier-border: black;   //  Border outline of quotes, tables, line breaks
     --background-modifier-form-field: rgba(0, 0, 0, 0.3);
     --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22); // Search Bar Active Highlight
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -28,7 +28,7 @@
     --text-highlight-fg: var(--gray-dark-7);
     --text-highlight-bg: rgba(252, 232, 131, .9);
     --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-    --text-selection: var(--secondary-accent-6);
+    --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
 
     /** Text on accent should work as foreground for all interactive elements */
     --text-on-accent: var(--gray-light-1);                   //  Program Title bar text
