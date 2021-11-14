@@ -1975,7 +1975,8 @@ div[src$="#portrait"] {
 }
 .ebullientworks-floating-frontmatter pre.frontmatter:hover {
   border: 1px solid var(--background-modifier-border);
-  background-color: var(--background-primary-alt);
+  background-color: var(--background-secondary);
+  filter: drop-shadow(-0.2rem 0.2rem 0.2rem var(--background-secondary-alt));
   width: unset;
   height: unset;
   z-index: 3;
@@ -2006,7 +2007,8 @@ div[src$="#portrait"] {
 }
 .ebullientworks-floating-frontmatter .frontmatter-container:hover {
   border: 1px solid var(--background-modifier-border);
-  background-color: var(--background-primary-alt);
+  background-color: var(--background-secondary);
+  filter: drop-shadow(-0.2rem 0.2rem 0.2rem var(--background-secondary-alt));
   width: unset;
   height: unset;
   z-index: 3;
