@@ -18,8 +18,8 @@
 
     --text-accent: var(--pink-2);                        // Links
     --text-accent-hover: var(--pink-1);
-    --text-normal: var(--gray-light-3);                  //  Text body of note
-    --text-muted: var(--gray-light-1);                   //  Text darker for sidebar, toggles, inactive, tags, etc
+    --text-normal: var(--gray-light-1);                  //  Text body of note
+    --text-muted: var(--gray);                   //  Text darker for sidebar, toggles, inactive, tags, etc
     --text-muted-rgb: 153, 153, 153;
     --text-faint: var(--gray-dark-1);                    //  Link brackets color
     --text-error: var(--pink-5);
@@ -31,13 +31,13 @@
     --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
 
     /** Text on accent should work as foreground for all interactive elements */
-    --text-on-accent: var(--gray-light-1);                   //  Program Title bar text
+    --text-on-accent: white;                   //  Program Title bar text
     --interactive-normal: var(--secondary-accent-4);         // Button background Color
     --interactive-hover: var(--primary-accent-4);            // Button hover text; pin
     --interactive-accent: var(--secondary-accent-4);         // Workspace Note Title Underline
     --interactive-accent-rgb: var(--primary-accent-4-rgb);   // Publish item select, Resize Handle
     --interactive-accent-hover: var(--blue-4);               // Menu Button Hover
-    --interactive-success: var(--green-3);
+    --interactive-success: var(--green-4);
 
     --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
     --scrollbar-bg: rgba(255, 255, 255, 0.05);

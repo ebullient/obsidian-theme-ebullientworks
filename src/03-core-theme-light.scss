@@ -33,13 +33,13 @@
     --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
 
     /** Text on accent should work as foreground for all interactive elements */
-    --text-on-accent: var(--gray-dark-6);                // Program Title bar text
-    --interactive-normal: var(--blue-1);            // Button background Color
-    --interactive-hover: var(--primary-accent-1);            // Button hover text; pin
-    --interactive-accent: var(--secondary-accent-1);             // Workspace Note Title Underline
-    --interactive-accent-rgb: var(--secondary-accent-1-rgb);    // Publish item select, Resize Handle
-    --interactive-accent-hover: var(--secondary-accent-2);      // Menu Button Hover
-    --interactive-success: var(--green-3);
+    --text-on-accent: var(--gray-dark-7);                // Program Title bar text
+    --interactive-normal: var(--secondary-accent-2);            // Button background Color
+    --interactive-hover: var(--primary-accent-2);            // Button hover text; pin
+    --interactive-accent: var(--secondary-accent-2);             // Workspace Note Title Underline
+    --interactive-accent-rgb: var(--primary-accent-1-rgb);    // Publish item select, Resize Handle
+    --interactive-accent-hover: var(--blue-2);      // Menu Button Hover
+    --interactive-success: var(--green-2);
 
     --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.08);
     --scrollbar-bg: rgba(0, 0, 0, 0.03);

@@ -13,7 +13,7 @@
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
 }
 .theme-dark {
-  --leaf-fg: var(--text-on-accent);
+  --leaf-fg: var(--text-muted);
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
   --resize-handle-bg: rgba(0, 0, 0, 0.5);
   --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--primary-accent-6) 2%, var(--primary-accent-5) 15%, var(--primary-accent-5));
