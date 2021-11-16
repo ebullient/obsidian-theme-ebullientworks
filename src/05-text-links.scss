@@ -18,7 +18,7 @@
   --strong: var(--blue-4);
   --em: var(--pink-4);
 
-  --link: var(--gray-dark-3);
+  --link: var(--gray-dark-4);
   --link-underline: var(--teal-2);
   --link-hover: var(--teal-3);
   --link-hidden: var(--teal-1);
@@ -74,13 +74,21 @@ a,
   text-decoration: underline var(--link-underline);
 }
 .cm-s-obsidian span.cm-string.cm-url {
-color: var(--link-hidden);
+  color: var(--link-hidden);
 }
 // Formatting characters [around](links)
 .cm-s-obsidian span.cm-formatting-link.cm-link,
 .cm-s-obsidian span.cm-formatting-link-string {
   font-weight: normal;
-  color: var(--text-faint);
+  color: var(--text-muted);
+}
+.markdown-preview-view .internal-link.is-unresolved {
+  opacity: 0.9;
+  text-decoration-style: dotted;
+}
+.markdown-preview-view .internal-link.is-unresolved::after {
+  content: ' ⎆';
+  color: var(--link-underline);
 }
 
 /* Collapse external links / markdown links in edit mode */
