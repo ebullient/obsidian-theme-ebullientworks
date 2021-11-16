@@ -16,6 +16,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-table-width
+    title: Prevent table content from extending beyond the width of the page
+    description: If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
+    type: class-toggle
+    default: false
+  -
     title: Headings
     description: Font for text headings (h1 to h6)
     id: font-header
@@ -94,5 +100,6 @@ settings:
 @import '12-calendar-day-planner-tracker.scss';
 @import '13-timelines.scss';
 @import '14-frontmatter.scss';
+@import '15-table.scss';
 
 

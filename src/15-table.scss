@@ -1,0 +1,44 @@
+.markdown-preview-view {
+  .table-view-table > thead,
+  thead {
+    > tr > th {
+      background-color: var(--interactive-hover);
+      color: var(--text-on-accent);
+      border: 1px solid var(--background-modifier-border);
+    }
+  }
+
+  .table-view-table > tbody,
+  tbody {
+    > tr:nth-child(even) {
+      background-color: var(--background-primary-alt);
+    }
+
+    > tr:hover {
+      background: var(--background-secondary);
+    }
+
+    > tr > td {
+      border: 1px solid var(--background-modifier-border);
+      vertical-align: top;
+    }
+  }
+}
+
+.ebullientworks-table-width table {
+  max-width: 100%;
+
+  .table-view-table > thead,
+  thead {
+    max-width: 100%;
+  }
+
+  .table-view-table > tbody,
+  tbody {
+    max-width: 100%;
+
+    > tr > td {
+      word-break: break-all;
+    }
+  }
+}

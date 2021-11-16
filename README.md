@@ -25,60 +25,72 @@ Some light styling has also been applied for the following community plugins:
 
 This theme does support style settings. Settable attributes: 
 
-- "Show external links in edit mode"  
-    This theme will try to use use CSS tricks to hide link text in edit mode. This works best with a minimal configuration of the CodeMirror options plugin. Specifically, for Visual Styling: "Style active selection" and "Retain active line on selection". The "Collapse external links" capability of that plugin is really nice, but this theme catches a few cases that plugin misses, and collapses those, too. (I personally use markdown links, which are collapsed/hidden with these settings). 
+- "Show external links in edit mode"
+    If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+
+- "Float front-matter in a box to the right"
+    If true, front-matter in preview mode will be collapsed in a top-right container.
+
+- "Prevent table content from extending beyond the width of the page"
+    If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
 
 - Set custom fonts for 
     - Headings
     - Tags
     - Text (default font for text)
-    - Monospace 
+    - Monospace text
 
 - Choose primary / secondary accent color
     This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
 ### Creating your own accent colors
 
 The colors used by this palette are selected by applying a grayscale filter to a selected hue. 
-Use the following URL to apply the same grayscale filter to a color of your choice: 
+
+1. Use the following URL to apply the same grayscale filter to a color of your choice: 
 https://grayscale.design/app?lums=71.05,60.94,48.16,35.39,17.24,6.39,2.80&palettes=%23A17E9B&filters=0%7C0&names=purple&labels=
 
-Then create a snippet that contains your customized colors. 
+2. Create a snippet that contains your customized colors. 
+
+### Example
 
 For example, let's use a REALLY BOLD RED: `#ae2012`.
-If we visit the link above, we can scroll down a bit until we see a button "Add a color", and we paste this value (including the `#` in that field). This will show us something like this: 
+
+1. If we visit the link above, we can scroll down a bit until we see a button "Add a color", and we paste this value (including the `#` in that field). This will show us something like this: 
 ![](images/create-a-custom-accent-color.png)
 
-Scroll down until you see `Step 3`, which is the step you need to export your colors. You'll want to use the CSS variables.
+2. Scroll down until you see `Step 3`, which is the step you need to export your colors. You'll want to use the CSS variables.
 
-If we want to use this red as the primary color: 
-```
-.primary-accent-custom {
-  --primary-accent-0: rgb(250, 210, 206); /* red-100 */
-  --primary-accent-1: rgb(248, 192, 187);
-  --primary-accent-2: rgb(245, 163, 156);
-  --primary-accent-3: rgb(241, 127, 117);
-  --primary-accent-4: rgb(222, 40, 23);
-  --primary-accent-4-rgb: 222, 40, 23; /* Note removal of rgb() function */
-  --primary-accent-5: rgb(142, 25, 15);
-  --primary-accent-6: rgb(95, 17, 10); /* red-700 */
-}
-```
+    If we want to use this red as the primary color: 
+    ```
+    .primary-accent-custom {
+        --primary-accent-0: rgb(250, 210, 206); /* red-100 */
+        --primary-accent-1: rgb(248, 192, 187);
+        --primary-accent-1-rgb: 248, 192, 187;  /* Note removal of rgb() function */
+        --primary-accent-2: rgb(245, 163, 156);
+        --primary-accent-3: rgb(241, 127, 117);
+        --primary-accent-4: rgb(222, 40, 23);
+        --primary-accent-4-rgb: 222, 40, 23;    /* Note removal of rgb() function */
+        --primary-accent-5: rgb(142, 25, 15);
+        --primary-accent-6: rgb(95, 17, 10);    /* red-700 */
+    }
+    ```
 
-If we want to use this red as the secondary color:
-```
-.secondary-accent-custom {
-  --secondary-accent-0: rgb(250, 210, 206); /* red-100 */
-  --secondary-accent-1: rgb(248, 192, 187);
-  --secondary-accent-1-rgb: 248, 192, 187;  /* Note removal of rgb() function */
-  --secondary-accent-2: rgb(245, 163, 156);
-  --secondary-accent-3: rgb(241, 127, 117);
-  --secondary-accent-4: rgb(222, 40, 23);
-  --secondary-accent-5: rgb(142, 25, 15);
-  --secondary-accent-6: rgb(95, 17, 10);    /* red-700 */
-}
-```
+    If we want to use this red as the secondary color:
+    ```
+    .secondary-accent-custom {
+        --secondary-accent-0: rgb(250, 210, 206); /* red-100 */
+        --secondary-accent-1: rgb(248, 192, 187);
+        --secondary-accent-1-rgb: 248, 192, 187;  /* Note removal of rgb() function */
+        --secondary-accent-2: rgb(245, 163, 156);
+        --secondary-accent-3: rgb(241, 127, 117);
+        --secondary-accent-4: rgb(222, 40, 23);
+        --secondary-accent-4-rgb: 222, 40, 23;    /* Note removal of rgb() function */
+        --secondary-accent-5: rgb(142, 25, 15);
+        --secondary-accent-6: rgb(95, 17, 10);    /* red-700 */
+    }
+    ```
 
-Place the file containing this snippet in the .obsidian/snippets directory, and make sure to enable it. Provided you've selected the "custom" entry in the primary/secondary style settings drop-down, you should be off to the races.
+3. Create a snippet (e.g. a file named`accent-colors.css`) containing this content in the `.obsidian/snippets` directory. Go to the Obsidian Appearance settings use the refresh button if necessary to find the snippet, and enable it. Provided you've selected the "custom" value in the primary/secondary style settings drop-down, you should be off to the races with this brilliant red.
 
 ## Admonitions
 
