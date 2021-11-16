@@ -2,8 +2,8 @@
   pre.frontmatter {
     float: right;
     position: absolute;
-    right: 8px;
-    top: 8px;
+    right: 0;
+    top: .6rem;
     width: 2rem;
     height: 2rem;
     overflow: hidden;
@@ -26,7 +26,7 @@
   pre.frontmatter:hover {
     border: 1px solid var(--background-modifier-border);
     background-color: var(--background-secondary);
-    filter: drop-shadow(-.2rem .2rem .2rem var(--background-secondary-alt));
+    filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
     width: unset;
     height: unset;
     z-index: 3;
@@ -39,8 +39,8 @@
   .frontmatter-container {
     float: right;
     position: absolute;
-    right: 8px;
-    top: 8px;
+    right: .6rem;
+    top: 0;
     width: 2rem;
     height: 2rem;
     overflow: hidden;
@@ -61,7 +61,7 @@
   .frontmatter-container:hover {
     border: 1px solid var(--background-modifier-border);
     background-color: var(--background-secondary);
-    filter: drop-shadow(-.2rem .2rem .2rem var(--background-secondary-alt));
+    filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
     width: unset;
     height: unset;
     z-index: 3;
