@@ -12,6 +12,10 @@
   .vertical-tab-header-group-title {
     color: var(--gray-dark-6);
   }
+  .community-plugin .u-muted,
+  .community-plugin-desc,
+  .community-plugin-downloads,
+  .community-plugin-item,
   .vertical-tab-nav-item {
     color: var(--gray-dark-6);
   }
@@ -73,7 +77,7 @@ input[type='number'] {
   .community-plugin {
     .setting-item-control button,
     .flair.mod-pop {
-      background-color: var(--background-modifier-cover);
+      background-color: var(--modal-nav-hover);
     }
   }
   .mod-settings .setting-item button,
