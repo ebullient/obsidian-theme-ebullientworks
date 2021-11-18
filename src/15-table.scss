@@ -1,4 +1,10 @@
-.markdown-preview-view {
+.theme-dark {
+  --table-alt-alpha: .2;
+}
+.theme-light {
+  --table-alt-alpha: .05;
+}
+.markdown-preview-view table {
   .table-view-table > thead,
   thead {
     > tr > th {
@@ -11,7 +17,7 @@
   .table-view-table > tbody,
   tbody {
     > tr:nth-child(even) {
-      background-color: var(--background-primary-alt);
+      background-color: rgba(0, 0, 0, var(--table-alt-alpha));
     }
 
     > tr:hover {
