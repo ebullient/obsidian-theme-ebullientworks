@@ -87,16 +87,16 @@ a,
   text-decoration-style: dotted;
 }
 .markdown-preview-view .internal-link.is-unresolved::after {
-  content: ' ⎆';
+  content: ' ✎';
   color: var(--link-underline);
 }
 
 /* Collapse external links / markdown links in edit mode */
-body.style-active-selection:not(.ebullientworks-show-edit-mode-links) {
-  div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting){
+body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line {
+  .cm-string.cm-url:not(.cm-formatting) {
     font-size: 0;
   }
-  div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting)::after {
+  .cm-string.cm-url:not(.cm-formatting)::after {
     content: '·';
     font-size: 1rem;
   }
