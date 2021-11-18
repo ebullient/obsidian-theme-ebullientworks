@@ -10,6 +10,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-nix-checkbox
+    title: Suppress or Remove this theme's checkbox styles
+    description: Set this to true if you are going to use other themes to manage the style for your lists and checkboxes.
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-floating-frontmatter
     title: Float front-matter in a box to the right
     description: If true, front-matter in preview mode will be collapsed in a top-right container.
