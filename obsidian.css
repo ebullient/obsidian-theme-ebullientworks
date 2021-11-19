@@ -372,7 +372,7 @@ settings:
   --text-highlight-fg: var(--text-normal);
   --text-highlight-bg: rgb(255, 255, 0, 0.4);
   --text-highlight-bg-active: rgba(255, 128, 0, 0.3);
-  --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
+  --text-selection: rgba(var(--secondary-accent-1-rgb), 0.4);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-dark-7);
   --interactive-normal: var(--secondary-accent-2);
@@ -1649,6 +1649,10 @@ div[src$="#portrait"] {
   --admonition-danger: 211, 141, 160;
   --admonition-reference: 183, 183, 183;
   --admonition-toc: 235, 235, 235;
+}
+
+.theme-light {
+  --admonition-toc: 203, 203, 203;
 }
 
 .rendered-widget .admonition,
