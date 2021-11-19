@@ -15,123 +15,122 @@
   --text-title-h6: var(--pink-4);
 }
 
-.workspace {
+.workspace,
+.print {
   .cm-header,
-  .view-content h1,
-  .view-content h2,
-  .view-content h3,
-  .view-content h4,
-  .view-content h5,
-  .view-content h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-header);
     font-weight: 500;
+    margin: 10px 0 5px 0;
+  }
+
+  .cm-header-1,
+  h1 {
+    color: var(--text-title-h1);
+    font-variant: common-ligatures small-caps;
+    line-height: 1.2em;
+  }
+
+  .cm-header-2,
+  h2 {
+    color: var(--text-title-h2);
+  }
+
+  .cm-header-3,
+  h3 {
+    color: var(--text-title-h3);
+  }
+
+  .cm-header-4,
+  h4 {
+    color: var(--text-title-h4);
+  }
+
+  .cm-header-5,
+  h5 {
+    color: var(--text-title-h5);
+  }
+
+  .cm-header-6,
+  h6 {
+    color: var(--text-title-h6);
+  }
+
+  blockquote {
+    .cm-header-1,
+    h1 {
+      color: var(--text-title-h2);
+      font-variant: common-ligatures;
+    }
+  }
+
+  h1:before,
+  h2:before,
+  h3:before,
+  h4:before,
+  h5:before,
+  h6:before {
+    content: "\00a7\00a0";
+    font-size: 0.6em;
+  }
+
+  h1 code,
+  h2 code,
+  h3 code,
+  h4 code,
+  h5 code,
+  h6 code {
+    font-weight: normal;
+    font-size: 75%;
+  }
+
+  h1 a.tag,
+  h2 a.tag,
+  h3 a.tag,
+  h4 a.tag,
+  h5 a.tag,
+  h6 a.tag {
+    font-weight: normal;
+    font-size: 65%;
+    font-variant: common-ligatures;
   }
 }
 
-.cm-header-1,
-.view-content h1 {
-  color: var(--text-title-h1);
-  font-variant: common-ligatures small-caps;
-  line-height: 1.2em;
-}
-
-blockquote .cm-header-1,
-blockquote h1 {
-  color: var(--text-title-h2);
-  font-variant: common-ligatures;
-}
-
-.cm-header-2,
-.view-content h2 {
-  color: var(--text-title-h2);
-}
-
-.cm-header-3,
-.view-content h3 {
-  color: var(--text-title-h3);
-}
-
-.cm-header-4,
-.view-content h4 {
-  color: var(--text-title-h4);
-}
-
-.cm-header-5,
-.view-content h5 {
-  color: var(--text-title-h5);
-}
-
-.cm-header-6,
-.view-content .markdown-preview-view h6 {
-  color: var(--text-title-h6);
-}
-
-.view-content .markdown-preview-view h1:before,
-.view-content .markdown-preview-view h2:before,
-.view-content .markdown-preview-view h3:before,
-.view-content .markdown-preview-view h4:before,
-.view-content .markdown-preview-view h5:before,
-.view-content .markdown-preview-view h6:before {
-  content: "\00a7\00a0";
-  font-size: .6em;
-}
-
-.view-content .markdown-preview-view h1 code,
-.view-content .markdown-preview-view h2 code,
-.view-content .markdown-preview-view h3 code,
-.view-content .markdown-preview-view h4 code,
-.view-content .markdown-preview-view h5 code,
-.view-content .markdown-preview-view h6 code {
-  font-weight: normal;
-  font-size: 75%;
-}
-
-.cm-s-obsidian .cm-inline-code.cm-header {
+.cm-s-obsidian {
+  .cm-inline-code.cm-header {
     font-weight: normal;
     font-size: 90%;
-}
+  }
 
-.view-content .markdown-preview-view h1 a.tag,
-.view-content .markdown-preview-view h2 a.tag,
-.view-content .markdown-preview-view h3 a.tag,
-.view-content .markdown-preview-view h4 a.tag,
-.view-content .markdown-preview-view h5 a.tag,
-.view-content .markdown-preview-view h6 a.tag {
-  font-weight: normal;
-  font-size: 65%;
-  font-variant: common-ligatures;
-}
-
-.cm-s-obsidian .cm-header.cm-hashtag {
-  font-weight: normal;
-  font-size: 90%;
-  font-variant: common-ligatures;
-}
-
-.view-content .markdown-preview-view h1,
-.view-content .markdown-preview-view h2,
-.view-content .markdown-preview-view h3,
-.view-content .markdown-preview-view h4,
-.view-content .markdown-preview-view h5,
-.view-content .markdown-preview-view h6 {
-  margin: 10px 0 5px 0;
+  .cm-header.cm-hashtag {
+    font-weight: normal;
+    font-size: 90%;
+    font-variant: common-ligatures;
+  }
 }
 
 // HR tags
-.markdown-preview-view hr {
-  border: none;
-  border-top: 1px dotted var(--interactive-normal);
-  color: var(--interactive-hover);
-  overflow: visible;
-  text-align: center;
-  height: 2px;
-  margin: 12px 0;
-}
-.markdown-preview-view hr:after {
-  background: var(--background-primary);
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  content: ' ✧ ✧ ✧ ';
-  padding: 0 .8em;
-  position: relative;
-  top: -13px;
+.markdown-preview-view {
+  hr {
+    border: none;
+    border-top: 1px dotted var(--interactive-normal);
+    color: var(--interactive-hover);
+    overflow: visible;
+    text-align: center;
+    height: 2px;
+    margin: 12px 0;
+  }
+  hr:after {
+    background: var(--background-primary);
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    content: " ✧ ✧ ✧ ";
+    padding: 0 0.8em;
+    position: relative;
+    top: -13px;
+  }
 }
