@@ -133,3 +133,4 @@ I frequently reference the following two themes, as they're often the quickest t
 - [ITS Theme](https://github.com/SlRvb/Obsidian--ITS-Theme)
 
 
+<a href="https://www.buymeacoffee.com/ebullient" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
