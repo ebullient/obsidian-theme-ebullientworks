@@ -815,7 +815,7 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
 
 .theme-light {
   --modal-nav-bg: var(--primary-accent-2);
-  --modal-nav-hover: var(--background-secondary);
+  --modal-nav-hover: var(--primary-accent-0);
   --modal-nav-accent: var(--primary-accent-3);
   --modal-content-bg: var(--background-primary);
   --modal-checkbox-bg: var(--secondary-accent-0);
