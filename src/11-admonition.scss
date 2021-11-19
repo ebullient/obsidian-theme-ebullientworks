@@ -15,6 +15,9 @@
   --admonition-reference: 183, 183, 183; // gray
   --admonition-toc: 235, 235, 235; // gray-light-4
 }
+.theme-light {
+  --admonition-toc: 203, 203, 203; // gray-light-2
+}
 
 @mixin admonition-color($rgb-color) {
   border-left: 0.2rem solid rgb($rgb-color);
