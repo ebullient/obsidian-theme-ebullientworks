@@ -1016,103 +1016,123 @@ input[type=number] {
 }
 
 .workspace .cm-header,
-.workspace .view-content h1,
-.workspace .view-content h2,
-.workspace .view-content h3,
-.workspace .view-content h4,
-.workspace .view-content h5,
-.workspace .view-content h6 {
+.workspace h1,
+.workspace h2,
+.workspace h3,
+.workspace h4,
+.workspace h5,
+.workspace h6,
+.print .cm-header,
+.print h1,
+.print h2,
+.print h3,
+.print h4,
+.print h5,
+.print h6 {
   font-family: var(--font-header);
   font-weight: 500;
+  margin: 10px 0 5px 0;
 }
-
-.cm-header-1,
-.view-content h1 {
+.workspace .cm-header-1,
+.workspace h1,
+.print .cm-header-1,
+.print h1 {
   color: var(--text-title-h1);
   font-variant: common-ligatures small-caps;
   line-height: 1.2em;
 }
-
-blockquote .cm-header-1,
-blockquote h1 {
+.workspace .cm-header-2,
+.workspace h2,
+.print .cm-header-2,
+.print h2 {
+  color: var(--text-title-h2);
+}
+.workspace .cm-header-3,
+.workspace h3,
+.print .cm-header-3,
+.print h3 {
+  color: var(--text-title-h3);
+}
+.workspace .cm-header-4,
+.workspace h4,
+.print .cm-header-4,
+.print h4 {
+  color: var(--text-title-h4);
+}
+.workspace .cm-header-5,
+.workspace h5,
+.print .cm-header-5,
+.print h5 {
+  color: var(--text-title-h5);
+}
+.workspace .cm-header-6,
+.workspace h6,
+.print .cm-header-6,
+.print h6 {
+  color: var(--text-title-h6);
+}
+.workspace blockquote .cm-header-1,
+.workspace blockquote h1,
+.print blockquote .cm-header-1,
+.print blockquote h1 {
   color: var(--text-title-h2);
   font-variant: common-ligatures;
 }
-
-.cm-header-2,
-.view-content h2 {
-  color: var(--text-title-h2);
-}
-
-.cm-header-3,
-.view-content h3 {
-  color: var(--text-title-h3);
-}
-
-.cm-header-4,
-.view-content h4 {
-  color: var(--text-title-h4);
-}
-
-.cm-header-5,
-.view-content h5 {
-  color: var(--text-title-h5);
-}
-
-.cm-header-6,
-.view-content .markdown-preview-view h6 {
-  color: var(--text-title-h6);
-}
-
-.view-content .markdown-preview-view h1:before,
-.view-content .markdown-preview-view h2:before,
-.view-content .markdown-preview-view h3:before,
-.view-content .markdown-preview-view h4:before,
-.view-content .markdown-preview-view h5:before,
-.view-content .markdown-preview-view h6:before {
+.workspace h1:before,
+.workspace h2:before,
+.workspace h3:before,
+.workspace h4:before,
+.workspace h5:before,
+.workspace h6:before,
+.print h1:before,
+.print h2:before,
+.print h3:before,
+.print h4:before,
+.print h5:before,
+.print h6:before {
   content: "§ ";
   font-size: 0.6em;
 }
-
-.view-content .markdown-preview-view h1 code,
-.view-content .markdown-preview-view h2 code,
-.view-content .markdown-preview-view h3 code,
-.view-content .markdown-preview-view h4 code,
-.view-content .markdown-preview-view h5 code,
-.view-content .markdown-preview-view h6 code {
+.workspace h1 code,
+.workspace h2 code,
+.workspace h3 code,
+.workspace h4 code,
+.workspace h5 code,
+.workspace h6 code,
+.print h1 code,
+.print h2 code,
+.print h3 code,
+.print h4 code,
+.print h5 code,
+.print h6 code {
   font-weight: normal;
   font-size: 75%;
+}
+.workspace h1 a.tag,
+.workspace h2 a.tag,
+.workspace h3 a.tag,
+.workspace h4 a.tag,
+.workspace h5 a.tag,
+.workspace h6 a.tag,
+.print h1 a.tag,
+.print h2 a.tag,
+.print h3 a.tag,
+.print h4 a.tag,
+.print h5 a.tag,
+.print h6 a.tag {
+  font-weight: normal;
+  font-size: 65%;
+  font-variant: common-ligatures;
 }
 
 .cm-s-obsidian .cm-inline-code.cm-header {
   font-weight: normal;
   font-size: 90%;
 }
-
-.view-content .markdown-preview-view h1 a.tag,
-.view-content .markdown-preview-view h2 a.tag,
-.view-content .markdown-preview-view h3 a.tag,
-.view-content .markdown-preview-view h4 a.tag,
-.view-content .markdown-preview-view h5 a.tag,
-.view-content .markdown-preview-view h6 a.tag {
-  font-weight: normal;
-  font-size: 65%;
-  font-variant: common-ligatures;
-}
-
 .cm-s-obsidian .cm-header.cm-hashtag {
   font-weight: normal;
   font-size: 90%;
   font-variant: common-ligatures;
-}
-
-.view-content .markdown-preview-view h1,
-.view-content .markdown-preview-view h2,
-.view-content .markdown-preview-view h3,
-.view-content .markdown-preview-view h4,
-.view-content .markdown-preview-view h5,
-.view-content .markdown-preview-view h6 {
-  margin: 10px 0 5px 0;
 }
 
 .markdown-preview-view hr {
@@ -1124,7 +1144,6 @@ blockquote h1 {
   height: 2px;
   margin: 12px 0;
 }
-
 .markdown-preview-view hr:after {
   background: var(--background-primary);
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -1297,6 +1316,8 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-
   font-weight: normal;
   color: var(--text-normal);
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked input.task-list-item-checkbox:checked::before,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked p > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > input.task-list-item-checkbox:checked::before,
@@ -1304,12 +1325,16 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=
   content: "✓";
   color: var(--checkbox-checked);
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked input.task-list-item-checkbox,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked p > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-checked);
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked input.task-list-item-checkbox:checked,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked p > input.task-list-item-checkbox:checked,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox:checked,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox:checked,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > input.task-list-item-checkbox:checked,
@@ -1429,16 +1454,12 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
   border-color: var(--text-on-accent);
 }
 
-.theme-dark {
-  --tags: var(--pink-4);
-}
-
-.theme-light {
+:root {
   --tags: var(--pink-4);
 }
 
 .cm-s-obsidian span.cm-hashtag,
-.view-content .tag:not(.token) {
+.tag:not(.token) {
   color: var(--tags);
   font-family: var(--font-tags);
 }
@@ -1446,12 +1467,12 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
 .CodeMirror-line span.cm-hashtag,
 .cm-s-obsidian .cm-header.cm-hashtag,
 .markdown-preview-section a.tag,
-.view-content .markdown-preview-view h1 a.tag,
-.view-content .markdown-preview-view h2 a.tag,
-.view-content .markdown-preview-view h3 a.tag,
-.view-content .markdown-preview-view h4 a.tag,
-.view-content .markdown-preview-view h5 a.tag,
-.view-content .markdown-preview-view h6 a.tag {
+.markdown-preview-view h1 a.tag,
+.markdown-preview-view h2 a.tag,
+.markdown-preview-view h3 a.tag,
+.markdown-preview-view h4 a.tag,
+.markdown-preview-view h5 a.tag,
+.markdown-preview-view h6 a.tag {
   font-size: 0.8rem !important;
   text-decoration: none;
 }
