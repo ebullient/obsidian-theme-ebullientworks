@@ -19,6 +19,9 @@
   .vertical-tab-nav-item {
     color: var(--gray-dark-6);
   }
+  .document-search-container {
+    background-color: var(--background-secondary-alt);
+  }
 }
 .theme-dark {
   --modal-nav-bg: var(--primary-accent-6);
@@ -27,6 +30,10 @@
   --modal-content-bg: var(--background-primary);
   --modal-checkbox-bg: var(--secondary-accent-6);
   --modal-checked-bg: var(--secondary-accent-4);
+
+  .document-search-container {
+    background-color: var(--background-secondary);
+  }
 }
 // -------------------------------------
 // Modal dialog & Prompts
@@ -46,6 +53,22 @@ input[type='number'] {
   right: 5px;
   top: 3px;
 }
+.document-search-container {
+  input.document-search-input,
+  input.document-replace-input {
+    background: var(--background-modifier-form-field);
+
+    &.mod-no-match {
+      background-color: var(--background-primary);
+      border: 1px solid var(--background-modifier-error);
+    }
+    &.mod-no-match:hover {
+      background-color: var(--background-primary);
+      border: 1px solid var(--background-modifier-error-hover);
+    }
+  }
+}
+
 // Don't apply special fonts to modals / community panels
 .modal-container {
   .prompt,
