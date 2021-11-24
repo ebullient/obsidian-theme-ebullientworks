@@ -7,11 +7,6 @@
   --link-underline: var(--teal-4);
   --link-hover: var(--teal-3);
   --link-hidden: var(--teal-5);
-
-  .search-result-file-matched-text {
-    background-color: var(--background-secondary);
-    color: var(--text-highlight-bg);
-  }
 }
 .theme-light {
   --strong-em: var(--yellow-3);
@@ -40,10 +35,25 @@
 .view-content strong em {
   color: var(--strong-em);
 }
-// Highlight
+
+// Highlight, matched text
 .markdown-preview-view mark,
+.search-result-file-matched-text,
+.cm-s-obsidian span.obsidian-search-match-highlight,
 .cm-s-obsidian span.cm-highlight {
   color: var(--text-highlight-fg);
+}
+
+div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
+  --text-selection: var(--text-highlight-bg-active);
+}
+
+.CodeMirror-cursor,
+.cm-s-obsidian .cm-cursor {
+  border-left: 1px solid var(--primary-accent-4);
+}
+.cm-s-obsidian .CodeMirror-lines {
+  caret-color: var(--primary-accent-4);
 }
 
 // Reference: css styles for links in base

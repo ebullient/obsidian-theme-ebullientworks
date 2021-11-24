@@ -329,16 +329,16 @@ settings:
   --text-error: var(--pink-5);
   --text-error-hover: var(--pink-5);
   --text-highlight-fg: var(--gray-dark-7);
-  --text-highlight-bg: rgba(252, 232, 131, .9);
-  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-highlight-bg: rgba(252, 232, 131, 0.9);
+  --text-highlight-bg-active: rgba(252, 232, 131, 0.7);
   --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: white;
   --interactive-normal: var(--secondary-accent-4);
   --interactive-hover: var(--primary-accent-4);
   --interactive-accent: var(--secondary-accent-4);
-  --interactive-accent-rgb: var(--primary-accent-4-rgb);
-  --interactive-accent-hover: var(--blue-4);
+  --interactive-accent-rgb: var(--secondary-accent-4-rgb);
+  --interactive-accent-hover: var(--primary-accent-4);
   --interactive-success: var(--green-4);
   --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
   --scrollbar-bg: rgba(255, 255, 255, 0.05);
@@ -358,7 +358,7 @@ settings:
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
   --background-modifier-success: var(--green-2);
   --background-modifier-error: var(--pink-1);
-  --background-modifier-error-rgb: var(--pink-5-rgb);
+  --background-modifier-error-rgb: var(--pink-2-rgb);
   --background-modifier-error-hover: var(--pink-2);
   --background-modifier-cover: rgba(158, 158, 158, 0.2);
   --text-accent: var(--primary-accent-4);
@@ -370,16 +370,16 @@ settings:
   --text-error: var(--pink-5);
   --text-error-hover: var(--pink-4);
   --text-highlight-fg: var(--text-normal);
-  --text-highlight-bg: rgb(255, 255, 0, 0.4);
-  --text-highlight-bg-active: rgba(255, 128, 0, 0.3);
+  --text-highlight-bg: rgba(252, 232, 131, 0.9);
+  --text-highlight-bg-active: rgba(252, 232, 131, 0.4);
   --text-selection: rgba(var(--secondary-accent-1-rgb), 0.4);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-dark-7);
   --interactive-normal: var(--secondary-accent-2);
   --interactive-hover: var(--primary-accent-2);
   --interactive-accent: var(--secondary-accent-2);
-  --interactive-accent-rgb: var(--primary-accent-1-rgb);
-  --interactive-accent-hover: var(--blue-2);
+  --interactive-accent-rgb: var(--secondary-accent-1-rgb);
+  --interactive-accent-hover: var(--primary-accent-2);
   --interactive-success: var(--green-2);
   --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.08);
   --scrollbar-bg: rgba(0, 0, 0, 0.03);
@@ -834,6 +834,9 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
 .theme-light .vertical-tab-nav-item {
   color: var(--gray-dark-6);
 }
+.theme-light .document-search-container {
+  background-color: var(--background-secondary-alt);
+}
 
 .theme-dark {
   --modal-nav-bg: var(--primary-accent-6);
@@ -842,6 +845,9 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   --modal-content-bg: var(--background-primary);
   --modal-checkbox-bg: var(--secondary-accent-6);
   --modal-checked-bg: var(--secondary-accent-4);
+}
+.theme-dark .document-search-container {
+  background-color: var(--background-secondary);
 }
 
 input[type=text],
@@ -859,6 +865,21 @@ input[type=number] {
 .search-input-clear-button {
   right: 5px;
   top: 3px;
+}
+
+.document-search-container input.document-search-input,
+.document-search-container input.document-replace-input {
+  background: var(--background-modifier-form-field);
+}
+.document-search-container input.document-search-input.mod-no-match,
+.document-search-container input.document-replace-input.mod-no-match {
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-error);
+}
+.document-search-container input.document-search-input.mod-no-match:hover,
+.document-search-container input.document-replace-input.mod-no-match:hover {
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-error-hover);
 }
 
 .modal-container .prompt,
@@ -1162,10 +1183,6 @@ input[type=number] {
   --link-hover: var(--teal-3);
   --link-hidden: var(--teal-5);
 }
-.theme-dark .search-result-file-matched-text {
-  background-color: var(--background-secondary);
-  color: var(--text-highlight-bg);
-}
 
 .theme-light {
   --strong-em: var(--yellow-3);
@@ -1195,8 +1212,23 @@ input[type=number] {
 }
 
 .markdown-preview-view mark,
+.search-result-file-matched-text,
+.cm-s-obsidian span.obsidian-search-match-highlight,
 .cm-s-obsidian span.cm-highlight {
   color: var(--text-highlight-fg);
+}
+
+div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
+  --text-selection: var(--text-highlight-bg-active);
+}
+
+.CodeMirror-cursor,
+.cm-s-obsidian .cm-cursor {
+  border-left: 1px solid var(--primary-accent-4);
+}
+
+.cm-s-obsidian .CodeMirror-lines {
+  caret-color: var(--primary-accent-4);
 }
 
 a:hover {
