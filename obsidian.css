@@ -1346,8 +1346,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=X]::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=x]::before,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked input.task-list-item-checkbox:checked::before,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked p > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > input.task-list-item-checkbox:checked::before,
@@ -1357,22 +1355,11 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=X],
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=x],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked input.task-list-item-checkbox,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked p > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-checked);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=X],
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=x],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked p > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=x] > p > input.task-list-item-checkbox:checked {
   color: var(--checkbox-checked);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"]::before,
@@ -1385,10 +1372,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-cancelled);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > p > input.task-list-item-checkbox:checked {
   color: var(--checkbox-cancelled);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=">"]::before,
@@ -1401,10 +1384,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=">"] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=">"] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-deferred);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=">"],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=">"] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=">"] > p > input.task-list-item-checkbox:checked {
   color: var(--checkbox-deferred);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="?"]::before,
@@ -1417,10 +1396,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="?"] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="?"] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-question);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="?"],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="?"] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="?"] > p > input.task-list-item-checkbox:checked {
   color: var(--checkbox-question);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=R]::before,
@@ -1434,10 +1409,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=R] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=R] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-review);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=R],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=R] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=R] > p > input.task-list-item-checkbox:checked {
   color: var(--checkbox-review);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"]::before,
@@ -1450,10 +1421,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-important);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"] > p > input.task-list-item-checkbox:checked {
   color: var(--checkbox-important);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="/"]::before,
@@ -1467,10 +1434,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="/"] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="/"] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-in-progress);
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="/"],
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="/"] > input.task-list-item-checkbox:checked,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="/"] > p > input.task-list-item-checkbox:checked {
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span,
