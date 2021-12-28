@@ -86,7 +86,8 @@ https://grayscale.design/app?lums=71.05,60.94,48.16,35.39,17.24,6.39,2.80&palett
 
 For example, let's use a REALLY BOLD RED: `#ae2012`.
 
-1. If we visit the link above, we can scroll down a bit until we see a button "Add a color", and we paste this value (including the `#` in that field). This will show us something like this: 
+1. If we visit the link above, we can scroll down a bit until we see a button "Add a color", and we paste this value (including the `#` in that field). This will show us something like this:
+
 ![](images/create-a-custom-accent-color.png)
 
 2. Scroll down until you see `Step 3`, which is the step you need to export your colors. You'll want to use the CSS variables.
