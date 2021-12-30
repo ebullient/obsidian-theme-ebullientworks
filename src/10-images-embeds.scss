@@ -26,22 +26,34 @@ div {
 .markdown-embed-title {
   display:none;
 }
-.markdown-preview-view .markdown-embed {
-  border:none;
-  padding:0;
-  margin:0;
+.markdown-preview-view {
+  .markdown-embed {
+    border:none;
+    padding:0;
+    margin:0;
+
+    .markdown-embed-content,
+    .markdown-embed-content > .markdown-preview-view  {
+      max-height: unset;
+      background-color: var(--background-secondary); /*define different bg color*/
+    }
+
+    .markdown-embed-content>:first-child {
+      margin-top: 0;
+    }
+    .markdown-embed-content>:last-child {
+      margin-bottom: 0;
+      padding-bottom: 1em;
+    }
+  }
 }
-.markdown-preview-view .markdown-embed-content,
-.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
-  max-height: unset;
-  background-color: var(--background-secondary); /*define different bg color*/
-}
-.markdown-preview-view .markdown-embed-content>:first-child {
-  margin-top: 0;
-}
-.markdown-preview-view .markdown-embed-content>:last-child {
-  margin-bottom: 0;
-  padding-bottom: 1em;
+
+.print.print-preview > .markdown-preview-view {
+  .markdown-embed-content,
+  .markdown-embed-content > .markdown-preview-view {
+    overflow-wrap: break-word;
+    width: auto;
+  }
 }
 
 // ------------------------------------------------------

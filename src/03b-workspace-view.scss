@@ -3,15 +3,6 @@
   --desktop-header-font-size: 12px;
   --active-leaf-action-hover: var(--yellow-1);
 }
-.theme-light {
-  --leaf-fg: var(--gray-light-5);
-  --sharp-border: 1px solid rgba(0, 0, 0, .1);
-  --resize-handle-bg: var(--background-secondary-alt);
-  --active-leaf-bg: linear-gradient(to top, var(--primary-accent-5), var(--primary-accent-4) 2%, var(--primary-accent-3) 15%, var(--primary-accent-3));
-  --rotated-active-leaf-bg: linear-gradient(to left, var(--primary-accent-5), var(--primary-accent-4) 2%, var(--primary-accent-3) 15%, var(--primary-accent-3));
-  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
-  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
-}
 .theme-dark {
   --leaf-fg: var(--text-muted);
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
@@ -20,6 +11,16 @@
   --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--primary-accent-6) 2%, var(--primary-accent-5) 15%, var(--primary-accent-5));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
   --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
+}
+.theme-dark .print,
+.theme-light {
+  --leaf-fg: var(--gray-light-5);
+  --sharp-border: 1px solid rgba(0, 0, 0, .1);
+  --resize-handle-bg: var(--background-secondary-alt);
+  --active-leaf-bg: linear-gradient(to top, var(--primary-accent-5), var(--primary-accent-4) 2%, var(--primary-accent-3) 15%, var(--primary-accent-3));
+  --rotated-active-leaf-bg: linear-gradient(to left, var(--primary-accent-5), var(--primary-accent-4) 2%, var(--primary-accent-3) 15%, var(--primary-accent-3));
+  --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
+  --rotated-inactive-leaf-bg: linear-gradient(to left, var(--gray-dark-3), var(--gray-dark-2) 2%, var(--gray-dark-1) 15%, var(--gray-dark-1));
 }
 // --------------------------------------------------
 // Common: inset title shading, monospace font

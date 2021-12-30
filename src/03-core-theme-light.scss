@@ -1,3 +1,4 @@
+.theme-dark .print,
 .theme-light {
     /** Core styles **/
     --background-primary: var(--gray-light-7);                 //  Note background
@@ -45,4 +46,12 @@
     --scrollbar-bg: rgba(0, 0, 0, 0.03);
     --scrollbar-thumb-bg: rgba(0, 0, 0, 0.05);
     --highlight-mix-blend-mode: lighten;                // Search Highlight Mode
+}
+.theme-dark .print,
+.theme-light .print {
+  --background-primary: white;                 //  Note background
+  --background-primary-alt: #fafafa;           //  Note title background
+
+  --background-secondary: #fcfcfc;             //  Sidebar background
+  --background-secondary-alt: #f3f3f3;         //  Sidebar title background
 }

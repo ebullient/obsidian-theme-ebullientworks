@@ -1,3 +1,16 @@
+.theme-dark {
+  --modal-nav-bg: var(--primary-accent-6);
+  --modal-nav-hover: var(--primary-accent-5);
+  --modal-nav-accent: var(--primary-accent-4);
+  --modal-content-bg: var(--background-primary);
+  --modal-checkbox-bg: var(--secondary-accent-6);
+  --modal-checked-bg: var(--secondary-accent-4);
+
+  .document-search-container {
+    background-color: var(--background-secondary);
+  }
+}
+.theme-dark .print,
 .theme-light {
   --modal-nav-bg: var(--primary-accent-2);
   --modal-nav-hover: var(--primary-accent-0);
@@ -21,18 +34,6 @@
   }
   .document-search-container {
     background-color: var(--background-secondary-alt);
-  }
-}
-.theme-dark {
-  --modal-nav-bg: var(--primary-accent-6);
-  --modal-nav-hover: var(--primary-accent-5);
-  --modal-nav-accent: var(--primary-accent-4);
-  --modal-content-bg: var(--background-primary);
-  --modal-checkbox-bg: var(--secondary-accent-6);
-  --modal-checked-bg: var(--secondary-accent-4);
-
-  .document-search-container {
-    background-color: var(--background-secondary);
   }
 }
 // -------------------------------------
