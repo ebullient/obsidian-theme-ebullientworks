@@ -44,7 +44,7 @@ This theme does support style settings. Settable attributes:
 - Choose primary / secondary accent color
     This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
     
-- (0.2.8) Tag brightness (dark/light mode)
+- (0.2.7) Tag brightness (dark/light mode)
     Select a brightness or contrast level for tags.
 
 ## Admonitions
