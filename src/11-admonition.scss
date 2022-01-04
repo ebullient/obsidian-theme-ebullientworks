@@ -20,7 +20,7 @@
 }
 
 @mixin admonition-color($rgb-color) {
-  border-left: 0.1rem solid rgb($rgb-color);
+  border-left: 0.15rem solid rgb($rgb-color);
   .admonition-title {
     background-color: rgba($rgb-color, 0.2);
     .admonition-title-icon {
