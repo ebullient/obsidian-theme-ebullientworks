@@ -78,6 +78,42 @@ settings:
         - secondary-accent-teal
         - secondary-accent-blue
         - secondary-accent-custom
+  -
+    title: Tag brightness - dark mode
+    id: tag-dark
+    description: Select tag brightness/contrast level for dark mode
+    type: variable-select
+    allowEmpty: false
+    default: var(--tag-4)
+    options:
+        - value: var(--tag-0)
+          label: lightest
+        - value: var(--tag-1)
+          label: lighter
+        - value: var(--tag-2)
+          label: light
+        - value: var(--tag-3)
+          label: medium
+        - value: var(--tag-4)
+          label: dark
+  -
+    title: Tag brightness - light mode
+    id: tag-light
+    description: Select tag brightness/contrast level for light mode
+    type: variable-select
+    allowEmpty: false
+    default: var(--tag-4)
+    options:
+        - value: var(--tag-2)
+          label: light
+        - value: var(--tag-3)
+          label: medium
+        - value: var(--tag-4)
+          label: dark
+        - value: var(--tag-5)
+          label: darker
+        - value: var(--tag-6)
+          label: darkest
  */
 :root {
   --line-height: 1.5em;

@@ -1,5 +1,20 @@
 :root {
-  --tags: var(--pink-4);
+  --tag-0: var(--pink-0);
+  --tag-1: var(--pink-1);
+  --tag-2: var(--pink-2);
+  --tag-3: var(--pink-3);
+  --tag-4: var(--pink-4);
+  --tag-5: var(--pink-5);
+  --tag-6: var(--pink-6);
+  --tag-dark:  var(--tag-4);
+  --tag-light: var(--tag-4);
+}
+.theme-dark {
+  --tags: var(--tag-dark);
+}
+.theme-dark .print,
+.theme-light {
+  --tags: var(--tag-light);
 }
 
 .cm-s-obsidian span.cm-hashtag,

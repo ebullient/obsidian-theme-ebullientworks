@@ -79,6 +79,42 @@ settings:
         - secondary-accent-teal
         - secondary-accent-blue
         - secondary-accent-custom
+  -
+    title: Tag brightness - dark mode
+    id: tag-dark
+    description: Select tag brightness/contrast level for dark mode
+    type: variable-select
+    allowEmpty: false
+    default: var(--tag-4)
+    options:
+        - value: var(--tag-0)
+          label: lightest
+        - value: var(--tag-1)
+          label: lighter
+        - value: var(--tag-2)
+          label: light
+        - value: var(--tag-3)
+          label: medium
+        - value: var(--tag-4)
+          label: dark
+  -
+    title: Tag brightness - light mode
+    id: tag-light
+    description: Select tag brightness/contrast level for light mode
+    type: variable-select
+    allowEmpty: false
+    default: var(--tag-4)
+    options:
+        - value: var(--tag-2)
+          label: light
+        - value: var(--tag-3)
+          label: medium
+        - value: var(--tag-4)
+          label: dark
+        - value: var(--tag-5)
+          label: darker
+        - value: var(--tag-6)
+          label: darkest
  */
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 :root {
@@ -1501,7 +1537,24 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
 }
 
 :root {
-  --tags: var(--pink-4);
+  --tag-0: var(--pink-0);
+  --tag-1: var(--pink-1);
+  --tag-2: var(--pink-2);
+  --tag-3: var(--pink-3);
+  --tag-4: var(--pink-4);
+  --tag-5: var(--pink-5);
+  --tag-6: var(--pink-6);
+  --tag-dark: var(--tag-4);
+  --tag-light: var(--tag-4);
+}
+
+.theme-dark {
+  --tags: var(--tag-dark);
+}
+
+.theme-dark .print,
+.theme-light {
+  --tags: var(--tag-light);
 }
 
 .cm-s-obsidian span.cm-hashtag,
@@ -1717,7 +1770,7 @@ div[src$="#portrait"] {
 
 .rendered-widget .admonition,
 .markdown-preview-section .admonition {
-  border-left: 0.1rem solid rgb(var(--admonition-color));
+  border-left: 0.15rem solid rgb(var(--admonition-color));
   background-color: var(--background-primary-alt);
 }
 .rendered-widget .admonition .admonition-title,
@@ -1730,7 +1783,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-note,
 .markdown-preview-section .admonition.admonition-note {
-  border-left: 0.1rem solid rgb(var(--admonition-note));
+  border-left: 0.15rem solid rgb(var(--admonition-note));
 }
 .rendered-widget .admonition.admonition-note .admonition-title,
 .markdown-preview-section .admonition.admonition-note .admonition-title {
@@ -1742,7 +1795,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-abstract,
 .markdown-preview-section .admonition.admonition-abstract {
-  border-left: 0.1rem solid rgb(var(--admonition-abstract));
+  border-left: 0.15rem solid rgb(var(--admonition-abstract));
 }
 .rendered-widget .admonition.admonition-abstract .admonition-title,
 .markdown-preview-section .admonition.admonition-abstract .admonition-title {
@@ -1754,7 +1807,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-info,
 .markdown-preview-section .admonition.admonition-info {
-  border-left: 0.1rem solid rgb(var(--admonition-info));
+  border-left: 0.15rem solid rgb(var(--admonition-info));
 }
 .rendered-widget .admonition.admonition-info .admonition-title,
 .markdown-preview-section .admonition.admonition-info .admonition-title {
@@ -1766,7 +1819,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-tip,
 .markdown-preview-section .admonition.admonition-tip {
-  border-left: 0.1rem solid rgb(var(--admonition-tip));
+  border-left: 0.15rem solid rgb(var(--admonition-tip));
 }
 .rendered-widget .admonition.admonition-tip .admonition-title,
 .markdown-preview-section .admonition.admonition-tip .admonition-title {
@@ -1778,7 +1831,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-success,
 .markdown-preview-section .admonition.admonition-success {
-  border-left: 0.1rem solid rgb(var(--admonition-success));
+  border-left: 0.15rem solid rgb(var(--admonition-success));
 }
 .rendered-widget .admonition.admonition-success .admonition-title,
 .markdown-preview-section .admonition.admonition-success .admonition-title {
@@ -1790,7 +1843,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-question,
 .markdown-preview-section .admonition.admonition-question {
-  border-left: 0.1rem solid rgb(var(--admonition-question));
+  border-left: 0.15rem solid rgb(var(--admonition-question));
 }
 .rendered-widget .admonition.admonition-question .admonition-title,
 .markdown-preview-section .admonition.admonition-question .admonition-title {
@@ -1802,7 +1855,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-warning,
 .markdown-preview-section .admonition.admonition-warning {
-  border-left: 0.1rem solid rgb(var(--admonition-warning));
+  border-left: 0.15rem solid rgb(var(--admonition-warning));
 }
 .rendered-widget .admonition.admonition-warning .admonition-title,
 .markdown-preview-section .admonition.admonition-warning .admonition-title {
@@ -1814,7 +1867,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-failure,
 .markdown-preview-section .admonition.admonition-failure {
-  border-left: 0.1rem solid rgb(var(--admonition-failure));
+  border-left: 0.15rem solid rgb(var(--admonition-failure));
 }
 .rendered-widget .admonition.admonition-failure .admonition-title,
 .markdown-preview-section .admonition.admonition-failure .admonition-title {
@@ -1826,7 +1879,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-danger,
 .markdown-preview-section .admonition.admonition-danger {
-  border-left: 0.1rem solid rgb(var(--admonition-danger));
+  border-left: 0.15rem solid rgb(var(--admonition-danger));
 }
 .rendered-widget .admonition.admonition-danger .admonition-title,
 .markdown-preview-section .admonition.admonition-danger .admonition-title {
@@ -1838,7 +1891,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-bug,
 .markdown-preview-section .admonition.admonition-bug {
-  border-left: 0.1rem solid rgb(var(--admonition-bug));
+  border-left: 0.15rem solid rgb(var(--admonition-bug));
 }
 .rendered-widget .admonition.admonition-bug .admonition-title,
 .markdown-preview-section .admonition.admonition-bug .admonition-title {
@@ -1850,7 +1903,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-example,
 .markdown-preview-section .admonition.admonition-example {
-  border-left: 0.1rem solid rgb(var(--admonition-example));
+  border-left: 0.15rem solid rgb(var(--admonition-example));
 }
 .rendered-widget .admonition.admonition-example .admonition-title,
 .markdown-preview-section .admonition.admonition-example .admonition-title {
@@ -1864,7 +1917,7 @@ div[src$="#portrait"] {
 .rendered-widget .admonition.admonition-quote,
 .markdown-preview-section .admonition.admonition-excerpt,
 .markdown-preview-section .admonition.admonition-quote {
-  border-left: 0.1rem solid rgb(var(--admonition-quote));
+  border-left: 0.15rem solid rgb(var(--admonition-quote));
 }
 .rendered-widget .admonition.admonition-excerpt .admonition-title,
 .rendered-widget .admonition.admonition-quote .admonition-title,
@@ -1880,7 +1933,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-reference,
 .markdown-preview-section .admonition.admonition-reference {
-  border-left: 0.1rem solid rgb(var(--admonition-reference));
+  border-left: 0.15rem solid rgb(var(--admonition-reference));
 }
 .rendered-widget .admonition.admonition-reference .admonition-title,
 .markdown-preview-section .admonition.admonition-reference .admonition-title {
@@ -1892,7 +1945,7 @@ div[src$="#portrait"] {
 }
 .rendered-widget .admonition.admonition-toc,
 .markdown-preview-section .admonition.admonition-toc {
-  border-left: 0.1rem solid rgb(var(--admonition-toc));
+  border-left: 0.15rem solid rgb(var(--admonition-toc));
 }
 .rendered-widget .admonition.admonition-toc .admonition-title,
 .markdown-preview-section .admonition.admonition-toc .admonition-title {

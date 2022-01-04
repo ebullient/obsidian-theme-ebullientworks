@@ -43,6 +43,9 @@ This theme does support style settings. Settable attributes:
 
 - Choose primary / secondary accent color
     This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
+    
+- (0.2.8) Tag brightness (dark/light mode)
+    Select a brightness or contrast level for tags.
 
 ## Admonitions
 
@@ -123,6 +126,66 @@ For example, let's use a REALLY BOLD RED: `#ae2012`.
     ```
 
 3. Create a snippet (e.g. a file named`accent-colors.css`) containing this content in the `.obsidian/snippets` directory. Go to the Obsidian Appearance settings use the refresh button if necessary to find the snippet, and enable it. Provided you've selected the "custom" value in the primary/secondary style settings drop-down, you should be off to the races with this brilliant red.
+
+### Changing tag colors
+
+As of 0.2.7, you can alter the color contrast (against the usual scale, 0-6) for tags in light or dark mode. 
+
+#### Custom color
+
+Change the color to your own value (using the above bold red as an example): 
+```
+.theme-dark {
+  --tags: #ae2012;
+}
+.theme-dark .print,
+.theme-light {
+  --tags: #ae2012;
+}
+```
+
+#### Contrast toggle with your own color scale
+
+To keep the contrast toggles, redefine the scaled tag variables.
+```
+:root {
+  --tag-0: var(--pink-0);
+  --tag-1: var(--pink-1);
+  --tag-2: var(--pink-2);
+  --tag-3: var(--pink-3);
+  --tag-4: var(--pink-4);
+  --tag-5: var(--pink-5);
+  --tag-6: var(--pink-6);
+}
+```
+You can use existing theme colors: `green`, `teal`, `blue`, `purple`, or `pink`. 
+Note: `yellow` is also an option, but it has a constrained range (1-4).
+
+You could also align it with the primary or secondary theme colors: 
+```
+:root {
+  --tag-0: var(--primary-accent-0);
+  --tag-1: var(--primary-accent-1);
+  --tag-2: var(--primary-accent-2);
+  --tag-3: var(--primary-accent-3);
+  --tag-4: var(--primary-accent-4);
+  --tag-5: var(--primary-accent-5);
+  --tag-6: var(--primary-accent-6);
+}
+```
+OR
+```
+:root {
+  --tag-0: var(--secondary-accent-0);
+  --tag-1: var(--secondary-accent-1);
+  --tag-2: var(--secondary-accent-2);
+  --tag-3: var(--secondary-accent-3);
+  --tag-4: var(--secondary-accent-4);
+  --tag-5: var(--secondary-accent-5);
+  --tag-6: var(--secondary-accent-6);
+}
+```
+
 
 ## Credits
 
