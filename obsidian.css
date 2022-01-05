@@ -1252,18 +1252,20 @@ input[type=number] {
   --link-hidden: var(--teal-2);
 }
 
+.cm-s-obsidian .cm-strong.cm-quote,
 .cm-s-obsidian .cm-strong,
 .view-content strong {
   color: var(--strong);
   font-weight: 600;
 }
 
+.cm-s-obsidian .cm-em.cm-quote,
 .cm-s-obsidian .cm-em,
 .view-content em {
   color: var(--em);
 }
 
-.cm-s-obsidian .cm-strong.cm-em,
+.cm-s-obsidian .cm-quote.cm-strong.cm-em,
 .cm-s-obsidian .cm-em.cm-strong,
 .view-content strong em {
   color: var(--strong-em);
