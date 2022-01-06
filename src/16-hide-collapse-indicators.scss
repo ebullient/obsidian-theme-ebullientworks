@@ -1,0 +1,13 @@
+body.ebullientworks-hide-inactive-collapse-indicators {
+  /* hide collapse indicators until hovered/active line */
+  li:not(:hover) .collapse-indicator,
+  h1:not(:hover) .collapse-indicator,
+  h2:not(:hover) .collapse-indicator,
+  h3:not(:hover) .collapse-indicator,
+  h4:not(:hover) .collapse-indicator,
+  h5:not(:hover) .collapse-indicator,
+  h6:not(:hover) .collapse-indicator,
+  .cm-line:not(:hover):not(.cm-active) .collapse-indicator {
+      color: transparent;
+  }
+}

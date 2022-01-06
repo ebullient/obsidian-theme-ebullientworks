@@ -23,6 +23,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-hide-inactive-collapse-indicators
+    title: Hide collapse indicators when not hovered or active
+    description: If true, hide collapse indicators in all three modes when not hovered or active.
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-table-width
     title: Prevent table content from extending beyond the width of the page
     description: If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
@@ -2238,4 +2244,18 @@ div[src$="#portrait"] {
 .ebullientworks-table-width table .table-view-table > tbody > tr > td,
 .ebullientworks-table-width table tbody > tr > td {
   word-break: break-all;
+}
+
+body.ebullientworks-hide-inactive-collapse-indicators {
+  /* hide collapse indicators until hovered/active line */
+}
+body.ebullientworks-hide-inactive-collapse-indicators li:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators h1:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators h2:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators h3:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators h4:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators h5:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators h6:not(:hover) .collapse-indicator,
+body.ebullientworks-hide-inactive-collapse-indicators .cm-line:not(:hover):not(.cm-active) .collapse-indicator {
+  color: transparent;
 }
