@@ -6,6 +6,10 @@
   --modal-checkbox-bg: var(--secondary-accent-6);
   --modal-checked-bg: var(--secondary-accent-4);
 
+  .modal {
+    background-color: var(--background-primary);
+  }
+
   .document-search-container {
     background-color: var(--background-secondary);
   }

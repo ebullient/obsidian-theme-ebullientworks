@@ -656,7 +656,6 @@ settings:
 .menu-item.selected:not(.is-disabled):not(.is-label),
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover,
-.nav-file:hover,
 .nav-action-button:hover,
 .nav-action-button.is-active:hover,
 .tree-item-self.is-clickable:hover,
@@ -867,6 +866,9 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   --modal-content-bg: var(--background-primary);
   --modal-checkbox-bg: var(--secondary-accent-6);
   --modal-checked-bg: var(--secondary-accent-4);
+}
+.theme-dark .modal {
+  background-color: var(--background-primary);
 }
 .theme-dark .document-search-container {
   background-color: var(--background-secondary);
