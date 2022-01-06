@@ -1617,7 +1617,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
 }
 
 .markdown-preview-view blockquote {
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary-alt);
   margin: 0;
   padding-left: 1em;
   overflow-x: auto;
