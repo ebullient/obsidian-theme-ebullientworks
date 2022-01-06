@@ -24,8 +24,8 @@ settings:
     default: false
   -
     id: ebullientworks-hide-inactive-collapse-indicators
-    title: Hide collapse indicators when not hovered or active
-    description: If true, hide collapse indicators in all three modes when not hovered or active.
+    title: Hide collapse indicators unless hovered or active
+    description: If true, hide collapse indicators in all three modes unless they are hovered over or the line is active.
     type: class-toggle
     default: false
   -
@@ -1333,11 +1333,20 @@ a,
   color: var(--link-underline);
 }
 
-/* Collapse external links / markdown links in edit mode */
+/* Collapse external links / markdown links in edit mode: CodeMirrorOptions + Legacy editor */
 body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting) {
   font-size: 0;
 }
 body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting)::after {
+  content: "·";
+  font-size: 1rem;
+}
+
+/* CM6 editor */
+body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 div.cm-line:not(.cm-active) > .cm-string.cm-url:not(.cm-formatting) {
+  font-size: 0;
+}
+body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 div.cm-line:not(.cm-active) > .cm-string.cm-url:not(.cm-formatting)::after {
   content: "·";
   font-size: 1rem;
 }
