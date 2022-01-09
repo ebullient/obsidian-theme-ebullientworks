@@ -543,6 +543,7 @@ settings:
 }
 
 .nav-folder-title,
+.nav-folder-title-content,
 .nav-file-title,
 .nav-file-title-content {
   font-weight: normal;
@@ -1514,6 +1515,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=
   border-color: var(--checkbox-in-progress);
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]),
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked {
@@ -1525,6 +1527,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"].task-list-item.is-checked {
   font-weight: 900;
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"].task-list-item.is-checked {
