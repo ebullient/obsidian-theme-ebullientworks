@@ -7,8 +7,8 @@
   "license": "MIT",
   "homepage": "https://github.com/ebullient",
   "scripts": {
-    "build": "npx sass --no-source-map src/ebullientworks.scss obsidian.css",
-    "dev": "npx sass --no-source-map src/ebullientworks.scss vault/.obsidian/themes/Ebullientworks.css",
+    "build": "npx sass --no-source-map src/ebullientworks.scss obsidian.css; npx sass --no-source-map src/tasks-snippet.scss tasks-snippet.css",
+    "dev": "npx sass src/ebullientworks.scss vault/.obsidian/themes/Ebullientworks.css; npx sass --no-source-map src/tasks-snippet.scss vault/.obsidian/snippets/tasks-snippet.css",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "test-version": "auto-changelog -p"
   },

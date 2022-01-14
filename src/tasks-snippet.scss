@@ -1,0 +1,18 @@
+:root {
+  --checkbox-checked: rgb(139, 167, 145);
+  --checkbox-deferred: rgb(111, 166, 211);
+  --checkbox-important: rgb(187, 79, 108);
+  --checkbox-review: rgb(92, 122, 99);
+  --checkbox-in-progress: rgb(89, 174, 170);
+  --checkbox-question: rgb(234, 175, 0);
+}
+.theme-dark {
+  --checkbox-cancelled: rgb(115, 115, 115);
+  --checkbox-hover: rgb(137, 137, 137);
+}
+.theme-dark .print,
+.theme-light {
+  --checkbox-cancelled: rgb(159, 159, 159);
+  --checkbox-hover: rgb(137, 137, 137);
+}
+@import '06a-checkboxes.scss';
