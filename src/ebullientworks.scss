@@ -1,5 +1,5 @@
 /*
-Ebullientworks 0.3.2 by @ebullient
+Ebullientworks $version$ by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -138,29 +138,28 @@ settings:
   --line-height: 1.5em;
 }
 
-@import '01-colors.scss';
-@import '02-fonts.scss';
+@import 'fragments/01-colors.scss';
+@import 'fragments/02-fonts.scss';
 
-@import '03-core-theme-dark.scss';
-@import '03-core-theme-light.scss';
-@import '03a-workspace-layout.scss';
-@import '03b-workspace-view.scss';
-@import '03c-modal-input.scss';
-@import '03d-graph-view.scss';
+@import 'fragments/03-core-theme-dark.scss';
+@import 'fragments/03-core-theme-light.scss';
+@import 'fragments/03a-workspace-layout.scss';
+@import 'fragments/03b-workspace-view.scss';
+@import 'fragments/03c-modal-input.scss';
+@import 'fragments/03d-graph-view.scss';
 
-@import '04-headings-hr.scss';
-@import '05-text-links.scss';
+@import 'fragments/04-headings-hr.scss';
+@import 'fragments/05-text-links.scss';
 
-@import '06-lists-checkboxes.scss';
-@import '07-tags.scss';
-@import '08-blockquote.scss';
-@import '09-codeblocks.scss';
-@import '10-images-embeds.scss';
+@import 'fragments/06-lists-checkboxes.scss';
+@import 'fragments/07-tags.scss';
+@import 'fragments/08-blockquote.scss';
+@import 'fragments/09-codeblocks.scss';
+@import 'fragments/10-images-embeds.scss';
 
-@import '11-admonition.scss';
-@import '12-calendar-day-planner-tracker.scss';
-@import '13-timelines.scss';
-@import '14-frontmatter.scss';
-@import '15-table.scss';
-@import '16-hide-collapse-indicators.scss';
-
+@import 'fragments/11-admonition.scss';
+@import 'fragments/12-calendar-day-planner-tracker.scss';
+@import 'fragments/13-timelines.scss';
+@import 'fragments/14-frontmatter.scss';
+@import 'fragments/15-table.scss';
+@import 'fragments/16-hide-collapse-indicators.scss';
