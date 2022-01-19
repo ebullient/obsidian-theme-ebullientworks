@@ -7,8 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.build.outputs.version }}
+
     steps:
     - uses: actions/checkout@v2
       with:
@@ -19,7 +18,7 @@ jobs:
       with:
         node-version: '16.7'
 
-    # Build the plugin
+    # Create release notes
     - name: Build
       id: build
       env:
@@ -42,6 +41,7 @@ jobs:
         body_path: ./release-notes.md
         draft: false
         prerelease: false
+        
     # Upload the main.js
     - name: Upload obsidian.css
       id: upload-main
@@ -53,6 +53,7 @@ jobs:
         asset_path: ./obsidian.css
         asset_name: obsidian.css
         asset_content_type: text/css
+        
     # Upload the tasks-snippet.css
     - name: Upload tasks-snippet.css
       id: upload-manifest
