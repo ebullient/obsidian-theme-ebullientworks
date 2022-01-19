@@ -34,18 +34,6 @@
 /* "/" Half done */
 /* text style tasks that should still have readable text */
 /* text style for important task ('- [!]') */
-.markdown-preview-view ul {
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 20px;
-}
-
-.mobile .markdown-preview-view ol,
-.mobile .markdown-preview-view ul {
-  display: block;
-  line-height: var(--line-height);
-}
-
 .markdown-source-view.mod-cm6 input.task-list-item-checkbox,
 .markdown-preview-view input.task-list-item-checkbox {
   -webkit-appearance: none;

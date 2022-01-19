@@ -16,6 +16,26 @@
   --checkbox-hover: var(--gray-light-2);
 }
 
+/** Set line-height on mobile */
+.mobile {
+  .markdown-preview-view {
+    ol,
+    ul {
+      display: block;
+      line-height: var(--line-height);
+    }
+  }
+}
+
 body:not(.ebullientworks-nix-checkbox) {
+  /** Condense whitespace */
+  .markdown-preview-view {
+    ul {
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 20px;
+    }
+  }
+
   @import '06a-checkboxes.scss';
 }
