@@ -35,7 +35,7 @@ div {
     .markdown-embed-content,
     .markdown-embed-content > .markdown-preview-view  {
       max-height: unset;
-      background-color: var(--background-secondary); /*define different bg color*/
+      background-color: var(--background-primary-alt);
     }
 
     .markdown-embed-content>:first-child {
