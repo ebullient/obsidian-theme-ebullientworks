@@ -134,4 +134,8 @@
     position: relative;
     top: -13px;
   }
+
+  .markdown-embed-content hr::after {
+    background: var(--background-primary-alt);
+  }
 }
