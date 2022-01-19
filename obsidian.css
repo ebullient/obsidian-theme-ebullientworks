@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks by @ebullient
+Ebullientworks 0.3.2 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -1385,7 +1385,15 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 div
   --checkbox-hover: var(--gray-light-2);
 }
 
+/** Set line-height on mobile */
+.mobile .markdown-preview-view ol,
+.mobile .markdown-preview-view ul {
+  display: block;
+  line-height: var(--line-height);
+}
+
 body:not(.ebullientworks-nix-checkbox) {
+  /** Condense whitespace */
   /* '✓' for completed task ('- [x]') */
   /* '-' for cancelled task ('- [-]') */
   /* '>' for deferred task ('- [>]') */
@@ -1400,11 +1408,6 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 20px;
-}
-body:not(.ebullientworks-nix-checkbox) .mobile .markdown-preview-view ol,
-body:not(.ebullientworks-nix-checkbox) .mobile .markdown-preview-view ul {
-  display: block;
-  line-height: var(--line-height);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-item-checkbox {
@@ -1725,8 +1728,7 @@ div[src$="#portrait"] {
 .markdown-preview-view .markdown-embed .markdown-embed-content,
 .markdown-preview-view .markdown-embed .markdown-embed-content > .markdown-preview-view {
   max-height: unset;
-  background-color: var(--background-secondary);
-  /*define different bg color*/
+  background-color: var(--background-primary-alt);
 }
 .markdown-preview-view .markdown-embed .markdown-embed-content > :first-child {
   margin-top: 0;
