@@ -10,6 +10,7 @@
     "build": "npx gulp css",
     "dev": "npx gulp dev",
     "version": "auto-changelog -p && git add CHANGELOG.md && npx gulp css",
+    "release-notes": "run() { auto-changelog --stdout --hide-credit --hide-empty-releases --template .github/changelog.hbs -v $1 --starting-version $1  > release-notes.md; }; run",
     "test-version": "auto-changelog -p"
   },
   "repository": {
