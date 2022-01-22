@@ -931,7 +931,9 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
 .theme-light .modal {
   background-color: var(--gray-light-5);
 }
+.theme-dark .print .modal-title,
 .theme-dark .print .vertical-tab-header-group-title,
+.theme-light .modal-title,
 .theme-light .vertical-tab-header-group-title {
   color: var(--gray-dark-6);
 }
