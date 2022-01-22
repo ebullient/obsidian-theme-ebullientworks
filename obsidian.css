@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.3 by @ebullient
+Ebullientworks 0.3.4 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -18,21 +18,27 @@ name: Ebullientworks theme settings
 id: ebullientworks-theme
 settings:
   -
-    id: ebullientworks-show-edit-mode-external-links
-    title: Show external links in edit mode
-    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+    id: ebullientworks-use-default-list-indent
+    title: Use the default indent for lists
+    description: This theme compresses list indent whitespace by default. Enable this to use the indent spacing from the default theme.
     type: class-toggle
     default: false
   -
     id: ebullientworks-nix-checkbox
-    title: Suppress or Remove this theme's checkbox styles
-    description: Set this to true if you are going to use other themes to manage the style for your lists and checkboxes.
+    title: Suppress/Remove this checkbox styles
+    description: Set this to true if you are going to use your own task snippet
     type: class-toggle
     default: false
   -
-    id: ebullientworks-floating-frontmatter
-    title: Float front-matter in a box to the right
-    description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    id: ebullientworks-show-hide
+    title: Showing and Hiding content
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: ebullientworks-show-edit-mode-external-links
+    title: Show external links in edit mode
+    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
     type: class-toggle
     default: false
   -
@@ -42,11 +48,23 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-floating-frontmatter
+    title: Float front-matter in a box to the right
+    description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-table-width
     title: Prevent table content from extending beyond the width of the page
     description: If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
     type: class-toggle
     default: false
+  -
+    id: ebullientworks-fonts
+    title: Fonts
+    type: heading
+    level: 3
+    collapsed: true
   -
     title: Headings
     description: Font for text headings (h1 to h6)
@@ -70,6 +88,12 @@ settings:
     id: font-monospace
     type: variable-text
     default: "'Fira Code', 'Source Code Pro', Jetbrains Mono, SFMono-Regular, Consolas, 'Roboto Mono', monospace"
+  -
+    id: ebullientworks-colors
+    title: Colors
+    type: heading
+    level: 3
+    collapsed: true
   -
     title: Primary accent color
     id: ebullientworks-primary-accent
@@ -997,6 +1021,11 @@ input[type=number] {
   color: var(--text-on-accent);
 }
 
+.modal button:not(.mod-cta):not(.mod-warning) {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
 .graph-controls .checkbox-container {
   background-color: var(--modal-checkbox-bg);
 }
@@ -1395,8 +1424,17 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 div
   line-height: var(--line-height);
 }
 
-body:not(.ebullientworks-nix-checkbox) {
+body:not(.ebullientworks-default-list-indent) {
   /** Condense whitespace */
+}
+body:not(.ebullientworks-default-list-indent) .markdown-preview-view ol,
+body:not(.ebullientworks-default-list-indent) .markdown-preview-view ul {
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20px;
+}
+
+body:not(.ebullientworks-nix-checkbox) {
   /* '✓' for completed task ('- [x]') */
   /* '-' for cancelled task ('- [-]') */
   /* '>' for deferred task ('- [>]') */
@@ -1406,43 +1444,68 @@ body:not(.ebullientworks-nix-checkbox) {
   /* "/" Half done */
   /* text style tasks that should still have readable text */
   /* text style for important task ('- [!]') */
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul {
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 20px;
+  /* 'x' for completed task ('- [x]') */
+  /* '-' for completed task ('- [-]') */
+  /* '>' for completed task ('- [>]') */
+  /* '?' for completed task ('- [?]') */
+  /* 'R' for completed task ('- [R]') */
+  /* '!' for completed task ('- [!]') */
+  /* '/' for completed task ('- [/]') */
+  /* Consistent hover colors */
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-item-checkbox {
   -webkit-appearance: none;
   box-sizing: border-box;
-  border: 1px solid var(--text-normal);
-  position: relative;
-  width: 13px;
-  height: 13px;
-  margin: 0;
-  margin-right: 4px;
-  margin-bottom: 1px;
   transition: background-color 200ms ease-out 0s;
   cursor: pointer;
   filter: none;
+  border: 1px solid var(--text-normal);
   border-radius: 2px;
+  position: relative;
+}
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-item-checkbox {
+  margin-top: 2px;
+  margin-bottom: 1px;
+}
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-item-checkbox:checked::before {
+  font-family: var(--font-monospace);
   position: absolute;
   text-align: center;
-  font-weight: 600;
-  line-height: 12px;
-  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  font-size: 14px;
   left: 1px;
   right: 1px;
+}
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox::before,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li > input.task-list-item-checkbox:checked::before,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li > p > input.task-list-item-checkbox:checked::before {
+  content: "✓";
+  color: var(--text-normal);
+}
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li > input.task-list-item-checkbox,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li > p > input.task-list-item-checkbox {
+  border-color: var(--text-normal);
+  color: var(--text-normal);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item {
   font-weight: normal;
   color: var(--text-normal);
 }
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=X]::before,
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]),
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked {
+  color: var(--text-normal);
+  text-decoration: none;
+}
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=x]::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=X] > p > input.task-list-item-checkbox:checked::before,
@@ -1463,13 +1526,20 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"]::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > p > input.task-list-item-checkbox:checked::before {
-  content: "−";
+  content: "-";
   color: var(--checkbox-cancelled);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"],
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > input.task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"] > p > input.task-list-item-checkbox {
   border-color: var(--checkbox-cancelled);
+  color: var(--checkbox-cancelled);
+}
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"].task-list-item.is-checked {
+  text-decoration: line-through;
   color: var(--checkbox-cancelled);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=">"]::before,
@@ -1521,11 +1591,17 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=
   border-color: var(--checkbox-important);
   color: var(--checkbox-important);
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"],
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"] + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"] + span + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"].task-list-item.is-checked {
+  color: var(--checkbox-important);
+  font-weight: 900;
+}
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="/"]::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="/"] > input.task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="/"] > p > input.task-list-item-checkbox:checked::before {
   content: " ";
-  font-family: var(--font-monospace);
   line-height: 18px;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="/"],
@@ -1534,43 +1610,24 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task=
   border-color: var(--checkbox-in-progress);
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]),
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span,
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox + span + span,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li.task-list-item.is-checked {
-  color: var(--text-normal);
-  text-decoration: none;
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"] + span,
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"] + span + span,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="!"].task-list-item.is-checked {
-  font-weight: 900;
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span,
-body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span + span,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul > li[data-task="-"].task-list-item.is-checked {
-  color: var(--checkbox-cancelled);
-  text-decoration: line-through;
-}
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=X] > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=X] > p > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=x] > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=x] > p > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="!"] > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="!"] > p > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="-"] > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="-"] > p > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="/"] > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="/"] > p > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=">"] > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=">"] > p > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="?"] > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="?"] > p > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=R] > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=R] > p > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="/"] > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="/"] > p > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="!"] > input.task-list-item-checkbox:checked:hover,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task="!"] > p > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=X] > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=X] > p > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=x] > input.task-list-item-checkbox:checked:hover,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view li[data-task=x] > p > input.task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-item-checkbox:hover {
   color: var(--text-on-accent);
   background-color: var(--checkbox-hover);

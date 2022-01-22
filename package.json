@@ -1,6 +1,6 @@
 {
   "name": "obsidian-theme-ebullientworks",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "description": "An Obsidian Theme",
   "author": "Erin Schnabel",
@@ -32,6 +32,6 @@
   "auto-changelog": {
     "backfillLimit": false,
     "commitLimit": false,
-    "ignoreCommitPattern": "(changelog|.* README\\.).*"
+    "ignoreCommitPattern": "(🔖|🔨|changelog|.* README\\.).*"
   }
 }

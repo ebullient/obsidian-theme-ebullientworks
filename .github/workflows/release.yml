@@ -25,6 +25,7 @@ jobs:
         VERSION: ${{ github.ref_name }}
       run: |
         echo "Release ${VERSION}"
+        npm install
         npm run release-notes -- ${VERSION}
         echo "::set-output name=version::${VERSION}"
 
@@ -41,7 +42,7 @@ jobs:
         body_path: ./release-notes.md
         draft: false
         prerelease: false
-        
+
     # Upload the main.js
     - name: Upload obsidian.css
       id: upload-main
@@ -53,7 +54,7 @@ jobs:
         asset_path: ./obsidian.css
         asset_name: obsidian.css
         asset_content_type: text/css
-        
+
     # Upload the tasks-snippet.css
     - name: Upload tasks-snippet.css
       id: upload-manifest
