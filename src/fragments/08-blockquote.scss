@@ -3,8 +3,13 @@
     border-color: var(--secondary-accent-4);
     border-left: 3px solid var(--secondary-accent-4);
   }
-  .markdown-preview-view blockquote:before {
-    color: var(--secondary-accent-4);
+  .markdown-source-view.mod-cm6.is-live-preview div.HyperMD-quote {
+    border-left: 2px solid var(--secondary-accent-4);
+    border-right: 1px solid var(--secondary-accent-4);
+  }
+  .markdown-source-view.mod-cm6 .cm-blockquote-border {
+    border: 0 solid var(--primary-accent-4);
+    border-left-width: 1px;
   }
 }
 .theme-dark .print,
@@ -13,8 +18,13 @@
     border-color: var(--secondary-accent-2);
     border-left: 3px solid var(--secondary-accent-2);
   }
-  .markdown-preview-view blockquote:before {
-    color: var(--secondary-accent-2);
+  .markdown-source-view.mod-cm6.is-live-preview div.HyperMD-quote {
+    border-left: 2px solid var(--secondary-accent-2);
+    border-right: 1px solid var(--secondary-accent-2);
+  }
+  .markdown-source-view.mod-cm6 .cm-blockquote-border {
+    border: 0 solid var(--primary-accent-2);
+    border-left-width: 1px;
   }
 }
 .markdown-preview-view blockquote {
@@ -24,6 +34,12 @@
   overflow-x: auto;
   position: relative;
 }
-blockquote p {
-  margin: 0px;
+.markdown-source-view.mod-cm6 .cm-blockquote-border {
+  display: inline-block;
+  border-left-width: 5px;
+  text-indent: -5px;
+}
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  border-left-width: 5px;
+  background-color: var(--background-primary-alt);
 }

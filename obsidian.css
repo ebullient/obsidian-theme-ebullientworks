@@ -1677,8 +1677,13 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
   border-color: var(--secondary-accent-4);
   border-left: 3px solid var(--secondary-accent-4);
 }
-.theme-dark .markdown-preview-view blockquote:before {
-  color: var(--secondary-accent-4);
+.theme-dark .markdown-source-view.mod-cm6.is-live-preview div.HyperMD-quote {
+  border-left: 2px solid var(--secondary-accent-4);
+  border-right: 1px solid var(--secondary-accent-4);
+}
+.theme-dark .markdown-source-view.mod-cm6 .cm-blockquote-border {
+  border: 0 solid var(--primary-accent-4);
+  border-left-width: 1px;
 }
 
 .theme-dark .print .markdown-preview-view blockquote,
@@ -1686,9 +1691,15 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
   border-color: var(--secondary-accent-2);
   border-left: 3px solid var(--secondary-accent-2);
 }
-.theme-dark .print .markdown-preview-view blockquote:before,
-.theme-light .markdown-preview-view blockquote:before {
-  color: var(--secondary-accent-2);
+.theme-dark .print .markdown-source-view.mod-cm6.is-live-preview div.HyperMD-quote,
+.theme-light .markdown-source-view.mod-cm6.is-live-preview div.HyperMD-quote {
+  border-left: 2px solid var(--secondary-accent-2);
+  border-right: 1px solid var(--secondary-accent-2);
+}
+.theme-dark .print .markdown-source-view.mod-cm6 .cm-blockquote-border,
+.theme-light .markdown-source-view.mod-cm6 .cm-blockquote-border {
+  border: 0 solid var(--primary-accent-2);
+  border-left-width: 1px;
 }
 
 .markdown-preview-view blockquote {
@@ -1699,8 +1710,15 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view input.task-list-it
   position: relative;
 }
 
-blockquote p {
-  margin: 0px;
+.markdown-source-view.mod-cm6 .cm-blockquote-border {
+  display: inline-block;
+  border-left-width: 5px;
+  text-indent: -5px;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  border-left-width: 5px;
+  background-color: var(--background-primary-alt);
 }
 
 .theme-dark {
