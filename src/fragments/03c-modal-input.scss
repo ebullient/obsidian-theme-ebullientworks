@@ -115,6 +115,10 @@ input[type='number'] {
     color: var(--text-on-accent);
   }
 }
+.modal button:not(.mod-cta):not(.mod-warning) {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
 .graph-controls {
   .checkbox-container {
     background-color: var(--modal-checkbox-bg);

@@ -27,15 +27,18 @@
   }
 }
 
-body:not(.ebullientworks-nix-checkbox) {
+body:not(.ebullientworks-default-list-indent) {
   /** Condense whitespace */
   .markdown-preview-view {
+    ol,
     ul {
       margin-inline-start: 0px;
       margin-inline-end: 0px;
       padding-inline-start: 20px;
     }
   }
+}
 
+body:not(.ebullientworks-nix-checkbox) {
   @import '06a-checkboxes.scss';
 }

@@ -17,21 +17,27 @@ name: Ebullientworks theme settings
 id: ebullientworks-theme
 settings:
   -
-    id: ebullientworks-show-edit-mode-external-links
-    title: Show external links in edit mode
-    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+    id: ebullientworks-use-default-list-indent
+    title: Use the default indent for lists
+    description: This theme compresses list indent whitespace by default. Enable this to use the indent spacing from the default theme.
     type: class-toggle
     default: false
   -
     id: ebullientworks-nix-checkbox
-    title: Suppress or Remove this theme's checkbox styles
-    description: Set this to true if you are going to use other themes to manage the style for your lists and checkboxes.
+    title: Suppress/Remove this checkbox styles
+    description: Set this to true if you are going to use your own task snippet
     type: class-toggle
     default: false
   -
-    id: ebullientworks-floating-frontmatter
-    title: Float front-matter in a box to the right
-    description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    id: ebullientworks-show-hide
+    title: Showing and Hiding content
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: ebullientworks-show-edit-mode-external-links
+    title: Show external links in edit mode
+    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
     type: class-toggle
     default: false
   -
@@ -41,11 +47,23 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-floating-frontmatter
+    title: Float front-matter in a box to the right
+    description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-table-width
     title: Prevent table content from extending beyond the width of the page
     description: If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
     type: class-toggle
     default: false
+  -
+    id: ebullientworks-fonts
+    title: Fonts
+    type: heading
+    level: 3
+    collapsed: true
   -
     title: Headings
     description: Font for text headings (h1 to h6)
@@ -69,6 +87,12 @@ settings:
     id: font-monospace
     type: variable-text
     default: "'Fira Code', 'Source Code Pro', Jetbrains Mono, SFMono-Regular, Consolas, 'Roboto Mono', monospace"
+  -
+    id: ebullientworks-colors
+    title: Colors
+    type: heading
+    level: 3
+    collapsed: true
   -
     title: Primary accent color
     id: ebullientworks-primary-accent

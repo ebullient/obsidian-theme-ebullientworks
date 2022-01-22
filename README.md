@@ -22,6 +22,8 @@ Some light styling has also been applied for the following community plugins:
 - timelines
 - tracker
 
+This theme is compatible with custom task snippets from the [Snippitor](https://github.com/ebullient/obsidian-snippetor).
+
 ## Style Settings
 
 This theme does support style settings. Settable attributes: 
@@ -46,6 +48,10 @@ This theme does support style settings. Settable attributes:
     
 - (0.2.7) Tag brightness (dark/light mode)
     Select a brightness or contrast level for tags.
+
+- (0.3.4) Use default theme list indent
+    This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to 
+    disable that, and preserve list spaceing consistent with the default theme.
 
 ## Admonitions
 
