@@ -2,16 +2,26 @@
   --modal-nav-bg: var(--primary-accent-6);
   --modal-nav-hover: var(--primary-accent-5);
   --modal-nav-accent: var(--primary-accent-4);
-  --modal-content-bg: var(--background-primary);
-  --modal-checkbox-bg: var(--secondary-accent-6);
+  --modal-checkbox-bg: var(--gray-dark-75);
   --modal-checked-bg: var(--secondary-accent-4);
-
-  .modal {
-    background-color: var(--background-primary);
-  }
+  --modal-button-bg: var(--gray-dark-6);
 
   .document-search-container {
     background-color: var(--background-secondary);
+  }
+  .community-theme {
+    background-color: var(--gray-dark-75);
+  }
+  .community-theme.is-selected {
+    background-color: var(--primary-accent-5);
+    .community-theme-remove-button {
+      background-color: unset;
+      color: var(--text-faint);
+    }
+  }
+  .modal .community-theme.is-selected button {
+    background-color: var(--primary-accent-4);
+    color: var(--text-on-accent);
   }
 }
 .theme-dark .print,
@@ -19,13 +29,10 @@
   --modal-nav-bg: var(--primary-accent-2);
   --modal-nav-hover: var(--primary-accent-0);
   --modal-nav-accent: var(--primary-accent-3);
-  --modal-content-bg: var(--background-primary);
   --modal-checkbox-bg: var(--secondary-accent-0);
   --modal-checked-bg: var(--secondary-accent-2);
+  --modal-button-bg: var(--gray-light-4);
 
-  .modal {
-    background-color: var(--gray-light-5);
-  }
   .modal-title,
   .vertical-tab-header-group-title {
     color: var(--gray-dark-6);
@@ -40,18 +47,24 @@
   .document-search-container {
     background-color: var(--background-secondary-alt);
   }
+  .community-theme {
+    background-color: var(--gray-light-4);
+  }
+  .community-theme.is-selected {
+    background-color: var(--primary-accent-0);
+    .community-theme-remove-button {
+      background-color: unset;
+      color: var(--text-faint);
+    }
+  }
+  .modal .community-theme.is-selected button {
+    background-color: var(--primary-accent-4);
+    color: var(--gray-light-7);
+  }
 }
 // -------------------------------------
 // Modal dialog & Prompts
 // -------------------------------------
-// Text Input Field
-input[type='text'],
-input[type='search'],
-input[type='email'],
-input[type='password'],
-input[type='number'] {
-  font-size: 0.8em;
-}
 .search-input-container input {
   padding: 2px 20px 2px 6px;
 }
@@ -74,9 +87,16 @@ input[type='number'] {
     }
   }
 }
+.modal,
+.modal.mod-settings {
+  background-color: var(--background-primary);
 
-// Don't apply special fonts to modals / community panels
-.modal-container {
+  button.mod-cta:not(.mod-warning),
+  button:not(.mod-cta):not(.mod-warning) {
+    background-color: var(--modal-button-bg);
+    color: var(--text-on-accent);
+  }
+
   .prompt,
   .vertical-tab-header,
   .vertical-tab-nav-item,
@@ -89,13 +109,12 @@ input[type='number'] {
   .community-plugin-item:hover,
   .horizontal-tab-nav-item:hover,
   .vertical-tab-nav-item:hover,
-  .community-theme.is-selected,
   .vertical-tab-nav-item.is-active {
     background-color: var(--modal-nav-hover);
   }
   .prompt > .prompt-results,
   .vertical-tab-content {
-    background-color: var(--modal-content-bg);
+    background-color: var(--background-primary);
   }
   .checkbox-container {
     background-color: var(--modal-checkbox-bg);
@@ -109,16 +128,6 @@ input[type='number'] {
       background-color: var(--modal-nav-hover);
     }
   }
-  .mod-settings .setting-item button,
-  .modal.mod-settings button:not(.mod-cta):not(.mod-warning),
-  .modal .community-plugin-details button:not(.mod-cta):not(.mod-warning) {
-    background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
-  }
-}
-.modal button:not(.mod-cta):not(.mod-warning) {
-  background-color: var(--interactive-accent);
-  color: var(--text-on-accent);
 }
 .graph-controls {
   .checkbox-container {

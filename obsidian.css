@@ -180,6 +180,7 @@ settings:
   --gray-dark-5: rgb(77, 77, 77);
   --gray-dark-6: rgb(63, 63, 63);
   --gray-dark-7: rgb(49, 49, 49);
+  --gray-dark-75: rgb(40, 40, 40);
   --gray-dark-8: rgb(33, 33, 33);
   --gray-dark-9: rgb(27, 27, 27);
   --gray-dark-10: rgb(7, 7, 7);
@@ -389,7 +390,7 @@ settings:
   --background-primary: var(--gray-dark-8);
   --background-primary-alt: var(--gray-dark-9);
   --background-secondary: var(--gray-dark-7);
-  --background-secondary-alt: var(--gray-dark-8);
+  --background-secondary-alt: var(--gray-dark-75);
   --background-modifier-border: black;
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
@@ -907,15 +908,26 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   --modal-nav-bg: var(--primary-accent-6);
   --modal-nav-hover: var(--primary-accent-5);
   --modal-nav-accent: var(--primary-accent-4);
-  --modal-content-bg: var(--background-primary);
-  --modal-checkbox-bg: var(--secondary-accent-6);
+  --modal-checkbox-bg: var(--gray-dark-75);
   --modal-checked-bg: var(--secondary-accent-4);
-}
-.theme-dark .modal {
-  background-color: var(--background-primary);
+  --modal-button-bg: var(--gray-dark-6);
 }
 .theme-dark .document-search-container {
   background-color: var(--background-secondary);
+}
+.theme-dark .community-theme {
+  background-color: var(--gray-dark-75);
+}
+.theme-dark .community-theme.is-selected {
+  background-color: var(--primary-accent-5);
+}
+.theme-dark .community-theme.is-selected .community-theme-remove-button {
+  background-color: unset;
+  color: var(--text-faint);
+}
+.theme-dark .modal .community-theme.is-selected button {
+  background-color: var(--primary-accent-4);
+  color: var(--text-on-accent);
 }
 
 .theme-dark .print,
@@ -923,13 +935,9 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   --modal-nav-bg: var(--primary-accent-2);
   --modal-nav-hover: var(--primary-accent-0);
   --modal-nav-accent: var(--primary-accent-3);
-  --modal-content-bg: var(--background-primary);
   --modal-checkbox-bg: var(--secondary-accent-0);
   --modal-checked-bg: var(--secondary-accent-2);
-}
-.theme-dark .print .modal,
-.theme-light .modal {
-  background-color: var(--gray-light-5);
+  --modal-button-bg: var(--gray-light-4);
 }
 .theme-dark .print .modal-title,
 .theme-dark .print .vertical-tab-header-group-title,
@@ -953,13 +961,23 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
 .theme-light .document-search-container {
   background-color: var(--background-secondary-alt);
 }
-
-input[type=text],
-input[type=search],
-input[type=email],
-input[type=password],
-input[type=number] {
-  font-size: 0.8em;
+.theme-dark .print .community-theme,
+.theme-light .community-theme {
+  background-color: var(--gray-light-4);
+}
+.theme-dark .print .community-theme.is-selected,
+.theme-light .community-theme.is-selected {
+  background-color: var(--primary-accent-0);
+}
+.theme-dark .print .community-theme.is-selected .community-theme-remove-button,
+.theme-light .community-theme.is-selected .community-theme-remove-button {
+  background-color: unset;
+  color: var(--text-faint);
+}
+.theme-dark .print .modal .community-theme.is-selected button,
+.theme-light .modal .community-theme.is-selected button {
+  background-color: var(--primary-accent-4);
+  color: var(--gray-light-7);
 }
 
 .search-input-container input {
@@ -986,46 +1004,60 @@ input[type=number] {
   border: 1px solid var(--background-modifier-error-hover);
 }
 
-.modal-container .prompt,
-.modal-container .vertical-tab-header,
-.modal-container .vertical-tab-nav-item,
-.modal-container .community-plugin-search {
+.modal,
+.modal.mod-settings {
+  background-color: var(--background-primary);
+}
+.modal button.mod-cta:not(.mod-warning),
+.modal button:not(.mod-cta):not(.mod-warning),
+.modal.mod-settings button.mod-cta:not(.mod-warning),
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning) {
+  background-color: var(--modal-button-bg);
+  color: var(--text-on-accent);
+}
+.modal .prompt,
+.modal .vertical-tab-header,
+.modal .vertical-tab-nav-item,
+.modal .community-plugin-search,
+.modal.mod-settings .prompt,
+.modal.mod-settings .vertical-tab-header,
+.modal.mod-settings .vertical-tab-nav-item,
+.modal.mod-settings .community-plugin-search {
   background-color: var(--modal-nav-bg);
 }
-.modal-container .vertical-tab-nav-item.is-active {
+.modal .vertical-tab-nav-item.is-active,
+.modal.mod-settings .vertical-tab-nav-item.is-active {
   border-left-color: var(--modal-nav-accent);
 }
-.modal-container .community-plugin-item:hover,
-.modal-container .horizontal-tab-nav-item:hover,
-.modal-container .vertical-tab-nav-item:hover,
-.modal-container .community-theme.is-selected,
-.modal-container .vertical-tab-nav-item.is-active {
+.modal .community-plugin-item:hover,
+.modal .horizontal-tab-nav-item:hover,
+.modal .vertical-tab-nav-item:hover,
+.modal .vertical-tab-nav-item.is-active,
+.modal.mod-settings .community-plugin-item:hover,
+.modal.mod-settings .horizontal-tab-nav-item:hover,
+.modal.mod-settings .vertical-tab-nav-item:hover,
+.modal.mod-settings .vertical-tab-nav-item.is-active {
   background-color: var(--modal-nav-hover);
 }
-.modal-container .prompt > .prompt-results,
-.modal-container .vertical-tab-content {
-  background-color: var(--modal-content-bg);
+.modal .prompt > .prompt-results,
+.modal .vertical-tab-content,
+.modal.mod-settings .prompt > .prompt-results,
+.modal.mod-settings .vertical-tab-content {
+  background-color: var(--background-primary);
 }
-.modal-container .checkbox-container {
+.modal .checkbox-container,
+.modal.mod-settings .checkbox-container {
   background-color: var(--modal-checkbox-bg);
 }
-.modal-container .checkbox-container.is-enabled {
+.modal .checkbox-container.is-enabled,
+.modal.mod-settings .checkbox-container.is-enabled {
   background-color: var(--modal-checked-bg);
 }
-.modal-container .community-plugin .setting-item-control button,
-.modal-container .community-plugin .flair.mod-pop {
+.modal .community-plugin .setting-item-control button,
+.modal .community-plugin .flair.mod-pop,
+.modal.mod-settings .community-plugin .setting-item-control button,
+.modal.mod-settings .community-plugin .flair.mod-pop {
   background-color: var(--modal-nav-hover);
-}
-.modal-container .mod-settings .setting-item button,
-.modal-container .modal.mod-settings button:not(.mod-cta):not(.mod-warning),
-.modal-container .modal .community-plugin-details button:not(.mod-cta):not(.mod-warning) {
-  background-color: var(--interactive-accent);
-  color: var(--text-on-accent);
-}
-
-.modal button:not(.mod-cta):not(.mod-warning) {
-  background-color: var(--interactive-accent);
-  color: var(--text-on-accent);
 }
 
 .graph-controls .checkbox-container {
