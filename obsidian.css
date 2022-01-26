@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.5 by @ebullient
+Ebullientworks 0.3.6 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -433,7 +433,7 @@ settings:
   --background-primary-alt: var(--gray-light-5);
   --background-secondary: var(--gray-light-6);
   --background-secondary-alt: var(--gray-light-2);
-  --background-modifier-border: var(--gray-light-3);
+  --background-modifier-border: var(--gray-light-1);
   --background-modifier-form-field: white;
   --background-modifier-form-field-highlighted: white;
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
@@ -2379,4 +2379,9 @@ body.ebullientworks-hide-inactive-collapse-indicators h5:not(:hover) .collapse-i
 body.ebullientworks-hide-inactive-collapse-indicators h6:not(:hover) .collapse-indicator,
 body.ebullientworks-hide-inactive-collapse-indicators .cm-line:not(:hover):not(.cm-active) .collapse-indicator {
   color: transparent;
+}
+
+.theme-light #snippetor-checkboxes-modal ul > li .snippetor-settings .row-label,
+.theme-light #snippetor-checkboxes-modal ul > li .snippetor-settings .snippetor-group.decorated {
+  background-color: var(--modal-button-bg);
 }
