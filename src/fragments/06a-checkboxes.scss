@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* '✓' for completed task ('- [x]') */
 /* '-' for cancelled task ('- [-]') */
 /* '>' for deferred task ('- [>]') */
@@ -7,199 +8,440 @@
 /* "/" Half done */
 /* text style tasks that should still have readable text */
 /* text style for important task ('- [!]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox,
-.markdown-preview-view input.task-list-item-checkbox {
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  transition: background-color 200ms ease-out 0s;
-  cursor: pointer;
-  filter: none;
-  border: 1px solid var(--text-normal);
-  border-radius: 2px;
-  position: relative;
+/* '/' for task ('- [/]') */
+.theme-dark {
+    --snippetor-checkbox-0: var(--checkbox-in-progress);
+    --snippetor-checkbox-bg-0: "transparent";
+    --snippetor-li-0: "inherit";
+    --snippetor-li-bg-0: "transparent";
 }
-.markdown-preview-view input.task-list-item-checkbox {
-  margin-top: 2px;
-  margin-bottom: 1px;
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-0: var(--checkbox-in-progress);
+    --snippetor-checkbox-bg-0: "transparent";
+    --snippetor-li-0: "inherit";
+    --snippetor-li-bg-0: "transparent";
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox {
-  margin-top: 3px;
-  margin-bottom: 3px;
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="/"] input[type=checkbox][data-task="/"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-0);
+    content: ' ';
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox:checked::before,
-.markdown-preview-view input.task-list-item-checkbox:checked::before {
-  font-family: var(--font-monospace);
-  position: absolute;
-  text-align: center;
-  font-weight: 500;
-  line-height: 14px;
-  font-size: 14px;
-  left: 1px;
-  right: 1px;
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="/"] input[type=checkbox][data-task="/"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, transparent 50%, var(--snippetor-checkbox-0) 50%);
+    filter: none;
+    color: var(--snippetor-checkbox-0);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-0) !important;
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox::before,
-.markdown-preview-view ul > li > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li > p > input.task-list-item-checkbox:checked::before {
-  content: "✓";
-  color: var(--text-normal);
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox].task-list-item-checkbox[data-task="/"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox].task-list-item-checkbox[data-task="/"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-0);
+    background-color: var(--snippetor-li-bg-0);
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox,
-.markdown-preview-view ul > li > input.task-list-item-checkbox,
-.markdown-preview-view ul > li > p > input.task-list-item-checkbox {
-  border-color: var(--text-normal);
-  color: var(--text-normal);
+/* '>' for task ('- [>]') */
+.theme-dark {
+    --snippetor-checkbox-1: var(--checkbox-deferred);
+    --snippetor-checkbox-bg-1: "transparent";
+    --snippetor-li-1: "inherit";
+    --snippetor-li-bg-1: "transparent";
 }
-.markdown-preview-view ul > li.task-list-item {
-  font-weight: normal;
-  color: var(--text-normal);
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-1: var(--checkbox-deferred);
+    --snippetor-checkbox-bg-1: "transparent";
+    --snippetor-li-1: "inherit";
+    --snippetor-li-bg-1: "transparent";
 }
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]),
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox + span,
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox + span + span,
-.markdown-preview-view ul > li.task-list-item.is-checked {
-  color: var(--text-normal);
-  text-decoration: none;
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task=">"] input[type=checkbox][data-task=">"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-1);
+    content: '>';
 }
-
-/* 'x' for completed task ('- [x]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="x"]::before,
-.markdown-preview-view ul > li[data-task="X"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="X"] > p > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="x"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="x"] > p > input.task-list-item-checkbox:checked::before {
-  content: "✓";
-  color: var(--checkbox-checked);
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task=">"] input[type=checkbox][data-task=">"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-1) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-1);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-1) !important;
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="X"],
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="x"],
-.markdown-preview-view ul > li[data-task="X"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="X"] > p > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="x"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="x"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-checked);
-  color: var(--checkbox-checked);
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] input[type=checkbox].task-list-item-checkbox[data-task=">"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] input[type=checkbox].task-list-item-checkbox[data-task=">"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-1);
+    background-color: var(--snippetor-li-bg-1);
 }
-
-/* '-' for completed task ('- [-]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"]::before,
-.markdown-preview-view ul > li[data-task="-"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="-"] > p > input.task-list-item-checkbox:checked::before {
-  content: "-";
-  color: var(--checkbox-cancelled);
+/* 'R' for task ('- [R]') */
+.theme-dark {
+    --snippetor-checkbox-2: var(--checkbox-review);
+    --snippetor-checkbox-bg-2: "transparent";
+    --snippetor-li-2: "inherit";
+    --snippetor-li-bg-2: "transparent";
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"],
-.markdown-preview-view ul > li[data-task="-"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="-"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-cancelled);
-  color: var(--checkbox-cancelled);
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-2: var(--checkbox-review);
+    --snippetor-checkbox-bg-2: "transparent";
+    --snippetor-li-2: "inherit";
+    --snippetor-li-bg-2: "transparent";
 }
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span,
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="-"] + span + span,
-.markdown-preview-view ul > li[data-task="-"].task-list-item.is-checked {
-  text-decoration: line-through;
-  color: var(--checkbox-cancelled);
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="R"] input[type=checkbox][data-task="R"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="R"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-2);
+    content: '👀';
 }
-
-/* '>' for completed task ('- [>]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=">"]::before,
-.markdown-preview-view ul > li[data-task=">"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task=">"] > p > input.task-list-item-checkbox:checked::before {
-  content: ">";
-  color: var(--checkbox-deferred);
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="R"] input[type=checkbox][data-task="R"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="R"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-2) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-2);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-2) !important;
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task=">"],
-.markdown-preview-view ul > li[data-task=">"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task=">"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-deferred);
-  color: var(--checkbox-deferred);
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="R"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="R"] input[type=checkbox].task-list-item-checkbox[data-task="R"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="R"] input[type=checkbox].task-list-item-checkbox[data-task="R"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="R"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-2);
+    background-color: var(--snippetor-li-bg-2);
 }
-
-/* '?' for completed task ('- [?]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="?"]::before,
-.markdown-preview-view ul > li[data-task="?"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="?"] > p > input.task-list-item-checkbox:checked::before {
-  content: "?";
-  color: var(--checkbox-question);
+/* '?' for task ('- [?]') */
+.theme-dark {
+    --snippetor-checkbox-3: var(--checkbox-question);
+    --snippetor-checkbox-bg-3: "transparent";
+    --snippetor-li-3: "inherit";
+    --snippetor-li-bg-3: "transparent";
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="?"],
-.markdown-preview-view ul > li[data-task="?"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="?"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-question);
-  color: var(--checkbox-question);
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-3: var(--checkbox-question);
+    --snippetor-checkbox-bg-3: "transparent";
+    --snippetor-li-3: "inherit";
+    --snippetor-li-bg-3: "transparent";
 }
-
-/* 'R' for completed task ('- [R]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="R"]::before,
-.markdown-preview-view ul > li[data-task="R"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="R"] > p > input.task-list-item-checkbox:checked::before {
-  content: "👀";
-  font-size: 0.7em;
-  color: var(--checkbox-review);
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="?"] input[type=checkbox][data-task="?"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="?"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-3);
+    content: '?';
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="R"],
-.markdown-preview-view ul > li[data-task="R"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="R"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-review);
-  color: var(--checkbox-review);
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="?"] input[type=checkbox][data-task="?"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="?"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-3) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-3);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-3) !important;
 }
-
-/* '!' for completed task ('- [!]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"]::before,
-.markdown-preview-view ul > li[data-task="!"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="!"] > p > input.task-list-item-checkbox:checked::before {
-  content: "‼️";
-  color: var(--checkbox-important);
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"] input[type=checkbox].task-list-item-checkbox[data-task="?"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"] input[type=checkbox].task-list-item-checkbox[data-task="?"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="?"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-3);
+    background-color: var(--snippetor-li-bg-3);
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"],
-.markdown-preview-view ul > li[data-task="!"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="!"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-important);
-  color: var(--checkbox-important);
+/* '!' for task ('- [!]') */
+.theme-dark {
+    --snippetor-checkbox-4: var(--checkbox-important);
+    --snippetor-checkbox-bg-4: "transparent";
+    --snippetor-li-4: var(--checkbox-important);
+    --snippetor-li-bg-4: "transparent";
+}
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-4: var(--checkbox-important);
+    --snippetor-checkbox-bg-4: "transparent";
+    --snippetor-li-4: var(--checkbox-important);
+    --snippetor-li-bg-4: "transparent";
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="!"] input[type=checkbox][data-task="!"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="!"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-4);
+    content: '!';
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="!"] input[type=checkbox][data-task="!"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="!"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-4) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-4);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-4) !important;
 }
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"],
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"] + span,
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="!"] + span + span,
-.markdown-preview-view ul > li[data-task="!"].task-list-item.is-checked {
-  color: var(--checkbox-important);
-  font-weight: 900;
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"] input[type=checkbox].task-list-item-checkbox[data-task="!"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"] input[type=checkbox].task-list-item-checkbox[data-task="!"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="!"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 700;
+    font-style: normal;
+    color: var(--snippetor-li-4);
+    background-color: var(--snippetor-li-bg-4);
 }
-
-/* '/' for completed task ('- [/]') */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="/"]::before,
-.markdown-preview-view ul > li[data-task="/"] > input.task-list-item-checkbox:checked::before,
-.markdown-preview-view ul > li[data-task="/"] > p > input.task-list-item-checkbox:checked::before {
-  content: " ";
-  line-height: 18px;
+/* '-' for task ('- [-]') */
+.theme-dark {
+    --snippetor-checkbox-5: var(--checkbox-cancelled);
+    --snippetor-checkbox-bg-5: "transparent";
+    --snippetor-li-5: var(--checkbox-cancelled);
+    --snippetor-li-bg-5: "transparent";
 }
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox[data-task="/"],
-.markdown-preview-view ul > li[data-task="/"] > input.task-list-item-checkbox,
-.markdown-preview-view ul > li[data-task="/"] > p > input.task-list-item-checkbox {
-  border-color: var(--checkbox-in-progress);
-  background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-5: var(--checkbox-cancelled);
+    --snippetor-checkbox-bg-5: "transparent";
+    --snippetor-li-5: var(--checkbox-cancelled);
+    --snippetor-li-bg-5: "transparent";
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="-"] input[type=checkbox][data-task="-"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="-"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-5);
+    content: '-';
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="-"] input[type=checkbox][data-task="-"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="-"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-5) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-5);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-5) !important;
+}
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type=checkbox].task-list-item-checkbox[data-task="-"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type=checkbox].task-list-item-checkbox[data-task="-"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="-"].task-list-item.is-checked {
+    text-decoration: line-through !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-5);
+    background-color: var(--snippetor-li-bg-5);
+}
+/* 'x' for task ('- [x]') */
+.theme-dark {
+    --snippetor-checkbox-6: var(--checkbox-checked);
+    --snippetor-checkbox-bg-6: "transparent";
+    --snippetor-li-6: "inherit";
+    --snippetor-li-bg-6: "transparent";
+}
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-6: var(--checkbox-checked);
+    --snippetor-checkbox-bg-6: "transparent";
+    --snippetor-li-6: "inherit";
+    --snippetor-li-bg-6: "transparent";
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="x"] input[type=checkbox][data-task="x"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="x"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-6);
+    content: '✓';
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="x"] input[type=checkbox][data-task="x"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="x"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-6) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-6);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-6) !important;
+}
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] input[type=checkbox].task-list-item-checkbox[data-task="x"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] input[type=checkbox].task-list-item-checkbox[data-task="x"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="x"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-6);
+    background-color: var(--snippetor-li-bg-6);
+}
+/* 'X' for task ('- [X]') */
+.theme-dark {
+    --snippetor-checkbox-7: var(--checkbox-checked);
+    --snippetor-checkbox-bg-7: "transparent";
+    --snippetor-li-7: "inherit";
+    --snippetor-li-bg-7: "transparent";
+}
+.theme-dark .print,
+.theme-light {
+    --snippetor-checkbox-7: var(--checkbox-checked);
+    --snippetor-checkbox-bg-7: "transparent";
+    --snippetor-li-7: "inherit";
+    --snippetor-li-bg-7: "transparent";
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="X"] input[type=checkbox][data-task="X"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="X"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+    font-family: var(--font-monospace);
+    background: none;
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    top: 0;
+    left: 1px;
+    right: 1px;
+    color: var(--snippetor-checkbox-7);
+    content: 'X';
+}
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="X"] input[type=checkbox][data-task="X"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="X"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+    position: relative;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: unset !important;
+    background-color: var(--snippetor-checkbox-bg-7) !important; /* override theme */
+    filter: none;
+    color: var(--snippetor-checkbox-7);
+    font-family: var(--font-monospace);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--snippetor-checkbox-7) !important;
+}
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] input[type=checkbox].task-list-item-checkbox[data-task="X"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] input[type=checkbox].task-list-item-checkbox[data-task="X"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="X"].task-list-item.is-checked {
+    text-decoration: none !important; /* override theme */
+    font-weight: 500;
+    font-style: normal;
+    color: var(--snippetor-li-7);
+    background-color: var(--snippetor-li-bg-7);
 }
 
 /* Consistent hover colors */
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox:hover,
-.markdown-source-view.mod-cm6 input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="!"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="!"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="-"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="-"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="/"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="/"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task=">"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task=">"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="?"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="?"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="R"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="R"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="X"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="X"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="x"] > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view li[data-task="x"] > p > input.task-list-item-checkbox:checked:hover,
-.markdown-preview-view input.task-list-item-checkbox:hover {
-  color: var(--text-on-accent);
-  background-color: var(--checkbox-hover);
-  border-color: var(--text-on-accent);
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="/"] input[type=checkbox][data-task="/"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task=">"] input[type=checkbox][data-task=">"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="R"] input[type=checkbox][data-task="R"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="R"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="?"] input[type=checkbox][data-task="?"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="?"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="!"] input[type=checkbox][data-task="!"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="!"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="-"] input[type=checkbox][data-task="-"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="-"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="x"] input[type=checkbox][data-task="x"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="x"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="X"] input[type=checkbox][data-task="X"].task-list-item-checkbox:checked:hover, .markdown-preview-view ul.contains-task-list > li[data-task="X"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover {
+  color: var(--text-on-accent) !important;
+  background-color: var(--interactive-accent-hover) !important;
+  border-color: var(--text-on-accent) !important;
 }

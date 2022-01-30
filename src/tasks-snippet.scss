@@ -20,11 +20,4 @@ Ebullientworks tasks $version$ by @ebullient
   --checkbox-hover: rgb(137, 137, 137);
 }
 
-/** Clear background from minimal theme */
-.checklist-plugin-main .group .compact > .toggle .checked,
-.is-flashing input[type="checkbox"]:checked,
-input[type="checkbox"]:checked {
-  background-color: unset !important;
-}
-
 @import 'fragments/06a-checkboxes.scss';
