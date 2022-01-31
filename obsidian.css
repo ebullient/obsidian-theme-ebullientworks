@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.7 by @ebullient
+Ebullientworks 0.3.8 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -528,6 +528,15 @@ settings:
   transition: none;
 }
 
+.workspace-ribbon-collapse-btn {
+  margin-top: 0px;
+  padding-top: 8px;
+}
+
+.side-dock-settings {
+  margin-bottom: 8px;
+}
+
 .workspace-tabs .collapse-icon svg {
   transition: transform 100ms ease-in-out;
 }
@@ -720,7 +729,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .theme-dark {
   --leaf-fg: var(--text-muted);
   --sharp-border: 1px solid rgba(0, 0, 0, 0.5);
-  --resize-handle-bg: rgba(0, 0, 0, 0.5);
+  --resize-handle-bg: var(--background-secondary-alt);
   --active-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--primary-accent-6) 2%, var(--primary-accent-5) 15%, var(--primary-accent-5));
   --rotated-active-leaf-bg: linear-gradient(to left, var(--gray-dark-7), var(--primary-accent-6) 2%, var(--primary-accent-5) 15%, var(--primary-accent-5));
   --inactive-leaf-bg: linear-gradient(to top, var(--gray-dark-7), var(--gray-dark-6) 2%, var(--gray-dark-5) 15%, var(--gray-dark-5));
