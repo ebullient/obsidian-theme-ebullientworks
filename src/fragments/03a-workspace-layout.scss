@@ -56,6 +56,10 @@
   margin-top: 0px;
   padding-top: 8px;
 }
+// Move sidedock settings down
+.side-dock-settings {
+  margin-bottom: 8px;
+}
 // Sidebar collapse arrows*/
 .workspace-tabs .collapse-icon svg {
   transition: transform 100ms ease-in-out;
