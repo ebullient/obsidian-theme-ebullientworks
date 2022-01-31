@@ -43,4 +43,9 @@
   .cm-s-obsidian div.HyperMD-codeblock-end-bg {
     border-bottom: 2px solid var(--background-primary-alt);
   }
+
+  .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
+    /* Inherited display is not safely inline */
+    display: inline;
+  }
 }
