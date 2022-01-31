@@ -51,6 +51,11 @@
 .workspace-tab-container-after {
     transition: none;
 }
+// Move the buttons up
+.workspace-ribbon-collapse-btn {
+  margin-top: 0px;
+  padding-top: 8px;
+}
 // Sidebar collapse arrows*/
 .workspace-tabs .collapse-icon svg {
   transition: transform 100ms ease-in-out;
