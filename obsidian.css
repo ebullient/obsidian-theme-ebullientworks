@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.8 by @ebullient
+Ebullientworks 0.3.9 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -2080,6 +2080,11 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 .theme-dark .cm-s-obsidian div.HyperMD-codeblock-end-bg,
 .theme-light .cm-s-obsidian div.HyperMD-codeblock-end-bg {
   border-bottom: 2px solid var(--background-primary-alt);
+}
+.theme-dark .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code,
+.theme-light .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
+  /* Inherited display is not safely inline */
+  display: inline;
 }
 
 img[alt~=float-right],
