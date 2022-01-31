@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.3.9 by @ebullient
+Ebullientworks tasks 0.3.10 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -22,6 +22,31 @@ Ebullientworks tasks 0.3.9 by @ebullient
   --checkbox-hover: rgb(137, 137, 137);
 }
 
+.markdown-preview-view .task-list-item-checkbox {
+  margin-top: 2.2px;
+  margin-bottom: 1px;
+}
+
+.markdown-preview-view .task-list-item-checkbox,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
+  border-radius: 3px;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=" "] input[type=checkbox][data-task=" "].task-list-item-checkbox:not(:checked),
+.markdown-preview-view ul.contains-task-list > li[data-task=""].task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked) {
+  position: relative;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  background-color: transparent !important;
+  /* override theme */
+  filter: none;
+  background: unset !important;
+  color: var(--text-normal);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--text-normal) !important;
+}
+
 /* '✓' for completed task ('- [x]') */
 /* '-' for cancelled task ('- [-]') */
 /* '>' for deferred task ('- [>]') */
@@ -32,23 +57,8 @@ Ebullientworks tasks 0.3.9 by @ebullient
 /* text style tasks that should still have readable text */
 /* text style for important task ('- [!]') */
 /* '/' for task ('- [/]') */
-.theme-dark {
-  --snippetor-checkbox-0: var(--checkbox-in-progress);
-  --snippetor-checkbox-bg-0: "transparent";
-  --snippetor-li-0: "inherit";
-  --snippetor-li-bg-0: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-0: var(--checkbox-in-progress);
-  --snippetor-checkbox-bg-0: "transparent";
-  --snippetor-li-0: "inherit";
-  --snippetor-li-bg-0: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox][data-task="/"].task-list-item-checkbox:checked::before,
-.markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
+.markdown-preview-view ul.contains-task-list li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
   background: none;
   position: absolute;
@@ -59,22 +69,22 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-0);
+  color: var(--checkbox-in-progress);
   content: " ";
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox][data-task="/"].task-list-item-checkbox:checked,
-.markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
+.markdown-preview-view ul.contains-task-list li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
   position: relative;
   -webkit-appearance: none;
   box-sizing: border-box;
-  background: linear-gradient(135deg, transparent 50%, var(--snippetor-checkbox-0) 50%);
+  background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
   filter: none;
-  color: var(--snippetor-checkbox-0);
+  color: var(--checkbox-in-progress);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-0) !important;
+  border-color: var(--checkbox-in-progress) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"],
@@ -85,26 +95,9 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-0);
-  background-color: var(--snippetor-li-bg-0);
 }
 
 /* '>' for task ('- [>]') */
-.theme-dark {
-  --snippetor-checkbox-1: var(--checkbox-deferred);
-  --snippetor-checkbox-bg-1: "transparent";
-  --snippetor-li-1: "inherit";
-  --snippetor-li-bg-1: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-1: var(--checkbox-deferred);
-  --snippetor-checkbox-bg-1: "transparent";
-  --snippetor-li-1: "inherit";
-  --snippetor-li-bg-1: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] input[type=checkbox][data-task=">"].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -117,7 +110,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-1);
+  color: var(--checkbox-deferred);
   content: ">";
 }
 
@@ -127,14 +120,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-1) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-1);
+  color: var(--checkbox-deferred);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-1) !important;
+  border-color: var(--checkbox-deferred) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"],
@@ -145,26 +138,9 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-1);
-  background-color: var(--snippetor-li-bg-1);
 }
 
 /* 'R' for task ('- [R]') */
-.theme-dark {
-  --snippetor-checkbox-2: var(--checkbox-review);
-  --snippetor-checkbox-bg-2: "transparent";
-  --snippetor-li-2: "inherit";
-  --snippetor-li-bg-2: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-2: var(--checkbox-review);
-  --snippetor-checkbox-bg-2: "transparent";
-  --snippetor-li-2: "inherit";
-  --snippetor-li-bg-2: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox][data-task=R].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task=R].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -177,7 +153,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-2);
+  color: var(--checkbox-review);
   content: "👀";
 }
 
@@ -187,14 +163,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-2) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-2);
+  color: var(--checkbox-review);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-2) !important;
+  border-color: var(--checkbox-review) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R],
@@ -205,26 +181,9 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-2);
-  background-color: var(--snippetor-li-bg-2);
 }
 
 /* '?' for task ('- [?]') */
-.theme-dark {
-  --snippetor-checkbox-3: var(--checkbox-question);
-  --snippetor-checkbox-bg-3: "transparent";
-  --snippetor-li-3: "inherit";
-  --snippetor-li-bg-3: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-3: var(--checkbox-question);
-  --snippetor-checkbox-bg-3: "transparent";
-  --snippetor-li-3: "inherit";
-  --snippetor-li-bg-3: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"] input[type=checkbox][data-task="?"].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task="?"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -237,7 +196,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-3);
+  color: var(--checkbox-question);
   content: "?";
 }
 
@@ -247,14 +206,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-3) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-3);
+  color: var(--checkbox-question);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-3) !important;
+  border-color: var(--checkbox-question) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"],
@@ -265,26 +224,9 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-3);
-  background-color: var(--snippetor-li-bg-3);
 }
 
 /* '!' for task ('- [!]') */
-.theme-dark {
-  --snippetor-checkbox-4: var(--checkbox-important);
-  --snippetor-checkbox-bg-4: "transparent";
-  --snippetor-li-4: var(--checkbox-important);
-  --snippetor-li-bg-4: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-4: var(--checkbox-important);
-  --snippetor-checkbox-bg-4: "transparent";
-  --snippetor-li-4: var(--checkbox-important);
-  --snippetor-li-bg-4: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"] input[type=checkbox][data-task="!"].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task="!"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -297,7 +239,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-4);
+  color: var(--checkbox-important);
   content: "!";
 }
 
@@ -307,14 +249,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-4) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-4);
+  color: var(--checkbox-important);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-4) !important;
+  border-color: var(--checkbox-important) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"],
@@ -325,26 +267,10 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 700;
   font-style: normal;
-  color: var(--snippetor-li-4);
-  background-color: var(--snippetor-li-bg-4);
+  color: var(--checkbox-important);
 }
 
 /* '-' for task ('- [-]') */
-.theme-dark {
-  --snippetor-checkbox-5: var(--checkbox-cancelled);
-  --snippetor-checkbox-bg-5: "transparent";
-  --snippetor-li-5: var(--checkbox-cancelled);
-  --snippetor-li-bg-5: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-5: var(--checkbox-cancelled);
-  --snippetor-checkbox-bg-5: "transparent";
-  --snippetor-li-5: var(--checkbox-cancelled);
-  --snippetor-li-bg-5: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type=checkbox][data-task="-"].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task="-"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -357,7 +283,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-5);
+  color: var(--checkbox-cancelled);
   content: "-";
 }
 
@@ -367,14 +293,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-5) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-5);
+  color: var(--checkbox-cancelled);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-5) !important;
+  border-color: var(--checkbox-cancelled) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
@@ -385,26 +311,10 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-5);
-  background-color: var(--snippetor-li-bg-5);
+  color: var(--checkbox-cancelled);
 }
 
 /* 'x' for task ('- [x]') */
-.theme-dark {
-  --snippetor-checkbox-6: var(--checkbox-checked);
-  --snippetor-checkbox-bg-6: "transparent";
-  --snippetor-li-6: "inherit";
-  --snippetor-li-bg-6: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-6: var(--checkbox-checked);
-  --snippetor-checkbox-bg-6: "transparent";
-  --snippetor-li-6: "inherit";
-  --snippetor-li-bg-6: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=x] input[type=checkbox][data-task=x].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task=x].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -417,7 +327,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-6);
+  color: var(--checkbox-checked);
   content: "✓";
 }
 
@@ -427,14 +337,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-6) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-6);
+  color: var(--checkbox-checked);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-6) !important;
+  border-color: var(--checkbox-checked) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=x],
@@ -445,26 +355,9 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-6);
-  background-color: var(--snippetor-li-bg-6);
 }
 
 /* 'X' for task ('- [X]') */
-.theme-dark {
-  --snippetor-checkbox-7: var(--checkbox-checked);
-  --snippetor-checkbox-bg-7: "transparent";
-  --snippetor-li-7: "inherit";
-  --snippetor-li-bg-7: "transparent";
-}
-
-.theme-dark .print,
-.theme-light {
-  --snippetor-checkbox-7: var(--checkbox-checked);
-  --snippetor-checkbox-bg-7: "transparent";
-  --snippetor-li-7: "inherit";
-  --snippetor-li-bg-7: "transparent";
-}
-
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=X] input[type=checkbox][data-task=X].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task=X].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -477,7 +370,7 @@ Ebullientworks tasks 0.3.9 by @ebullient
   top: 0;
   left: 1px;
   right: 1px;
-  color: var(--snippetor-checkbox-7);
+  color: var(--checkbox-checked);
   content: "X";
 }
 
@@ -487,14 +380,14 @@ Ebullientworks tasks 0.3.9 by @ebullient
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: var(--snippetor-checkbox-bg-7) !important;
+  background-color: transparent !important;
   /* override theme */
   filter: none;
-  color: var(--snippetor-checkbox-7);
+  color: var(--checkbox-checked);
   font-family: var(--font-monospace);
   border-width: 1px;
   border-style: solid;
-  border-color: var(--snippetor-checkbox-7) !important;
+  border-color: var(--checkbox-checked) !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=X],
@@ -505,8 +398,6 @@ Ebullientworks tasks 0.3.9 by @ebullient
   /* override theme */
   font-weight: 500;
   font-style: normal;
-  color: var(--snippetor-li-7);
-  background-color: var(--snippetor-li-bg-7);
 }
 
 /* Consistent hover colors */
