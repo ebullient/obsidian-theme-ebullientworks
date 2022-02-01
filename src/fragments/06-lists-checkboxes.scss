@@ -36,6 +36,13 @@ body:not(.ebullientworks-default-list-indent) {
       margin-inline-end: 0px;
       padding-inline-start: 20px;
     }
+
+    td > ol,
+    td > ul {
+      > li {
+        margin-left: 16px;
+      }
+    }
   }
 }
 
