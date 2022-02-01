@@ -1,9 +1,18 @@
 name: Release Obsidian Theme
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
 on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-    - '*' # Push events to matching any tag format, i.e. 1.0, 20.15.10
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'New version or major, minor, patch'
+        default: 'patch'
+        required: true
+      update-manifest:
+        description: 'Update manifest.json'
+        default: "true"
+        required: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,13 +28,25 @@ jobs:
         node-version: '16.7'
 
     # Create release notes
-    - name: Build
+    - name: Build and Tag
       id: build
       env:
-        VERSION: ${{ github.ref_name }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "Release ${VERSION}"
+        echo "${{ github.event.inputs.version }}"
+        echo "${{ github.event.inputs.update-manifest }}"
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
         npm install
+        npm version ${{ github.event.inputs.version }} --no-git-tag-version
+        VERSION=$(grep '^  "version"' package.json | cut -d'"' -f4)
+        git status
+        git commit -m "🔖 $VERSION"
+
+        git tag $VERSION
+        git push --tags
+
         npm run release-notes -- ${VERSION}
         echo "::set-output name=version::${VERSION}"
 
