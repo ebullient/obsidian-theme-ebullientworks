@@ -52,6 +52,11 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   --text-selection: var(--text-highlight-bg-active);
 }
 
+::selection {
+  color: var(--text-highlight-fg);
+  background-color: var(--text-selection);
+}
+
 .is-flashing * ::selection {
   background-color: var(--text-highlight-bg-active);
 }
