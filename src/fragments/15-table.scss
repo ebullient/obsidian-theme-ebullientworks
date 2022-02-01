@@ -5,13 +5,19 @@
 .theme-light {
   --table-alt-alpha: .05;
 }
+.markdown-source-view.mod-cm6 table,
 .markdown-preview-view table {
+
   .table-view-table > thead,
   thead {
     > tr > th {
       background-color: var(--interactive-hover);
       color: var(--text-on-accent);
-      border: 1px solid var(--background-modifier-border);
+      border: 0px;
+      border-left: 1px solid var(--background-modifier-border);
+    }
+    > tr > th:last-child {
+      border-right: 1px solid var(--background-modifier-border);
     }
   }
 
@@ -26,26 +32,47 @@
     }
 
     > tr > td {
-      border: 1px solid var(--background-modifier-border);
+      border: 0px;
       vertical-align: top;
+      border-left: 1px solid var(--background-modifier-border);
+    }
+    > tr > td:last-child {
+      border-right: 1px solid var(--background-modifier-border);
     }
   }
 }
 
-.ebullientworks-table-width table {
-  max-width: 100%;
 
-  .table-view-table > thead,
-  thead {
-    max-width: 100%;
-  }
-
-  .table-view-table > tbody,
-  tbody {
+.markdown-source-view.mod-cm6.wrap-table,
+.markdown-preview-view.wrap-table {
+  table,
+  table.table-view-table {
     max-width: 100%;
 
-    > tr > td {
-      word-break: break-all;
+    .table-view-table > thead,
+    thead {
+      max-width: 100%;
+    }
+
+    .table-view-table > tbody,
+    tbody {
+      max-width: 100%;
+
+      > tr > td {
+        word-break: break-all;
+      }
     }
   }
 }
+
+.markdown-source-view.mod-cm6.wrap-table-src .cm-line.HyperMD-table-row {
+  min-width: unset;
+}
+
+.markdown-source-view.mod-cm6.wrap-table-src .cm-line.HyperMD-table-row,
+.cm-s-obsidian .HyperMD-table-row {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
