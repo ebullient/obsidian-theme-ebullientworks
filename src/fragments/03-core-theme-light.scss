@@ -28,7 +28,7 @@
     --text-error-hover: var(--pink-4);
 
     --text-highlight-fg: var(--text-normal);
-    --text-highlight-bg: rgba(252, 232, 131, 0.9);
+    --text-highlight-bg: rgba(var(--primary-accent-1-rgb), 0.3);
     --text-highlight-bg-active: rgba(252, 232, 131, 0.4);
 
     --text-selection: rgba(var(--secondary-accent-1-rgb), 0.4);

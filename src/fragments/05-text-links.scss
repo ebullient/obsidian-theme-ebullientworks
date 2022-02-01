@@ -43,12 +43,17 @@
 .markdown-preview-view mark,
 .search-result-file-matched-text,
 .cm-s-obsidian span.obsidian-search-match-highlight,
-.cm-s-obsidian span.cm-highlight {
+.cm-s-obsidian span.cm-highlight,
+.is-flashing * {
   color: var(--text-highlight-fg);
 }
 
 div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   --text-selection: var(--text-highlight-bg-active);
+}
+
+.is-flashing * ::selection {
+  background-color: var(--text-highlight-bg-active);
 }
 
 .CodeMirror-cursor,
