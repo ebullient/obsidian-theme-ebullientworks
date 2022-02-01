@@ -41,8 +41,11 @@ jobs:
         npm install
         npm version ${{ github.event.inputs.version }} --no-git-tag-version
         VERSION=$(grep '^  "version"' package.json | cut -d'"' -f4)
+        echo $VERSION
+
         git status
         git commit -m "🔖 $VERSION"
+        git push
 
         git tag $VERSION
         git push --tags
@@ -56,10 +59,10 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        VERSION: ${{ github.ref }}
+        VERSION: ${{ steps.build.outputs.version }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ steps.build.outputs.version }}
+        release_name: Release ${{ steps.build.outputs.version }}
         body_path: ./release-notes.md
         draft: false
         prerelease: false
