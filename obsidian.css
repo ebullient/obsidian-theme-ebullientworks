@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.10 by @ebullient
+Ebullientworks 0.3.11 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -51,12 +51,6 @@ settings:
     id: ebullientworks-floating-frontmatter
     title: Float front-matter in a box to the right
     description: If true, front-matter in preview mode will be collapsed in a top-right container.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-table-width
-    title: Prevent table content from extending beyond the width of the page
-    description: If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
     type: class-toggle
     default: false
   -
@@ -1477,6 +1471,10 @@ body:not(.ebullientworks-default-list-indent) .markdown-preview-view ul {
   margin-inline-end: 0px;
   padding-inline-start: 20px;
 }
+body:not(.ebullientworks-default-list-indent) .markdown-preview-view td > ol > li,
+body:not(.ebullientworks-default-list-indent) .markdown-preview-view td > ul > li {
+  margin-left: 16px;
+}
 
 body:not(.ebullientworks-nix-checkbox) {
   /* '✓' for completed task ('- [x]') */
@@ -1507,6 +1505,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
   border-radius: 3px;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=" "] input[type=checkbox][data-task=" "].task-list-item-checkbox:not(:checked),
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li.task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked),
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=""].task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked) {
   position: relative;
   -webkit-appearance: none;
@@ -1606,7 +1605,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   font-size: 14px;
   line-height: 14px;
   top: 0;
-  left: 1px;
+  left: 0px;
   right: 1px;
   color: var(--checkbox-review);
   content: "👀";
@@ -2513,40 +2512,94 @@ div[src$="#portrait"] {
   --table-alt-alpha: .05;
 }
 
+.markdown-source-view.mod-cm6 table .table-view-table > thead > tr > th,
+.markdown-source-view.mod-cm6 table thead > tr > th,
 .markdown-preview-view table .table-view-table > thead > tr > th,
 .markdown-preview-view table thead > tr > th {
   background-color: var(--interactive-hover);
   color: var(--text-on-accent);
-  border: 1px solid var(--background-modifier-border);
+  border: 0px;
+  border-left: 1px solid var(--background-modifier-border);
 }
+.markdown-source-view.mod-cm6 table .table-view-table > thead > tr > th:last-child,
+.markdown-source-view.mod-cm6 table thead > tr > th:last-child,
+.markdown-preview-view table .table-view-table > thead > tr > th:last-child,
+.markdown-preview-view table thead > tr > th:last-child {
+  border-right: 1px solid var(--background-modifier-border);
+}
+.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:nth-child(even),
+.markdown-source-view.mod-cm6 table tbody > tr:nth-child(even),
 .markdown-preview-view table .table-view-table > tbody > tr:nth-child(even),
 .markdown-preview-view table tbody > tr:nth-child(even) {
   background-color: rgba(0, 0, 0, var(--table-alt-alpha));
 }
+.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:hover,
+.markdown-source-view.mod-cm6 table tbody > tr:hover,
 .markdown-preview-view table .table-view-table > tbody > tr:hover,
 .markdown-preview-view table tbody > tr:hover {
   background: var(--background-secondary);
 }
+.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr > td,
+.markdown-source-view.mod-cm6 table tbody > tr > td,
 .markdown-preview-view table .table-view-table > tbody > tr > td,
 .markdown-preview-view table tbody > tr > td {
-  border: 1px solid var(--background-modifier-border);
+  border: 0px;
   vertical-align: top;
+  border-left: 1px solid var(--background-modifier-border);
+}
+.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr > td:last-child,
+.markdown-source-view.mod-cm6 table tbody > tr > td:last-child,
+.markdown-preview-view table .table-view-table > tbody > tr > td:last-child,
+.markdown-preview-view table tbody > tr > td:last-child {
+  border-right: 1px solid var(--background-modifier-border);
 }
 
-.ebullientworks-table-width table {
+.markdown-source-view.mod-cm6.wrap-table table,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table,
+.markdown-preview-view.wrap-table table,
+.markdown-preview-view.wrap-table table.table-view-table {
   max-width: 100%;
 }
-.ebullientworks-table-width table .table-view-table > thead,
-.ebullientworks-table-width table thead {
+.markdown-source-view.mod-cm6.wrap-table table .table-view-table > thead,
+.markdown-source-view.mod-cm6.wrap-table table thead,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table .table-view-table > thead,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table thead,
+.markdown-preview-view.wrap-table table .table-view-table > thead,
+.markdown-preview-view.wrap-table table thead,
+.markdown-preview-view.wrap-table table.table-view-table .table-view-table > thead,
+.markdown-preview-view.wrap-table table.table-view-table thead {
   max-width: 100%;
 }
-.ebullientworks-table-width table .table-view-table > tbody,
-.ebullientworks-table-width table tbody {
+.markdown-source-view.mod-cm6.wrap-table table .table-view-table > tbody,
+.markdown-source-view.mod-cm6.wrap-table table tbody,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table .table-view-table > tbody,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table tbody,
+.markdown-preview-view.wrap-table table .table-view-table > tbody,
+.markdown-preview-view.wrap-table table tbody,
+.markdown-preview-view.wrap-table table.table-view-table .table-view-table > tbody,
+.markdown-preview-view.wrap-table table.table-view-table tbody {
   max-width: 100%;
 }
-.ebullientworks-table-width table .table-view-table > tbody > tr > td,
-.ebullientworks-table-width table tbody > tr > td {
+.markdown-source-view.mod-cm6.wrap-table table .table-view-table > tbody > tr > td,
+.markdown-source-view.mod-cm6.wrap-table table tbody > tr > td,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table .table-view-table > tbody > tr > td,
+.markdown-source-view.mod-cm6.wrap-table table.table-view-table tbody > tr > td,
+.markdown-preview-view.wrap-table table .table-view-table > tbody > tr > td,
+.markdown-preview-view.wrap-table table tbody > tr > td,
+.markdown-preview-view.wrap-table table.table-view-table .table-view-table > tbody > tr > td,
+.markdown-preview-view.wrap-table table.table-view-table tbody > tr > td {
   word-break: break-all;
+}
+
+.markdown-source-view.mod-cm6.wrap-table-src .cm-line.HyperMD-table-row {
+  min-width: unset;
+}
+
+.markdown-source-view.mod-cm6.wrap-table-src .cm-line.HyperMD-table-row,
+.cm-s-obsidian .HyperMD-table-row {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 body.ebullientworks-hide-inactive-collapse-indicators {
