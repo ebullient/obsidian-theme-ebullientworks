@@ -8,6 +8,7 @@
   border-radius: 3px;
 }
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=" "] input[type=checkbox][data-task=" "].task-list-item-checkbox:not(:checked),
+.markdown-preview-view ul.contains-task-list > li.task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked),
 .markdown-preview-view ul.contains-task-list > li[data-task=""].task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked) {
   position: relative;
   -webkit-appearance: none;
@@ -115,7 +116,7 @@
     font-size: 14px;
     line-height: 14px;
     top: 0;
-    left: 1px;
+    left: 0px;
     right: 1px;
     color: var(--checkbox-review);
     content: '👀';
