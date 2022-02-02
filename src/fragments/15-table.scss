@@ -26,6 +26,9 @@
     > tr:nth-child(even) {
       background-color: rgba(0, 0, 0, var(--table-alt-alpha));
     }
+    > tr:last-child {
+      border-bottom: 1px solid var(--background-modifier-border);
+    }
 
     > tr:hover {
       background: var(--background-secondary);
