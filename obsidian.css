@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.11 by @ebullient
+Ebullientworks 0.3.12 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -404,9 +404,9 @@ settings:
   --text-error: var(--pink-5);
   --text-error-hover: var(--pink-5);
   --text-highlight-fg: var(--gray-dark-7);
-  --text-highlight-bg: rgba(252, 232, 131, 0.9);
-  --text-highlight-bg-active: rgba(252, 232, 131, 0.7);
-  --text-selection: rgba(var(--secondary-accent-1-rgb), 0.2);
+  --text-highlight-bg: var(--primary-accent-2);
+  --text-highlight-bg-active: rgba(255, 216, 99, 0.664);
+  --text-selection: var(--secondary-accent-2);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: white;
   --interactive-normal: var(--secondary-accent-4);
@@ -445,10 +445,10 @@ settings:
   --text-faint: var(--gray-dark-1);
   --text-error: var(--pink-5);
   --text-error-hover: var(--pink-4);
-  --text-highlight-fg: var(--text-normal);
-  --text-highlight-bg: rgba(252, 232, 131, 0.9);
-  --text-highlight-bg-active: rgba(252, 232, 131, 0.4);
-  --text-selection: rgba(var(--secondary-accent-1-rgb), 0.4);
+  --text-highlight-fg: var(--text-dark-2);
+  --text-highlight-bg: var(--primary-accent-0);
+  --text-highlight-bg-active: rgba(252, 232, 131, 0.6);
+  --text-selection: var(--secondary-accent-0);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-dark-7);
   --interactive-normal: var(--secondary-accent-2);
@@ -472,10 +472,10 @@ settings:
 }
 
 .theme-dark {
-  --side-dock-text-on-accent: var(--gray-light-4);
+  --side-dock-text-on-accent: var(--gray-light-2);
   --side-dock-text-on-accent-hover: var(--yellow-1);
   --side-dock-accent: var(--primary-accent-5);
-  --side-dock-accent-hover: var(--secondary-accent-4);
+  --side-dock-accent-hover: var(--secondary-accent-5);
 }
 
 .theme-dark .print,
@@ -524,11 +524,13 @@ settings:
 
 .workspace-ribbon-collapse-btn {
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .side-dock-settings {
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 
 .workspace-tabs .collapse-icon svg {
@@ -827,12 +829,6 @@ body:not(.is-mobile) .workspace-tab-header-inner,
 body:not(.is-mobile) .workspace-tab-container-before,
 body:not(.is-mobile) .workspace-tab-container-after {
   transition: none;
-}
-body:not(.is-mobile) .workspace-tabs .collapse-icon svg {
-  transition: transform 100ms ease-in-out;
-}
-body:not(.is-mobile) .collapse-icon {
-  margin-top: -0.1em;
 }
 body:not(.is-mobile) .view-header {
   height: var(--leaf-header-width);
@@ -1366,12 +1362,22 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
 .markdown-preview-view mark,
 .search-result-file-matched-text,
 .cm-s-obsidian span.obsidian-search-match-highlight,
-.cm-s-obsidian span.cm-highlight {
+.cm-s-obsidian span.cm-highlight,
+.is-flashing * {
   color: var(--text-highlight-fg);
 }
 
 div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   --text-selection: var(--text-highlight-bg-active);
+}
+
+::selection {
+  color: var(--text-highlight-fg);
+  background-color: var(--text-selection);
+}
+
+.is-flashing * ::selection {
+  background-color: var(--text-highlight-bg-active);
 }
 
 .CodeMirror-cursor,
@@ -1477,6 +1483,7 @@ body:not(.ebullientworks-default-list-indent) .markdown-preview-view td > ul > l
 }
 
 body:not(.ebullientworks-nix-checkbox) {
+  /** Use style settings to disable custom checkboxes in the theme */
   /* '✓' for completed task ('- [x]') */
   /* '-' for cancelled task ('- [-]') */
   /* '>' for deferred task ('- [>]') */
@@ -1496,8 +1503,8 @@ body:not(.ebullientworks-nix-checkbox) {
   /* 'X' for task ('- [X]') */
   /* Consistent hover colors */
 }
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view .task-list-item-checkbox {
-  margin-top: 2.2px;
+body:not(.ebullientworks-nix-checkbox) body.ebullientworks-nix-checkbox .markdown-preview-view .task-list-item-checkbox {
+  margin-top: 2px;
   margin-bottom: 1px;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view .task-list-item-checkbox,
@@ -2532,6 +2539,12 @@ div[src$="#portrait"] {
 .markdown-preview-view table .table-view-table > tbody > tr:nth-child(even),
 .markdown-preview-view table tbody > tr:nth-child(even) {
   background-color: rgba(0, 0, 0, var(--table-alt-alpha));
+}
+.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:last-child,
+.markdown-source-view.mod-cm6 table tbody > tr:last-child,
+.markdown-preview-view table .table-view-table > tbody > tr:last-child,
+.markdown-preview-view table tbody > tr:last-child {
+  border-bottom: 1px solid var(--background-modifier-border);
 }
 .markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:hover,
 .markdown-source-view.mod-cm6 table tbody > tr:hover,

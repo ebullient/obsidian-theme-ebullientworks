@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.3.11 by @ebullient
+Ebullientworks tasks 0.3.12 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -22,8 +22,8 @@ Ebullientworks tasks 0.3.11 by @ebullient
   --checkbox-hover: rgb(137, 137, 137);
 }
 
-.markdown-preview-view .task-list-item-checkbox {
-  margin-top: 2.2px;
+body.ebullientworks-nix-checkbox .markdown-preview-view .task-list-item-checkbox {
+  margin-top: 2px;
   margin-bottom: 1px;
 }
 
