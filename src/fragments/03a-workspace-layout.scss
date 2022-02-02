@@ -54,13 +54,15 @@
 // Move the buttons up
 .workspace-ribbon-collapse-btn {
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 8px;
+  padding-bottom: 8px;
 }
 // Move sidedock settings down
 .side-dock-settings {
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
-// Sidebar collapse arrows*/
+// Sidebar collapse arrows
 .workspace-tabs .collapse-icon svg {
   transition: transform 100ms ease-in-out;
 }

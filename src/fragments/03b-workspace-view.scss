@@ -113,13 +113,6 @@ body:not(.is-mobile) {
   .workspace-tab-container-after {
       transition: none;
   }
-  // Sidebar collapse arrows
-  .workspace-tabs .collapse-icon svg {
-    transition: transform 100ms ease-in-out;
-  }
-  .collapse-icon {
-    margin-top: -.1em;
-  }
   .view-header {
     height: var(--leaf-header-width);
     align-items: center;
