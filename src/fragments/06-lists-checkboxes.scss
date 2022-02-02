@@ -47,5 +47,6 @@ body:not(.ebullientworks-default-list-indent) {
 }
 
 body:not(.ebullientworks-nix-checkbox) {
+  /** Use style settings to disable custom checkboxes in the theme */
   @import '06a-checkboxes.scss';
 }

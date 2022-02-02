@@ -1,7 +1,9 @@
 @charset "UTF-8";
-.markdown-preview-view .task-list-item-checkbox {
-  margin-top: 2.2px;
-  margin-bottom: 1px;
+body.ebullientworks-nix-checkbox {
+  .markdown-preview-view .task-list-item-checkbox {
+    margin-top: 2px;
+    margin-bottom: 1px;
+  }
 }
 .markdown-preview-view .task-list-item-checkbox,
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
