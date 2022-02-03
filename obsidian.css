@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.12 by @ebullient
+Ebullientworks 0.3.13 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -51,6 +51,12 @@ settings:
     id: ebullientworks-floating-frontmatter
     title: Float front-matter in a box to the right
     description: If true, front-matter in preview mode will be collapsed in a top-right container.
+    type: class-toggle
+    default: false
+  -
+    id: ebullientworks-hover-collapsed-sidebars
+    title: Show collapsed sidebars on hover
+    description: If true, collapsed side-bars will be shown when you hover over the ribbon.
     type: class-toggle
     default: false
   -
@@ -401,8 +407,8 @@ settings:
   --text-muted: var(--gray);
   --text-muted-rgb: 153, 153, 153;
   --text-faint: var(--gray-dark-1);
-  --text-error: var(--pink-5);
-  --text-error-hover: var(--pink-5);
+  --text-error: var(--pink-3);
+  --text-error-hover: var(--pink-2);
   --text-highlight-fg: var(--gray-dark-7);
   --text-highlight-bg: var(--primary-accent-2);
   --text-highlight-bg-active: rgba(255, 216, 99, 0.664);
@@ -902,6 +908,53 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   background: var(--rotated-active-leaf-bg);
   border-right: none;
   border-left: none;
+}
+
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-collapsed:not(.is-floating) {
+  display: flex !important;
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: visibility 0.2s 0 ease;
+}
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .side-dock-ribbon.mod-left:hover + .mod-left-split.is-collapsed:not(.is-floating),
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-collapsed:not(.is-floating):hover {
+  transition: visibility 0.2s 0.7s ease;
+  visibility: visible;
+  opacity: 1;
+}
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating) {
+  display: flex !important;
+  width: 400px !important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+}
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating)::before {
+  content: "✧ ・ ✦ ・ ✧";
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 18px;
+  color: var(--primary-accent-3);
+  position: fixed;
+  line-height: 18px;
+  width: 32px;
+  top: 40%;
+  right: 5px;
+  z-index: 30;
+  visibility: visible;
+}
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating):hover {
+  width: 400px !important;
+  opacity: 1;
+  height: 100%;
+  padding-right: 30px;
+  visibility: visible;
 }
 
 .theme-dark {
