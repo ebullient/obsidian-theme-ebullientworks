@@ -1,0 +1,50 @@
+body:not(.is-modal).ebullientworks-hover-collapsed-sidebars {
+  .mod-left-split.is-collapsed:not(.is-floating) {
+    display: flex !important;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    transition: visibility 0.2s 0 ease;
+  }
+
+  .side-dock-ribbon.mod-left:hover + .mod-left-split.is-collapsed:not(.is-floating),
+  .mod-left-split.is-collapsed:not(.is-floating):hover {
+    transition: visibility 0.2s .7s ease;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .mod-right-split.is-collapsed:not(.is-floating) {
+      display: flex !important;
+      width: 400px !important;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      visibility: hidden;
+  }
+  .mod-right-split.is-collapsed:not(.is-floating)::before {
+      content: '✧ ・ ✦ ・ ✧';
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-size: 18px;
+      color: var(--primary-accent-3);
+      position: fixed;
+      line-height: 18px;
+      width: 32px;
+      top: 40%;
+      right: 5px;
+      z-index: 30;
+      visibility: visible;
+  }
+  .mod-right-split.is-collapsed:not(.is-floating):hover {
+      width: 400px !important;
+      opacity: 1;
+      height: 100%;
+      padding-right: 30px;
+      visibility: visible;
+  }
+}

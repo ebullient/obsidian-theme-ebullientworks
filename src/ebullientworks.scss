@@ -53,6 +53,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-hover-collapsed-sidebars
+    title: Show collapsed sidebars on hover
+    description: If true, collapsed side-bars will be shown when you hover over the ribbon.
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-fonts
     title: Fonts
     type: heading
@@ -163,6 +169,7 @@ settings:
 @import 'fragments/03-core-theme-light.scss';
 @import 'fragments/03a-workspace-layout.scss';
 @import 'fragments/03b-workspace-view.scss';
+@import 'fragments/03b-option-sidebar-hover.scss';
 @import 'fragments/03c-modal-input.scss';
 @import 'fragments/03d-graph-view.scss';
 

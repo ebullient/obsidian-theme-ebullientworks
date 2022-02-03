@@ -52,6 +52,8 @@ This theme does support style settings. Settable attributes:
 - (0.3.4) Use default theme list indent
     This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to 
     disable that, and preserve list spaceing consistent with the default theme.
+    
+- (0.3.13) Show collapsed sidebars when you hover over them (with a small lag to prevent flicker)
 
 ## Admonitions
 
