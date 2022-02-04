@@ -1,4 +1,4 @@
-# Welcome to Ebullientworks Obsidian Theme 👋
+# Welcome to Ebullientworks Obsidian Theme 👋 [![GitHub tag (Latest by date)](https://img.shields.io/github/v/tag/ebullient/obsidian-theme-ebullientworks)](https://github.com/ebullient/obsidian-theme-ebullientworks/releases) 
 
 <table><tr><td>Jump: </td>
 <td><a href="#style-settings">Settings</a></td>
