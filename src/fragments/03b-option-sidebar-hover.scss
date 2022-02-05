@@ -1,4 +1,8 @@
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars {
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars {
+  // .is-floating is set by customizable sidebars. Only apply hover
+  // styling if the sidebars are "pinned" (such that expanding or collapsing
+  // them moves content around
+
   .mod-left-split.is-collapsed:not(.is-floating) {
     display: flex !important;
     position: absolute;
@@ -8,6 +12,7 @@ body:not(.is-modal).ebullientworks-hover-collapsed-sidebars {
     visibility: hidden;
     opacity: 0;
     z-index: 1;
+    width: 350px !important;
     transition: visibility 0.2s 0 ease;
   }
 
@@ -15,6 +20,7 @@ body:not(.is-modal).ebullientworks-hover-collapsed-sidebars {
   .mod-left-split.is-collapsed:not(.is-floating):hover {
     transition: visibility 0.2s .7s ease;
     visibility: visible;
+    width: 350px !important;
     opacity: 1;
   }
 
