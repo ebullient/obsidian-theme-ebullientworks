@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.13 by @ebullient
+Ebullientworks 0.3.14 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -910,7 +910,7 @@ body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace 
   border-left: none;
 }
 
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-collapsed:not(.is-floating) {
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-collapsed:not(.is-floating) {
   display: flex !important;
   position: absolute;
   left: 30px;
@@ -919,15 +919,17 @@ body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-c
   visibility: hidden;
   opacity: 0;
   z-index: 1;
+  width: 350px !important;
   transition: visibility 0.2s 0 ease;
 }
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .side-dock-ribbon.mod-left:hover + .mod-left-split.is-collapsed:not(.is-floating),
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-collapsed:not(.is-floating):hover {
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .side-dock-ribbon.mod-left:hover + .mod-left-split.is-collapsed:not(.is-floating),
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-left-split.is-collapsed:not(.is-floating):hover {
   transition: visibility 0.2s 0.7s ease;
   visibility: visible;
+  width: 350px !important;
   opacity: 1;
 }
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating) {
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating) {
   display: flex !important;
   width: 400px !important;
   position: absolute;
@@ -935,7 +937,7 @@ body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-
   right: 0;
   visibility: hidden;
 }
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating)::before {
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating)::before {
   content: "✧ ・ ✦ ・ ✧";
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -949,7 +951,7 @@ body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-
   z-index: 30;
   visibility: visible;
 }
-body:not(.is-modal).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating):hover {
+body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is-collapsed:not(.is-floating):hover {
   width: 400px !important;
   opacity: 1;
   height: 100%;
@@ -1424,6 +1426,7 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   --text-selection: var(--text-highlight-bg-active);
 }
 
+.markdown-source-view.mod-cm6 .cm-selection,
 ::selection {
   color: var(--text-highlight-fg);
   background-color: var(--text-selection);
