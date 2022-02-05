@@ -19,6 +19,11 @@ div {
     margin-left: 5px;
     width: 200px;
   }
+  &[src$="#callout"] {
+    float: right;
+    margin-left: 5px;
+    width: 50%;
+  }
 }
 // ------------------------------------------------------
 // Naked embeds
