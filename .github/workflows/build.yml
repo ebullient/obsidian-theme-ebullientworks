@@ -1,15 +1,5 @@
 name: Build and Test Obsidian Plugin
-on:
-  push:
-    branches: [ main ]
-    paths:
-      - '**.scss'
-  pull_request:
-    branches: [ main ]
-    paths:
-      - '**.ts'
-      - '**.json'
-      - '**.scss'
+on: [push, pull_request]
 
 jobs:
   build:
