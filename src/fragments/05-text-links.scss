@@ -52,6 +52,7 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   --text-selection: var(--text-highlight-bg-active);
 }
 
+.markdown-source-view.mod-cm6 .cm-selection,
 ::selection {
   color: var(--text-highlight-fg);
   background-color: var(--text-selection);
