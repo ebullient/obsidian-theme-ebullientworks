@@ -33,9 +33,9 @@ This theme does support style settings. Settable attributes:
 
 - (0.1.8) "Float front-matter in a box to the right"
     If true, front-matter in preview mode will be collapsed in a top-right container.
-
-- (0.2.0) "Prevent table content from extending beyond the width of the page" 
-    If true, tables will have a maximum width set. Cell content will be wrapped (mid-word if necessary).
+    
+- (0.3.13) Show collapsed sidebars on hover
+    If true, when the left or right sidebar is in a collapsed state, you can temporarily display (and interact) with its content by hovering over the ribbon. 
 
 - Set custom fonts for 
     - Headings
@@ -52,8 +52,6 @@ This theme does support style settings. Settable attributes:
 - (0.3.4) Use default theme list indent
     This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to 
     disable that, and preserve list spaceing consistent with the default theme.
-    
-- (0.3.13) Show collapsed sidebars when you hover over them (with a small lag to prevent flicker)
 
 ## Admonitions
 
@@ -76,6 +74,15 @@ Here is what they look like (unstyled edit mode on the left):
 ## Tables
 
 ![](images/table-styles.png)
+
+Use document-specific css classes to constrain table content to the width of the pane: 
+
+For Preview or Live Preview, use: 
+```
+---
+cssclass: wrap-table
+---
+```
 
 
 ## Colors
