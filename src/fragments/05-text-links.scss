@@ -115,6 +115,15 @@ a,
   color: var(--link-underline);
 }
 
+.is-mobile {
+  .markdown-preview-view .internal-link:not(.is-unresolved) {
+    border-bottom: 1px solid var(--link-underline);
+  }
+  .markdown-preview-view .internal-link.is-unresolved {
+    border-bottom: 1px dotted var(--link-underline);
+  }
+}
+
 /* Collapse external links / markdown links in edit mode: CodeMirrorOptions + Legacy editor */
 body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line {
   .cm-string.cm-url:not(.cm-formatting) {
