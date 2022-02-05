@@ -1,9 +1,11 @@
 @charset "UTF-8";
-body.ebullientworks-nix-checkbox {
-  .markdown-preview-view .task-list-item-checkbox {
-    margin-top: 2px;
-    margin-bottom: 1px;
-  }
+body:not(.is-mobile) .markdown-preview-view .task-list-item-checkbox {
+  margin-top: 2px;
+  margin-bottom: 1px;
+}
+body.is-mobile .markdown-preview-view .task-list-item-checkbox {
+  margin-top: 1px;
+  margin-bottom: 0;
 }
 .markdown-preview-view .task-list-item-checkbox,
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
@@ -119,7 +121,7 @@ body.ebullientworks-nix-checkbox {
     line-height: 14px;
     top: 0;
     left: 0px;
-    right: 1px;
+    right: 2px;
     color: var(--checkbox-review);
     content: '👀';
 }
