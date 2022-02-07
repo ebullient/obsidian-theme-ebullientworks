@@ -124,6 +124,17 @@ a,
   }
 }
 
+// Skip decorations on dataview task list item indicators
+body:not(.is-mobile),
+body.is-mobile {
+  .markdown-preview-view .task-list-item {
+    a[data-href].internal-link {
+      border-bottom: none;
+      text-decoration: none;
+    }
+  }
+}
+
 /* Collapse external links / markdown links in edit mode: CodeMirrorOptions + Legacy editor */
 body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line {
   .cm-string.cm-url:not(.cm-formatting) {
