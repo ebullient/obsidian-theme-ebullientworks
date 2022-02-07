@@ -47,5 +47,6 @@
   .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
     /* Inherited display is not safely inline */
     display: inline;
+    padding: unset;
   }
 }
