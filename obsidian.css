@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.14 by @ebullient
+Ebullientworks 0.3.15 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -1479,6 +1479,19 @@ a,
   color: var(--link-underline);
 }
 
+.is-mobile .markdown-preview-view .internal-link:not(.is-unresolved) {
+  border-bottom: 1px solid var(--link-underline);
+}
+.is-mobile .markdown-preview-view .internal-link.is-unresolved {
+  border-bottom: 1px dotted var(--link-underline);
+}
+
+body:not(.is-mobile) .markdown-preview-view .task-list-item a[data-href].internal-link,
+body.is-mobile .markdown-preview-view .task-list-item a[data-href].internal-link {
+  border-bottom: none;
+  text-decoration: none;
+}
+
 /* Collapse external links / markdown links in edit mode: CodeMirrorOptions + Legacy editor */
 body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-string.cm-url:not(.cm-formatting) {
   font-size: 0;
@@ -1559,9 +1572,13 @@ body:not(.ebullientworks-nix-checkbox) {
   /* 'X' for task ('- [X]') */
   /* Consistent hover colors */
 }
-body:not(.ebullientworks-nix-checkbox) body.ebullientworks-nix-checkbox .markdown-preview-view .task-list-item-checkbox {
+body:not(.ebullientworks-nix-checkbox) body:not(.is-mobile) .markdown-preview-view .task-list-item-checkbox {
   margin-top: 2px;
   margin-bottom: 1px;
+}
+body:not(.ebullientworks-nix-checkbox) body.is-mobile .markdown-preview-view .task-list-item-checkbox {
+  margin-top: 1px;
+  margin-bottom: 0;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view .task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
@@ -1669,7 +1686,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   line-height: 14px;
   top: 0;
   left: 0px;
-  right: 1px;
+  right: 2px;
   color: var(--checkbox-review);
   content: "👀";
 }
@@ -2051,6 +2068,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 .theme-light .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
   /* Inherited display is not safely inline */
   display: inline;
+  padding: unset;
 }
 
 img[alt~=float-right],
@@ -2070,6 +2088,12 @@ div[src$="#portrait"] {
   float: right;
   margin-left: 5px;
   width: 200px;
+}
+img[src$="#callout"],
+div[src$="#callout"] {
+  float: right;
+  margin-left: 5px;
+  width: 50%;
 }
 
 .markdown-embed-title {
@@ -2101,7 +2125,6 @@ div[src$="#portrait"] {
 }
 
 .popover.hover-popover .markdown-embed {
-  height: auto;
   max-height: 500px;
   overflow: auto;
 }
@@ -2374,6 +2397,10 @@ div[src$="#portrait"] {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 30px;
+}
+
+div.popover .admonition.admonition-toc {
+  display: none;
 }
 
 .theme-dark {
