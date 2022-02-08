@@ -128,9 +128,10 @@ a,
 body:not(.is-mobile),
 body.is-mobile {
   .markdown-preview-view .task-list-item {
-    a[data-href].internal-link {
+    a[data-href][aria-label-position].internal-link {
       border-bottom: none;
       text-decoration: none;
+      color: var(--link-underline);
     }
   }
 }
