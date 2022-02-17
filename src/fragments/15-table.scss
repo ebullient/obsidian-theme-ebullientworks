@@ -46,8 +46,8 @@
 }
 
 
-.markdown-source-view.mod-cm6.wrap-table,
-.markdown-preview-view.wrap-table {
+.markdown-source-view.mod-cm6.force-wrap,
+.markdown-preview-view.force-wrap {
   table,
   table.table-view-table {
     max-width: 100%;
@@ -64,6 +64,24 @@
       > tr > td {
         word-break: break-all;
       }
+    }
+  }
+}
+
+.markdown-source-view.mod-cm6.word-wrap,
+.markdown-preview-view.word-wrap {
+  table,
+  table.table-view-table {
+
+    .table-view-table > thead > tr > th,
+    thead > th {
+      white-space: pre;
+    }
+
+    .table-view-table > tbody > tr > td ,
+    tbody > tr > td {
+      word-wrap: normal;
+      word-break: normal;
     }
   }
 }
