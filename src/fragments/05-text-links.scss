@@ -21,21 +21,26 @@
 }
 
 .cm-s-obsidian .cm-strong.cm-quote,
+.cm-s-obsidian .cm-strong.cm-link,
 .cm-s-obsidian .cm-strong,
-.view-content strong {
+.view-content strong,
+.view-content strong a.internal-link {
   color: var(--strong);
   font-weight: 600;
 }
 
 .cm-s-obsidian .cm-em.cm-quote,
 .cm-s-obsidian .cm-em,
-.view-content em {
+.view-content em,
+.view-content em a.internal-link {
   color: var(--em);
 }
 
-.cm-s-obsidian .cm-quote.cm-strong.cm-em,
+.cm-s-obsidian .cm-quote.cm-em.cm-strong,
+.cm-s-obsidian .cm-link.cm-em.cm-strong,
 .cm-s-obsidian .cm-em.cm-strong,
-.view-content strong em {
+.view-content strong em,
+.view-content strong em a.internal-link {
   color: var(--strong-em);
 }
 
