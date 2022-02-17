@@ -1,34 +1,36 @@
 .theme-dark {
-  --graph-fill: var(--purple-4);
-  --graph-line: var(--green-6);
-  --graph-highlight-fill: var(--purple-3);
-  --graph-highlight-line: var(--green-3);
+  --graph-fill: var(--primary-accent-4);
+  --graph-line: var(--gray-dark-5);
+  --graph-highlight-fill: var(--primary-accent-3);
+  --graph-highlight-line: var(--gray-dark-3);
 
-  --graph-fill-tag: var(--green-4);
-  --graph-fill-attachment: var(--teal-4);
+  --graph-fill-tag: var(--secondary-accent-3);
+  --graph-fill-attachment: var(--secondary-accent-2);
   --graph-fill-focused: var(--yellow-1);
-  --graph-fill-1: var(--yellow-3);
-  --graph-fill-2: var(--green-5);
-  --graph-fill-3: var(--teal-5);
-  --graph-fill-4: var(--blue-5);
-  --graph-fill-5: var(--purple-5);
-  --graph-fill-6: var(--pink-5);
+
+  --graph-fill-1: #8ba791;
+  --graph-fill-2: #8ba1a7;
+  --graph-fill-3: #918ba7;
+  --graph-fill-4: #a78ba1;
+  --graph-fill-5: #a7918b;
+  --graph-fill-6: #a1a78b;
 }
 .theme-light {
-  --graph-fill: var(--purple-2);
-  --graph-line: var(--gray-light-2);
-  --graph-highlight-fill: var(--purple-3);
-  --graph-highlight-line: var(--green-3);
+  --graph-fill: var(--primary-accent-2);
+  --graph-line: var(--gray-light-1);
+  --graph-highlight-fill: var(--primary-accent-3);
+  --graph-highlight-line: var(--gray-dark-1);
 
-  --graph-fill-tag: var(--green-2);
-  --graph-fill-attachment: var(--teal-2);
+  --graph-fill-tag: var(--secondary-accent-3);
+  --graph-fill-attachment: var(--secondary-accent-2);
   --graph-fill-focused: var(--yellow-1);
-  --graph-fill-1: var(--yellow-2);
-  --graph-fill-2: var(--teal-2);
-  --graph-fill-3: var(--blue-2);
-  --graph-fill-4: var(--pink-2);
-  --graph-fill-5: var(--purple-1);
-  --graph-fill-6: var(--green-1);
+
+  --graph-fill-1: #5c7a63;
+  --graph-fill-2: #5c737a;
+  --graph-fill-3: #635c7a;
+  --graph-fill-4: #7a5c73;
+  --graph-fill-5: #7a635c;
+  --graph-fill-6: #737a5c;
 }
 
 .graph-view.color-line {
