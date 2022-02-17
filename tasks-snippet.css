@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.3.16 by @ebullient
+Ebullientworks tasks 0.3.17 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -20,6 +20,14 @@ Ebullientworks tasks 0.3.16 by @ebullient
 .theme-light {
   --checkbox-cancelled: rgb(159, 159, 159);
   --checkbox-hover: rgb(137, 137, 137);
+}
+
+/** Deal with Blue Topaz masks */
+.markdown-preview-view ul.contains-task-list li.task-list-item.is-checked[data-task] input.task-list-item-checkbox::before,
+.markdown-preview-view ol.contains-task-list li.task-list-item.is-checked[data-task] input.task-list-item-checkbox::before,
+.markdown-source-view.is-live-preview input.task-list-item-checkbox[data-task]::before {
+  transform: none !important;
+  -webkit-mask-image: none !important;
 }
 
 body:not(.is-mobile) .markdown-preview-view .task-list-item-checkbox {
