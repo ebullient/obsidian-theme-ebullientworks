@@ -8,6 +8,10 @@
 
   .document-search-container {
     background-color: var(--background-secondary);
+
+    .document-search-button {
+      color: var(--gray-light-7)
+    }
   }
   .community-theme {
     background-color: var(--gray-dark-75);
