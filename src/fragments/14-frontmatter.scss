@@ -2,8 +2,8 @@
   pre.frontmatter {
     float: right;
     position: absolute;
-    right: 0;
-    top: .6rem;
+    right: .15em;
+    top: .65rem;
     width: 2rem;
     height: 2rem;
     overflow: hidden;
@@ -27,13 +27,23 @@
     border: 1px solid var(--background-modifier-border);
     background-color: var(--background-secondary);
     filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-    width: unset;
+    width: 60%;
+    min-width: 200px;
     height: unset;
     z-index: 3;
 
     .code {
       visibility: visible;
     }
+  }
+  pre.frontmatter.mod-failed {
+    position: absolute;
+    .mod-error {
+      visibility: hidden;
+    }
+  }
+  pre.frontmatter.mod-failed:hover .mod-error {
+    visibility: visible;
   }
 
   .frontmatter-container {
