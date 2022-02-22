@@ -33,7 +33,7 @@ div {
 }
 .markdown-preview-view {
   .markdown-embed {
-    border:none;
+    border: none;
     padding:0;
     margin:0;
 
@@ -41,6 +41,7 @@ div {
     .markdown-embed-content > .markdown-preview-view  {
       max-height: unset;
       background-color: var(--background-primary-alt);
+      padding: 5px;
     }
 
     .markdown-embed-content>:first-child {
@@ -48,8 +49,35 @@ div {
     }
     .markdown-embed-content>:last-child {
       margin-bottom: 0;
-      padding-bottom: 1em;
+      padding-bottom: .5em;
     }
+
+    .markdown-embed-link,
+    .file-embed-link {
+      border-radius: none;
+      border-bottom-left-radius: 3px;
+      background-color: var(--background-primary);
+    }
+  }
+}
+
+.markdown-source-view .markdown-embed,
+.markdown-source-view .file-embed {
+  border: none;
+  padding:0;
+  margin:0;
+
+  .markdown-embed-content,
+  .markdown-embed-content > .markdown-preview-view  {
+    background-color: var(--background-primary-alt);
+    padding: 5px;
+  }
+
+  .markdown-embed-link,
+  .file-embed-link {
+    border-radius: none;
+    border-bottom-left-radius: 3px;
+    background-color: var(--background-primary);
   }
 }
 
