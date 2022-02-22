@@ -80,7 +80,16 @@ Use document-specific css classes to constrain table content to the width of the
 For Preview or Live Preview, use: 
 ```
 ---
-cssclass: wrap-table
+cssclass: force-wrap
+---
+```
+
+To prevent column headers from wrapping: 
+
+For Preview or Live Preview, use: 
+```
+---
+cssclass: word-wrap
 ---
 ```
 
