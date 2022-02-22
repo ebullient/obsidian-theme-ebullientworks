@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.17 by @ebullient
+Ebullientworks 0.3.18 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -1487,6 +1487,22 @@ a,
   color: var(--link-underline);
 }
 
+.markdown-embed-link,
+.file-embed-link {
+  top: 0px;
+  right: 0px;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.markdown-embed-link svg {
+  color: var(--link-underline);
+  height: 14px;
+  width: 14px;
+}
+
 .is-mobile .markdown-preview-view .internal-link:not(.is-unresolved) {
   border-bottom: 1px solid var(--link-underline);
 }
@@ -2118,13 +2134,42 @@ div[src$="#callout"] {
 .markdown-preview-view .markdown-embed .markdown-embed-content > .markdown-preview-view {
   max-height: unset;
   background-color: var(--background-primary-alt);
+  padding: 5px;
 }
 .markdown-preview-view .markdown-embed .markdown-embed-content > :first-child {
   margin-top: 0;
 }
 .markdown-preview-view .markdown-embed .markdown-embed-content > :last-child {
   margin-bottom: 0;
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
+}
+.markdown-preview-view .markdown-embed .markdown-embed-link,
+.markdown-preview-view .markdown-embed .file-embed-link {
+  border-radius: none;
+  border-bottom-left-radius: 3px;
+  background-color: var(--background-primary);
+}
+
+.markdown-source-view .markdown-embed,
+.markdown-source-view .file-embed {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.markdown-source-view .markdown-embed .markdown-embed-content,
+.markdown-source-view .markdown-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-source-view .file-embed .markdown-embed-content,
+.markdown-source-view .file-embed .markdown-embed-content > .markdown-preview-view {
+  background-color: var(--background-primary-alt);
+  padding: 5px;
+}
+.markdown-source-view .markdown-embed .markdown-embed-link,
+.markdown-source-view .markdown-embed .file-embed-link,
+.markdown-source-view .file-embed .markdown-embed-link,
+.markdown-source-view .file-embed .file-embed-link {
+  border-radius: none;
+  border-bottom-left-radius: 3px;
+  background-color: var(--background-primary);
 }
 
 .print.print-preview > .markdown-preview-view .markdown-embed-content,
@@ -2537,8 +2582,8 @@ div.popover .admonition.admonition-toc {
 .ebullientworks-floating-frontmatter pre.frontmatter {
   float: right;
   position: absolute;
-  right: 0;
-  top: 0.6rem;
+  right: 0.15em;
+  top: 0.65rem;
   width: 2rem;
   height: 2rem;
   overflow: hidden;
@@ -2561,11 +2606,21 @@ div.popover .admonition.admonition-toc {
   border: 1px solid var(--background-modifier-border);
   background-color: var(--background-secondary);
   filter: drop-shadow(-0.1rem 0.1rem 0.1rem var(--background-secondary-alt));
-  width: unset;
+  width: 60%;
+  min-width: 200px;
   height: unset;
   z-index: 3;
 }
 .ebullientworks-floating-frontmatter pre.frontmatter:hover .code {
+  visibility: visible;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter.mod-failed {
+  position: absolute;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter.mod-failed .mod-error {
+  visibility: hidden;
+}
+.ebullientworks-floating-frontmatter pre.frontmatter.mod-failed:hover .mod-error {
   visibility: visible;
 }
 .ebullientworks-floating-frontmatter .frontmatter-container {
