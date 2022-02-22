@@ -75,18 +75,14 @@ Here is what they look like (unstyled edit mode on the left):
 
 ![](images/table-styles.png)
 
-Use document-specific css classes to constrain table content to the width of the pane: 
-
-For Preview or Live Preview, use: 
+To constrain table content to the width of the pane, use: 
 ```
 ---
 cssclass: force-wrap
 ---
 ```
 
-To prevent column headers from wrapping: 
-
-For Preview or Live Preview, use: 
+To prevent column headers from wrapping, use: 
 ```
 ---
 cssclass: word-wrap
