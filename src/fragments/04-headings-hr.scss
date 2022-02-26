@@ -135,6 +135,8 @@
     top: -13px;
   }
 
+  blockquote hr::after,
+  .admonition-content hr::after,
   .markdown-embed-content hr::after {
     background: var(--background-primary-alt);
   }
