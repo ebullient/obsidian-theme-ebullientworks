@@ -1,0 +1,16 @@
+/* Adjust color of shadow for indentation guide for nested items inside of blockquotes or admonitions */
+// .ig-lists-preview .markdown-preview-view li ul,
+// .ig-lists-preview .markdown-preview-view li ol {
+//   box-shadow: calc(-1em + 1px + var(--indentation-guide-adjust-preview)) 0 0 -1px inherit, calc(-1em + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--indentation-guide-color);
+// }
+.ig-lists-preview .markdown-preview-view {
+  blockquote,
+  .admonition-content {
+    li {
+      ul,
+      ol {
+        box-shadow: calc(-1em + 1px + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--background-primary-alt), calc(-1em + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--indentation-guide-color);
+      }
+    }
+  }
+}
