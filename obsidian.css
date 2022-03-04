@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.19 by @ebullient
+Ebullientworks 0.3.20 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -2798,4 +2798,12 @@ body.ebullientworks-hide-inactive-collapse-indicators h5:not(:hover) .collapse-i
 body.ebullientworks-hide-inactive-collapse-indicators h6:not(:hover) .collapse-indicator,
 body.ebullientworks-hide-inactive-collapse-indicators .cm-line:not(:hover):not(.cm-active) .collapse-indicator {
   color: transparent;
+}
+
+/* Adjust color of shadow for indentation guide for nested items inside of blockquotes or admonitions */
+.ig-lists-preview .markdown-preview-view blockquote li ul,
+.ig-lists-preview .markdown-preview-view blockquote li ol,
+.ig-lists-preview .markdown-preview-view .admonition-content li ul,
+.ig-lists-preview .markdown-preview-view .admonition-content li ol {
+  box-shadow: calc(-1em + 1px + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--background-primary-alt), calc(-1em + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--indentation-guide-color);
 }
