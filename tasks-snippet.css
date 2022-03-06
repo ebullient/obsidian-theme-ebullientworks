@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.3.20 by @ebullient
+Ebullientworks tasks 0.3.21 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -43,6 +43,11 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
 .markdown-preview-view .task-list-item-checkbox,
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
   border-radius: 3px;
+}
+
+.markdown-preview-view ul.contains-task-list > li.task-list-item,
+.markdown-preview-view ul.contains-task-list > li.task-list-item > p:first-of-type {
+  text-indent: -24px;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=" "] input[type=checkbox][data-task=" "].task-list-item-checkbox:not(:checked),
