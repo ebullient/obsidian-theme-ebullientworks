@@ -59,12 +59,11 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
 
 .markdown-source-view.mod-cm6 .cm-selection,
 ::selection {
-  color: var(--text-highlight-fg);
   background-color: var(--text-selection);
 }
 
 .is-flashing * ::selection {
-  background-color: var(--text-highlight-bg-active);
+  background-color: var(--text-selection-active);
 }
 
 .CodeMirror-cursor,

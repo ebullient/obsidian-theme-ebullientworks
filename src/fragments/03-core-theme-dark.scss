@@ -29,7 +29,8 @@
   --text-highlight-bg: var(--primary-accent-2);
   --text-highlight-bg-active: rgba(255, 216, 99, 0.664);
 
-  --text-selection: var(--secondary-accent-2);
+  --text-selection: rgba(var(--primary-accent-4-rgb), 0.2);
+  --text-selection-active: rgba(var(--primary-accent-4-rgb), 0.3);
 
   --indentation-guide: var(--gray-dark-7);
   --indentation-guide-active: var(--gray-dark-6);
