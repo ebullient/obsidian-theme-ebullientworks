@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.22 by @ebullient
+Ebullientworks 0.3.23 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -413,8 +413,8 @@ settings:
   --text-highlight-bg: var(--primary-accent-2);
   --text-highlight-bg-active: rgba(255, 216, 99, 0.664);
   --text-selection: var(--secondary-accent-2);
-  --indentation-guide: var(--text-faint);
-  --indentation-guide-active: var(--pink-4);
+  --indentation-guide: var(--gray-dark-7);
+  --indentation-guide-active: var(--gray-dark-6);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: white;
   --interactive-normal: var(--secondary-accent-4);
@@ -457,7 +457,7 @@ settings:
   --text-highlight-bg: var(--primary-accent-0);
   --text-highlight-bg-active: rgba(252, 232, 131, 0.6);
   --text-selection: var(--secondary-accent-0);
-  --indentation-guide: var(--text-faint);
+  --indentation-guide: var(--gray-light-3);
   --indentation-guide-active: var(--pink-2);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-dark-7);
@@ -1614,10 +1614,6 @@ body:not(.ebullientworks-nix-checkbox) body.is-mobile .markdown-preview-view .ta
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view .task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
   border-radius: 3px;
-}
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li.task-list-item,
-body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li.task-list-item > p:first-of-type {
-  text-indent: -24px;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=" "] input[type=checkbox][data-task=" "].task-list-item-checkbox:not(:checked),
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li.task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked),
