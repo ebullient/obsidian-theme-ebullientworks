@@ -31,6 +31,65 @@
 
 .rendered-widget,
 .markdown-preview-section {
+  .callout[data-callout="abstract"],
+  .callout[data-callout="summary"],
+  .callout[data-callout="tldr"] {
+    --callout-color: var(--admonition-abstract);
+  }
+  .callout[data-callout="info"],
+  .callout[data-callout="todo"] {
+    --callout-color: var(--admonition-info);
+  }
+  .callout[data-callout="tip"],
+  .callout[data-callout="hint"],
+  .callout[data-callout="important"] {
+    --callout-color: var(--admonition-tip);
+  }
+  .callout[data-callout="success"],
+  .callout[data-callout="check"],
+  .callout[data-callout="done"] {
+    --callout-color: var(--admonition-success);
+  }
+  .callout[data-callout="question"],
+  .callout[data-callout="help"],
+  .callout[data-callout="faq"] {
+    --callout-color: var(--admonition-question);
+  }
+  .callout[data-callout="warning"],
+  .callout[data-callout="caution"],
+  .callout[data-callout="attention"] {
+    --callout-color: var(--admonition-warning);
+  }
+  .callout[data-callout="failure"],
+  .callout[data-callout="fail"],
+  .callout[data-callout="missing"] {
+    --callout-color: var(--admonition-failure);
+  }
+  .callout[data-callout="danger"],
+  .callout[data-callout="error"] {
+    --callout-color: var(--admonition-danger);
+  }
+  .callout[data-callout="bug"] {
+    --callout-color: var(--admonition-bug);
+  }
+  .callout[data-callout="example"] {
+    --callout-color: var(--admonition-example);
+  }
+  .callout[data-callout="excerpt"],
+  .callout[data-callout="quote"],
+  .callout[data-callout="cite"] {
+    --callout-color: var(--admonition-quote);
+  }
+  .callout[data-callout="note"] {
+    --callout-color: var(--admonition-note);
+  }
+  .callout[data-callout="reference"] {
+    --callout-color: var(--admonition-reference);
+  }
+  .callout[data-callout="toc"] {
+    --callout-color: var(--admonition-toc);
+  }
+
   .admonition {
     @include admonition-color(var(--admonition-color));
     background-color: var(--background-primary-alt);
@@ -79,6 +138,18 @@
     @include admonition-color(var(--admonition-toc));
   }
 
+  .callout {
+    background-color: unset;
+    border-left-width: 0.2rem;
+  }
+  .callout-content {
+    background-color: var(--background-primary-alt);
+    padding: 2px .5em 2px .8em;
+  }
+  .callout-title {
+    background-color: rgba(var(--callout-color), 0.2);
+  }
+  .callout-title,
   .admonition-title {
     font-family: var(--font-header);
     font-size: 1em;
@@ -118,6 +189,25 @@
   // - List of links to document sections
   // ```
   // ------------------------------------------------------
+  .callout[data-callout="toc"] {
+    &.callout {
+      float: right;
+      margin-left: .5em;
+      min-width: 150px;
+    }
+    .callout-content {
+      padding-right: .5em;
+
+      ul {
+        display: block;
+        margin-block-start: .5em;
+        margin-block-end: .5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 30px;
+      }
+    }
+  }
   .admonition-toc {
     &.admonition {
       float: right;
