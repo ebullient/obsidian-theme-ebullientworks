@@ -12,10 +12,6 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
   border-radius: 3px;
 }
-.markdown-preview-view ul.contains-task-list > li.task-list-item,
-.markdown-preview-view ul.contains-task-list > li.task-list-item > p:first-of-type {
-  text-indent: -24px;
-}
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=" "] input[type=checkbox][data-task=" "].task-list-item-checkbox:not(:checked),
 .markdown-preview-view ul.contains-task-list > li.task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked),
 .markdown-preview-view ul.contains-task-list > li[data-task=""].task-list-item input[type=checkbox].task-list-item-checkbox:not(:checked) {
