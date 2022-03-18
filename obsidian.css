@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.21 by @ebullient
+Ebullientworks 0.3.22 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -413,6 +413,8 @@ settings:
   --text-highlight-bg: var(--primary-accent-2);
   --text-highlight-bg-active: rgba(255, 216, 99, 0.664);
   --text-selection: var(--secondary-accent-2);
+  --indentation-guide: var(--text-faint);
+  --indentation-guide-active: var(--pink-4);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: white;
   --interactive-normal: var(--secondary-accent-4);
@@ -455,6 +457,8 @@ settings:
   --text-highlight-bg: var(--primary-accent-0);
   --text-highlight-bg-active: rgba(252, 232, 131, 0.6);
   --text-selection: var(--secondary-accent-0);
+  --indentation-guide: var(--text-faint);
+  --indentation-guide-active: var(--pink-2);
   /** Text on accent should work as foreground for all interactive elements */
   --text-on-accent: var(--gray-dark-7);
   --interactive-normal: var(--secondary-accent-2);
@@ -2226,6 +2230,94 @@ div[src$="#callout"] {
   --admonition-toc: 203, 203, 203;
 }
 
+.rendered-widget .callout[data-callout=abstract],
+.rendered-widget .callout[data-callout=summary],
+.rendered-widget .callout[data-callout=tldr],
+.markdown-preview-section .callout[data-callout=abstract],
+.markdown-preview-section .callout[data-callout=summary],
+.markdown-preview-section .callout[data-callout=tldr] {
+  --callout-color: var(--admonition-abstract);
+}
+.rendered-widget .callout[data-callout=info],
+.rendered-widget .callout[data-callout=todo],
+.markdown-preview-section .callout[data-callout=info],
+.markdown-preview-section .callout[data-callout=todo] {
+  --callout-color: var(--admonition-info);
+}
+.rendered-widget .callout[data-callout=tip],
+.rendered-widget .callout[data-callout=hint],
+.rendered-widget .callout[data-callout=important],
+.markdown-preview-section .callout[data-callout=tip],
+.markdown-preview-section .callout[data-callout=hint],
+.markdown-preview-section .callout[data-callout=important] {
+  --callout-color: var(--admonition-tip);
+}
+.rendered-widget .callout[data-callout=success],
+.rendered-widget .callout[data-callout=check],
+.rendered-widget .callout[data-callout=done],
+.markdown-preview-section .callout[data-callout=success],
+.markdown-preview-section .callout[data-callout=check],
+.markdown-preview-section .callout[data-callout=done] {
+  --callout-color: var(--admonition-success);
+}
+.rendered-widget .callout[data-callout=question],
+.rendered-widget .callout[data-callout=help],
+.rendered-widget .callout[data-callout=faq],
+.markdown-preview-section .callout[data-callout=question],
+.markdown-preview-section .callout[data-callout=help],
+.markdown-preview-section .callout[data-callout=faq] {
+  --callout-color: var(--admonition-question);
+}
+.rendered-widget .callout[data-callout=warning],
+.rendered-widget .callout[data-callout=caution],
+.rendered-widget .callout[data-callout=attention],
+.markdown-preview-section .callout[data-callout=warning],
+.markdown-preview-section .callout[data-callout=caution],
+.markdown-preview-section .callout[data-callout=attention] {
+  --callout-color: var(--admonition-warning);
+}
+.rendered-widget .callout[data-callout=failure],
+.rendered-widget .callout[data-callout=fail],
+.rendered-widget .callout[data-callout=missing],
+.markdown-preview-section .callout[data-callout=failure],
+.markdown-preview-section .callout[data-callout=fail],
+.markdown-preview-section .callout[data-callout=missing] {
+  --callout-color: var(--admonition-failure);
+}
+.rendered-widget .callout[data-callout=danger],
+.rendered-widget .callout[data-callout=error],
+.markdown-preview-section .callout[data-callout=danger],
+.markdown-preview-section .callout[data-callout=error] {
+  --callout-color: var(--admonition-danger);
+}
+.rendered-widget .callout[data-callout=bug],
+.markdown-preview-section .callout[data-callout=bug] {
+  --callout-color: var(--admonition-bug);
+}
+.rendered-widget .callout[data-callout=example],
+.markdown-preview-section .callout[data-callout=example] {
+  --callout-color: var(--admonition-example);
+}
+.rendered-widget .callout[data-callout=excerpt],
+.rendered-widget .callout[data-callout=quote],
+.rendered-widget .callout[data-callout=cite],
+.markdown-preview-section .callout[data-callout=excerpt],
+.markdown-preview-section .callout[data-callout=quote],
+.markdown-preview-section .callout[data-callout=cite] {
+  --callout-color: var(--admonition-quote);
+}
+.rendered-widget .callout[data-callout=note],
+.markdown-preview-section .callout[data-callout=note] {
+  --callout-color: var(--admonition-note);
+}
+.rendered-widget .callout[data-callout=reference],
+.markdown-preview-section .callout[data-callout=reference] {
+  --callout-color: var(--admonition-reference);
+}
+.rendered-widget .callout[data-callout=toc],
+.markdown-preview-section .callout[data-callout=toc] {
+  --callout-color: var(--admonition-toc);
+}
 .rendered-widget .admonition,
 .markdown-preview-section .admonition {
   border-left: 0.15rem solid rgb(var(--admonition-color));
@@ -2413,7 +2505,23 @@ div[src$="#callout"] {
 .markdown-preview-section .admonition.admonition-toc .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-toc));
 }
+.rendered-widget .callout,
+.markdown-preview-section .callout {
+  background-color: unset;
+  border-left-width: 0.2rem;
+}
+.rendered-widget .callout-content,
+.markdown-preview-section .callout-content {
+  background-color: var(--background-primary-alt);
+  padding: 2px 0.5em 2px 0.8em;
+}
+.rendered-widget .callout-title,
+.markdown-preview-section .callout-title {
+  background-color: rgba(var(--callout-color), 0.2);
+}
+.rendered-widget .callout-title,
 .rendered-widget .admonition-title,
+.markdown-preview-section .callout-title,
 .markdown-preview-section .admonition-title {
   font-family: var(--font-header);
   font-size: 1em;
@@ -2438,6 +2546,25 @@ div[src$="#callout"] {
 .rendered-widget .admonition-reference .admonition-content a.external-link,
 .markdown-preview-section .admonition-reference .admonition-content a.external-link {
   background-size: 10px;
+}
+.rendered-widget .callout[data-callout=toc].callout,
+.markdown-preview-section .callout[data-callout=toc].callout {
+  float: right;
+  margin-left: 0.5em;
+  min-width: 150px;
+}
+.rendered-widget .callout[data-callout=toc] .callout-content,
+.markdown-preview-section .callout[data-callout=toc] .callout-content {
+  padding-right: 0.5em;
+}
+.rendered-widget .callout[data-callout=toc] .callout-content ul,
+.markdown-preview-section .callout[data-callout=toc] .callout-content ul {
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 30px;
 }
 .rendered-widget .admonition-toc.admonition,
 .markdown-preview-section .admonition-toc.admonition {
@@ -2807,6 +2934,8 @@ body.ebullientworks-hide-inactive-collapse-indicators .cm-line:not(:hover):not(.
 /* Adjust color of shadow for indentation guide for nested items inside of blockquotes or admonitions */
 .ig-lists-preview .markdown-preview-view blockquote li ul,
 .ig-lists-preview .markdown-preview-view blockquote li ol,
+.ig-lists-preview .markdown-preview-view .markdown-embed-content li ul,
+.ig-lists-preview .markdown-preview-view .markdown-embed-content li ol,
 .ig-lists-preview .markdown-preview-view .admonition-content li ul,
 .ig-lists-preview .markdown-preview-view .admonition-content li ol {
   box-shadow: calc(-1em + 1px + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--background-primary-alt), calc(-1em + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--indentation-guide-color);
