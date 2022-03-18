@@ -33,6 +33,9 @@
 
     --text-selection: var(--secondary-accent-0);
 
+    --indentation-guide: var(--text-faint);
+    --indentation-guide-active: var(--pink-2);
+
     /** Text on accent should work as foreground for all interactive elements */
     --text-on-accent: var(--gray-dark-7);                // Program Title bar text
     --interactive-normal: var(--secondary-accent-2);            // Button background Color
