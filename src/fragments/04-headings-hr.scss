@@ -33,7 +33,8 @@
   .cm-header-1,
   h1 {
     color: var(--text-title-h1);
-    font-variant: common-ligatures small-caps;
+    font-variant: common-ligatures;
+    font-variant-caps: var(--font-header-caps-variant);
     line-height: 1.2em;
   }
 

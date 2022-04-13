@@ -71,6 +71,34 @@ settings:
     type: variable-text
     default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
   -
+    title: Heading Font Variant
+    description: Font variant for text headings (h1 to h6)
+    id: font-header-caps-variant
+    type: variable-select
+    allowEmpty: false
+    default: small-caps
+    options:
+        - value: normal
+          label: normal
+        - value: small-caps
+          label: small-caps
+        - value: all-small-caps
+          label: all-small-caps
+        - value: all-petite-caps
+          label: all-petite-caps
+        - value: petite-caps
+          label: petite-caps
+        - value: titling-caps
+          label: titling-caps
+        - value: unicase
+          label: unicase
+        - value: inherit
+          label: inherit
+        - value: initial
+          label: initial
+        - value: unset
+          label: unset
+  -
     title: Tags
     description: Font for displaying inline #tags (edit and preview mode).
     id: font-tags
