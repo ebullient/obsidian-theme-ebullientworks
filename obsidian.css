@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.23 by @ebullient
+Ebullientworks 0.3.24 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -71,6 +71,34 @@ settings:
     id: font-header
     type: variable-text
     default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+  -
+    title: Heading Font Variant
+    description: Font variant for text headings (h1 to h6)
+    id: font-header-caps-variant
+    type: variable-select
+    allowEmpty: false
+    default: small-caps
+    options:
+        - value: normal
+          label: normal
+        - value: small-caps
+          label: small-caps
+        - value: all-small-caps
+          label: all-small-caps
+        - value: all-petite-caps
+          label: all-petite-caps
+        - value: petite-caps
+          label: petite-caps
+        - value: titling-caps
+          label: titling-caps
+        - value: unicase
+          label: unicase
+        - value: inherit
+          label: inherit
+        - value: initial
+          label: initial
+        - value: unset
+          label: unset
   -
     title: Tags
     description: Font for displaying inline #tags (edit and preview mode).
@@ -382,6 +410,7 @@ settings:
   --default-font: "IBM Plex Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-tags: Architects Daughter, Helvetica Neue, Helvetica, Arial, sans-serif;
   --font-header: var(--font-tags);
+  --font-header-caps-variant: small-caps;
   --font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono, SFMono-Regular, Consolas, "Roboto Mono", monospace;
   --cm-font-monospace: var(--font-monospace);
 }
@@ -412,7 +441,8 @@ settings:
   --text-highlight-fg: var(--gray-dark-7);
   --text-highlight-bg: var(--primary-accent-2);
   --text-highlight-bg-active: rgba(255, 216, 99, 0.664);
-  --text-selection: var(--secondary-accent-2);
+  --text-selection: rgba(var(--primary-accent-4-rgb), 0.2);
+  --text-selection-active: rgba(var(--primary-accent-4-rgb), 0.3);
   --indentation-guide: var(--gray-dark-7);
   --indentation-guide-active: var(--gray-dark-6);
   /** Text on accent should work as foreground for all interactive elements */
@@ -1263,7 +1293,8 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
 .print .cm-header-1,
 .print h1 {
   color: var(--text-title-h1);
-  font-variant: common-ligatures small-caps;
+  font-variant: common-ligatures;
+  font-variant-caps: var(--font-header-caps-variant);
   line-height: 1.2em;
 }
 .workspace .cm-header-2,
@@ -1442,12 +1473,11 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
 
 .markdown-source-view.mod-cm6 .cm-selection,
 ::selection {
-  color: var(--text-highlight-fg);
   background-color: var(--text-selection);
 }
 
 .is-flashing * ::selection {
-  background-color: var(--text-highlight-bg-active);
+  background-color: var(--text-selection-active);
 }
 
 .CodeMirror-cursor,
@@ -1457,6 +1487,11 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
 
 .cm-s-obsidian .CodeMirror-lines {
   caret-color: var(--primary-accent-4);
+}
+
+.cm-s-obsidian .HyperMD-codeblock-bg.cm-line {
+  text-indent: -4px;
+  padding-left: 4px;
 }
 
 a:hover {
@@ -2182,11 +2217,6 @@ div[src$="#callout"] {
 .print.print-preview > .markdown-preview-view .markdown-embed-content > .markdown-preview-view {
   overflow-wrap: break-word;
   width: auto;
-}
-
-.popover.hover-popover .markdown-embed {
-  max-height: 500px;
-  overflow: auto;
 }
 
 .embedframe iframe {
