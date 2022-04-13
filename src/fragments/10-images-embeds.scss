@@ -90,14 +90,6 @@ div {
 }
 
 // ------------------------------------------------------
-// Bounded popover
-// ------------------------------------------------------
-// TODO: understand behavior on height/scroll
-.popover.hover-popover .markdown-embed {
-  max-height: 500px;
-  overflow: auto;
-}
-// ------------------------------------------------------
 // Scaled iframes
 // cssclass: embedframe
 // <div class='scaled-iframe'><iframe src="..." ></iframe></div>
