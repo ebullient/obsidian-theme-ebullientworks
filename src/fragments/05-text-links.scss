@@ -74,6 +74,12 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   caret-color: var(--primary-accent-4);
 }
 
+// Padding for indentation guides
+.cm-s-obsidian .HyperMD-codeblock-bg.cm-line {
+  text-indent: -4px;
+  padding-left: 4px;
+}
+
 // Reference: css styles for links in base
 // .rich-link -- color
 // .cm-link -- text-decoration
