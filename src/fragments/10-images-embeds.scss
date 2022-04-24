@@ -39,6 +39,7 @@ div {
 
     .markdown-embed-content,
     .markdown-embed-content > .markdown-preview-view  {
+      overflow-y: unset;
       max-height: unset;
       background-color: var(--background-primary-alt);
       padding: 5px;
