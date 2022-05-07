@@ -66,10 +66,10 @@ settings:
     collapsed: true
   -
     title: Headings
-    description: Font for text headings (h1 to h6)
+    description: Font for text headings (h1 to h6); empty will use default text font
     id: font-header
     type: variable-text
-    default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+    default: "'Architects Daughter'"
   -
     title: Heading Font Variant
     description: Font variant for text headings (h1 to h6)
@@ -100,21 +100,16 @@ settings:
           label: unset
   -
     title: Tags
-    description: Font for displaying inline #tags (edit and preview mode).
+    description: Font for displaying inline tags; empty will use default text font
     id: font-tags
     type: variable-text
-    default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+    default: "'Architects Daughter'"
   -
-    title: Text
-    description: Default text font for preview and edit mode.
-    id: default-font
-    type: variable-text
-    default: "'IBM Plex Sans', Helvetica Neue, Helvetica, Arial, sans-serif"
-  -
-    title: Monospace
-    id: font-monospace
-    type: variable-text
-    default: "'Fira Code', 'Source Code Pro', Jetbrains Mono, SFMono-Regular, Consolas, 'Roboto Mono', monospace"
+    id: other-font-settings
+    title: Use Appearance to customize text/monospace fonts
+    description: (This has no effect. ;) )
+    type: class-toggle
+    default: false
   -
     id: ebullientworks-colors
     title: Colors
