@@ -28,30 +28,52 @@ This theme is compatible with custom task snippets from the [Snippitor](https://
 
 This theme does support style settings. Settable attributes: 
 
-- "Show external links in edit mode"
-    If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
-
-- (0.1.8) "Float front-matter in a box to the right"
-    If true, front-matter in preview mode will be collapsed in a top-right container.
-    
-- (0.3.13) Show collapsed sidebars on hover
-    If true, when the left or right sidebar is in a collapsed state, you can temporarily display (and interact) with its content by hovering over the ribbon. 
-
-- Set custom fonts for 
-    - Headings
-    - Tags
-    - Text (default font for text)
-    - Monospace text
-
-- Choose primary / secondary accent color
-    This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
-    
-- (0.2.7) Tag brightness (dark/light mode)
-    Select a brightness or contrast level for tags.
-
 - (0.3.4) Use default theme list indent
     This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to 
     disable that, and preserve list spaceing consistent with the default theme.
+
+- (0.3.25) Suppress/remove this theme's checkbox styles
+    Set this to true if you are going to use your own task snippet
+
+- Show / Hide
+
+    - "Show external links in edit mode"
+        If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+
+    - (0.2.8) "Hide collapse indicators unless hovered or active"
+        If true, hide collapse indicators in all three modes unless they are hovered over or the line is active.
+
+    - (0.1.8) "Float front-matter in a box to the right"
+        If true, front-matter in preview mode will be collapsed in a top-right container.
+
+    - (0.3.13) Show collapsed sidebars on hover
+        If true, when the left or right sidebar is in a collapsed state, you can temporarily display (and interact) with its content by hovering over the ribbon. 
+
+- Custom Fonts
+
+    - "Headings"
+        Font variant for text headings (h1 to h6)
+
+    - (0.3.24) "Heading Font Variant"
+        Font variant for text headings (h1 to h6)
+
+    - "Tags"
+        Font for displaying inline tags; empty will use default text font
+
+    - (0.3.26) Removed other font settings. 
+        Use Obsidian Appearance to set text and monospace fonts.
+
+- Colors
+        This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
+
+    - "Primary accent color" 
+        Choose the primary accent color. You should define a snippet if you select primary-accent-custom. See the Theme's README.
+
+    - "Secondary accent color"
+        Choose the secondary accent color. You should define a snippet if you select secondary-accent-custom. See the Theme's README.
+
+    - (0.2.7) Tag brightness (dark/light mode)
+        Select a brightness or contrast level for tags.
 
 ## Admonitions
 
