@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.25 by @ebullient
+Ebullientworks 0.3.26 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -25,7 +25,7 @@ settings:
     default: false
   -
     id: ebullientworks-nix-checkbox
-    title: Suppress/Remove this checkbox styles
+    title: Suppress/Remove this theme's checkbox styles
     description: Set this to true if you are going to use your own task snippet
     type: class-toggle
     default: false
@@ -67,10 +67,10 @@ settings:
     collapsed: true
   -
     title: Headings
-    description: Font for text headings (h1 to h6)
+    description: Font for text headings (h1 to h6); empty will use default text font
     id: font-header
     type: variable-text
-    default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+    default: "'Architects Daughter'"
   -
     title: Heading Font Variant
     description: Font variant for text headings (h1 to h6)
@@ -101,21 +101,16 @@ settings:
           label: unset
   -
     title: Tags
-    description: Font for displaying inline #tags (edit and preview mode).
+    description: Font for displaying inline tags; empty will use default text font
     id: font-tags
     type: variable-text
-    default: "'Architects Daughter', Helvetica Neue, Helvetica, Arial, sans-serif"
+    default: "'Architects Daughter'"
   -
-    title: Text
-    description: Default text font for preview and edit mode.
-    id: default-font
-    type: variable-text
-    default: "'IBM Plex Sans', Helvetica Neue, Helvetica, Arial, sans-serif"
-  -
-    title: Monospace
-    id: font-monospace
-    type: variable-text
-    default: "'Fira Code', 'Source Code Pro', Jetbrains Mono, SFMono-Regular, Consolas, 'Roboto Mono', monospace"
+    id: other-font-settings
+    title: Use Appearance to customize text/monospace fonts
+    description: (This has no effect. ;) )
+    type: class-toggle
+    default: false
   -
     id: ebullientworks-colors
     title: Colors
@@ -407,11 +402,19 @@ settings:
 
 /* Want a different font? This is the file to change! (02-fonts.scss) */
 :root {
-  --default-font: "IBM Plex Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
-  --font-tags: Architects Daughter, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --eworks-font-text: "IBM Plex Sans", Helvetica Neue;
+  --eworks-font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono;
+  --font-tags: "Architects Daughter";
   --font-header: var(--font-tags);
   --font-header-caps-variant: small-caps;
-  --font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono, SFMono-Regular, Consolas, "Roboto Mono", monospace;
+}
+
+body {
+  --font-interface-theme: var(--eworks-font-text);
+  --font-text-theme: var(--eworks-font-text);
+  --font-monospace-theme: var(--eworks-font-monospace);
+  --font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --font-text: var(--font-text-override), var(--font-text-theme), var(--default-font, ""), var(--font-default);
   --cm-font-monospace: var(--font-monospace);
 }
 
@@ -1270,6 +1273,20 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   --text-title-h6: var(--pink-4);
 }
 
+.HyperMD-header .cm-header,
+.HyperMD-header h1,
+.HyperMD-header h2,
+.HyperMD-header h3,
+.HyperMD-header h4,
+.HyperMD-header h5,
+.HyperMD-header h6,
+.markdown-rendered .cm-header,
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
 .workspace .cm-header,
 .workspace h1,
 .workspace h2,
@@ -1288,6 +1305,10 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   font-weight: 500;
   margin: 10px 0 5px 0;
 }
+.HyperMD-header .cm-header-1,
+.HyperMD-header h1,
+.markdown-rendered .cm-header-1,
+.markdown-rendered h1,
 .workspace .cm-header-1,
 .workspace h1,
 .print .cm-header-1,
@@ -1297,36 +1318,60 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   font-variant-caps: var(--font-header-caps-variant);
   line-height: 1.2em;
 }
+.HyperMD-header .cm-header-2,
+.HyperMD-header h2,
+.markdown-rendered .cm-header-2,
+.markdown-rendered h2,
 .workspace .cm-header-2,
 .workspace h2,
 .print .cm-header-2,
 .print h2 {
   color: var(--text-title-h2);
 }
+.HyperMD-header .cm-header-3,
+.HyperMD-header h3,
+.markdown-rendered .cm-header-3,
+.markdown-rendered h3,
 .workspace .cm-header-3,
 .workspace h3,
 .print .cm-header-3,
 .print h3 {
   color: var(--text-title-h3);
 }
+.HyperMD-header .cm-header-4,
+.HyperMD-header h4,
+.markdown-rendered .cm-header-4,
+.markdown-rendered h4,
 .workspace .cm-header-4,
 .workspace h4,
 .print .cm-header-4,
 .print h4 {
   color: var(--text-title-h4);
 }
+.HyperMD-header .cm-header-5,
+.HyperMD-header h5,
+.markdown-rendered .cm-header-5,
+.markdown-rendered h5,
 .workspace .cm-header-5,
 .workspace h5,
 .print .cm-header-5,
 .print h5 {
   color: var(--text-title-h5);
 }
+.HyperMD-header .cm-header-6,
+.HyperMD-header h6,
+.markdown-rendered .cm-header-6,
+.markdown-rendered h6,
 .workspace .cm-header-6,
 .workspace h6,
 .print .cm-header-6,
 .print h6 {
   color: var(--text-title-h6);
 }
+.HyperMD-header blockquote .cm-header-1,
+.HyperMD-header blockquote h1,
+.markdown-rendered blockquote .cm-header-1,
+.markdown-rendered blockquote h1,
 .workspace blockquote .cm-header-1,
 .workspace blockquote h1,
 .print blockquote .cm-header-1,
@@ -1334,6 +1379,18 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   color: var(--text-title-h2);
   font-variant: common-ligatures;
 }
+.HyperMD-header h1:before,
+.HyperMD-header h2:before,
+.HyperMD-header h3:before,
+.HyperMD-header h4:before,
+.HyperMD-header h5:before,
+.HyperMD-header h6:before,
+.markdown-rendered h1:before,
+.markdown-rendered h2:before,
+.markdown-rendered h3:before,
+.markdown-rendered h4:before,
+.markdown-rendered h5:before,
+.markdown-rendered h6:before,
 .workspace h1:before,
 .workspace h2:before,
 .workspace h3:before,
@@ -1349,6 +1406,18 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   content: "§ ";
   font-size: 0.6em;
 }
+.HyperMD-header h1 code,
+.HyperMD-header h2 code,
+.HyperMD-header h3 code,
+.HyperMD-header h4 code,
+.HyperMD-header h5 code,
+.HyperMD-header h6 code,
+.markdown-rendered h1 code,
+.markdown-rendered h2 code,
+.markdown-rendered h3 code,
+.markdown-rendered h4 code,
+.markdown-rendered h5 code,
+.markdown-rendered h6 code,
 .workspace h1 code,
 .workspace h2 code,
 .workspace h3 code,
@@ -1364,6 +1433,18 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   font-weight: normal;
   font-size: 75%;
 }
+.HyperMD-header h1 a.tag,
+.HyperMD-header h2 a.tag,
+.HyperMD-header h3 a.tag,
+.HyperMD-header h4 a.tag,
+.HyperMD-header h5 a.tag,
+.HyperMD-header h6 a.tag,
+.markdown-rendered h1 a.tag,
+.markdown-rendered h2 a.tag,
+.markdown-rendered h3 a.tag,
+.markdown-rendered h4 a.tag,
+.markdown-rendered h5 a.tag,
+.markdown-rendered h6 a.tag,
 .workspace h1 a.tag,
 .workspace h2 a.tag,
 .workspace h3 a.tag,
@@ -1463,6 +1544,12 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
 .search-result-file-matched-text,
 .cm-s-obsidian span.obsidian-search-match-highlight,
 .cm-s-obsidian span.cm-highlight,
+.is-flashing h1,
+.is-flashing h2,
+.is-flashing h3,
+.is-flashing h4,
+.is-flashing h5,
+.is-flashing h6,
 .is-flashing * {
   color: var(--text-highlight-fg);
 }
