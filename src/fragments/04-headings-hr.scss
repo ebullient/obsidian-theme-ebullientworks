@@ -1,3 +1,12 @@
+:root {
+  --h1: 2em;
+  --h2: 1.8em;
+  --h3: 1.6em;
+  --h4: 1.4em;
+  --h5: 1.2em;
+  --h6: 1.2em;
+}
+
 .theme-dark {
   --text-title-h1: var(--yellow-1);
   --text-title-h2: var(--green-3);
