@@ -301,6 +301,7 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
     text-decoration: none !important; /* override theme */
     font-weight: 500;
     font-style: normal;
+    color: var(--text-normal);
 }
 /* 'X' for task ('- [X]') */
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="X"] input[type=checkbox][data-task="X"].task-list-item-checkbox:checked::before,
@@ -339,6 +340,7 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
     text-decoration: none !important; /* override theme */
     font-weight: 500;
     font-style: normal;
+    color: var(--text-normal);
 }
 
 /* Consistent hover colors */
