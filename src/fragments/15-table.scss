@@ -18,6 +18,11 @@
       border: 0px;
       border-left: 1px solid var(--background-modifier-border);
       font-size: 1em;
+
+      .dataview.small-text {
+        color: var(--text-on-accent);
+        font-weight: 200;
+      }
     }
     > tr > th:last-child {
       border-right: 1px solid var(--background-modifier-border);

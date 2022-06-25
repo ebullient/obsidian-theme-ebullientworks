@@ -5,8 +5,7 @@ body:not(.is-mobile) .markdown-preview-view .task-list-item-checkbox {
   margin-bottom: 1px;
 }
 body.is-mobile .markdown-preview-view .task-list-item-checkbox {
-  margin-top: 1px;
-  margin-bottom: 0;
+  top: 6px;
 }
 .markdown-preview-view .task-list-item-checkbox,
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {

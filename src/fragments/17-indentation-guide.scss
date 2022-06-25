@@ -3,7 +3,7 @@
 // .ig-lists-preview .markdown-preview-view li ol {
 //   box-shadow: calc(-1em + 1px + var(--indentation-guide-adjust-preview)) 0 0 -1px inherit, calc(-1em + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--indentation-guide-color);
 // }
-.ig-lists-preview .markdown-preview-view {
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) {
   blockquote,
   .markdown-embed-content,
   .callout-content,

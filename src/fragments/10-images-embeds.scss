@@ -24,6 +24,11 @@ div {
     margin-left: 5px;
     width: 50%;
   }
+  &[src$="#small-right"] {
+    float: right;
+    margin-left: 5px;
+    width: 75px;
+  }
 }
 // ------------------------------------------------------
 // Naked embeds
@@ -41,7 +46,6 @@ div {
     .markdown-embed-content > .markdown-preview-view  {
       overflow-y: unset;
       max-height: unset;
-      background-color: var(--background-primary-alt);
       padding: 5px;
     }
 
@@ -57,7 +61,6 @@ div {
     .file-embed-link {
       border-radius: none;
       border-bottom-left-radius: 3px;
-      background-color: var(--background-primary);
     }
   }
 }
@@ -70,7 +73,6 @@ div {
 
   .markdown-embed-content,
   .markdown-embed-content > .markdown-preview-view  {
-    background-color: var(--background-primary-alt);
     padding: 5px;
   }
 
@@ -78,7 +80,6 @@ div {
   .file-embed-link {
     border-radius: none;
     border-bottom-left-radius: 3px;
-    background-color: var(--background-primary);
   }
 }
 
@@ -87,6 +88,22 @@ div {
   .markdown-embed-content > .markdown-preview-view {
     overflow-wrap: break-word;
     width: auto;
+  }
+}
+
+.markdown-source-view.mod-cm6:not(.invisible-embed),
+.markdown-preview-view:not(.invisible-embed) {
+  .markdown-embed,
+  .file-embed {
+    .markdown-embed-content,
+    .markdown-embed-content > .markdown-preview-view  {
+      background-color: var(--background-primary-alt);
+    }
+
+    .markdown-embed-link,
+    .file-embed-link {
+      background-color: var(--background-primary);
+    }
   }
 }
 
