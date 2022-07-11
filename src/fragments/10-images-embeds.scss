@@ -56,13 +56,10 @@ div {
       margin-bottom: 0;
       padding-bottom: .5em;
     }
-
-    .markdown-embed-link,
-    .file-embed-link {
-      border-radius: none;
-      border-bottom-left-radius: 3px;
-    }
   }
+}
+.markdown-embed-content > .markdown-preview-view  {
+  height: unset;
 }
 
 .markdown-source-view .markdown-embed,
@@ -75,12 +72,18 @@ div {
   .markdown-embed-content > .markdown-preview-view  {
     padding: 5px;
   }
+}
 
-  .markdown-embed-link,
-  .file-embed-link {
-    border-radius: none;
-    border-bottom-left-radius: 3px;
-  }
+.markdown-embed-link,
+.file-embed-link {
+  top: 0px;
+  right: -18px;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: none;
+  border-bottom-left-radius: 3px;
 }
 
 .print.print-preview > .markdown-preview-view {
@@ -91,18 +94,35 @@ div {
   }
 }
 
-.markdown-source-view.mod-cm6:not(.invisible-embed),
-.markdown-preview-view:not(.invisible-embed) {
+.markdown-source-view.mod-cm6,
+.markdown-preview-view {
   .markdown-embed,
   .file-embed {
     .markdown-embed-content,
-    .markdown-embed-content > .markdown-preview-view  {
+    .markdown-embed-content > .markdown-preview-view {
       background-color: var(--background-primary-alt);
     }
 
     .markdown-embed-link,
     .file-embed-link {
       background-color: var(--background-primary);
+    }
+  }
+}
+
+.markdown-source-view.mod-cm6.invisible-embed,
+.markdown-preview-view.invisible-embed {
+  .markdown-embed,
+  .file-embed {
+    .markdown-embed-content,
+    .markdown-embed-content > .markdown-preview-view {
+      background-color: var(--background-primary);
+      padding: 0;
+    }
+
+    .markdown-embed-link,
+    .file-embed-link {
+      background-color: var(--background-primary-alt);
     }
   }
 }
