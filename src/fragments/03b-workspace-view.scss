@@ -147,8 +147,8 @@ body:not(.is-mobile) {
 // Sliding panes
 //---------------------------------------
 // Hide the gradient of the title pane
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
+body:not(.is-popout-window).plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
   box-shadow: none !important;
 
   > .workspace-leaf-content > .view-header {
@@ -158,10 +158,10 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
     }
   }
 }
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf:not(:first-of-type) {
+body:not(.is-popout-window).plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf:not(:first-of-type) {
   border-left: var(--sharp-border);
 }
-body.plugin-sliding-panes-rotate-header {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header {
   .view-header-title {
     line-height: calc(var(--leaf-header-width) - 2px);
   }
