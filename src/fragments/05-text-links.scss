@@ -111,6 +111,10 @@ a,
 .cm-s-obsidian span.cm-hmd-internal-link,
 .markdown-preview-view .internal-link {
   color: var(--link);
+}
+.cm-s-obsidian span.cm-url:not(.cm-strikethrough),
+.cm-s-obsidian span.cm-link:not(.cm-strikethrough),
+.cm-s-obsidian span.cm-hmd-internal-link:not(.cm-strikethrough) {
   text-decoration: underline var(--link-underline);
 }
 .cm-s-obsidian span.cm-string.cm-url {
