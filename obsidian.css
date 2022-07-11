@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.26 by @ebullient
+Ebullientworks 0.3.27 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -903,45 +903,45 @@ body:not(.is-mobile) .view-action svg {
   height: 14px;
 }
 
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
+body:not(.is-popout-window).plugin-sliding-panes .workspace > .mod-root > .workspace-leaf,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf {
   box-shadow: none !important;
 }
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
-body.plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after {
+body:not(.is-popout-window).plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
+body:not(.is-popout-window).plugin-sliding-panes .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:before,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-title-container:after {
   background: none !important;
 }
 
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf:not(:first-of-type) {
+body:not(.is-popout-window).plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf:not(:first-of-type) {
   border-left: var(--sharp-border);
 }
 
-body.plugin-sliding-panes-rotate-header .view-header-title {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .view-header-title {
   line-height: calc(var(--leaf-header-width) - 2px);
 }
-body.plugin-sliding-panes-rotate-header .workspace-split.mod-horizontal.mod-left-split {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .workspace-split.mod-horizontal.mod-left-split {
   border-right: none;
 }
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .mod-root > .workspace-leaf > .workspace-leaf-content {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .mod-root > .workspace-leaf > .workspace-leaf-content {
   padding-left: var(--leaf-header-width);
 }
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header {
   background: var(--rotated-inactive-leaf-bg);
   border-right: none;
   border-left: none;
   width: var(--leaf-header-width);
 }
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon svg,
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-action svg,
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header .view-header-icon svg,
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header .view-action svg {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-header-icon svg,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header .view-action svg,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header .view-header-icon svg,
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace .view-header .view-action svg {
   width: 14px;
   height: auto;
 }
-body.plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+body:not(.is-popout-window).plugin-sliding-panes-rotate-header .horizontal-main-container > .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
   background: var(--rotated-active-leaf-bg);
   border-right: none;
   border-left: none;
@@ -1252,6 +1252,15 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
 
 .graph-view.color-line-highlight {
   color: var(--graph-highlight-line);
+}
+
+:root {
+  --h1: 2em;
+  --h2: 1.8em;
+  --h3: 1.6em;
+  --h4: 1.4em;
+  --h5: 1.2em;
+  --h6: 1.2em;
 }
 
 .theme-dark {
@@ -1592,6 +1601,11 @@ a,
 .cm-s-obsidian span.cm-hmd-internal-link,
 .markdown-preview-view .internal-link {
   color: var(--link);
+}
+
+.cm-s-obsidian span.cm-url:not(.cm-strikethrough),
+.cm-s-obsidian span.cm-link:not(.cm-strikethrough),
+.cm-s-obsidian span.cm-hmd-internal-link:not(.cm-strikethrough) {
   text-decoration: underline var(--link-underline);
 }
 
@@ -1615,16 +1629,6 @@ a,
   color: var(--link-underline);
 }
 
-.markdown-embed-link,
-.file-embed-link {
-  top: 0px;
-  right: 0px;
-  height: 18px;
-  width: 18px;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .markdown-embed-link svg {
   color: var(--link-underline);
   height: 14px;
@@ -1638,8 +1642,7 @@ a,
   border-bottom: 1px dotted var(--link-underline);
 }
 
-body:not(.is-mobile) .markdown-preview-view .task-list-item a[data-href][aria-label-position].internal-link,
-body.is-mobile .markdown-preview-view .task-list-item a[data-href][aria-label-position].internal-link {
+.markdown-preview-view .task-list-item a[data-href][aria-label-position].internal-link {
   border-bottom: none;
   text-decoration: none;
   color: var(--link-underline);
@@ -1730,8 +1733,7 @@ body:not(.ebullientworks-nix-checkbox) body:not(.is-mobile) .markdown-preview-vi
   margin-bottom: 1px;
 }
 body:not(.ebullientworks-nix-checkbox) body.is-mobile .markdown-preview-view .task-list-item-checkbox {
-  margin-top: 1px;
-  margin-bottom: 0;
+  top: 6px;
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view .task-list-item-checkbox,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task] input[type=checkbox].task-list-item-checkbox {
@@ -1743,8 +1745,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   position: relative;
   -webkit-appearance: none;
   box-sizing: border-box;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   background: unset !important;
   color: var(--text-normal);
@@ -1784,8 +1785,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox].task-list-item-checkbox[data-task="/"] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox].task-list-item-checkbox[data-task="/"] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 500;
   font-style: normal;
 }
@@ -1810,8 +1810,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-deferred);
   font-family: var(--font-monospace);
@@ -1823,8 +1822,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] input[type=checkbox].task-list-item-checkbox[data-task=">"] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] input[type=checkbox].task-list-item-checkbox[data-task=">"] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 500;
   font-style: normal;
 }
@@ -1849,8 +1847,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-review);
   font-family: var(--font-monospace);
@@ -1862,8 +1859,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox].task-list-item-checkbox[data-task=R] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox].task-list-item-checkbox[data-task=R] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=R].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 500;
   font-style: normal;
 }
@@ -1888,8 +1884,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-question);
   font-family: var(--font-monospace);
@@ -1901,8 +1896,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"] input[type=checkbox].task-list-item-checkbox[data-task="?"] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="?"] input[type=checkbox].task-list-item-checkbox[data-task="?"] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task="?"].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 500;
   font-style: normal;
 }
@@ -1927,8 +1921,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-important);
   font-family: var(--font-monospace);
@@ -1940,8 +1933,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"] input[type=checkbox].task-list-item-checkbox[data-task="!"] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="!"] input[type=checkbox].task-list-item-checkbox[data-task="!"] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task="!"].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 700;
   font-style: normal;
   color: var(--checkbox-important);
@@ -1967,8 +1959,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-cancelled);
   font-family: var(--font-monospace);
@@ -1980,8 +1971,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type=checkbox].task-list-item-checkbox[data-task="-"] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type=checkbox].task-list-item-checkbox[data-task="-"] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task="-"].task-list-item.is-checked {
-  text-decoration: line-through !important;
-  /* override theme */
+  text-decoration: line-through !important; /* override theme */
   font-weight: 500;
   font-style: normal;
   color: var(--checkbox-cancelled);
@@ -2007,8 +1997,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-checked);
   font-family: var(--font-monospace);
@@ -2020,10 +2009,10 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=x] input[type=checkbox].task-list-item-checkbox[data-task=x] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=x] input[type=checkbox].task-list-item-checkbox[data-task=x] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=x].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 500;
   font-style: normal;
+  color: var(--text-normal);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=X] input[type=checkbox][data-task=X].task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=X].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
@@ -2046,8 +2035,7 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   -webkit-appearance: none;
   box-sizing: border-box;
   background: unset !important;
-  background-color: transparent !important;
-  /* override theme */
+  background-color: transparent !important; /* override theme */
   filter: none;
   color: var(--checkbox-checked);
   font-family: var(--font-monospace);
@@ -2059,10 +2047,10 @@ body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-ta
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=X] input[type=checkbox].task-list-item-checkbox[data-task=X] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=X] input[type=checkbox].task-list-item-checkbox[data-task=X] + span + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=X].task-list-item.is-checked {
-  text-decoration: none !important;
-  /* override theme */
+  text-decoration: none !important; /* override theme */
   font-weight: 500;
   font-style: normal;
+  color: var(--text-normal);
 }
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="/"] input[type=checkbox][data-task="/"].task-list-item-checkbox:checked:hover, body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task="/"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] input[type=checkbox][data-task=">"].task-list-item-checkbox:checked:hover, body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=">"].task-list-item input[type=checkbox].task-list-item-checkbox:checked:hover,
@@ -2248,6 +2236,12 @@ div[src$="#callout"] {
   margin-left: 5px;
   width: 50%;
 }
+img[src$="#small-right"],
+div[src$="#small-right"] {
+  float: right;
+  margin-left: 5px;
+  width: 75px;
+}
 
 .markdown-embed-title {
   display: none;
@@ -2262,7 +2256,6 @@ div[src$="#callout"] {
 .markdown-preview-view .markdown-embed .markdown-embed-content > .markdown-preview-view {
   overflow-y: unset;
   max-height: unset;
-  background-color: var(--background-primary-alt);
   padding: 5px;
 }
 .markdown-preview-view .markdown-embed .markdown-embed-content > :first-child {
@@ -2272,11 +2265,9 @@ div[src$="#callout"] {
   margin-bottom: 0;
   padding-bottom: 0.5em;
 }
-.markdown-preview-view .markdown-embed .markdown-embed-link,
-.markdown-preview-view .markdown-embed .file-embed-link {
-  border-radius: none;
-  border-bottom-left-radius: 3px;
-  background-color: var(--background-primary);
+
+.markdown-embed-content > .markdown-preview-view {
+  height: unset;
 }
 
 .markdown-source-view .markdown-embed,
@@ -2289,22 +2280,68 @@ div[src$="#callout"] {
 .markdown-source-view .markdown-embed .markdown-embed-content > .markdown-preview-view,
 .markdown-source-view .file-embed .markdown-embed-content,
 .markdown-source-view .file-embed .markdown-embed-content > .markdown-preview-view {
-  background-color: var(--background-primary-alt);
   padding: 5px;
 }
-.markdown-source-view .markdown-embed .markdown-embed-link,
-.markdown-source-view .markdown-embed .file-embed-link,
-.markdown-source-view .file-embed .markdown-embed-link,
-.markdown-source-view .file-embed .file-embed-link {
+
+.markdown-embed-link,
+.file-embed-link {
+  top: 0px;
+  right: -18px;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  vertical-align: middle;
   border-radius: none;
   border-bottom-left-radius: 3px;
-  background-color: var(--background-primary);
 }
 
 .print.print-preview > .markdown-preview-view .markdown-embed-content,
 .print.print-preview > .markdown-preview-view .markdown-embed-content > .markdown-preview-view {
   overflow-wrap: break-word;
   width: auto;
+}
+
+.markdown-source-view.mod-cm6 .markdown-embed .markdown-embed-content,
+.markdown-source-view.mod-cm6 .markdown-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-source-view.mod-cm6 .file-embed .markdown-embed-content,
+.markdown-source-view.mod-cm6 .file-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-preview-view .markdown-embed .markdown-embed-content,
+.markdown-preview-view .markdown-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-preview-view .file-embed .markdown-embed-content,
+.markdown-preview-view .file-embed .markdown-embed-content > .markdown-preview-view {
+  background-color: var(--background-primary-alt);
+}
+.markdown-source-view.mod-cm6 .markdown-embed .markdown-embed-link,
+.markdown-source-view.mod-cm6 .markdown-embed .file-embed-link,
+.markdown-source-view.mod-cm6 .file-embed .markdown-embed-link,
+.markdown-source-view.mod-cm6 .file-embed .file-embed-link,
+.markdown-preview-view .markdown-embed .markdown-embed-link,
+.markdown-preview-view .markdown-embed .file-embed-link,
+.markdown-preview-view .file-embed .markdown-embed-link,
+.markdown-preview-view .file-embed .file-embed-link {
+  background-color: var(--background-primary);
+}
+
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-embed-content,
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-source-view.mod-cm6.invisible-embed .file-embed .markdown-embed-content,
+.markdown-source-view.mod-cm6.invisible-embed .file-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-preview-view.invisible-embed .markdown-embed .markdown-embed-content,
+.markdown-preview-view.invisible-embed .markdown-embed .markdown-embed-content > .markdown-preview-view,
+.markdown-preview-view.invisible-embed .file-embed .markdown-embed-content,
+.markdown-preview-view.invisible-embed .file-embed .markdown-embed-content > .markdown-preview-view {
+  background-color: var(--background-primary);
+  padding: 0;
+}
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-embed-link,
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed .file-embed-link,
+.markdown-source-view.mod-cm6.invisible-embed .file-embed .markdown-embed-link,
+.markdown-source-view.mod-cm6.invisible-embed .file-embed .file-embed-link,
+.markdown-preview-view.invisible-embed .markdown-embed .markdown-embed-link,
+.markdown-preview-view.invisible-embed .markdown-embed .file-embed-link,
+.markdown-preview-view.invisible-embed .file-embed .markdown-embed-link,
+.markdown-preview-view.invisible-embed .file-embed .file-embed-link {
+  background-color: var(--background-primary-alt);
 }
 
 .embedframe iframe {
@@ -2906,58 +2943,66 @@ div.popover .admonition.admonition-toc {
 
 .theme-dark {
   --table-alt-alpha: .2;
+  --header-background: var(--interactive-hover);
 }
 
 .theme-dark .print,
 .theme-light {
   --table-alt-alpha: .05;
+  --header-background: var(--primary-accent-1) ;
 }
 
-.markdown-source-view.mod-cm6 table .table-view-table > thead > tr > th,
-.markdown-source-view.mod-cm6 table thead > tr > th,
-.markdown-preview-view table .table-view-table > thead > tr > th,
-.markdown-preview-view table thead > tr > th {
-  background-color: var(--interactive-hover);
+.markdown-source-view.mod-cm6 table > thead > tr > th,
+.markdown-source-view.mod-cm6 table > thead > tr > th.table-view-th,
+.markdown-preview-view table > thead > tr > th,
+.markdown-preview-view table > thead > tr > th.table-view-th,
+.markdown-preview-view table.table-view-table > thead > tr > th,
+.markdown-preview-view table.table-view-table > thead > tr > th.table-view-th {
+  background-color: var(--header-background);
   color: var(--text-on-accent);
   border: 0px;
   border-left: 1px solid var(--background-modifier-border);
+  font-size: 1em;
 }
-.markdown-source-view.mod-cm6 table .table-view-table > thead > tr > th:last-child,
-.markdown-source-view.mod-cm6 table thead > tr > th:last-child,
-.markdown-preview-view table .table-view-table > thead > tr > th:last-child,
-.markdown-preview-view table thead > tr > th:last-child {
+.markdown-source-view.mod-cm6 table > thead > tr > th .dataview.small-text,
+.markdown-source-view.mod-cm6 table > thead > tr > th.table-view-th .dataview.small-text,
+.markdown-preview-view table > thead > tr > th .dataview.small-text,
+.markdown-preview-view table > thead > tr > th.table-view-th .dataview.small-text,
+.markdown-preview-view table.table-view-table > thead > tr > th .dataview.small-text,
+.markdown-preview-view table.table-view-table > thead > tr > th.table-view-th .dataview.small-text {
+  color: var(--text-on-accent);
+  font-weight: 200;
+}
+.markdown-source-view.mod-cm6 table > thead > tr > th:last-child,
+.markdown-preview-view table > thead > tr > th:last-child,
+.markdown-preview-view table.table-view-table > thead > tr > th:last-child {
   border-right: 1px solid var(--background-modifier-border);
 }
-.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:nth-child(even),
-.markdown-source-view.mod-cm6 table tbody > tr:nth-child(even),
-.markdown-preview-view table .table-view-table > tbody > tr:nth-child(even),
-.markdown-preview-view table tbody > tr:nth-child(even) {
+.markdown-source-view.mod-cm6 table > tbody > tr:nth-child(even),
+.markdown-preview-view table > tbody > tr:nth-child(even),
+.markdown-preview-view table.table-view-table > tbody > tr:nth-child(even) {
   background-color: rgba(0, 0, 0, var(--table-alt-alpha));
 }
-.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:last-child,
-.markdown-source-view.mod-cm6 table tbody > tr:last-child,
-.markdown-preview-view table .table-view-table > tbody > tr:last-child,
-.markdown-preview-view table tbody > tr:last-child {
+.markdown-source-view.mod-cm6 table > tbody > tr:last-child,
+.markdown-preview-view table > tbody > tr:last-child,
+.markdown-preview-view table.table-view-table > tbody > tr:last-child {
   border-bottom: 1px solid var(--background-modifier-border);
 }
-.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr:hover,
-.markdown-source-view.mod-cm6 table tbody > tr:hover,
-.markdown-preview-view table .table-view-table > tbody > tr:hover,
-.markdown-preview-view table tbody > tr:hover {
+.markdown-source-view.mod-cm6 table > tbody > tr:hover,
+.markdown-preview-view table > tbody > tr:hover,
+.markdown-preview-view table.table-view-table > tbody > tr:hover {
   background: var(--background-secondary);
 }
-.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr > td,
-.markdown-source-view.mod-cm6 table tbody > tr > td,
-.markdown-preview-view table .table-view-table > tbody > tr > td,
-.markdown-preview-view table tbody > tr > td {
+.markdown-source-view.mod-cm6 table > tbody > tr > td,
+.markdown-preview-view table > tbody > tr > td,
+.markdown-preview-view table.table-view-table > tbody > tr > td {
   border: 0px;
   vertical-align: top;
   border-left: 1px solid var(--background-modifier-border);
 }
-.markdown-source-view.mod-cm6 table .table-view-table > tbody > tr > td:last-child,
-.markdown-source-view.mod-cm6 table tbody > tr > td:last-child,
-.markdown-preview-view table .table-view-table > tbody > tr > td:last-child,
-.markdown-preview-view table tbody > tr > td:last-child {
+.markdown-source-view.mod-cm6 table > tbody > tr > td:last-child,
+.markdown-preview-view table > tbody > tr > td:last-child,
+.markdown-preview-view table.table-view-table > tbody > tr > td:last-child {
   border-right: 1px solid var(--background-modifier-border);
 }
 
@@ -3046,11 +3091,13 @@ body.ebullientworks-hide-inactive-collapse-indicators .cm-line:not(:hover):not(.
 }
 
 /* Adjust color of shadow for indentation guide for nested items inside of blockquotes or admonitions */
-.ig-lists-preview .markdown-preview-view blockquote li ul,
-.ig-lists-preview .markdown-preview-view blockquote li ol,
-.ig-lists-preview .markdown-preview-view .markdown-embed-content li ul,
-.ig-lists-preview .markdown-preview-view .markdown-embed-content li ol,
-.ig-lists-preview .markdown-preview-view .admonition-content li ul,
-.ig-lists-preview .markdown-preview-view .admonition-content li ol {
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) blockquote li ul,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) blockquote li ol,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) .markdown-embed-content li ul,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) .markdown-embed-content li ol,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) .callout-content li ul,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) .callout-content li ol,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) .admonition-content li ul,
+.ig-lists-preview .markdown-preview-view :not(.invisible-embed) .admonition-content li ol {
   box-shadow: calc(-1em + 1px + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--background-primary-alt), calc(-1em + var(--indentation-guide-adjust-preview)) 0 0 -1px var(--indentation-guide-color);
 }
