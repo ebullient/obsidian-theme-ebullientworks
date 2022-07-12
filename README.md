@@ -4,6 +4,7 @@
 <td><a href="#style-settings">Settings</a></td>
 <td><a href="#admonitions">Admonitions</a></td>
 <td><a href="#tables">Tables</a></td>
+<td><a href="#embeds">Embeds</a></td>
 <td><a href="#colors">Colors</a></td>
 <td><a href="#creating-your-own-accent-colors">Custom accents</a></td></tr></table>
 
@@ -111,6 +112,15 @@ cssclass: word-wrap
 ---
 ```
 
+## Embeds
+
+To make embedded content "invisible" (same background color as the including page and much less padding), use the `invisible-embed` css class:
+
+```
+---
+cssclass: invisible-embed
+---
+```
 
 ## Colors
 
