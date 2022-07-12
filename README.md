@@ -34,7 +34,7 @@ This theme does support style settings. Settable attributes:
     disable that, and preserve list spaceing consistent with the default theme.
 
 - (0.3.25) Suppress/remove this theme's checkbox styles
-    Set this to true if you are going to use your own task snippet
+    Set this to true if you are going to use your own task snippet (💡 Check out [Snippetor](https://github.com/ebullient/obsidian-snippetor)!)
 
 - Show / Hide
 
