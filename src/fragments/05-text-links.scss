@@ -141,15 +141,6 @@ a,
   width: 14px;
 }
 
-.is-mobile {
-  .markdown-preview-view .internal-link:not(.is-unresolved) {
-    border-bottom: 1px solid var(--link-underline);
-  }
-  .markdown-preview-view .internal-link.is-unresolved {
-    border-bottom: 1px dotted var(--link-underline);
-  }
-}
-
 // Skip decorations on dataview task list item indicators
 .markdown-preview-view .task-list-item {
   a[data-href][aria-label-position].internal-link {
