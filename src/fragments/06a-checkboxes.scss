@@ -30,6 +30,7 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
 /* '>' for deferred task ('- [>]') */
 /* '?' for question/more info task ('- [?]') */
 /* 'R' for PR info task ('- [R]') */
+/* 'r' for PR info task ('- [r]') */
 /* '!' for important task ('- [!]') */
 /* "/" Half done */
 /* text style tasks that should still have readable text */
@@ -110,6 +111,8 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
     font-style: normal;
 }
 /* 'R' for task ('- [R]') */
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="r"] input[type=checkbox][data-task="r"].task-list-item-checkbox:checked::before,
+.markdown-preview-view ul.contains-task-list > li[data-task="r"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before,
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="R"] input[type=checkbox][data-task="R"].task-list-item-checkbox:checked::before,
 .markdown-preview-view ul.contains-task-list > li[data-task="R"].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
     font-family: var(--font-monospace);
@@ -125,6 +128,8 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
     color: var(--checkbox-review);
     content: '👀';
 }
+.markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="r"] input[type=checkbox][data-task="r"].task-list-item-checkbox:checked,
+.markdown-preview-view ul.contains-task-list > li[data-task="r"].task-list-item input[type=checkbox].task-list-item-checkbox:checked,
 .markdown-source-view.mod-cm6  .HyperMD-task-line[data-task="R"] input[type=checkbox][data-task="R"].task-list-item-checkbox:checked,
 .markdown-preview-view ul.contains-task-list > li[data-task="R"].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
     position: relative;
@@ -139,6 +144,10 @@ body.is-mobile .markdown-preview-view .task-list-item-checkbox {
     border-style: solid;
     border-color: var(--checkbox-review) !important;
 }
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="r"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="r"] input[type=checkbox].task-list-item-checkbox[data-task="r"] + span,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="r"] input[type=checkbox].task-list-item-checkbox[data-task="r"] + span + span,
+.markdown-preview-view ul.contains-task-list > li[data-task="r"].task-list-item.is-checked,
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="R"],
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="R"] input[type=checkbox].task-list-item-checkbox[data-task="R"] + span,
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="R"] input[type=checkbox].task-list-item-checkbox[data-task="R"] + span + span,
