@@ -46,6 +46,7 @@
 
 // Highlight, matched text
 .markdown-preview-view mark,
+.markdown-rendered mark,
 .search-result-file-matched-text,
 .cm-s-obsidian span.obsidian-search-match-highlight,
 .cm-s-obsidian span.cm-highlight,
@@ -95,9 +96,9 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
 // .cm-s-obsidian span.cm-hmd-internal-link -- color(text-accent)
 // .cm-s-obsidian span.cm-formatting-link -- color(text-faint)
 // .cm-s-obsidian span.cm-hmd-internal-link:hover -- text-decoration(underline)
-// .markdown-preview-view .internal-link -- text-decoration(underline)
-// .markdown-preview-view .internal-link.is-unresolved -- opacity
-// .markdown-preview-view mark .internal-link -- color(text-normal), background-color(highlight)
+// .markdown-rendered .internal-link -- text-decoration(underline)
+// .markdown-rendered .internal-link.is-unresolved -- opacity
+// .markdown-rendered mark .internal-link -- color(text-normal), background-color(highlight)
 // .markdown-embed-link, .file-embed-link -- color(text-faint)
 // .markdown-embed-link:hover, .file-embed-link:hover -- color(text-accent)
 // ---
@@ -109,9 +110,13 @@ a,
 .cm-s-obsidian span.cm-url,
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-rendered .internal-link,
 .markdown-preview-view .internal-link {
   color: var(--link);
 }
+a,
+.markdown-rendered .internal-link,
+.markdown-preview-view .internal-link,
 .cm-s-obsidian span.cm-url:not(.cm-strikethrough),
 .cm-s-obsidian span.cm-link:not(.cm-strikethrough),
 .cm-s-obsidian span.cm-hmd-internal-link:not(.cm-strikethrough) {
@@ -126,15 +131,17 @@ a,
   font-weight: normal;
   color: var(--text-muted);
 }
-.markdown-preview-view .internal-link.is-unresolved {
-  opacity: 0.9;
-  text-decoration-style: dotted;
+.markdown-rendered,
+.markdown-preview-view {
+  .internal-link.is-unresolved {
+    opacity: 0.9;
+    text-decoration-style: dotted;
+  }
+  .internal-link.is-unresolved::after {
+    content: ' ✎';
+    color: var(--link-underline);
+  }
 }
-.markdown-preview-view .internal-link.is-unresolved::after {
-  content: ' ✎';
-  color: var(--link-underline);
-}
-
 .markdown-embed-link svg {
   color: var(--link-underline);
   height: 14px;
@@ -142,7 +149,8 @@ a,
 }
 
 // Skip decorations on dataview task list item indicators
-.markdown-preview-view .task-list-item {
+.markdown-preview-view .task-list-item,
+.markdown-rendered .task-list-item {
   a[data-href][aria-label-position].internal-link {
     border-bottom: none;
     text-decoration: none;
