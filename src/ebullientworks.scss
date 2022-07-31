@@ -105,6 +105,12 @@ settings:
     type: variable-text
     default: "'Architects Daughter'"
   -
+    id: font-callout-title
+    title: Font for callout/admonition titles
+    description: Use the specified font for callout and admonition titles
+    type: variable-text
+    default: "'Architects Daughter'"
+  -
     id: other-font-settings
     title: Use Appearance to customize text/monospace fonts
     description: (This has no effect. ;) )

@@ -5,9 +5,10 @@
   // style settings baseline
   --eworks-font-text: 'IBM Plex Sans', Helvetica Neue;
   --eworks-font-monospace: 'Fira Code', 'Source Code Pro', Jetbrains Mono;
-  --font-tags: 'Architects Daughter';
-  --font-header: var(--font-tags);
+  --font-header: 'Architects Daughter';
   --font-header-caps-variant: small-caps;
+  --font-tags: var(--font-header);
+  --font-callout-title: var(--font-header);
 }
 
 body {

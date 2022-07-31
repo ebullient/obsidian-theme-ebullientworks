@@ -30,6 +30,7 @@
 }
 
 .rendered-widget,
+.markdown-rendered,
 .markdown-preview-section {
   .callout[data-callout="abstract"],
   .callout[data-callout="summary"],
@@ -151,11 +152,11 @@
   }
   .callout-title,
   .admonition-title {
-    font-family: var(--font-header);
+    font-family: var(--font-callout-title);
     font-size: 1em;
   }
   .admonition-title-icon {
-    font-family: var(--font-header);
+    font-family: var(--font-callout-title);
     min-width: .9em;
   }
   .admonition-content-holder .admonition-content {
