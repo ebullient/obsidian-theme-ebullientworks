@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.3.27 by @ebullient
+Ebullientworks 0.4.0 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -103,6 +103,12 @@ settings:
     title: Tags
     description: Font for displaying inline tags; empty will use default text font
     id: font-tags
+    type: variable-text
+    default: "'Architects Daughter'"
+  -
+    id: font-callout-title
+    title: Font for callout/admonition titles
+    description: Use the specified font for callout and admonition titles
     type: variable-text
     default: "'Architects Daughter'"
   -
@@ -404,9 +410,10 @@ settings:
 :root {
   --eworks-font-text: "IBM Plex Sans", Helvetica Neue;
   --eworks-font-monospace: "Fira Code", "Source Code Pro", Jetbrains Mono;
-  --font-tags: "Architects Daughter";
-  --font-header: var(--font-tags);
+  --font-header: "Architects Daughter";
   --font-header-caps-variant: small-caps;
+  --font-tags: var(--font-header);
+  --font-callout-title: var(--font-header);
 }
 
 body {
@@ -1481,6 +1488,7 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   font-variant: common-ligatures;
 }
 
+.markdown-rendered hr,
 .markdown-preview-view hr {
   border: none;
   border-top: 1px dotted var(--interactive-normal);
@@ -1490,6 +1498,7 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   height: 2px;
   margin: 12px 0;
 }
+.markdown-rendered hr:after,
 .markdown-preview-view hr:after {
   background: var(--background-primary);
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -1498,6 +1507,9 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
   position: relative;
   top: -13px;
 }
+.markdown-rendered blockquote hr::after,
+.markdown-rendered .admonition-content hr::after,
+.markdown-rendered .markdown-embed-content hr::after,
 .markdown-preview-view blockquote hr::after,
 .markdown-preview-view .admonition-content hr::after,
 .markdown-preview-view .markdown-embed-content hr::after {
@@ -1550,6 +1562,7 @@ body:not(.is-mobile).ebullientworks-hover-collapsed-sidebars .mod-right-split.is
 }
 
 .markdown-preview-view mark,
+.markdown-rendered mark,
 .search-result-file-matched-text,
 .cm-s-obsidian span.obsidian-search-match-highlight,
 .cm-s-obsidian span.cm-highlight,
@@ -1599,13 +1612,22 @@ a,
 .cm-s-obsidian span.cm-url,
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-rendered .internal-link,
 .markdown-preview-view .internal-link {
   color: var(--link);
 }
 
-.cm-s-obsidian span.cm-url:not(.cm-strikethrough),
-.cm-s-obsidian span.cm-link:not(.cm-strikethrough),
-.cm-s-obsidian span.cm-hmd-internal-link:not(.cm-strikethrough) {
+a,
+.markdown-rendered .internal-link,
+.markdown-preview-view .internal-link,
+.markdown-source-view.mod-cm6 .cm-url:not(.cm-strikethrough),
+.markdown-source-view.mod-cm6 .cm-url:not(.cm-strikethrough) .cm-underline,
+.markdown-source-view.mod-cm6 .cm-link:not(.cm-strikethrough),
+.markdown-source-view.mod-cm6 .cm-link:not(.cm-strikethrough) .cm-underline,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link:not(.cm-strikethrough),
+.cm-s-obsidian .cm-url:not(.cm-strikethrough),
+.cm-s-obsidian .cm-link:not(.cm-strikethrough),
+.cm-s-obsidian .cm-hmd-internal-link:not(.cm-strikethrough) {
   text-decoration: underline var(--link-underline);
 }
 
@@ -1619,11 +1641,12 @@ a,
   color: var(--text-muted);
 }
 
+.markdown-rendered .internal-link.is-unresolved,
 .markdown-preview-view .internal-link.is-unresolved {
   opacity: 0.9;
   text-decoration-style: dotted;
 }
-
+.markdown-rendered .internal-link.is-unresolved::after,
 .markdown-preview-view .internal-link.is-unresolved::after {
   content: " ✎";
   color: var(--link-underline);
@@ -1635,14 +1658,8 @@ a,
   width: 14px;
 }
 
-.is-mobile .markdown-preview-view .internal-link:not(.is-unresolved) {
-  border-bottom: 1px solid var(--link-underline);
-}
-.is-mobile .markdown-preview-view .internal-link.is-unresolved {
-  border-bottom: 1px dotted var(--link-underline);
-}
-
-.markdown-preview-view .task-list-item a[data-href][aria-label-position].internal-link {
+.markdown-preview-view .task-list-item a[data-href][aria-label-position].internal-link,
+.markdown-rendered .task-list-item a[data-href][aria-label-position].internal-link {
   border-bottom: none;
   text-decoration: none;
   color: var(--link-underline);
@@ -1714,6 +1731,7 @@ body:not(.ebullientworks-nix-checkbox) {
   /* '>' for deferred task ('- [>]') */
   /* '?' for question/more info task ('- [?]') */
   /* 'R' for PR info task ('- [R]') */
+  /* 'r' for PR info task ('- [r]') */
   /* '!' for important task ('- [!]') */
   /* "/" Half done */
   /* text style tasks that should still have readable text */
@@ -1826,6 +1844,8 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   font-weight: 500;
   font-style: normal;
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=r] input[type=checkbox][data-task=r].task-list-item-checkbox:checked::before,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=r].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox][data-task=R].task-list-item-checkbox:checked::before,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=R].task-list-item input[type=checkbox].task-list-item-checkbox:checked::before {
   font-family: var(--font-monospace);
@@ -1841,6 +1861,8 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   color: var(--checkbox-review);
   content: "👀";
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=r] input[type=checkbox][data-task=r].task-list-item-checkbox:checked,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=r].task-list-item input[type=checkbox].task-list-item-checkbox:checked,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox][data-task=R].task-list-item-checkbox:checked,
 body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=R].task-list-item input[type=checkbox].task-list-item-checkbox:checked {
   position: relative;
@@ -1855,6 +1877,10 @@ body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-l
   border-style: solid;
   border-color: var(--checkbox-review) !important;
 }
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=r],
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=r] input[type=checkbox].task-list-item-checkbox[data-task=r] + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=r] input[type=checkbox].task-list-item-checkbox[data-task=r] + span + span,
+body:not(.ebullientworks-nix-checkbox) .markdown-preview-view ul.contains-task-list > li[data-task=r].task-list-item.is-checked,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R],
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox].task-list-item-checkbox[data-task=R] + span,
 body:not(.ebullientworks-nix-checkbox) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=R] input[type=checkbox].task-list-item-checkbox[data-task=R] + span + span,
@@ -2252,7 +2278,11 @@ div[src$="#small-right"] {
   padding: 0;
   margin: 0;
 }
-.markdown-preview-view .markdown-embed .markdown-embed-content,
+.markdown-preview-view .markdown-embed .markdown-embed-content {
+  padding: 0;
+  max-height: unset;
+  overflow: unset;
+}
 .markdown-preview-view .markdown-embed .markdown-embed-content > .markdown-preview-view {
   overflow-y: unset;
   max-height: unset;
@@ -2322,6 +2352,18 @@ div[src$="#small-right"] {
   background-color: var(--background-primary);
 }
 
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed,
+.markdown-source-view.mod-cm6.invisible-embed .file-embed,
+.markdown-preview-view.invisible-embed .markdown-embed,
+.markdown-preview-view.invisible-embed .file-embed {
+  padding: 0;
+}
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-rendered,
+.markdown-source-view.mod-cm6.invisible-embed .file-embed .markdown-rendered,
+.markdown-preview-view.invisible-embed .markdown-embed .markdown-rendered,
+.markdown-preview-view.invisible-embed .file-embed .markdown-rendered {
+  padding: 0 0 0 2px;
+}
 .markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-embed-content,
 .markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-embed-content > .markdown-preview-view,
 .markdown-source-view.mod-cm6.invisible-embed .file-embed .markdown-embed-content,
@@ -2331,7 +2373,6 @@ div[src$="#small-right"] {
 .markdown-preview-view.invisible-embed .file-embed .markdown-embed-content,
 .markdown-preview-view.invisible-embed .file-embed .markdown-embed-content > .markdown-preview-view {
   background-color: var(--background-primary);
-  padding: 0;
 }
 .markdown-source-view.mod-cm6.invisible-embed .markdown-embed .markdown-embed-link,
 .markdown-source-view.mod-cm6.invisible-embed .markdown-embed .file-embed-link,
@@ -2341,7 +2382,15 @@ div[src$="#small-right"] {
 .markdown-preview-view.invisible-embed .markdown-embed .file-embed-link,
 .markdown-preview-view.invisible-embed .file-embed .markdown-embed-link,
 .markdown-preview-view.invisible-embed .file-embed .file-embed-link {
-  background-color: var(--background-primary-alt);
+  background-color: var(--background-primary);
+}
+.markdown-source-view.mod-cm6.invisible-embed blockquote hr::after,
+.markdown-source-view.mod-cm6.invisible-embed .admonition-content hr::after,
+.markdown-source-view.mod-cm6.invisible-embed .markdown-embed-content hr::after,
+.markdown-preview-view.invisible-embed blockquote hr::after,
+.markdown-preview-view.invisible-embed .admonition-content hr::after,
+.markdown-preview-view.invisible-embed .markdown-embed-content hr::after {
+  background: var(--background-primary);
 }
 
 .embedframe iframe {
@@ -2384,6 +2433,9 @@ div[src$="#small-right"] {
 .rendered-widget .callout[data-callout=abstract],
 .rendered-widget .callout[data-callout=summary],
 .rendered-widget .callout[data-callout=tldr],
+.markdown-rendered .callout[data-callout=abstract],
+.markdown-rendered .callout[data-callout=summary],
+.markdown-rendered .callout[data-callout=tldr],
 .markdown-preview-section .callout[data-callout=abstract],
 .markdown-preview-section .callout[data-callout=summary],
 .markdown-preview-section .callout[data-callout=tldr] {
@@ -2391,6 +2443,8 @@ div[src$="#small-right"] {
 }
 .rendered-widget .callout[data-callout=info],
 .rendered-widget .callout[data-callout=todo],
+.markdown-rendered .callout[data-callout=info],
+.markdown-rendered .callout[data-callout=todo],
 .markdown-preview-section .callout[data-callout=info],
 .markdown-preview-section .callout[data-callout=todo] {
   --callout-color: var(--admonition-info);
@@ -2398,6 +2452,9 @@ div[src$="#small-right"] {
 .rendered-widget .callout[data-callout=tip],
 .rendered-widget .callout[data-callout=hint],
 .rendered-widget .callout[data-callout=important],
+.markdown-rendered .callout[data-callout=tip],
+.markdown-rendered .callout[data-callout=hint],
+.markdown-rendered .callout[data-callout=important],
 .markdown-preview-section .callout[data-callout=tip],
 .markdown-preview-section .callout[data-callout=hint],
 .markdown-preview-section .callout[data-callout=important] {
@@ -2406,6 +2463,9 @@ div[src$="#small-right"] {
 .rendered-widget .callout[data-callout=success],
 .rendered-widget .callout[data-callout=check],
 .rendered-widget .callout[data-callout=done],
+.markdown-rendered .callout[data-callout=success],
+.markdown-rendered .callout[data-callout=check],
+.markdown-rendered .callout[data-callout=done],
 .markdown-preview-section .callout[data-callout=success],
 .markdown-preview-section .callout[data-callout=check],
 .markdown-preview-section .callout[data-callout=done] {
@@ -2414,6 +2474,9 @@ div[src$="#small-right"] {
 .rendered-widget .callout[data-callout=question],
 .rendered-widget .callout[data-callout=help],
 .rendered-widget .callout[data-callout=faq],
+.markdown-rendered .callout[data-callout=question],
+.markdown-rendered .callout[data-callout=help],
+.markdown-rendered .callout[data-callout=faq],
 .markdown-preview-section .callout[data-callout=question],
 .markdown-preview-section .callout[data-callout=help],
 .markdown-preview-section .callout[data-callout=faq] {
@@ -2422,6 +2485,9 @@ div[src$="#small-right"] {
 .rendered-widget .callout[data-callout=warning],
 .rendered-widget .callout[data-callout=caution],
 .rendered-widget .callout[data-callout=attention],
+.markdown-rendered .callout[data-callout=warning],
+.markdown-rendered .callout[data-callout=caution],
+.markdown-rendered .callout[data-callout=attention],
 .markdown-preview-section .callout[data-callout=warning],
 .markdown-preview-section .callout[data-callout=caution],
 .markdown-preview-section .callout[data-callout=attention] {
@@ -2430,6 +2496,9 @@ div[src$="#small-right"] {
 .rendered-widget .callout[data-callout=failure],
 .rendered-widget .callout[data-callout=fail],
 .rendered-widget .callout[data-callout=missing],
+.markdown-rendered .callout[data-callout=failure],
+.markdown-rendered .callout[data-callout=fail],
+.markdown-rendered .callout[data-callout=missing],
 .markdown-preview-section .callout[data-callout=failure],
 .markdown-preview-section .callout[data-callout=fail],
 .markdown-preview-section .callout[data-callout=missing] {
@@ -2437,257 +2506,323 @@ div[src$="#small-right"] {
 }
 .rendered-widget .callout[data-callout=danger],
 .rendered-widget .callout[data-callout=error],
+.markdown-rendered .callout[data-callout=danger],
+.markdown-rendered .callout[data-callout=error],
 .markdown-preview-section .callout[data-callout=danger],
 .markdown-preview-section .callout[data-callout=error] {
   --callout-color: var(--admonition-danger);
 }
 .rendered-widget .callout[data-callout=bug],
+.markdown-rendered .callout[data-callout=bug],
 .markdown-preview-section .callout[data-callout=bug] {
   --callout-color: var(--admonition-bug);
 }
 .rendered-widget .callout[data-callout=example],
+.markdown-rendered .callout[data-callout=example],
 .markdown-preview-section .callout[data-callout=example] {
   --callout-color: var(--admonition-example);
 }
 .rendered-widget .callout[data-callout=excerpt],
 .rendered-widget .callout[data-callout=quote],
 .rendered-widget .callout[data-callout=cite],
+.markdown-rendered .callout[data-callout=excerpt],
+.markdown-rendered .callout[data-callout=quote],
+.markdown-rendered .callout[data-callout=cite],
 .markdown-preview-section .callout[data-callout=excerpt],
 .markdown-preview-section .callout[data-callout=quote],
 .markdown-preview-section .callout[data-callout=cite] {
   --callout-color: var(--admonition-quote);
 }
 .rendered-widget .callout[data-callout=note],
+.markdown-rendered .callout[data-callout=note],
 .markdown-preview-section .callout[data-callout=note] {
   --callout-color: var(--admonition-note);
 }
 .rendered-widget .callout[data-callout=reference],
+.markdown-rendered .callout[data-callout=reference],
 .markdown-preview-section .callout[data-callout=reference] {
   --callout-color: var(--admonition-reference);
 }
 .rendered-widget .callout[data-callout=toc],
+.markdown-rendered .callout[data-callout=toc],
 .markdown-preview-section .callout[data-callout=toc] {
   --callout-color: var(--admonition-toc);
 }
 .rendered-widget .admonition,
+.markdown-rendered .admonition,
 .markdown-preview-section .admonition {
   border-left: 0.15rem solid rgb(var(--admonition-color));
   background-color: var(--background-primary-alt);
 }
 .rendered-widget .admonition .admonition-title,
+.markdown-rendered .admonition .admonition-title,
 .markdown-preview-section .admonition .admonition-title {
   background-color: rgba(var(--admonition-color), 0.2);
 }
 .rendered-widget .admonition .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-color));
 }
 .rendered-widget .admonition.admonition-note,
+.markdown-rendered .admonition.admonition-note,
 .markdown-preview-section .admonition.admonition-note {
   border-left: 0.15rem solid rgb(var(--admonition-note));
 }
 .rendered-widget .admonition.admonition-note .admonition-title,
+.markdown-rendered .admonition.admonition-note .admonition-title,
 .markdown-preview-section .admonition.admonition-note .admonition-title {
   background-color: rgba(var(--admonition-note), 0.2);
 }
 .rendered-widget .admonition.admonition-note .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-note .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-note .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-note));
 }
 .rendered-widget .admonition.admonition-abstract,
+.markdown-rendered .admonition.admonition-abstract,
 .markdown-preview-section .admonition.admonition-abstract {
   border-left: 0.15rem solid rgb(var(--admonition-abstract));
 }
 .rendered-widget .admonition.admonition-abstract .admonition-title,
+.markdown-rendered .admonition.admonition-abstract .admonition-title,
 .markdown-preview-section .admonition.admonition-abstract .admonition-title {
   background-color: rgba(var(--admonition-abstract), 0.2);
 }
 .rendered-widget .admonition.admonition-abstract .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-abstract .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-abstract .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-abstract));
 }
 .rendered-widget .admonition.admonition-info,
+.markdown-rendered .admonition.admonition-info,
 .markdown-preview-section .admonition.admonition-info {
   border-left: 0.15rem solid rgb(var(--admonition-info));
 }
 .rendered-widget .admonition.admonition-info .admonition-title,
+.markdown-rendered .admonition.admonition-info .admonition-title,
 .markdown-preview-section .admonition.admonition-info .admonition-title {
   background-color: rgba(var(--admonition-info), 0.2);
 }
 .rendered-widget .admonition.admonition-info .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-info .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-info .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-info));
 }
 .rendered-widget .admonition.admonition-tip,
+.markdown-rendered .admonition.admonition-tip,
 .markdown-preview-section .admonition.admonition-tip {
   border-left: 0.15rem solid rgb(var(--admonition-tip));
 }
 .rendered-widget .admonition.admonition-tip .admonition-title,
+.markdown-rendered .admonition.admonition-tip .admonition-title,
 .markdown-preview-section .admonition.admonition-tip .admonition-title {
   background-color: rgba(var(--admonition-tip), 0.2);
 }
 .rendered-widget .admonition.admonition-tip .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-tip .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-tip .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-tip));
 }
 .rendered-widget .admonition.admonition-success,
+.markdown-rendered .admonition.admonition-success,
 .markdown-preview-section .admonition.admonition-success {
   border-left: 0.15rem solid rgb(var(--admonition-success));
 }
 .rendered-widget .admonition.admonition-success .admonition-title,
+.markdown-rendered .admonition.admonition-success .admonition-title,
 .markdown-preview-section .admonition.admonition-success .admonition-title {
   background-color: rgba(var(--admonition-success), 0.2);
 }
 .rendered-widget .admonition.admonition-success .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-success .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-success .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-success));
 }
 .rendered-widget .admonition.admonition-question,
+.markdown-rendered .admonition.admonition-question,
 .markdown-preview-section .admonition.admonition-question {
   border-left: 0.15rem solid rgb(var(--admonition-question));
 }
 .rendered-widget .admonition.admonition-question .admonition-title,
+.markdown-rendered .admonition.admonition-question .admonition-title,
 .markdown-preview-section .admonition.admonition-question .admonition-title {
   background-color: rgba(var(--admonition-question), 0.2);
 }
 .rendered-widget .admonition.admonition-question .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-question .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-question .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-question));
 }
 .rendered-widget .admonition.admonition-warning,
+.markdown-rendered .admonition.admonition-warning,
 .markdown-preview-section .admonition.admonition-warning {
   border-left: 0.15rem solid rgb(var(--admonition-warning));
 }
 .rendered-widget .admonition.admonition-warning .admonition-title,
+.markdown-rendered .admonition.admonition-warning .admonition-title,
 .markdown-preview-section .admonition.admonition-warning .admonition-title {
   background-color: rgba(var(--admonition-warning), 0.2);
 }
 .rendered-widget .admonition.admonition-warning .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-warning .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-warning .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-warning));
 }
 .rendered-widget .admonition.admonition-failure,
+.markdown-rendered .admonition.admonition-failure,
 .markdown-preview-section .admonition.admonition-failure {
   border-left: 0.15rem solid rgb(var(--admonition-failure));
 }
 .rendered-widget .admonition.admonition-failure .admonition-title,
+.markdown-rendered .admonition.admonition-failure .admonition-title,
 .markdown-preview-section .admonition.admonition-failure .admonition-title {
   background-color: rgba(var(--admonition-failure), 0.2);
 }
 .rendered-widget .admonition.admonition-failure .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-failure .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-failure .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-failure));
 }
 .rendered-widget .admonition.admonition-danger,
+.markdown-rendered .admonition.admonition-danger,
 .markdown-preview-section .admonition.admonition-danger {
   border-left: 0.15rem solid rgb(var(--admonition-danger));
 }
 .rendered-widget .admonition.admonition-danger .admonition-title,
+.markdown-rendered .admonition.admonition-danger .admonition-title,
 .markdown-preview-section .admonition.admonition-danger .admonition-title {
   background-color: rgba(var(--admonition-danger), 0.2);
 }
 .rendered-widget .admonition.admonition-danger .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-danger .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-danger .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-danger));
 }
 .rendered-widget .admonition.admonition-bug,
+.markdown-rendered .admonition.admonition-bug,
 .markdown-preview-section .admonition.admonition-bug {
   border-left: 0.15rem solid rgb(var(--admonition-bug));
 }
 .rendered-widget .admonition.admonition-bug .admonition-title,
+.markdown-rendered .admonition.admonition-bug .admonition-title,
 .markdown-preview-section .admonition.admonition-bug .admonition-title {
   background-color: rgba(var(--admonition-bug), 0.2);
 }
 .rendered-widget .admonition.admonition-bug .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-bug .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-bug .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-bug));
 }
 .rendered-widget .admonition.admonition-example,
+.markdown-rendered .admonition.admonition-example,
 .markdown-preview-section .admonition.admonition-example {
   border-left: 0.15rem solid rgb(var(--admonition-example));
 }
 .rendered-widget .admonition.admonition-example .admonition-title,
+.markdown-rendered .admonition.admonition-example .admonition-title,
 .markdown-preview-section .admonition.admonition-example .admonition-title {
   background-color: rgba(var(--admonition-example), 0.2);
 }
 .rendered-widget .admonition.admonition-example .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-example .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-example .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-example));
 }
 .rendered-widget .admonition.admonition-excerpt,
 .rendered-widget .admonition.admonition-quote,
+.markdown-rendered .admonition.admonition-excerpt,
+.markdown-rendered .admonition.admonition-quote,
 .markdown-preview-section .admonition.admonition-excerpt,
 .markdown-preview-section .admonition.admonition-quote {
   border-left: 0.15rem solid rgb(var(--admonition-quote));
 }
 .rendered-widget .admonition.admonition-excerpt .admonition-title,
 .rendered-widget .admonition.admonition-quote .admonition-title,
+.markdown-rendered .admonition.admonition-excerpt .admonition-title,
+.markdown-rendered .admonition.admonition-quote .admonition-title,
 .markdown-preview-section .admonition.admonition-excerpt .admonition-title,
 .markdown-preview-section .admonition.admonition-quote .admonition-title {
   background-color: rgba(var(--admonition-quote), 0.2);
 }
 .rendered-widget .admonition.admonition-excerpt .admonition-title .admonition-title-icon,
 .rendered-widget .admonition.admonition-quote .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-excerpt .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-quote .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-excerpt .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-quote .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-quote));
 }
 .rendered-widget .admonition.admonition-reference,
+.markdown-rendered .admonition.admonition-reference,
 .markdown-preview-section .admonition.admonition-reference {
   border-left: 0.15rem solid rgb(var(--admonition-reference));
 }
 .rendered-widget .admonition.admonition-reference .admonition-title,
+.markdown-rendered .admonition.admonition-reference .admonition-title,
 .markdown-preview-section .admonition.admonition-reference .admonition-title {
   background-color: rgba(var(--admonition-reference), 0.2);
 }
 .rendered-widget .admonition.admonition-reference .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-reference .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-reference .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-reference));
 }
 .rendered-widget .admonition.admonition-toc,
+.markdown-rendered .admonition.admonition-toc,
 .markdown-preview-section .admonition.admonition-toc {
   border-left: 0.15rem solid rgb(var(--admonition-toc));
 }
 .rendered-widget .admonition.admonition-toc .admonition-title,
+.markdown-rendered .admonition.admonition-toc .admonition-title,
 .markdown-preview-section .admonition.admonition-toc .admonition-title {
   background-color: rgba(var(--admonition-toc), 0.2);
 }
 .rendered-widget .admonition.admonition-toc .admonition-title .admonition-title-icon,
+.markdown-rendered .admonition.admonition-toc .admonition-title .admonition-title-icon,
 .markdown-preview-section .admonition.admonition-toc .admonition-title .admonition-title-icon {
   color: rgb(var(--admonition-toc));
 }
 .rendered-widget .callout,
+.markdown-rendered .callout,
 .markdown-preview-section .callout {
   background-color: unset;
   border-left-width: 0.2rem;
 }
 .rendered-widget .callout-content,
+.markdown-rendered .callout-content,
 .markdown-preview-section .callout-content {
   background-color: var(--background-primary-alt);
   padding: 2px 0.5em 2px 0.8em;
 }
 .rendered-widget .callout-title,
+.markdown-rendered .callout-title,
 .markdown-preview-section .callout-title {
   background-color: rgba(var(--callout-color), 0.2);
 }
 .rendered-widget .callout-title,
 .rendered-widget .admonition-title,
+.markdown-rendered .callout-title,
+.markdown-rendered .admonition-title,
 .markdown-preview-section .callout-title,
 .markdown-preview-section .admonition-title {
-  font-family: var(--font-header);
+  font-family: var(--font-callout-title);
   font-size: 1em;
 }
 .rendered-widget .admonition-title-icon,
+.markdown-rendered .admonition-title-icon,
 .markdown-preview-section .admonition-title-icon {
-  font-family: var(--font-header);
+  font-family: var(--font-callout-title);
   min-width: 0.9em;
 }
 .rendered-widget .admonition-content-holder .admonition-content,
+.markdown-rendered .admonition-content-holder .admonition-content,
 .markdown-preview-section .admonition-content-holder .admonition-content {
   margin: 2px 0.5em;
   padding-left: 0.5em;
 }
 .rendered-widget .admonition-reference .admonition-content,
+.markdown-rendered .admonition-reference .admonition-content,
 .markdown-preview-section .admonition-reference .admonition-content {
   white-space: pre-line;
   font-family: var(--font-monospace);
@@ -2695,20 +2830,24 @@ div[src$="#small-right"] {
   color: var(--text-muted);
 }
 .rendered-widget .admonition-reference .admonition-content a.external-link,
+.markdown-rendered .admonition-reference .admonition-content a.external-link,
 .markdown-preview-section .admonition-reference .admonition-content a.external-link {
   background-size: 10px;
 }
 .rendered-widget .callout[data-callout=toc].callout,
+.markdown-rendered .callout[data-callout=toc].callout,
 .markdown-preview-section .callout[data-callout=toc].callout {
   float: right;
   margin-left: 0.5em;
   min-width: 150px;
 }
 .rendered-widget .callout[data-callout=toc] .callout-content,
+.markdown-rendered .callout[data-callout=toc] .callout-content,
 .markdown-preview-section .callout[data-callout=toc] .callout-content {
   padding-right: 0.5em;
 }
 .rendered-widget .callout[data-callout=toc] .callout-content ul,
+.markdown-rendered .callout[data-callout=toc] .callout-content ul,
 .markdown-preview-section .callout[data-callout=toc] .callout-content ul {
   display: block;
   margin-block-start: 0.5em;
@@ -2718,16 +2857,19 @@ div[src$="#small-right"] {
   padding-inline-start: 30px;
 }
 .rendered-widget .admonition-toc.admonition,
+.markdown-rendered .admonition-toc.admonition,
 .markdown-preview-section .admonition-toc.admonition {
   float: right;
   margin-left: 0.5em;
   min-width: 150px;
 }
 .rendered-widget .admonition-toc .admonition-content-holder,
+.markdown-rendered .admonition-toc .admonition-content-holder,
 .markdown-preview-section .admonition-toc .admonition-content-holder {
   padding-right: 0.5em;
 }
 .rendered-widget .admonition-toc .admonition-content-holder .admonition-content ul,
+.markdown-rendered .admonition-toc .admonition-content-holder .admonition-content ul,
 .markdown-preview-section .admonition-toc .admonition-content-holder .admonition-content ul {
   display: block;
   margin-block-start: 0.5em;
