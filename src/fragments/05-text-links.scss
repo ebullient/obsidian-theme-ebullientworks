@@ -117,9 +117,14 @@ a,
 a,
 .markdown-rendered .internal-link,
 .markdown-preview-view .internal-link,
-.cm-s-obsidian span.cm-url:not(.cm-strikethrough),
-.cm-s-obsidian span.cm-link:not(.cm-strikethrough),
-.cm-s-obsidian span.cm-hmd-internal-link:not(.cm-strikethrough) {
+.markdown-source-view.mod-cm6 .cm-url:not(.cm-strikethrough),
+.markdown-source-view.mod-cm6 .cm-url:not(.cm-strikethrough) .cm-underline,
+.markdown-source-view.mod-cm6 .cm-link:not(.cm-strikethrough),
+.markdown-source-view.mod-cm6 .cm-link:not(.cm-strikethrough) .cm-underline,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link:not(.cm-strikethrough),
+.cm-s-obsidian .cm-url:not(.cm-strikethrough),
+.cm-s-obsidian .cm-link:not(.cm-strikethrough),
+.cm-s-obsidian .cm-hmd-internal-link:not(.cm-strikethrough) {
   text-decoration: underline var(--link-underline);
 }
 .cm-s-obsidian span.cm-string.cm-url {
