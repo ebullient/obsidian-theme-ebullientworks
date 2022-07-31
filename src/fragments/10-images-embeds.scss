@@ -42,7 +42,12 @@ div {
     padding:0;
     margin:0;
 
-    .markdown-embed-content,
+    .markdown-embed-content {
+      padding: 0;
+      max-height: unset;
+      overflow: unset;
+    }
+
     .markdown-embed-content > .markdown-preview-view  {
       overflow-y: unset;
       max-height: unset;
@@ -114,16 +119,27 @@ div {
 .markdown-preview-view.invisible-embed {
   .markdown-embed,
   .file-embed {
+    padding: 0;
+
+    .markdown-rendered {
+      padding: 0 0 0 2px;
+    }
+
     .markdown-embed-content,
     .markdown-embed-content > .markdown-preview-view {
       background-color: var(--background-primary);
-      padding: 0;
     }
 
     .markdown-embed-link,
     .file-embed-link {
-      background-color: var(--background-primary-alt);
+      background-color: var(--background-primary);
     }
+  }
+
+  blockquote hr::after,
+  .admonition-content hr::after,
+  .markdown-embed-content hr::after {
+    background: var(--background-primary);
   }
 }
 
