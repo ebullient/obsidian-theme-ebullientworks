@@ -67,26 +67,25 @@ jobs:
         draft: false
         prerelease: false
 
-    # Upload the main.js
-    - name: Upload obsidian.css
-      id: upload-main
+    # Upload the theme.css
+    - name: Upload theme.css
+      id: upload-theme
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./obsidian.css
-        asset_name: obsidian.css
+        asset_path: ./theme.css
+        asset_name: theme.css
         asset_content_type: text/css
 
-    # Upload the tasks-snippet.css
-    - name: Upload tasks-snippet.css
-      id: upload-manifest
+    - name: Upload tasks-snippet-for-0.16.css
+      id: upload-tasks-snippet
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./tasks-snippet.css
-        asset_name: tasks-snippet.css
+        asset_path: ./tasks-snippet-for-0.16.css
+        asset_name: tasks-snippet-for-0.16.css
         asset_content_type: text/css
