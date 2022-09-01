@@ -23,6 +23,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-reverse-view-header-actions
+    title: View header actions to the left
+    description: Set this to true if the view header is visible, and you want the controls on the left side
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-show-hide
     title: Showing and Hiding content
     type: heading
@@ -59,12 +65,12 @@ settings:
     type: variable-text
     default: "'Architects Daughter'"
   -
-    title: Heading Font Variant
-    description: Font variant for text headings (h1 to h6)
+    title: Heading Font Caps Variant
+    description: Capitalization variant for h1 text headings
     id: ebw-header-font-caps-variant
     type: variable-select
     allowEmpty: false
-    default: small-caps
+    default: normal
     options:
         - value: normal
           label: normal
@@ -195,7 +201,7 @@ settings:
 @import 'fragments/09-codeblocks.scss';
 @import 'fragments/10-images-embeds.scss';
 
-// @import 'fragments/12-calendar-day-planner-tracker.scss';
+@import 'fragments/12-calendar-day-planner-tracker.scss';
 // @import 'fragments/13-timelines.scss';
 @import 'fragments/14-frontmatter.scss';
 @import 'fragments/15-table.scss';

@@ -43,8 +43,7 @@ body:not(.is-mobile) div.workspace.is-right-sidedock-open
     border-left: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
-// Pane controls (in title)
-.workspace-tabs .view-header {
+.ebullientworks-reverse-view-header-actions .workspace-tabs .view-header {
   margin: 0;
   > .view-actions {
     order: 0;
@@ -58,26 +57,6 @@ body:not(.is-mobile) div.workspace.is-right-sidedock-open
     order: 1;
   }
 }
-// body.is-focused .workspace-leaf.mod-active .view-header {
-//   background-color: var(--ebw-active-leaf-header-bg);
-//   border-bottom: var(--ebw-sharp-border);
-//   .view-header-title, .view-action {
-//     color: var(--ebw-active-leaf-fg);
-//   }
-//   .view-header-title-container:after {
-//     display: none;
-//   }
-// }
-// .workspace-leaf .view-header {
-//   background-color: var(--ebw-active-leaf-header-bg);
-//   border-bottom: var(--ebw-sharp-border);
-//   .view-header-title, .view-action {
-//     color: var(--ebw-active-leaf-fg);
-//   }
-//   .view-header-title-container:after {
-//     display: none;
-//   }
-// }
 
 // Pane relief / sliding panes icon always on top
 div.workspace-split.mod-vertical.is-sliding.mod-root {
