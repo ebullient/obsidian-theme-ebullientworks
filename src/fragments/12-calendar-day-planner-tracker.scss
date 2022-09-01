@@ -2,7 +2,7 @@
   --calendar-year: var(--primary-accent-3);
   --calendar-month: var(--secondary-accent-3);
   --calendar-dividing-line: var(--primary-accent-1);
-  --day-planner-timeline-fg: var(--blue-1);
+  --day-planner-timeline-fg: var(--primary-accent-3);
 
   .day.today {
     color: var(--primary-accent-3);
@@ -17,7 +17,7 @@
   --calendar-year: var(--primary-accent-4);
   --calendar-month: var(--secondary-accent-4);
   --calendar-dividing-line: var(--primary-accent-1);
-  --day-planner-timeline-fg: var(--blue-1);
+  --day-planner-timeline-fg: var(--primary-accent-1);
 
   .day.today {
     color: var(--primary-accent-4);
@@ -61,14 +61,11 @@
 // Day Planner
 // ------------------------------------------------------
 .day-planner-progress-bar {
-  background-color: var(--side-dock-fg-faint);
+  background-color: var(--background-primary);
+  border: 1px solid var(--tab-outline-color);
 }
-#day-planner-timeline-container {
-  .event_item_contents > {
-    .ei_Copy,
-    .ei_Title {
-      color: var(--day-planner-timeline-fg);
-    }
-  }
+.day-planner-progress-value {
+  height: 14px;
+  background-color: var(--day-planner-timeline-fg);
 }
 
