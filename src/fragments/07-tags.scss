@@ -10,27 +10,16 @@
   --tag-light: var(--tag-4);
 }
 .theme-dark {
-  --tags: var(--tag-dark);
+  --tag-color: var(--tag-dark);
+  --tag-color-hover: var(--tag-dark);
 }
 .theme-dark .print,
 .theme-light {
-  --tags: var(--tag-light);
+  --tag-color: var(--tag-light);
+  --tag-color-hover: var(--tag-light);
 }
 
-.cm-s-obsidian span.cm-hashtag,
-.tag:not(.token) {
-  color: var(--tags);
-  font-family: var(--font-tags);
-}
-
-.CodeMirror-line span.cm-hashtag,
-.cm-s-obsidian .cm-header.cm-hashtag,
-.markdown-preview-section a.tag,
-.markdown-preview-view h1 a.tag,
-.markdown-preview-view h2 a.tag,
-.markdown-preview-view h3 a.tag,
-.markdown-preview-view h4 a.tag,
-.markdown-preview-view h5 a.tag,
-.markdown-preview-view h6 a.tag {
-  text-decoration: none;
+a.tag,
+.editor .cl-hashtag {
+  font-family: var(--ebw-font-tags);
 }

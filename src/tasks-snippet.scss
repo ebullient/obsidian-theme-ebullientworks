@@ -21,9 +21,7 @@ Ebullientworks tasks $version$ by @ebullient
 }
 
 /** Deal with Blue Topaz masks */
-.markdown-preview-view ul.contains-task-list li.task-list-item.is-checked[data-task] input.task-list-item-checkbox::before,
-.markdown-preview-view ol.contains-task-list li.task-list-item.is-checked[data-task] input.task-list-item-checkbox::before,
-.markdown-source-view.is-live-preview input.task-list-item-checkbox[data-task]::before {
+li[data-task] input[type=checkbox]::before {
   transform: none !important;
   -webkit-mask-image: none !important;
 }

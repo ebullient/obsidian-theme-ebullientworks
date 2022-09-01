@@ -1,178 +1,97 @@
 .theme-dark {
-  --strong-em: var(--yellow-2);
-  --strong: var(--blue-3);
-  --em: var(--pink-3);
+  --bold-color: var(--blue-3);
+  --italic-color: var(--pink-3);
+  --ebw-strong-em: var(--yellow-2);
 
-  --link: var(--gray-light-1);
-  --link-underline: var(--teal-4);
-  --link-hover: var(--teal-3);
-  --link-hidden: var(--teal-4);
+  --ebw-link-underline: var(--teal-4);
+  --ebw-link-hidden: var(--teal-4);
+
+  --link-color: var(--gray-light-1);
+  --link-color-hover: var(--teal-3);
 }
 .theme-dark .print,
 .theme-light {
-  --strong-em: var(--yellow-3);
-  --strong: var(--blue-4);
-  --em: var(--pink-4);
+  --bold-color: var(--blue-4);
+  --italic-color: var(--pink-4);
+  --ebw-strong-em: var(--yellow-3);
 
-  --link: var(--gray-dark-4);
-  --link-underline: var(--teal-2);
-  --link-hover: var(--teal-3);
-  --link-hidden: var(--teal-2);
+  --ebw-link-underline: var(--teal-2);
+  --ebw-link-hidden: var(--teal-2);
+
+  --link-color: var(--gray-dark-4);
+  --link-color-hover: var(--teal-3);
 }
+body {
+  --link-decoration: underline var(--ebw-link-underline);
+  --link-decoration-hover: underline var(--ebw-link-underline);
 
-.cm-s-obsidian .cm-strong.cm-quote,
-.cm-s-obsidian .cm-strong.cm-link,
-.cm-s-obsidian .cm-strong,
-.view-content strong,
-.view-content strong a.internal-link {
-  color: var(--strong);
-  font-weight: 600;
-}
+  --link-external-color: var(--link-color);
+  --link-external-color-hover: var(--link-color-hover);
+  --link-external-decoration: underline var(--ebw-link-underline);
+  --link-external-decoration-hover: var(--ebw-link-underline);
 
-.cm-s-obsidian .cm-em.cm-quote,
-.cm-s-obsidian .cm-em,
-.view-content em,
-.view-content em a.internal-link {
-  color: var(--em);
-}
-
-.cm-s-obsidian .cm-quote.cm-em.cm-strong,
-.cm-s-obsidian .cm-link.cm-em.cm-strong,
-.cm-s-obsidian .cm-em.cm-strong,
-.view-content strong em,
-.view-content strong em a.internal-link {
-  color: var(--strong-em);
+  --link-unresolved-color: var(--link-color);
+  --link-unresolved-opacity: 0.9;
+  --link-unresolved-decoration-style: dotted;
+  --link-unresolved-decoration-color: var(--ebw-link-underline);
 }
 
-// Highlight, matched text
-.markdown-preview-view mark,
-.markdown-rendered mark,
-.search-result-file-matched-text,
-.cm-s-obsidian span.obsidian-search-match-highlight,
-.cm-s-obsidian span.cm-highlight,
-.is-flashing h1,
-.is-flashing h2,
-.is-flashing h3,
-.is-flashing h4,
-.is-flashing h5,
-.is-flashing h6,
-.is-flashing * {
-  color: var(--text-highlight-fg);
+del {
+  text-decoration-color: rgba(203, 203, 203, 0.7);
+}
+strong em,
+strong em a.internal-link {
+  color: var(--ebw-strong-em);
 }
 
-div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
-  --text-selection: var(--text-highlight-bg-active);
-}
-
-.markdown-source-view.mod-cm6 .cm-selection,
-::selection {
-  background-color: var(--text-selection);
-}
-
-.is-flashing * ::selection {
-  background-color: var(--text-selection-active);
-}
-
-.CodeMirror-cursor,
-.cm-s-obsidian .cm-cursor {
-  border-left: 1px solid var(--primary-accent-4);
-}
-.cm-s-obsidian .CodeMirror-lines {
-  caret-color: var(--primary-accent-4);
-}
-
-// Padding for indentation guides
-.cm-s-obsidian .HyperMD-codeblock-bg.cm-line {
-  text-indent: -4px;
-  padding-left: 4px;
-}
-
-// Reference: css styles for links in base
-// .rich-link -- color
-// .cm-link -- text-decoration
-// .cm-s-default .cm-link -- color(#00c)
-// .cm-s-obsidian .hmd-link-icon:after -- color(#009), text-shadow
-// .cm-s-obsidian span.cm-link -- color(text-accent)
-// .cm-s-obsidian span.cm-hmd-internal-link -- color(text-accent)
-// .cm-s-obsidian span.cm-formatting-link -- color(text-faint)
-// .cm-s-obsidian span.cm-hmd-internal-link:hover -- text-decoration(underline)
-// .markdown-rendered .internal-link -- text-decoration(underline)
-// .markdown-rendered .internal-link.is-unresolved -- opacity
-// .markdown-rendered mark .internal-link -- color(text-normal), background-color(highlight)
-// .markdown-embed-link, .file-embed-link -- color(text-faint)
-// .markdown-embed-link:hover, .file-embed-link:hover -- color(text-accent)
-// ---
-a:hover {
-  color: var(--link-hover);
-  text-decoration: underline var(--link-underline);
-}
-a,
-.cm-s-obsidian span.cm-url,
-.cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-hmd-internal-link,
-.markdown-rendered .internal-link,
-.markdown-preview-view .internal-link {
-  color: var(--link);
-}
-a,
-.markdown-rendered .internal-link,
-.markdown-preview-view .internal-link,
-.markdown-source-view.mod-cm6 .cm-url:not(.cm-strikethrough),
-.markdown-source-view.mod-cm6 .cm-url:not(.cm-strikethrough) .cm-underline,
-.markdown-source-view.mod-cm6 .cm-link:not(.cm-strikethrough),
-.markdown-source-view.mod-cm6 .cm-link:not(.cm-strikethrough) .cm-underline,
-.markdown-source-view.mod-cm6 .cm-hmd-internal-link:not(.cm-strikethrough),
-.cm-s-obsidian .cm-url:not(.cm-strikethrough),
-.cm-s-obsidian .cm-link:not(.cm-strikethrough),
-.cm-s-obsidian .cm-hmd-internal-link:not(.cm-strikethrough) {
-  text-decoration: underline var(--link-underline);
+.markdown-rendered del a.external-link,
+.markdown-rendered del a.internal-link,
+.markdown-rendered del a.internal-link.is-unresolved,
+.markdown-source-view.mod-cm6 .cm-url.cm-strikethrough,
+.markdown-source-view.mod-cm6 .cm-url.cm-strikethrough .cm-underline,
+.markdown-source-view.mod-cm6 .cm-link.cm-strikethrough,
+.markdown-source-view.mod-cm6 .cm-link.cm-strikethrough .cm-underline,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link.cm-strikethrough,
+.cm-s-obsidian .cm-url.cm-strikethrough,
+.cm-s-obsidian .cm-link.cm-strikethrough,
+.cm-s-obsidian .cm-hmd-internal-link.cm-strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: var(--link-decoration-color);
+  text-decoration-thickness: initial;
 }
 .cm-s-obsidian span.cm-string.cm-url {
-  color: var(--link-hidden);
+  color: var(--ebw-link-hidden);
 }
-// Formatting characters [around](links)
-.cm-s-obsidian span.cm-formatting-link.cm-link,
-.cm-s-obsidian span.cm-formatting-link-string {
-  font-weight: normal;
-  color: var(--text-muted);
-}
-.markdown-rendered,
-.markdown-preview-view {
-  .internal-link.is-unresolved {
-    opacity: 0.9;
-    text-decoration-style: dotted;
-  }
+.markdown-rendered {
   .internal-link.is-unresolved::after {
     content: ' ✎';
-    color: var(--link-underline);
+    color: var(--ebw-link-underline);
   }
 }
-.markdown-embed-link svg {
-  color: var(--link-underline);
-  height: 14px;
-  width: 14px;
+em a,
+.cm-s-obsidian span.cm-link.cm-em {
+  color: var(--italic-color);
+  text-decoration: var(--link-decoration);
+  text-decoration-color: var(--link-decoration-color);
 }
-
-// Skip decorations on dataview task list item indicators
-.markdown-preview-view .task-list-item,
-.markdown-rendered .task-list-item {
-  a[data-href][aria-label-position].internal-link {
-    border-bottom: none;
-    text-decoration: none;
-    color: var(--link-underline);
-  }
+strong a,
+.cm-s-obsidian span.cm-link.cm-strong {
+  color: var(--bold-color);
+  text-decoration: var(--link-decoration);
+}
+em a:hover,
+.cm-s-obsidian span.cm-link.cm-em:hover,
+strong a:hover,
+.cm-s-obsidian span.cm-link.cm-strong:hover {
+  color: var(--link-color-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+.external-link {
+  background-position: center right;
+  background-size: .9em;
 }
 
 /* Collapse external links / markdown links in edit mode: CodeMirrorOptions + Legacy editor */
-body.style-active-selection:not(.ebullientworks-show-edit-mode-links) div:not(.CodeMirror-activeline) > .CodeMirror-line {
-  .cm-string.cm-url:not(.cm-formatting) {
-    font-size: 0;
-  }
-  .cm-string.cm-url:not(.cm-formatting)::after {
-    content: '·';
-    font-size: 1rem;
-  }
-}
 /* CM6 editor */
 body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
   div.cm-line:not(.cm-active) {
@@ -185,3 +104,50 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
     }
   }
 }
+
+// DATAVIEW TASK Skip decorations on dataview task list item indicators
+.markdown-preview-view .task-list-item,
+.markdown-rendered .task-list-item {
+  a[data-href][aria-label-position].internal-link {
+    border-bottom: none;
+    text-decoration: none;
+    color: var(--ebw-link-underline);
+  }
+}
+
+// Highlight, matched text
+// .markdown-preview-view mark,
+// .markdown-rendered mark,
+// .search-result-file-matched-text,
+// .cm-s-obsidian span.obsidian-search-match-highlight,
+// .cm-s-obsidian span.cm-highlight,
+// .is-flashing h1,
+// .is-flashing h2,
+// .is-flashing h3,
+// .is-flashing h4,
+// .is-flashing h5,
+// .is-flashing h6,
+// .is-flashing * {
+//   color: var(--text-highlight-fg);
+// }
+
+// div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
+//   --text-selection: var(--text-highlight-bg-active);
+// }
+
+// .markdown-source-view.mod-cm6 .cm-selection,
+// ::selection {
+//   background-color: var(--text-selection);
+// }
+
+// .is-flashing * ::selection {
+//   background-color: var(--text-selection-active);
+// }
+
+// .CodeMirror-cursor,
+// .cm-s-obsidian .cm-cursor {
+//   border-left: 1px solid var(--primary-accent-4);
+// }
+// .cm-s-obsidian .CodeMirror-lines {
+//   caret-color: var(--primary-accent-4);
+// }

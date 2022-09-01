@@ -3,3 +3,4 @@ package-lock.json
 vault
 .DS_Store
 .dev-target.json
+app*.css

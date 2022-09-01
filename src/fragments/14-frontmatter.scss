@@ -10,7 +10,7 @@
     border: none !important;
     background-color: transparent;
 
-    .code {
+    code {
       visibility: hidden;
     }
     button {
@@ -32,10 +32,12 @@
     height: unset;
     z-index: 3;
 
-    .code {
+    code {
       visibility: visible;
+      background-color: var(---background-secondary);
     }
   }
+
   pre.frontmatter.mod-failed {
     position: absolute;
     .mod-error {
@@ -72,13 +74,22 @@
     border: 1px solid var(--background-modifier-border);
     background-color: var(--background-secondary);
     filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-    width: unset;
+    width: 50%;
+    min-width: 200px;
     height: unset;
     z-index: 3;
 
-    .frontmatter-container-header,
+    .frontmatter-container-header {
+      padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
+      visibility: visible;
+    }
     .frontmatter-section {
       visibility: visible;
+      padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
+    }
+
+    .frontmatter-collapse-indicator {
+      display: none;
     }
   }
 }

@@ -1,52 +1,8 @@
 .theme-dark {
-  --pre-code: var(--blue-2);
+  --code-normal: var(--blue-2);
 }
 .theme-dark .print,
 .theme-light {
-  --pre-code: var(--blue-5);
+  --code-normal: var(--blue-5);
 }
 
-.cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian .HyperMD-codeblock,
-.markdown-preview-view code {
-  color: var(--pre-code);
-}
-
-// Specificity
-.theme-dark,
-.theme-light {
-  .markdown-preview-view pre > code {
-    border: none;
-    background: none;
-  }
-
-  pre[class*="language-"],
-  :not(pre) > code[class*="language-"],
-  .markdown-preview-view pre {
-    background: var(--background-primary-alt);
-    border-radius: 4px;
-    border: 1px solid var(--background-primary-alt);
-  }
-  .cm-s-obsidian span.cm-inline-code,
-  .cm-s-obsidian div.HyperMD-codeblock-begin-bg,
-  .cm-s-obsidian div.HyperMD-codeblock-end-bg,
-  .cm-s-obsidian div.HyperMD-codeblock-bg {
-    background-color: var(--background-primary-alt);
-  }
-  .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-    border-top: 2px solid var(--background-primary-alt);
-  }
-  .cm-s-obsidian div.HyperMD-codeblock-bg {
-    border-left: 2px solid var(--background-primary-alt);
-    border-right: 2px solid var(--background-primary-alt);
-  }
-  .cm-s-obsidian div.HyperMD-codeblock-end-bg {
-    border-bottom: 2px solid var(--background-primary-alt);
-  }
-
-  .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
-    /* Inherited display is not safely inline */
-    display: inline;
-    padding: unset;
-  }
-}

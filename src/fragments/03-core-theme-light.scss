@@ -7,25 +7,30 @@
     --background-secondary: var(--gray-light-6);               //  Sidebar background
     --background-secondary-alt: var(--gray-light-2);           //  Sidebar title background
 
-    --background-modifier-border: var(--gray-light-1);         //  Border outline of quotes, tables, line breaks
-    --background-modifier-form-field: white;
-    --background-modifier-form-field-highlighted: white;     // Search Bar Active Highlight
-    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
-    --background-modifier-success: var(--green-2);      // Publish Upload Success Background
+    // --background-modifier-border: var(--gray-light-1);         //  Border outline of quotes, tables, line breaks
+    // --background-modifier-form-field: white;
+    // --background-modifier-form-field-highlighted: white;     // Search Bar Active Highlight
+    // --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+
+    --background-modifier-success:     var(--green-2);      // Publish Upload Success Background
+    --background-modifier-success-rgb: var(--green-2-rgb);      // Publish Upload Success Background
+
     --background-modifier-error: var(--pink-1);           // Delete Screen Button
     --background-modifier-error-rgb: var(--pink-2-rgb); // Ctrl F Search Background
     --background-modifier-error-hover: var(--pink-2);
-    --background-modifier-cover: rgba(158, 158, 158, 0.2);   // Obsidian Title Bar
+
+    --text-normal: var(--gray-dark-5);                   // Text body of note
+    --text-muted: var(--gray-dark-4);                    // Text darker for sidebar, toggles, inactive, tags, etc
+    --text-faint: var(--gray-dark-1);                    // Link brackets color
 
     --text-accent: var(--primary-accent-4);                  // Links
     --text-accent-hover: var(--secondary-accent-3);          // Links hover
-    --text-normal: var(--gray-dark-5);                   // Text body of note
-    --text-muted: var(--gray-dark-4);                    // Text darker for sidebar, toggles, inactive, tags, etc
     --text-muted-rgb: 33, 33, 33;
-    --text-faint: var(--gray-dark-1);                    // Link brackets color
 
     --text-error: var(--pink-5);
-    --text-error-hover: var(--pink-4);
+    --text-error: var(--green-4);
+
+    // --text-error-hover: var(--pink-4);
 
     --text-highlight-fg: var(--text-dark-2);
     --text-highlight-bg: var(--primary-accent-0);
@@ -33,22 +38,16 @@
 
     --text-selection: var(--secondary-accent-0);
 
-    --indentation-guide: var(--gray-light-3);
-    --indentation-guide-active: var(--pink-2);
+    // --indentation-guide: var(--gray-light-3);
+    // --indentation-guide-active: var(--pink-2);
 
-    /** Text on accent should work as foreground for all interactive elements */
+    // /** Text on accent should work as foreground for all interactive elements */
     --text-on-accent: var(--gray-dark-7);                // Program Title bar text
-    --interactive-normal: var(--secondary-accent-2);            // Button background Color
     --interactive-hover: var(--primary-accent-2);            // Button hover text; pin
+    --interactive-normal: var(--secondary-accent-2);            // Button background Color
     --interactive-accent: var(--secondary-accent-2);             // Workspace Note Title Underline
     --interactive-accent-rgb: var(--secondary-accent-1-rgb);    // Publish item select, Resize Handle
     --interactive-accent-hover: var(--primary-accent-2);      // Menu Button Hover
-    --interactive-success: var(--green-2);
-
-    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.08);
-    --scrollbar-bg: rgba(0, 0, 0, 0.03);
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.05);
-    --highlight-mix-blend-mode: lighten;                // Search Highlight Mode
 }
 .theme-dark .print,
 .theme-light .print {

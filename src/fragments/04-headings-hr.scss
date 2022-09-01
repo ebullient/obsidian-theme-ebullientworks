@@ -1,28 +1,69 @@
 :root {
-  --h1: 2em;
-  --h2: 1.8em;
-  --h3: 1.6em;
-  --h4: 1.4em;
-  --h5: 1.2em;
-  --h6: 1.2em;
+  --h1-size: 2em;
+  --h2-size: 1.8em;
+  --h3-size: 1.6em;
+  --h4-size: 1.4em;
+  --h5-size: 1.2em;
+  --h6-size: 1.2em;
+
+  --h1-font: var(--ebw-header-font);
+  --h2-font: var(--ebw-header-font);
+  --h3-font: var(--ebw-header-font);
+  --h4-font: var(--ebw-header-font);
+  --h5-font: var(--ebw-header-font);
+  --h6-font: var(--ebw-header-font);
+
+  --h1variant: common-ligatures var(--ebw-header-font-caps-variant);
+  --h2variant: common-ligatures;
+  --h3variant: common-ligatures;
+  --h4variant: common-ligatures;
+  --h5variant: common-ligatures;
+  --h6variant: common-ligatures;
+
+  --h1-weight: 600;
+  --h2-weight: 600;
+  --h3-weight: 600;
+  --h4-weight: 500;
+  --h5-weight: 500;
+  --h6-weight: 500;
+
 }
 
 .theme-dark {
-  --text-title-h1: var(--yellow-1);
-  --text-title-h2: var(--green-3);
-  --text-title-h3: var(--teal-3);
-  --text-title-h4: var(--blue-3);
-  --text-title-h5: var(--purple-3);
-  --text-title-h6: var(--pink-3);
+  --h1-color: var(--yellow-1);
+  --h2-color: var(--green-3);
+  --h3-color: var(--teal-3);
+  --h4-color: var(--blue-3);
+  --h5-color: var(--purple-3);
+  --h6-color: var(--pink-3);
 }
 .theme-dark .print,
 .theme-light {
-  --text-title-h1: var(--yellow-3);
-  --text-title-h2: var(--green-4);
-  --text-title-h3: var(--teal-4);
-  --text-title-h4: var(--blue-4);
-  --text-title-h5: var(--purple-4);
-  --text-title-h6: var(--pink-4);
+  --h1-color: var(--yellow-3);
+  --h2-color: var(--green-4);
+  --h3-color: var(--teal-4);
+  --h4-color: var(--blue-4);
+  --h5-color: var(--purple-4);
+  --h6-color: var(--pink-4);
+}
+
+.cm-header-1 {
+  --heading-formatting: var(--h1-color)
+}
+.cm-header-2 {
+  --heading-formatting: var(--h2-color)
+}
+.cm-header-3 {
+  --heading-formatting: var(--h3-color)
+}
+.cm-header-4 {
+  --heading-formatting: var(--h4-color)
+}
+.cm-header-5 {
+  --heading-formatting: var(--h5-color)
+}
+.cm-header-6 {
+  --heading-formatting: var(--h6-color)
 }
 
 .HyperMD-header,
@@ -36,58 +77,16 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-header);
-    font-weight: 500;
     margin: 10px 0 5px 0;
   }
 
-  .cm-header-1,
-  h1 {
-    color: var(--text-title-h1);
-    font-variant: common-ligatures;
-    font-variant-caps: var(--font-header-caps-variant);
-    line-height: 1.2em;
-  }
-
-  .cm-header-2,
-  h2 {
-    color: var(--text-title-h2);
-  }
-
-  .cm-header-3,
-  h3 {
-    color: var(--text-title-h3);
-  }
-
-  .cm-header-4,
-  h4 {
-    color: var(--text-title-h4);
-  }
-
-  .cm-header-5,
-  h5 {
-    color: var(--text-title-h5);
-  }
-
-  .cm-header-6,
-  h6 {
-    color: var(--text-title-h6);
-  }
-
-  blockquote {
-    .cm-header-1,
-    h1 {
-      color: var(--text-title-h2);
-      font-variant: common-ligatures;
-    }
-  }
-
-  h1:before,
-  h2:before,
-  h3:before,
-  h4:before,
-  h5:before,
-  h6:before {
+  .is-live-prevew .HyperMD-header .cm-header::before,
+  h1::before,
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
     content: "\00a7\00a0";
     font-size: 0.6em;
   }
@@ -117,19 +116,18 @@
 .cm-s-obsidian {
   .cm-inline-code.cm-header {
     font-weight: normal;
-    font-size: 90%;
+    font-size: var(--code-size);
   }
 
   .cm-header.cm-hashtag {
     font-weight: normal;
-    font-size: 90%;
+    font-size: var(--tag-size);
     font-variant: common-ligatures;
   }
 }
 
 // HR tags
-.markdown-rendered,
-.markdown-preview-view {
+.markdown-rendered {
   hr {
     border: none;
     border-top: 1px dotted var(--interactive-normal);
@@ -149,7 +147,7 @@
   }
 
   blockquote hr::after,
-  .admonition-content hr::after,
+  .callout-content hr::after,
   .markdown-embed-content hr::after {
     background: var(--background-primary-alt);
   }

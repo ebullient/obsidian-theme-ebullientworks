@@ -17,12 +17,6 @@ name: Ebullientworks theme settings
 id: ebullientworks-theme
 settings:
   -
-    id: ebullientworks-use-default-list-indent
-    title: Use the default indent for lists
-    description: This theme compresses list indent whitespace by default. Enable this to use the indent spacing from the default theme.
-    type: class-toggle
-    default: false
-  -
     id: ebullientworks-nix-checkbox
     title: Suppress/Remove this theme's checkbox styles
     description: Set this to true if you are going to use your own task snippet
@@ -38,12 +32,6 @@ settings:
     id: ebullientworks-show-edit-mode-external-links
     title: Show external links in edit mode
     description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-hide-inactive-collapse-indicators
-    title: Hide collapse indicators unless hovered or active
-    description: If true, hide collapse indicators in all three modes unless they are hovered over or the line is active.
     type: class-toggle
     default: false
   -
@@ -67,13 +55,13 @@ settings:
   -
     title: Headings
     description: Font for text headings (h1 to h6); empty will use default text font
-    id: font-header
+    id: ebw-header-font
     type: variable-text
     default: "'Architects Daughter'"
   -
     title: Heading Font Variant
     description: Font variant for text headings (h1 to h6)
-    id: font-header-caps-variant
+    id: ebw-header-font-caps-variant
     type: variable-select
     allowEmpty: false
     default: small-caps
@@ -101,11 +89,11 @@ settings:
   -
     title: Tags
     description: Font for displaying inline tags; empty will use default text font
-    id: font-tags
+    id: ebw-font-tags
     type: variable-text
     default: "'Architects Daughter'"
   -
-    id: font-callout-title
+    id: ebw-font-callout-title
     title: Font for callout/admonition titles
     description: Use the specified font for callout and admonition titles
     type: variable-text
@@ -187,9 +175,6 @@ settings:
         - value: var(--tag-6)
           label: darkest
  */
-:root {
-  --line-height: 1.5em;
-}
 
 @import 'fragments/01-colors.scss';
 @import 'fragments/02-fonts.scss';
@@ -197,24 +182,21 @@ settings:
 @import 'fragments/03-core-theme-dark.scss';
 @import 'fragments/03-core-theme-light.scss';
 @import 'fragments/03a-workspace-layout.scss';
-@import 'fragments/03b-workspace-view.scss';
-@import 'fragments/03b-option-sidebar-hover.scss';
-@import 'fragments/03c-modal-input.scss';
-@import 'fragments/03d-graph-view.scss';
+// @import 'fragments/03b-option-sidebar-hover.scss';
+// @import 'fragments/03c-modal-input.scss';
+// @import 'fragments/03d-graph-view.scss';
 
 @import 'fragments/04-headings-hr.scss';
 @import 'fragments/05-text-links.scss';
 
 @import 'fragments/06-lists-checkboxes.scss';
 @import 'fragments/07-tags.scss';
-@import 'fragments/08-blockquote.scss';
+@import 'fragments/08-blockquote-callouts.scss';
 @import 'fragments/09-codeblocks.scss';
 @import 'fragments/10-images-embeds.scss';
 
-@import 'fragments/11-admonition.scss';
-@import 'fragments/12-calendar-day-planner-tracker.scss';
-@import 'fragments/13-timelines.scss';
+// @import 'fragments/12-calendar-day-planner-tracker.scss';
+// @import 'fragments/13-timelines.scss';
 @import 'fragments/14-frontmatter.scss';
 @import 'fragments/15-table.scss';
-@import 'fragments/16-hide-collapse-indicators.scss';
-@import 'fragments/17-indentation-guide.scss';
+

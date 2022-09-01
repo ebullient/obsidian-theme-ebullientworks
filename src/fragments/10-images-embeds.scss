@@ -1,3 +1,14 @@
+body {
+  --embed-border-left: 1px solid var(--ebw-embed-border-color);
+  --embed-border-right: 1px solid var(--ebw-embed-border-color);
+  --embed-padding: 0 var(--size-4-1);
+}
+.theme-light {
+  --ebw-embed-border-color: var(--primary-accent-1);
+}
+.theme-dark {
+  --ebw-embed-border-color: var(--gray-dark-7);
+}
 // ------------------------------------------------------
 // Floating images
 // ------------------------------------------------------
@@ -33,50 +44,57 @@ div {
 // ------------------------------------------------------
 // Naked embeds
 // ------------------------------------------------------
+.markdown-embed {
+  border-radius: var(--radius-l);
+}
 .markdown-embed-title {
   display:none;
 }
-.markdown-preview-view {
-  .markdown-embed {
-    border: none;
-    padding:0;
-    margin:0;
-
-    .markdown-embed-content {
-      padding: 0;
-      max-height: unset;
-      overflow: unset;
-    }
-
-    .markdown-embed-content > .markdown-preview-view  {
-      overflow-y: unset;
-      max-height: unset;
-      padding: 5px;
-    }
-
-    .markdown-embed-content>:first-child {
-      margin-top: 0;
-    }
-    .markdown-embed-content>:last-child {
-      margin-bottom: 0;
-      padding-bottom: .5em;
-    }
-  }
+.markdown-embed-content {
+  max-height: unset;
+  overflow: unset;
 }
-.markdown-embed-content > .markdown-preview-view  {
+
+// .markdown-preview-view {
+//   .markdown-embed {
+//     border: none;
+//     padding:0;
+//     margin:0;
+
+//     .markdown-embed-content {
+//       padding: 0;
+//       max-height: unset;
+//       overflow: unset;
+//     }
+
+//     .markdown-embed-content > .markdown-preview-view  {
+//       overflow-y: unset;
+//       max-height: unset;
+//       padding: 5px;
+//     }
+
+//     .markdown-embed-content>:first-child {
+//       margin-top: 0;
+//     }
+//     .markdown-embed-content>:last-child {
+//       margin-bottom: 0;
+//       padding-bottom: .5em;
+//     }
+//   }
+// }
+
+.markdown-embed {
+  position: relative;
+}
+> .markdown-preview-view  {
   height: unset;
 }
 
-.markdown-source-view .markdown-embed,
-.markdown-source-view .file-embed {
-  border: none;
-  padding:0;
-  margin:0;
-
-  .markdown-embed-content,
-  .markdown-embed-content > .markdown-preview-view  {
-    padding: 5px;
-  }
+// EMBED LINK
+.markdown-embed-link svg {
+  color: var(--ebw-link-underline);
+  height: 14px;
+  width: 14px;
 }
 
 .markdown-embed-link,
@@ -87,8 +105,7 @@ div {
   width: 18px;
   text-align: center;
   vertical-align: middle;
-  border-radius: none;
-  border-bottom-left-radius: 3px;
+  z-index: var(--layer-tooltip);
 }
 
 .print.print-preview > .markdown-preview-view {
@@ -99,49 +116,49 @@ div {
   }
 }
 
-.markdown-source-view.mod-cm6,
-.markdown-preview-view {
-  .markdown-embed,
-  .file-embed {
-    .markdown-embed-content,
-    .markdown-embed-content > .markdown-preview-view {
-      background-color: var(--background-primary-alt);
-    }
+// .markdown-source-view.mod-cm6,
+// .markdown-preview-view {
+//   .markdown-embed,
+//   .file-embed {
+//     .markdown-embed-content,
+//     .markdown-embed-content > .markdown-preview-view {
+//       background-color: var(--background-primary-alt);
+//     }
 
-    .markdown-embed-link,
-    .file-embed-link {
-      background-color: var(--background-primary);
-    }
-  }
-}
+//     .markdown-embed-link,
+//     .file-embed-link {
+//       background-color: var(--background-primary);
+//     }
+//   }
+// }
 
-.markdown-source-view.mod-cm6.invisible-embed,
-.markdown-preview-view.invisible-embed {
-  .markdown-embed,
-  .file-embed {
-    padding: 0;
+// .markdown-source-view.mod-cm6.invisible-embed,
+// .markdown-preview-view.invisible-embed {
+//   .markdown-embed,
+//   .file-embed {
+//     padding: 0;
 
-    .markdown-rendered {
-      padding: 0 0 0 2px;
-    }
+//     .markdown-rendered {
+//       padding: 0 0 0 2px;
+//     }
 
-    .markdown-embed-content,
-    .markdown-embed-content > .markdown-preview-view {
-      background-color: var(--background-primary);
-    }
+//     .markdown-embed-content,
+//     .markdown-embed-content > .markdown-preview-view {
+//       background-color: var(--background-primary);
+//     }
 
-    .markdown-embed-link,
-    .file-embed-link {
-      background-color: var(--background-primary);
-    }
-  }
+//     .markdown-embed-link,
+//     .file-embed-link {
+//       background-color: var(--background-primary);
+//     }
+//   }
 
-  blockquote hr::after,
-  .admonition-content hr::after,
-  .markdown-embed-content hr::after {
-    background: var(--background-primary);
-  }
-}
+//   blockquote hr::after,
+//   .callout-content hr::after,
+//   .markdown-embed-content hr::after {
+//     background: var(--background-primary);
+//   }
+// }
 
 // ------------------------------------------------------
 // Scaled iframes

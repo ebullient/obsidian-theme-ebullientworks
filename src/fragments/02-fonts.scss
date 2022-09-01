@@ -3,23 +3,16 @@
 
 :root {
   // style settings baseline
-  --eworks-font-text: 'IBM Plex Sans', Helvetica Neue;
-  --eworks-font-monospace: 'Fira Code', 'Source Code Pro', Jetbrains Mono;
-  --font-header: 'Architects Daughter';
-  --font-header-caps-variant: small-caps;
-  --font-tags: var(--font-header);
-  --font-callout-title: var(--font-header);
+  --ebw-font-text: 'IBM Plex Sans', Helvetica Neue;
+  --ebw-font-monospace: 'Fira Code', 'Source Code Pro', Jetbrains Mono;
+  --ebw-header-font: 'Architects Daughter';
+  --ebw-header-font-caps-variant: small-caps;
+  --ebw-font-tags: var(--ebw-header-font);
+  --ebw-font-callout-title: var(--ebw-header-font);
 }
 
 body {
-  --font-interface-theme: var(--eworks-font-text);
-  --font-text-theme: var(--eworks-font-text);
-  --font-monospace-theme: var(--eworks-font-monospace);
-
-  // Something wrong with Inter font as of 0.14.9 that prevent proper rendering of emoji
-  // A) re-declare font-default to remove Inter
-  // B) re-declare font-text to dis-entangle it from font-interface stack
-  --font-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
-  --font-text: var(--font-text-override), var(--font-text-theme), var(--default-font, ""), var(--font-default);
-  --cm-font-monospace: var(--font-monospace);
+  --font-interface-theme: var(--ebw-font-text);
+  --font-text-theme: var(--ebw-font-text);
+  --font-monospace-theme: var(--ebw-font-monospace);
 }

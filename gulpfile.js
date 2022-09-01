@@ -16,7 +16,9 @@ gulp.task("css", () => {
         .pipe(
             rename(function (path) {
                 if (path.basename == "ebullientworks") {
-                    path.basename = "obsidian";
+                    path.basename = "theme";
+                } else {
+                    path.basename += "-for-0.16";
                 }
                 path.extname = ".css";
             })
