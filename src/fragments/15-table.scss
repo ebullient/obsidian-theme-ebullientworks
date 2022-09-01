@@ -1,19 +1,22 @@
 body {
-  // --table-header-border-width: 0px;
   --table-header-color: var(--text-on-accent);
   --table-header-background-hover: var(--ebw-table-header-alt);
   --table-row-background-hover: var(--background-secondary);
-  --table-row-alt-background: var(--ebw-table-alt);
-  --table-column-alt-background: transparent;
+  --table-background: var(--ebw-row-alt);
+  --table-row-alt-background: transparent;
+  --table-column-alt-background: unset;
+  --table-header-size: var(--font-small);
 }
 .theme-dark {
   --table-header-background: var(--primary-accent-5);
   --ebw-table-header-alt: var(--primary-accent-4);
+  --ebw-row-alt: rgba(0, 0, 0, .2);
 }
 .theme-dark .print,
 .theme-light {
   --table-header-background: var(--primary-accent-1);
   --ebw-table-header-alt: var(--primary-accent-2);
+  --ebw-row-alt: rgba(0, 0, 0, .05);
 }
 
 .markdown-rendered table.table-view-table.dataview {
