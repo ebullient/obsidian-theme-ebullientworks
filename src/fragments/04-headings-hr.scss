@@ -13,12 +13,12 @@
   --h5-font: var(--ebw-header-font);
   --h6-font: var(--ebw-header-font);
 
-  --h1variant: var(--ebw-header-font-caps-variant);
-  --h2variant: common-ligatures;
-  --h3variant: common-ligatures;
-  --h4variant: common-ligatures;
-  --h5variant: common-ligatures;
-  --h6variant: common-ligatures;
+  --h1-variant: common-ligatures;
+  --h2-variant: common-ligatures;
+  --h3-variant: common-ligatures;
+  --h4-variant: common-ligatures;
+  --h5-variant: common-ligatures;
+  --h6-variant: common-ligatures;
 
   --h1-weight: 600;
   --h2-weight: 600;
@@ -28,7 +28,6 @@
   --h6-weight: 500;
 
 }
-
 .theme-dark {
   --h1-color: var(--yellow-1);
   --h2-color: var(--green-3);
@@ -64,6 +63,14 @@
 }
 .cm-header-6 {
   --heading-formatting: var(--h6-color)
+}
+
+h1,
+.markdown-rendered h1,
+.HyperMD-header-1,
+.HyperMD-list-line
+.cm-header-1 {
+  font-variant-caps: var(--ebw-header-font-caps-variant);
 }
 
 .HyperMD-header,
@@ -109,7 +116,6 @@
   h6 a.tag {
     font-weight: normal;
     font-size: 65%;
-    font-variant: common-ligatures;
   }
 }
 
@@ -122,7 +128,6 @@
   .cm-header.cm-hashtag {
     font-weight: normal;
     font-size: var(--tag-size);
-    font-variant: common-ligatures;
   }
 }
 
