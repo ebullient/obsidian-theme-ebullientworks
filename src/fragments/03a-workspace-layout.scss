@@ -1,14 +1,16 @@
 body {
+  --divider-color: var(--background-modifier-border);
   --file-margins: var(--size-4-2) var(--size-4-8);
+  --ribbon-background: var(--titlebar-background);
   --ribbon-background-collapsed: var(--titlebar-background);
+  --status-bar-background: var(--titlebar-background);
   --tab-text-color: var(--icon-color);
   --tab-text-color-focused: var(--icon-color-focused);
   --tab-container-background: var(--titlebar-background);
-  --status-bar-background: var(--titlebar-background);
   --tab-outline-color: var(--background-modifier-border);
-  --divider-color: var(--background-modifier-border);
 }
 body.is-focused {
+  --ribbon-background: var(--titlebar-background-focused);
   --ribbon-background-collapsed: var(--titlebar-background-focused);
   --tab-container-background: var(--titlebar-background-focused);
   --status-bar-background: var(--titlebar-background-focused);
@@ -17,15 +19,23 @@ body.is-focused {
 }
 .theme-dark {
   --ebw-sharp-border: 1px solid rgba(0, 0, 0, 0.5);
+  --ebw-rotated-active-leaf-fg: var(--background-secondary-alt);
+  --ebw-rotated-active-leaf-bg: var(--primary-accent-5);
+  --ebw-rotated-inactive-leaf-fg: var(--background-secondary-alt);
+  --ebw-rotated-inactive-leaf-bg: var(--gray-dark-5);
 }
 .theme-light {
   --ebw-active-leaf-fg: var(--gray-light-5);
   --ebw-sharp-border: 1px solid rgba(0, 0, 0, .1);
+  --ebw-rotated-active-leaf-fg: var(--background-secondary-alt);
+  --ebw-rotated-active-leaf-bg: var(--primary-accent-3);
+  --ebw-rotated-inactive-leaf-fg: var(--nav-item-color);
+  --ebw-rotated-inactive-leaf-bg: var(--titlebar-background-focused);
 }
 .workspace-ribbon .sidebar-toggle-button {
   border-right: var(--tab-outline-width) solid var(--tab-outline-color);
 }
-.workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right {
+.workspace:not(.is-right-sidedock-open) .workspace-tabs:not(.mod-stacked) .sidebar-toggle-button.mod-right {
   border-left: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 body:not(.is-mobile) .mod-left-split.is-floating {
@@ -43,6 +53,10 @@ body:not(.is-mobile) div.workspace.is-right-sidedock-open
     border-left: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
+body:not(.is-mobile) .mod-right-split.is-floating {
+  right: 0;
+}
+
 .ebullientworks-reverse-view-header-actions .workspace-tabs .view-header {
   margin: 0;
   > .view-actions {
@@ -58,17 +72,58 @@ body:not(.is-mobile) div.workspace.is-right-sidedock-open
   }
 }
 
-// Pane relief / sliding panes icon always on top
-div.workspace-split.mod-vertical.is-sliding.mod-root {
-  div.workspace-tabs.mod-top.mod-top-right-space .workspace-tab-header-container {
-    padding-right: var(--ribbon-width);
+.workspace .mod-root .workspace-tabs.mod-stacked {
+  --tab-stacked-header-width: calc(var(--icon-s) + var(--size-2-3));
+  --tab-stacked-pane-width: 700px;
+
+  .workspace-tab-container {
+    .workspace-tab-header-inner-icon,
+    .workspace-tab-header-status-icon,
+    .workspace-tab-header-inner-close-button {
+      padding: var(--size-2-3) var(--size-2-2);
+      color: inherit;
+    }
+
+    .workspace-tab-header-inner {
+      padding: var(--size-2-4) var(--size-4-2);
+      justify-content: flex-start;
+    }
+    .workspace-tab-header {
+      color: var(--ebw-rotated-inactive-leaf-fg);
+      background-color: var(--ebw-rotated-inactive-leaf-bg);
+      border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+
+      &.is-active {
+        color: var(--ebw-rotated-active-leaf-fg);
+        background-color: var(--ebw-rotated-active-leaf-bg);
+      }
+
+      .workspace-tab-header-inner-title {
+        display: none;
+      }
+    }
   }
-  div.sidebar-toggle-button.mod-right {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: var(--ribbon-width);
-    background-color: var(--tab-container-background);
-    z-index: var(--layer-sidedock);
+  .view-header {
+    --text-normal: var(--text-faint);
+    --header-height: calc(var(--icon-s) + var(--size-2-4));
+    align-items: center;
+  }
+  .view-header-title {
+      line-height: calc(var(--header-height) - var(--size-2-4));
   }
 }
+
+// Pane relief / sliding panes icon always on top
+// div.workspace-split.mod-vertical.is-sliding.mod-root {
+//   div.workspace-tabs.mod-top.mod-top-right-space .workspace-tab-header-container {
+//     padding-right: var(--ribbon-width);
+//   }
+//   div.sidebar-toggle-button.mod-right {
+//     position: fixed;
+//     top: 0;
+//     right: 0;
+//     width: var(--ribbon-width);
+//     background-color: var(--tab-container-background);
+//     z-index: var(--layer-sidedock);
+//   }
+// }
