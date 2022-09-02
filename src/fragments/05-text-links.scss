@@ -40,7 +40,8 @@ del {
   text-decoration-color: rgba(203, 203, 203, 0.7);
 }
 strong em,
-strong em a.internal-link {
+strong em a.internal-link,
+.cm-s-obsidian span.cm-strong.cm-em {
   color: var(--ebw-strong-em);
 }
 
