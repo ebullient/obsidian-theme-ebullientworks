@@ -8,16 +8,13 @@
     --background-secondary-alt: var(--gray-light-4);           //  Sidebar title background
 
     --background-modifier-border: var(--gray-light-1);         //  Border outline of quotes, tables, line breaks
-    // --background-modifier-form-field: white;
-    // --background-modifier-form-field-highlighted: white;     // Search Bar Active Highlight
-    // --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
 
     --background-modifier-success:     var(--green-2);      // Publish Upload Success Background
     --background-modifier-success-rgb: var(--green-2-rgb);      // Publish Upload Success Background
 
-    --background-modifier-error: var(--pink-1);           // Delete Screen Button
-    --background-modifier-error-rgb: var(--pink-2-rgb); // Ctrl F Search Background
-    --background-modifier-error-hover: var(--pink-2);
+    --background-modifier-error: var(--red-1);           // Delete Screen Button
+    --background-modifier-error-rgb: var(--red-2-rgb); // Ctrl F Search Background
+    --background-modifier-error-hover: var(--red-2);
 
     --text-normal: var(--gray-dark-5);                   // Text body of note
     --text-muted: var(--gray-dark-4);                    // Text darker for sidebar, toggles, inactive, tags, etc
@@ -26,19 +23,16 @@
     --text-accent: var(--primary-accent-4);                  // Links
 
     --text-success: var(--green-2);
-    --text-error: var(--pink-5);
-    --text-error: var(--green-4);
+    --text-error: var(--red-5);
 
-    // --text-error-hover: var(--pink-4);
-
-    --text-highlight-fg: var(--text-dark-2);
+    --text-highlight-fg: var(--gray-dark-7);
     --text-highlight-bg: var(--primary-accent-0);
     --text-highlight-bg-active: rgba(252, 232, 131, 0.6);
 
     --text-selection: var(--secondary-accent-0);
 
     // --indentation-guide: var(--gray-light-3);
-    // --indentation-guide-active: var(--pink-2);
+    // --indentation-guide-active: var(--red-2);
 
     // /** Text on accent should work as foreground for all interactive elements */
     --text-on-accent: var(--gray-dark-7);                // Program Title bar text
@@ -48,11 +42,11 @@
     --interactive-accent-rgb: var(--secondary-accent-1-rgb);    // Publish item select, Resize Handle
     --interactive-accent-hover: var(--primary-accent-2);      // Menu Button Hover
 }
-.theme-dark .print,
-.theme-light .print {
-  --background-primary: white;                 //  Note background
-  --background-primary-alt: #fafafa;           //  Note title background
+// .theme-dark .print,
+// .theme-light .print {
+//   --background-primary: white;                 //  Note background
+//   --background-primary-alt: #fafafa;           //  Note title background
 
-  --background-secondary: #fcfcfc;             //  Sidebar background
-  --background-secondary-alt: #f3f3f3;         //  Sidebar title background
-}
+//   --background-secondary: #fcfcfc;             //  Sidebar background
+//   --background-secondary-alt: #f3f3f3;         //  Sidebar title background
+// }

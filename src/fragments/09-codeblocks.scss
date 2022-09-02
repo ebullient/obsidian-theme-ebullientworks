@@ -3,6 +3,9 @@
 }
 .theme-dark .print,
 .theme-light {
-  --code-normal: var(--blue-5);
+  --code-normal: var(--blue-4);
 }
-
+kbd {
+  padding: 0.1em 0.25em;
+  background-color: var(--background-secondary-alt);
+}

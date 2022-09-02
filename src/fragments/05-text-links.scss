@@ -1,6 +1,6 @@
 .theme-dark {
-  --bold-color: var(--blue-3);
-  --italic-color: var(--pink-3);
+  --bold-color: var(--blue-2);
+  --italic-color: var(--pink-2);
   --ebw-strong-em: var(--yellow-2);
 
   --ebw-link-underline: var(--teal-4);
@@ -12,7 +12,7 @@
 .theme-dark .print,
 .theme-light {
   --bold-color: var(--blue-4);
-  --italic-color: var(--pink-4);
+  --italic-color: var(--pink-3);
   --ebw-strong-em: var(--yellow-3);
 
   --ebw-link-underline: var(--teal-2);
@@ -113,6 +113,12 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
     text-decoration: none;
     color: var(--ebw-link-underline);
   }
+}
+
+.markdown-rendered mark {
+  color: var(--text-highlight-fg);
+  border-radius: var(--radius-s);
+  padding: 0 4px;
 }
 
 // Highlight, matched text

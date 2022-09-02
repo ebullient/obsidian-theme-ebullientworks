@@ -6,8 +6,10 @@
   --tag-4: var(--pink-4);
   --tag-5: var(--pink-5);
   --tag-6: var(--pink-6);
-  --tag-dark:  var(--tag-4);
-  --tag-light: var(--tag-4);
+  --tag-dark:  var(--tag-5);
+  --tag-light: var(--tag-3);
+  --tag-background: transparent;
+  --tag-background-hover: rgba(var(--primary-accent-1-rgb), 0.2);
 }
 .theme-dark {
   --tag-color: var(--tag-dark);

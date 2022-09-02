@@ -62,20 +62,18 @@ body {
   tr > td:last-child {
     border-right-width: var(--table-column-last-border-width);
   }
-
 }
 
-.markdown-source-view.mod-cm6.force-wrap,
-.markdown-preview-view.force-wrap {
-  .markdown-rendered table,
-  .markdown-rendered table.table-view-table {
+.markdown-rendered.force-wrap {
+  table,
+  table.table-view-table,
+  table.table-view-table.dataview {
     max-width: 100%;
 
     .table-view-table > thead,
     thead {
       max-width: 100%;
     }
-
     .table-view-table > tbody,
     tbody {
       max-width: 100%;
@@ -87,10 +85,10 @@ body {
   }
 }
 
-.markdown-source-view.mod-cm6.word-wrap,
-.markdown-preview-view.word-wrap {
-  .markdown-rendered table,
-  .markdown-rendered table.table-view-table {
+.markdown-rendered.word-wrap {
+  table,
+  table.table-view-table,
+  table.table-view-table.dataview {
 
     .table-view-table > thead > tr > th,
     thead > th {
