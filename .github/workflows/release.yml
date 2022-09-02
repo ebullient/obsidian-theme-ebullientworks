@@ -16,7 +16,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.build.outputs.version }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -43,6 +44,11 @@ jobs:
         VERSION=$(grep '^  "version"' package.json | cut -d'"' -f4)
         echo $VERSION
 
+        if [ "${{ github.event.inputs.update-manifest }}" = "true" ]; then
+          sed -i 's|\(version":\) "[0-9\.]*"|\1 "'$VERSION'"|' manifest.json
+        fi
+
+        git add .
         git status
         git commit -m "🔖 $VERSION"
         git push
@@ -67,7 +73,7 @@ jobs:
         draft: false
         prerelease: false
 
-    # Upload the theme.css
+    # Upload theme.css
     - name: Upload theme.css
       id: upload-theme
       uses: actions/upload-release-asset@v1
@@ -89,3 +95,15 @@ jobs:
         asset_path: ./tasks-snippet-for-0.16.css
         asset_name: tasks-snippet-for-0.16.css
         asset_content_type: text/css
+
+    # Upload manifest.json
+    - name: Upload manifest.json
+      id: upload-manifest
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./manifest.json
+        asset_name: manifest.json
+        asset_content_type: application/json
