@@ -43,12 +43,12 @@ function reload(done) {
         for (const [source, targets] of Object.entries(data)) {
             const sourcePath = path.resolve(__dirname, source);
             if (Array.isArray(targets)) {
-                for(const t in targets) {
-                    console.log(`copy ${sourcePath} to ${t}`);
+                targets.forEach((t) => {
+                    console.log(`copy ${source} to ${t}`);
                     fs.copyFileSync(sourcePath, path.resolve(__dirname, t));
-                }
+                })
             } else {
-                console.log(`copy ${sourcePath} to ${targets}`);
+                console.log(`copy ${source} to ${targets}`);
                 fs.copyFileSync(sourcePath, path.resolve(__dirname, targets));
             }
         }

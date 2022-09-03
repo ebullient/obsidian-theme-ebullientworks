@@ -1,6 +1,14 @@
 /node_modules
 package-lock.json
-vault
 .DS_Store
 .dev-target.json
 app*.css
+
+linked
+src/fragments/2*
+src/fragments/3*
+src/fragments/4*
+
+allthethings*
+campaign*
+statblock*
