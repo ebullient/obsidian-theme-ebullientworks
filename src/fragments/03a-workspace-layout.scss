@@ -8,40 +8,67 @@ body {
   --tab-text-color-focused: var(--icon-color-focused);
   --tab-container-background: var(--titlebar-background);
   --tab-outline-color: var(--background-modifier-border);
+
+  --he-title-bar-height: calc(var(--icon-s) + var(--size-2-3));
+  --he-view-header-height: calc(var(--icon-s) + var(--size-2-3));
 }
 body.is-focused {
+  --divider-color: var(--background-modifier-border-focus);
   --ribbon-background: var(--titlebar-background-focused);
   --ribbon-background-collapsed: var(--titlebar-background-focused);
-  --tab-container-background: var(--titlebar-background-focused);
   --status-bar-background: var(--titlebar-background-focused);
+  --tab-container-background: var(--titlebar-background-focused);
   --tab-outline-color: var(--background-modifier-border-focus);
-  --divider-color: var(--background-modifier-border-focus);
 }
 .theme-dark {
-  --ebw-sharp-border: 1px solid rgba(0, 0, 0, 0.5);
-  --ebw-rotated-active-leaf-fg: var(--background-secondary-alt);
+  --ebw-rotated-active-leaf-fg: var(--text-muted);
   --ebw-rotated-active-leaf-bg: var(--primary-accent-5);
-  --ebw-rotated-inactive-leaf-fg: var(--background-secondary-alt);
+  --ebw-rotated-inactive-leaf-fg: var(--text-muted);
   --ebw-rotated-inactive-leaf-bg: var(--gray-dark-5);
+
+  // hover editor popover colors
+  --ebw-he-title-border: var(--tab-outline-color);
+  --he-title-bar-active-fg: var(--gray-light-6);
+  --he-title-bar-active-bg: var(--secondary-accent-4);
+  --he-title-bar-active-pinned-bg: var(--primary-accent-4);
+
+  --he-title-bar-inactive-fg: var(--gray-light-3);
+  --he-title-bar-inactive-bg: var(--gray-dark-3);
+  --he-title-bar-inactive-pinned-bg: var(--gray-dark-3);
+
+  --he-text-on-accent-inactive: var(--gray-dark-7);
+  --he-text-on-accent-active: var(--gray-light-5);
 }
 .theme-light {
   --ebw-active-leaf-fg: var(--gray-light-5);
-  --ebw-sharp-border: 1px solid rgba(0, 0, 0, .1);
   --ebw-rotated-active-leaf-fg: var(--background-secondary-alt);
   --ebw-rotated-active-leaf-bg: var(--primary-accent-3);
   --ebw-rotated-inactive-leaf-fg: var(--nav-item-color);
   --ebw-rotated-inactive-leaf-bg: var(--titlebar-background-focused);
+
+  // hover editor popover colors
+  --ebw-he-title-border: var(--gray-dark-3);
+  --he-title-bar-active-fg: white;
+  --he-title-bar-active-bg: var(--secondary-accent-3);
+  --he-title-bar-active-pinned-bg: var(--primary-accent-3);
+  --he-title-bar-inactive-fg: var(--gray-light-5);
+  --he-title-bar-inactive-bg: var(--gray-dark-1);
+  --he-title-bar-inactive-pinned-bg: var(--gray-dark-1);
+
+  --he-text-on-accent-inactive: var(--gray-dark-5);
+  --he-text-on-accent-active: var(--gray-light-5);
 }
+
+// Border on the right side of the left-toggle button
 .workspace-ribbon .sidebar-toggle-button {
   border-right: var(--tab-outline-width) solid var(--tab-outline-color);
 }
+// Add a border on the right side of the left-toggle button when not using stacked tabs
 .workspace:not(.is-right-sidedock-open) .workspace-tabs:not(.mod-stacked) .sidebar-toggle-button.mod-right {
   border-left: var(--tab-outline-width) solid var(--tab-outline-color);
 }
-body:not(.is-mobile) .mod-left-split.is-floating {
-  left: calc(var(--ribbon-width));
-}
-// left hover sidedock border
+
+// left sidedock border
 body:not(.is-mobile) .workspace.is-left-sidedock-open
   .workspace-split.mod-left-split .workspace-tab-header-container {
     border-right: var(--tab-outline-width) solid var(--tab-outline-color);
@@ -53,28 +80,52 @@ body:not(.is-mobile) div.workspace.is-right-sidedock-open
     border-left: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
+// Floating sidedock
+body:not(.is-mobile) .mod-left-split.is-floating {
+  left: calc(var(--ribbon-width));
+}
 body:not(.is-mobile) .mod-right-split.is-floating {
   right: 0;
 }
 
-.ebullientworks-reverse-view-header-actions .workspace-tabs .view-header {
-  margin: 0;
-  > .view-actions {
-    order: 0;
-    flex-direction: row-reverse;
-    padding: 0 var(--size-2-3);
-  }
-  > .view-header-icon {
-    order: 1;
-  }
-  > .view-header-title-container {
-    order: 1;
+// Put view actions on the left side of the view title
+.ebullientworks-reverse-view-header-actions {
+  .popover.hover-editor .popover-content .workspace-leaf-content .view-header,
+  .workspace-tabs .view-header {
+    margin: 0;
+    > .view-actions {
+      order: 0;
+      flex-direction: row-reverse;
+      padding: 0 var(--size-2-3);
+    }
+    > .view-header-icon {
+      order: 1;
+    }
+    > .view-header-title-container {
+      order: 1;
+    }
   }
 }
 
-.workspace .mod-root .workspace-tabs.mod-stacked {
+// For stacked tabs resize and align the icons with the view header
+// Hide the view header title
+body.is-focused .workspace .mod-root .workspace-tabs.mod-stacked,
+body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked {
   --tab-stacked-header-width: calc(var(--icon-s) + var(--size-2-3));
   --tab-stacked-pane-width: 700px;
+  --titlebar-text-color-focused: var(--ebw-rotated-active-leaf-fg);
+  --tab-text-color-focused: var(--ebw-rotated-active-leaf-fg);
+  --tab-background-active: var(--ebw-rotated-active-leaf-bg);
+
+  .workspace-tab-header {
+    background-color: var(--ebw-rotated-inactive-leaf-bg);
+    border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+
+    &.is-active {
+      color: var(--ebw-rotated-active-leaf-fg);
+      background-color: var(--ebw-rotated-active-leaf-bg);
+    }
+  }
 
   .workspace-tab-container {
     .workspace-tab-header-inner-icon,
@@ -83,25 +134,16 @@ body:not(.is-mobile) .mod-right-split.is-floating {
       padding: var(--size-2-3) var(--size-2-2);
       color: inherit;
     }
-
     .workspace-tab-header-inner {
-      padding: var(--size-2-4) var(--size-4-2);
+      padding: 0 var(--size-4-2);
       justify-content: flex-start;
     }
-    .workspace-tab-header {
-      color: var(--ebw-rotated-inactive-leaf-fg);
-      background-color: var(--ebw-rotated-inactive-leaf-bg);
-      border-right: var(--tab-outline-width) solid var(--tab-outline-color);
-
-      &.is-active {
-        color: var(--ebw-rotated-active-leaf-fg);
-        background-color: var(--ebw-rotated-active-leaf-bg);
-      }
-
-      .workspace-tab-header-inner-title {
-        display: none;
-      }
+    .workspace-tab-header-inner {
+      --tab-stacked-font-weight: var(--font-light);
+      --tab-stacked-font-size: var(--font-ui-smaller);
+      font-family: var(--font-monospace);
     }
+
   }
   .view-header {
     --text-normal: var(--text-faint);
@@ -109,21 +151,27 @@ body:not(.is-mobile) .mod-right-split.is-floating {
     align-items: center;
   }
   .view-header-title {
-      line-height: calc(var(--header-height) - var(--size-2-4));
+      line-height: var(--icon-s);
+      visibility: hidden;
   }
 }
 
-// Pane relief / sliding panes icon always on top
-// div.workspace-split.mod-vertical.is-sliding.mod-root {
-//   div.workspace-tabs.mod-top.mod-top-right-space .workspace-tab-header-container {
-//     padding-right: var(--ribbon-width);
-//   }
-//   div.sidebar-toggle-button.mod-right {
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     width: var(--ribbon-width);
-//     background-color: var(--tab-container-background);
-//     z-index: var(--layer-sidedock);
-//   }
-// }
+// Popover
+.hover-editor {
+  .popover-content {
+    .popover-titlebar {
+      border-top: 1px solid var(--ebw-he-title-border);
+    }
+    .view-header {
+      --header-height: calc(var(--icon-s) + var(--size-2-4));
+      align-items: center;
+    }
+    .view-header-title {
+      line-height: var(--icon-s);
+    }
+    .view-header-title-container:after {
+      display: none;
+    }
+  }
+}
+

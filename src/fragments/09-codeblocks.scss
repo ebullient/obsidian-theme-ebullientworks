@@ -9,3 +9,6 @@ kbd {
   padding: 0.1em 0.25em;
   background-color: var(--background-secondary-alt);
 }
+.cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
+  padding: unset;
+}

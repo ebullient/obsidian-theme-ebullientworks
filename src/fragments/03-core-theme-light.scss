@@ -21,6 +21,7 @@
     --text-faint: var(--gray-dark-1);                    // Link brackets color
 
     --text-accent: var(--primary-accent-4);                  // Links
+    --text-accent-hover: var(--primary-accent-5);
 
     --text-success: var(--green-2);
     --text-error: var(--red-5);
@@ -35,18 +36,9 @@
     // --indentation-guide-active: var(--red-2);
 
     // /** Text on accent should work as foreground for all interactive elements */
-    --text-on-accent: var(--gray-light-7);                // Program Title bar text
-    --interactive-hover: var(--primary-accent-2);            // Button hover text; pin
-    --interactive-normal: var(--secondary-accent-2);            // Button background Color
-    --interactive-accent: var(--secondary-accent-2);             // Workspace Note Title Underline
-    --interactive-accent-rgb: var(--secondary-accent-1-rgb);    // Publish item select, Resize Handle
-    --interactive-accent-hover: var(--primary-accent-2);      // Menu Button Hover
+    --text-on-accent: var(--gray-light-8);                // Program Title bar text
+    --interactive-hover: var(--primary-accent-1);            // Button hover text; pin
+    --interactive-normal: var(--background-primary-alt);
+    --interactive-accent: var(--secondary-accent-4);             // Workspace Note Title Underline
+    --interactive-accent-hover: var(--primary-accent-4);      // Menu Button Hover
 }
-// .theme-dark .print,
-// .theme-light .print {
-//   --background-primary: white;                 //  Note background
-//   --background-primary-alt: #fafafa;           //  Note title background
-
-//   --background-secondary: #fcfcfc;             //  Sidebar background
-//   --background-secondary-alt: #f3f3f3;         //  Sidebar title background
-// }

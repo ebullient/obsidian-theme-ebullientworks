@@ -7,6 +7,7 @@
   --background-secondary-alt: var(--gray-dark-8);     //  muted button, checkbox container, kbd, modal border, modal button, tab nav items, vertical tab header, clickable tree item, card, drag ghost border
 
   --background-modifier-border: black;   //  Border outline of quotes, tables, line breaks
+  --background-modifier-border-focus: black;
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22); // Search Bar Active Highlight
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -16,7 +17,9 @@
   --background-modifier-error-hover: var(--red-5);
   --background-modifier-cover: rgba(0, 0, 0, 0.8);   //  Obsidian Title Bar
 
-  --text-accent: var(--red-2);                        // Links
+  --text-accent: var(--primary-accent-2);                        // Links
+  --text-accent-hover: var(--gray-light-8);
+
   --text-normal: var(--gray-light-1);                  //  Text body of note
   --text-muted: var(--gray);                   //  Text darker for sidebar, toggles, inactive, tags, etc
   --text-faint: var(--gray-dark-1);                    //  Link brackets color
@@ -36,10 +39,12 @@
   --indentation-guide-active: var(--gray-dark-6);
 
   /** Text on accent should work as foreground for all interactive elements */
-  --text-on-accent: white;                   //  Program Title bar text
-  --interactive-normal: var(--secondary-accent-4);         // Button background Color
+  --text-on-accent: var(--gray-light-8);                // Program Title bar text
   --interactive-hover: var(--primary-accent-4);            // Button hover text; pin
-  --interactive-accent: var(--secondary-accent-4);         // Workspace Note Title Underline
-  --interactive-accent-rgb: var(--secondary-accent-4-rgb); // Publish item select, Resize Handle
-  --interactive-accent-hover: var(--primary-accent-4);     // Menu Button Hover
+  --interactive-normal: var(--background-primary-alt);
+  --interactive-accent: var(--secondary-accent-4);             // Workspace Note Title Underline
+  --interactive-accent-hover: var(--primary-accent-4);      // Menu Button Hover
+
+  --ebw-alpha2: rgba(0, 0, 0, 0.2);
+  --ebw-alpha4: rgba(0, 0, 0, 0.4);
 }

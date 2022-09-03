@@ -46,48 +46,27 @@ div {
 // ------------------------------------------------------
 .markdown-embed {
   border-radius: var(--radius-l);
-}
-.markdown-embed-title {
-  display:none;
-}
-.markdown-embed-content {
-  max-height: unset;
-  overflow: unset;
-}
-
-// .markdown-preview-view {
-//   .markdown-embed {
-//     border: none;
-//     padding:0;
-//     margin:0;
-
-//     .markdown-embed-content {
-//       padding: 0;
-//       max-height: unset;
-//       overflow: unset;
-//     }
-
-//     .markdown-embed-content > .markdown-preview-view  {
-//       overflow-y: unset;
-//       max-height: unset;
-//       padding: 5px;
-//     }
-
-//     .markdown-embed-content>:first-child {
-//       margin-top: 0;
-//     }
-//     .markdown-embed-content>:last-child {
-//       margin-bottom: 0;
-//       padding-bottom: .5em;
-//     }
-//   }
-// }
-
-.markdown-embed {
   position: relative;
-}
-> .markdown-preview-view  {
-  height: unset;
+
+  .markdown-embed-content {
+    max-height: unset;
+    overflow: unset;
+
+    > .markdown-preview-view  {
+      // no scroll
+      overflow-y: unset;
+
+      // hide a linked heading
+      > .markdown-preview-section:first-child > div > h1,
+      > .markdown-preview-section:first-child > div > h2,
+      > .markdown-preview-section:first-child > div > h3,
+      > .markdown-preview-section:first-child > div > h4,
+      > .markdown-preview-section:first-child > div > h5,
+      > .markdown-preview-section:first-child > div > h6 {
+        display: none;
+      }
+    }
+  }
 }
 
 // EMBED LINK
@@ -100,7 +79,7 @@ div {
 .markdown-embed-link,
 .file-embed-link {
   top: 0px;
-  right: -18px;
+  right: 0;
   height: 18px;
   width: 18px;
   text-align: center;
@@ -108,57 +87,12 @@ div {
   z-index: var(--layer-tooltip);
 }
 
-.print.print-preview > .markdown-preview-view {
-  .markdown-embed-content,
-  .markdown-embed-content > .markdown-preview-view {
-    overflow-wrap: break-word;
-    width: auto;
-  }
+.markdown-source-view.invisible-embed,
+.markdown-rendered.invisible-embed {
+  --embed-border-left: none;
+  --embed-border-right: none;
+  --embed-padding: 0;
 }
-
-// .markdown-source-view.mod-cm6,
-// .markdown-preview-view {
-//   .markdown-embed,
-//   .file-embed {
-//     .markdown-embed-content,
-//     .markdown-embed-content > .markdown-preview-view {
-//       background-color: var(--background-primary-alt);
-//     }
-
-//     .markdown-embed-link,
-//     .file-embed-link {
-//       background-color: var(--background-primary);
-//     }
-//   }
-// }
-
-// .markdown-source-view.mod-cm6.invisible-embed,
-// .markdown-preview-view.invisible-embed {
-//   .markdown-embed,
-//   .file-embed {
-//     padding: 0;
-
-//     .markdown-rendered {
-//       padding: 0 0 0 2px;
-//     }
-
-//     .markdown-embed-content,
-//     .markdown-embed-content > .markdown-preview-view {
-//       background-color: var(--background-primary);
-//     }
-
-//     .markdown-embed-link,
-//     .file-embed-link {
-//       background-color: var(--background-primary);
-//     }
-//   }
-
-//   blockquote hr::after,
-//   .callout-content hr::after,
-//   .markdown-embed-content hr::after {
-//     background: var(--background-primary);
-//   }
-// }
 
 // ------------------------------------------------------
 // Scaled iframes

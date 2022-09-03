@@ -1,23 +1,19 @@
 .theme-dark {
-  --bold-color: var(--blue-2);
+  --bold-color: var(--blue-3);
   --italic-color: var(--pink-2);
   --ebw-strong-em: var(--yellow-2);
-
   --ebw-link-underline: var(--teal-4);
   --ebw-link-hidden: var(--teal-4);
-
   --link-color: var(--gray-light-1);
-  --link-color-hover: var(--teal-3);
+  --link-color-hover: var(--teal-2);
 }
 .theme-dark .print,
 .theme-light {
   --bold-color: var(--blue-4);
   --italic-color: var(--pink-3);
   --ebw-strong-em: var(--yellow-3);
-
   --ebw-link-underline: var(--teal-2);
   --ebw-link-hidden: var(--teal-2);
-
   --link-color: var(--gray-dark-4);
   --link-color-hover: var(--teal-3);
 }
@@ -35,7 +31,6 @@ body {
   --link-unresolved-decoration-style: dotted;
   --link-unresolved-decoration-color: var(--ebw-link-underline);
 }
-
 del {
   text-decoration-color: rgba(203, 203, 203, 0.7);
 }
@@ -44,7 +39,6 @@ strong em a.internal-link,
 .cm-s-obsidian span.cm-strong.cm-em {
   color: var(--ebw-strong-em);
 }
-
 .markdown-rendered del a.external-link,
 .markdown-rendered del a.internal-link,
 .markdown-rendered del a.internal-link.is-unresolved,
@@ -58,7 +52,6 @@ strong em a.internal-link,
 .cm-s-obsidian .cm-hmd-internal-link.cm-strikethrough {
   text-decoration: line-through;
   text-decoration-color: var(--link-decoration-color);
-  text-decoration-thickness: initial;
 }
 .cm-s-obsidian span.cm-string.cm-url {
   color: var(--ebw-link-hidden);
@@ -123,38 +116,30 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
 }
 
 // Highlight, matched text
-// .markdown-preview-view mark,
-// .markdown-rendered mark,
-// .search-result-file-matched-text,
-// .cm-s-obsidian span.obsidian-search-match-highlight,
-// .cm-s-obsidian span.cm-highlight,
-// .is-flashing h1,
-// .is-flashing h2,
-// .is-flashing h3,
-// .is-flashing h4,
-// .is-flashing h5,
-// .is-flashing h6,
-// .is-flashing * {
-//   color: var(--text-highlight-fg);
-// }
+.markdown-preview-view mark,
+.markdown-rendered mark,
+.search-result-file-matched-text,
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.cm-s-obsidian span.cm-highlight,
+.is-flashing h1,
+.is-flashing h2,
+.is-flashing h3,
+.is-flashing h4,
+.is-flashing h5,
+.is-flashing h6,
+.is-flashing * {
+  color: var(--text-highlight-fg);
+}
 
-// div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
-//   --text-selection: var(--text-highlight-bg-active);
-// }
+div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
+  --text-selection: var(--text-highlight-bg-active);
+}
 
-// .markdown-source-view.mod-cm6 .cm-selection,
-// ::selection {
-//   background-color: var(--text-selection);
-// }
+.markdown-source-view.mod-cm6 .cm-selection,
+::selection {
+  background-color: var(--text-selection);
+}
 
-// .is-flashing * ::selection {
-//   background-color: var(--text-selection-active);
-// }
-
-// .CodeMirror-cursor,
-// .cm-s-obsidian .cm-cursor {
-//   border-left: 1px solid var(--primary-accent-4);
-// }
-// .cm-s-obsidian .CodeMirror-lines {
-//   caret-color: var(--primary-accent-4);
-// }
+.is-flashing * ::selection {
+  background-color: var(--text-selection-active);
+}

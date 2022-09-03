@@ -1,4 +1,4 @@
-:root {
+body {
   --h1-size: 2em;
   --h2-size: 1.8em;
   --h3-size: 1.6em;
@@ -26,14 +26,29 @@
   --h4-weight: 500;
   --h5-weight: 500;
   --h6-weight: 500;
+
+  --tag-0: var(--pink-0);
+  --tag-1: var(--pink-1);
+  --tag-2: var(--pink-2);
+  --tag-3: var(--pink-3);
+  --tag-4: var(--pink-4);
+  --tag-5: var(--pink-5);
+  --tag-6: var(--pink-6);
+  --tag-dark:  var(--tag-5);
+  --tag-light: var(--tag-3);
+  --tag-background: transparent;
+  --tag-background-hover: transparent;
 }
 .theme-dark {
   --h1-color: var(--yellow-2);
   --h2-color: var(--green-3);
-  --h3-color: var(--teal-2);
+  --h3-color: var(--teal-3);
   --h4-color: var(--blue-3);
   --h5-color: var(--purple-3);
-  --h6-color: var(--pink-2);
+  --h6-color: var(--pink-3);
+
+  --tag-color: var(--tag-dark);
+  --tag-color-hover: var(--tag-dark);
 }
 .theme-dark .print,
 .theme-light {
@@ -43,6 +58,17 @@
   --h4-color: var(--blue-4);
   --h5-color: var(--purple-4);
   --h6-color: var(--pink-4);
+
+  --tag-color: var(--tag-light);
+  --tag-color-hover: var(--tag-light);
+}
+
+a.tag,
+.editor .cl-hashtag,
+.cm-s-obsidian .cm-quote.cm-hashtag,
+.cm-s-obsidian .cm-hmd-codeblock.cm-hashtag {
+  font-family: var(--ebw-font-tags);
+  color: var(--tag-color);
 }
 
 .cm-header-1 {
@@ -66,9 +92,8 @@
 
 h1,
 .markdown-rendered h1,
-.HyperMD-header-1,
-.HyperMD-list-line
-.cm-header-1 {
+.cm-line:not(.HyperMD-codeblock) .cm-header-1,
+.HyperMD-list-line .cm-header-1 {
   font-variant-caps: var(--ebw-header-font-caps-variant);
 }
 
@@ -76,16 +101,6 @@ h1,
 .markdown-rendered,
 .workspace,
 .print {
-  .cm-header,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 10px 0 5px 0;
-  }
-
   .is-live-prevew .HyperMD-header .cm-header::before,
   h1::before,
   h2::before,
@@ -94,7 +109,11 @@ h1,
   h5::before,
   h6::before {
     content: "\00a7\00a0";
-    font-size: 0.6em;
+    font-size: 0.5em;
+    font-weight: 200;
+    position: relative;
+    vertical-align: middle;
+    font-family: var(--font-default);
   }
 
   h1 code,
@@ -104,7 +123,8 @@ h1,
   h5 code,
   h6 code {
     font-weight: normal;
-    font-size: 75%;
+    font-variant-caps: normal;
+    font-size: 75% !important;
   }
 
   h1 a.tag,
@@ -113,20 +133,58 @@ h1,
   h4 a.tag,
   h5 a.tag,
   h6 a.tag {
-    font-weight: normal;
-    font-size: 65%;
+    font-variant-caps: normal;
+    font-weight: var(--font-extralight);
+    font-size: 75% !important;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: unset;
   }
 }
 
 .cm-s-obsidian {
-  .cm-inline-code.cm-header {
+  .cm-header.cm-inline-code {
+    font-weight: var(--font-extralight);
     font-weight: normal;
-    font-size: var(--code-size);
+    font-variant-caps: normal;
   }
 
   .cm-header.cm-hashtag {
-    font-weight: normal;
-    font-size: var(--tag-size);
+    font-weight: var(--font-extralight);
+    font-variant-caps: normal;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: unset;
+  }
+
+  .cm-line:not(.HyperMD-codeblock) {
+    .cm-header.cm-inline-code {
+      font-size: 65% !important;
+    }
+    .cm-header.cm-hashtag {
+      font-size: 65% !important;
+    }
+  }
+
+  .cm-header-1.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
+    color: var(--h1-color);
+  }
+  .cm-header-2.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
+    color: var(--h2-color);
+  }
+  .cm-header-3.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
+    color: var(--h3-color);
+  }
+  .cm-header-4.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
+    color: var(--h4-color);
+  }
+  .cm-header-5.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
+    color: var(--h5-color);
+  }
+  .cm-header-6.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
+    color: var(--h6-color);
   }
 }
 
@@ -134,7 +192,7 @@ h1,
 .markdown-rendered {
   hr {
     border: none;
-    border-top: 1px dotted var(--interactive-normal);
+    border-top: 1px dotted var(--interactive-accent);
     color: var(--interactive-hover);
     overflow: visible;
     text-align: center;
@@ -148,11 +206,5 @@ h1,
     padding: 0 0.8em;
     position: relative;
     top: -13px;
-  }
-
-  blockquote hr::after,
-  .callout-content hr::after,
-  .markdown-embed-content hr::after {
-    background: var(--background-primary-alt);
   }
 }
