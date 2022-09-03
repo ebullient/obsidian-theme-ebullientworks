@@ -12,19 +12,25 @@ body {
   --he-title-bar-height: calc(var(--icon-s) + var(--size-2-3));
   --he-view-header-height: calc(var(--icon-s) + var(--size-2-3));
 }
-body.is-focused {
+.is-focused {
   --divider-color: var(--background-modifier-border-focus);
   --ribbon-background: var(--titlebar-background-focused);
   --ribbon-background-collapsed: var(--titlebar-background-focused);
   --status-bar-background: var(--titlebar-background-focused);
   --tab-container-background: var(--titlebar-background-focused);
   --tab-outline-color: var(--background-modifier-border-focus);
+
+  .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
+    color: var(--ebw-rotated-active-leaf-fg);
+    background-color: var(--ebw-rotated-active-leaf-bg);
+    .workspace-tab-header-inner-title {
+      color: inherit;
+    }
+  }
 }
 .theme-dark {
   --ebw-rotated-active-leaf-fg: var(--text-muted);
   --ebw-rotated-active-leaf-bg: var(--primary-accent-5);
-  --ebw-rotated-inactive-leaf-fg: var(--text-muted);
-  --ebw-rotated-inactive-leaf-bg: var(--gray-dark-5);
 
   // hover editor popover colors
   --ebw-he-title-border: var(--tab-outline-color);
@@ -40,11 +46,8 @@ body.is-focused {
   --he-text-on-accent-active: var(--gray-light-5);
 }
 .theme-light {
-  --ebw-active-leaf-fg: var(--gray-light-5);
-  --ebw-rotated-active-leaf-fg: var(--background-secondary-alt);
+  --ebw-rotated-active-leaf-fg: var(--gray-light-7);
   --ebw-rotated-active-leaf-bg: var(--primary-accent-3);
-  --ebw-rotated-inactive-leaf-fg: var(--nav-item-color);
-  --ebw-rotated-inactive-leaf-bg: var(--titlebar-background-focused);
 
   // hover editor popover colors
   --ebw-he-title-border: var(--gray-dark-3);
@@ -112,21 +115,6 @@ body:not(.is-mobile) .mod-right-split.is-floating {
 body.is-focused .workspace .mod-root .workspace-tabs.mod-stacked,
 body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked {
   --tab-stacked-header-width: calc(var(--icon-s) + var(--size-2-3));
-  --tab-stacked-pane-width: 700px;
-  --titlebar-text-color-focused: var(--ebw-rotated-active-leaf-fg);
-  --tab-text-color-focused: var(--ebw-rotated-active-leaf-fg);
-  --tab-background-active: var(--ebw-rotated-active-leaf-bg);
-
-  .workspace-tab-header {
-    background-color: var(--ebw-rotated-inactive-leaf-bg);
-    border-right: var(--tab-outline-width) solid var(--tab-outline-color);
-
-    &.is-active {
-      color: var(--ebw-rotated-active-leaf-fg);
-      background-color: var(--ebw-rotated-active-leaf-bg);
-    }
-  }
-
   .workspace-tab-container {
     .workspace-tab-header-inner-icon,
     .workspace-tab-header-status-icon,
@@ -143,8 +131,8 @@ body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked {
       --tab-stacked-font-size: var(--font-ui-smaller);
       font-family: var(--font-monospace);
     }
-
   }
+
   .view-header {
     --text-normal: var(--text-faint);
     --header-height: calc(var(--icon-s) + var(--size-2-4));
