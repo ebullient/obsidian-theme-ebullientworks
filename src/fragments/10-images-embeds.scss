@@ -55,17 +55,14 @@ div {
     > .markdown-preview-view  {
       // no scroll
       overflow-y: unset;
-
-      // hide a linked heading
-      > .markdown-preview-section:first-child > div > h1,
-      > .markdown-preview-section:first-child > div > h2,
-      > .markdown-preview-section:first-child > div > h3,
-      > .markdown-preview-section:first-child > div > h4,
-      > .markdown-preview-section:first-child > div > h5,
-      > .markdown-preview-section:first-child > div > h6 {
-        display: none;
-      }
     }
+  }
+}
+
+.ebullientworks-hide-embedded-heading {
+  .markdown-preview-view > [data-heading]:first-child,
+  .markdown-embed-heading .markdown-preview-pusher + div > [data-heading] {
+    display: none;
   }
 }
 

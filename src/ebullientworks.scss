@@ -53,6 +53,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-hide-embedded-heading
+    title: Hide the heading used to embed a document
+    description: If true, the heading used to embed a document will be hidden.
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-fonts
     title: Fonts
     type: heading
@@ -188,21 +194,19 @@ settings:
 @import 'fragments/03-core-theme-dark.scss';
 @import 'fragments/03-core-theme-light.scss';
 @import 'fragments/03a-workspace-layout.scss';
-// @import 'fragments/03b-option-sidebar-hover.scss';
-// @import 'fragments/03c-modal-input.scss';
-// @import 'fragments/03d-graph-view.scss';
+@import 'fragments/03c-modal-input.scss';
+@import 'fragments/03d-graph-view.scss';
 
-@import 'fragments/04-headings-hr.scss';
+@import 'fragments/04-headings-hr-tags.scss';
 @import 'fragments/05-text-links.scss';
 
 @import 'fragments/06-lists-checkboxes.scss';
-@import 'fragments/07-tags.scss';
 @import 'fragments/08-blockquote-callouts.scss';
 @import 'fragments/09-codeblocks.scss';
 @import 'fragments/10-images-embeds.scss';
 
 @import 'fragments/12-calendar-day-planner-tracker.scss';
-// @import 'fragments/13-timelines.scss';
+@import 'fragments/13-timelines.scss';
 @import 'fragments/14-frontmatter.scss';
 @import 'fragments/15-table.scss';
 
