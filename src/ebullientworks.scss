@@ -29,12 +29,6 @@ settings:
     type: class-toggle
     default: false
   -
-    id: ebullientworks-show-hide
-    title: Showing and Hiding content
-    type: heading
-    level: 3
-    collapsed: true
-  -
     id: ebullientworks-show-edit-mode-external-links
     title: Show external links in edit mode
     description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
@@ -44,12 +38,6 @@ settings:
     id: ebullientworks-floating-frontmatter
     title: Float front-matter in a box to the right
     description: If true, front-matter in preview mode will be collapsed in a top-right container.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-hover-collapsed-sidebars
-    title: Show collapsed sidebars on hover
-    description: If true, collapsed side-bars will be shown when you hover over the ribbon.
     type: class-toggle
     default: false
   -
