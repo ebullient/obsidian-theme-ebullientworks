@@ -12,9 +12,9 @@
     --background-modifier-success:     var(--green-2);      // Publish Upload Success Background
     --background-modifier-success-rgb: var(--green-2-rgb);      // Publish Upload Success Background
 
-    --background-modifier-error: var(--red-1);           // Delete Screen Button
-    --background-modifier-error-rgb: var(--red-2-rgb); // Ctrl F Search Background
-    --background-modifier-error-hover: var(--red-2);
+    --background-modifier-error: var(--red-4);           // Delete Screen Button
+    --background-modifier-error-rgb: 188,83,69;
+    --background-modifier-error-hover: var(--red-4);
 
     --text-normal: var(--gray-dark-5);                   // Text body of note
     --text-muted: var(--gray-dark-4);                    // Text darker for sidebar, toggles, inactive, tags, etc
