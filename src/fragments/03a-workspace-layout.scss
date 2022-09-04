@@ -6,31 +6,48 @@ body {
   --status-bar-background: var(--titlebar-background);
   --tab-text-color: var(--icon-color);
   --tab-text-color-focused: var(--icon-color-focused);
-  --tab-container-background: var(--titlebar-background);
+  --tab-container-background: var(--background-secondary);
   --tab-outline-color: var(--background-modifier-border);
 
   --he-title-bar-height: calc(var(--icon-s) + var(--size-2-3));
   --he-view-header-height: calc(var(--icon-s) + var(--size-2-3));
+}
+:not(.is-focused) {
+  .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+    color: var(--tab-text-color);
+    background-color: var(--background-secondary);
+
+    .workspace-tab-header-inner-title {
+      color: inherit;
+    }
+
+    &.is-active {
+      color: var(--ebw-tab-title-active-fg);
+      background-color: var(--ebw-tab-title-active-bg);
+    }
+  }
 }
 .is-focused {
   --divider-color: var(--background-modifier-border-focus);
   --ribbon-background: var(--titlebar-background-focused);
   --ribbon-background-collapsed: var(--titlebar-background-focused);
   --status-bar-background: var(--titlebar-background-focused);
-  --tab-container-background: var(--titlebar-background-focused);
   --tab-outline-color: var(--background-modifier-border-focus);
 
   .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
-    color: var(--ebw-rotated-active-leaf-fg);
-    background-color: var(--ebw-rotated-active-leaf-bg);
+    color: var(--ebw-tab-title-active-fg);
+    background-color: var(--ebw-tab-title-active-focused-bg);
     .workspace-tab-header-inner-title {
       color: inherit;
     }
   }
 }
 .theme-dark {
-  --ebw-rotated-active-leaf-fg: var(--text-muted);
-  --ebw-rotated-active-leaf-bg: var(--primary-accent-5);
+  --ebw-tab-title-active-fg: var(--text-normal);
+  --ebw-tab-title-active-bg: var(--secondary-accent-5);
+  --ebw-tab-title-inactive-bg: var(--gray-dark-4);
+  --ebw-tab-title-inactive-focused-bg: var(--gray-dark-4);
+  --ebw-tab-title-active-focused-bg: var(--primary-accent-5);
 
   // hover editor popover colors
   --ebw-he-title-border: var(--tab-outline-color);
@@ -46,8 +63,10 @@ body {
   --he-text-on-accent-active: var(--gray-light-5);
 }
 .theme-light {
-  --ebw-rotated-active-leaf-fg: var(--gray-light-7);
-  --ebw-rotated-active-leaf-bg: var(--primary-accent-3);
+  --ebw-tab-title-active-fg: white;
+  --ebw-tab-title-active-bg: var(--secondary-accent-2);
+  --ebw-tab-title-inactive-bg: var(--gray-dark-3);
+  --ebw-tab-title-active-focused-bg: var(--primary-accent-2);
 
   // hover editor popover colors
   --ebw-he-title-border: var(--gray-dark-3);
@@ -62,25 +81,19 @@ body {
   --he-text-on-accent-active: var(--gray-light-5);
 }
 
-// Border on the right side of the left-toggle button
-.workspace-ribbon .sidebar-toggle-button {
-  border-right: var(--tab-outline-width) solid var(--tab-outline-color);
-}
-// Add a border on the right side of the left-toggle button when not using stacked tabs
-.workspace:not(.is-right-sidedock-open) .workspace-tabs:not(.mod-stacked) .sidebar-toggle-button.mod-right {
-  border-left: var(--tab-outline-width) solid var(--tab-outline-color);
-}
-
-// left sidedock border
-body:not(.is-mobile) .workspace.is-left-sidedock-open
-  .workspace-split.mod-left-split .workspace-tab-header-container {
+// left and right sidedock borders (Hidden and Native modes)
+body:not(.is-mobile):not(.is-frameless):not(.is-hidden-frameless), // native
+body:not(.is-mobile).is-hidden-frameless {
+  // Border on the right side of the left-toggle button
+  .workspace-ribbon .sidebar-toggle-button {
     border-right: var(--tab-outline-width) solid var(--tab-outline-color);
-}
-
-// right sidedock border
-body:not(.is-mobile) div.workspace.is-right-sidedock-open
-  .workspace-split.mod-right-split .workspace-tab-header-container {
+  }
+  .workspace.is-left-sidedock-open .workspace-split.mod-left-split .workspace-tab-header-container {
+    border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
+  div.workspace.is-right-sidedock-open .workspace-split.mod-right-split .workspace-tab-header-container {
     border-left: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
 }
 
 // Floating sidedock
@@ -139,8 +152,8 @@ body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked {
     align-items: center;
   }
   .view-header-title {
-      line-height: var(--icon-s);
-      visibility: hidden;
+    line-height: var(--icon-s);
+    visibility: hidden;
   }
 }
 
@@ -162,4 +175,3 @@ body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked {
     }
   }
 }
-
