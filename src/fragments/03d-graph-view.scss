@@ -1,74 +1,18 @@
 .theme-dark {
-  --graph-fill: var(--primary-accent-4);
   --graph-line: var(--gray-dark-5);
-  --graph-highlight-fill: var(--primary-accent-3);
-  --graph-highlight-line: var(--gray-dark-3);
 
-  --graph-fill-tag: var(--secondary-accent-3);
-  --graph-fill-attachment: var(--secondary-accent-2);
-  --graph-fill-focused: var(--yellow-1);
-
-  --graph-fill-1: #8ba791;
-  --graph-fill-2: #8ba1a7;
-  --graph-fill-3: #918ba7;
-  --graph-fill-4: #a78ba1;
-  --graph-fill-5: #a7918b;
-  --graph-fill-6: #a1a78b;
+  --graph-node: var(--primary-accent-4);
+  --graph-node-focused: var(--yellow-1);
+  --graph-node-tag: var(--secondary-accent-3);
+  --graph-node-attachment: var(--secondary-accent-2);
+  --graph-node-unresolved: var(--gray);
 }
 .theme-light {
-  --graph-fill: var(--primary-accent-2);
   --graph-line: var(--gray-light-1);
-  --graph-highlight-fill: var(--primary-accent-3);
-  --graph-highlight-line: var(--gray-dark-1);
 
-  --graph-fill-tag: var(--secondary-accent-3);
-  --graph-fill-attachment: var(--secondary-accent-2);
-  --graph-fill-focused: var(--yellow-1);
-
-  --graph-fill-1: #5c7a63;
-  --graph-fill-2: #5c737a;
-  --graph-fill-3: #635c7a;
-  --graph-fill-4: #7a5c73;
-  --graph-fill-5: #7a635c;
-  --graph-fill-6: #737a5c;
-}
-
-.graph-view.color-line {
-  color: var(--graph-line);
-}
-.graph-view.color-fill {
-  color: var(--graph-fill);
-}
-.graph-view.color-fill-focused {
-  color: var(--graph-fill-focused) !important;
-}
-.graph-view.color-fill-tag {
-  color: var(--graph-fill-tag) !important;
-}
-.graph-view.color-fill-attachment {
-  color: var(--graph-fill-attachment) !important;
-}
-.graph-view.color-fill-1 {
-  color: var(--graph-fill-1)
-}
-.graph-view.color-fill-2 {
-  color: var(--graph-fill-2)
-}
-.graph-view.color-fill-3 {
-  color: var(--graph-fill-3)
-}
-.graph-view.color-fill-4 {
-  color: var(--graph-fill-4)
-}
-.graph-view.color-fill-5 {
-  color: var(--graph-fill-5)
-}
-.graph-view.color-fill-6 {
-  color: var(--graph-fill-6)
-}
-.graph-view.color-fill-highlight {
-  color: var(--graph-highlight-fill);
-}
-.graph-view.color-line-highlight {
-  color: var(--graph-highlight-line);
+  --graph-node: var(--primary-accent-2);
+  --graph-node-focused: var(--yellow-1);
+  --graph-node-tag: var(--secondary-accent-3);
+  --graph-node-attachment: var(--secondary-accent-2);
+  --graph-node-unresolved: var(--gray);
 }
