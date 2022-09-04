@@ -8,14 +8,16 @@ body {
   --table-header-size: var(--font-small);
 }
 .theme-dark {
+  --table-header-color: var(--text-on-accent);
   --table-header-background: var(--primary-accent-5);
   --ebw-table-header-alt: var(--primary-accent-4);
   --ebw-row-alt: rgba(0, 0, 0, .2);
 }
 .theme-dark .print,
 .theme-light {
-  --table-header-background: var(--primary-accent-1);
-  --ebw-table-header-alt: var(--primary-accent-2);
+  --table-header-color: var(--gray-dark-7);
+  --table-header-background: var(--primary-accent-2);
+  --ebw-table-header-alt: var(--primary-accent-3);
   --ebw-row-alt: rgba(0, 0, 0, .05);
 }
 
