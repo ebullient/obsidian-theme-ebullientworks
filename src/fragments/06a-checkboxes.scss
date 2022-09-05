@@ -1,20 +1,21 @@
 @charset "UTF-8";
 
 @mixin custom-task-background($character, $rgb-color, $background, $font-weight: var(--font-normal), $text-decoration: none, $li-fg: var(--text-normal)) {
+  div[data-task="#{$character}"],
   li[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
     --checklist-done-decoration: #{$text-decoration};
     color: $li-fg;
 
-    > input[type=checkbox]:not(:checked) {
+    input[type=checkbox]:not(:checked) {
       background-color: unset;
       background: unset;
     }
-    > input[type=checkbox]:checked {
+    input[type=checkbox]:checked {
       background: #{$background};
     }
-    > input[type=checkbox]:checked:after {
+    input[type=checkbox]:checked:after {
       -webkit-mask-image: none;
       background: unset;
       content: ' ';
@@ -28,6 +29,7 @@
     --checkbox-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
     color: $li-fg;
+    font-weight: $font-weight;
     text-decoration: $text-decoration;
 
     input[type=checkbox]:not(:checked) {
@@ -62,5 +64,5 @@
 @include custom-task-text("R", var(--checkbox-review), "👀", var(--font-normal), none);
 @include custom-task-text("r", var(--checkbox-review), "👀", var(--font-normal), none);
 @include custom-task-text("?", var(--checkbox-question), "?", var(--font-bold), none);
-@include custom-task-text("!", var(--checkbox-important), "!", var(--font-extrabold), none, var(--checkbox-important));
+@include custom-task-text("!", var(--checkbox-important), "!", var(--font-extrabold), none);
 @include custom-task-background("/", var(--checkbox-in-progress), "linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%)");
