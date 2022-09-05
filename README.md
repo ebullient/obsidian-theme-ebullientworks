@@ -29,43 +29,34 @@ This theme is compatible with custom task snippets from the [Snippitor](https://
 
 This theme does support style settings. Settable attributes: 
 
-- (0.3.4) Use default theme list indent
-    This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to 
-    disable that, and preserve list spaceing consistent with the default theme.
-
-- (0.3.25) Suppress/remove this theme's checkbox styles
+- (0.3.25) "Suppress/remove this theme's checkbox styles"
     Set this to true if you are going to use your own task snippet (💡 Check out [Snippetor](https://github.com/ebullient/obsidian-snippetor)!)
 
-- Show / Hide
+- (0.5.x) "View header actions to the left"
+    Set this to true if the view header is visible, and you want the controls on the left side of the tab contents, rather than the right.
 
-    - "Show external links in edit mode"
-        If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+- "Show external links in edit mode"
+    If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
 
-    - (0.2.8) "Hide collapse indicators unless hovered or active"
-        If true, hide collapse indicators in all three modes unless they are hovered over or the line is active.
+- (0.1.8) "Float front-matter in a box to the right"
+    If true, front-matter in preview mode will be collapsed in a top-right container.
 
-    - (0.1.8) "Float front-matter in a box to the right"
-        If true, front-matter in preview mode will be collapsed in a top-right container.
-
-    - (0.3.13) Show collapsed sidebars on hover
-        If true, when the left or right sidebar is in a collapsed state, you can temporarily display (and interact) with its content by hovering over the ribbon. 
+- (0.5.x) "Hide the heading used to embed a document"
+    If true, the heading used to embed a document will be hidden.
 
 - Custom Fonts
 
     - "Headings"
         Font variant for text headings (h1 to h6)
 
-    - (0.3.24) "Heading Font Variant"
-        Font variant for text headings (h1 to h6)
+    - (0.3.24) "Heading Font Caps Variant"
+        Capitalization variant for text headings (h1 to h6)
 
     - "Tags"
         Font for displaying inline tags; empty will use default text font
 
-    - (0.3.26) Removed other font settings. 
-        Use Obsidian Appearance to set text and monospace fonts.
-
 - Colors
-        This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
+    This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
 
     - "Primary accent color" 
         Choose the primary accent color. You should define a snippet if you select primary-accent-custom. See the Theme's README.
@@ -73,8 +64,24 @@ This theme does support style settings. Settable attributes:
     - "Secondary accent color"
         Choose the secondary accent color. You should define a snippet if you select secondary-accent-custom. See the Theme's README.
 
-    - (0.2.7) Tag brightness (dark/light mode)
-        Select a brightness or contrast level for tags.
+## Removed
+
+- (added in 0.3.4, removed in 0.5.*) Use default theme list indent
+    This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to use list spacing from the default theme.
+
+- (removed in 0.5.x) Show / Hide, the section was removed (remaining contents flattened with the first section)
+
+- (added in 0.2.8, removed in 0.5.x) "Hide collapse indicators unless hovered or active"
+    If true, hide collapse indicators in all three modes unless they are hovered over or the line is active.
+
+- (added in 0.3.13, removed in 0.5.x) Show collapsed sidebars on hover
+    If true, when the left or right sidebar is in a collapsed state, you can temporarily display (and interact) with its content by hovering over the ribbon. 
+
+- (0.3.26) Removed other font settings. 
+    Use Obsidian Appearance to set text and monospace fonts.
+
+- (added in 0.2.7, removed in 0.5.x) Tag brightness (dark/light mode)
+    Select a brightness or contrast level for tags. In 0.5.x and above, the accent color from appearance settings is used as the tag color (reset the value to see the theme default).
 
 ## Admonitions
 
@@ -179,13 +186,15 @@ For example, let's use a REALLY BOLD RED: `#ae2012`.
 
 3. Create a snippet (e.g. a file named`accent-colors.css`) containing this content in the `.obsidian/snippets` directory. Go to the Obsidian Appearance settings use the refresh button if necessary to find the snippet, and enable it. Provided you've selected the "custom" value in the primary/secondary style settings drop-down, you should be off to the races with this brilliant red.
 
-### Changing tag colors
+### Changing tag colors (before 0.5.0)
 
 As of 0.2.7, you can alter the color contrast (against the usual scale, 0-6) for tags in light or dark mode. 
 
+With Obsidian 0.16, use the "accent color" setting on the appearance pane to set your tag color. Resetting the value will show the theme default.
+
 #### Custom color
 
-Change the color to your own value (using the above bold red as an example): 
+Change the color to your own value (using the above bold red as an example) in a snippet: 
 ```
 .theme-dark {
   --tags: #ae2012;
@@ -195,49 +204,6 @@ Change the color to your own value (using the above bold red as an example):
   --tags: #ae2012;
 }
 ```
-
-#### Contrast toggle with your own color scale
-
-To keep the contrast toggles, redefine the scaled tag variables.
-```
-:root {
-  --tag-0: var(--pink-0);
-  --tag-1: var(--pink-1);
-  --tag-2: var(--pink-2);
-  --tag-3: var(--pink-3);
-  --tag-4: var(--pink-4);
-  --tag-5: var(--pink-5);
-  --tag-6: var(--pink-6);
-}
-```
-You can use existing theme colors: `green`, `teal`, `blue`, `purple`, or `pink`. 
-Note: `yellow` is also an option, but it has a constrained range (1-4).
-
-You could also align it with the primary or secondary theme colors: 
-```
-:root {
-  --tag-0: var(--primary-accent-0);
-  --tag-1: var(--primary-accent-1);
-  --tag-2: var(--primary-accent-2);
-  --tag-3: var(--primary-accent-3);
-  --tag-4: var(--primary-accent-4);
-  --tag-5: var(--primary-accent-5);
-  --tag-6: var(--primary-accent-6);
-}
-```
-OR
-```
-:root {
-  --tag-0: var(--secondary-accent-0);
-  --tag-1: var(--secondary-accent-1);
-  --tag-2: var(--secondary-accent-2);
-  --tag-3: var(--secondary-accent-3);
-  --tag-4: var(--secondary-accent-4);
-  --tag-5: var(--secondary-accent-5);
-  --tag-6: var(--secondary-accent-6);
-}
-```
-
 
 ## Credits
 

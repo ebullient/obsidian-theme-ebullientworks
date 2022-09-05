@@ -1,3 +1,41 @@
+.theme-dark {
+  --ebw-tab-title-active-fg: var(--text-normal);
+  --ebw-tab-title-active-bg: var(--secondary-accent-5);
+  --ebw-tab-title-inactive-bg: var(--gray-dark-4);
+  --ebw-tab-title-inactive-focused-bg: var(--gray-dark-4);
+  --ebw-tab-title-active-focused-bg: var(--primary-accent-5);
+
+  // hover editor popover colors
+  --ebw-he-title-border: var(--tab-outline-color);
+  --he-title-bar-active-fg: var(--gray-light-6);
+  --he-title-bar-active-bg: var(--secondary-accent-4);
+  --he-title-bar-active-pinned-bg: var(--primary-accent-4);
+
+  --he-title-bar-inactive-fg: var(--gray-light-3);
+  --he-title-bar-inactive-bg: var(--gray-dark-3);
+  --he-title-bar-inactive-pinned-bg: var(--gray-dark-3);
+
+  --he-text-on-accent-inactive: var(--gray-dark-7);
+  --he-text-on-accent-active: var(--gray-light-5);
+}
+.theme-light {
+  --ebw-tab-title-active-fg: white;
+  --ebw-tab-title-active-bg: var(--secondary-accent-4);
+  --ebw-tab-title-inactive-bg: var(--gray-dark-3);
+  --ebw-tab-title-active-focused-bg: var(--primary-accent-4);
+
+  // hover editor popover colors
+  --ebw-he-title-border: var(--gray-dark-3);
+  --he-title-bar-active-fg: white;
+  --he-title-bar-active-bg: var(--secondary-accent-3);
+  --he-title-bar-active-pinned-bg: var(--primary-accent-3);
+  --he-title-bar-inactive-fg: var(--gray-light-5);
+  --he-title-bar-inactive-bg: var(--gray-dark-1);
+  --he-title-bar-inactive-pinned-bg: var(--gray-dark-1);
+
+  --he-text-on-accent-inactive: var(--gray-dark-5);
+  --he-text-on-accent-active: var(--gray-light-5);
+}
 body {
   --divider-color: var(--background-modifier-border);
   --file-margins: var(--size-4-2) var(--size-4-8);
@@ -42,45 +80,6 @@ body {
     }
   }
 }
-.theme-dark {
-  --ebw-tab-title-active-fg: var(--text-normal);
-  --ebw-tab-title-active-bg: var(--secondary-accent-5);
-  --ebw-tab-title-inactive-bg: var(--gray-dark-4);
-  --ebw-tab-title-inactive-focused-bg: var(--gray-dark-4);
-  --ebw-tab-title-active-focused-bg: var(--primary-accent-5);
-
-  // hover editor popover colors
-  --ebw-he-title-border: var(--tab-outline-color);
-  --he-title-bar-active-fg: var(--gray-light-6);
-  --he-title-bar-active-bg: var(--secondary-accent-4);
-  --he-title-bar-active-pinned-bg: var(--primary-accent-4);
-
-  --he-title-bar-inactive-fg: var(--gray-light-3);
-  --he-title-bar-inactive-bg: var(--gray-dark-3);
-  --he-title-bar-inactive-pinned-bg: var(--gray-dark-3);
-
-  --he-text-on-accent-inactive: var(--gray-dark-7);
-  --he-text-on-accent-active: var(--gray-light-5);
-}
-.theme-light {
-  --ebw-tab-title-active-fg: white;
-  --ebw-tab-title-active-bg: var(--secondary-accent-2);
-  --ebw-tab-title-inactive-bg: var(--gray-dark-3);
-  --ebw-tab-title-active-focused-bg: var(--primary-accent-2);
-
-  // hover editor popover colors
-  --ebw-he-title-border: var(--gray-dark-3);
-  --he-title-bar-active-fg: white;
-  --he-title-bar-active-bg: var(--secondary-accent-3);
-  --he-title-bar-active-pinned-bg: var(--primary-accent-3);
-  --he-title-bar-inactive-fg: var(--gray-light-5);
-  --he-title-bar-inactive-bg: var(--gray-dark-1);
-  --he-title-bar-inactive-pinned-bg: var(--gray-dark-1);
-
-  --he-text-on-accent-inactive: var(--gray-dark-5);
-  --he-text-on-accent-active: var(--gray-light-5);
-}
-
 // left and right sidedock borders (Hidden and Native modes)
 body:not(.is-mobile):not(.is-frameless):not(.is-hidden-frameless), // native
 body:not(.is-mobile).is-hidden-frameless {
