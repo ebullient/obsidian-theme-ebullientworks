@@ -10,7 +10,7 @@
 .theme-dark .print,
 .theme-light {
   --bold-color: var(--blue-4);
-  --italic-color: var(--pink-3);
+  --italic-color: var(--pink-4);
   --ebw-strong-em: var(--yellow-3);
   --ebw-link-underline: var(--teal-2);
   --ebw-link-hidden: var(--teal-2);
@@ -34,9 +34,17 @@ body {
 del {
   text-decoration-color: rgba(203, 203, 203, 0.7);
 }
+/** BUG */
+.cm-s-obsidian span.cm-quote.cm-em {
+  color: var(--italic-color);
+}
+.cm-s-obsidian span.cm-quote.cm-strong {
+  color: var(--bold-color);
+}
 strong em,
 strong em a.internal-link,
-.cm-s-obsidian span.cm-strong.cm-em {
+.cm-s-obsidian span.cm-strong.cm-em,
+.cm-s-obsidian span.cm-quote.cm-strong.cm-em {
   color: var(--ebw-strong-em);
 }
 .markdown-rendered del a.external-link,
