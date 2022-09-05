@@ -28,6 +28,7 @@ body {
   --h6-weight: 500;
   --tag-background: transparent;
   --tag-background-hover: transparent;
+  --tag-padding-x: 0;
 }
 .theme-dark {
   --h1-color: var(--yellow-2);
@@ -55,6 +56,8 @@ body {
 
 a.tag,
 .editor .cl-hashtag,
+.markdown-source-view.mod-cm6 .cm-hashtag,
+.cm-s-obsidian .cm-formatting.cm-hashtag,
 .cm-s-obsidian .cm-quote.cm-hashtag,
 .cm-s-obsidian .cm-hmd-codeblock.cm-hashtag {
   font-family: var(--ebw-font-tags);
