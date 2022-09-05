@@ -1,4 +1,4 @@
-:root {
+body {
 // https://accessiblepalette.com/?lightness=98.2,93.9,85,76.2,67.4,57.8,48,40.2,31.8,24.9&fe6f5c=0,0&ffd863=0,-10&5C7A63=0,0&3d7e7b=0,10&3376ad=0,0&8E6787=1,15&808080=0,0
 // https://accessiblepalette.com/?lightness=98.2%2C93.9%2C87.5%2C82.5%2C74.8%2C66%2C48.4%2C30.6%2C19.4%2C10&fe6f5c=0%2C0&ffd863=0%2C-10&5C7A63=0%2C-3&3d7e7b=0%2C10&3376ad=0%2C0&8e6787=0%2C2&808080=0%2C0
 
@@ -110,6 +110,11 @@
   --gray-dark-85:#1e1e1e;
   --gray-dark-9: #1b1b1b;
   --gray-dark-10:#070707;
+
+  /* Pink */
+  --accent-h: 344;
+  --accent-s: 30%;
+  --accent-l: 51%;
 
   /* Defaults: purple/green */
   --primary-accent-0: var(--purple-0);
