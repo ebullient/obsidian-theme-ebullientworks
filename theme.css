@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.5.2 by @ebullient
+Ebullientworks 0.5.3 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -30,12 +30,6 @@ settings:
     type: class-toggle
     default: false
   -
-    id: ebullientworks-show-hide
-    title: Showing and Hiding content
-    type: heading
-    level: 3
-    collapsed: true
-  -
     id: ebullientworks-show-edit-mode-external-links
     title: Show external links in edit mode
     description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
@@ -45,12 +39,6 @@ settings:
     id: ebullientworks-floating-frontmatter
     title: Float front-matter in a box to the right
     description: If true, front-matter in preview mode will be collapsed in a top-right container.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-hover-collapsed-sidebars
-    title: Show collapsed sidebars on hover
-    description: If true, collapsed side-bars will be shown when you hover over the ribbon.
     type: class-toggle
     default: false
   -
@@ -151,45 +139,9 @@ settings:
         - secondary-accent-teal
         - secondary-accent-blue
         - secondary-accent-custom
-  -
-    title: Tag brightness - dark mode
-    id: tag-dark
-    description: Select tag brightness/contrast level for dark mode
-    type: variable-select
-    allowEmpty: false
-    default: var(--tag-4)
-    options:
-        - value: var(--tag-0)
-          label: lightest
-        - value: var(--tag-1)
-          label: lighter
-        - value: var(--tag-2)
-          label: light
-        - value: var(--tag-3)
-          label: medium
-        - value: var(--tag-4)
-          label: dark
-  -
-    title: Tag brightness - light mode
-    id: tag-light
-    description: Select tag brightness/contrast level for light mode
-    type: variable-select
-    allowEmpty: false
-    default: var(--tag-4)
-    options:
-        - value: var(--tag-2)
-          label: light
-        - value: var(--tag-3)
-          label: medium
-        - value: var(--tag-4)
-          label: dark
-        - value: var(--tag-5)
-          label: darker
-        - value: var(--tag-6)
-          label: darkest
- */
+*/
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
-:root {
+body {
   --red-0: #efd6d3;
   --red-1: #e8c5c0;
   --red-2: #dfada6;
@@ -283,6 +235,10 @@ settings:
   --gray-dark-85:#1e1e1e;
   --gray-dark-9: #1b1b1b;
   --gray-dark-10:#070707;
+  /* Pink */
+  --accent-h: 344;
+  --accent-s: 30%;
+  --accent-l: 51%;
   /* Defaults: purple/green */
   --primary-accent-0: var(--purple-0);
   --primary-accent-1: var(--purple-1);
@@ -489,9 +445,9 @@ body {
   --background-modifier-border: var(--gray-light-1);
   --background-modifier-success: var(--green-2);
   --background-modifier-success-rgb: var(--green-2-rgb);
-  --background-modifier-error: var(--red-1);
-  --background-modifier-error-rgb: var(--red-2-rgb);
-  --background-modifier-error-hover: var(--red-2);
+  --background-modifier-error: var(--red-4);
+  --background-modifier-error-rgb: 188,83,69;
+  --background-modifier-error-hover: var(--red-4);
   --text-normal: var(--gray-dark-5);
   --text-muted: var(--gray-dark-4);
   --text-faint: var(--gray-dark-1);
@@ -510,39 +466,12 @@ body {
   --interactive-accent-hover: var(--primary-accent-4);
 }
 
-body {
-  --divider-color: var(--background-modifier-border);
-  --file-margins: var(--size-4-2) var(--size-4-8);
-  --ribbon-background: var(--titlebar-background);
-  --ribbon-background-collapsed: var(--titlebar-background);
-  --status-bar-background: var(--titlebar-background);
-  --tab-text-color: var(--icon-color);
-  --tab-text-color-focused: var(--icon-color-focused);
-  --tab-container-background: var(--titlebar-background);
-  --tab-outline-color: var(--background-modifier-border);
-  --he-title-bar-height: calc(var(--icon-s) + var(--size-2-3));
-  --he-view-header-height: calc(var(--icon-s) + var(--size-2-3));
-}
-
-.is-focused {
-  --divider-color: var(--background-modifier-border-focus);
-  --ribbon-background: var(--titlebar-background-focused);
-  --ribbon-background-collapsed: var(--titlebar-background-focused);
-  --status-bar-background: var(--titlebar-background-focused);
-  --tab-container-background: var(--titlebar-background-focused);
-  --tab-outline-color: var(--background-modifier-border-focus);
-}
-.is-focused .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
-  color: var(--ebw-rotated-active-leaf-fg);
-  background-color: var(--ebw-rotated-active-leaf-bg);
-}
-.is-focused .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-  color: inherit;
-}
-
 .theme-dark {
-  --ebw-rotated-active-leaf-fg: var(--text-muted);
-  --ebw-rotated-active-leaf-bg: var(--primary-accent-5);
+  --ebw-tab-title-active-fg: var(--text-normal);
+  --ebw-tab-title-active-bg: var(--secondary-accent-5);
+  --ebw-tab-title-inactive-bg: var(--gray-dark-4);
+  --ebw-tab-title-inactive-focused-bg: var(--gray-dark-4);
+  --ebw-tab-title-active-focused-bg: var(--primary-accent-5);
   --ebw-he-title-border: var(--tab-outline-color);
   --he-title-bar-active-fg: var(--gray-light-6);
   --he-title-bar-active-bg: var(--secondary-accent-4);
@@ -555,8 +484,10 @@ body {
 }
 
 .theme-light {
-  --ebw-rotated-active-leaf-fg: var(--gray-light-7);
-  --ebw-rotated-active-leaf-bg: var(--primary-accent-3);
+  --ebw-tab-title-active-fg: white;
+  --ebw-tab-title-active-bg: var(--secondary-accent-4);
+  --ebw-tab-title-inactive-bg: var(--gray-dark-3);
+  --ebw-tab-title-active-focused-bg: var(--primary-accent-4);
   --ebw-he-title-border: var(--gray-dark-3);
   --he-title-bar-active-fg: white;
   --he-title-bar-active-bg: var(--secondary-accent-3);
@@ -568,19 +499,57 @@ body {
   --he-text-on-accent-active: var(--gray-light-5);
 }
 
-.workspace-ribbon .sidebar-toggle-button {
+body {
+  --divider-color: var(--background-modifier-border);
+  --file-margins: var(--size-4-2) var(--size-4-8);
+  --ribbon-background: var(--titlebar-background);
+  --ribbon-background-collapsed: var(--titlebar-background);
+  --status-bar-background: var(--titlebar-background);
+  --tab-text-color: var(--icon-color);
+  --tab-text-color-focused: var(--icon-color-focused);
+  --tab-container-background: var(--background-secondary);
+  --tab-outline-color: var(--background-modifier-border);
+  --he-title-bar-height: calc(var(--icon-s) + var(--size-2-3));
+  --he-view-header-height: calc(var(--icon-s) + var(--size-2-3));
+}
+
+:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+  color: var(--tab-text-color);
+  background-color: var(--background-secondary);
+}
+:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header .workspace-tab-header-inner-title {
+  color: inherit;
+}
+:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
+  color: var(--ebw-tab-title-active-fg);
+  background-color: var(--ebw-tab-title-active-bg);
+}
+
+.is-focused {
+  --divider-color: var(--background-modifier-border-focus);
+  --ribbon-background: var(--titlebar-background-focused);
+  --ribbon-background-collapsed: var(--titlebar-background-focused);
+  --status-bar-background: var(--titlebar-background-focused);
+  --tab-outline-color: var(--background-modifier-border-focus);
+}
+.is-focused .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
+  color: var(--ebw-tab-title-active-fg);
+  background-color: var(--ebw-tab-title-active-focused-bg);
+}
+.is-focused .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: inherit;
+}
+
+body:not(.is-mobile):not(.is-frameless):not(.is-hidden-frameless) .workspace-ribbon .sidebar-toggle-button,
+body:not(.is-mobile).is-hidden-frameless .workspace-ribbon .sidebar-toggle-button {
   border-right: var(--tab-outline-width) solid var(--tab-outline-color);
 }
-
-.workspace:not(.is-right-sidedock-open) .workspace-tabs:not(.mod-stacked) .sidebar-toggle-button.mod-right {
-  border-left: var(--tab-outline-width) solid var(--tab-outline-color);
-}
-
-body:not(.is-mobile) .workspace.is-left-sidedock-open .workspace-split.mod-left-split .workspace-tab-header-container {
+body:not(.is-mobile):not(.is-frameless):not(.is-hidden-frameless) .workspace.is-left-sidedock-open .workspace-split.mod-left-split .workspace-tab-header-container,
+body:not(.is-mobile).is-hidden-frameless .workspace.is-left-sidedock-open .workspace-split.mod-left-split .workspace-tab-header-container {
   border-right: var(--tab-outline-width) solid var(--tab-outline-color);
 }
-
-body:not(.is-mobile) div.workspace.is-right-sidedock-open .workspace-split.mod-right-split .workspace-tab-header-container {
+body:not(.is-mobile):not(.is-frameless):not(.is-hidden-frameless) div.workspace.is-right-sidedock-open .workspace-split.mod-right-split .workspace-tab-header-container,
+body:not(.is-mobile).is-hidden-frameless div.workspace.is-right-sidedock-open .workspace-split.mod-right-split .workspace-tab-header-container {
   border-left: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
@@ -713,17 +682,9 @@ body {
   --h4-weight: 500;
   --h5-weight: 500;
   --h6-weight: 500;
-  --tag-0: var(--pink-0);
-  --tag-1: var(--pink-1);
-  --tag-2: var(--pink-2);
-  --tag-3: var(--pink-3);
-  --tag-4: var(--pink-4);
-  --tag-5: var(--pink-5);
-  --tag-6: var(--pink-6);
-  --tag-dark: var(--tag-5);
-  --tag-light: var(--tag-3);
   --tag-background: transparent;
   --tag-background-hover: transparent;
+  --tag-padding-x: 0;
 }
 
 .theme-dark {
@@ -733,8 +694,8 @@ body {
   --h4-color: var(--blue-3);
   --h5-color: var(--purple-3);
   --h6-color: var(--pink-3);
-  --tag-color: var(--tag-dark);
-  --tag-color-hover: var(--tag-dark);
+  --tag-color: var(--color-accent-2);
+  --tag-color-hover: var(--tag-3);
 }
 
 .theme-dark .print,
@@ -745,12 +706,14 @@ body {
   --h4-color: var(--blue-4);
   --h5-color: var(--purple-4);
   --h6-color: var(--pink-4);
-  --tag-color: var(--tag-light);
-  --tag-color-hover: var(--tag-light);
+  --tag-color: var(--color-accent);
+  --tag-color-hover: var(--tag-4);
 }
 
 a.tag,
 .editor .cl-hashtag,
+.markdown-source-view.mod-cm6 .cm-hashtag,
+.cm-s-obsidian .cm-formatting.cm-hashtag,
 .cm-s-obsidian .cm-quote.cm-hashtag,
 .cm-s-obsidian .cm-hmd-codeblock.cm-hashtag {
   font-family: var(--ebw-font-tags);
@@ -953,7 +916,7 @@ h1,
 .theme-dark .print,
 .theme-light {
   --bold-color: var(--blue-4);
-  --italic-color: var(--pink-3);
+  --italic-color: var(--pink-4);
   --ebw-strong-em: var(--yellow-3);
   --ebw-link-underline: var(--teal-2);
   --ebw-link-hidden: var(--teal-2);
@@ -978,9 +941,19 @@ del {
   text-decoration-color: rgba(203, 203, 203, 0.7);
 }
 
+/** BUG */
+.cm-s-obsidian span.cm-quote.cm-em {
+  color: var(--italic-color);
+}
+
+.cm-s-obsidian span.cm-quote.cm-strong {
+  color: var(--bold-color);
+}
+
 strong em,
 strong em a.internal-link,
-.cm-s-obsidian span.cm-strong.cm-em {
+.cm-s-obsidian span.cm-strong.cm-em,
+.cm-s-obsidian span.cm-quote.cm-strong.cm-em {
   color: var(--ebw-strong-em);
 }
 
@@ -1085,22 +1058,25 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   background-color: var(--text-selection-active);
 }
 
-:root {
-  --checkbox-checked: var(--green-3);
+body {
+  --checkbox-checked: var(--green-4);
   --checkbox-deferred: var(--blue-3);
-  --checkbox-important: var(--red-4);
-  --checkbox-review: var(--green-4);
-  --checkbox-in-progress: var(--teal-3);
+  --checkbox-review: var(--green-3);
+  --checkbox-important: var(--pink-4);
+  --checkbox-in-progress: var(--teal-4);
   --checkbox-question: var(--yellow-3);
-}
-
-.theme-dark {
   --checkbox-cancelled: var(--gray-dark-3);
   --checkbox-hover: var(--gray-dark-2);
 }
 
 .theme-dark .print,
 .theme-light {
+  --checkbox-checked: var(--green-3);
+  --checkbox-deferred: var(--blue-3);
+  --checkbox-review: var(--green-3);
+  --checkbox-important: var(--red-4);
+  --checkbox-in-progress: var(--teal-3);
+  --checkbox-question: var(--yellow-3);
   --checkbox-cancelled: var(--gray-dark-1);
   --checkbox-hover: var(--gray-light-2);
 }
@@ -1120,6 +1096,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=x] {
   --checkbox-color: var(--checkbox-checked);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=x] input[type=checkbox]:not(:checked),
@@ -1153,6 +1130,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="-"] {
   --checkbox-color: var(--checkbox-cancelled);
   --checkbox-marker-color: transparent;
   color: var(--text-faint);
+  font-weight: var(--font-normal);
   text-decoration: line-through;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input[type=checkbox]:not(:checked),
@@ -1186,6 +1164,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=">"] {
   --checkbox-color: var(--checkbox-deferred);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input[type=checkbox]:not(:checked),
@@ -1219,6 +1198,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=R] {
   --checkbox-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=R] input[type=checkbox]:not(:checked),
@@ -1252,6 +1232,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=r] {
   --checkbox-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=r] input[type=checkbox]:not(:checked),
@@ -1285,6 +1266,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="?"] {
   --checkbox-color: var(--checkbox-question);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-bold);
   text-decoration: none;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input[type=checkbox]:not(:checked),
@@ -1317,7 +1299,8 @@ body:not(.ebullientworks-nix-checkbox) div[data-task="!"],
 body:not(.ebullientworks-nix-checkbox) li[data-task="!"] {
   --checkbox-color: var(--checkbox-important);
   --checkbox-marker-color: transparent;
-  color: var(--checkbox-important);
+  color: var(--text-normal);
+  font-weight: var(--font-extrabold);
   text-decoration: none;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input[type=checkbox]:not(:checked),
@@ -1346,20 +1329,24 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="!"] input[type=checkbox]:ch
   right: 2px;
   content: "!";
 }
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"],
 body:not(.ebullientworks-nix-checkbox) li[data-task="/"] {
   --checkbox-color: var(--checkbox-in-progress);
   --checkbox-marker-color: transparent;
   --checklist-done-decoration: none;
   color: var(--text-normal);
 }
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] > input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) li[data-task="/"] input[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] > input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) li[data-task="/"] input[type=checkbox]:checked {
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="/"] input[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   background: unset;
   content: " ";
@@ -1953,6 +1940,7 @@ body {
 }
 
 .theme-dark {
+  --table-header-color: var(--text-on-accent);
   --table-header-background: var(--primary-accent-5);
   --ebw-table-header-alt: var(--primary-accent-4);
   --ebw-row-alt: rgba(0, 0, 0, .2);
@@ -1960,8 +1948,9 @@ body {
 
 .theme-dark .print,
 .theme-light {
-  --table-header-background: var(--primary-accent-1);
-  --ebw-table-header-alt: var(--primary-accent-2);
+  --table-header-color: var(--gray-dark-7);
+  --table-header-background: var(--primary-accent-2);
+  --ebw-table-header-alt: var(--primary-accent-3);
   --ebw-row-alt: rgba(0, 0, 0, .05);
 }
 

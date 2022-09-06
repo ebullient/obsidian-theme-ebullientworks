@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.5.2 by @ebullient
+Ebullientworks tasks 0.5.3 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -33,6 +33,7 @@ li[data-task=x] {
   --checkbox-color: var(--checkbox-checked);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 div[data-task=x] input[type=checkbox]:not(:checked),
@@ -67,6 +68,7 @@ li[data-task="-"] {
   --checkbox-color: var(--checkbox-cancelled);
   --checkbox-marker-color: transparent;
   color: var(--text-faint);
+  font-weight: var(--font-normal);
   text-decoration: line-through;
 }
 div[data-task="-"] input[type=checkbox]:not(:checked),
@@ -101,6 +103,7 @@ li[data-task=">"] {
   --checkbox-color: var(--checkbox-deferred);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 div[data-task=">"] input[type=checkbox]:not(:checked),
@@ -135,6 +138,7 @@ li[data-task=R] {
   --checkbox-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 div[data-task=R] input[type=checkbox]:not(:checked),
@@ -169,6 +173,7 @@ li[data-task=r] {
   --checkbox-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 div[data-task=r] input[type=checkbox]:not(:checked),
@@ -203,6 +208,7 @@ li[data-task="?"] {
   --checkbox-color: var(--checkbox-question);
   --checkbox-marker-color: transparent;
   color: var(--text-normal);
+  font-weight: var(--font-bold);
   text-decoration: none;
 }
 div[data-task="?"] input[type=checkbox]:not(:checked),
@@ -236,7 +242,8 @@ div[data-task="!"],
 li[data-task="!"] {
   --checkbox-color: var(--checkbox-important);
   --checkbox-marker-color: transparent;
-  color: var(--checkbox-important);
+  color: var(--text-normal);
+  font-weight: var(--font-extrabold);
   text-decoration: none;
 }
 div[data-task="!"] input[type=checkbox]:not(:checked),
@@ -266,20 +273,24 @@ li[data-task="!"] input[type=checkbox]:checked:after {
   content: "!";
 }
 
+div[data-task="/"],
 li[data-task="/"] {
   --checkbox-color: var(--checkbox-in-progress);
   --checkbox-marker-color: transparent;
   --checklist-done-decoration: none;
   color: var(--text-normal);
 }
-li[data-task="/"] > input[type=checkbox]:not(:checked) {
+div[data-task="/"] input[type=checkbox]:not(:checked),
+li[data-task="/"] input[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-li[data-task="/"] > input[type=checkbox]:checked {
+div[data-task="/"] input[type=checkbox]:checked,
+li[data-task="/"] input[type=checkbox]:checked {
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
-li[data-task="/"] > input[type=checkbox]:checked:after {
+div[data-task="/"] input[type=checkbox]:checked:after,
+li[data-task="/"] input[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   background: unset;
   content: " ";
