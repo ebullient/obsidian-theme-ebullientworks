@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.5.4 by @ebullient
+Ebullientworks 0.5.5 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -911,6 +911,7 @@ h1,
   --ebw-link-hidden: var(--teal-4);
   --link-color: var(--gray-light-1);
   --link-color-hover: var(--teal-2);
+  --ebw-del-link-decoration-color: rgba(203, 203, 203, 0.5);
 }
 
 .theme-dark .print,
@@ -922,23 +923,21 @@ h1,
   --ebw-link-hidden: var(--teal-2);
   --link-color: var(--gray-dark-4);
   --link-color-hover: var(--teal-3);
+  --ebw-del-link-decoration-color: rgba(100, 100, 100, 0.5);
 }
 
 body {
-  --link-decoration: underline var(--ebw-link-underline);
-  --link-decoration-hover: underline var(--ebw-link-underline);
+  --link-decoration: underline;
+  --link-decoration-hover: underline
+  --link-external-decoration: underline;
+  --link-external-decoration-hover: underline;
+  --link-decoration-color: var(--ebw-link-underline);
   --link-external-color: var(--link-color);
   --link-external-color-hover: var(--link-color-hover);
-  --link-external-decoration: underline var(--ebw-link-underline);
-  --link-external-decoration-hover: var(--ebw-link-underline);
   --link-unresolved-color: var(--link-color);
   --link-unresolved-opacity: 0.9;
   --link-unresolved-decoration-style: dotted;
   --link-unresolved-decoration-color: var(--ebw-link-underline);
-}
-
-del {
-  text-decoration-color: rgba(203, 203, 203, 0.7);
 }
 
 /** BUG */
@@ -968,8 +967,18 @@ strong em a.internal-link,
 .cm-s-obsidian .cm-url.cm-strikethrough,
 .cm-s-obsidian .cm-link.cm-strikethrough,
 .cm-s-obsidian .cm-hmd-internal-link.cm-strikethrough {
-  text-decoration: line-through;
+  text-decoration: line-through var(--link-decoration-color);
+}
+
+a {
   text-decoration-color: var(--link-decoration-color);
+}
+
+del a,
+.markdown-rendered del a.external-link,
+.markdown-rendered del a.internal-link,
+.markdown-rendered del a.internal-link.is-unresolved {
+  text-decoration-color: var(--ebw-del-link-decoration-color);
 }
 
 .cm-s-obsidian span.cm-string.cm-url {
