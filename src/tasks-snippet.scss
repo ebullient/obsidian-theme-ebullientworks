@@ -26,4 +26,5 @@ li[data-task] input[type=checkbox]::before {
   -webkit-mask-image: none !important;
 }
 
+@import 'fragments/06a-checkbox-mixin.scss';
 @import 'fragments/06a-checkboxes.scss';

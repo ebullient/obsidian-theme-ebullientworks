@@ -33,5 +33,6 @@ body {
 
 body:not(.ebullientworks-nix-checkbox) {
   /** Use style settings to disable custom checkboxes in the theme */
+  @import '06a-checkbox-mixin.scss';
   @import '06a-checkboxes.scss';
 }
