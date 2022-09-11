@@ -39,7 +39,11 @@ body {
 
   --ebw-callout-note: 33, 75, 109; // blue-5
   --ebw-callout-abstract: 88, 64, 84; // purple-5
+  --ebw-callout-info: 53, 119, 174; // blue-4
   --ebw-callout-tip: 61, 126, 123; // teal-4
+
+  --ebw-callout-danger: 167,92,112; // pink-4
+  --ebw-callout-failure: 188,83,69; // red-4
 }
 .markdown-rendered blockquote {
   padding: var(--callout-content-padding);
