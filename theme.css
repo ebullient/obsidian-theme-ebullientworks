@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.5.5 by @ebullient
+Ebullientworks 0.5.6 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -578,6 +578,7 @@ body:not(.is-mobile) .mod-right-split.is-floating {
 .ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header > .view-header-title-container,
 .ebullientworks-reverse-view-header-actions .workspace-tabs .view-header > .view-header-title-container {
   order: 1;
+  justify-content: flex-start;
 }
 
 body.is-focused .workspace .mod-root .workspace-tabs.mod-stacked,
@@ -609,6 +610,7 @@ body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked .view-hea
   --text-normal: var(--text-faint);
   --header-height: calc(var(--icon-s) + var(--size-2-4));
   align-items: center;
+  gap: var(--size-2-4);
 }
 body.is-focused .workspace .mod-root .workspace-tabs.mod-stacked .view-header-title,
 body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked .view-header-title {
@@ -919,10 +921,10 @@ h1,
   --bold-color: var(--blue-4);
   --italic-color: var(--pink-4);
   --ebw-strong-em: var(--yellow-3);
-  --ebw-link-underline: var(--teal-2);
+  --ebw-link-underline: var(--teal-3);
   --ebw-link-hidden: var(--teal-2);
-  --link-color: var(--gray-dark-4);
-  --link-color-hover: var(--teal-3);
+  --link-color: var(--gray-dark-3);
+  --link-color-hover: var(--teal-4);
   --ebw-del-link-decoration-color: rgba(100, 100, 100, 0.5);
 }
 
@@ -1397,7 +1399,10 @@ body {
   --ebw-callout-success: 92, 122, 99;
   --ebw-callout-note: 33, 75, 109;
   --ebw-callout-abstract: 88, 64, 84;
+  --ebw-callout-info: 53, 119, 174;
   --ebw-callout-tip: 61, 126, 123;
+  --ebw-callout-danger: 167,92,112;
+  --ebw-callout-failure: 188,83,69;
 }
 
 .markdown-rendered blockquote {
@@ -1684,8 +1689,10 @@ div[src$="#small-right"] {
   overflow-y: unset;
 }
 
-.ebullientworks-hide-embedded-heading .markdown-preview-view > [data-heading]:first-child,
-.ebullientworks-hide-embedded-heading .markdown-embed-heading .markdown-preview-pusher + div > [data-heading] {
+.ebullientworks-hide-embedded-heading .markdown-embed .markdown-embed-title {
+  display: none;
+}
+.ebullientworks-hide-embedded-heading .markdown-embed .markdown-preview-pusher + div > [data-heading] {
   display: none;
 }
 
