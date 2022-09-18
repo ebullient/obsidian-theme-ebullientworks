@@ -118,6 +118,7 @@ body:not(.is-mobile) .mod-right-split.is-floating {
     }
     > .view-header-title-container {
       order: 1;
+      justify-content: flex-start;
     }
   }
 }
@@ -149,6 +150,7 @@ body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked {
     --text-normal: var(--text-faint);
     --header-height: calc(var(--icon-s) + var(--size-2-4));
     align-items: center;
+    gap: var(--size-2-4);
   }
   .view-header-title {
     line-height: var(--icon-s);
