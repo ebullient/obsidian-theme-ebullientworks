@@ -108,12 +108,15 @@ body:not(.is-mobile) .mod-right-split.is-floating {
   .popover.hover-editor .popover-content .workspace-leaf-content .view-header,
   .workspace-tabs .view-header {
     margin: 0;
+    > .view-header-icon {
+      order: 0;
+    }
     > .view-actions {
       order: 0;
       flex-direction: row-reverse;
       padding: 0 var(--size-2-3);
     }
-    > .view-header-icon {
+    > .view-header-nav-buttons {
       order: 1;
     }
     > .view-header-title-container {
