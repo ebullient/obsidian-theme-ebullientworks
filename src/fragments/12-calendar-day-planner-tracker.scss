@@ -19,6 +19,10 @@
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--primary-accent-1);
 
+  .week-num.active,
+  .day.active {
+    --color-dot: var(--text-on-accent);
+  }
   .day.today {
     color: var(--primary-accent-4);
     font-weight: bold;
