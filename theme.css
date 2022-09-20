@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.5.6 by @ebullient
+Ebullientworks 0.5.7 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -565,14 +565,18 @@ body:not(.is-mobile) .mod-right-split.is-floating {
 .ebullientworks-reverse-view-header-actions .workspace-tabs .view-header {
   margin: 0;
 }
+.ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header > .view-header-icon,
+.ebullientworks-reverse-view-header-actions .workspace-tabs .view-header > .view-header-icon {
+  order: 0;
+}
 .ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header > .view-actions,
 .ebullientworks-reverse-view-header-actions .workspace-tabs .view-header > .view-actions {
   order: 0;
   flex-direction: row-reverse;
   padding: 0 var(--size-2-3);
 }
-.ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header > .view-header-icon,
-.ebullientworks-reverse-view-header-actions .workspace-tabs .view-header > .view-header-icon {
+.ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header > .view-header-nav-buttons,
+.ebullientworks-reverse-view-header-actions .workspace-tabs .view-header > .view-header-nav-buttons {
   order: 1;
 }
 .ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header > .view-header-title-container,
@@ -1755,6 +1759,12 @@ div[src$="#small-right"] {
   --calendar-month: var(--secondary-accent-4);
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--primary-accent-1);
+}
+.theme-dark .print .week-num.active,
+.theme-dark .print .day.active,
+.theme-light .week-num.active,
+.theme-light .day.active {
+  --color-dot: var(--text-on-accent);
 }
 .theme-dark .print .day.today,
 .theme-light .day.today {
