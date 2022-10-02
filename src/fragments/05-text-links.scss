@@ -114,8 +114,8 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
       font-size: 0;
     }
     > .cm-string.cm-url:not(.cm-formatting)::after {
-      content: '·';
-      font-size: 1rem;
+      content: '\27B9';
+      font-size: .8rem;
     }
   }
 }
