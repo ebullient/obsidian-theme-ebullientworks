@@ -73,3 +73,12 @@
   background-color: var(--day-planner-timeline-fg);
 }
 
+// ------
+// Fantasy Calendar
+// ------
+.mod-cta {
+  .setting-item-description,
+  .setting-item-name {
+    color: var(--text-on-accent);
+  }
+}
