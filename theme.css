@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.5.7 by @ebullient
+Ebullientworks 0.5.8 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -682,9 +682,9 @@ body {
   --h4-variant: common-ligatures;
   --h5-variant: common-ligatures;
   --h6-variant: common-ligatures;
-  --h1-weight: 600;
-  --h2-weight: 600;
-  --h3-weight: 600;
+  --h1-weight: 500;
+  --h2-weight: 500;
+  --h3-weight: 500;
   --h4-weight: 500;
   --h5-weight: 500;
   --h6-weight: 500;
@@ -1028,8 +1028,8 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 div
   font-size: 0;
 }
 body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 div.cm-line:not(.cm-active) > .cm-string.cm-url:not(.cm-formatting)::after {
-  content: "·";
-  font-size: 1rem;
+  content: "➹";
+  font-size: 0.8rem;
 }
 
 .markdown-preview-view .task-list-item a[data-href][aria-label-position].internal-link,
