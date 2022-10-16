@@ -1,95 +1,98 @@
-.ebullientworks-floating-frontmatter {
-  pre.frontmatter {
-    float: right;
-    position: absolute;
-    right: .15em;
-    top: .65rem;
-    width: 2rem;
-    height: 2rem;
-    overflow: hidden;
-    border: none !important;
-    background-color: transparent;
-
-    code {
-      visibility: hidden;
+.ebullientworks-floating-frontmatter,
+.ebullientworks-floating-frontmatter.is-mobile {
+  .markdown-rendered {
+    pre.frontmatter:not(:hover) > button.copy-code-button {
+        display: none;
     }
-    button {
-      display: none;
+    pre.frontmatter {
+      float: right;
+      position: absolute;
+      right: .15em;
+      top: .65rem;
+      width: 2rem;
+      height: 2rem;
+      overflow: hidden;
+      border: none !important;
+      background-color: transparent;
+
+      code {
+        visibility: hidden;
+      }
     }
-  }
-  pre.frontmatter::before {
-    content: "✧";
-    font-size: 20px;
-    color: var(--primary-accent-3);
-    float: right;
-  }
-  pre.frontmatter:hover {
-    border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-secondary);
-    filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-    width: 60%;
-    min-width: 200px;
-    height: unset;
-    z-index: 3;
-
-    code {
-      visibility: visible;
-      background-color: var(---background-secondary);
+    pre.frontmatter::before {
+      content: "✧";
+      font-size: 20px;
+      color: var(--primary-accent-3);
+      float: right;
     }
-  }
+    pre.frontmatter:hover {
+      border: 1px solid var(--background-modifier-border);
+      background-color: var(--background-secondary);
+      filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
+      width: 60%;
+      min-width: 200px;
+      height: unset;
+      z-index: 3;
 
-  pre.frontmatter.mod-failed {
-    position: absolute;
-    .mod-error {
-      visibility: hidden;
+      code {
+        visibility: visible;
+        background-color: var(---background-secondary);
+      }
     }
-  }
-  pre.frontmatter.mod-failed:hover .mod-error {
-    visibility: visible;
-  }
 
-  .frontmatter-container {
-    float: right;
-    position: absolute;
-    right: .6rem;
-    top: 0;
-    width: 2rem;
-    height: 2rem;
-    overflow: hidden;
-    border: none !important;
-    background-color: transparent;
-
-    .frontmatter-container-header,
-    .frontmatter-section {
-      visibility: hidden;
+    pre.frontmatter.mod-failed {
+      position: absolute;
+      .mod-error {
+        visibility: hidden;
+      }
     }
-  }
-  .frontmatter-container::before {
-    content: "✧";
-    font-size: 20px;
-    color: var(--primary-accent-3);
-    float: right;
-  }
-  .frontmatter-container:hover {
-    border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-secondary);
-    filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-    width: 50%;
-    min-width: 200px;
-    height: unset;
-    z-index: 3;
-
-    .frontmatter-container-header {
-      padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
+    pre.frontmatter.mod-failed:hover .mod-error {
       visibility: visible;
     }
-    .frontmatter-section {
-      visibility: visible;
-      padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
-    }
 
-    .frontmatter-collapse-indicator {
-      display: none;
+    .frontmatter-container {
+      float: right;
+      position: absolute;
+      right: .6rem;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      overflow: hidden;
+      border: none !important;
+      background-color: transparent;
+
+      .frontmatter-container-header,
+      .frontmatter-section {
+        visibility: hidden;
+      }
+    }
+    .frontmatter-container::before {
+      content: "✧";
+      font-size: 20px;
+      color: var(--primary-accent-3);
+      float: right;
+    }
+    .frontmatter-container:hover {
+      border: 1px solid var(--background-modifier-border);
+      background-color: var(--background-secondary);
+      filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
+      width: 50%;
+      min-width: 200px;
+      height: unset;
+      z-index: 3;
+
+      .frontmatter-container-header {
+        padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
+        visibility: visible;
+      }
+      .frontmatter-section {
+        visibility: visible;
+        padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
+      }
+
+      .frontmatter-collapse-indicator {
+        display: none;
+      }
     }
   }
 }
