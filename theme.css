@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.5.8 by @ebullient
+Ebullientworks 0.5.9 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -435,6 +435,12 @@ body {
   --ebw-alpha4: rgba(0, 0, 0, 0.4);
 }
 
+.is-tablet.theme-dark {
+  --titlebar-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-secondary);
+  --interactive-normal: var(--background-primary-alt);
+}
+
 .theme-dark .print,
 .theme-light {
   /** Core styles **/
@@ -620,6 +626,71 @@ body.is-focused .workspace .mod-root .workspace-tabs.mod-stacked .view-header-ti
 body:not(.is-focused) .workspace .mod-root .workspace-tabs.mod-stacked .view-header-title {
   line-height: var(--icon-s);
   visibility: hidden;
+}
+body.is-focused.is-tablet .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-close-button,
+body:not(.is-focused).is-tablet .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-close-button {
+  padding-top: var(--size-4-2);
+}
+body.is-focused.is-tablet .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-status-container,
+body:not(.is-focused).is-tablet .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-status-container {
+  padding-top: var(--size-2-2);
+}
+
+.mobile-navbar-actions,
+.workspace-drawer .nav-buttons-container,
+body.is-tablet .sidebar-toggle-button,
+.is-mobile .view-header-nav-buttons,
+.is-mobile .view-header .view-action {
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--text-muted);
+  --icon-color-active: var(--text-accent);
+  --icon-color-focused: var(--text-normal);
+}
+
+body.is-tablet {
+  --header-height: calc(var(--icon-m) + var(--size-4-3));
+}
+body.is-tablet .view-header {
+  --icon-xs: 14px;
+  --icon-s: 16px;
+  --icon-m: 18px;
+  --icon-l: 18px;
+}
+
+body.is-tablet,
+.is-mobile {
+  --view-header-height: var(--header-height);
+}
+body.is-tablet .view-header-title-container,
+.is-mobile .view-header-title-container {
+  height: unset;
+}
+
+body.is-tablet .sidebar-toggle-button,
+body.is-tablet .view-header-nav-buttons,
+body.is-tablet .view-header .view-action,
+.is-mobile .view-header-nav-buttons,
+.is-mobile .view-header .view-action {
+  --icon-size: var(--icon-m);
+  --icon-stroke: var(--icon-m-stroke-width);
+}
+
+.workspace-drawer .workspace-drawer-active-tab-icon,
+.workspace-drawer .workspace-drawer-tab-option-item-icon,
+.workspace-drawer .workspace-drawer-active-tab-back-icon,
+.workspace-drawer .workspace-drawer-header-icon,
+.workspace-drawer .clickable-icon.side-dock-ribbon-action .svg-icon,
+.workspace-drawer .workspace-tab-header-inner-icon .svg-icon,
+.workspace-drawer .workspace-tab-header-inner-icon .svg-icon,
+.workspace-drawer .nav-buttons-container {
+  --icon-size: var(--icon-m);
+  --icon-stroke: var(--icon-m-stroke-width);
+}
+
+.workspace-drawer-header-icon,
+.workspace-drawer-active-tab-back-icon,
+.workspace-drawer-active-tab-icon:last-child {
+  color: var(--icon-color);
 }
 
 .hover-editor .popover-content .popover-titlebar {
@@ -1810,6 +1881,11 @@ div[src$="#small-right"] {
   background-color: var(--day-planner-timeline-fg);
 }
 
+.mod-cta .setting-item-description,
+.mod-cta .setting-item-name {
+  color: var(--text-on-accent);
+}
+
 .theme-dark .timeline-container h2 {
   color: var(--gray-dark-2);
 }
@@ -1868,7 +1944,12 @@ div[src$="#small-right"] {
   text-decoration: none;
 }
 
-.ebullientworks-floating-frontmatter pre.frontmatter {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter:not(:hover) > button.copy-code-button,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter:not(:hover) > button.copy-code-button {
+  display: none;
+}
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter {
   float: right;
   position: absolute;
   right: 0.15em;
@@ -1879,19 +1960,19 @@ div[src$="#small-right"] {
   border: none !important;
   background-color: transparent;
 }
-.ebullientworks-floating-frontmatter pre.frontmatter code {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter code,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter code {
   visibility: hidden;
 }
-.ebullientworks-floating-frontmatter pre.frontmatter button {
-  display: none;
-}
-.ebullientworks-floating-frontmatter pre.frontmatter::before {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter::before,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter::before {
   content: "✧";
   font-size: 20px;
   color: var(--primary-accent-3);
   float: right;
 }
-.ebullientworks-floating-frontmatter pre.frontmatter:hover {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter:hover,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter:hover {
   border: 1px solid var(--background-modifier-border);
   background-color: var(--background-secondary);
   filter: drop-shadow(-0.1rem 0.1rem 0.1rem var(--background-secondary-alt));
@@ -1900,20 +1981,25 @@ div[src$="#small-right"] {
   height: unset;
   z-index: 3;
 }
-.ebullientworks-floating-frontmatter pre.frontmatter:hover code {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter:hover code,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter:hover code {
   visibility: visible;
   background-color: var(---background-secondary);
 }
-.ebullientworks-floating-frontmatter pre.frontmatter.mod-failed {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter.mod-failed,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter.mod-failed {
   position: absolute;
 }
-.ebullientworks-floating-frontmatter pre.frontmatter.mod-failed .mod-error {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter.mod-failed .mod-error,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter.mod-failed .mod-error {
   visibility: hidden;
 }
-.ebullientworks-floating-frontmatter pre.frontmatter.mod-failed:hover .mod-error {
+.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter.mod-failed:hover .mod-error,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter.mod-failed:hover .mod-error {
   visibility: visible;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container {
   float: right;
   position: absolute;
   right: 0.6rem;
@@ -1924,17 +2010,21 @@ div[src$="#small-right"] {
   border: none !important;
   background-color: transparent;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container .frontmatter-container-header,
-.ebullientworks-floating-frontmatter .frontmatter-container .frontmatter-section {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container .frontmatter-container-header,
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container .frontmatter-section,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container .frontmatter-container-header,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container .frontmatter-section {
   visibility: hidden;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container::before {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container::before,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container::before {
   content: "✧";
   font-size: 20px;
   color: var(--primary-accent-3);
   float: right;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container:hover {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover {
   border: 1px solid var(--background-modifier-border);
   background-color: var(--background-secondary);
   filter: drop-shadow(-0.1rem 0.1rem 0.1rem var(--background-secondary-alt));
@@ -1943,15 +2033,18 @@ div[src$="#small-right"] {
   height: unset;
   z-index: 3;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container:hover .frontmatter-container-header {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover .frontmatter-container-header,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover .frontmatter-container-header {
   padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
   visibility: visible;
 }
-.ebullientworks-floating-frontmatter .frontmatter-container:hover .frontmatter-section {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover .frontmatter-section,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover .frontmatter-section {
   visibility: visible;
   padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
 }
-.ebullientworks-floating-frontmatter .frontmatter-container:hover .frontmatter-collapse-indicator {
+.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover .frontmatter-collapse-indicator,
+.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover .frontmatter-collapse-indicator {
   display: none;
 }
 
