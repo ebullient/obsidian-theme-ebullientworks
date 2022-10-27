@@ -12,7 +12,7 @@
 
 This is a dark and light theme for [Obsidian.md](https://obsidian.md), a note taking app. 
 
-Headers are styled and sized (for mobile and not) with and without Sliding panes (and rotated headers). Modals, tables, and other panels are also styled. 
+Headers are styled and sized (for mobile and not) with and without stacked tabs. Modals, tables, and other panels are also styled. 
 
 Some light styling has also been applied for the following community plugins: 
 

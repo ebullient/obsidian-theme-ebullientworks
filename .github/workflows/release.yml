@@ -57,7 +57,7 @@ jobs:
         git push --tags
 
         npm run release-notes -- ${VERSION}
-        echo "::set-output name=version::${VERSION}"
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
 
     # Create the release on github
     - name: Create Release
@@ -85,15 +85,15 @@ jobs:
         asset_name: theme.css
         asset_content_type: text/css
 
-    - name: Upload tasks-snippet-for-0.16.css
+    - name: Upload tasks-snippet.css
       id: upload-tasks-snippet
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./tasks-snippet-for-0.16.css
-        asset_name: tasks-snippet-for-0.16.css
+        asset_path: ./tasks-snippet.css
+        asset_name: tasks-snippet.css
         asset_content_type: text/css
 
     # Upload manifest.json
