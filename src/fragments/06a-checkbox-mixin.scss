@@ -2,6 +2,7 @@
   div[data-task="#{$character}"],
   li[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
+    --checkbox-border-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
     --checklist-done-decoration: #{$text-decoration};
     color: $li-fg;
@@ -25,6 +26,7 @@
   div[data-task="#{$character}"],
   li[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
+    --checkbox-border-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
     color: $li-fg;
     font-weight: $font-weight;
