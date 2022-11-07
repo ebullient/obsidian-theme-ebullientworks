@@ -1,20 +1,20 @@
 @mixin custom-task-background($character, $rgb-color, $background, $font-weight: var(--font-normal), $text-decoration: none, $li-fg: var(--text-normal)) {
   div[data-task="#{$character}"],
-  li[data-task="#{$character}"] {
+  ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
     --checklist-done-decoration: #{$text-decoration};
     color: $li-fg;
 
-    input[type=checkbox]:not(:checked) {
+    input.task-list-item-checkbox[type=checkbox]:not(:checked) {
       background-color: unset;
       background: unset;
     }
-    input[type=checkbox]:checked {
+    input.task-list-item-checkbox[type=checkbox]:checked {
       background: #{$background};
     }
-    input[type=checkbox]:checked:after {
+    input.task-list-item-checkbox[type=checkbox]:checked:after {
       -webkit-mask-image: none;
       background: unset;
       content: ' ';
@@ -24,7 +24,7 @@
 
 @mixin custom-task-text($character, $rgb-color, $emoji, $font-weight, $text-decoration, $li-fg: var(--text-normal)) {
   div[data-task="#{$character}"],
-  li[data-task="#{$character}"] {
+  ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
@@ -32,15 +32,15 @@
     font-weight: $font-weight;
     text-decoration: $text-decoration;
 
-    input[type=checkbox]:not(:checked) {
+    input.task-list-item-checkbox[type=checkbox]:not(:checked) {
       background-color: unset;
       background: unset;
     }
-    input[type=checkbox]:checked {
+    input.task-list-item-checkbox[type=checkbox]:checked {
       background-color: unset;
       background: unset;
     }
-    input[type=checkbox]:checked:after {
+    input.task-list-item-checkbox[type=checkbox]:checked:after {
       -webkit-mask-image: none;
       font-family: var(--font-monospace);
       background: unset;
