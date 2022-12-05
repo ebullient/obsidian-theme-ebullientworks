@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.6.0 by @ebullient
+Ebullientworks 0.6.1 by @ebullient
 
 This is a dark and light theme for Obsidian.
 
@@ -21,6 +21,12 @@ settings:
     id: ebullientworks-nix-checkbox
     title: Suppress/Remove this theme's checkbox styles
     description: Set this to true if you are going to use your own task snippet
+    type: class-toggle
+    default: false
+  -
+    id: ebullientworks-nix-tags
+    title: Suppress/Remove this theme's tag styles
+    description: Set this to true if you are going to use your own tag snippet
     type: class-toggle
     default: false
   -
@@ -759,9 +765,6 @@ body {
   --h4-weight: 500;
   --h5-weight: 500;
   --h6-weight: 500;
-  --tag-background: transparent;
-  --tag-background-hover: transparent;
-  --tag-padding-x: 0;
 }
 
 .theme-dark {
@@ -771,8 +774,6 @@ body {
   --h4-color: var(--blue-3);
   --h5-color: var(--purple-3);
   --h6-color: var(--pink-3);
-  --tag-color: var(--color-accent-2);
-  --tag-color-hover: var(--tag-3);
 }
 
 .theme-dark .print,
@@ -783,18 +784,6 @@ body {
   --h4-color: var(--blue-4);
   --h5-color: var(--purple-4);
   --h6-color: var(--pink-4);
-  --tag-color: var(--color-accent);
-  --tag-color-hover: var(--tag-4);
-}
-
-a.tag,
-.editor .cl-hashtag,
-.markdown-source-view.mod-cm6 .cm-hashtag,
-.cm-s-obsidian .cm-formatting.cm-hashtag,
-.cm-s-obsidian .cm-quote.cm-hashtag,
-.cm-s-obsidian .cm-hmd-codeblock.cm-hashtag {
-  font-family: var(--ebw-font-tags);
-  color: var(--tag-color);
 }
 
 .cm-header-1 {
@@ -891,30 +880,63 @@ h1,
   font-variant-caps: normal;
   font-size: 75% !important;
 }
-.HyperMD-header h1 a.tag,
-.HyperMD-header h2 a.tag,
-.HyperMD-header h3 a.tag,
-.HyperMD-header h4 a.tag,
-.HyperMD-header h5 a.tag,
-.HyperMD-header h6 a.tag,
-.markdown-rendered h1 a.tag,
-.markdown-rendered h2 a.tag,
-.markdown-rendered h3 a.tag,
-.markdown-rendered h4 a.tag,
-.markdown-rendered h5 a.tag,
-.markdown-rendered h6 a.tag,
-.workspace h1 a.tag,
-.workspace h2 a.tag,
-.workspace h3 a.tag,
-.workspace h4 a.tag,
-.workspace h5 a.tag,
-.workspace h6 a.tag,
-.print h1 a.tag,
-.print h2 a.tag,
-.print h3 a.tag,
-.print h4 a.tag,
-.print h5 a.tag,
-.print h6 a.tag {
+
+.cm-s-obsidian .cm-header.cm-inline-code {
+  font-weight: var(--font-extralight);
+  font-weight: normal;
+  font-variant-caps: normal;
+}
+.cm-s-obsidian .cm-line:not(.HyperMD-codeblock) .cm-header.cm-inline-code {
+  font-size: 65% !important;
+}
+.cm-s-obsidian .cm-header-1.cm-hmd-codeblock:not(.cm-inline-code) {
+  color: var(--h1-color);
+}
+.cm-s-obsidian .cm-header-2.cm-hmd-codeblock:not(.cm-inline-code) {
+  color: var(--h2-color);
+}
+.cm-s-obsidian .cm-header-3.cm-hmd-codeblock:not(.cm-inline-code) {
+  color: var(--h3-color);
+}
+.cm-s-obsidian .cm-header-4.cm-hmd-codeblock:not(.cm-inline-code) {
+  color: var(--h4-color);
+}
+.cm-s-obsidian .cm-header-5.cm-hmd-codeblock:not(.cm-inline-code) {
+  color: var(--h5-color);
+}
+.cm-s-obsidian .cm-header-6.cm-hmd-codeblock:not(.cm-inline-code) {
+  color: var(--h6-color);
+}
+
+/* Tag formatting */
+body:not(.ebullientworks-nix-tags) {
+  --tag-background: transparent;
+  --tag-background-hover: transparent;
+  --tag-padding-x: 0;
+}
+body:not(.ebullientworks-nix-tags).theme-dark {
+  --tag-color: var(--color-accent-2);
+  --tag-color-hover: var(--tag-3);
+}
+body:not(.ebullientworks-nix-tags).theme-dark .print, body:not(.ebullientworks-nix-tags).theme-light {
+  --tag-color: var(--color-accent);
+  --tag-color-hover: var(--tag-4);
+}
+body:not(.ebullientworks-nix-tags) a.tag,
+body:not(.ebullientworks-nix-tags) .editor .cl-hashtag,
+body:not(.ebullientworks-nix-tags) .markdown-source-view.mod-cm6 .cm-hashtag,
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-formatting.cm-hashtag,
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-quote.cm-hashtag,
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-hmd-codeblock.cm-hashtag {
+  font-family: var(--ebw-font-tags);
+  color: var(--tag-color);
+}
+body:not(.ebullientworks-nix-tags) h1 a.tag,
+body:not(.ebullientworks-nix-tags) h2 a.tag,
+body:not(.ebullientworks-nix-tags) h3 a.tag,
+body:not(.ebullientworks-nix-tags) h4 a.tag,
+body:not(.ebullientworks-nix-tags) h5 a.tag,
+body:not(.ebullientworks-nix-tags) h6 a.tag {
   font-variant-caps: normal;
   font-weight: var(--font-extralight);
   font-size: 75% !important;
@@ -923,13 +945,7 @@ h1,
   border: none;
   border-radius: unset;
 }
-
-.cm-s-obsidian .cm-header.cm-inline-code {
-  font-weight: var(--font-extralight);
-  font-weight: normal;
-  font-variant-caps: normal;
-}
-.cm-s-obsidian .cm-header.cm-hashtag {
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header.cm-hashtag {
   font-weight: var(--font-extralight);
   font-variant-caps: normal;
   padding: 0;
@@ -937,31 +953,19 @@ h1,
   border: none;
   border-radius: unset;
 }
-.cm-s-obsidian .cm-line:not(.HyperMD-codeblock) .cm-header.cm-inline-code {
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-line:not(.HyperMD-codeblock) .cm-header.cm-hashtag {
   font-size: 65% !important;
 }
-.cm-s-obsidian .cm-line:not(.HyperMD-codeblock) .cm-header.cm-hashtag {
-  font-size: 65% !important;
-}
-.cm-s-obsidian .cm-header-1.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
-  color: var(--h1-color);
-}
-.cm-s-obsidian .cm-header-2.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
-  color: var(--h2-color);
-}
-.cm-s-obsidian .cm-header-3.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
-  color: var(--h3-color);
-}
-.cm-s-obsidian .cm-header-4.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
-  color: var(--h4-color);
-}
-.cm-s-obsidian .cm-header-5.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
-  color: var(--h5-color);
-}
-.cm-s-obsidian .cm-header-6.cm-hmd-codeblock:not(.cm-inline-code):not(.cm-hashtag) {
-  color: var(--h6-color);
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-1.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-2.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-3.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-4.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-5.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-6.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code) {
+  color: var(--tag-color);
 }
 
+/* HR tags */
 .markdown-rendered hr {
   border: none;
   border-top: 1px dotted var(--interactive-accent);
@@ -1178,25 +1182,27 @@ body:not(.ebullientworks-nix-checkbox) {
   /** Use style settings to disable custom checkboxes in the theme */
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=x],
-body:not(.ebullientworks-nix-checkbox) li[data-task=x] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=x] {
   --checkbox-color: var(--checkbox-checked);
+  --checkbox-border-color: var(--checkbox-checked);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=x] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task=x] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task=x] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=x] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=x] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task=x] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=x] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=x] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1212,25 +1218,27 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=x] input[type=checkbox]:chec
   content: "✓";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="-"],
-body:not(.ebullientworks-nix-checkbox) li[data-task="-"] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="-"] {
   --checkbox-color: var(--checkbox-cancelled);
+  --checkbox-border-color: var(--checkbox-cancelled);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: line-through;
   color: var(--text-faint);
   font-weight: var(--font-normal);
   text-decoration: line-through;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task="-"] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="-"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task="-"] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="-"] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1246,25 +1254,27 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="-"] input[type=checkbox]:ch
   content: "-";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=">"],
-body:not(.ebullientworks-nix-checkbox) li[data-task=">"] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=">"] {
   --checkbox-color: var(--checkbox-deferred);
+  --checkbox-border-color: var(--checkbox-deferred);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task=">"] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=">"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task=">"] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=">"] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1280,25 +1290,27 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=">"] input[type=checkbox]:ch
   content: ">";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=R],
-body:not(.ebullientworks-nix-checkbox) li[data-task=R] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=R] {
   --checkbox-color: var(--checkbox-review);
+  --checkbox-border-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=R] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task=R] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task=R] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=R] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=R] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task=R] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=R] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=R] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1314,25 +1326,27 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=R] input[type=checkbox]:chec
   content: "👀";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=r],
-body:not(.ebullientworks-nix-checkbox) li[data-task=r] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=r] {
   --checkbox-color: var(--checkbox-review);
+  --checkbox-border-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=r] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task=r] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task=r] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=r] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=r] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task=r] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task=r] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=r] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1348,25 +1362,27 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=r] input[type=checkbox]:chec
   content: "👀";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="?"],
-body:not(.ebullientworks-nix-checkbox) li[data-task="?"] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="?"] {
   --checkbox-color: var(--checkbox-question);
+  --checkbox-border-color: var(--checkbox-question);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-bold);
   text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task="?"] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="?"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task="?"] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="?"] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1382,25 +1398,27 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="?"] input[type=checkbox]:ch
   content: "?";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="!"],
-body:not(.ebullientworks-nix-checkbox) li[data-task="!"] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="!"] {
   --checkbox-color: var(--checkbox-important);
+  --checkbox-border-color: var(--checkbox-important);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-extrabold);
   text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task="!"] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="!"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task="!"] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="!"] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -1416,23 +1434,26 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="!"] input[type=checkbox]:ch
   content: "!";
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="/"],
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] {
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="/"] {
   --checkbox-color: var(--checkbox-in-progress);
+  --checkbox-border-color: var(--checkbox-in-progress);
   --checkbox-marker-color: transparent;
   --checklist-done-decoration: none;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
+  text-decoration: none;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input[type=checkbox]:not(:checked),
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] input[type=checkbox]:not(:checked) {
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="/"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input[type=checkbox]:checked,
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] input[type=checkbox]:checked {
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked {
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
-body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="/"] input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) div[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+body:not(.ebullientworks-nix-checkbox) ul > li.task-list-item[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   background: unset;
   content: " ";

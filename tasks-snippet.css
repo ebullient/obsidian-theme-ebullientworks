@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.6.0 by @ebullient
+Ebullientworks tasks 0.6.1 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -29,25 +29,27 @@ li[data-task] input[type=checkbox]::before {
 }
 
 div[data-task=x],
-li[data-task=x] {
+ul > li.task-list-item[data-task=x] {
   --checkbox-color: var(--checkbox-checked);
+  --checkbox-border-color: var(--checkbox-checked);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=x] input[type=checkbox]:not(:checked),
-li[data-task=x] input[type=checkbox]:not(:checked) {
+div[data-task=x] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task=x] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task=x] input[type=checkbox]:checked,
-li[data-task=x] input[type=checkbox]:checked {
+div[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=x] input[type=checkbox]:checked:after,
-li[data-task=x] input[type=checkbox]:checked:after {
+div[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task=x] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -64,25 +66,27 @@ li[data-task=x] input[type=checkbox]:checked:after {
 }
 
 div[data-task="-"],
-li[data-task="-"] {
+ul > li.task-list-item[data-task="-"] {
   --checkbox-color: var(--checkbox-cancelled);
+  --checkbox-border-color: var(--checkbox-cancelled);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: line-through;
   color: var(--text-faint);
   font-weight: var(--font-normal);
   text-decoration: line-through;
 }
-div[data-task="-"] input[type=checkbox]:not(:checked),
-li[data-task="-"] input[type=checkbox]:not(:checked) {
+div[data-task="-"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task="-"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task="-"] input[type=checkbox]:checked,
-li[data-task="-"] input[type=checkbox]:checked {
+div[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task="-"] input[type=checkbox]:checked:after,
-li[data-task="-"] input[type=checkbox]:checked:after {
+div[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task="-"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -99,25 +103,27 @@ li[data-task="-"] input[type=checkbox]:checked:after {
 }
 
 div[data-task=">"],
-li[data-task=">"] {
+ul > li.task-list-item[data-task=">"] {
   --checkbox-color: var(--checkbox-deferred);
+  --checkbox-border-color: var(--checkbox-deferred);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=">"] input[type=checkbox]:not(:checked),
-li[data-task=">"] input[type=checkbox]:not(:checked) {
+div[data-task=">"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task=">"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task=">"] input[type=checkbox]:checked,
-li[data-task=">"] input[type=checkbox]:checked {
+div[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=">"] input[type=checkbox]:checked:after,
-li[data-task=">"] input[type=checkbox]:checked:after {
+div[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task=">"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -134,25 +140,27 @@ li[data-task=">"] input[type=checkbox]:checked:after {
 }
 
 div[data-task=R],
-li[data-task=R] {
+ul > li.task-list-item[data-task=R] {
   --checkbox-color: var(--checkbox-review);
+  --checkbox-border-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=R] input[type=checkbox]:not(:checked),
-li[data-task=R] input[type=checkbox]:not(:checked) {
+div[data-task=R] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task=R] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task=R] input[type=checkbox]:checked,
-li[data-task=R] input[type=checkbox]:checked {
+div[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=R] input[type=checkbox]:checked:after,
-li[data-task=R] input[type=checkbox]:checked:after {
+div[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task=R] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -169,25 +177,27 @@ li[data-task=R] input[type=checkbox]:checked:after {
 }
 
 div[data-task=r],
-li[data-task=r] {
+ul > li.task-list-item[data-task=r] {
   --checkbox-color: var(--checkbox-review);
+  --checkbox-border-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=r] input[type=checkbox]:not(:checked),
-li[data-task=r] input[type=checkbox]:not(:checked) {
+div[data-task=r] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task=r] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task=r] input[type=checkbox]:checked,
-li[data-task=r] input[type=checkbox]:checked {
+div[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=r] input[type=checkbox]:checked:after,
-li[data-task=r] input[type=checkbox]:checked:after {
+div[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task=r] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -204,25 +214,27 @@ li[data-task=r] input[type=checkbox]:checked:after {
 }
 
 div[data-task="?"],
-li[data-task="?"] {
+ul > li.task-list-item[data-task="?"] {
   --checkbox-color: var(--checkbox-question);
+  --checkbox-border-color: var(--checkbox-question);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-bold);
   text-decoration: none;
 }
-div[data-task="?"] input[type=checkbox]:not(:checked),
-li[data-task="?"] input[type=checkbox]:not(:checked) {
+div[data-task="?"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task="?"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task="?"] input[type=checkbox]:checked,
-li[data-task="?"] input[type=checkbox]:checked {
+div[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task="?"] input[type=checkbox]:checked:after,
-li[data-task="?"] input[type=checkbox]:checked:after {
+div[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task="?"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -239,25 +251,27 @@ li[data-task="?"] input[type=checkbox]:checked:after {
 }
 
 div[data-task="!"],
-li[data-task="!"] {
+ul > li.task-list-item[data-task="!"] {
   --checkbox-color: var(--checkbox-important);
+  --checkbox-border-color: var(--checkbox-important);
   --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
   color: var(--text-normal);
   font-weight: var(--font-extrabold);
   text-decoration: none;
 }
-div[data-task="!"] input[type=checkbox]:not(:checked),
-li[data-task="!"] input[type=checkbox]:not(:checked) {
+div[data-task="!"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task="!"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task="!"] input[type=checkbox]:checked,
-li[data-task="!"] input[type=checkbox]:checked {
+div[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task="!"] input[type=checkbox]:checked:after,
-li[data-task="!"] input[type=checkbox]:checked:after {
+div[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task="!"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -274,23 +288,26 @@ li[data-task="!"] input[type=checkbox]:checked:after {
 }
 
 div[data-task="/"],
-li[data-task="/"] {
+ul > li.task-list-item[data-task="/"] {
   --checkbox-color: var(--checkbox-in-progress);
+  --checkbox-border-color: var(--checkbox-in-progress);
   --checkbox-marker-color: transparent;
   --checklist-done-decoration: none;
   color: var(--text-normal);
+  font-weight: var(--font-normal);
+  text-decoration: none;
 }
-div[data-task="/"] input[type=checkbox]:not(:checked),
-li[data-task="/"] input[type=checkbox]:not(:checked) {
+div[data-task="/"] input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item[data-task="/"] input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
-div[data-task="/"] input[type=checkbox]:checked,
-li[data-task="/"] input[type=checkbox]:checked {
+div[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked {
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
-div[data-task="/"] input[type=checkbox]:checked:after,
-li[data-task="/"] input[type=checkbox]:checked:after {
+div[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked:after,
+ul > li.task-list-item[data-task="/"] input.task-list-item-checkbox[type=checkbox]:checked:after {
   -webkit-mask-image: none;
   background: unset;
   content: " ";
