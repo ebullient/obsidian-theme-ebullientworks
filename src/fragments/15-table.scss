@@ -16,8 +16,10 @@ body {
 .theme-dark .print,
 .theme-light {
   --table-header-color: var(--gray-dark-7);
-  --table-header-background: var(--primary-accent-2);
-  --ebw-table-header-alt: var(--primary-accent-3);
+  --table-header-background: var(--primary-accent-1);
+  --table-header-border-color: var(--primary-accent-3);
+  --table-header-weight: var(--font-semibold);
+  --ebw-table-header-alt: rgba(var(--primary-accent-4-rgb), .4);
   --ebw-row-alt: rgba(0, 0, 0, .05);
 }
 
