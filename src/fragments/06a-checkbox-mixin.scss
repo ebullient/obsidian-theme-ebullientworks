@@ -24,7 +24,7 @@
   }
 }
 
-@mixin custom-task-text($character, $rgb-color, $emoji, $font-weight, $text-decoration, $li-fg: var(--text-normal)) {
+@mixin custom-task-text($character, $rgb-color, $emoji, $font-weight, $text-decoration, $li-fg: var(--text-normal), $font-family: var(--font-monospace)) {
   div[data-task="#{$character}"],
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
@@ -45,7 +45,7 @@
     }
     input.task-list-item-checkbox[type=checkbox]:checked:after {
       -webkit-mask-image: none;
-      font-family: var(--font-monospace);
+      font-family: #{$font-family};
       background: unset;
       position: absolute;
       text-align: center;
