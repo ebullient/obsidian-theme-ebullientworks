@@ -23,6 +23,12 @@ settings:
     type: class-toggle
     default: false
   -
+    id: ebullientworks-nix-tags
+    title: Suppress/Remove this theme's tag styles
+    description: Set this to true if you are going to use your own tag snippet
+    type: class-toggle
+    default: false
+  -
     id: ebullientworks-reverse-view-header-actions
     title: View header actions to the left
     description: Set this to true if the view header is visible, and you want the controls on the left side
