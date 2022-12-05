@@ -6,6 +6,8 @@
     --checkbox-marker-color: transparent;
     --checklist-done-decoration: #{$text-decoration};
     color: $li-fg;
+    font-weight: $font-weight;
+    text-decoration: $text-decoration;
 
     input.task-list-item-checkbox[type=checkbox]:not(:checked) {
       background-color: unset;
@@ -28,6 +30,7 @@
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
+    --checklist-done-decoration: #{$text-decoration};
     color: $li-fg;
     font-weight: $font-weight;
     text-decoration: $text-decoration;
