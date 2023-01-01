@@ -14,8 +14,8 @@ body {
   --ebw-callout-info: 111, 166, 211; // blue-3
   --ebw-callout-quote: 53, 120, 175; // blue-4
 
-  --ebw-callout-tip: 134, 196, 193; // teal-2
-  --ebw-callout-question: 89, 174, 170; // teal-3
+  --ebw-callout-tip: 134, 196, 193; // cyan-2
+  --ebw-callout-question: 89, 174, 170; // cyan-3
 
   --ebw-callout-abstract: 199, 178, 195; // purple-2
   --ebw-callout-bug: 180, 152, 175; // purple-3
@@ -40,7 +40,7 @@ body {
   --ebw-callout-note: 33, 75, 109; // blue-5
   --ebw-callout-abstract: 88, 64, 84; // purple-5
   --ebw-callout-info: 53, 119, 174; // blue-4
-  --ebw-callout-tip: 61, 126, 123; // teal-4
+  --ebw-callout-tip: 61, 126, 123; // cyan-4
 
   --ebw-callout-danger: 167,92,112; // pink-4
   --ebw-callout-failure: 188,83,69; // red-4
@@ -130,7 +130,7 @@ body {
   .callout[data-callout="tip"],
   .callout[data-callout="hint"],
   .callout[data-callout="important"] {
-    --callout-title-color: var(--teal-5);
+    --callout-title-color: var(--cyan-5);
   }
   .callout[data-callout="success"],
   .callout[data-callout="check"],
