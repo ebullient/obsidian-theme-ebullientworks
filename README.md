@@ -32,6 +32,9 @@ This theme does support style settings. Settable attributes:
 - (0.3.25) "Suppress/remove this theme's checkbox styles"
     Set this to true if you are going to use your own task snippet (💡 Check out [Snippetor](https://github.com/ebullient/obsidian-snippetor)!)
 
+- (0.6.1) "Suppress/remove this theme's tag styles"
+    Set this to true if you are going to use your own tag snippet
+
 - (0.5.x) "View header actions to the left"
     Set this to true if the view header is visible, and you want the controls on the left side of the tab contents, rather than the right.
 
@@ -47,13 +50,16 @@ This theme does support style settings. Settable attributes:
 - Custom Fonts
 
     - "Headings"
-        Font variant for text headings (h1 to h6)
+        Font for text headings (h1 to h6); empty will use default text font
 
     - (0.3.24) "Heading Font Caps Variant"
-        Capitalization variant for text headings (h1 to h6)
+        Capitalization variant for h1 text headings
 
     - "Tags"
         Font for displaying inline tags; empty will use default text font
+
+    - "Callout/admonition titles"
+        Font for callout/admonition titles; empty will use default text font
 
 - Colors
     This allows you to select the primary or secondary color from the colors in the palette (purple, pink, green, teal, or blue). You can also select a "custom" accent color, in which case, you should define and enable your own snippet as described below.
