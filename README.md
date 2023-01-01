@@ -2,7 +2,7 @@
 
 <table><tr><td>Jump: </td>
 <td><a href="#style-settings">Settings</a></td>
-<td><a href="#admonitions">Admonitions</a></td>
+<td><a href="#admonitions-and-callouts">Admonitions</a></td>
 <td><a href="#tables">Tables</a></td>
 <td><a href="#embeds">Embeds</a></td>
 <td><a href="#colors">Colors</a></td>
@@ -83,7 +83,7 @@ This theme does support style settings. Settable attributes:
 - (added in 0.2.7, removed in 0.5.x) Tag brightness (dark/light mode)
     Select a brightness or contrast level for tags. In 0.5.x and above, the accent color from appearance settings is used as the tag color (reset the value to see the theme default).
 
-## Admonitions
+## Admonitions and callouts
 
 As of version 6.5.1, you can disable the color picker for admonitions (globally or per-admonition) to have colors picked up from CSS styles instead. All of the default admonitions, in addition to two additional custom types, have been styled.
 
@@ -97,7 +97,7 @@ Those two custom types are:
     Styled to create a floating (hover:right) section for Table of Contents
     To use this style, create a `toc` admonition (I recommend you use the list icon, but take your pick).
     
-Here is what they look like (unstyled edit mode on the left): 
+Here is what they look like (Callouts and Admonitions): 
 
 ![](images/admonitions.png)
 
