@@ -59,24 +59,15 @@ div {
   }
 }
 
-// option 2: fully hide the header and use other styling to create uniform padding
-// .markdown-preview-view > [data-heading]:first-child,
-// .markdown-embed-heading .markdown-preview-pusher + div > [data-heading] {
-//   display: none;
-// }
-//
-// .markdown-embed-heading > div:not(.markdown-preview-view) .markdown-preview-pusher + div::after {
-//   display: block;
-//   content: "";
-//   height: 15px;
-// }
-
+// Hide the embedded header and use other styling to create uniform padding
 .ebullientworks-hide-embedded-heading {
   .markdown-embed {
-    .markdown-embed-title {
+    .markdown-embed-title,
+    .mod-header {
       display: none;
     }
-    .markdown-preview-pusher + div > [data-heading] {
+    div.markdown-preview-pusher + div > h2[data-heading],
+    div.mod-header + div > h2[data-heading]{
       display: none;
     }
   }
