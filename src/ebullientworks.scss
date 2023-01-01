@@ -94,14 +94,14 @@ settings:
           label: unset
   -
     title: Tags
-    description: Font for displaying inline tags; empty will use default text font
+    description: Font for tags; empty will use default text font
     id: ebw-font-tags
     type: variable-text
     default: "'Architects Daughter'"
   -
     id: ebw-font-callout-title
-    title: Font for callout/admonition titles
-    description: Use the specified font for callout and admonition titles
+    title: Callout/admonition titles
+    description: Font for callout/admonition titles; empty will use default text font
     type: variable-text
     default: "'Architects Daughter'"
   -
@@ -119,7 +119,7 @@ settings:
   -
     title: Primary accent color
     id: ebullientworks-primary-accent
-    description: Choose the primary accent color. You should define a snippet if you select primary-accent-custom. See the Theme's README.
+    description: Choose the primary accent color. You must define a snippet if you select primary-accent-custom. See the Theme's README.
     type: class-select
     allowEmpty: false
     default: primary-accent-purple
@@ -135,7 +135,7 @@ settings:
   -
     title: Secondary accent color
     id: ebullientworks-secondary-accent
-    description: Choose the secondary accent color. You should define a snippet if you select secondary-accent-custom. See the Theme's README.
+    description: Choose the secondary accent color. You must define a snippet if you select secondary-accent-custom. See the Theme's README.
     type: class-select
     allowEmpty: false
     default: secondary-accent-green
