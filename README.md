@@ -131,16 +131,22 @@ cssclass: invisible-embed
 
 ## Colors
 
-All colors are sourced from [this palette](http://htmlpreview.github.io/?https://github.com/ebullient/obsidian-theme-ebullientworks/blob/main/colors.html)
+All colors are sourced from [this palette](https://accessiblepalette.com/?lightness=98.2,93.9,87.5,82.5,74.8,66,48.4,30.6,19.4,10&C76E85=0,0&DD5755=0,0&d78e6e=0,-8&E1BA60=0,-10&5c7a62=0,0&3376AD=0,10&8E6787=0,0&808080=0,0&009698=0,-3)
 
-![](images/theme-colors.jpg)
+<table>
+<tr><td>
+<img width="349" alt="image" src="https://user-images.githubusercontent.com/808713/210182009-f41561f6-62b1-47df-b6bb-8d5c4531d934.png">
+</td><td>
+<img width="340" alt="image" src="https://user-images.githubusercontent.com/808713/210182020-3cbbda60-06ff-42db-b589-810a8f7d084d.png">
+</td></tr>
+</table>
 
 ### Creating your own accent colors
 
-The colors used by this palette are selected by applying a grayscale filter to a selected hue. 
+A simple way to select colors that will work with this palette is by applying a grayscale filter to a selected hue. 
 
-1. Use the following URL to apply the same grayscale filter to a color of your choice: 
-https://grayscale.design/app?lums=71.05,60.94,48.16,35.39,17.24,6.39,2.80&palettes=%23A17E9B&filters=0%7C0&names=purple&labels=
+1. Use the following URL to apply the grayscale filter to a color of your choice: 
+https://grayscale.design/app?lums=71.05%2C60.94%2C48.16%2C35.39%2C17.24%2C6.39%2C2.80&palettes=%235c7a62%2C%238e6787&filters=0%7C0%2C0%7C0&names=green%2Cpurple&labels=%2C
 
 2. Create a snippet that contains your customized colors. 
 
@@ -158,13 +164,13 @@ For example, let's use a REALLY BOLD RED: `#ae2012`.
     ```
     .primary-accent-custom {
         --primary-accent-0: rgb(250, 210, 206); /* red-100 */
-        --primary-accent-1: rgb(248, 192, 187);
+        --primary-accent-1: rgb(248, 192, 187); /* red-200 */
         --primary-accent-1-rgb: 248, 192, 187;  /* Note removal of rgb() function */
-        --primary-accent-2: rgb(245, 163, 156);
-        --primary-accent-3: rgb(241, 127, 117);
-        --primary-accent-4: rgb(222, 40, 23);
+        --primary-accent-2: rgb(245, 163, 156); /* red-300 */
+        --primary-accent-3: rgb(241, 127, 117); /* red-400 */
+        --primary-accent-4: rgb(222, 40, 23);   /* red-500 */
         --primary-accent-4-rgb: 222, 40, 23;    /* Note removal of rgb() function */
-        --primary-accent-5: rgb(142, 25, 15);
+        --primary-accent-5: rgb(142, 25, 15);   /* red-600 */
         --primary-accent-6: rgb(95, 17, 10);    /* red-700 */
     }
     ```
@@ -173,37 +179,25 @@ For example, let's use a REALLY BOLD RED: `#ae2012`.
     ```
     .secondary-accent-custom {
         --secondary-accent-0: rgb(250, 210, 206); /* red-100 */
-        --secondary-accent-1: rgb(248, 192, 187);
+        --secondary-accent-1: rgb(248, 192, 187); /* red-200 */
         --secondary-accent-1-rgb: 248, 192, 187;  /* Note removal of rgb() function */
-        --secondary-accent-2: rgb(245, 163, 156);
-        --secondary-accent-3: rgb(241, 127, 117);
-        --secondary-accent-4: rgb(222, 40, 23);
+        --secondary-accent-2: rgb(245, 163, 156); /* red-300 */
+        --secondary-accent-3: rgb(241, 127, 117); /* red-400 */
+        --secondary-accent-4: rgb(222, 40, 23);   /* red-500 */
         --secondary-accent-4-rgb: 222, 40, 23;    /* Note removal of rgb() function */
-        --secondary-accent-5: rgb(142, 25, 15);
+        --secondary-accent-5: rgb(142, 25, 15);   /* red-600 */
         --secondary-accent-6: rgb(95, 17, 10);    /* red-700 */
     }
     ```
 
 3. Create a snippet (e.g. a file named`accent-colors.css`) containing this content in the `.obsidian/snippets` directory. Go to the Obsidian Appearance settings use the refresh button if necessary to find the snippet, and enable it. Provided you've selected the "custom" value in the primary/secondary style settings drop-down, you should be off to the races with this brilliant red.
 
-### Changing tag colors (before 0.5.0)
 
-As of 0.2.7, you can alter the color contrast (against the usual scale, 0-6) for tags in light or dark mode. 
+### Changing tag colors
 
-With Obsidian 0.16, use the "accent color" setting on the appearance pane to set your tag color. Resetting the value will show the theme default.
+As of 0.5.3 (Obsidian 0.16+ / 1.x), use the "accent color" setting on the appearance pane to set your tag color. Resetting the value will use the theme default.
 
-#### Custom color
-
-Change the color to your own value (using the above bold red as an example) in a snippet: 
-```
-.theme-dark {
-  --tags: #ae2012;
-}
-.theme-dark .print,
-.theme-light {
-  --tags: #ae2012;
-}
-```
+For 0.2.7 through 0.5.2, you can alter the color contrast (against the usual scale, 0-6) for tags in light or dark mode. 
 
 ## Credits
 
