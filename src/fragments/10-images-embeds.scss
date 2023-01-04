@@ -66,9 +66,16 @@ div {
     .mod-header {
       display: none;
     }
-    div.markdown-preview-pusher + div > h2[data-heading],
-    div.mod-header + div > h2[data-heading]{
-      display: none;
+    div.markdown-preview-pusher + div,
+    div.mod-header + div {
+      > h1[data-heading],
+      > h2[data-heading],
+      > h3[data-heading],
+      > h4[data-heading],
+      > h5[data-heading],
+      > h6[data-heading] {
+        display: none;
+      }
     }
   }
 }
