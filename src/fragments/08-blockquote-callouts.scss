@@ -103,9 +103,11 @@ body {
   --callout-color: var(--ebw-callout-quote);
 }
 .callout[data-callout="reference"] {
+  --callout-icon: library;
   --callout-color: var(--ebw-callout-reference);
 }
 .callout[data-callout="toc"] {
+  --callout-icon: layout-list;
   --callout-color: var(--ebw-callout-toc);
 }
 .theme-light {
