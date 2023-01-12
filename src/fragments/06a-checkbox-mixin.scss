@@ -1,4 +1,11 @@
-@mixin custom-task-background($character, $rgb-color, $background, $font-weight: var(--font-normal), $text-decoration: none, $li-fg: var(--text-normal)) {
+@mixin custom-task-background(
+  $character,
+  $rgb-color,
+  $background,
+  $font-weight: var(--font-normal),
+  $text-decoration: none,
+  $li-fg: var(--text-normal)
+) {
   div[data-task="#{$character}"],
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
@@ -9,22 +16,27 @@
     font-weight: $font-weight;
     text-decoration: $text-decoration;
 
-    input.task-list-item-checkbox[type=checkbox]:not(:checked) {
-      background-color: unset;
-      background: unset;
-    }
-    input.task-list-item-checkbox[type=checkbox]:checked {
+    > input.task-list-item-checkbox[type="checkbox"]:checked {
       background: #{$background};
-    }
-    input.task-list-item-checkbox[type=checkbox]:checked:after {
-      -webkit-mask-image: none;
-      background: unset;
-      content: ' ';
+
+      &::after {
+        -webkit-mask-image: none;
+        background: unset;
+        content: " ";
+      }
     }
   }
 }
 
-@mixin custom-task-text($character, $rgb-color, $emoji, $font-weight, $text-decoration, $li-fg: var(--text-normal), $font-family: var(--font-monospace)) {
+@mixin custom-task-text(
+  $character,
+  $rgb-color,
+  $emoji,
+  $font-weight,
+  $text-decoration,
+  $li-fg: var(--text-normal),
+  $font-family: var(--font-monospace)
+) {
   div[data-task="#{$character}"],
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
@@ -35,27 +47,24 @@
     font-weight: $font-weight;
     text-decoration: $text-decoration;
 
-    input.task-list-item-checkbox[type=checkbox]:not(:checked) {
+    > input.task-list-item-checkbox[type="checkbox"]:checked {
       background-color: unset;
       background: unset;
-    }
-    input.task-list-item-checkbox[type=checkbox]:checked {
-      background-color: unset;
-      background: unset;
-    }
-    input.task-list-item-checkbox[type=checkbox]:checked:after {
-      -webkit-mask-image: none;
-      font-family: #{$font-family};
-      background: unset;
-      position: absolute;
-      text-align: center;
-      font-weight: $font-weight;
-      font-size: calc(var(--checkbox-size) - 2px);
-      left: 50%;
-      margin-left: calc(-1 * (var(--checkbox-size)/2));
-      line-height: var(--checkbox-size);
-      color: var(--checkbox-color);
-      content: '#{$emoji}';
+
+      &::after {
+        -webkit-mask-image: none;
+        font-family: #{$font-family};
+        background: unset;
+        position: absolute;
+        text-align: center;
+        font-weight: $font-weight;
+        font-size: calc(var(--checkbox-size) - 2px);
+        left: 50%;
+        margin-left: calc(-1 * (var(--checkbox-size) / 2));
+        line-height: var(--checkbox-size);
+        color: var(--checkbox-color);
+        content: "#{$emoji}";
+      }
     }
   }
 }

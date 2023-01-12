@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+div[data-task],
+ul > li.task-list-item {
+  color: var(--text-normal);
+  font-weight: unset;
+  text-decoration: unset;
+
+  > input.task-list-item-checkbox[type=checkbox]:not(:checked) {
+    background-color: unset;
+    background: unset;
+  }
+}
+
 @include custom-task-text("x", var(--checkbox-checked), "✓", var(--font-normal), none, var(--text-normal), var(--font-text));
 @include custom-task-text("-", var(--checkbox-cancelled), "-", var(--font-normal), line-through, var(--text-faint));
 @include custom-task-text(">", var(--checkbox-deferred), ">", var(--font-normal), none);
