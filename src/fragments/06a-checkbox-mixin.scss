@@ -6,8 +6,13 @@
   $text-decoration: none,
   $li-fg: var(--text-normal)
 ) {
-  label.task-list-label,
-  div[data-task="#{$character}"],
+  .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="#{$character}"] {
+    --checkbox-color: #{$rgb-color};
+    --checkbox-border-color: #{$rgb-color};
+    --checkbox-marker-color: transparent;
+    --checklist-done-decoration: #{$text-decoration};
+  }
+  div[data-task="#{$character}"] > label.task-list-label,
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
@@ -17,7 +22,7 @@
     font-weight: $font-weight;
     text-decoration: $text-decoration;
 
-    > input.task-list-item-checkbox[type="checkbox"]:checked {
+    > input.task-list-item-checkbox[type=checkbox]:checked {
       background: #{$background};
 
       &:after {
@@ -38,8 +43,13 @@
   $li-fg: var(--text-normal),
   $font-family: var(--font-monospace)
 ) {
-  label.task-list-label,
-  div[data-task="#{$character}"],
+  .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="#{$character}"] {
+    --checkbox-color: #{$rgb-color};
+    --checkbox-border-color: #{$rgb-color};
+    --checkbox-marker-color: transparent;
+    --checklist-done-decoration: #{$text-decoration};
+  }
+  div[data-task="#{$character}"] > label.task-list-label,
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
