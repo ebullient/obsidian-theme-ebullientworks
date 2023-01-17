@@ -6,6 +6,7 @@
   $text-decoration: none,
   $li-fg: var(--text-normal)
 ) {
+  label.task-list-label,
   div[data-task="#{$character}"],
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
@@ -19,7 +20,7 @@
     > input.task-list-item-checkbox[type="checkbox"]:checked {
       background: #{$background};
 
-      &::after {
+      &:after {
         -webkit-mask-image: none;
         background: unset;
         content: " ";
@@ -37,6 +38,7 @@
   $li-fg: var(--text-normal),
   $font-family: var(--font-monospace)
 ) {
+  label.task-list-label,
   div[data-task="#{$character}"],
   ul > li.task-list-item[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
@@ -51,7 +53,7 @@
       background-color: unset;
       background: unset;
 
-      &::after {
+      &:after {
         -webkit-mask-image: none;
         font-family: #{$font-family};
         background: unset;
