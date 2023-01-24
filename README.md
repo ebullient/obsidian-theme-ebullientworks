@@ -2,6 +2,7 @@
 
 <table><tr><td>Jump: </td>
 <td><a href="#style-settings">Settings</a></td>
+<td><a href="#alternative-checkboxes">Alt Checkboxes</a></td>
 <td><a href="#admonitions-and-callouts">Admonitions</a></td>
 <td><a href="#tables">Tables</a></td>
 <td><a href="#embeds">Embeds</a></td>
@@ -70,24 +71,20 @@ This theme does support style settings. Settable attributes:
     - "Secondary accent color"
         Choose the secondary accent color. You should define a snippet if you select secondary-accent-custom. See the Theme's README.
 
-## Removed
+## Alternative Checkboxes
 
-- (added in 0.3.4, removed in 0.5.*) Use default theme list indent
-    This theme condenses whitespace padding in ordered and unordered lists. This toggle allows you to use list spacing from the default theme.
+This theme provides styles for the following checkbox values:
 
-- (removed in 0.5.x) Show / Hide, the section was removed (remaining contents flattened with the first section)
-
-- (added in 0.2.8, removed in 0.5.x) "Hide collapse indicators unless hovered or active"
-    If true, hide collapse indicators in all three modes unless they are hovered over or the line is active.
-
-- (added in 0.3.13, removed in 0.5.x) Show collapsed sidebars on hover
-    If true, when the left or right sidebar is in a collapsed state, you can temporarily display (and interact) with its content by hovering over the ribbon. 
-
-- (0.3.26) Removed other font settings. 
-    Use Obsidian Appearance to set text and monospace fonts.
-
-- (added in 0.2.7, removed in 0.5.x) Tag brightness (dark/light mode)
-    Select a brightness or contrast level for tags. In 0.5.x and above, the accent color from appearance settings is used as the tag color (reset the value to see the theme default).
+| Syntax   | Description |
+|----------|-------------|
+| `- [ ]`  | Unchecked   |
+| `- [x]`  | Checked     |
+| `- [-]`  | Cancelled   |
+| `- [/]`  | In Progress |
+| `- [>]`  | Deferred    |
+| `- [!]`  | Important   |
+| `- [?]`  | Question    |
+| `- [r]`  | Review      |
 
 ## Admonitions and callouts
 
