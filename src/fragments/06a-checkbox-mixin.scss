@@ -22,6 +22,7 @@
     font-weight: $font-weight;
     text-decoration: $text-decoration;
 
+    > p > input.task-list-item-checkbox[type=checkbox]:checked,
     > input.task-list-item-checkbox[type=checkbox]:checked {
       background: #{$background};
 
@@ -59,6 +60,7 @@
     font-weight: $font-weight;
     text-decoration: $text-decoration;
 
+    > p > input.task-list-item-checkbox[type=checkbox]:checked,
     > input.task-list-item-checkbox[type="checkbox"]:checked {
       background-color: unset;
       background: unset;
