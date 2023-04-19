@@ -240,7 +240,7 @@ body.is-tablet .view-header .view-action,
     .view-header-title {
       line-height: var(--icon-s);
     }
-    .view-header-title-container:after {
+    .view-header-title-container::after {
       display: none;
     }
   }

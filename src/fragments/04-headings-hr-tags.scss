@@ -208,7 +208,7 @@ body:not(.ebullientworks-nix-tags) {
     height: 2px;
     margin: 12px 0;
   }
-  hr:after {
+  hr::after {
     background: var(--background-primary);
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     content: " ✧ ✧ ✧ ";
