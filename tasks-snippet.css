@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks tasks 0.7.5 by @ebullient
+Ebullientworks tasks 0.7.6 by @ebullient
 */
 :root {
   --checkbox-checked: rgb(139, 167, 145);
@@ -29,13 +29,15 @@ li[data-task] input[type=checkbox]::before {
 }
 
 div[data-task] > label.task-list-label,
-ul > li.task-list-item {
+ul > li.task-list-item,
+ul > li.task-list-item > p {
   color: var(--text-normal);
   font-weight: unset;
   text-decoration: unset;
 }
 div[data-task] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:not(:checked),
-ul > li.task-list-item > input.task-list-item-checkbox[type=checkbox]:not(:checked) {
+ul > li.task-list-item > input.task-list-item-checkbox[type=checkbox]:not(:checked),
+ul > li.task-list-item > p > input.task-list-item-checkbox[type=checkbox]:not(:checked) {
   background-color: unset;
   background: unset;
 }
@@ -48,7 +50,8 @@ ul > li.task-list-item > input.task-list-item-checkbox[type=checkbox]:not(:check
 }
 
 div[data-task=x] > label.task-list-label,
-ul > li.task-list-item[data-task=x] {
+ul > li.task-list-item[data-task=x],
+ul > li.task-list-item[data-task=x] > p {
   --checkbox-color: var(--checkbox-checked);
   --checkbox-border-color: var(--checkbox-checked);
   --checkbox-marker-color: transparent;
@@ -57,17 +60,15 @@ ul > li.task-list-item[data-task=x] {
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=x] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task=x] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=x] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=x] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task=x] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=x] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=x] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task=x] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=x] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=x] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task=x] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=x] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=x] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-text);
   background: unset;
@@ -90,7 +91,8 @@ ul > li.task-list-item[data-task=x] > input.task-list-item-checkbox[type=checkbo
 }
 
 div[data-task="-"] > label.task-list-label,
-ul > li.task-list-item[data-task="-"] {
+ul > li.task-list-item[data-task="-"],
+ul > li.task-list-item[data-task="-"] > p {
   --checkbox-color: var(--checkbox-cancelled);
   --checkbox-border-color: var(--checkbox-cancelled);
   --checkbox-marker-color: transparent;
@@ -99,17 +101,15 @@ ul > li.task-list-item[data-task="-"] {
   font-weight: var(--font-normal);
   text-decoration: line-through;
 }
-div[data-task="-"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task="-"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="-"] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="-"] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task="-"] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="-"] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task="-"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task="-"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="-"] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="-"] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task="-"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="-"] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="-"] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -132,7 +132,8 @@ ul > li.task-list-item[data-task="-"] > input.task-list-item-checkbox[type=check
 }
 
 div[data-task=">"] > label.task-list-label,
-ul > li.task-list-item[data-task=">"] {
+ul > li.task-list-item[data-task=">"],
+ul > li.task-list-item[data-task=">"] > p {
   --checkbox-color: var(--checkbox-deferred);
   --checkbox-border-color: var(--checkbox-deferred);
   --checkbox-marker-color: transparent;
@@ -141,17 +142,15 @@ ul > li.task-list-item[data-task=">"] {
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=">"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task=">"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=">"] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=">"] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task=">"] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=">"] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=">"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task=">"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=">"] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=">"] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task=">"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=">"] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=">"] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -174,7 +173,8 @@ ul > li.task-list-item[data-task=">"] > input.task-list-item-checkbox[type=check
 }
 
 div[data-task=R] > label.task-list-label,
-ul > li.task-list-item[data-task=R] {
+ul > li.task-list-item[data-task=R],
+ul > li.task-list-item[data-task=R] > p {
   --checkbox-color: var(--checkbox-review);
   --checkbox-border-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
@@ -183,17 +183,15 @@ ul > li.task-list-item[data-task=R] {
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=R] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task=R] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=R] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=R] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task=R] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=R] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=R] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task=R] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=R] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=R] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task=R] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=R] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=R] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-text);
   background: unset;
@@ -216,7 +214,8 @@ ul > li.task-list-item[data-task=R] > input.task-list-item-checkbox[type=checkbo
 }
 
 div[data-task=r] > label.task-list-label,
-ul > li.task-list-item[data-task=r] {
+ul > li.task-list-item[data-task=r],
+ul > li.task-list-item[data-task=r] > p {
   --checkbox-color: var(--checkbox-review);
   --checkbox-border-color: var(--checkbox-review);
   --checkbox-marker-color: transparent;
@@ -225,17 +224,15 @@ ul > li.task-list-item[data-task=r] {
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task=r] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task=r] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=r] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task=r] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task=r] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task=r] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task=r] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task=r] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=r] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task=r] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task=r] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=r] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task=r] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-text);
   background: unset;
@@ -258,7 +255,8 @@ ul > li.task-list-item[data-task=r] > input.task-list-item-checkbox[type=checkbo
 }
 
 div[data-task="?"] > label.task-list-label,
-ul > li.task-list-item[data-task="?"] {
+ul > li.task-list-item[data-task="?"],
+ul > li.task-list-item[data-task="?"] > p {
   --checkbox-color: var(--checkbox-question);
   --checkbox-border-color: var(--checkbox-question);
   --checkbox-marker-color: transparent;
@@ -267,17 +265,15 @@ ul > li.task-list-item[data-task="?"] {
   font-weight: var(--font-bold);
   text-decoration: none;
 }
-div[data-task="?"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task="?"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="?"] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="?"] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task="?"] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="?"] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task="?"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task="?"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="?"] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="?"] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task="?"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="?"] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="?"] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -300,7 +296,8 @@ ul > li.task-list-item[data-task="?"] > input.task-list-item-checkbox[type=check
 }
 
 div[data-task="!"] > label.task-list-label,
-ul > li.task-list-item[data-task="!"] {
+ul > li.task-list-item[data-task="!"],
+ul > li.task-list-item[data-task="!"] > p {
   --checkbox-color: var(--checkbox-important);
   --checkbox-border-color: var(--checkbox-important);
   --checkbox-marker-color: transparent;
@@ -309,17 +306,15 @@ ul > li.task-list-item[data-task="!"] {
   font-weight: var(--font-extrabold);
   text-decoration: none;
 }
-div[data-task="!"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task="!"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="!"] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="!"] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task="!"] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="!"] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background-color: unset;
   background: unset;
 }
-div[data-task="!"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task="!"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="!"] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="!"] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task="!"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="!"] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="!"] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   font-family: var(--font-monospace);
   background: unset;
@@ -342,7 +337,8 @@ ul > li.task-list-item[data-task="!"] > input.task-list-item-checkbox[type=check
 }
 
 div[data-task="/"] > label.task-list-label,
-ul > li.task-list-item[data-task="/"] {
+ul > li.task-list-item[data-task="/"],
+ul > li.task-list-item[data-task="/"] > p {
   --checkbox-color: var(--checkbox-in-progress);
   --checkbox-border-color: var(--checkbox-in-progress);
   --checkbox-marker-color: transparent;
@@ -351,16 +347,14 @@ ul > li.task-list-item[data-task="/"] {
   font-weight: var(--font-normal);
   text-decoration: none;
 }
-div[data-task="/"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked,
 div[data-task="/"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="/"] > p > input.task-list-item-checkbox[type=checkbox]:checked,
-ul > li.task-list-item[data-task="/"] > input.task-list-item-checkbox[type=checkbox]:checked {
+ul > li.task-list-item[data-task="/"] > input.task-list-item-checkbox[type=checkbox]:checked,
+ul > li.task-list-item[data-task="/"] > p > input.task-list-item-checkbox[type=checkbox]:checked {
   background: linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%);
 }
-div[data-task="/"] > label.task-list-label > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-div[data-task="/"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="/"] > p > input.task-list-item-checkbox[type=checkbox]:checked:after,
-ul > li.task-list-item[data-task="/"] > input.task-list-item-checkbox[type=checkbox]:checked:after {
+div[data-task="/"] > label.task-list-label > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="/"] > input.task-list-item-checkbox[type=checkbox]:checked::after,
+ul > li.task-list-item[data-task="/"] > p > input.task-list-item-checkbox[type=checkbox]:checked::after {
   -webkit-mask-image: none;
   background: unset;
   content: " ";
