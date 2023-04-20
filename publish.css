@@ -1,154 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
-/*
-Ebullientworks 0.7.7 by @ebullient
-
-A dark and light theme for Obsidian.
-
-Sponsor my work:
-https://www.buymeacoffee.com/ebullient
-
-Readme:
-https://github.com/ebullient/obsidian-theme-ebullientworks
-*/
-/* @settings
-
-name: Ebullientworks theme settings
-id: ebullientworks-theme-16
-settings:
-  -
-    id: ebullientworks-nix-checkbox
-    title: Suppress/Remove this theme's checkbox styles
-    description: Set this to true if you are going to use your own task snippet
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-nix-tags
-    title: Suppress/Remove this theme's tag styles
-    description: Set this to true if you are going to use your own tag snippet
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-reverse-view-header-actions
-    title: View header actions to the left
-    description: Set this to true if the view header is visible, and you want the controls on the left side
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-show-edit-mode-external-links
-    title: Show external links in edit mode
-    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-floating-frontmatter
-    title: Float front-matter in a box to the right
-    description: If true, front-matter in preview mode will be collapsed in a top-right container.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-hide-embedded-heading
-    title: Hide the heading used to embed a document
-    description: If true, the heading used to embed a document will be hidden.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-fonts
-    title: Fonts
-    type: heading
-    level: 3
-    collapsed: true
-  -
-    title: Headings
-    description: Font for text headings (h1 to h6); empty will use default text font
-    id: ebw-header-font
-    type: variable-text
-    default: "'Architects Daughter'"
-  -
-    title: Heading Font Caps Variant
-    description: Capitalization variant for h1 text headings
-    id: ebw-header-font-caps-variant
-    type: variable-select
-    allowEmpty: false
-    default: normal
-    options:
-        - value: normal
-          label: normal
-        - value: small-caps
-          label: small-caps
-        - value: all-small-caps
-          label: all-small-caps
-        - value: all-petite-caps
-          label: all-petite-caps
-        - value: petite-caps
-          label: petite-caps
-        - value: titling-caps
-          label: titling-caps
-        - value: unicase
-          label: unicase
-        - value: inherit
-          label: inherit
-        - value: initial
-          label: initial
-        - value: unset
-          label: unset
-  -
-    title: Tags
-    description: Font for tags; empty will use default text font
-    id: ebw-font-tags
-    type: variable-text
-    default: "'Architects Daughter'"
-  -
-    id: ebw-font-callout-title
-    title: Callout/admonition titles
-    description: Font for callout/admonition titles; empty will use default text font
-    type: variable-text
-    default: "'Architects Daughter'"
-  -
-    id: other-font-settings
-    title: Use Appearance to customize text/monospace fonts
-    description: (This has no effect. ;) )
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-colors
-    title: Colors
-    type: heading
-    level: 3
-    collapsed: true
-  -
-    title: Primary accent color
-    id: ebullientworks-primary-accent
-    description: Choose the primary accent color. You must define a snippet if you select primary-accent-custom. See the Theme's README.
-    type: class-select
-    allowEmpty: false
-    default: primary-accent-purple
-    options:
-        - primary-accent-purple
-        - primary-accent-pink
-        - primary-accent-red
-        - primary-accent-orange
-        - primary-accent-green
-        - primary-accent-cyan
-        - primary-accent-blue
-        - primary-accent-custom
-  -
-    title: Secondary accent color
-    id: ebullientworks-secondary-accent
-    description: Choose the secondary accent color. You must define a snippet if you select secondary-accent-custom. See the Theme's README.
-    type: class-select
-    allowEmpty: false
-    default: secondary-accent-green
-    options:
-        - secondary-accent-purple
-        - secondary-accent-pink
-        - secondary-accent-red
-        - secondary-accent-orange
-        - secondary-accent-green
-        - secondary-accent-cyan
-        - secondary-accent-blue
-        - secondary-accent-custom
-*/
 body {
   --red-0: #f6d3d3;
   --red-1: #f3c2c1;
@@ -279,174 +130,6 @@ body {
   --secondary-accent-5: var(--green-5);
   --secondary-accent-6: var(--green-6);
   --secondary-accent-1-rgb: var(--green-1-rgb);
-}
-
-.primary-accent-red {
-  --primary-accent-0: var(--red-0);
-  --primary-accent-1: var(--red-1);
-  --primary-accent-2: var(--red-2);
-  --primary-accent-3: var(--red-3);
-  --primary-accent-4: var(--red-4);
-  --primary-accent-5: var(--red-5);
-  --primary-accent-6: var(--red-6);
-  --primary-accent-1-rgb: var(--red-1-rgb);
-  --primary-accent-4-rgb: var(--red-4-rgb);
-}
-
-.primary-accent-orange {
-  --primary-accent-0: var(--orange-0);
-  --primary-accent-1: var(--orange-1);
-  --primary-accent-2: var(--orange-2);
-  --primary-accent-3: var(--orange-3);
-  --primary-accent-4: var(--orange-4);
-  --primary-accent-5: var(--orange-5);
-  --primary-accent-6: var(--orange-6);
-  --primary-accent-1-rgb: var(--orange-1-rgb);
-  --primary-accent-4-rgb: var(--orange-4-rgb);
-}
-
-.primary-accent-green {
-  --primary-accent-0: var(--green-0);
-  --primary-accent-1: var(--green-1);
-  --primary-accent-2: var(--green-2);
-  --primary-accent-3: var(--green-3);
-  --primary-accent-4: var(--green-4);
-  --primary-accent-5: var(--green-5);
-  --primary-accent-6: var(--green-6);
-  --primary-accent-1-rgb: var(--green-1-rgb);
-  --primary-accent-4-rgb: var(--green-4-rgb);
-}
-
-.primary-accent-cyan {
-  --primary-accent-0: var(--cyan-0);
-  --primary-accent-1: var(--cyan-1);
-  --primary-accent-2: var(--cyan-2);
-  --primary-accent-3: var(--cyan-3);
-  --primary-accent-4: var(--cyan-4);
-  --primary-accent-5: var(--cyan-5);
-  --primary-accent-6: var(--cyan-6);
-  --primary-accent-1-rgb: var(--cyan-1-rgb);
-  --primary-accent-4-rgb: var(--cyan-4-rgb);
-}
-
-.primary-accent-blue {
-  --primary-accent-0: var(--blue-0);
-  --primary-accent-1: var(--blue-1);
-  --primary-accent-2: var(--blue-2);
-  --primary-accent-3: var(--blue-3);
-  --primary-accent-4: var(--blue-4);
-  --primary-accent-5: var(--blue-5);
-  --primary-accent-6: var(--blue-6);
-  --primary-accent-1-rgb: var(--blue-1-rgb);
-  --primary-accent-4-rgb: var(--blue-4-rgb);
-}
-
-.primary-accent-purple {
-  --primary-accent-0: var(--purple-0);
-  --primary-accent-1: var(--purple-1);
-  --primary-accent-2: var(--purple-2);
-  --primary-accent-3: var(--purple-3);
-  --primary-accent-4: var(--purple-4);
-  --primary-accent-5: var(--purple-5);
-  --primary-accent-6: var(--purple-6);
-  --primary-accent-1-rgb: var(--purple-1-rgb);
-  --primary-accent-4-rgb: var(--purple-4-rgb);
-}
-
-.primary-accent-pink {
-  --primary-accent-0: var(--pink-0);
-  --primary-accent-1: var(--pink-1);
-  --primary-accent-2: var(--pink-2);
-  --primary-accent-3: var(--pink-3);
-  --primary-accent-4: var(--pink-4);
-  --primary-accent-5: var(--pink-5);
-  --primary-accent-6: var(--pink-6);
-  --primary-accent-1-rgb: var(--pink-1-rgb);
-  --primary-accent-4-rgb: var(--pink-4-rgb);
-}
-
-.secondary-accent-red {
-  --secondary-accent-0: var(--red-0);
-  --secondary-accent-1: var(--red-1);
-  --secondary-accent-2: var(--red-2);
-  --secondary-accent-3: var(--red-3);
-  --secondary-accent-4: var(--red-4);
-  --secondary-accent-5: var(--red-5);
-  --secondary-accent-6: var(--red-6);
-  --secondary-accent-1-rgb: var(--red-1-rgb);
-  --secondary-accent-4-rgb: var(--red-4-rgb);
-}
-
-.secondary-accent-orange {
-  --secondary-accent-0: var(--orange-0);
-  --secondary-accent-1: var(--orange-1);
-  --secondary-accent-2: var(--orange-2);
-  --secondary-accent-3: var(--orange-3);
-  --secondary-accent-4: var(--orange-4);
-  --secondary-accent-5: var(--orange-5);
-  --secondary-accent-6: var(--orange-6);
-  --secondary-accent-1-rgb: var(--orange-1-rgb);
-  --secondary-accent-4-rgb: var(--orange-4-rgb);
-}
-
-.secondary-accent-green {
-  --secondary-accent-0: var(--green-0);
-  --secondary-accent-1: var(--green-1);
-  --secondary-accent-2: var(--green-2);
-  --secondary-accent-3: var(--green-3);
-  --secondary-accent-4: var(--green-4);
-  --secondary-accent-5: var(--green-5);
-  --secondary-accent-6: var(--green-6);
-  --secondary-accent-1-rgb: var(--green-1-rgb);
-  --secondary-accent-4-rgb: var(--green-4-rgb);
-}
-
-.secondary-accent-cyan {
-  --secondary-accent-0: var(--cyan-0);
-  --secondary-accent-1: var(--cyan-1);
-  --secondary-accent-2: var(--cyan-2);
-  --secondary-accent-3: var(--cyan-3);
-  --secondary-accent-4: var(--cyan-4);
-  --secondary-accent-5: var(--cyan-5);
-  --secondary-accent-6: var(--cyan-6);
-  --secondary-accent-1-rgb: var(--cyan-1-rgb);
-  --secondary-accent-4-rgb: var(--cyan-4-rgb);
-}
-
-.secondary-accent-blue {
-  --secondary-accent-0: var(--blue-0);
-  --secondary-accent-1: var(--blue-1);
-  --secondary-accent-2: var(--blue-2);
-  --secondary-accent-3: var(--blue-3);
-  --secondary-accent-4: var(--blue-4);
-  --secondary-accent-5: var(--blue-5);
-  --secondary-accent-6: var(--blue-6);
-  --secondary-accent-1-rgb: var(--blue-1-rgb);
-  --secondary-accent-4-rgb: var(--blue-4-rgb);
-}
-
-.secondary-accent-purple {
-  --secondary-accent-0: var(--purple-0);
-  --secondary-accent-1: var(--purple-1);
-  --secondary-accent-2: var(--purple-2);
-  --secondary-accent-3: var(--purple-3);
-  --secondary-accent-4: var(--purple-4);
-  --secondary-accent-5: var(--purple-5);
-  --secondary-accent-6: var(--purple-6);
-  --secondary-accent-1-rgb: var(--purple-1-rgb);
-  --secondary-accent-4-rgb: var(--purple-4-rgb);
-}
-
-.secondary-accent-pink {
-  --secondary-accent-0: var(--pink-0);
-  --secondary-accent-1: var(--pink-1);
-  --secondary-accent-2: var(--pink-2);
-  --secondary-accent-3: var(--pink-3);
-  --secondary-accent-4: var(--pink-4);
-  --secondary-accent-5: var(--pink-5);
-  --secondary-accent-6: var(--pink-6);
-  --secondary-accent-1-rgb: var(--pink-1-rgb);
-  --secondary-accent-4-rgb: var(--pink-4-rgb);
 }
 
 body {
@@ -800,34 +483,6 @@ body.is-tablet .view-header .view-action,
 }
 .hover-editor .popover-content .view-header-title-container::after {
   display: none;
-}
-
-.modal-content .vertical-tab-header {
-  --interactive-accent: var(--interactive-accent-hover);
-}
-
-select:focus, .dropdown:focus {
-  box-shadow: 0 0 0px 1px var(--background-modifier-border-focus);
-  outline: none;
-}
-
-.theme-dark {
-  --graph-line: var(--gray-dark-5);
-  --graph-node: var(--primary-accent-4);
-  --graph-node-focused: var(--yellow-1);
-  --graph-node-tag: var(--secondary-accent-3);
-  --graph-node-attachment: var(--secondary-accent-2);
-  --graph-node-unresolved: var(--gray);
-}
-
-.theme-dark .print:not(.published-container),
-.theme-light {
-  --graph-line: var(--gray-light-1);
-  --graph-node: var(--primary-accent-2);
-  --graph-node-focused: var(--yellow-1);
-  --graph-node-tag: var(--secondary-accent-3);
-  --graph-node-attachment: var(--secondary-accent-2);
-  --graph-node-unresolved: var(--gray);
 }
 
 body {
@@ -1985,244 +1640,6 @@ div[src$="#small-right"] {
   position: relative;
 }
 
-.theme-dark {
-  --calendar-year: var(--primary-accent-3);
-  --calendar-month: var(--secondary-accent-3);
-  --calendar-dividing-line: var(--primary-accent-1);
-  --day-planner-timeline-fg: var(--primary-accent-3);
-}
-.theme-dark .day.today {
-  color: var(--primary-accent-3);
-  font-weight: bold;
-}
-.theme-dark .day.today:hover {
-  color: var(--gray-light-5);
-}
-
-.theme-dark .print:not(.published-container),
-.theme-light {
-  --calendar-year: var(--primary-accent-4);
-  --calendar-month: var(--secondary-accent-4);
-  --calendar-dividing-line: var(--primary-accent-1);
-  --day-planner-timeline-fg: var(--primary-accent-1);
-}
-.theme-dark .print:not(.published-container) .week-num.active,
-.theme-dark .print:not(.published-container) .day.active,
-.theme-light .week-num.active,
-.theme-light .day.active {
-  --color-dot: var(--text-on-accent);
-}
-.theme-dark .print:not(.published-container) .day.today,
-.theme-light .day.today {
-  color: var(--primary-accent-4);
-  font-weight: bold;
-}
-.theme-dark .print:not(.published-container) .day.today:hover,
-.theme-light .day.today:hover {
-  color: var(--gray-dark-5);
-}
-
-#calendar-container span.year {
-  color: var(--calendar-year);
-}
-
-#calendar-container span.month {
-  color: var(--calendar-month);
-}
-
-.block-language-tracker .tracker-month-header-month,
-.block-language-tracker .tracker-month-title-arrow {
-  fill: var(--calendar-month);
-}
-.block-language-tracker .tracker-month-header-year {
-  fill: var(--calendar-year);
-}
-.block-language-tracker .tracker-month-dividing-line {
-  fill: var(--calendar-dividing-line);
-}
-.block-language-tracker .tracker-month-weekday,
-.block-language-tracker .tracker-month-label {
-  fill: var(--text-faint);
-  fill-opacity: 1 !important;
-}
-
-.day-planner-progress-bar {
-  background-color: var(--background-primary);
-  border: 1px solid var(--tab-outline-color);
-}
-
-.day-planner-progress-value {
-  height: 14px;
-  background-color: var(--day-planner-timeline-fg);
-}
-
-.mod-cta .setting-item-description,
-.mod-cta .setting-item-name {
-  color: var(--text-on-accent);
-}
-
-.theme-dark .timeline-container h2 {
-  color: var(--gray-dark-2);
-}
-.theme-dark .timeline-left::before {
-  border: medium solid var(--gray-dark-2);
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent var(--gray-dark-2);
-}
-.theme-dark .timeline-right::before {
-  border: medium solid var(--gray-dark-2);
-  border-width: 10px 10px 10px 0;
-  border-color: transparent var(--gray-dark-2) transparent transparent;
-}
-.theme-dark .timeline-container::after {
-  border: 4px solid var(--primary-accent-4);
-}
-
-.theme-dark .print:not(.published-container) .timeline-container h2,
-.theme-light .timeline-container h2 {
-  color: var(--gray-light-1);
-}
-.theme-dark .print:not(.published-container) .timeline-left::before,
-.theme-light .timeline-left::before {
-  border: medium solid var(--gray-light-1);
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent var(--gray-light-1);
-}
-.theme-dark .print:not(.published-container) .timeline-right::before,
-.theme-light .timeline-right::before {
-  border: medium solid var(--gray-light-1);
-  border-width: 10px 10px 10px 0;
-  border-color: transparent var(--gray-light-1) transparent transparent;
-}
-.theme-dark .print:not(.published-container) .timeline-container::after,
-.theme-light .timeline-container::after {
-  border: 4px solid var(--primary-accent-2);
-}
-.theme-dark .print:not(.published-container) .timeline::after,
-.theme-light .timeline::after {
-  background-color: var(--blue-1);
-}
-
-.timeline-container {
-  page-break-inside: avoid;
-}
-.timeline-container h1:before,
-.timeline-container h2:before,
-.timeline-container h3:before,
-.timeline-container h4:before,
-.timeline-container h5:before,
-.timeline-container h6:before {
-  display: none;
-}
-
-.timeline-card a.internal-link {
-  text-decoration: none;
-}
-
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter {
-  float: right;
-  position: absolute;
-  right: 0.15em;
-  top: 0.65rem;
-  width: 2rem;
-  height: 2rem;
-  overflow: hidden;
-  border: none !important;
-  background-color: transparent;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter code,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter code {
-  visibility: hidden;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter .mod-failed,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter .mod-failed {
-  position: absolute;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter .mod-failed .mod-error,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter .mod-failed .mod-error {
-  visibility: hidden;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter .mod-failed:hover .mod-error,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter .mod-failed:hover .mod-error {
-  visibility: visible;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter::before,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter::before {
-  content: "✧";
-  font-size: 20px;
-  color: var(--primary-accent-3);
-  float: right;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter:not(:hover) > button.copy-code-button,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter:not(:hover) > button.copy-code-button {
-  display: none;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter:hover,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter:hover {
-  border: 1px solid var(--background-modifier-border);
-  background-color: var(--background-secondary);
-  filter: drop-shadow(-0.1rem 0.1rem 0.1rem var(--background-secondary-alt));
-  width: 60%;
-  min-width: 200px;
-  height: unset;
-  z-index: 3;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter:hover code,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered pre.frontmatter:hover code {
-  visibility: visible;
-  background-color: var(---background-secondary);
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container {
-  float: right;
-  position: absolute;
-  right: 0.6rem;
-  top: 0;
-  width: 2rem;
-  height: 2rem;
-  overflow: hidden;
-  border: none !important;
-  background-color: transparent;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container .frontmatter-container-header,
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container .frontmatter-section,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container .frontmatter-container-header,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container .frontmatter-section {
-  visibility: hidden;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container::before,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container::before {
-  content: "✧";
-  font-size: 20px;
-  color: var(--primary-accent-3);
-  float: right;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover {
-  border: 1px solid var(--background-modifier-border);
-  background-color: var(--background-secondary);
-  filter: drop-shadow(-0.1rem 0.1rem 0.1rem var(--background-secondary-alt));
-  width: 50%;
-  min-width: 200px;
-  height: unset;
-  z-index: 3;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover .frontmatter-container-header,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover .frontmatter-container-header {
-  padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
-  visibility: visible;
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover .frontmatter-section,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover .frontmatter-section {
-  visibility: visible;
-  padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
-}
-.ebullientworks-floating-frontmatter .markdown-rendered .frontmatter-container:hover .frontmatter-collapse-indicator,
-.ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .frontmatter-container:hover .frontmatter-collapse-indicator {
-  display: none;
-}
-
 body {
   --table-header-color: var(--text-on-accent);
   --table-header-background-hover: var(--ebw-table-header-alt);
@@ -2333,4 +1750,118 @@ body {
 .markdown-rendered.word-wrap table.table-view-table.dataview tbody > tr > td {
   word-wrap: normal;
   word-break: normal;
+}
+
+.published-container {
+  /* Page */
+  --footer-display: block;
+  display: flex;
+  /* Page titles */
+  flex-direction: column;
+  --sidebar-font-size: 1rem;
+  --outline-heading-weight-active: 600;
+  --graph-height: 16.25rem;
+  --header-height: var(--h1-size);
+  --input-height: 2.5rem;
+  /* Component titles, e.g. backlinks, graph, table of contents */
+  --logo-height: auto;
+  height: 100%;
+  --nav-item-weight-active: 500;
+  --sidebar-left-border-width: 0.0625rem;
+  --sidebar-left-width: 17.5rem;
+  --logo-max-height: 12.5rem;
+  /* Inputs */
+  --logo-max-width: calc(100% - 18px);
+  /* Graph */
+  --site-menu-icon-size: 1.5rem;
+  /* Sidebars */
+  --site-name-font: inherit;
+  --site-name-size: var(--h2-size);
+  --site-name-weight: 700;
+  overflow: auto;
+  --nav-parent-item-weight: 500;
+  position: relative;
+  /* Site header */
+  --logo-radius: 0.5rem;
+  --sidebar-right-background: transparent;
+  --sidebar-right-border-width: 0px;
+  --sidebar-right-width: 18.75rem;
+  --page-side-padding: 2rem;
+  --component-title-font: var(--font-ui);
+  --page-title-font: var(--h1-font);
+  --page-title-line-height: var(--h1-line-height);
+  --component-title-size: var(--font-ui-small);
+  --page-title-size: var(--h1-size);
+  /* Navigation */
+  --component-title-style: normal;
+  --page-title-style: var(--h1-style);
+  /* Outline */
+  --component-title-transform: uppercase;
+  /* Footer */
+  --component-title-variant: normal;
+  --page-title-variant: var(--h1-font);
+  --component-title-weight: 600;
+  --page-title-weight: var(--h1-weight);
+  -webkit-user-select: none;
+  user-select: none;
+  --logo-width: auto;
+  --page-width: 100%;
+  width: 100%;
+}
+.published-container::selection {
+  background-color: var(--text-selection);
+}
+
+.published-container .loader-cube {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: var(--font-ui-medium);
+  }
+}
+@media screen and (max-width: 750px) {
+  body {
+    font-size: var(--font-ui-medium);
+    --popover-display: none;
+    --input-height: 2.25rem;
+  }
+  .published-container {
+    --footer-display: none;
+    --header-height: 4rem;
+    --site-name-size: 1.125rem;
+    --page-side-padding: 1rem;
+    --page-title-size: 1.8em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: var(--font-ui-medium);
+  }
+  .published-container {
+    --footer-display: none;
+    --outline-heading-weight-active: 600;
+    --header-height: var(--h2-size);
+    --logo-height: auto;
+    --nav-item-weight-active: 500;
+    --logo-max-height: 150px;
+    --logo-max-width: calc(100% - 18px);
+    --site-menu-icon-size: 1.375rem;
+    /* Navigation */
+    --site-name-size: var(--h3-size);
+    --nav-parent-item-weight: 500;
+    /* Outline */
+    --logo-radius: 0.375rem;
+    /* Footer */
+    --logo-width: auto;
+  }
+  .published-container > .markdown-preview-view > .markdown-preview-sizer {
+    margin-right: 0;
+  }
 }
