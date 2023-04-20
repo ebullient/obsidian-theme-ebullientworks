@@ -1,0 +1,198 @@
+.published-container {
+  // These are the Default Ones that Come with App.css
+
+// Page width and padding
+  --page-width: 100%;
+  --page-side-padding: 48px;
+
+  // Page titles
+  --page-title-color: var(--h1-color);
+  --page-title-font: var(--h1-font);
+  --page-title-line-height: var(--h1-line-height);
+  --page-title-size: 2.6em;
+  --page-title-style: var(--h1-style);
+  --page-title-variant: var(--h1-variant);
+  --page-title-weight: var(--h1-weight);
+
+
+  // Component Titles
+  --component-title-color: var(--text-normal);
+  --component-title-font: inherit;
+  --component-title-size: var(--font-ui-small);
+  --component-title-style: inherit;
+  --component-title-transform: uppercase;
+  --component-title-variant: inherit;
+  --component-title-weight: var(--font-semibold);
+
+  // Inputs
+  --input-height: 32px;
+
+  // Graph
+  --graph-height: 260px;
+
+  // Sidebar
+  --sidebar-font-size: 14px;
+  --sidebar-left-width: 280px;
+  --sidebar-left-background: var(--background-primary);
+  --sidebar-left-border-width: 1px;
+  --sidebar-left-border-color: var(--background-modifier-border);
+  --sidebar-right-width: 300px;
+  --sidebar-right-background: transparent;
+  --sidebar-right-border-width: 0px;
+  --sidebar-right-border-color: var(--background-modifier-border);
+
+  // Site Headers
+  --logo-width: auto;
+  --logo-height: auto;
+  --logo-max-width: calc(100% - 18px);
+  --logo-max-height: 200px;
+  --logo-radius: 8px;
+  --header-height: 50px;
+  --site-name-color: var(--text-normal);
+  --site-name-color-hover: var(--text-muted);
+  --site-name-font: inherit;
+  --site-name-size: 22px;
+  --site-name-weight: var(--font-semibold);
+  --site-menu-icon-color: var(--text-faint);
+  --site-menu-icon-color-hover: var(--text-normal);
+  --site-menu-icon-size: 24px;
+
+  // Site Navigation
+  --nav-collapse-icon-color: var(--text-faint);
+  --nav-collapse-icon-color-hover: var(--text-muted);
+  --nav-parent-item-color: var(--text-normal);
+  --nav-parent-item-color-active: var(--text-accent);
+  --nav-parent-item-weight: var(--font-medium);
+  --nav-item-color: var(--text-muted);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: var(--text-accent);
+  --nav-item-border-color: var(--background-modifier-border);
+  --nav-item-border-color-active: var(--text-accent);
+  --nav-item-weight-active: var(--font-medium);
+
+  // Outline
+  --outline-heading-color: var(--text-muted);
+  --outline-heading-color-hover: var(--text-normal);
+  --outline-heading-color-active: var(--text-accent);
+  --outline-heading-weight-active: var(--font-semibold);
+
+  // Footer
+  --footer-display: block;
+
+  // Fonts
+  --font-text-size: 16px;
+  --font-text-theme: var(--ebw-font-text);
+  --font-monospace-theme: var(--ebw-font-monospace);
+  --font-interface-theme: var(--ebw-font-text);
+  --font-mermaid: var(--ebw-font-monospace);
+}
+
+body {
+  /* Tooltips */
+  --tooltip-display: none;
+  /* Popovers */
+  --popover-display: block;
+
+  // Added to fix borders on callouts
+  --callout-border-width: 0.05rem 0 0 0.05rem;
+}
+
+
+.theme-dark {
+  --nav-item-border-color-hover: var(--yellow-2);
+}
+
+.theme-light {
+  --nav-item-border-color-hover: var(--yellow-4);
+}
+
+
+
+/* Obsidian Publish mobile variables */
+/* --------------------------------- */
+@media screen and (max-width: 750px) {
+  body {
+    --popover-display: none;
+    --input-height: 36px;
+  }
+  .published-container {
+    --site-name-size: 18px;
+    --header-height: 50px;
+    --header-background: var(--background-primary);
+    --page-title-size: 2em;
+    --page-side-padding: 24px;
+    --footer-display: none;
+    --list-spacing: 0.15em;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: var(--font-ui-medium);
+  }
+
+  .published-container {
+    --footer-display: none;
+    --outline-heading-weight-active: 600;
+    --header-height: var(--h2-size);
+    --logo-height: auto;
+    --nav-item-weight-active: 500;
+    --logo-max-height: 150px;
+    --logo-max-width: calc(100% - 18px);
+    --site-menu-icon-size: 1.375rem;
+    /* Navigation */
+    --site-name-size: var(--h3-size);
+    --nav-parent-item-weight: 500;
+    /* Outline */
+    --logo-radius: 0.375rem;
+    /* Footer */
+    --logo-width: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* ... rules and variables for screens larger than a big tablet */
+  .published-container {
+    --page-side-padding: 10rem;
+    --sidebar-left-width: 230px;
+    --sidebar-right-width: 250px;
+    --graph-height: 200px;
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+  /* ... rules and variables for screens larger than a small monitor */
+  .published-container {
+    --page-side-padding: 12rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  /* ... rules and variables for screens larger than a medium monitor */
+  .published-container {
+    --page-side-padding: 14rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  /* ... rules and variables for screens larger than a average monitor */
+  .published-container {
+    --page-side-padding: 16rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  /* ... rules and variables for screens larger than a good monitor */
+  .published-container {
+    --page-side-padding: 18rem;
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  /* ... rules and variables for screens larger than a projector */
+  .published-container {
+    --page-side-padding: 20rem;
+  }
+}

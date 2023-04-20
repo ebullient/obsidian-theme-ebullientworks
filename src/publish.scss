@@ -1,18 +1,22 @@
-@import 'fragments/01-color-palette';
-@import 'fragments/02-fonts';
+@use 'fragments/01-color-palette' as *;
+@use 'fragments/02-fonts' as *;
 
-@import 'fragments/03-core-theme-dark';
-@import 'fragments/03-core-theme-light';
+@use 'fragments/03-core-theme-dark' as *;
+@use 'fragments/03-core-theme-light' as *;
 
-@import 'fragments/03a-workspace-layout';
+@use 'fragments/04-headings-hr-tags' as *;
+@use 'fragments/05-text-links' as *;
+@use 'fragments/06-lists-checkboxes' as *;
 
-@import 'fragments/04-headings-hr-tags';
-@import 'fragments/05-text-links';
-@import 'fragments/06-lists-checkboxes';
+@use 'fragments/08-blockquote-callouts' as *;
+@use 'fragments/09-codeblocks' as *;
+@use 'fragments/10-images-embeds' as *;
+@use 'fragments/15-table' as *;
 
-@import 'fragments/08-blockquote-callouts';
-@import 'fragments/09-codeblocks';
-@import 'fragments/10-images-embeds';
-@import 'fragments/15-table';
 
-@import 'fragments/19-publish-container';
+@use 'fragments/20-publish-variables' as *;
+//@use 'fragments/21-publish-container' as *;
+@use 'fragments/25-publish-typography' as *;
+@use 'fragments/27-callmonitions' as *;
+@use 'fragments/28-publish-image-embeds' as *;
+@use 'fragments/29-publish-code' as *;
