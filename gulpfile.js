@@ -11,7 +11,6 @@ gulp.task("css", () => {
     const json = JSON.parse(fs.readFileSync("./package.json"));
     return gulp
         .src("./src/*.scss")
-        .pipe(replace("$version$", json.version))
         .pipe(sass.sync().on("error", sass.logError))
         .pipe(
             rename(function (path) {
@@ -21,6 +20,7 @@ gulp.task("css", () => {
                 path.extname = ".css";
             })
         )
+        .pipe(replace("$version$", json.version))
         .pipe(gulp.dest("./dist"));
 });
 

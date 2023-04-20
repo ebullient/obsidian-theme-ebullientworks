@@ -1,7 +1,5 @@
-/*
-Ebullientworks tasks $version$ by @ebullient
-*/
-
+@use 'fragments/00-heading' as *;
+@use 'fragments/06a-checkbox-mixin' as checkboxes;
 body {
   --checkbox-checked: rgb(139, 167, 145);
   --checkbox-deferred: rgb(111, 166, 211);
@@ -25,4 +23,5 @@ li[data-task] input[type=checkbox]::before {
   -webkit-mask-image: none !important;
 }
 
-@import 'fragments/06a-checkboxes.scss';
+@include checkboxes.list;
+

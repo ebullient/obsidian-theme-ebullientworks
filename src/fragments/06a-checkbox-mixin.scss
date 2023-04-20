@@ -1,3 +1,29 @@
+@charset "UTF-8";
+
+@mixin list() {
+  div[data-task] > label.task-list-label,
+  ul > li.task-list-item,
+  ul > li.task-list-item > p  {
+    color: var(--text-normal);
+    font-weight: unset;
+    text-decoration: unset;
+
+    > input.task-list-item-checkbox[type=checkbox]:not(:checked) {
+      background-color: unset;
+      background: unset;
+    }
+  }
+
+  @include custom-task-text("x", var(--checkbox-checked), "✓", var(--font-normal), none, var(--text-normal), var(--font-text));
+  @include custom-task-text("-", var(--checkbox-cancelled), "-", var(--font-normal), line-through, var(--text-faint));
+  @include custom-task-text(">", var(--checkbox-deferred), ">", var(--font-normal), none);
+  @include custom-task-text("R", var(--checkbox-review), "👀", var(--font-normal), none, var(--text-normal), var(--font-text));
+  @include custom-task-text("r", var(--checkbox-review), "👀", var(--font-normal), none, var(--text-normal), var(--font-text));
+  @include custom-task-text("?", var(--checkbox-question), "?", var(--font-bold), none);
+  @include custom-task-text("!", var(--checkbox-important), "!", var(--font-extrabold), none);
+  @include custom-task-background("/", var(--checkbox-in-progress), "linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%)");
+}
+
 @mixin custom-task-background(
   $character,
   $rgb-color,

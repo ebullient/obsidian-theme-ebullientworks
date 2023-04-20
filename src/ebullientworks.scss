@@ -1,176 +1,26 @@
-/*
-Ebullientworks $version$ by @ebullient
+@use 'fragments/00-heading' as *;
+@use 'fragments/00-stylesettings' as *;
+@use 'fragments/01-color-palette' as *;
+@use 'fragments/01a-color-accents' as *;
+@use 'fragments/02-fonts' as *;
 
-This is a dark and light theme for Obsidian.
+@use 'fragments/03-core-theme-dark' as *;
+@use 'fragments/03-core-theme-light' as *;
 
-Additional tweaks available with the Style Settings plugin
+@use 'fragments/03a-workspace-layout' as *;
+@use 'fragments/03c-modal-input' as *;
+@use 'fragments/03d-graph-view' as *;
 
-Sponsor my work:
-https://www.buymeacoffee.com/ebullient
+@use 'fragments/04-headings-hr-tags' as *;
+@use 'fragments/05-text-links' as *;
 
-Readme:
-https://github.com/ebullient/obsidian-theme-ebullientworks
-*/
-/* @settings
+@use 'fragments/06-lists-checkboxes' as *;
+@use 'fragments/08-blockquote-callouts' as *;
+@use 'fragments/09-codeblocks' as *;
+@use 'fragments/10-images-embeds' as *;
 
-name: Ebullientworks theme settings
-id: ebullientworks-theme-16
-settings:
-  -
-    id: ebullientworks-nix-checkbox
-    title: Suppress/Remove this theme's checkbox styles
-    description: Set this to true if you are going to use your own task snippet
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-nix-tags
-    title: Suppress/Remove this theme's tag styles
-    description: Set this to true if you are going to use your own tag snippet
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-reverse-view-header-actions
-    title: View header actions to the left
-    description: Set this to true if the view header is visible, and you want the controls on the left side
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-show-edit-mode-external-links
-    title: Show external links in edit mode
-    description: If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-floating-frontmatter
-    title: Float front-matter in a box to the right
-    description: If true, front-matter in preview mode will be collapsed in a top-right container.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-hide-embedded-heading
-    title: Hide the heading used to embed a document
-    description: If true, the heading used to embed a document will be hidden.
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-fonts
-    title: Fonts
-    type: heading
-    level: 3
-    collapsed: true
-  -
-    title: Headings
-    description: Font for text headings (h1 to h6); empty will use default text font
-    id: ebw-header-font
-    type: variable-text
-    default: "'Architects Daughter'"
-  -
-    title: Heading Font Caps Variant
-    description: Capitalization variant for h1 text headings
-    id: ebw-header-font-caps-variant
-    type: variable-select
-    allowEmpty: false
-    default: normal
-    options:
-        - value: normal
-          label: normal
-        - value: small-caps
-          label: small-caps
-        - value: all-small-caps
-          label: all-small-caps
-        - value: all-petite-caps
-          label: all-petite-caps
-        - value: petite-caps
-          label: petite-caps
-        - value: titling-caps
-          label: titling-caps
-        - value: unicase
-          label: unicase
-        - value: inherit
-          label: inherit
-        - value: initial
-          label: initial
-        - value: unset
-          label: unset
-  -
-    title: Tags
-    description: Font for tags; empty will use default text font
-    id: ebw-font-tags
-    type: variable-text
-    default: "'Architects Daughter'"
-  -
-    id: ebw-font-callout-title
-    title: Callout/admonition titles
-    description: Font for callout/admonition titles; empty will use default text font
-    type: variable-text
-    default: "'Architects Daughter'"
-  -
-    id: other-font-settings
-    title: Use Appearance to customize text/monospace fonts
-    description: (This has no effect. ;) )
-    type: class-toggle
-    default: false
-  -
-    id: ebullientworks-colors
-    title: Colors
-    type: heading
-    level: 3
-    collapsed: true
-  -
-    title: Primary accent color
-    id: ebullientworks-primary-accent
-    description: Choose the primary accent color. You must define a snippet if you select primary-accent-custom. See the Theme's README.
-    type: class-select
-    allowEmpty: false
-    default: primary-accent-purple
-    options:
-        - primary-accent-purple
-        - primary-accent-pink
-        - primary-accent-red
-        - primary-accent-orange
-        - primary-accent-green
-        - primary-accent-cyan
-        - primary-accent-blue
-        - primary-accent-custom
-  -
-    title: Secondary accent color
-    id: ebullientworks-secondary-accent
-    description: Choose the secondary accent color. You must define a snippet if you select secondary-accent-custom. See the Theme's README.
-    type: class-select
-    allowEmpty: false
-    default: secondary-accent-green
-    options:
-        - secondary-accent-purple
-        - secondary-accent-pink
-        - secondary-accent-red
-        - secondary-accent-orange
-        - secondary-accent-green
-        - secondary-accent-cyan
-        - secondary-accent-blue
-        - secondary-accent-custom
-*/
-
-@import 'fragments/01-color-palette';
-@import 'fragments/01a-color-accents';
-@import 'fragments/02-fonts';
-
-@import 'fragments/03-core-theme-dark';
-@import 'fragments/03-core-theme-light';
-
-@import 'fragments/03a-workspace-layout';
-@import 'fragments/03c-modal-input';
-@import 'fragments/03d-graph-view';
-
-@import 'fragments/04-headings-hr-tags';
-@import 'fragments/05-text-links';
-
-@import 'fragments/06-lists-checkboxes';
-@import 'fragments/08-blockquote-callouts';
-@import 'fragments/09-codeblocks';
-@import 'fragments/10-images-embeds';
-
-@import 'fragments/12-calendar-day-planner-tracker';
-@import 'fragments/13-timelines';
-@import 'fragments/14-frontmatter';
-@import 'fragments/15-table';
+@use 'fragments/12-calendar-day-planner-tracker' as *;
+@use 'fragments/13-timelines' as *;
+@use 'fragments/14-frontmatter' as *;
+@use 'fragments/15-table' as *;
 
