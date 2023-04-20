@@ -26,11 +26,10 @@ body {
 
   --ebw-callout-reference: 183, 183, 183; // gray
   --ebw-callout-toc: 235, 235, 235; // gray-light-4
-}
-.theme-dark {
+
   --blockquote-border-color: var(--secondary-accent-4);
 }
-.theme-dark .print,
+.theme-dark .print:not(.published-container),
 .theme-light {
   --blockquote-border-color: var(--secondary-accent-2);
   --ebw-callout-toc: 159, 159, 159; // gray-dark-1
@@ -110,6 +109,7 @@ body {
   --callout-icon: layout-list;
   --callout-color: var(--ebw-callout-toc);
 }
+.theme-dark .print:not(.published-container),
 .theme-light {
   .callout[data-callout="info"],
   .callout[data-callout="todo"],
@@ -164,7 +164,6 @@ body {
 }
 .callout-content {
   background-color: var(--background-primary);
-
   > :first-child {
     margin-top: 0.5em;
   }
@@ -172,7 +171,6 @@ body {
     margin-bottom: 0.5em;
   }
 }
-
 // ------------------------------------------------------
 // Reference Admonition
 // Create callout of type 'reference' (book icon suggested)
@@ -228,7 +226,6 @@ body {
   margin: 1em 0;
   padding: var(--callout-padding);
 }
-
 .rendered-widget,
 .markdown-rendered,
 .markdown-preview-section {
@@ -249,4 +246,3 @@ div.popover {
     display: none;
   }
 }
-

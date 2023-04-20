@@ -1,5 +1,4 @@
 .theme-dark {
-  /** Core styles **/
   --background-primary: var(--gray-dark-85);           //  Note background
   --background-primary-alt: var(--gray-dark-75);       //  Note title background
 
@@ -38,18 +37,37 @@
   --indentation-guide: var(--gray-dark-7);
   --indentation-guide-active: var(--gray-dark-6);
 
-  /** Text on accent should work as foreground for all interactive elements */
+  // Text on accent should work as foreground for all interactive elements
   --text-on-accent: var(--gray-light-8);                // Program Title bar text
-  --interactive-hover: var(--primary-accent-4);            // Button hover text; pin
+  --interactive-hover: var(--primary-accent-4);         // Button hover text; pin
   --interactive-normal: var(--background-primary-alt);
-  --interactive-accent: var(--secondary-accent-4);             // Workspace Note Title Underline
-  --interactive-accent-hover: var(--primary-accent-4);      // Menu Button Hover
+  --interactive-accent: var(--secondary-accent-4);      // Workspace Note Title Underline
+  --interactive-accent-hover: var(--primary-accent-4);  // Menu Button Hover
 
   --ebw-alpha2: rgba(0, 0, 0, 0.2);
   --ebw-alpha4: rgba(0, 0, 0, 0.4);
-}
-.is-tablet.theme-dark {
-  --titlebar-background: var(--background-secondary);
-  --titlebar-background-focused: var(--background-secondary);
-  --interactive-normal: var(--background-primary-alt);
+
+  // Color Spectrum
+  --color-red-rgb: var(--red-2-rgb);
+  --color-red: var(--red-2);
+  --color-orange-rgb: var(--orange-2-rgb);
+  --color-orange: var(--orange-2);
+  --color-yellow-rgb: var(--yellow-2-rgb);
+  --color-yellow: var(--yellow-2);
+  --color-green-rgb: var(--green-2-rgb);
+  --color-green: var(--green-2);
+  --color-cyan-rgb: var(--cyan-2-rgb);
+  --color-cyan: var(--cyan-2);
+  --color-blue-rgb: var(--blue-2-rgb);
+  --color-blue: var(--blue-2);
+  --color-purple-rgb: var(--purple-2-rgb);
+  --color-purple: var(--purple-2);
+  --color-pink-rgb: var(--pink-2-rgb);
+  --color-pink: var(--pink-2);
+
+  &.is-tablet {
+    --titlebar-background: var(--background-secondary);
+    --titlebar-background-focused: var(--background-secondary);
+    --interactive-normal: var(--background-primary-alt);
+  }
 }

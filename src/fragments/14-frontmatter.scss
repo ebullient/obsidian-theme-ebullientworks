@@ -1,9 +1,6 @@
 .ebullientworks-floating-frontmatter,
 .ebullientworks-floating-frontmatter.is-mobile {
   .markdown-rendered {
-    pre.frontmatter:not(:hover) > button.copy-code-button {
-        display: none;
-    }
     pre.frontmatter {
       float: right;
       position: absolute;
@@ -18,36 +15,40 @@
       code {
         visibility: hidden;
       }
-    }
-    pre.frontmatter::before {
-      content: "✧";
-      font-size: 20px;
-      color: var(--primary-accent-3);
-      float: right;
-    }
-    pre.frontmatter:hover {
-      border: 1px solid var(--background-modifier-border);
-      background-color: var(--background-secondary);
-      filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-      width: 60%;
-      min-width: 200px;
-      height: unset;
-      z-index: 3;
 
-      code {
-        visibility: visible;
-        background-color: var(---background-secondary);
+      .mod-failed {
+        position: absolute;
+        .mod-error {
+          visibility: hidden;
+        }
+        &:hover .mod-error {
+          visibility: visible;
+        }
       }
-    }
 
-    pre.frontmatter.mod-failed {
-      position: absolute;
-      .mod-error {
-        visibility: hidden;
+      &::before {
+        content: "✧";
+        font-size: 20px;
+        color: var(--primary-accent-3);
+        float: right;
       }
-    }
-    pre.frontmatter.mod-failed:hover .mod-error {
-      visibility: visible;
+      &:not(:hover) > button.copy-code-button {
+        display: none;
+      }
+      &:hover {
+        border: 1px solid var(--background-modifier-border);
+        background-color: var(--background-secondary);
+        filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
+        width: 60%;
+        min-width: 200px;
+        height: unset;
+        z-index: 3;
+
+        code {
+          visibility: visible;
+          background-color: var(---background-secondary);
+        }
+      }
     }
 
     .frontmatter-container {
@@ -65,33 +66,32 @@
       .frontmatter-section {
         visibility: hidden;
       }
-    }
-    .frontmatter-container::before {
-      content: "✧";
-      font-size: 20px;
-      color: var(--primary-accent-3);
-      float: right;
-    }
-    .frontmatter-container:hover {
-      border: 1px solid var(--background-modifier-border);
-      background-color: var(--background-secondary);
-      filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-      width: 50%;
-      min-width: 200px;
-      height: unset;
-      z-index: 3;
-
-      .frontmatter-container-header {
-        padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
-        visibility: visible;
+      &::before {
+        content: "✧";
+        font-size: 20px;
+        color: var(--primary-accent-3);
+        float: right;
       }
-      .frontmatter-section {
-        visibility: visible;
-        padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
-      }
+      &:hover {
+        border: 1px solid var(--background-modifier-border);
+        background-color: var(--background-secondary);
+        filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
+        width: 50%;
+        min-width: 200px;
+        height: unset;
+        z-index: 3;
 
-      .frontmatter-collapse-indicator {
-        display: none;
+        .frontmatter-container-header {
+          padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
+          visibility: visible;
+        }
+        .frontmatter-section {
+          visibility: visible;
+          padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
+        }
+        .frontmatter-collapse-indicator {
+          display: none;
+        }
       }
     }
   }

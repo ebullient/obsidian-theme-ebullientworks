@@ -1,6 +1,5 @@
-.theme-dark .print,
+.theme-dark .print:not(.published-container),
 .theme-light {
-    /** Core styles **/
     --background-primary: var(--gray-light-7);                 //  Note background
     --background-primary-alt: var(--gray-light-5);             //  Note title background
 
@@ -9,18 +8,18 @@
 
     --background-modifier-border: var(--gray-light-1);         //  Border outline of quotes, tables, line breaks
 
-    --background-modifier-success:     var(--green-2);      // Publish Upload Success Background
-    --background-modifier-success-rgb: var(--green-2-rgb);      // Publish Upload Success Background
+    --background-modifier-success:     var(--green-2);         // Publish Upload Success Background
+    --background-modifier-success-rgb: var(--green-2-rgb);     // Publish Upload Success Background
 
-    --background-modifier-error: var(--red-4);           // Delete Screen Button
+    --background-modifier-error: var(--red-4);                 // Delete Screen Button
     --background-modifier-error-rgb: 188,83,69;
     --background-modifier-error-hover: var(--red-4);
 
-    --text-normal: var(--gray-dark-5);                   // Text body of note
-    --text-muted: var(--gray-dark-4);                    // Text darker for sidebar, toggles, inactive, tags, etc
-    --text-faint: var(--gray-dark-1);                    // Link brackets color
+    --text-normal: var(--gray-dark-5);                        // Text body of note
+    --text-muted: var(--gray-dark-4);                         // Text darker for sidebar, toggles, inactive, tags, etc
+    --text-faint: var(--gray-dark-1);                         // Link brackets color
 
-    --text-accent: var(--primary-accent-4);                  // Links
+    --text-accent: var(--primary-accent-4);                   // Links
     --text-accent-hover: var(--primary-accent-5);
 
     --text-success: var(--green-4);
@@ -35,10 +34,28 @@
     // --indentation-guide: var(--gray-light-3);
     // --indentation-guide-active: var(--red-2);
 
-    // /** Text on accent should work as foreground for all interactive elements */
+    // Text on accent should work as foreground for all interactive elements
     --text-on-accent: var(--gray-light-8);                // Program Title bar text
-    --interactive-hover: var(--primary-accent-1);            // Button hover text; pin
+    --interactive-hover: var(--primary-accent-1);         // Button hover text; pin
     --interactive-normal: var(--background-primary-alt);
-    --interactive-accent: var(--secondary-accent-4);             // Workspace Note Title Underline
-    --interactive-accent-hover: var(--primary-accent-4);      // Menu Button Hover
+    --interactive-accent: var(--secondary-accent-4);      // Workspace Note Title Underline
+    --interactive-accent-hover: var(--primary-accent-4);  // Menu Button Hover
+
+    // Color Spectrum
+    --color-red-rgb: var(--red-4-rgb);
+    --color-red: var(--red-4);
+    --color-orange-rgb: var(--orange-4-rgb);
+    --color-orange: var(--orange-4);
+    --color-yellow-rgb: var(--yellow-3-rgb);
+    --color-yellow: var(--yellow-3);
+    --color-green-rgb: var(--green-4-rgb);
+    --color-green: var(--green-4);
+    --color-cyan-rgb: var(--cyan-4-rgb);
+    --color-cyan: var(--cyan-4);
+    --color-blue-rgb: var(--blue-4-rgb);
+    --color-blue: var(--blue-4);
+    --color-purple-rgb: var(--purple-4-rgb);
+    --color-purple: var(--purple-4);
+    --color-pink-rgb: var(--pink-4-rgb);
+    --color-pink: var(--pink-4);
 }

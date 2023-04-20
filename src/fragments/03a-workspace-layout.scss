@@ -18,6 +18,7 @@
   --he-text-on-accent-inactive: var(--gray-dark-7);
   --he-text-on-accent-active: var(--gray-light-5);
 }
+.theme-dark .print:not(.published-container),
 .theme-light {
   --ebw-tab-title-active-fg: white;
   --ebw-tab-title-active-bg: var(--secondary-accent-4);
@@ -125,7 +126,6 @@ body:not(.is-mobile) .mod-right-split.is-floating {
     }
   }
 }
-
 // For stacked tabs resize and align the icons with the view header
 // Hide the view header title
 body.is-focused,

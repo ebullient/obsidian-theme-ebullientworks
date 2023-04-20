@@ -150,25 +150,27 @@ settings:
         - secondary-accent-custom
 */
 
-@import 'fragments/01-colors.scss';
-@import 'fragments/02-fonts.scss';
+@import 'fragments/01-color-palette';
+@import 'fragments/01a-color-accents';
+@import 'fragments/02-fonts';
 
-@import 'fragments/03-core-theme-dark.scss';
-@import 'fragments/03-core-theme-light.scss';
-@import 'fragments/03a-workspace-layout.scss';
-@import 'fragments/03c-modal-input.scss';
-@import 'fragments/03d-graph-view.scss';
+@import 'fragments/03-core-theme-dark';
+@import 'fragments/03-core-theme-light';
 
-@import 'fragments/04-headings-hr-tags.scss';
-@import 'fragments/05-text-links.scss';
+@import 'fragments/03a-workspace-layout';
+@import 'fragments/03c-modal-input';
+@import 'fragments/03d-graph-view';
 
-@import 'fragments/06-lists-checkboxes.scss';
-@import 'fragments/08-blockquote-callouts.scss';
-@import 'fragments/09-codeblocks.scss';
-@import 'fragments/10-images-embeds.scss';
+@import 'fragments/04-headings-hr-tags';
+@import 'fragments/05-text-links';
 
-@import 'fragments/12-calendar-day-planner-tracker.scss';
-@import 'fragments/13-timelines.scss';
-@import 'fragments/14-frontmatter.scss';
-@import 'fragments/15-table.scss';
+@import 'fragments/06-lists-checkboxes';
+@import 'fragments/08-blockquote-callouts';
+@import 'fragments/09-codeblocks';
+@import 'fragments/10-images-embeds';
+
+@import 'fragments/12-calendar-day-planner-tracker';
+@import 'fragments/13-timelines';
+@import 'fragments/14-frontmatter';
+@import 'fragments/15-table';
 

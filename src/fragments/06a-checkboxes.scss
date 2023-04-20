@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use '06a-checkbox-mixin' as chkbox;
 
 div[data-task] > label.task-list-label,
 ul > li.task-list-item,
@@ -13,11 +14,11 @@ ul > li.task-list-item > p  {
   }
 }
 
-@include custom-task-text("x", var(--checkbox-checked), "✓", var(--font-normal), none, var(--text-normal), var(--font-text));
-@include custom-task-text("-", var(--checkbox-cancelled), "-", var(--font-normal), line-through, var(--text-faint));
-@include custom-task-text(">", var(--checkbox-deferred), ">", var(--font-normal), none);
-@include custom-task-text("R", var(--checkbox-review), "👀", var(--font-normal), none, var(--text-normal), var(--font-text));
-@include custom-task-text("r", var(--checkbox-review), "👀", var(--font-normal), none, var(--text-normal), var(--font-text));
-@include custom-task-text("?", var(--checkbox-question), "?", var(--font-bold), none);
-@include custom-task-text("!", var(--checkbox-important), "!", var(--font-extrabold), none);
-@include custom-task-background("/", var(--checkbox-in-progress), "linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%)");
+@include chkbox.custom-task-text("x", var(--checkbox-checked), "✓", var(--font-normal), none, var(--text-normal), var(--font-text));
+@include chkbox.custom-task-text("-", var(--checkbox-cancelled), "-", var(--font-normal), line-through, var(--text-faint));
+@include chkbox.custom-task-text(">", var(--checkbox-deferred), ">", var(--font-normal), none);
+@include chkbox.custom-task-text("R", var(--checkbox-review), "👀", var(--font-normal), none, var(--text-normal), var(--font-text));
+@include chkbox.custom-task-text("r", var(--checkbox-review), "👀", var(--font-normal), none, var(--text-normal), var(--font-text));
+@include chkbox.custom-task-text("?", var(--checkbox-question), "?", var(--font-bold), none);
+@include chkbox.custom-task-text("!", var(--checkbox-important), "!", var(--font-extrabold), none);
+@include chkbox.custom-task-background("/", var(--checkbox-in-progress), "linear-gradient(135deg, transparent 50%, var(--checkbox-in-progress) 50%)");

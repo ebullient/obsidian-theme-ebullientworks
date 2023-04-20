@@ -13,7 +13,7 @@ body {
   --ebw-table-header-alt: var(--primary-accent-4);
   --ebw-row-alt: rgba(0, 0, 0, .2);
 }
-.theme-dark .print,
+.theme-dark .print:not(.published-container),
 .theme-light {
   --table-header-color: var(--gray-dark-7);
   --table-header-background: var(--primary-accent-1);
@@ -22,7 +22,6 @@ body {
   --ebw-table-header-alt: rgba(var(--primary-accent-4-rgb), .4);
   --ebw-row-alt: rgba(0, 0, 0, .05);
 }
-
 .markdown-rendered table.table-view-table.dataview {
   > thead {
     > tr > th,

@@ -1,7 +1,7 @@
 .theme-dark {
   --code-normal: var(--blue-2);
 }
-.theme-dark .print,
+.theme-dark .print:not(.published-container),
 .theme-light {
   --code-normal: var(--blue-4);
 }

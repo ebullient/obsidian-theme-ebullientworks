@@ -8,7 +8,7 @@ body {
   --checkbox-cancelled: var(--gray-dark-3);
   --checkbox-hover: var(--gray-dark-2);
 }
-.theme-dark .print,
+.theme-dark .print:not(.published-container),
 .theme-light {
   --checkbox-checked: var(--green-3);
   --checkbox-deferred: var(--blue-3);
@@ -33,6 +33,5 @@ body {
 
 body:not(.ebullientworks-nix-checkbox) {
   /** Use style settings to disable custom checkboxes in the theme */
-  @import '06a-checkbox-mixin.scss';
-  @import '06a-checkboxes.scss';
+  @import '06a-checkboxes';
 }
