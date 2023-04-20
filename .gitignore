@@ -4,9 +4,11 @@ package-lock.json
 .dev-target.json
 app*.css
 
+dist
 linked
 src/fragments/2*
 src/fragments/3*
+!src/fragments/30*
 src/fragments/4*
 
 allthethings*

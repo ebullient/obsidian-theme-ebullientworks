@@ -21,7 +21,7 @@ gulp.task("css", () => {
                 path.extname = ".css";
             })
         )
-        .pipe(gulp.dest("./"));
+        .pipe(gulp.dest("./dist"));
 });
 
 const watchCss = () =>
@@ -36,10 +36,11 @@ function reload(done) {
     //    "other.css": "thatOtherPlace/"
     // }
     const devTargets = path.resolve(__dirname, '.dev-target.json');
+    const distDir = path.resolve(__dirname, 'dist');
     if (fs.existsSync(devTargets)) {
         const data = JSON.parse(fs.readFileSync(devTargets, 'utf-8'));
         for (const [source, targets] of Object.entries(data)) {
-            const sourcePath = path.resolve(__dirname, source);
+            const sourcePath = path.resolve(distDir, source);
             if (Array.isArray(targets)) {
                 targets.forEach((t) => {
                     console.log(`copy ${source} to ${t}`);

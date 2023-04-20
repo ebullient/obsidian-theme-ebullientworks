@@ -28,9 +28,33 @@ When you open the issue, include a screenshot or other short screen recording of
 and include any information you gathered from steps 2 and 3 so we can figure out how to get everything
 to play nicely. ;)
 
+## Building the theme
+
+- Use `npm run build` to compile Sass in `src` into css in `dist`.
+- Use `npm run dev` to watch for changes in `src` and compile them into `dist`.
+
+    `npm run dev` can also copy watched files into test vaults.
+    Create a `.dev-target.json` that uses an output file in the dist directory as a key, and provides a string or array of desired targets as the value:
+    
+    ```json
+    {
+       "theme.css": [ 'test1/MyTheme.css', '...' ],
+       "other.css": "thatOtherPlace/"
+    }
+    ```
+    Notes:
+      - The source path should be relative to the `dist` directory.
+      - Target paths should be relative to the project root.
+
+
+
 ## PRs
 
-Pull Requests are welcome! This theme uses Sass (`npm run build` to update the `obsidian.css` file). 
-Try to keep changes as compact as you can, and avoid using `!important`.
+Pull Requests are welcome! 
+
+This theme uses Sass:
+
+- Keep changes as compact as you can. Do not use `!important`.
+- Release builds create the `*.css` files in the root directory. Do not edit them directly.
 
 Thank you! 🍻

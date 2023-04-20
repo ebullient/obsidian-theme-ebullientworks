@@ -9,7 +9,7 @@
   "scripts": {
     "build": "npx gulp css",
     "dev": "npx gulp dev",
-    "version": "auto-changelog -p && npx gulp css && git add -u",
+    "version": "auto-changelog -p && npx gulp css && cp -v dist/*.css . && git add -u",
     "release-notes": "run() { auto-changelog --stdout --hide-credit --hide-empty-releases --template .github/changelog.hbs -v $1 --starting-version $1  > release-notes.md; }; run",
     "test-version": "auto-changelog -p"
   },
