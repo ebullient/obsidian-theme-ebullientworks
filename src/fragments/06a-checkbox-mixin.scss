@@ -32,31 +32,33 @@
   $text-decoration: none,
   $li-fg: var(--text-normal)
 ) {
+  div[data-task="#{$character}"],
+  li.task-list-item[data-task="#{$character}"],
+  li.task-list-item[data-task="#{$character}"] > p {
+    color: $li-fg;
+    font-weight: $font-weight;
+    text-decoration: $text-decoration;
+  }
+  div[data-task="#{$character}"] > label.task-list-label,
+  li.task-list-item[data-task="#{$character}"],
+  li.task-list-item[data-task="#{$character}"] > p,
   .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
     --checkbox-marker-color: transparent;
     --checklist-done-decoration: #{$text-decoration};
   }
-  div[data-task="#{$character}"] > label.task-list-label,
-  ul > li.task-list-item[data-task="#{$character}"],
-  ul > li.task-list-item[data-task="#{$character}"] > p {
-    --checkbox-color: #{$rgb-color};
-    --checkbox-border-color: #{$rgb-color};
-    --checkbox-marker-color: transparent;
-    --checklist-done-decoration: #{$text-decoration};
-    color: $li-fg;
-    font-weight: $font-weight;
-    text-decoration: $text-decoration;
 
-    > input.task-list-item-checkbox[type=checkbox]:checked {
-      background: #{$background};
+  input[data-task="#{$character}"]:checked,
+  li[data-task="#{$character}"] > input[type=checkbox]:checked,
+  li[data-task="#{$character}"] > p > input[type=checkbox]:checked {
+    background: #{$background};
 
-      &::after {
-        -webkit-mask-image: none;
-        background: unset;
-        content: ' ';
-      }
+    &:after {
+      transform: none;
+      -webkit-mask-image: none;
+      background: unset;
+      content: ' ';
     }
   }
 }
@@ -70,6 +72,16 @@
   $li-fg: var(--text-normal),
   $font-family: var(--font-monospace)
 ) {
+  div[data-task="#{$character}"],
+  li.task-list-item[data-task="#{$character}"],
+  li.task-list-item[data-task="#{$character}"] > p {
+    color: $li-fg;
+    font-weight: $font-weight;
+    text-decoration: $text-decoration;
+  }
+  div[data-task="#{$character}"] > label.task-list-label,
+  li.task-list-item[data-task="#{$character}"],
+  li.task-list-item[data-task="#{$character}"] > p,
   .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="#{$character}"] {
     --checkbox-color: #{$rgb-color};
     --checkbox-border-color: #{$rgb-color};
@@ -77,35 +89,26 @@
     --checklist-done-decoration: #{$text-decoration};
   }
 
-  div[data-task="#{$character}"] > label.task-list-label,
-  ul > li.task-list-item[data-task="#{$character}"],
-  ul > li.task-list-item[data-task="#{$character}"] > p {
-    --checkbox-color: #{$rgb-color};
-    --checkbox-border-color: #{$rgb-color};
-    --checkbox-marker-color: transparent;
-    --checklist-done-decoration: #{$text-decoration};
-    color: $li-fg;
-    font-weight: $font-weight;
-    text-decoration: $text-decoration;
+  input[type=checkbox][data-task="#{$character}"]:checked,
+  li[data-task="#{$character}"] > input[type=checkbox]:checked,
+  li[data-task="#{$character}"] > p > input[type=checkbox]:checked {
+    background-color: unset;
+    background: unset;
 
-    > input.task-list-item-checkbox[type=checkbox]:checked {
-      background-color: unset;
+    &:after {
+      transform: none;
+      -webkit-mask-image: none;
       background: unset;
-
-      &::after {
-        -webkit-mask-image: none;
-        font-family: #{$font-family};
-        background: unset;
-        position: absolute;
-        text-align: center;
-        font-weight: $font-weight;
-        font-size: calc(var(--checkbox-size) - 2px);
-        left: 50%;
-        margin-left: calc(-1 * (var(--checkbox-size) / 2));
-        line-height: var(--checkbox-size);
-        color: var(--checkbox-color);
-        content: '#{$emoji}';
-      }
+      position: absolute;
+      text-align: center;
+      font-weight: $font-weight;
+      font-size: calc(var(--checkbox-size) - 2px);
+      font-family: #{$font-family};
+      line-height: var(--checkbox-size);
+      left: 50%;
+      margin-left: calc(-1 * (var(--checkbox-size) / 2));
+      color: var(--checkbox-color);
+      content: '#{$emoji}';
     }
   }
 }
