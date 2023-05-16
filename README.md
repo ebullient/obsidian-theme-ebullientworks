@@ -9,22 +9,23 @@
 <td><a href="#colors">Colors</a></td>
 <td><a href="#creating-your-own-accent-colors">Custom accents</a></td></tr></table>
 
-![](https://raw.githubusercontent.com/ebullient/obsidian-theme-ebullientworks/main/images/ebullientworks-theme.jpg)
+![Ebullient Works Theme](https://raw.githubusercontent.com/ebullient/obsidian-theme-ebullientworks/main/images/ebullientworks-theme.jpg)
 
-This is a dark and light theme for [Obsidian.md](https://obsidian.md), a note taking app. 
+This is a dark and light theme for [Obsidian](https://obsidian.md), 
+a note-taking application and Obsidian Publish, a static site generator. 
 
-Headers are styled and sized (for mobile and not) with and without stacked tabs. Modals, tables, and other panels are also styled. 
+Headers are styled, sized, and responsive (meaning friendly for all screens) with and without stacked tabs enabled.
+Modals, tables, and other panels are also styled. 
 
 Some light styling has also been applied for the following community plugins: 
 
-- admonition
-- calendar
-- day planner
-- sliding panes
-- timelines
-- tracker
+- [Admonition](https://github.com/valentine195/obsidian-admonition)
+- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
+- [Day Planner](https://github.com/lynchjames/obsidian-day-planner)
+- [Timelines](https://github.com/George-debug/obsidian-timeline)
+- [Tracker](https://github.com/pyrochlore/obsidian-tracker)
 
-This theme is compatible with custom task snippets from the [Snippitor](https://github.com/ebullient/obsidian-snippetor).
+This theme is compatible with custom task snippets from the [Snippetor](https://github.com/ebullient/obsidian-snippetor).
 
 ## Style Settings
 
@@ -40,7 +41,8 @@ This theme does support style settings. Settable attributes:
     Set this to true if the view header is visible, and you want the controls on the left side of the tab contents, rather than the right.
 
 - "Show external links in edit mode"
-    If true, external links (or the content of markdown links) will be shown in edit mode. External links are hidden by default.
+    If true, external links (or the content of Markdown links) will be shown in edit mode. 
+    External links are hidden by default.
 
 - (0.1.8) "Float front-matter in a box to the right"
     If true, front-matter in preview mode will be collapsed in a top-right container.
@@ -88,7 +90,10 @@ This theme provides styles for the following checkbox values:
 
 ## Admonitions and callouts
 
-As of version 6.5.1, you can disable the color picker for admonitions (globally or per-admonition) to have colors picked up from CSS styles instead. All of the default admonitions, in addition to two additional custom types, have been styled.
+As of version 6.5.1,
+you can disable the color picker for admonitions (globally or per-admonition)
+to have colors picked up from CSS styles instead.
+All the default admonitions, in addition to two additional custom types, have been styled.
 
 Those two custom types are:
 
@@ -102,21 +107,21 @@ Those two custom types are:
     
 Here is what they look like (Callouts and Admonitions): 
 
-![](images/admonitions.png)
+![Admonitions and Callouts](images/admonitions.png)
 
 ## Tables
 
-![](images/table-styles.png)
+![Table Styles](images/table-styles.png)
 
-To constrain table content to the width of the pane, use: 
-```
+To constrain the table content to the width of the pane, use: 
+```yaml
 ---
 cssclass: force-wrap
 ---
 ```
 
 To prevent column headers from wrapping, use: 
-```
+```yaml
 ---
 cssclass: word-wrap
 ---
@@ -126,7 +131,7 @@ cssclass: word-wrap
 
 To make embedded content "invisible" (same background color as the including page and much less padding), use the `invisible-embed` css class:
 
-```
+```yaml
 ---
 cssclass: invisible-embed
 ---
