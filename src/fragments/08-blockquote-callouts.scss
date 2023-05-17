@@ -29,7 +29,6 @@ body {
 
   --blockquote-border-color: var(--secondary-accent-4);
 }
-.theme-dark .print:not(.published-container),
 .theme-light {
   --blockquote-border-color: var(--secondary-accent-2);
   --ebw-callout-toc: 159, 159, 159; // gray-dark-1
@@ -44,11 +43,27 @@ body {
   --ebw-callout-danger: 167,92,112; // pink-4
   --ebw-callout-failure: 188,83,69; // red-4
 }
-.markdown-rendered blockquote {
-  padding: var(--callout-content-padding);
-  border-radius: var(--callout-radius);
-}
 
+.rendered-widget,
+.markdown-rendered,
+.markdown-preview-section {
+  blockquote {
+    overflow-x: auto;
+    padding: var(--callout-content-padding);
+    border-radius: var(--callout-radius);
+
+    > :first-child {
+      margin-top: 0.5em;
+    }
+    > :last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+.admonition {
+  margin: 1em 0;
+  padding: var(--callout-padding);
+}
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
@@ -109,7 +124,6 @@ body {
   --callout-icon: layout-list;
   --callout-color: var(--ebw-callout-toc);
 }
-.theme-dark .print:not(.published-container),
 .theme-light {
   .callout[data-callout="info"],
   .callout[data-callout="todo"],
@@ -222,23 +236,11 @@ body {
     }
   }
 }
-.admonition {
-  margin: 1em 0;
-  padding: var(--callout-padding);
-}
-.rendered-widget,
-.markdown-rendered,
-.markdown-preview-section {
-  blockquote {
-    overflow-x: auto;
-    padding: var(--callout-content-padding);
-
-    > :first-child {
-      margin-top: 0.5em;
-    }
-    > :last-child {
-      margin-bottom: 0.5em;
-    }
+div.modal-content {
+  .callout[data-callout="toc"] {
+    float: unset;
+    min-width: unset;
+    margin-left: unset;
   }
 }
 div.popover {

@@ -40,15 +40,15 @@ function reload(done) {
     if (fs.existsSync(devTargets)) {
         const data = JSON.parse(fs.readFileSync(devTargets, 'utf-8'));
         for (const [source, targets] of Object.entries(data)) {
-            const sourcePath = path.resolve(distDir, source);
+            const filePath = path.resolve(distDir, source);
             if (Array.isArray(targets)) {
                 targets.forEach((t) => {
-                    console.log(`copy ${source} to ${t}`);
-                    fs.copyFileSync(sourcePath, path.resolve(__dirname, t));
+                    console.log(`copy ${filePath} to\n\t${t}`);
+                    fs.copyFileSync(filePath, path.resolve(__dirname, t));
                 })
             } else {
-                console.log(`copy ${source} to ${targets}`);
-                fs.copyFileSync(sourcePath, path.resolve(__dirname, targets));
+                console.log(`copy ${filePath} to ${targets}`);
+                fs.copyFileSync(filePath, path.resolve(__dirname, targets));
             }
         }
     }

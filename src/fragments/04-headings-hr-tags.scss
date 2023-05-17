@@ -35,7 +35,6 @@ body {
   --h5-color: var(--purple-3);
   --h6-color: var(--pink-3);
 }
-.theme-dark .print:not(.published-container),
 .theme-light {
   --h1-color: var(--yellow-3);
   --h2-color: var(--green-4);
@@ -142,8 +141,7 @@ body:not(.ebullientworks-nix-tags) {
     --tag-color: var(--color-accent-2);
     --tag-color-hover: var(--tag-3);
   }
-  &.theme-dark .print:not(.published-container),
-  &.theme-light {
+  &  &.theme-light {
     --tag-color: var(--color-accent);
     --tag-color-hover: var(--tag-4);
   }
