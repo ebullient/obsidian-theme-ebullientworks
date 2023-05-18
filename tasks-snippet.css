@@ -1,13 +1,7 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.7 by @ebullient
+Ebullientworks 0.7.8. A dark and light theme for Obsidian.
 
-A dark and light theme for Obsidian.
-
-Sponsor my work:
-https://www.buymeacoffee.com/ebullient
-
-Readme:
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
 body {
@@ -21,7 +15,6 @@ body {
   --checkbox-hover: rgb(137, 137, 137);
 }
 
-.theme-dark .print:not(.published-container),
 .theme-light {
   --checkbox-cancelled: rgb(159, 159, 159);
   --checkbox-hover: rgb(137, 137, 137);
