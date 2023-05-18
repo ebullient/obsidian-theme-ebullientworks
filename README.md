@@ -90,21 +90,28 @@ This theme provides styles for the following checkbox values:
 
 ## Admonitions and callouts
 
-As of version 6.5.1,
+As of Admonitions version 6.5.1,
 you can disable the color picker for admonitions (globally or per-admonition)
 to have colors picked up from CSS styles instead.
+
 All the default admonitions, in addition to two additional custom types, have been styled.
 
-Those two custom types are:
+Custom admonitions:
+
+- `chat`
+    Styled with a speech bubble to represent a conversation of some kind
+
+- `excerpt`
+    Styled similarly to quote, for a captured text snippet.
 
 - `reference`  
     Styled for inline reference metadata. Compact, monospace font.  
-    To use this style, create a `reference` admonition (I recommend you use the closed book icon, but take your pick).
     
 - `toc`
     Styled to create a floating (hover:right) section for Table of Contents
-    To use this style, create a `toc` admonition (I recommend you use the list icon, but take your pick).
-    
+
+You can import these admonitions using [admonitions.json](https://raw.githubusercontent.com/ebullient/obsidian-theme-ebullientworks/main/admonitions.json)
+
 Here is what they look like (Callouts and Admonitions): 
 
 ![Admonitions and Callouts](images/admonitions.png)
