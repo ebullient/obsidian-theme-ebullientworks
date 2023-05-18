@@ -38,7 +38,6 @@ body {
   --link-unresolved-decoration-style: dotted;
   --link-unresolved-decoration-color: var(--ebw-link-underline);
 }
-/** BUG */
 .cm-s-obsidian span.cm-quote.cm-em {
   color: var(--italic-color);
 }
@@ -105,8 +104,7 @@ strong a:hover,
   background-size: .9em;
 }
 
-/* Collapse external links / markdown links in edit mode: CodeMirrorOptions + Legacy editor */
-/* CM6 editor */
+/* Collapse external links / markdown links in edit mode */
 body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
   div.cm-line:not(.cm-active) {
     > .cm-string.cm-url:not(.cm-formatting) {

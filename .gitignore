@@ -5,10 +5,9 @@ app*.css
 
 dist
 linked
-src/fragments/2*
-src/fragments/3*
-!src/fragments/30*
-src/fragments/4*
+src/fragments/_5*
+src/fragments/_6*
+src/dnd5e
 
 allthethings*
 campaign*

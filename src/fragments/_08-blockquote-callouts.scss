@@ -16,13 +16,14 @@ body {
 
   --ebw-callout-tip: 134, 196, 193; // cyan-2
   --ebw-callout-question: 89, 174, 170; // cyan-3
+  --ebw-callout-chat: 61, 126, 123; // cyan-4
 
   --ebw-callout-abstract: 199, 178, 195; // purple-2
   --ebw-callout-bug: 180, 152, 175; // purple-3
   --ebw-callout-example: 142, 103, 135; // purple-4
 
-  --ebw-callout-danger: 211, 141, 160; // pink-3
-  --ebw-callout-failure: 187, 79, 108; // pink-4
+  --ebw-callout-danger: 230,133,132; // red-3
+  --ebw-callout-failure: 211,141,159; // pink-3
 
   --ebw-callout-reference: 183, 183, 183; // gray
   --ebw-callout-toc: 235, 235, 235; // gray-light-4
@@ -41,7 +42,6 @@ body {
   --ebw-callout-tip: 61, 126, 123; // cyan-4
 
   --ebw-callout-danger: 167,92,112; // pink-4
-  --ebw-callout-failure: 188,83,69; // red-4
 }
 
 .rendered-widget,
@@ -115,6 +115,9 @@ body {
 .callout[data-callout="quote"],
 .callout[data-callout="cite"] {
   --callout-color: var(--ebw-callout-quote);
+}
+.callout[data-callout="chat"] {
+  --callout-color: var(--ebw-callout-chat);
 }
 .callout[data-callout="reference"] {
   --callout-icon: library;

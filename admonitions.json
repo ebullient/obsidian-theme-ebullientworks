@@ -1,0 +1,42 @@
+[
+  {
+    "type": "chat",
+    "color": "171, 197, 176",
+    "icon": {
+        "name": "comment",
+        "type": "font-awesome"
+    },
+    "injectColor": false,
+    "copy": false
+  },
+  {
+      "type": "excerpt",
+      "color": "161, 126, 155",
+      "icon": {
+          "name": "quote-left",
+          "type": "font-awesome"
+      },
+      "injectColor": false,
+      "copy": false
+  },
+  {
+    "type": "reference",
+    "color": "183, 194, 204",
+    "icon": {
+        "name": "book",
+        "type": "font-awesome"
+    },
+    "injectColor": false,
+    "copy": false
+  },
+  {
+    "type": "toc",
+    "color": "#7d7d7d",
+    "icon": {
+      "type": "obsidian",
+      "name": "lucide-list-ordered"
+    },
+    "injectColor": false,
+    "copy": false
+  }
+]
