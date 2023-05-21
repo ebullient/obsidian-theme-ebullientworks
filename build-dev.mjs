@@ -29,7 +29,7 @@ try {
       return;
     } else if (Array.isArray(targets)) {
         targets.forEach((t) => {
-            console.log(`copy ${key} to\n\t${t}`);
+            console.log(`copy ${key} to ${t}`);
             copyFileSync(f, path.resolve(t));
         })
     } else {
