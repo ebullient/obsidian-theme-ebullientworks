@@ -4,7 +4,7 @@ body {
   --callout-content-padding: 0 var(--size-4-2);
   --callout-title-padding: var(--size-4-2);
   --callout-border-opacity: 0.4;
-  --callout-border-width: 0 0.05rem 0 0.05rem;
+  --callout-border-width: 0 0.05rem 0 0.1rem;
   --blockquote-border-thickness: 0.05rem;
 
   --ebw-callout-warning: 234, 175, 0; // yellow-3
@@ -63,6 +63,38 @@ body {
 .admonition {
   margin: 1em 0;
   padding: var(--callout-padding);
+}
+.is-live-preview {
+  .admonition {
+    margin: 0;
+    padding: var(--callout-padding);
+
+    .admonition-content {
+      > :first-child {
+        margin-top: 0.5em;
+      }
+      > :last-child {
+        margin-bottom: 0.5em;
+      }
+      > * {
+        margin-top: initial;
+        margin-bottom: initial;
+      }
+      > * br {
+        display: none;
+      }
+      ul,
+      ol {
+        white-space: normal;
+      }
+      .math-block > mjx-container {
+        padding: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
