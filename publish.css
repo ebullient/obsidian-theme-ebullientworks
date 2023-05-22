@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 /*
-Ebullientworks 0.7.8. A dark and light theme for Obsidian.
+Ebullientworks 0.7.9. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -340,28 +340,28 @@ h1,
   font-variant-caps: var(--ebw-header-font-caps-variant);
 }
 
-.HyperMD-header .is-live-prevew .HyperMD-header .cm-header::before,
+.HyperMD-header .is-live-preview .HyperMD-header .cm-header::before,
 .HyperMD-header h1::before,
 .HyperMD-header h2::before,
 .HyperMD-header h3::before,
 .HyperMD-header h4::before,
 .HyperMD-header h5::before,
 .HyperMD-header h6::before,
-.markdown-rendered .is-live-prevew .HyperMD-header .cm-header::before,
+.markdown-rendered .is-live-preview .HyperMD-header .cm-header::before,
 .markdown-rendered h1::before,
 .markdown-rendered h2::before,
 .markdown-rendered h3::before,
 .markdown-rendered h4::before,
 .markdown-rendered h5::before,
 .markdown-rendered h6::before,
-.workspace .is-live-prevew .HyperMD-header .cm-header::before,
+.workspace .is-live-preview .HyperMD-header .cm-header::before,
 .workspace h1::before,
 .workspace h2::before,
 .workspace h3::before,
 .workspace h4::before,
 .workspace h5::before,
 .workspace h6::before,
-.print .is-live-prevew .HyperMD-header .cm-header::before,
+.print .is-live-preview .HyperMD-header .cm-header::before,
 .print h1::before,
 .print h2::before,
 .print h3::before,
@@ -531,7 +531,7 @@ body:not(.ebullientworks-nix-tags) .cm-s-obsidian .cm-header-6.cm-hmd-codeblock.
 
 body {
   --link-decoration: underline;
-  --link-decoration-hover: underline
+  --link-decoration-hover: underline;
   --link-external-decoration: underline;
   --link-external-decoration-hover: underline;
   --link-decoration-color: var(--ebw-link-underline);
@@ -1022,7 +1022,7 @@ body {
   --callout-content-padding: 0 var(--size-4-2);
   --callout-title-padding: var(--size-4-2);
   --callout-border-opacity: 0.4;
-  --callout-border-width: 0 0.05rem 0 0.05rem;
+  --callout-border-width: 0 0.05rem 0 0.1rem;
   --blockquote-border-thickness: 0.05rem;
   --ebw-callout-warning: 234, 175, 0;
   --ebw-callout-success: 139, 167, 145;
@@ -1075,6 +1075,34 @@ body {
 .admonition {
   margin: 1em 0;
   padding: var(--callout-padding);
+}
+
+.is-live-preview .admonition {
+  margin: 0;
+  padding: var(--callout-padding);
+}
+.is-live-preview .admonition .admonition-content > :first-child {
+  margin-top: 0.5em;
+}
+.is-live-preview .admonition .admonition-content > :last-child {
+  margin-bottom: 0.5em;
+}
+.is-live-preview .admonition .admonition-content > * {
+  margin-top: initial;
+  margin-bottom: initial;
+}
+.is-live-preview .admonition .admonition-content > * br {
+  display: none;
+}
+.is-live-preview .admonition .admonition-content ul,
+.is-live-preview .admonition .admonition-content ol {
+  white-space: normal;
+}
+.is-live-preview .admonition .admonition-content .math-block > mjx-container {
+  padding: 0;
+}
+.is-live-preview .admonition .admonition-content:last-child {
+  margin-bottom: 0;
 }
 
 .callout[data-callout=abstract],
