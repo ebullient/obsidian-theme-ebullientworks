@@ -8,6 +8,7 @@
   "homepage": "https://github.com/ebullient",
   "scripts": {
     "build": "npx sass --no-source-map --stop-on-error src:dist",
+    "push": "node build-push.mjs",
     "dev": "npm-run-all --parallel watch:scss watch:css",
     "watch:scss": "npx sass --watch --embed-source-map src:dist",
     "watch:css": "node build-dev.mjs",

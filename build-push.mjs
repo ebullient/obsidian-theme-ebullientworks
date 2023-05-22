@@ -1,6 +1,5 @@
 import path from 'node:path';
 import { copyFileSync, existsSync, readFileSync } from 'fs';
-import chokidar  from 'chokidar';
 
 const devTargets = path.resolve('./.dev-target.json');
 const distDir = path.resolve('./dist');
@@ -12,29 +11,19 @@ try {
   }
 
   const data = JSON.parse(readFileSync(devTargets, 'utf-8'));
-
-  // Initialize watcher.
-  chokidar.watch(distDir, {
-    awaitWriteFinish: {
-      stabilityThreshold: 2000,
-      pollInterval: 100
-    }
-  }).on('change', (f, stats) => {
-    const key = path.basename(f);
+  Object.keys(data).forEach((key) => { 
+    const srcFile = path.resolve(distDir, key);
     const targets = data[key];
-    if (stats) {
-      console.log(`File ${f} changed size to ${stats.size}`);
-    }
     if (targets === undefined) {
       return;
     } else if (Array.isArray(targets)) {
         targets.forEach((t) => {
             console.log(`copy ${key} to ${t}`);
-            copyFileSync(f, path.resolve(t));
+            copyFileSync(srcFile, path.resolve(t));
         })
     } else {
         console.log(`copy ${key} to ${targets}`);
-        copyFileSync(f, path.resolve(targets));
+        copyFileSync(srcFile, path.resolve(targets));
     }
   });
 } catch (err) {
