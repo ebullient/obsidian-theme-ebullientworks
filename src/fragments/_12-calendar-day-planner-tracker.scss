@@ -29,15 +29,33 @@
   .day.today:hover {
     color: var(--gray-dark-5);
   }
+  .calendarium .view-state.active {
+    color: var(--text-on-accent);
+  }
 }
 // ------------------------------------------------------
 // Calendar, Fantasy Calendar
 // ------------------------------------------------------
-#calendar-container span.year {
-  color: var(--calendar-year);
-}
-#calendar-container span.month {
-  color: var(--calendar-month);
+#calendar-container,
+.calendarium {
+  h3::before {
+    display: none;
+  }
+  h3.calendar-name {
+    font-size: 1.2em;
+    font-family: var(--font-interface);
+    font-variant-caps: var(--ebw-header-font-caps-variant);
+  }
+  .calendarium-title {
+    font-size: 1em;
+    font-family: var(--font-interface);
+  }
+  span.year {
+    color: var(--calendar-year);
+  }
+  span.month {
+    color: var(--calendar-month);
+  }
 }
 // ------------------------------------------------------
 // Tracker
