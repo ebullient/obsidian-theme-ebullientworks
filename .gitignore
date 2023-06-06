@@ -8,6 +8,7 @@ linked
 src/fragments/_5*
 src/fragments/_6*
 src/dnd5e
+src/dnd5e-compendium.scss
 
 allthethings*
 campaign*
