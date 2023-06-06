@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 /*
-Ebullientworks 0.7.9. A dark and light theme for Obsidian.
+Ebullientworks 0.7.10. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -2014,12 +2014,31 @@ div[src$="#small-right"] {
 .theme-light .day.today:hover {
   color: var(--gray-dark-5);
 }
-
-#calendar-container span.year {
-  color: var(--calendar-year);
+.theme-light .calendarium .view-state.active {
+  color: var(--text-on-accent);
 }
 
-#calendar-container span.month {
+#calendar-container h3::before,
+.calendarium h3::before {
+  display: none;
+}
+#calendar-container h3.calendar-name,
+.calendarium h3.calendar-name {
+  font-size: 1.2em;
+  font-family: var(--font-interface);
+  font-variant-caps: var(--ebw-header-font-caps-variant);
+}
+#calendar-container .calendarium-title,
+.calendarium .calendarium-title {
+  font-size: 1em;
+  font-family: var(--font-interface);
+}
+#calendar-container span.year,
+.calendarium span.year {
+  color: var(--calendar-year);
+}
+#calendar-container span.month,
+.calendarium span.month {
   color: var(--calendar-month);
 }
 
