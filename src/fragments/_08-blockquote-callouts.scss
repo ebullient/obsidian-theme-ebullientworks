@@ -96,6 +96,10 @@ body {
     }
   }
 }
+.markdown-source-view.mod-cm6 .admonition-parent > .edit-block-button {
+  right: calc(var(--size-4-2) + var(--icon-size) + 6px);
+  top: calc(var(--size-2-2) + 2px);
+}
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
