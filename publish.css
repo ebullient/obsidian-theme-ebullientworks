@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 /*
-Ebullientworks 0.7.10. A dark and light theme for Obsidian.
+Ebullientworks 0.7.11. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -735,9 +735,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=x] > p > input[type=checkbox
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=x]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=x] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=x] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=x]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=x] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=x] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -751,6 +751,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=x] > p > input[type=checkbox
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: "✓";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="-"],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task="-"],
@@ -774,9 +775,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="-"] > p > input[type=checkb
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task="-"]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="-"] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="-"] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task="-"]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="-"] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="-"] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -790,6 +791,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="-"] > p > input[type=checkb
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: "-";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=">"],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task=">"],
@@ -813,9 +815,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=">"] > p > input[type=checkb
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=">"]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=">"] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=">"] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=">"]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=">"] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=">"] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -829,6 +831,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=">"] > p > input[type=checkb
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: ">";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=R],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task=R],
@@ -852,9 +855,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=R] > p > input[type=checkbox
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=R]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=R] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=R] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=R]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=R] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=R] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -868,6 +871,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=R] > p > input[type=checkbox
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: "👀";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task=r],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task=r],
@@ -891,9 +895,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=r] > p > input[type=checkbox
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=r]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=r] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task=r] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task=r]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=r] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task=r] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -907,6 +911,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task=r] > p > input[type=checkbox
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: "👀";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="?"],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task="?"],
@@ -930,9 +935,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="?"] > p > input[type=checkb
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task="?"]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="?"] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="?"] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task="?"]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="?"] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="?"] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -946,6 +951,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="?"] > p > input[type=checkb
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: "?";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="!"],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task="!"],
@@ -969,9 +975,9 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="!"] > p > input[type=checkb
   background-color: unset;
   background: unset;
 }
-body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task="!"]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="!"] > input[type=checkbox]:checked:after,
-body:not(.ebullientworks-nix-checkbox) li[data-task="!"] > p > input[type=checkbox]:checked:after {
+body:not(.ebullientworks-nix-checkbox) input[type=checkbox][data-task="!"]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="!"] > input[type=checkbox]:checked::after,
+body:not(.ebullientworks-nix-checkbox) li[data-task="!"] > p > input[type=checkbox]:checked::after {
   transform: none;
   -webkit-mask-image: none;
   background: unset;
@@ -985,6 +991,7 @@ body:not(.ebullientworks-nix-checkbox) li[data-task="!"] > p > input[type=checkb
   margin-left: calc(-1 * var(--checkbox-size) / 2);
   color: var(--checkbox-color);
   content: "!";
+  display: block;
 }
 body:not(.ebullientworks-nix-checkbox) div[data-task="/"],
 body:not(.ebullientworks-nix-checkbox) li.task-list-item[data-task="/"],
@@ -1103,6 +1110,11 @@ body {
 }
 .is-live-preview .admonition .admonition-content:last-child {
   margin-bottom: 0;
+}
+
+.markdown-source-view.mod-cm6 .admonition-parent > .edit-block-button {
+  right: calc(var(--size-4-2) + var(--icon-size) + 6px);
+  top: calc(var(--size-2-2) + 2px);
 }
 
 .callout[data-callout=abstract],
