@@ -95,7 +95,7 @@
     background-color: unset;
     background: unset;
 
-    &:after {
+    &::after {
       transform: none;
       -webkit-mask-image: none;
       background: unset;
@@ -109,6 +109,7 @@
       margin-left: calc(-1 * (var(--checkbox-size) / 2));
       color: var(--checkbox-color);
       content: '#{$emoji}';
+      display: block;
     }
   }
 }
