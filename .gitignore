@@ -1,5 +1,6 @@
 /node_modules
 .DS_Store
+.idea
 .dev-target.json
 app*.css
 

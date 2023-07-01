@@ -1,4 +1,5 @@
 @use '06a-checkbox-mixin' as checkboxes;
+
 body {
   --checkbox-checked: var(--green-4);
   --checkbox-deferred: var(--blue-3);
@@ -18,17 +19,6 @@ body {
   --checkbox-question: var(--yellow-3);
   --checkbox-cancelled: var(--gray-dark-1);
   --checkbox-hover: var(--gray-light-2);
-}
-
-/** Set line-height on mobile */
-.mobile {
-  .markdown-preview-view {
-    ol,
-    ul {
-      display: block;
-      line-height: var(--line-height);
-    }
-  }
 }
 
 body:not(.ebullientworks-nix-checkbox) {

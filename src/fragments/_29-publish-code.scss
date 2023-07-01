@@ -1,11 +1,5 @@
 // Code Variables
 
-.frontmatter-container, .popover.hover-popover::after, .markdown-preview-view:not(.allow-fold-lists) {
-  &.list-collapse-indicator, &.allow-fold-headings .heading-collapse-indicator, &.show-frontmatter .frontmatter {
-    display: none;
-  }
-}
-
 pre[class*='language-'] {
   overflow: hidden;
 }

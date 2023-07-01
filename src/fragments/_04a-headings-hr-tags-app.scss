@@ -1,0 +1,84 @@
+@use '04-headings-hr-tags' as head;
+
+.cm-line:not(.HyperMD-codeblock) .cm-header-1,
+.HyperMD-list-line .cm-header-1 {
+  @include head.variants-caps-header-one;
+}
+
+.HyperMD-header,
+.workspace {
+  .is-live-preview .HyperMD-header .cm-header::before,
+  .workspace {
+    @include head.before-header-one;
+  }
+}
+
+.cm-s-obsidian {
+  .cm-header.cm-inline-code {
+    font-weight: var(--font-extralight);
+    font-weight: normal;
+    font-variant-caps: normal;
+  }
+
+  .cm-line:not(.HyperMD-codeblock) .cm-header.cm-inline-code {
+    font-size: 65% !important;
+  }
+
+  .cm-header-1.cm-hmd-codeblock:not(.cm-inline-code) {
+    color: var(--h1-color);
+  }
+
+  .cm-header-2.cm-hmd-codeblock:not(.cm-inline-code) {
+    color: var(--h2-color);
+  }
+
+  .cm-header-3.cm-hmd-codeblock:not(.cm-inline-code) {
+    color: var(--h3-color);
+  }
+
+  .cm-header-4.cm-hmd-codeblock:not(.cm-inline-code) {
+    color: var(--h4-color);
+  }
+
+  .cm-header-5.cm-hmd-codeblock:not(.cm-inline-code) {
+    color: var(--h5-color);
+  }
+
+  .cm-header-6.cm-hmd-codeblock:not(.cm-inline-code) {
+    color: var(--h6-color);
+  }
+}
+
+/* Tag formatting */
+
+.editor .cl-hashtag,
+.markdown-source-view.mod-cm6 .cm-hashtag,
+.cm-s-obsidian .cm-formatting.cm-hashtag,
+.cm-s-obsidian .cm-quote.cm-hashtag,
+.cm-s-obsidian .cm-hmd-codeblock.cm-hashtag  {
+  @include head.tags-reg;
+}
+
+.cm-s-obsidian {
+  .cm-header.cm-hashtag {
+    font-weight: var(--font-extralight);
+    font-variant-caps: normal;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: unset;
+  }
+
+  .cm-line:not(.HyperMD-codeblock) .cm-header.cm-hashtag {
+    font-size: 65% !important;
+  }
+
+  .cm-header-1.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+  .cm-header-2.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+  .cm-header-3.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+  .cm-header-4.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+  .cm-header-5.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
+  .cm-header-6.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code) {
+    color: var(--tag-color);
+  }
+}

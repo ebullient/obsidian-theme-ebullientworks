@@ -2,25 +2,26 @@
 @use 'fragments/00-stylesettings' as *;
 @use 'fragments/01-color-palette' as *;
 @use 'fragments/01a-color-accents' as *;
+
 @use 'fragments/02-fonts' as *;
 
-@use 'fragments/03-core-theme-dark' as *;
-@use 'fragments/03-core-theme-light' as *;
+@use 'fragments/03-core-themes-app' as *;
 
 @use 'fragments/03a-workspace-layout' as *;
 @use 'fragments/03c-modal-input' as *;
 @use 'fragments/03d-graph-view' as *;
+@use 'fragments/03f-metadata-view' as *;
 
-@use 'fragments/04-headings-hr-tags' as *;
-@use 'fragments/05-text-links' as *;
+@use 'fragments/04a-headings-hr-tags-app' as *;
+@use 'fragments/05a-text-links-app' as *;
+@use 'fragments/06b-lists-checkboxes-app' as *;
+@use 'fragments/08a-blockquote-callouts-app' as *;
+@use 'fragments/09a-codeblocks-app' as *;
+@use 'fragments/10a-images-embeds-app' as *;
 
-@use 'fragments/06-lists-checkboxes' as *;
-@use 'fragments/08-blockquote-callouts' as *;
-@use 'fragments/09-codeblocks' as *;
-@use 'fragments/10-images-embeds' as *;
 
 @use 'fragments/12-calendar-day-planner-tracker' as *;
 @use 'fragments/13-timelines' as *;
 @use 'fragments/14-frontmatter' as *;
 @use 'fragments/15-table' as *;
-
+// @use 'fragments/16-mermaid' as *;
