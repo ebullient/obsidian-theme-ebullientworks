@@ -1,0 +1,27 @@
+// Mermaid Core
+
+.mermaid {
+  font-family: var(--font-mermaid);
+  fill: red;
+
+  & .actor {
+      stroke: var(--background-modifier-border);
+      fill: var(--background-secondary);
+  }
+
+  & text.actor>tspan {
+    fill: var(--text-normal);
+    stroke: none;
+  }
+}
+.mermaid .statediagram {
+
+  & .nodelabel {
+    color: red;
+  }
+
+  & .edgeLabel {
+    background-color: black;
+    text-align: left;
+  }
+}

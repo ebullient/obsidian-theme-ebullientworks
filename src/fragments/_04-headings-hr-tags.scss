@@ -27,6 +27,7 @@ body {
   --h5-weight: 500;
   --h6-weight: 500;
 }
+
 .theme-dark {
   --h1-color: var(--yellow-2);
   --h2-color: var(--green-3);
@@ -35,6 +36,7 @@ body {
   --h5-color: var(--purple-3);
   --h6-color: var(--pink-3);
 }
+
 .theme-light {
   --h1-color: var(--yellow-3);
   --h2-color: var(--green-4);
@@ -43,37 +45,20 @@ body {
   --h5-color: var(--purple-4);
   --h6-color: var(--pink-4);
 }
-.cm-header-1 {
-  --heading-formatting: var(--h1-color)
-}
-.cm-header-2 {
-  --heading-formatting: var(--h2-color)
-}
-.cm-header-3 {
-  --heading-formatting: var(--h3-color)
-}
-.cm-header-4 {
-  --heading-formatting: var(--h4-color)
-}
-.cm-header-5 {
-  --heading-formatting: var(--h5-color)
-}
-.cm-header-6 {
-  --heading-formatting: var(--h6-color)
-}
 
-h1,
-.markdown-rendered h1,
-.cm-line:not(.HyperMD-codeblock) .cm-header-1,
-.HyperMD-list-line .cm-header-1 {
+
+@mixin variants-caps-header-one {
   font-variant-caps: var(--ebw-header-font-caps-variant);
 }
 
-.HyperMD-header,
-.markdown-rendered,
-.workspace,
-.print {
-  .is-live-preview .HyperMD-header .cm-header::before,
+
+h1,
+.markdown-rendered h1 {
+  @include variants-caps-header-one;
+}
+
+
+@mixin before-header-one {
   h1::before,
   h2::before,
   h3::before,
@@ -87,112 +72,54 @@ h1,
     vertical-align: middle;
     font-family: var(--font-default);
   }
-
-  h1 code,
-  h2 code,
-  h3 code,
-  h4 code,
-  h5 code,
-  h6 code {
-    font-weight: normal;
-    font-variant-caps: normal;
-    font-size: 75% !important;
-  }
 }
 
-.cm-s-obsidian {
-  .cm-header.cm-inline-code {
-    font-weight: var(--font-extralight);
-    font-weight: normal;
-    font-variant-caps: normal;
+.markdown-rendered,
+  .print {
+    @include before-header-one;
   }
 
-  .cm-line:not(.HyperMD-codeblock) .cm-header.cm-inline-code {
-    font-size: 65% !important;
-  }
-
-  .cm-header-1.cm-hmd-codeblock:not(.cm-inline-code) {
-    color: var(--h1-color);
-  }
-  .cm-header-2.cm-hmd-codeblock:not(.cm-inline-code) {
-    color: var(--h2-color);
-  }
-  .cm-header-3.cm-hmd-codeblock:not(.cm-inline-code) {
-    color: var(--h3-color);
-  }
-  .cm-header-4.cm-hmd-codeblock:not(.cm-inline-code) {
-    color: var(--h4-color);
-  }
-  .cm-header-5.cm-hmd-codeblock:not(.cm-inline-code) {
-    color: var(--h5-color);
-  }
-  .cm-header-6.cm-hmd-codeblock:not(.cm-inline-code) {
-    color: var(--h6-color);
-  }
-}
-
-/* Tag formatting */
+  /* Tag formatting */
 body:not(.ebullientworks-nix-tags) {
   --tag-background: transparent;
   --tag-background-hover: transparent;
   --tag-padding-x: 0;
 
-  &.theme-dark {
+  .theme-dark & {
     --tag-color: var(--color-accent-2);
     --tag-color-hover: var(--tag-3);
   }
-  &  &.theme-light {
+
+  .theme-light & {
     --tag-color: var(--color-accent);
     --tag-color-hover: var(--tag-4);
   }
+}
 
-  a.tag,
-  .editor .cl-hashtag,
-  .markdown-source-view.mod-cm6 .cm-hashtag,
-  .cm-s-obsidian .cm-formatting.cm-hashtag,
-  .cm-s-obsidian .cm-quote.cm-hashtag,
-  .cm-s-obsidian .cm-hmd-codeblock.cm-hashtag {
-    font-family: var(--ebw-font-tags);
-    color: var(--tag-color);
-  }
+@mixin tags-reg {
+  font-family: var(--ebw-font-tags);
+  color: var(--tag-color);
+}
 
-  h1 a.tag,
-  h2 a.tag,
-  h3 a.tag,
-  h4 a.tag,
-  h5 a.tag,
-  h6 a.tag {
-    font-variant-caps: normal;
-    font-weight: var(--font-extralight);
-    font-size: 75% !important;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    border-radius: unset;
-  }
 
-  .cm-s-obsidian {
-    .cm-header.cm-hashtag {
-      font-weight: var(--font-extralight);
-      font-variant-caps: normal;
-      padding: 0;
-      background-color: transparent;
-      border: none;
-      border-radius: unset;
-    }
+a.tag,
+.editor .cl-hashtag {
+  @include tags-reg;
+}
 
-    .cm-line:not(.HyperMD-codeblock) .cm-header.cm-hashtag {
-      font-size: 65% !important;
-    }
-    .cm-header-1.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-    .cm-header-2.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-    .cm-header-3.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-    .cm-header-4.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-    .cm-header-5.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-    .cm-header-6.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code) {
-      color: var(--tag-color);
-    }
-  }
+h1 a.tag,
+h2 a.tag,
+h3 a.tag,
+h4 a.tag,
+h5 a.tag,
+h6 a.tag {
+  font-variant-caps: normal;
+  font-weight: var(--font-extralight);
+  font-size: 75% !important;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: unset;
 }
 
 /* HR tags */

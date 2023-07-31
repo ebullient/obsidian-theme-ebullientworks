@@ -3,7 +3,7 @@
 
 // Page width and padding
   --page-width: 100%;
-  --page-side-padding: 48px;
+  --page-side-padding: 3rem  /* 48/16 */;
 
   // Page titles
   --page-title-color: var(--h1-color);
@@ -13,7 +13,6 @@
   --page-title-style: var(--h1-style);
   --page-title-variant: var(--h1-variant);
   --page-title-weight: var(--h1-weight);
-
 
   // Component Titles
   --component-title-color: var(--text-normal);
@@ -25,18 +24,18 @@
   --component-title-weight: var(--font-semibold);
 
   // Inputs
-  --input-height: 32px;
+  --input-height: 2rem  /* 32/16 */;
 
   // Graph
-  --graph-height: 260px;
+  --graph-height: 16.25rem  /* 260/16 */;
 
   // Sidebar
-  --sidebar-font-size: 14px;
-  --sidebar-left-width: 280px;
+  --sidebar-font-size: 0.875rem  /* 14/16 */;
+  --sidebar-left-width: 17.5rem  /* 280/16 */;
   --sidebar-left-background: var(--background-primary);
-  --sidebar-left-border-width: 1px;
+  --sidebar-left-border-width: 0.0625rem  /* 1/16 */;
   --sidebar-left-border-color: var(--background-modifier-border);
-  --sidebar-right-width: 300px;
+  --sidebar-right-width: 18.75rem  /* 300/16 */;
   --sidebar-right-background: transparent;
   --sidebar-right-border-width: 0px;
   --sidebar-right-border-color: var(--background-modifier-border);
@@ -45,17 +44,17 @@
   --logo-width: auto;
   --logo-height: auto;
   --logo-max-width: calc(100% - 18px);
-  --logo-max-height: 200px;
-  --logo-radius: 8px;
-  --header-height: 50px;
+  --logo-max-height: 12.5rem  /* 200/16 */;
+  --logo-radius: 0.5rem  /* 8/16 */;
+  --header-height: 3.125rem  /* 50/16 */;
   --site-name-color: var(--text-normal);
   --site-name-color-hover: var(--text-muted);
-  --site-name-font: inherit;
-  --site-name-size: 22px;
+  --site-name-font: var(--ebw-font-monospace);
+  --site-name-size: 1.125rem;  /* 18/16 */;
   --site-name-weight: var(--font-semibold);
   --site-menu-icon-color: var(--text-faint);
   --site-menu-icon-color-hover: var(--text-normal);
-  --site-menu-icon-size: 24px;
+  --site-menu-icon-size: 1.5rem  /* 24/16 */;
 
   // Site Navigation
   --nav-collapse-icon-color: var(--text-faint);
@@ -116,11 +115,11 @@ body {
     --input-height: 36px;
   }
   .published-container {
-    --site-name-size: 18px;
-    --header-height: 50px;
+    --site-name-size: 1.125rem;
+    --header-height: 3.125rem;
     --header-background: var(--background-primary);
     --page-title-size: 2em;
-    --page-side-padding: 24px;
+    --page-side-padding: 1.5rem;
     --footer-display: none;
     --list-spacing: 0.15em;
   }
@@ -138,8 +137,8 @@ body {
     --header-height: var(--h2-size);
     --logo-height: auto;
     --nav-item-weight-active: 500;
-    --logo-max-height: 150px;
-    --logo-max-width: calc(100% - 18px);
+    --logo-max-height: 9.375rem;
+    --logo-max-width: calc(100% - 1.125rem);
     --site-menu-icon-size: 1.375rem;
     /* Navigation */
     --site-name-size: var(--h3-size);
@@ -155,9 +154,9 @@ body {
   /* ... rules and variables for screens larger than a big tablet */
   .published-container {
     --page-side-padding: 10rem;
-    --sidebar-left-width: 230px;
-    --sidebar-right-width: 250px;
-    --graph-height: 200px;
+    --sidebar-left-width: 14.375rem;
+    --sidebar-right-width: 15.625rem;
+    --graph-height: 12.5rem;
   }
 }
 

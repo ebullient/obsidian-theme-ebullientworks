@@ -1,0 +1,5 @@
+@use '09-codeblocks' as *;
+
+.cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
+  padding: unset;
+}

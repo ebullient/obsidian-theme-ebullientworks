@@ -1,0 +1,91 @@
+// This file is NOT suitable for publish
+
+@use '05-text-links' as *;
+
+.cm-s-obsidian span.cm-quote.cm-em {
+  color: var(--italic-color);
+}
+.cm-s-obsidian span.cm-quote.cm-strong {
+  color: var(--bold-color);
+}
+
+.cm-s-obsidian span.cm-strong.cm-em,
+.cm-s-obsidian span.cm-quote.cm-strong.cm-em {
+  color: var(--ebw-strong-em);
+}
+
+.markdown-source-view.mod-cm6 .cm-url.cm-strikethrough,
+.markdown-source-view.mod-cm6 .cm-url.cm-strikethrough .cm-underline,
+.markdown-source-view.mod-cm6 .cm-link.cm-strikethrough,
+.markdown-source-view.mod-cm6 .cm-link.cm-strikethrough .cm-underline,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link.cm-strikethrough,
+.cm-s-obsidian .cm-url.cm-strikethrough,
+.cm-s-obsidian .cm-link.cm-strikethrough,
+.cm-s-obsidian .cm-hmd-internal-link.cm-strikethrough {
+  text-decoration: line-through var(--link-decoration-color);
+}
+
+.cm-s-obsidian span.cm-string.cm-url {
+  color: var(--ebw-link-hidden);
+}
+
+// Em A
+.cm-s-obsidian span.cm-link.cm-em {
+  color: var(--italic-color);
+  text-decoration: var(--link-decoration);
+  text-decoration-color: var(--link-decoration-color);
+}
+
+// Strong A
+
+.cm-s-obsidian span.cm-link.cm-strong {
+  color: var(--bold-color);
+  text-decoration: var(--link-decoration);
+}
+
+// Strong and Em A Hover
+
+.cm-s-obsidian span.cm-link.cm-em:hover,
+.cm-s-obsidian span.cm-link.cm-strong:hover {
+  color: var(--link-color-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+
+/* Collapse external links / markdown links in edit mode */
+body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
+  div.cm-line:not(.cm-active) {
+    > .cm-string.cm-url:not(.cm-formatting) {
+      font-size: 0;
+    }
+    > .cm-string.cm-url:not(.cm-formatting)::after {
+      content: '\27B9';
+      font-size: .8rem;
+    }
+  }
+}
+
+// DATAVIEW TASK Skip decorations on dataview task list item indicators
+.markdown-preview-view .task-list-item,
+.markdown-rendered .task-list-item {
+  a[data-href][aria-label-position].internal-link {
+    border-bottom: none;
+    text-decoration: none;
+    color: var(--ebw-link-underline);
+  }
+}
+
+// Highlight, matched text
+
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.cm-s-obsidian span.cm-highlight {
+  color: var(--text-highlight-fg);
+}
+
+div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
+  --text-selection: var(--text-highlight-bg-active);
+}
+
+.markdown-source-view.mod-cm6 .cm-selection,
+::selection {
+  background-color: var(--text-selection);
+}

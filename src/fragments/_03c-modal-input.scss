@@ -1,7 +1,9 @@
 .modal-content .vertical-tab-header {
   --interactive-accent: var(--interactive-accent-hover);
 }
-select:focus, .dropdown:focus {
-  box-shadow: 0 0 0px 1px var(--background-modifier-border-focus);
+
+select:focus,
+.dropdown:focus {
+  box-shadow: 0 0 0 0.0625rem var(--background-modifier-border-focus);
   outline: none;
 }

@@ -1,7 +1,7 @@
 body {
   --ebw-embed-border-color: var(--gray-dark-7);
-  --embed-border-left: 1px solid var(--ebw-embed-border-color);
-  --embed-border-right: 1px solid var(--ebw-embed-border-color);
+  --embed-border-left: 0.0625rem solid var(--ebw-embed-border-color);
+  --embed-border-right: 0.0625rem solid var(--ebw-embed-border-color);
   --embed-padding: 0 var(--size-4-1);
 }
 .theme-light {
@@ -25,23 +25,25 @@ div {
   // Use an anchor tag: ![Image](image.jpg#portrait)
   &[src$="#portrait"] {
     float: right;
-    margin-left: 5px;
-    width: 200px;
+    margin-left: 0.3125rem;
+    width: 12.5rem;
+    height: 12.5rem;
   }
   &[src$="#callout"] {
     float: right;
-    margin-left: 5px;
+    margin-left: 0.3125rem;
     width: 50%;
   }
   &[src$="#small-right"] {
     float: right;
-    margin-left: 5px;
-    width: 75px;
+    margin-left: 0.3125rem;
+    width: 4.6875rem;
   }
 }
 // ------------------------------------------------------
 // Naked embeds
 // ------------------------------------------------------
+
 .markdown-embed {
   border-radius: var(--radius-l);
   position: relative;
@@ -81,43 +83,17 @@ div {
 // EMBED LINK
 .markdown-embed-link svg {
   color: var(--ebw-link-underline);
-  height: 14px;
-  width: 14px;
+  height: 0.875rem;
+  width: 0.875rem;
 }
 
 .markdown-embed-link,
 .file-embed-link {
-  top: 0px;
+  top: 0;
   right: 0;
-  height: 18px;
-  width: 18px;
+  height: 1.125rem;
+  width: 1.125rem;
   text-align: center;
   vertical-align: middle;
   z-index: var(--layer-tooltip);
-}
-
-.markdown-source-view.invisible-embed,
-.markdown-rendered.invisible-embed {
-  --embed-border-left: none;
-  --embed-border-right: none;
-  --embed-padding: 0;
-}
-
-// ------------------------------------------------------
-// Scaled iframes
-// cssclass: embedframe
-// <div class='scaled-iframe'><iframe src="..." ></iframe></div>
-// ------------------------------------------------------
-.embedframe iframe {
-  width: 125%;
-  height: 750px;
-  -webkit-transform: scale(.8);
-  transform: scale(.8);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-.embedframe .scaled-iframe {
-  width: 100%;
-  height: 600px;
-  position: relative;
 }

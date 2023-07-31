@@ -1,0 +1,12 @@
+@use '06-lists-checkboxes' as *;
+
+/** Set line-height on mobile */
+.mobile {
+  .markdown-preview-view {
+    ol,
+    ul {
+      display: block;
+      line-height: var(--line-height);
+    }
+  }
+}

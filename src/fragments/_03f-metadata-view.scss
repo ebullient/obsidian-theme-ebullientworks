@@ -1,0 +1,103 @@
+body {
+  --metadata-background: var(--background-primary-alt); // Default Transparent or none
+  //--metadata-max-width: none;
+  //--metadata-padding: var(--size-4-2) 0;
+  //--metadata-border-color: var(--background-modifier-border);
+  //--metadata-border-radius: 0;
+  //--metadata-border-width: 0;
+  //--metadata-divider-color: var(--background-modifier-border);
+  //--metadata-divider-color-focus: transparent;
+  //--metadata-divider-width: 0;
+  --metadata-gap: 0.3125rem; // 5px
+  //--metadata-property-padding: 0;
+  --metadata-property-radius: 0.375rem; // 6px
+  //--metadata-property-background: transparent;
+  //--metadata-property-background-hover: transparent;
+  //--metadata-property-background-active: var(--background-modifier-hover);
+  //--metadata-label-background-hover: transparent;
+  //--metadata-label-background-active: var(--background-modifier-hover);
+  //--metadata-label-font-size: var(--font-smaller);
+  //--metadata-label-font-weight: inherit;
+  //--metadata-label-font-weight: 700;
+  //--metadata-label-text-color: var(--text-muted);
+  //--metadata-label-text-color-hover: var(--text-muted);
+  //--metadata-label-width: 8em;
+  //--metadata-input-font-size: var(--font-smaller);
+  //--metadata-input-background: transparent;
+  //--metadata-input-background-hover: transparent;
+  //--metadata-input-background-active: var(--background-modifier-hover);
+  //--metadata-sidebar-label-font-size: var(--font-ui-small);
+  //--metadata-sidebar-input-font-size: var(--font-ui-small);
+}
+
+//.metadata-container {
+//  --input-height: 1.75rem;
+//  border-radius: var(--metadata-border-radius);
+//  background-color: var(--metadata-background);
+//  border-color: var(--metadata-border-color);
+//  border-style: solid;
+//  border-width: var(--metadata-border-width);
+//  padding: var(--metadata-padding);
+//  color: var(--text-muted);
+//  position: relative;
+//  max-width: var(--metadata-max-width);
+//}
+//
+//
+//.metadata-properties-heading .collapse-indicator {
+//  position: absolute;
+//  left: -22px;
+//  padding: 0 6px;
+//}
+
+.metadata-properties-title {
+  //user-select: none;
+  //font-size: 1em;
+  //color: var(--text-normal);
+  //font-weight: var(--font-medium);
+  //margin-bottom: var(--size-4-3);
+  //padding: 0 var(--size-4-1);
+  display: flex;
+  justify-content: center;
+  font-family: var(--ebw-header-font);
+
+  &:before {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    content: "✧ ";
+    color: var(--interactive-hover);
+    padding: 0 0.8em;
+    position: relative;
+  }
+  &::after {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    content: " ✧";
+    padding: 0 0.8em;
+    position: relative;
+    color: var(--interactive-hover);
+  }
+}
+
+//input.metadata-property-key-input {
+  //border: none;
+  //flex-shrink: 1;
+  // color: var(--metadata-label-text-color);
+  //font-size: var(--metadata-label-font-size);
+  //font-weight: var(--metadata-label-font-weight);
+  //background-color: transparent;
+  //display: flex;
+  //align-items: center;
+  //text-overflow: ellipsis;
+  //overflow: hidden;
+//}
+
+// .metadata-property-value {
+  //display: flex;
+  //flex: 1 1 auto;
+  //gap: var(--size-2-2);
+  //align-items: center;
+  //align-self: stretch;
+  //min-height: var(--input-height);
+  //background-color: var(--metadata-input-background);
+  //border-bottom: var(--metadata-divider-width) solid var(--metadata-divider-color);
+  //overflow: hidden;
+//}
