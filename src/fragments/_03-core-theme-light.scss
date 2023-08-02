@@ -25,13 +25,9 @@
     --text-error: var(--red-5);
 
     --text-highlight-fg: var(--gray-dark-7);
-    --text-highlight-bg: var(--primary-accent-0);
-    --text-highlight-bg-active: rgba(252, 232, 131, 0.6);
-
-    --text-selection: var(--secondary-accent-0);
-
-    // --indentation-guide: var(--gray-light-3);
-    // --indentation-guide-active: var(--red-2);
+    --text-highlight-bg-rgb: var(--primary-accent-4-rgb);
+    --text-highlight-bg: rgba(var(--text-highlight-bg-rgb), 0.2);
+    --text-selection: rgba(var(--secondary-accent-4-rgb), 0.2);
 
     // Text on accent should work as foreground for all interactive elements
     --text-on-accent: var(--gray-light-8);                // Program Title bar text

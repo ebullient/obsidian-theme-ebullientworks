@@ -95,25 +95,9 @@ strong a:hover {
   background-size: .9em;
 }
 
+// Highlight, matched text
+.search-result-file-matched-text,
+.markdown-preview-view mark,
 .markdown-rendered mark {
   color: var(--text-highlight-fg);
-  border-radius: var(--radius-s);
-  padding: 0 4px;
-}
-
-// Highlight, matched text
-.markdown-preview-view mark,
-.markdown-rendered mark,
-.is-flashing h1,
-.is-flashing h2,
-.is-flashing h3,
-.is-flashing h4,
-.is-flashing h5,
-.is-flashing h6,
-.is-flashing * {
-  color: var(--text-highlight-fg);
-}
-
-.is-flashing * ::selection {
-  background-color: var(--text-selection-active);
 }
