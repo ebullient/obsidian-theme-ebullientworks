@@ -92,6 +92,24 @@ settings:
     type: variable-text
     default: "'Architects Daughter'"
   -
+    id: ebw-p-modifier
+    title: Paragraph spacing modifier
+    description: Gap between paragraphs (line height * this modifier)
+    type: variable-number-slider
+    default: 1
+    min: .4
+    max: 3
+    step: .1
+  -
+    id: ebw-header-modifier
+    title: Header spacing modifier
+    description: Gap before headings (paragraph spacing * this modifier)
+    type: variable-number-slider
+    default: 1.4
+    min: .8
+    max: 3
+    step: .1
+  -
     id: other-font-settings
     title: Use Appearance to customize text/monospace fonts
     description: (This has no effect. ;) )

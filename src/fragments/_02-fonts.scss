@@ -13,4 +13,11 @@ body {
   --font-text-theme: var(--ebw-font-text);
   --font-monospace-theme: var(--ebw-font-monospace);
   --font-mermaid: var(--ebw-font-monospace);
+
+  --ebw-p-modifier: 1;
+  --ebw-header-modifier: 1.4;
+
+  /* Calculates the spacings from the variables above */
+  --p-spacing: calc(var(--font-text-size) * var(--ebw-p-modifier));
+  --heading-spacing: calc(var(--p-spacing) * var(--ebw-header-modifier));
 }

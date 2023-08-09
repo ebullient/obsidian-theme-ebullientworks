@@ -26,6 +26,13 @@ body {
   --h4-weight: 500;
   --h5-weight: 500;
   --h6-weight: 500;
+
+  --h1-line-height: var(--line-height-normal);
+  --h2-line-height: var(--line-height-normal);
+  --h3-line-height: var(--line-height-normal);
+  --h4-line-height: var(--line-height-normal);
+  --h5-line-height: var(--line-height-normal);
+  --h6-line-height: var(--line-height-normal);
 }
 
 .theme-dark {
@@ -46,17 +53,14 @@ body {
   --h6-color: var(--pink-4);
 }
 
-
 @mixin variants-caps-header-one {
   font-variant-caps: var(--ebw-header-font-caps-variant);
 }
-
 
 h1,
 .markdown-rendered h1 {
   @include variants-caps-header-one;
 }
-
 
 @mixin before-header-one {
   h1::before,
@@ -131,7 +135,10 @@ h6 a.tag {
     overflow: visible;
     text-align: center;
     height: 2px;
-    margin: 12px 0;
+    margin: 0;
+    margin-block: calc(
+      (var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing)
+  );
   }
   hr::after {
     background: var(--background-primary);
@@ -139,6 +146,6 @@ h6 a.tag {
     content: " ✧ ✧ ✧ ";
     padding: 0 0.8em;
     position: relative;
-    top: -13px;
+    top: -12px;
   }
 }
