@@ -51,6 +51,7 @@
       }
     }
 
+    .metadata-container,
     .frontmatter-container {
       float: right;
       position: absolute;
@@ -59,9 +60,11 @@
       width: 2rem;
       height: 2rem;
       overflow: hidden;
-      border: none !important;
+      border: none;
       background-color: transparent;
 
+      .metadata-properties-heading,
+      .metadata-content,
       .frontmatter-container-header,
       .frontmatter-section {
         visibility: hidden;
@@ -73,26 +76,46 @@
         float: right;
       }
       &:hover {
-        border: 1px solid var(--background-modifier-border);
-        background-color: var(--background-secondary);
-        filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-        width: 50%;
-        min-width: 200px;
-        height: unset;
-        z-index: 3;
-
-        .frontmatter-container-header {
-          padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
-          visibility: visible;
-        }
+        .metadata-properties-heading,
+        .frontmatter-container-header,
+        .metadata-content,
         .frontmatter-section {
           visibility: visible;
-          padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
         }
         .frontmatter-collapse-indicator {
           display: none;
         }
       }
+    }
+
+    .frontmatter-container:hover {
+      border: 1px solid var(--background-modifier-border);
+      background-color: var(--background-primary-alt);
+      filter: drop-shadow(-.1rem .1rem .1rem var(--background-modifier-border));
+      width: 50%;
+      min-width: 200px;
+      height: unset;
+      z-index: 3;
+
+      .frontmatter-container-header {
+        padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
+      }
+      .frontmatter-section {
+        padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
+      }
+    }
+    .metadata-container:hover {
+      .metadata-property,
+      .metadata-property[data-property-key="tags"] {
+        --pill-background: var(--background-primary);
+      }
+      border: 1px solid var(--background-modifier-border);
+      background-color: var(--background-primary-alt);
+      filter: drop-shadow(-.1rem .1rem .1rem var(--background-modifier-border));
+      width: 80%;
+      min-width: 200px;
+      height: unset;
+      z-index: 3;
     }
   }
 }
