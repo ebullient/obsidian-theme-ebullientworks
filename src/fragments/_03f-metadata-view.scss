@@ -28,9 +28,6 @@ body {
     margin-left: 25px; // gutter
     margin-block-end: 0;
 
-  .metadata-property-icon {
-    align-self: center;
-  }
   .metadata-property-icon,
   .metadata-property-key,
   .metadata-property-key-input,
@@ -59,7 +56,7 @@ body {
     .metadata-property-icon {
       --icon-size: var(--icon-xs);
       width: var(--icon-s);
-      height: var(--icon-s);
+      min-height: var(--line-height-normal);
     }
     .multi-select-container {
       padding: 0;
