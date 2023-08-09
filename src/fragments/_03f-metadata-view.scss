@@ -13,20 +13,20 @@ body {
   --metadata-input-font-size: var(--font-smaller);
 }
 
+.markdown-source-view .metadata-container .metadata-add-button {
+  margin-top: var(--size-2-2);
+  padding-left: var(--size-2-2);
+  position: absolute;
+  font-size: var(--font-smaller);
+  left: 0;
+  top: 0;
+}
+
 .metadata-container {
   --input-height: var(--line-height-normal);
     font-family: var(--font-monospace);
     margin-left: 25px; // gutter
     margin-block-end: 0;
-
-  .metadata-add-button {
-    margin-top: var(--size-2-2);
-    padding-left: var(--size-2-2);
-    position: absolute;
-    font-size: var(--font-smaller);
-    left: 0;
-    top: 0;
-  }
 
   .metadata-property-icon {
     align-self: center;
