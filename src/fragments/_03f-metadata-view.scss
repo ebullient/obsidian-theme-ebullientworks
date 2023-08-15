@@ -1,20 +1,20 @@
 body {
   --metadata-background: transparent; // Default Transparent or none
-  --metadata-padding: 0 0 var(--size-4-1) 0;
+  --metadata-padding: 0;
   --metadata-border-color: var(--background-modifier-border);
   --metadata-border-radius: 4px;
   --metadata-border-width: 1px;
-  --metadata-divider-color: var(--background-primary-alt);
+  --metadata-divider-color: var(--background-secondary);
   --metadata-divider-width: 1px;
   --metadata-gap: 0;
-  --metadata-property-padding: 0 0 0 var(--size-4-1);
+  --metadata-property-padding: 0;
   --metadata-property-radius: var(--radius-s);
   --metadata-label-font-size: var(--font-smaller);
   --metadata-input-font-size: var(--font-smaller);
 }
 
 .markdown-source-view .metadata-container .metadata-add-button {
-  margin-top: var(--size-2-2);
+  margin-top: var(--size-2-1);
   padding-left: var(--size-2-2);
   position: absolute;
   font-size: var(--font-smaller);
@@ -22,7 +22,26 @@ body {
   top: 0;
 }
 
-.metadata-container {
+.workspace > .workspace-split:not(.mod-root) {
+  .workspace-leaf-content[data-type="file-properties"] .view-content {
+    padding: 0;
+  }
+  .metadata-container {
+    --metadata-background: transparent;
+    --metadata-divider-color: var(--background-secondary);
+    --metadata-border-color: transparent;
+
+    .metadata-property {
+      background-color: var(--background-primary-alt);
+    }
+
+    .metadata-add-button {
+      margin-top: 0;
+    }
+  }
+}
+
+.workspace > .workspace-split.mod-root .metadata-container {
   --input-height: var(--line-height-normal);
     font-family: var(--font-monospace);
     margin-left: 25px; // gutter
@@ -34,6 +53,10 @@ body {
   .metadata-property-value {
     border-bottom: none;
   }
+
+  // .metadata-property-key-input {
+  //   padding: 0 var(--size-4-1);
+  // }
 
   .metadata-property,
   .metadata-property[data-property-key="tags"] {
@@ -70,6 +93,11 @@ body {
   }
 }
 
+.metadata-property-key {
+  align-items: center;
+  border-right: var(--metadata-divider-width) solid var(--metadata-divider-color);
+}
+
 .metadata-properties-title {
   margin-bottom: var(--size-4-1);
   padding: var(--size-4-1);
@@ -96,4 +124,6 @@ body {
 
 .metadata-properties-heading {
   display: block;
+  padding: 0;
+  margin-bottom: 0;
 }
