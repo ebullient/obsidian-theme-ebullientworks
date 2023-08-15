@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 /*
-Ebullientworks 0.7.13. A dark and light theme for Obsidian.
+Ebullientworks 0.7.14. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -870,21 +870,21 @@ select:focus,
 
 body {
   --metadata-background: transparent;
-  --metadata-padding: 0 0 var(--size-4-1) 0;
+  --metadata-padding: 0;
   --metadata-border-color: var(--background-modifier-border);
   --metadata-border-radius: 4px;
   --metadata-border-width: 1px;
-  --metadata-divider-color: var(--background-primary-alt);
+  --metadata-divider-color: var(--background-secondary);
   --metadata-divider-width: 1px;
   --metadata-gap: 0;
-  --metadata-property-padding: 0 0 0 var(--size-4-1);
+  --metadata-property-padding: 0;
   --metadata-property-radius: var(--radius-s);
   --metadata-label-font-size: var(--font-smaller);
   --metadata-input-font-size: var(--font-smaller);
 }
 
 .markdown-source-view .metadata-container .metadata-add-button {
-  margin-top: var(--size-2-2);
+  margin-top: var(--size-2-1);
   padding-left: var(--size-2-2);
   position: absolute;
   font-size: var(--font-smaller);
@@ -892,20 +892,35 @@ body {
   top: 0;
 }
 
-.metadata-container {
+.workspace > .workspace-split:not(.mod-root) .workspace-leaf-content[data-type=file-properties] .view-content {
+  padding: 0;
+}
+.workspace > .workspace-split:not(.mod-root) .metadata-container {
+  --metadata-background: transparent;
+  --metadata-divider-color: var(--background-secondary);
+  --metadata-border-color: transparent;
+}
+.workspace > .workspace-split:not(.mod-root) .metadata-container .metadata-property {
+  background-color: var(--background-primary-alt);
+}
+.workspace > .workspace-split:not(.mod-root) .metadata-container .metadata-add-button {
+  margin-top: 0;
+}
+
+.workspace > .workspace-split.mod-root .metadata-container {
   --input-height: var(--line-height-normal);
   font-family: var(--font-monospace);
   margin-left: 25px;
   margin-block-end: 0;
 }
-.metadata-container .metadata-property-icon,
-.metadata-container .metadata-property-key,
-.metadata-container .metadata-property-key-input,
-.metadata-container .metadata-property-value {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property-icon,
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property-key,
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property-key-input,
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property-value {
   border-bottom: none;
 }
-.metadata-container .metadata-property,
-.metadata-container .metadata-property[data-property-key=tags] {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property,
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property[data-property-key=tags] {
   --pill-remove-color: var(--text-faint);
   --pill-remove-color-hover: var(--text-accent);
   --pill-radius: var(--radius-s);
@@ -914,23 +929,31 @@ body {
   --pill-padding-y: 0;
   --pill-padding-x: var(--size-2-1);
 }
-.metadata-container .metadata-property .multi-select-pill,
-.metadata-container .metadata-property[data-property-key=tags] .multi-select-pill {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property .multi-select-pill,
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property[data-property-key=tags] .multi-select-pill {
   line-height: var(--line-height-normal);
 }
-.metadata-container .metadata-property {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property {
   border-bottom: var(--metadata-divider-width) solid var(--metadata-divider-color);
 }
-.metadata-container .metadata-property .metadata-property-icon {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property .metadata-property-icon {
   --icon-size: var(--icon-xs);
   width: var(--icon-s);
   min-height: var(--line-height-normal);
 }
-.metadata-container .metadata-property .multi-select-container {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property .multi-select-container {
   padding: 0;
 }
-.metadata-container .metadata-property:last-child {
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property .metadata-input-longtext {
+  padding: var(--pill-padding-x);
+}
+.workspace > .workspace-split.mod-root .metadata-container .metadata-property:last-child {
   border-bottom: none;
+}
+
+.metadata-property-key {
+  align-items: center;
+  border-right: var(--metadata-divider-width) solid var(--metadata-divider-color);
 }
 
 .metadata-properties-title {
@@ -954,6 +977,12 @@ body {
   padding: 0 0.8em;
   position: relative;
   color: var(--secondary-accent-4);
+}
+
+.metadata-properties-heading {
+  display: block;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 body {
@@ -2477,10 +2506,6 @@ div[src$="#small-right"] {
 .ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .metadata-container:hover .metadata-property,
 .ebullientworks-floating-frontmatter.is-mobile .markdown-rendered .metadata-container:hover .metadata-property[data-property-key=tags] {
   --pill-background: var(--background-primary);
-}
-.ebullientworks-floating-frontmatter .metadata-input-longtext,
-.ebullientworks-floating-frontmatter.is-mobile .metadata-input-longtext {
-  padding: var(--pill-padding-x);
 }
 
 body {
