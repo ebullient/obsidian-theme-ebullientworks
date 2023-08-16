@@ -59,6 +59,26 @@ div {
   }
 }
 
+.internal-embed .markdown-embed-content {
+  .markdown-rendered ul,
+  .markdown-rendered ol {
+    display: inline-block;
+    margin-block-start: 0;
+  }
+}
+
+li .internal-embed {
+  blockquote {
+    margin: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .markdown-embed-content {
+    padding-right: 12px;
+  }
+}
+
 // Hide the embedded header and use other styling to create uniform padding
 .ebullientworks-hide-embedded-heading {
   .markdown-embed {
