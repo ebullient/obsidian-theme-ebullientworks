@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=IBM+Plex+Sans:wght@300;400;700&display=swap");
 /*
-Ebullientworks 0.7.14. A dark and light theme for Obsidian.
+Ebullientworks 0.7.15. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -1098,7 +1098,8 @@ h6 a.tag {
 }
 
 /* HR tags */
-.markdown-rendered hr {
+.workspace > .workspace-split.mod-root .markdown-rendered hr,
+.workspace > .workspace-split.mod-root hr {
   border: none;
   border-top: 1px dotted var(--interactive-accent);
   color: var(--interactive-hover);
@@ -1108,7 +1109,8 @@ h6 a.tag {
   margin: 0;
   margin-block: calc((var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing));
 }
-.markdown-rendered hr::after {
+.workspace > .workspace-split.mod-root .markdown-rendered hr::after,
+.workspace > .workspace-split.mod-root hr::after {
   background: var(--background-primary);
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   content: " ✧ ✧ ✧ ";
@@ -2153,6 +2155,22 @@ div[src$="#small-right"] {
   overflow-y: unset;
 }
 
+.internal-embed .markdown-embed-content .markdown-rendered ul,
+.internal-embed .markdown-embed-content .markdown-rendered ol {
+  display: inline-block;
+  margin-block-start: 0;
+}
+
+li .internal-embed blockquote {
+  margin: 0;
+}
+li .internal-embed p {
+  margin-bottom: 0;
+}
+li .internal-embed .markdown-embed-content {
+  padding-right: 12px;
+}
+
 .ebullientworks-hide-embedded-heading .markdown-embed .markdown-embed-title,
 .ebullientworks-hide-embedded-heading .markdown-embed .mod-header {
   display: none;
@@ -2194,6 +2212,37 @@ div[src$="#small-right"] {
   --embed-border-left: none;
   --embed-border-right: none;
   --embed-padding: 0;
+}
+
+.markdown-source-view .internal-embed {
+  --list-indent: 1.6em;
+  vertical-align: top;
+  display: inline-block;
+  width: calc(100% - 1.25rem);
+}
+.markdown-source-view .internal-embed .markdown-embed-content {
+  padding-right: 12px;
+}
+.markdown-source-view .internal-embed .markdown-embed-content li.task-list-item {
+  position: relative;
+  text-indent: -21px;
+  margin-left: -0.25em;
+  padding-left: 0px;
+}
+.markdown-source-view .HyperMD-list-line > .internal-embed .markdown-rendered ul,
+.markdown-source-view .HyperMD-list-line > .internal-embed .markdown-rendered ol {
+  display: inline-block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.markdown-source-view .HyperMD-list-line > .internal-embed .markdown-preview-section {
+  display: inline-block;
+}
+.markdown-source-view .HyperMD-list-line > .internal-embed .markdown-preview-section blockquote {
+  margin: 0;
+}
+.markdown-source-view .HyperMD-list-line > .internal-embed .markdown-preview-section p {
+  margin-bottom: 0;
 }
 
 .embedframe iframe {
