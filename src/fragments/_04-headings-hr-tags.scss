@@ -127,7 +127,8 @@ h6 a.tag {
 }
 
 /* HR tags */
-.markdown-rendered {
+.workspace > .workspace-split.mod-root {
+  .markdown-rendered hr,
   hr {
     border: none;
     border-top: 1px dotted var(--interactive-accent);
@@ -138,14 +139,15 @@ h6 a.tag {
     margin: 0;
     margin-block: calc(
       (var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing)
-  );
-  }
-  hr::after {
-    background: var(--background-primary);
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    content: " ✧ ✧ ✧ ";
-    padding: 0 0.8em;
-    position: relative;
-    top: -12px;
+    );
+
+    &::after {
+      background: var(--background-primary);
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      content: " ✧ ✧ ✧ ";
+      padding: 0 0.8em;
+      position: relative;
+      top: -12px;
+    }
   }
 }
