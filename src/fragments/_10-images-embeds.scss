@@ -60,8 +60,8 @@ div {
 }
 
 .internal-embed .markdown-embed-content {
-  .markdown-rendered ul,
-  .markdown-rendered ol {
+  .markdown-rendered div > ul,
+  .markdown-rendered div > ol {
     display: inline-block;
     margin-block-start: 0;
   }
