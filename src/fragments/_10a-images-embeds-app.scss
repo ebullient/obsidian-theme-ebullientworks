@@ -1,6 +1,7 @@
 @use '10-images-embeds' as *;
 
 
+.internal-embed[alt="invisible-embed"],
 .markdown-source-view.invisible-embed,
 .markdown-rendered.invisible-embed {
   --embed-border-left: none;
