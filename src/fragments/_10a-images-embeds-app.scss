@@ -1,12 +1,8 @@
 @use '10-images-embeds' as *;
 
-
-.internal-embed[alt="invisible-embed"],
 .markdown-source-view.invisible-embed,
 .markdown-rendered.invisible-embed {
-  --embed-border-left: none;
-  --embed-border-right: none;
-  --embed-padding: 0;
+  @include invisibleEmbed;
 }
 
 .markdown-source-view {
@@ -45,25 +41,4 @@
       }
     }
   }
-}
-
-// ------------------------------------------------------
-// Scaled iframes
-// cssclass: embedframe
-// <div class='scaled-iframe'><iframe src="..." ></iframe></div>
-// ------------------------------------------------------
-
-.embedframe iframe {
-  width: 125%;
-  height: 46.875rem;
-  -webkit-transform: scale(.8);
-  transform: scale(.8);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-
-.embedframe .scaled-iframe {
-  width: 100%;
-  height: 37.5rem;
-  position: relative;
 }
