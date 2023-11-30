@@ -129,7 +129,7 @@ h6 a.tag {
 /* HR tags */
 .workspace > .workspace-split.mod-root {
   .markdown-rendered hr,
-  hr {
+  hr:not(.workspace-leaf-resize-handle) {
     border: none;
     border-top: 1px dotted var(--interactive-accent);
     color: var(--interactive-hover);
