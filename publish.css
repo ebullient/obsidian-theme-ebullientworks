@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.16. A dark and light theme for Obsidian.
+Ebullientworks 0.7.17. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -114,17 +114,6 @@ body {
   --gray-dark-85:#1e1e1e;
   --gray-dark-9: #1b1b1b;
   --gray-dark-10:#070707;
-  --color-base-05: var(--gray-light-8);
-  --color-base-10: var(--gray-light-7);
-  --color-base-20: var(--gray-light-6);
-  --color-base-25: var(--gray-light-3);
-  --color-base-30: var(--gray-light-2);
-  --color-base-35: var(--gray-light-1);
-  --color-base-40: var(--gray);
-  --color-base-50: var(--gray-dark-1);
-  --color-base-60: var(--gray-dark-3);
-  --color-base-70: var(--gray-dark-4);
-  --color-base-100: var(--gray-dark-8);
   --accent-h: 344;
   --accent-s: 30%;
   --accent-l: 51%;
@@ -217,6 +206,18 @@ body {
   --color-purple: var(--purple-2);
   --color-pink-rgb: var(--pink-2-rgb);
   --color-pink: var(--pink-2);
+  --color-base-00: var(--gray-dark-10);
+  --color-base-05: var(--gray-dark-9);
+  --color-base-10: var(--gray-dark-85);
+  --color-base-20: var(--gray-dark-8);
+  --color-base-25: var(--gray-dark-75);
+  --color-base-30: var(--gray-dark-7);
+  --color-base-35: var(--gray-dark-6);
+  --color-base-40: var(--gray-dark-5);
+  --color-base-50: var(--gray-dark-3);
+  --color-base-60: var(--gray-dark-1);
+  --color-base-70: var(--gray);
+  --color-base-100: var(--gray-light-1);
 }
 .theme-dark .is-flashing {
   --text-highlight-fg: var(--text-normal);
@@ -272,6 +273,18 @@ body {
   --color-purple: var(--purple-4);
   --color-pink-rgb: var(--pink-4-rgb);
   --color-pink: var(--pink-4);
+  --color-base-00: var(--gray-light-8);
+  --color-base-05: var(--gray-light-7);
+  --color-base-10: var(--gray-light-6);
+  --color-base-20: var(--gray-light-5);
+  --color-base-25: var(--gray-light-3);
+  --color-base-30: var(--gray-light-2);
+  --color-base-35: var(--gray-light-1);
+  --color-base-40: var(--gray);
+  --color-base-50: var(--gray-dark-1);
+  --color-base-60: var(--gray-dark-3);
+  --color-base-70: var(--gray-dark-4);
+  --color-base-100: var(--gray-dark-8);
 }
 
 .theme-dark {
@@ -406,7 +419,7 @@ h6 a.tag {
 
 /* HR tags */
 .workspace > .workspace-split.mod-root .markdown-rendered hr,
-.workspace > .workspace-split.mod-root hr {
+.workspace > .workspace-split.mod-root hr:not(.workspace-leaf-resize-handle) {
   border: none;
   border-top: 1px dotted var(--interactive-accent);
   color: var(--interactive-hover);
@@ -417,7 +430,7 @@ h6 a.tag {
   margin-block: calc((var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing));
 }
 .workspace > .workspace-split.mod-root .markdown-rendered hr::after,
-.workspace > .workspace-split.mod-root hr::after {
+.workspace > .workspace-split.mod-root hr:not(.workspace-leaf-resize-handle)::after {
   background: var(--background-primary);
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   content: " ✧ ✧ ✧ ";
@@ -426,7 +439,7 @@ h6 a.tag {
   top: -12px;
 }
 
-.theme-dark {
+body {
   --bold-color: var(--blue-3);
   --italic-color: var(--pink-2);
   --ebw-strong-em: var(--yellow-2);
@@ -434,7 +447,16 @@ h6 a.tag {
   --ebw-link-hidden: var(--cyan-4);
   --link-color: var(--gray-light-1);
   --link-color-hover: var(--cyan-2);
-  --ebw-del-link-decoration-color: rgba(203, 203, 203, 0.5);
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-unresolved-color: var(--link-color);
+  --link-unresolved-opacity: 0.9;
+  --link-unresolved-decoration-style: dotted;
+  --link-unresolved-decoration-color: var(--ebw-link-underline);
+  --link-external-color: var(--link-color);
+  --link-external-color-hover: var(--link-color-hover);
+  --link-external-decoration: underline;
+  --link-external-decoration-hover: underline;
 }
 
 .theme-light {
@@ -445,59 +467,40 @@ h6 a.tag {
   --ebw-link-hidden: var(--cyan-2);
   --link-color: var(--gray-dark-3);
   --link-color-hover: var(--cyan-4);
-  --ebw-del-link-decoration-color: rgba(100, 100, 100, 0.5);
-}
-
-body {
-  --link-decoration: underline;
-  --link-decoration-hover: underline;
-  --link-external-decoration: underline;
-  --link-external-decoration-hover: underline;
-  --link-decoration-color: var(--ebw-link-underline);
-  --link-external-color: var(--link-color);
-  --link-external-color-hover: var(--link-color-hover);
-  --link-unresolved-color: var(--link-color);
-  --link-unresolved-opacity: 0.9;
-  --link-unresolved-decoration-style: dotted;
-  --link-unresolved-decoration-color: var(--ebw-link-underline);
-}
-
-strong em,
-strong em a.internal-link {
-  color: var(--ebw-strong-em);
-}
-
-.markdown-rendered del a.external-link,
-.markdown-rendered del a.internal-link,
-.markdown-rendered del a.internal-link.is-unresolved {
-  text-decoration: line-through var(--link-decoration-color);
 }
 
 a {
-  text-decoration-color: var(--link-decoration-color);
+  text-decoration-color: var(--ebw-link-underline);
 }
 
-del a,
-.markdown-rendered del a.external-link,
-.markdown-rendered del a.internal-link,
-.markdown-rendered del a.internal-link.is-unresolved {
-  text-decoration-color: var(--ebw-del-link-decoration-color);
+.markdown-rendered a del,
+.markdown-rendered del a,
+.markdown-rendered del a.internal-link {
+  color: var(--text-muted);
 }
-
+.markdown-rendered em a,
+.markdown-rendered em a.internal-link,
+.markdown-rendered em a.internal-link.is-unresolved {
+  color: var(--italic-color);
+}
+.markdown-rendered strong a,
+.markdown-rendered strong a.internal-link,
+.markdown-rendered strong a.internal-link.is-unresolved {
+  color: var(--bold-color);
+}
+.markdown-rendered strong em,
+.markdown-rendered strong em a.external-link,
+.markdown-rendered strong em a.internal-link,
+.markdown-rendered strong em a.internal-link.is-unresolved {
+  color: var(--ebw-strong-em);
+}
+.markdown-rendered .internal-link.is-unresolved {
+  text-decoration-line: var(--link-decoration);
+  text-decoration-color: var(--ebw-link-underline);
+}
 .markdown-rendered .internal-link.is-unresolved::after {
   content: " ✎";
   color: var(--ebw-link-underline);
-}
-
-em a {
-  color: var(--italic-color);
-  text-decoration: var(--link-decoration);
-  text-decoration-color: var(--link-decoration-color);
-}
-
-strong a {
-  color: var(--bold-color);
-  text-decoration: var(--link-decoration);
 }
 
 em a:hover,
