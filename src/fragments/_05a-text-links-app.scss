@@ -2,58 +2,133 @@
 
 @use '05-text-links' as *;
 
-.cm-s-obsidian span.cm-quote.cm-em {
-  color: var(--italic-color);
+.cm-s-obsidian {
+  span.cm-quote.cm-em {
+    color: var(--italic-color);
+  }
+  span.cm-quote.cm-strong {
+    color: var(--bold-color);
+  }
+  span.cm-strong.cm-em,
+  span.cm-quote.cm-strong.cm-em {
+    color: var(--ebw-strong-em);
+  }
 }
-.cm-s-obsidian span.cm-quote.cm-strong {
-  color: var(--bold-color);
+.cm-s-obsidian,
+.markdown-source-view.mod-cm6 {
+  // Readable strikethrough characters in source mode
+  .cm-formatting-strikethrough {
+    text-decoration: none;
+    color: var(--text-faint);
+  }
+  .cm-strikethrough:not(.cm-formatting-strikethrough) {
+    text-decoration-line: line-through;
+    text-decoration-thickness: var(--link-decoration-thickness);
+  }
+  span.cm-hmd-internal-link, // wiki links
+  span.cm-link {             // markdown links
+    .cm-underline {
+      text-decoration: none;
+    }
+    // Strikethrough links in live preview
+    &.cm-strikethrough .cm-underline {
+      color: var(--text-muted);
+      text-decoration-line: line-through;
+      text-decoration-thickness: var(--link-decoration-thickness);
+    }
+    &.cm-strikethrough:has(.cm-underline):not(:has(.is-unresolved)):after {
+      content: ' \27B9';
+      font-size: .8rem;
+      opacity: .5;
+    }
+    // Strikethrough link text in source mode
+    &.cm-strikethrough:not(.cm-formatting-strikethrough):not(:has(.cm-underline)) {
+      color: var(--text-muted);
+      text-decoration-line: line-through;
+      text-decoration-thickness: var(--link-decoration-thickness);
+      text-decoration-color: var(--text-normal);
+    }
+    // Readable strikethrough formatting characters in source mode
+    &.cm-formatting-strikethrough {
+      color: var(--text-faint);
+      text-decoration: none;
+    }
+    // consistent link decorations
+    &:not(:has(.is-unresolved)),
+    &.cm-em:not(:has(.is-unresolved)),
+    &.cm-strong:not(:has(.is-unresolved)),
+    &.cm-em.cm-strong:not(:has(.is-unresolved)) {
+      text-decoration-line: var(--link-decoration);
+      text-decoration-color: var(--ebw-link-underline);
+    }
+    &:has(.is-unresolved),
+    &.cm-em:has(.is-unresolved),
+    &.cm-strong:has(.is-unresolved),
+    &.cm-em.cm-strong:has(.is-unresolved) {
+      text-decoration-line: var(--link-decoration);
+      text-decoration-color: var(--ebw-link-underline);
+      text-decoration-style: var(--link-unresolved-decoration-style);
+      &:after {
+        content: ' ✎';
+        color: var(--ebw-link-underline);
+      }
+    }
+  }
+  // Bare links
+  .cm-line .cm-url.cm-link {
+    color: var(--link-external-color);
+    opacity: unset;
+  }
+  // Unmatched bare links are .. super strange for formatting in source mode/live preview.
+  .cm-line:has(.cm-url):not(:has(.cm-link)) .cm-url:not(.cm-link) {
+    background-color: green;
+    color: var(--text-normal);
+    font-weight: normal;
+    font-style: normal;
+  }
+  span.cm-hmd-internal-link, // wiki links
+  span.cm-link,              // markdown links
+  span.cm-url.cm-link {      // bare links
+    &.cm-em:hover,
+    &.cm-strong:hover,
+    &.cm-em.cm-strong:hover {
+      color: var(--link-color-hover);
+      text-decoration-line: var(--link-decoration-hover);
+    }
+    // Em A (wikilink & markdown link text)
+    &.cm-em,
+    &.cm-em .is-unresolved {
+      color: var(--italic-color);
+    }
+    // Strong A (wikilink & markdown link text)
+    &.cm-strong,
+    &.cm-strong .is-unresolved {
+      color: var(--bold-color);
+    }
+    // Em Strong A (wikilink & markdown link text)
+    &.cm-em.cm-strong,
+    &.cm-em.cm-strong .is-unresolved {
+      color: var(--ebw-strong-em);
+    }
+  }
+  span.cm-formatting-link:not(.cm-url.cm-link) {
+    font-weight: normal;
+    font-style: normal;
+    opacity: .7;
+  }
+  // the URL portion of markdown URL
+  span.cm-string.cm-url {
+    color: var(--ebw-link-hidden);
+    font-weight: normal;
+    font-style: normal;
+  }
 }
-
-.cm-s-obsidian span.cm-strong.cm-em,
-.cm-s-obsidian span.cm-quote.cm-strong.cm-em {
-  color: var(--ebw-strong-em);
-}
-
-.markdown-source-view.mod-cm6 .cm-url.cm-strikethrough,
-.markdown-source-view.mod-cm6 .cm-url.cm-strikethrough .cm-underline,
-.markdown-source-view.mod-cm6 .cm-link.cm-strikethrough,
-.markdown-source-view.mod-cm6 .cm-link.cm-strikethrough .cm-underline,
-.markdown-source-view.mod-cm6 .cm-hmd-internal-link.cm-strikethrough,
-.cm-s-obsidian .cm-url.cm-strikethrough,
-.cm-s-obsidian .cm-link.cm-strikethrough,
-.cm-s-obsidian .cm-hmd-internal-link.cm-strikethrough {
-  text-decoration: line-through var(--link-decoration-color);
-}
-
-.cm-s-obsidian span.cm-string.cm-url {
-  color: var(--ebw-link-hidden);
-}
-
-// Em A
-.cm-s-obsidian span.cm-link.cm-em {
-  color: var(--italic-color);
-  text-decoration: var(--link-decoration);
-  text-decoration-color: var(--link-decoration-color);
-}
-
-// Strong A
-
-.cm-s-obsidian span.cm-link.cm-strong {
-  color: var(--bold-color);
-  text-decoration: var(--link-decoration);
-}
-
-// Strong and Em A Hover
-
-.cm-s-obsidian span.cm-link.cm-em:hover,
-.cm-s-obsidian span.cm-link.cm-strong:hover {
-  color: var(--link-color-hover);
-  text-decoration: var(--link-decoration-hover);
-}
-
 /* Collapse external links / markdown links in edit mode */
 body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
   div.cm-line:not(.cm-active) {
+    > .cm-string.cm-url {
+      text-decoration: none;
+    }
     > .cm-string.cm-url:not(.cm-formatting) {
       font-size: 0;
     }
