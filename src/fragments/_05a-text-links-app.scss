@@ -81,7 +81,6 @@
   }
   // Unmatched bare links are .. super strange for formatting in source mode/live preview.
   .cm-line:has(.cm-url):not(:has(.cm-link)) .cm-url:not(.cm-link) {
-    background-color: green;
     color: var(--text-normal);
     font-weight: normal;
     font-style: normal;
