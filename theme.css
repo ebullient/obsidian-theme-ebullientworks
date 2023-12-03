@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.17. A dark and light theme for Obsidian.
+Ebullientworks 0.7.18. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -1495,7 +1495,6 @@ strong a:hover {
 }
 .cm-s-obsidian .cm-line:has(.cm-url):not(:has(.cm-link)) .cm-url:not(.cm-link),
 .markdown-source-view.mod-cm6 .cm-line:has(.cm-url):not(:has(.cm-link)) .cm-url:not(.cm-link) {
-  background-color: green;
   color: var(--text-normal);
   font-weight: normal;
   font-style: normal;
