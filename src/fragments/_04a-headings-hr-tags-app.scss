@@ -5,14 +5,15 @@
   @include head.variants-caps-header-one;
 }
 
-.HyperMD-header,
-.workspace {
-  .is-live-preview .HyperMD-header .cm-header::before,
-  .workspace {
-    @include head.before-header-one;
+/* Mark headers as sections § */
+body:not(.ebullientworks-nix-heading-marker) {
+  .is-live-preview {
+    .HyperMD-header {
+      --ebw-collapse-icon-width: -26px;
+      @include head.before-header-one;
+    }
   }
 }
-
 .cm-s-obsidian {
   .cm-header.cm-inline-code {
     font-weight: var(--font-extralight);

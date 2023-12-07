@@ -62,28 +62,50 @@ h1,
   @include variants-caps-header-one;
 }
 
+@mixin section-icon {
+  content: "\00a0\00a7\00a0";
+  font-size: 0.5em;
+  font-weight: 200;
+  position: relative;
+  vertical-align: middle;
+  font-family: var(--font-default);
+  visibility: visible;
+}
+
 @mixin before-header-one {
-  h1::before,
-  h2::before,
-  h3::before,
-  h4::before,
-  h5::before,
-  h6::before {
-    content: "\00a7\00a0";
-    font-size: 0.5em;
-    font-weight: 200;
-    position: relative;
-    vertical-align: middle;
-    font-family: var(--font-default);
+  &:not(:has(.collapse-indicator))::before {
+    @include section-icon;
+  }
+  .collapse-indicator {
+    opacity: 1;
+    visibility: hidden;
+    margin-left: var(--ebw-collapse-icon-width);
+    &:hover {
+      visibility: visible;
+    }
+    &:after {
+      @include section-icon;
+    }
   }
 }
 
-.markdown-rendered,
+/* Mark headers as sections § */
+body:not(.ebullientworks-nix-heading-marker) {
+  .markdown-rendered,
   .print {
-    @include before-header-one;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      --ebw-collapse-icon-width: -28px;
+      @include before-header-one;
+    }
   }
+}
 
-  /* Tag formatting */
+/* Tag formatting */
 body:not(.ebullientworks-nix-tags) {
   --tag-background: transparent;
   --tag-background-hover: transparent;
