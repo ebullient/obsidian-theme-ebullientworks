@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.18. A dark and light theme for Obsidian.
+Ebullientworks 0.7.19. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -361,24 +361,90 @@ h1,
   font-variant-caps: var(--ebw-header-font-caps-variant);
 }
 
-.markdown-rendered h1::before,
-.markdown-rendered h2::before,
-.markdown-rendered h3::before,
-.markdown-rendered h4::before,
-.markdown-rendered h5::before,
-.markdown-rendered h6::before,
-.print h1::before,
-.print h2::before,
-.print h3::before,
-.print h4::before,
-.print h5::before,
-.print h6::before {
-  content: "§ ";
+/* Mark headers as sections § */
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h1,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h2,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h3,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h4,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h5,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h6,
+body:not(.ebullientworks-nix-heading-marker) .print h1,
+body:not(.ebullientworks-nix-heading-marker) .print h2,
+body:not(.ebullientworks-nix-heading-marker) .print h3,
+body:not(.ebullientworks-nix-heading-marker) .print h4,
+body:not(.ebullientworks-nix-heading-marker) .print h5,
+body:not(.ebullientworks-nix-heading-marker) .print h6 {
+  --ebw-collapse-icon-width: -28px;
+}
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h1:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h2:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h3:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h4:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h5:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h6:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .print h1:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .print h2:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .print h3:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .print h4:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .print h5:not(:has(.collapse-indicator))::before,
+body:not(.ebullientworks-nix-heading-marker) .print h6:not(:has(.collapse-indicator))::before {
+  content: " § ";
   font-size: 0.5em;
   font-weight: 200;
   position: relative;
   vertical-align: middle;
   font-family: var(--font-default);
+  visibility: visible;
+}
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h1 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h2 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h3 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h4 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h5 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h6 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .print h1 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .print h2 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .print h3 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .print h4 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .print h5 .collapse-indicator,
+body:not(.ebullientworks-nix-heading-marker) .print h6 .collapse-indicator {
+  opacity: 1;
+  visibility: hidden;
+  margin-left: var(--ebw-collapse-icon-width);
+}
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h1 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h2 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h3 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h4 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h5 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h6 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .print h1 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .print h2 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .print h3 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .print h4 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .print h5 .collapse-indicator:hover,
+body:not(.ebullientworks-nix-heading-marker) .print h6 .collapse-indicator:hover {
+  visibility: visible;
+}
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h1 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h2 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h3 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h4 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h5 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .markdown-rendered h6 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .print h1 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .print h2 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .print h3 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .print h4 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .print h5 .collapse-indicator:after,
+body:not(.ebullientworks-nix-heading-marker) .print h6 .collapse-indicator:after {
+  content: " § ";
+  font-size: 0.5em;
+  font-weight: 200;
+  position: relative;
+  vertical-align: middle;
+  font-family: var(--font-default);
+  visibility: visible;
 }
 
 /* Tag formatting */
