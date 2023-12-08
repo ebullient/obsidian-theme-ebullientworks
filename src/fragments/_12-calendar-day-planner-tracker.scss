@@ -89,7 +89,17 @@
   height: 14px;
   background-color: var(--day-planner-timeline-fg);
 }
-
+// ---
+// Folder note
+// ---
+.folder-note-underline-path .has-folder-note.view-header-breadcrumb,
+.folder-note-underline .has-folder-note .nav-folder-title-content {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-base-40);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
 // ------
 // Fantasy Calendar
 // ------
