@@ -2,8 +2,3 @@
   --interactive-accent: var(--interactive-accent-hover);
 }
 
-select:focus,
-.dropdown:focus {
-  box-shadow: 0 0 0 0.0625rem var(--background-modifier-border-focus);
-  outline: none;
-}
