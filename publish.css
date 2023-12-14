@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.19. A dark and light theme for Obsidian.
+Ebullientworks 0.7.20. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -134,6 +134,7 @@ body {
   --secondary-accent-5: var(--green-5);
   --secondary-accent-6: var(--green-6);
   --secondary-accent-1-rgb: var(--green-1-rgb);
+  --secondary-accent-4-rgb: var(--green-4-rgb);
 }
 
 body {

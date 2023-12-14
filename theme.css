@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.19. A dark and light theme for Obsidian.
+Ebullientworks 0.7.20. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -296,6 +296,7 @@ body {
   --secondary-accent-5: var(--green-5);
   --secondary-accent-6: var(--green-6);
   --secondary-accent-1-rgb: var(--green-1-rgb);
+  --secondary-accent-4-rgb: var(--green-4-rgb);
 }
 
 .primary-accent-red {
@@ -934,12 +935,6 @@ body.is-tablet .view-header .view-action,
 
 .modal-content .vertical-tab-header {
   --interactive-accent: var(--interactive-accent-hover);
-}
-
-select:focus,
-.dropdown:focus {
-  box-shadow: 0 0 0 0.0625rem var(--background-modifier-border-focus);
-  outline: none;
 }
 
 .theme-dark {
@@ -1669,8 +1664,7 @@ div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
   --text-selection: var(--text-highlight-bg-active);
 }
 
-.markdown-source-view.mod-cm6 .cm-selection,
-::selection {
+.ebw-test-select {
   background-color: var(--text-selection);
 }
 
@@ -2652,6 +2646,15 @@ li .internal-embed .markdown-embed-content {
 .day-planner-progress-value {
   height: 14px;
   background-color: var(--day-planner-timeline-fg);
+}
+
+.folder-note-underline-path .has-folder-note.view-header-breadcrumb,
+.folder-note-underline .has-folder-note .nav-folder-title-content {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-base-40);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .mod-cta .setting-item-description,
