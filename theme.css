@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.20. A dark and light theme for Obsidian.
+Ebullientworks 0.7.21. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -1433,11 +1433,6 @@ em a:hover,
 strong a:hover {
   color: var(--link-color-hover);
   text-decoration: var(--link-decoration-hover);
-}
-
-.external-link {
-  background-position: center right;
-  background-size: 0.9em;
 }
 
 .search-result-file-matched-text,
