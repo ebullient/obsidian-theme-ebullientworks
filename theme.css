@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 0.7.21. A dark and light theme for Obsidian.
+Ebullientworks 1.0.0. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -2657,57 +2657,8 @@ li .internal-embed .markdown-embed-content {
   color: var(--text-on-accent);
 }
 
-.theme-dark .timeline-container h2 {
-  color: var(--gray-dark-2);
-}
-.theme-dark .timeline-left::before {
-  border: medium solid var(--gray-dark-2);
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent var(--gray-dark-2);
-}
-.theme-dark .timeline-right::before {
-  border: medium solid var(--gray-dark-2);
-  border-width: 10px 10px 10px 0;
-  border-color: transparent var(--gray-dark-2) transparent transparent;
-}
-.theme-dark .timeline-container::after {
-  border: 4px solid var(--primary-accent-4);
-}
-
-.theme-light .timeline-container h2 {
-  color: var(--gray-light-1);
-}
-.theme-light .timeline-left::before {
-  border: medium solid var(--gray-light-1);
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent var(--gray-light-1);
-}
-.theme-light .timeline-right::before {
-  border: medium solid var(--gray-light-1);
-  border-width: 10px 10px 10px 0;
-  border-color: transparent var(--gray-light-1) transparent transparent;
-}
-.theme-light .timeline-container::after {
-  border: 4px solid var(--primary-accent-2);
-}
-.theme-light .timeline::after {
-  background-color: var(--blue-1);
-}
-
-.timeline-container {
-  page-break-inside: avoid;
-}
-.timeline-container h1:before,
-.timeline-container h2:before,
-.timeline-container h3:before,
-.timeline-container h4:before,
-.timeline-container h5:before,
-.timeline-container h6:before {
-  display: none;
-}
-
-.timeline-card a.internal-link {
-  text-decoration: none;
+body.theme-light:not(.swcm6-nix-plugin-styles) {
+  --show-whitespace-color: var(--color-base-30);
 }
 
 .ebullientworks-floating-frontmatter .markdown-rendered pre.frontmatter,
