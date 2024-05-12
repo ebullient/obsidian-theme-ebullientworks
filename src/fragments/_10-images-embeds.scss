@@ -1,6 +1,8 @@
 @mixin invisibleEmbed() {
   --embed-border-left: none;
   --embed-border-right: none;
+  --embed-border-start: none;
+  --embed-border-end: none;
   --embed-padding: 0;
 }
 
@@ -55,7 +57,7 @@ div {
 // ------------------------------------------------------
 
 /** Ensure an individual embedded block to have borders and padding removed (nesting) */
-.internal-embed[alt="invisible-embed"] {
+.markdown-embed.internal-embed[alt="invisible-embed"] {
   @include invisibleEmbed;
 }
 /** Ensure an individual embedded block will have borders and padding applied (nesting) */
