@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 1.0.0. A dark and light theme for Obsidian.
+Ebullientworks 1.0.1. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -1283,9 +1283,11 @@ div[src$="#small-right"] {
 }
 
 /** Ensure an individual embedded block to have borders and padding removed (nesting) */
-.internal-embed[alt=invisible-embed] {
+.markdown-embed.internal-embed[alt=invisible-embed] {
   --embed-border-left: none;
   --embed-border-right: none;
+  --embed-border-start: none;
+  --embed-border-end: none;
   --embed-padding: 0;
 }
 
