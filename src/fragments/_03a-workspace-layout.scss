@@ -244,3 +244,43 @@ body.is-tablet .view-header .view-action,
     }
   }
 }
+
+
+// Sync status icon
+
+:is(.is-mobile, .is-phone) {
+  .workspace:not(:has(.workspace-drawer-backdrop)) {
+    .workspace-drawer.mod-right {
+      display: flex !important;
+      overflow: visible;
+      left: 100%;
+
+      .workspace-drawer-inner {
+        overflow: visible;
+      }
+    }
+    .view-actions {
+      padding-right: 32px;
+
+      &:is(.is-phone) {
+        padding-right: 23px;
+      }
+    }
+  }
+}
+
+.is-phone {
+  .sync-status-icon {
+    position: absolute;
+    top: 0.5rem;
+    left: calc(-1 * 3.25rem);
+  }
+}
+
+.is-tablet {
+  .sync-status-icon {
+    position: absolute;
+    top: 2.3rem;
+    left: calc(-1 * 3.25rem);
+  }
+}
