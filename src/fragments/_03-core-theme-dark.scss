@@ -5,26 +5,44 @@
   --background-secondary: var(--gray-dark-7);         //  Sidebar/modal background, active/hover tab nav items, tab content, drag ghost, menu item hover
   --background-secondary-alt: var(--gray-dark-8);     //  muted button, checkbox container, kbd, modal border, modal button, tab nav items, vertical tab header, clickable tree item, card, drag ghost border
 
-  --background-modifier-border: black;   //  Border outline of quotes, tables, line breaks
-  --background-modifier-border-focus: black;
-  --background-modifier-form-field: rgba(0, 0, 0, 0.3);
+  --background-modifier-hover: rgba(var(--mono-rgb-100), 0.075);
+  --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
+
+  --background-modifier-border: var(--gray-dark-9);   //  Border outline of quotes, tables, line breaks
+  --background-modifier-border-hover: black;
+  --background-modifier-border-focus: var(--gray-dark-10);
+
+  --background-modifier-error-rgb: var(--red-5-rgb);           //  Ctrl F Search Background
+  --background-modifier-error: var(--red-5);           //  with text-on-accent / Delete Screen Button
+  --background-modifier-error-hover: var(--red-4);
+
+  --background-modifier-success-rgb: var(--green-5-rgb);     // Publish Upload Success Background
+  --background-modifier-success:     var(--green-5);         // Publish Upload Success Background
+
+  --background-modifier-warning: var(--yellow-4);            //  Warning Background
+  --background-modifier-warning-hover: var(--yellow-3);
+  --background-modifier-info: var(--blue-5);
+
+  --modifier-text: var(--gray-light-8);
+  --modifier-text-accent: var(--gray-light-7);
+
+  // tooltip
+  --background-modifier-message: var(--gray-dark-6);
+
+  --background-modifier-form-field: var(--gray-dark-6);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22); // Search Bar Active Highlight
+
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
-  --background-modifier-success: var(--green-5);  //  with text-on-accent / Publish Upload Success Background
-  --background-modifier-error: var(--red-5);   //  with text-on-accent / Delete Screen Button
-  --background-modifier-error-rgb: 61, 0, 0;           //  Ctrl F Search Background
-  --background-modifier-error-hover: var(--red-5);
   --background-modifier-cover: rgba(0, 0, 0, 0.8);   //  Obsidian Title Bar
 
   --text-accent: var(--primary-accent-2);                        // Links
-  --text-accent-hover: var(--gray-light-8);
+  --text-accent-hover: var(--primary-accent-1);
 
   --text-normal: var(--gray-light-1);                  //  Text body of note
-  --text-muted: var(--gray);                   //  Text darker for sidebar, toggles, inactive, tags, etc
+  --text-muted: var(--gray);                           //  Text darker for sidebar, toggles, inactive, tags, etc
   --text-faint: var(--gray-dark-1);                    //  Link brackets color
 
   --text-error: var(--red-3);
-
   --text-success: var(--green-3);
 
   --text-highlight-fg: var(--gray-dark-7);
@@ -51,9 +69,11 @@
   // Text on accent should work as foreground for all interactive elements
   --text-on-accent: var(--gray-light-8);                // Program Title bar text
   --interactive-hover: var(--primary-accent-4);         // Button hover text; pin
-  --interactive-normal: var(--background-primary-alt);
-  --interactive-accent: var(--secondary-accent-4);      // Workspace Note Title Underline
+  --interactive-normal: var(--gray-dark-6);
+  --interactive-accent: var(--primary-accent-5);      // Workspace Note Title Underline
   --interactive-accent-hover: var(--primary-accent-4);  // Menu Button Hover
+  --interactive-toggle: var(--secondary-accent-4);
+  --interactive-disabled: var(--background-modifier-form-field);
 
   --ebw-alpha2: rgba(0, 0, 0, 0.2);
   --ebw-alpha4: rgba(0, 0, 0, 0.4);

@@ -247,7 +247,6 @@ body.is-tablet .view-header .view-action,
 
 
 // Sync status icon
-
 :is(.is-mobile, .is-phone) {
   .workspace:not(:has(.workspace-drawer-backdrop)) {
     .workspace-drawer.mod-right {
@@ -282,5 +281,44 @@ body.is-tablet .view-header .view-action,
     position: absolute;
     top: 2.3rem;
     left: calc(-1 * 3.25rem);
+  }
+}
+
+.message.mod-error,
+.message.mod-info,
+.message.mod-success,
+.message.mod-warning {
+  color: var(--modifier-text);
+}
+.message.mod-error a,
+.message.mod-info a,
+.message.mod-success a,
+.message.mod-warning a {
+  color: var(--modifier-text-accent);
+}
+.message.mod-info {
+  background-color: var(--background-modifier-info);
+}
+button.mod-warning,
+.message.mod-warning {
+  background-color: var(--background-modifier-warning);
+  color: var(--modifier-text);
+}
+button.mod-destructive {
+  background-color: var(--background-modifier-error);
+  color: var(--modifier-text);
+}
+.checkbox-container {
+  background-color: var(--interactive-disabled);
+  &.is-enabled {
+    background-color: var(--interactive-toggle);
+  }
+}
+@media (hover: hover) {
+  button.mod-warning:hover {
+    background-color: var(--background-modifier-warning-hover);
+  }
+  button.mod-destructive:hover {
+    background-color: var(--background-modifier-error-hover);
   }
 }

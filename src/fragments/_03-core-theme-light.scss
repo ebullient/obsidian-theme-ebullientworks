@@ -5,14 +5,51 @@
     --background-secondary: var(--gray-light-3);               //  Sidebar background
     --background-secondary-alt: var(--gray-light-4);           //  Sidebar title background
 
+    --background-modifier-hover: rgba(0, 0, 0, 0.075);
+    --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
+
     --background-modifier-border: var(--gray-light-1);         //  Border outline of quotes, tables, line breaks
+    --background-modifier-border-hover: var(--gray-light-2);
+    --background-modifier-border-focus: var(--gray);
 
-    --background-modifier-success:     var(--green-2);         // Publish Upload Success Background
-    --background-modifier-success-rgb: var(--green-2-rgb);     // Publish Upload Success Background
+    --background-modifier-error-rgb: var(--red-4-rgb);           //  Ctrl F Search Background
+    --background-modifier-error: var(--red-4);           //  with text-on-accent / Delete Screen Button
+    --background-modifier-error-hover: var(--red-3);
 
-    --background-modifier-error: var(--red-4);                 // Delete Screen Button
-    --background-modifier-error-rgb: 188,83,69;
-    --background-modifier-error-hover: var(--red-4);
+    --background-modifier-success-rgb: var(--green-4-rgb);     // Publish Upload Success Background
+    --background-modifier-success:     var(--green-4);         // Publish Upload Success Background
+
+    --background-modifier-warning: var(--yellow-3);            //  Warning Background
+    --background-modifier-warning-hover: var(--yellow-4);
+
+    --background-modifier-info: var(--blue-4);
+
+    --modifier-text: white;
+    --modifier-text-accent: var(--gray-light-7);
+
+    // button.mod-warning,
+    // .message.mod-warning {
+    //   --modifier-text: var(--gray-dark-6);
+    //   --modifier-text-accent: var(--gray-dark-5);
+    // }
+
+    @media (hover: hover) {
+      button.mod-cta:hover,
+      button.mod-destructive:hover {
+        --modifier-text: var(--gray-dark-8);
+        color: var(--modifier-text);
+      }
+    }
+
+
+    // always light text (tooltip)
+    --background-modifier-message: rgba(0, 0, 0, 0.9);
+
+    --background-modifier-form-field: var(--background-primary);
+    --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22); // Search Bar Active Highlight
+
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+    --background-modifier-cover: rgba(220, 220, 220, 0.4);
 
     --text-normal: var(--gray-dark-5);                        // Text body of note
     --text-muted: var(--gray-dark-4);                         // Text darker for sidebar, toggles, inactive, tags, etc
@@ -22,19 +59,22 @@
     --text-accent-hover: var(--primary-accent-5);
 
     --text-success: var(--green-4);
-    --text-error: var(--red-5);
+    --text-error: var(--red-4);
 
     --text-highlight-fg: var(--gray-dark-7);
     --text-highlight-bg-rgb: var(--primary-accent-4-rgb);
     --text-highlight-bg: rgba(var(--text-highlight-bg-rgb), 0.2);
     --text-selection: rgba(var(--secondary-accent-4-rgb), 0.2);
 
-    // Text on accent should work as foreground for all interactive elements
-    --text-on-accent: var(--gray-light-8);                // Program Title bar text
     --interactive-hover: var(--primary-accent-1);         // Button hover text; pin
     --interactive-normal: var(--background-primary-alt);
-    --interactive-accent: var(--secondary-accent-4);      // Workspace Note Title Underline
-    --interactive-accent-hover: var(--primary-accent-4);  // Menu Button Hover
+
+    // Text on accent should work as foreground for all interactive accent elements
+    --text-on-accent: var(--gray-light-8);                // Program Title bar text
+    --interactive-accent: var(--primary-accent-4);      // Workspace Note Title Underline
+    --interactive-accent-hover: var(--primary-accent-3);  // Menu Button Hover
+    --interactive-toggle: var(--secondary-accent-3);
+    --interactive-disabled: var(--gray-light-3);
 
     // Color Spectrum
     --color-red-rgb: var(--red-4-rgb);
