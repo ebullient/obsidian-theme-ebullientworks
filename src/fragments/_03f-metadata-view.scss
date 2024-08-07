@@ -127,3 +127,19 @@ body {
   padding: 0;
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 700px) {
+
+  .metadata-properties-title {
+    display: none;
+  }
+
+  .markdown-source-view .metadata-container .metadata-add-button {
+    margin-top: revert;
+    padding-left: revert;
+    position: revert;
+    font-size: revert;
+    left: revert;
+    top: revert;
+  }
+}
