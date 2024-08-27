@@ -65,6 +65,7 @@ body {
     }
   }
 }
+.is-mobile,
 .is-focused {
   --divider-color: var(--background-modifier-border-focus);
   --ribbon-background: var(--titlebar-background-focused);
@@ -101,6 +102,9 @@ body:not(.is-mobile) .mod-left-split.is-floating {
 }
 body:not(.is-mobile) .mod-right-split.is-floating {
   right: 0;
+}
+body.is-mobile .workspace-drawer-header-icon.sync-status-icon {
+  background-color: var(--background-primary);
 }
 
 // Put view actions on the left side of the view title
