@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 1.0.1. A dark and light theme for Obsidian.
+Ebullientworks 1.0.2. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -564,18 +564,28 @@ body {
   --background-primary-alt: var(--gray-dark-75);
   --background-secondary: var(--gray-dark-7);
   --background-secondary-alt: var(--gray-dark-8);
-  --background-modifier-border: black;
-  --background-modifier-border-focus: black;
-  --background-modifier-form-field: rgba(0, 0, 0, 0.3);
+  --background-modifier-hover: rgba(var(--mono-rgb-100), 0.075);
+  --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
+  --background-modifier-border: var(--gray-dark-9);
+  --background-modifier-border-hover: black;
+  --background-modifier-border-focus: var(--gray-dark-10);
+  --background-modifier-error-rgb: var(--red-5-rgb);
+  --background-modifier-error: var(--red-5);
+  --background-modifier-error-hover: var(--red-4);
+  --background-modifier-success-rgb: var(--green-5-rgb);
+  --background-modifier-success: var(--green-5);
+  --background-modifier-warning: var(--yellow-4);
+  --background-modifier-warning-hover: var(--yellow-3);
+  --background-modifier-info: var(--blue-5);
+  --modifier-text: var(--gray-light-8);
+  --modifier-text-accent: var(--gray-light-7);
+  --background-modifier-message: var(--gray-dark-6);
+  --background-modifier-form-field: var(--gray-dark-6);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
-  --background-modifier-success: var(--green-5);
-  --background-modifier-error: var(--red-5);
-  --background-modifier-error-rgb: 61, 0, 0;
-  --background-modifier-error-hover: var(--red-5);
   --background-modifier-cover: rgba(0, 0, 0, 0.8);
   --text-accent: var(--primary-accent-2);
-  --text-accent-hover: var(--gray-light-8);
+  --text-accent-hover: var(--primary-accent-1);
   --text-normal: var(--gray-light-1);
   --text-muted: var(--gray);
   --text-faint: var(--gray-dark-1);
@@ -590,9 +600,11 @@ body {
   --indentation-guide-active: var(--gray-dark-6);
   --text-on-accent: var(--gray-light-8);
   --interactive-hover: var(--primary-accent-4);
-  --interactive-normal: var(--background-primary-alt);
-  --interactive-accent: var(--secondary-accent-4);
+  --interactive-normal: var(--gray-dark-6);
+  --interactive-accent: var(--primary-accent-5);
   --interactive-accent-hover: var(--primary-accent-4);
+  --interactive-toggle: var(--secondary-accent-4);
+  --interactive-disabled: var(--background-modifier-form-field);
   --ebw-alpha2: rgba(0, 0, 0, 0.2);
   --ebw-alpha4: rgba(0, 0, 0, 0.4);
   --color-red-rgb: var(--red-2-rgb);
@@ -634,34 +646,56 @@ body {
   --text-highlight-bg: var(--primary-accent-2);
   --text-highlight-bg-rgb: var(--primary-accent-2-rgb);
 }
+.theme-dark .sync-status-icon.mod-working {
+  color: var(--primary-accent-4);
+}
+.theme-dark .sync-status-icon.mod-error {
+  color: var(--red-4);
+}
 
 .theme-light {
   --background-primary: var(--gray-light-7);
   --background-primary-alt: var(--gray-light-5);
   --background-secondary: var(--gray-light-3);
   --background-secondary-alt: var(--gray-light-4);
+  --background-modifier-hover: rgba(0, 0, 0, 0.075);
+  --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
   --background-modifier-border: var(--gray-light-1);
-  --background-modifier-success: var(--green-2);
-  --background-modifier-success-rgb: var(--green-2-rgb);
+  --background-modifier-border-hover: var(--gray-light-2);
+  --background-modifier-border-focus: var(--gray);
+  --background-modifier-error-rgb: var(--red-4-rgb);
   --background-modifier-error: var(--red-4);
-  --background-modifier-error-rgb: 188,83,69;
-  --background-modifier-error-hover: var(--red-4);
+  --background-modifier-error-hover: var(--red-3);
+  --background-modifier-success-rgb: var(--green-4-rgb);
+  --background-modifier-success: var(--green-4);
+  --background-modifier-warning: var(--yellow-3);
+  --background-modifier-warning-hover: var(--yellow-4);
+  --background-modifier-info: var(--blue-4);
+  --modifier-text: white;
+  --modifier-text-accent: var(--gray-light-7);
+  --background-modifier-message: rgba(0, 0, 0, 0.9);
+  --background-modifier-form-field: var(--background-primary);
+  --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+  --background-modifier-cover: rgba(220, 220, 220, 0.4);
   --text-normal: var(--gray-dark-5);
   --text-muted: var(--gray-dark-4);
   --text-faint: var(--gray-dark-1);
   --text-accent: var(--primary-accent-4);
   --text-accent-hover: var(--primary-accent-5);
   --text-success: var(--green-4);
-  --text-error: var(--red-5);
+  --text-error: var(--red-4);
   --text-highlight-fg: var(--gray-dark-7);
   --text-highlight-bg-rgb: var(--primary-accent-4-rgb);
   --text-highlight-bg: rgba(var(--text-highlight-bg-rgb), 0.2);
   --text-selection: rgba(var(--secondary-accent-4-rgb), 0.2);
-  --text-on-accent: var(--gray-light-8);
   --interactive-hover: var(--primary-accent-1);
   --interactive-normal: var(--background-primary-alt);
-  --interactive-accent: var(--secondary-accent-4);
-  --interactive-accent-hover: var(--primary-accent-4);
+  --text-on-accent: var(--gray-light-8);
+  --interactive-accent: var(--primary-accent-4);
+  --interactive-accent-hover: var(--primary-accent-3);
+  --interactive-toggle: var(--secondary-accent-3);
+  --interactive-disabled: var(--gray-light-3);
   --color-red-rgb: var(--red-4-rgb);
   --color-red: var(--red-4);
   --color-orange-rgb: var(--orange-4-rgb);
@@ -690,6 +724,13 @@ body {
   --color-base-60: var(--gray-dark-3);
   --color-base-70: var(--gray-dark-4);
   --color-base-100: var(--gray-dark-8);
+}
+@media (hover: hover) {
+  .theme-light button.mod-cta:hover,
+  .theme-light button.mod-destructive:hover {
+    --modifier-text: var(--gray-dark-8);
+    color: var(--modifier-text);
+  }
 }
 
 .theme-dark.is-tablet {
@@ -757,6 +798,7 @@ body {
   background-color: var(--ebw-tab-title-active-bg);
 }
 
+.is-mobile,
 .is-focused {
   --divider-color: var(--background-modifier-border-focus);
   --ribbon-background: var(--titlebar-background-focused);
@@ -764,10 +806,12 @@ body {
   --status-bar-background: var(--titlebar-background-focused);
   --tab-outline-color: var(--background-modifier-border-focus);
 }
+.is-mobile .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active,
 .is-focused .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
   color: var(--ebw-tab-title-active-fg);
   background-color: var(--ebw-tab-title-active-focused-bg);
 }
+.is-mobile .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 .is-focused .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active .workspace-tab-header-inner-title {
   color: inherit;
 }
@@ -791,6 +835,10 @@ body:not(.is-mobile) .mod-left-split.is-floating {
 
 body:not(.is-mobile) .mod-right-split.is-floating {
   right: 0;
+}
+
+body.is-mobile .workspace-drawer-header-icon.sync-status-icon {
+  background-color: var(--background-primary);
 }
 
 .ebullientworks-reverse-view-header-actions .popover.hover-editor .popover-content .workspace-leaf-content .view-header,
@@ -933,6 +981,77 @@ body.is-tablet .view-header .view-action,
   display: none;
 }
 
+:is(.is-mobile, .is-phone) .workspace:not(:has(.workspace-drawer-backdrop)) .workspace-drawer.mod-right {
+  display: flex !important;
+  overflow: visible;
+  left: 100%;
+}
+:is(.is-mobile, .is-phone) .workspace:not(:has(.workspace-drawer-backdrop)) .workspace-drawer.mod-right .workspace-drawer-inner {
+  overflow: visible;
+}
+:is(.is-mobile, .is-phone) .workspace:not(:has(.workspace-drawer-backdrop)) .view-actions {
+  padding-right: 32px;
+}
+:is(.is-mobile, .is-phone) .workspace:not(:has(.workspace-drawer-backdrop)) .view-actions:is(.is-phone) {
+  padding-right: 23px;
+}
+
+.is-phone .sync-status-icon {
+  position: absolute;
+  top: 0.5rem;
+  left: -3.25rem;
+}
+
+.is-tablet .sync-status-icon {
+  position: absolute;
+  top: 2.3rem;
+  left: -3.25rem;
+}
+
+.message.mod-error,
+.message.mod-info,
+.message.mod-success,
+.message.mod-warning {
+  color: var(--modifier-text);
+}
+
+.message.mod-error a,
+.message.mod-info a,
+.message.mod-success a,
+.message.mod-warning a {
+  color: var(--modifier-text-accent);
+}
+
+.message.mod-info {
+  background-color: var(--background-modifier-info);
+}
+
+button.mod-warning,
+.message.mod-warning {
+  background-color: var(--background-modifier-warning);
+  color: var(--modifier-text);
+}
+
+button.mod-destructive {
+  background-color: var(--background-modifier-error);
+  color: var(--modifier-text);
+}
+
+.checkbox-container {
+  background-color: var(--interactive-disabled);
+}
+.checkbox-container.is-enabled {
+  background-color: var(--interactive-toggle);
+}
+
+@media (hover: hover) {
+  button.mod-warning:hover {
+    background-color: var(--background-modifier-warning-hover);
+  }
+  button.mod-destructive:hover {
+    background-color: var(--background-modifier-error-hover);
+  }
+}
 .modal-content .vertical-tab-header {
   --interactive-accent: var(--interactive-accent-hover);
 }
@@ -1072,6 +1191,19 @@ body {
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 700px) {
+  .metadata-properties-title {
+    display: none;
+  }
+  .markdown-source-view .metadata-container .metadata-add-button {
+    margin-top: revert;
+    padding-left: revert;
+    position: revert;
+    font-size: revert;
+    left: revert;
+    top: revert;
+  }
+}
 body {
   --h1-size: 2em;
   --h2-size: 1.8em;
@@ -2362,7 +2494,7 @@ div.popover .callout[data-callout=toc] {
   margin-bottom: 0;
 }
 
-.markdown-source-view.mod-cm6 .admonition-parent > .edit-block-button {
+.markdown-source-view.mod-cm6 .edit-block-button {
   right: calc(var(--size-4-2) + var(--icon-size) + 0.375rem);
   top: calc(var(--size-2-2) + 0.125rem);
 }
