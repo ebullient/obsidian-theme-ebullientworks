@@ -108,4 +108,13 @@
   --color-base-60: var(--gray-dark-1);
   --color-base-70: var(--gray);
   --color-base-100: var(--gray-light-1);
+
+  .sync-status-icon {
+    &.mod-working {
+      color: var(--primary-accent-4);
+    }
+    &.mod-error {
+      color: var(--red-4);
+    }
+  }
 }
