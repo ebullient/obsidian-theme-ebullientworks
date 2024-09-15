@@ -4,10 +4,17 @@
   --calendar-dividing-line: var(--primary-accent-1);
   --day-planner-timeline-fg: var(--primary-accent-3);
 
-  .day.today {
-    color: var(--primary-accent-3);
-    font-weight: bold;
+  .calendar {
+
+    .today {
+
+      .span.day-number {
+        color: var(--primary-accent-3);
+        font-weight: bold;
+      }
+    }
   }
+
   .day.today:hover {
     color: var(--gray-light-5);
   }
