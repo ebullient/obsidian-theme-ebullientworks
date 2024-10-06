@@ -1,3 +1,22 @@
+// Declare mixins
+@mixin blockquote-styles {
+  blockquote {
+    overflow-x: auto;
+    padding: var(--callout-content-padding);
+    border-radius: var(--callout-radius);
+
+    > :first-child {
+      margin-top: 0.5em;
+    }
+
+    > :last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+// General colors
+
 body {
   --callout-padding: 0;
   --callout-radius: var(--radius-m);
@@ -45,25 +64,22 @@ body {
   --ebw-callout-danger: 167, 92, 112; // pink-4
 }
 
-@mixin blockquote-styles {
-  blockquote {
-    overflow-x: auto;
-    padding: var(--callout-content-padding);
-    border-radius: var(--callout-radius);
+// Blockquote styling
 
-    > :first-child {
-      margin-top: 0.5em;
-    }
-
-    > :last-child {
-      margin-bottom: 0.5em;
-    }
-  }
-}
-
+.rendered-widget,
+.markdown-preview-section,
 .markdown-rendered {
   @include blockquote-styles;
 }
+
+// Edit button tweaks
+
+.markdown-source-view.mod-cm6 .edit-block-button {
+  right: calc(var(--size-4-2) + var(--icon-size) + 0.375rem);
+  top: calc(var(--size-2-2) + 0.125rem);
+}
+
+// Build callouts
 
 // Callout Color Types
 
@@ -173,8 +189,47 @@ $callout-title-types: (
   }
 }
 
-.published-container .callout-content {
-  background-color: var(--background-primary-alt);
+// Add Admonition
+.admonition {
+  margin: 1em 0;
+  padding: var(--callout-padding);
+}
+.is-live-preview {
+  .admonition {
+    margin: 0;
+    padding: var(--callout-padding);
+
+    .admonition-content {
+      > :first-child {
+        margin-top: 0.5em;
+      }
+      > :last-child {
+        margin-bottom: 0.5em;
+      }
+      > * {
+        margin-top: initial;
+        margin-bottom: initial;
+      }
+      > * br {
+        display: none;
+      }
+      ul,
+      ol {
+        white-space: normal;
+      }
+      .math-block > mjx-container {
+        padding: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.markdown-source-view.mod-cm6 .edit-block-button {
+  right: calc(var(--size-4-2) + var(--icon-size) + 0.375rem);
+  top: calc(var(--size-2-2) + 0.125rem);
 }
 
 
