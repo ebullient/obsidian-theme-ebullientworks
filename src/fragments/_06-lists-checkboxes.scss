@@ -1,5 +1,7 @@
 @use '06a-checkbox-mixin' as checkboxes;
 
+// Colors
+
 body {
   --checkbox-checked: var(--green-4);
   --checkbox-deferred: var(--blue-3);
@@ -24,4 +26,14 @@ body {
 body:not(.ebullientworks-nix-checkbox) {
   /** Use style settings to disable custom checkboxes in the theme */
   @include checkboxes.list;
+}
+
+.mobile {
+  .markdown-preview-view {
+    ol,
+    ul {
+      display: block;
+      line-height: var(--line-height);
+    }
+  }
 }
