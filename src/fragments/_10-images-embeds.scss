@@ -16,12 +16,12 @@ body {
   --ebw-embed-border-color: var(--gray-dark-7);
   @include visibleEmbed;
 }
+
 .theme-light {
   --ebw-embed-border-color: var(--primary-accent-1);
 }
-// ------------------------------------------------------
+
 // Floating images
-// ------------------------------------------------------
 img,
 div {
   &[alt~='float-right'] {
@@ -52,15 +52,12 @@ div {
     width: 4.6875rem;
   }
 }
-// ------------------------------------------------------
-// Naked embeds
-// ------------------------------------------------------
 
-/** Ensure an individual embedded block to have borders and padding removed (nesting) */
+// Naked embeds
 .markdown-embed.internal-embed[alt="invisible-embed"] {
   @include invisibleEmbed;
 }
-/** Ensure an individual embedded block will have borders and padding applied (nesting) */
+
 .internal-embed[alt="visible-embed"] {
   @include visibleEmbed;
 }
@@ -73,7 +70,7 @@ div {
     max-height: unset;
     overflow: unset;
 
-    > .markdown-preview-view  {
+    > .markdown-preview-view {
       // no scroll
       overflow-y: unset;
     }
@@ -139,12 +136,7 @@ li .internal-embed {
   z-index: var(--layer-tooltip);
 }
 
-// ------------------------------------------------------
 // Scaled iframes
-// cssclass: embedframe
-// <div class='scaled-iframe'><iframe src="..." ></iframe></div>
-// ------------------------------------------------------
-
 .embedframe iframe {
   width: 125%;
   height: 46.875rem;
@@ -158,4 +150,47 @@ li .internal-embed {
   width: 100%;
   height: 37.5rem;
   position: relative;
+}
+
+.markdown-source-view.invisible-embed,
+.markdown-rendered.invisible-embed {
+  @include invisibleEmbed;
+}
+
+.markdown-source-view {
+  .internal-embed {
+    --list-indent: 1.6em;
+    vertical-align: top;
+    display: inline-block;
+    width: calc(100% - 1.25rem);
+
+    .markdown-embed-content {
+      padding-right: 12px;
+
+      li.task-list-item {
+        position: relative;
+        text-indent: -21px;
+        margin-left: -0.25em;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .HyperMD-list-line > .internal-embed {
+    .markdown-rendered ul,
+    .markdown-rendered ol {
+      display: inline-block;
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+    .markdown-preview-section {
+      display: inline-block;
+      blockquote {
+        margin: 0;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

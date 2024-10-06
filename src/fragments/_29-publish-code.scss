@@ -101,3 +101,8 @@ code[class*='language-'], pre[class*='language-'] {
     color: var(--gray-dark-4);
   }
 }
+
+
+.published-container .callout-content {
+  background-color: var(--background-primary-alt);
+}
