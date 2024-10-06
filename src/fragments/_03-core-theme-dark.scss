@@ -117,4 +117,10 @@
       color: var(--red-4);
     }
   }
+
+  &.is-tablet {
+    --titlebar-background: var(--background-secondary);
+    --titlebar-background-focused: var(--background-secondary);
+    --interactive-normal: var(--background-primary-alt);
+  }
 }
