@@ -105,11 +105,6 @@
       }
     }
     .metadata-container:hover {
-      .metadata-property,
-      .metadata-property[data-property-key="tags"] {
-        --pill-background: var(--background-primary);
-      }
-
       border: 1px solid var(--background-modifier-border);
       background-color: var(--background-primary-alt);
       filter: drop-shadow(-.1rem .1rem .1rem var(--background-modifier-border));
@@ -117,6 +112,10 @@
       min-width: 200px;
       height: unset;
       z-index: 3;
+      .metadata-property,
+      .metadata-property[data-property-key="tags"] {
+        --pill-background: var(--background-primary);
+      }
     }
   }
 }
