@@ -1,44 +1,18 @@
 .theme-dark {
-  --calendar-year: var(--primary-accent-3);
-  --calendar-month: var(--secondary-accent-3);
-  --calendar-dividing-line: var(--primary-accent-1);
-  --day-planner-timeline-fg: var(--primary-accent-3);
-
-  .calendar {
-
-    .today {
-
-      .span.day-number {
-        color: var(--primary-accent-3);
-        font-weight: bold;
-      }
-    }
-  }
-
-  .day.today:hover {
-    color: var(--gray-light-5);
-  }
+  --ebw-calendar-year: var(--primary-accent-3);
+  --ebw-calendar-month: var(--secondary-accent-3);
+  --ebw-today-hover: var(--gray-light-5);
+  --ebw-today-text: var(--primary-accent-3);
+  --day-planner-progress-fg: var(--secondary-accent-3);
+  --day-planner-progress-bg: var(--secondary-accent-5);
 }
 .theme-light {
-  --calendar-year: var(--primary-accent-4);
-  --calendar-month: var(--secondary-accent-4);
-  --calendar-dividing-line: var(--primary-accent-1);
-  --day-planner-timeline-fg: var(--primary-accent-1);
-
-  .week-num.active,
-  .day.active {
-    --color-dot: var(--text-on-accent);
-  }
-  .day.today {
-    color: var(--primary-accent-4);
-    font-weight: bold;
-  }
-  .day.today:hover {
-    color: var(--gray-dark-5);
-  }
-  .calendarium .view-state.active {
-    color: var(--text-on-accent);
-  }
+  --ebw-calendar-year: var(--primary-accent-4);
+  --ebw-calendar-month: var(--secondary-accent-4);
+  --ebw-today-hover: var(--gray-dark-5);
+  --ebw-today-text: var(--primary-accent-4);
+  --day-planner-progress-fg: var(--secondary-accent-1);
+  --day-planner-progress-bg: var(--background-primary);
 }
 // ------------------------------------------------------
 // Calendar, Fantasy Calendar
@@ -58,43 +32,32 @@
     font-family: var(--font-interface);
   }
   span.year {
-    color: var(--calendar-year);
+    color: var(--ebw-calendar-year);
   }
   span.month {
-    color: var(--calendar-month);
+    color: var(--ebw-calendar-month);
   }
 }
-// ------------------------------------------------------
-// Tracker
-// ------------------------------------------------------
-.block-language-tracker {
-  .tracker-month-header-month,
-  .tracker-month-title-arrow {
-    fill: var(--calendar-month);
-  }
-  // month display matches Calendar colors
-  .tracker-month-header-year {
-    fill: var(--calendar-year);
-  }
-  .tracker-month-dividing-line {
-    fill: var(--calendar-dividing-line);
-  }
-  .tracker-month-weekday,
-  .tracker-month-label {
-    fill: var(--text-faint);
-    fill-opacity: 1.0 !important; // bug
+.today,
+.day.today .day-number {
+  --color-text-today: var(--ebw-today-text);
+  color: var(--ebw-today-text);
+  font-weight: bold;
+
+  &:hover {
+    color: var(--ebw-today-hover);
   }
 }
 // ------------------------------------------------------
 // Day Planner
 // ------------------------------------------------------
 .day-planner-progress-bar {
-  background-color: var(--background-primary);
+  background-color: var(--day-planner-progress-bg);
   border: 1px solid var(--tab-outline-color);
 }
 .day-planner-progress-value {
   height: 14px;
-  background-color: var(--day-planner-timeline-fg);
+  background-color: var(--day-planner-progress-fg);
 }
 // ---
 // Folder note
