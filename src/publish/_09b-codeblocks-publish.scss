@@ -1,0 +1,45 @@
+@use "sass:meta";
+
+.theme-dark {
+  --code-normal: var(--blue-2);
+}
+.theme-light {
+  --code-normal: var(--blue-4);
+}
+
+kbd {
+  padding: 0.1em 0.25em;
+  background-color: var(--background-secondary-alt);
+}
+
+pre[class*='language-'] {
+  overflow: hidden;
+
+  code {
+    color: var(--blue-3);
+  }
+}
+
+code[class*='language-'] {
+  color: var(--blue-3);
+
+  // This avoids duplication with :not(pre)
+  &:not(pre > &) {
+    background: var(--background-secondary-alt);
+  }
+}
+
+pre[class*='language-'],
+:not(pre) > code[class*='language-'] {
+  background: var(--background-secondary-alt);
+}
+
+.markdown-rendered {
+  pre {
+    background-color: var(--background-primary-alt);
+
+    code {
+      background-color: var(--background-primary-alt);
+    }
+  }
+}

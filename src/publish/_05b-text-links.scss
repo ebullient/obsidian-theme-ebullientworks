@@ -1,0 +1,112 @@
+//
+// Variables
+//
+
+body {
+  --bold-color: var(--blue-3);
+  --italic-color: var(--pink-2);
+  --link-color: var(--gray-light-1);
+  --link-color-hover: var(--cyan-2);
+  --link-decoration: underline;
+
+  // --link-color 	Resolved link text color
+  --link-decoration-hover: underline;
+  // --link-color-hover 	Resolved link text color (hover)
+  --link-external-color: var(--link-color);
+  // --link-decoration 	Resolved link text decoration
+  --link-external-color-hover: var(--link-color-hover);
+  // --link-decoration-hover 	Resolved link text decoration (hover)
+  --link-external-decoration: underline;
+  // --link-decoration-thickness 	Resolved link text decoration thickness
+  // --link-unresolved-color 	Unresolved link text color
+  --link-external-decoration-hover: underline;
+  // --link-unresolved-opacity 	Unresolved link opacity
+  --ebw-link-hidden: var(--cyan-4);
+  // --link-unresolved-filter 	Unresolved link filter, e.g. hue-rotate
+  // --link-unresolved-decoration-style 	Unresolved link text decoration style
+  --ebw-link-underline: var(--cyan-4);
+  // --link-unresolved-decoration-color 	Unresolved link text decoration color
+  --ebw-strong-em: var(--yellow-2);
+  // --link-external-color 	External link text color
+  --link-unresolved-color: var(--link-color);
+  // --link-external-color-hover 	External link text color (hover)
+  --link-unresolved-decoration-color: var(--ebw-link-underline);
+  // --link-external-decoration 	External link text decoration
+  --link-unresolved-decoration-style: dotted;
+  // --link-external-decoration-hover 	External link text decoration (hover)
+  --link-unresolved-opacity: 0.9;
+}
+
+.theme-light {
+  --bold-color: var(--blue-4);
+  --italic-color: var(--pink-4);
+  --link-color: var(--gray-dark-3);
+  --link-color-hover: var(--cyan-4);
+  --ebw-link-hidden: var(--cyan-2);
+
+  --ebw-link-underline: var(--cyan-3);
+  --ebw-strong-em: var(--yellow-3);
+}
+
+//
+// Links
+//
+
+a {
+  text-decoration-color: var(--ebw-link-underline);
+}
+
+.markdown-rendered {
+  a {
+    del &,
+    & del,
+    del &.internal-link {
+      color: var(--text-muted);
+    }
+
+    em &,
+    & em,
+    em &.internal-link,
+    em &.internal-link.is-unresolved {
+      color: var(--italic-color);
+    }
+
+    strong &,
+    & strong,
+    strong &.internal-link,
+    strong &.internal-link.is-unresolved {
+      color: var(--bold-color);
+    }
+
+    strong em &,
+    & strong em,
+    strong em &.external-link,
+    strong em &.internal-link,
+    strong em &.internal-link.is-unresolved {
+      color: var(--ebw-strong-em);
+    }
+
+    &:hover {
+      color: var(--link-color-hover);
+      text-decoration: var(--link-decoration-hover);
+    }
+  }
+
+  .internal-link.is-unresolved {
+    text-decoration-color: var(--ebw-link-underline);
+    text-decoration-line: var(--link-decoration);
+
+    &::after {
+      color: var(--ebw-link-underline);
+      content: ' ✎';
+    }
+  }
+}
+
+//
+// Highlights
+//
+
+.markdown-rendered mark {
+  color: var(--text-highlight-fg);
+}
