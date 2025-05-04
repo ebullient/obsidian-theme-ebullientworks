@@ -1,0 +1,112 @@
+@mixin embedBorder($visible: true) {
+  @if $visible {
+    --embed-border-left: 0.0625rem solid var(--ebw-embed-border-color);
+    --embed-border-right: 0.0625rem solid var(--ebw-embed-border-color);
+    --embed-padding: var(--size-2-1) var(--size-4-2);
+  } @else {
+    --embed-border-left: none;
+    --embed-border-right: none;
+    --embed-border-start: none;
+    --embed-border-end: none;
+    --embed-padding: 0;
+  }
+}
+
+body {
+  --ebw-embed-border-color: var(--gray-dark-7);
+  @include embedBorder(true);
+}
+
+.theme-light {
+  --ebw-embed-border-color: var(--primary-accent-1);
+}
+
+// === Float Image Mixin ===
+@mixin floatImage($dir: right) {
+  float: $dir;
+  margin-#{if($dir == right, left, right)}: 1rem;
+  margin-top: 1rem;
+}
+
+// === Floating Images ===
+img,
+div {
+  &[alt~='float-right']    { @include floatImage(right); }
+  &[alt~='float-left']     { @include floatImage(left);  }
+  &[src$="#portrait"]      { @include floatImage(right); width: 12.5rem; height: 12.5rem; }
+  &[src$="#callout"]       { @include floatImage(right); width: 50%; }
+  &[src$="#small-right"]   { @include floatImage(right); width: 4.6875rem; }
+}
+
+// === Embeds ===
+.markdown-rendered.invisible-embed,
+.markdown-embed.internal-embed[alt="invisible-embed"] {
+  @include embedBorder(false);
+}
+
+.internal-embed[alt="visible-embed"] {
+  @include embedBorder(true);
+}
+
+.markdown-embed {
+  border-radius: var(--radius-l);
+  position: relative;
+
+  .markdown-embed-content {
+    max-height: unset;
+    overflow: unset;
+
+    > .markdown-preview-view {
+      overflow-y: unset;
+    }
+  }
+}
+
+.internal-embed .markdown-embed-content {
+  .markdown-rendered div > ul,
+  .markdown-rendered div > ol {
+    display: inline-block;
+    margin-block-start: 0;
+  }
+}
+
+li .internal-embed {
+  blockquote { margin: 0; }
+  p         { margin-bottom: 0; }
+  .markdown-embed-content { padding-right: 12px; }
+}
+
+// === Embed Links ===
+.markdown-embed-link,
+.file-embed-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1.125rem;
+  width: 1.125rem;
+  text-align: center;
+  vertical-align: middle;
+  z-index: var(--layer-tooltip);
+
+  svg {
+    color: var(--ebw-link-underline);
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+}
+
+// === Scaled Iframes ===
+.embedframe {
+  iframe {
+    width: 125%;
+    height: 46.875rem;
+    transform: scale(.8);
+    transform-origin: 0 0;
+  }
+
+  .scaled-iframe {
+    width: 100%;
+    height: 37.5rem;
+    position: relative;
+  }
+}
