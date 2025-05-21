@@ -1,9 +1,10 @@
 body {
   --table-header-color: var(--text-on-accent);
   --table-header-background-hover: var(--ebw-table-header-alt);
-  --table-row-background-hover: var(--background-secondary);
+  --table-row-background-hover: var(--ebw-row-alt-hover);
+  --table-row-alt-background-hover: var(--ebw-row-alt-hover);
   --table-background: var(--ebw-row-alt);
-  --table-row-alt-background: transparent;
+  --table-row-alt-background: unset;
   --table-column-alt-background: unset;
   --table-header-size: var(--font-small);
 }
@@ -12,6 +13,7 @@ body {
   --table-header-background: var(--primary-accent-5);
   --ebw-table-header-alt: var(--primary-accent-4);
   --ebw-row-alt: rgba(0, 0, 0, .2);
+  --ebw-row-alt-hover: rgba(var(--primary-accent-4-rgb), .2);
 }
 .theme-light {
   --table-header-color: var(--gray-dark-7);
@@ -20,6 +22,7 @@ body {
   --table-header-weight: var(--font-semibold);
   --ebw-table-header-alt: rgba(var(--primary-accent-4-rgb), .4);
   --ebw-row-alt: rgba(0, 0, 0, .05);
+  --ebw-row-alt-hover: rgba(var(--primary-accent-4-rgb), .05);
 }
 .markdown-rendered table.table-view-table.dataview {
   > thead {
