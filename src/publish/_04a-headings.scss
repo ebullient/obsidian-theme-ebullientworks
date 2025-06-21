@@ -1,0 +1,178 @@
+body {
+  --h1-size: 2em;
+  --h2-size: 1.8em;
+  --h3-size: 1.6em;
+  --h4-size: 1.4em;
+  --h5-size: 1.2em;
+  --h6-size: 1.2em;
+
+  --h1-font: var(--ebw-header-font);
+  --h2-font: var(--ebw-header-font);
+  --h3-font: var(--ebw-header-font);
+  --h4-font: var(--ebw-header-font);
+  --h5-font: var(--ebw-header-font);
+  --h6-font: var(--ebw-header-font);
+
+  --h1-variant: common-ligatures;
+  --h2-variant: common-ligatures;
+  --h3-variant: common-ligatures;
+  --h4-variant: common-ligatures;
+  --h5-variant: common-ligatures;
+  --h6-variant: common-ligatures;
+
+  --h1-weight: 500;
+  --h2-weight: 500;
+  --h3-weight: 500;
+  --h4-weight: 500;
+  --h5-weight: 500;
+  --h6-weight: 500;
+
+  --h1-line-height: var(--line-height-normal);
+  --h2-line-height: var(--line-height-normal);
+  --h3-line-height: var(--line-height-normal);
+  --h4-line-height: var(--line-height-normal);
+  --h5-line-height: var(--line-height-normal);
+  --h6-line-height: var(--line-height-normal);
+}
+
+.theme-dark {
+  --h1-color: var(--yellow-2);
+  --h2-color: var(--green-3);
+  --h3-color: var(--cyan-3);
+  --h4-color: var(--blue-3);
+  --h5-color: var(--purple-3);
+  --h6-color: var(--pink-3);
+}
+
+.theme-light {
+  --h1-color: var(--yellow-3);
+  --h2-color: var(--green-4);
+  --h3-color: var(--cyan-3);
+  --h4-color: var(--blue-4);
+  --h5-color: var(--purple-4);
+  --h6-color: var(--pink-4);
+}
+
+//
+// Headers
+//
+@mixin header-variant-caps {
+  font-variant-caps: var(--ebw-header-font-caps-variant);
+}
+
+@mixin section-icon {
+  content: "\00a0\00a7\00a0";
+  font-size: 0.5em;
+  font-weight: 200;
+  position: relative;
+  vertical-align: middle;
+  font-family: var(--font-default);
+  visibility: visible;
+}
+
+@mixin collapse-indicator-style {
+  .collapse-indicator {
+    opacity: 1;
+    visibility: hidden;
+    margin-left: var(--ebw-collapse-icon-width);
+
+    &:hover {
+      visibility: visible;
+    }
+
+    &:after {
+      @include section-icon;
+    }
+  }
+}
+
+.markdown-rendered,
+.print {
+  h1, h2, h3, h4, h5, h6 {
+    --ebw-collapse-icon-width: -28px;
+
+    @include header-variant-caps;
+    @include collapse-indicator-style;
+
+    // If you want to hide the section icon when there's a collapse-indicator:
+    // ⚠️ Caution: `:has()` lacks full cross-browser support.
+    &:not(:has(.collapse-indicator))::before {
+      @include section-icon;
+    }
+  }
+}
+
+//
+// Tags
+//
+
+body {
+  --tag-background: transparent;
+  --tag-background-hover: transparent;
+  --tag-padding-x: 0;
+  --tag-color: var(--color-accent);
+  --tag-color-hover: var(--tag-4);
+}
+
+.theme-dark {
+  --tag-color: var(--color-accent-2);
+  --tag-color-hover: var(--tag-3);
+}
+
+@mixin tag-style {
+  font-family: var(--ebw-font-tags);
+  color: var(--tag-color);
+}
+
+a.tag,
+.editor .cl-hashtag {
+  @include tag-style;
+}
+
+// Reset header tags because we has to style. :)
+.markdown-rendered {
+  h1, h2, h3, h4, h5, h6 {
+    a.tag {
+      font-variant-caps: normal;
+      font-weight: var(--font-extralight);
+      font-size: 75% !important;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      border-radius: unset;
+    }
+  }
+}
+
+//
+// HR
+//
+
+.markdown-rendered hr {
+  border: none;
+  border-top: 1px dotted var(--interactive-accent);
+  color: var(--interactive-hover);
+  overflow: visible;
+  text-align: center;
+  height: 2px;
+  margin: 0;
+  margin-block: calc(
+    (var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing)
+  );
+
+  &::after {
+    background: var(--background-primary);
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    content: " ✧ ✧ ✧ ";
+    padding: 0 0.8em;
+    position: relative;
+    top: -12px;
+  }
+}
+
+// Fix site header to be nicer and more in with the theme
+
+.site-body-left-column-site-name {
+  align-self: center;
+  font-family: var(--ebw-header-font);
+}
