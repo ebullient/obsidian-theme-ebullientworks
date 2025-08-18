@@ -104,14 +104,13 @@ li .internal-embed {
     .mod-header {
       display: none;
     }
-    div.markdown-preview-pusher + div,
-    div.mod-header + div {
-      > h1[data-heading],
-      > h2[data-heading],
-      > h3[data-heading],
-      > h4[data-heading],
-      > h5[data-heading],
-      > h6[data-heading] {
+    div.markdown-preview-section > div {
+      > h1[data-heading]:first-of-type,
+      > h2[data-heading]:first-of-type,
+      > h3[data-heading]:first-of-type,
+      > h4[data-heading]:first-of-type,
+      > h5[data-heading]:first-of-type,
+      > h6[data-heading]:first-of-type {
         display: none;
       }
     }
