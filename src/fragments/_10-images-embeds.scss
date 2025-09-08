@@ -6,15 +6,11 @@
   --embed-padding: 0;
 }
 
-@mixin visibleEmbed() {
+body {
+  --ebw-embed-border-color: var(--gray-dark-7);
   --embed-border-left: 0.0625rem solid var(--ebw-embed-border-color);
   --embed-border-right: 0.0625rem solid var(--ebw-embed-border-color);
   --embed-padding: var(--size-2-1) var(--size-4-2);
-}
-
-body {
-  --ebw-embed-border-color: var(--gray-dark-7);
-  @include visibleEmbed;
 }
 
 .theme-light {
@@ -58,10 +54,6 @@ div {
   @include invisibleEmbed;
 }
 
-.internal-embed[alt="visible-embed"] {
-  @include visibleEmbed;
-}
-
 .markdown-embed {
   border-radius: var(--radius-l);
   position: relative;
@@ -77,7 +69,7 @@ div {
   }
 }
 
-.internal-embed .markdown-embed-content {
+.inline-embed .markdown-embed-content {
   .markdown-rendered div > ul,
   .markdown-rendered div > ol {
     display: inline-block;
@@ -118,21 +110,12 @@ li .internal-embed {
 }
 
 // EMBED LINK
-.markdown-embed-link svg {
-  color: var(--ebw-link-underline);
-  height: 0.875rem;
-  width: 0.875rem;
-}
-
 .markdown-embed-link,
 .file-embed-link {
+  --icon-size: var(--icon-xs);
+  color: var(--ebw-link-underline);
   top: 0;
   right: 0;
-  height: 1.125rem;
-  width: 1.125rem;
-  text-align: center;
-  vertical-align: middle;
-  z-index: var(--layer-tooltip);
 }
 
 // Scaled iframes
@@ -151,11 +134,6 @@ li .internal-embed {
   position: relative;
 }
 
-.markdown-source-view.invisible-embed,
-.markdown-rendered.invisible-embed {
-  @include invisibleEmbed;
-}
-
 .markdown-source-view {
   .internal-embed {
     --list-indent: 1.6em;
@@ -165,31 +143,24 @@ li .internal-embed {
 
     .markdown-embed-content {
       padding-right: 12px;
-
-      li.task-list-item {
-        position: relative;
-        text-indent: -21px;
-        margin-left: -0.25em;
-        padding-left: 0;
-      }
     }
   }
 
-  .HyperMD-list-line > .internal-embed {
-    .markdown-rendered ul,
-    .markdown-rendered ol {
-      display: inline-block;
-      margin-block-start: 0;
-      margin-block-end: 0;
-    }
-    .markdown-preview-section {
-      display: inline-block;
-      blockquote {
-        margin: 0;
-      }
-      p {
-        margin-bottom: 0;
-      }
-    }
-  }
+  // .HyperMD-list-line > .internal-embed {
+  //   .markdown-rendered ul,
+  //   .markdown-rendered ol {
+  //     display: inline-block;
+  //     margin-block-start: 0;
+  //     margin-block-end: 0;
+  //   }
+  //   .markdown-preview-section {
+  //     display: inline-block;
+  //     blockquote {
+  //       margin: 0;
+  //     }
+  //     p {
+  //       margin-bottom: 0;
+  //     }
+  //   }
+  // }
 }
