@@ -1,0 +1,5 @@
+// Fixes LP edit button issue
+.markdown-source-view.mod-cm6 .bases-embed .edit-block-button,
+.markdown-source-view.mod-cm6 .cm-lang-base .edit-block-button {
+  right: calc(var(--size-2-2) + .125rem)
+}
