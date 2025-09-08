@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 1.0.2. A dark and light theme for Obsidian.
+Ebullientworks 1.0.3. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -169,6 +169,49 @@ li[data-task=">"] > p > input[type=checkbox]:checked::after {
   display: block;
 }
 
+div[data-task=b],
+li.task-list-item[data-task=b],
+li.task-list-item[data-task=b] > p {
+  color: var(--text-normal);
+  font-weight: var(--font-normal);
+  text-decoration: none;
+}
+
+div[data-task=b] > label.task-list-label,
+li.task-list-item[data-task=b],
+li.task-list-item[data-task=b] > p,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=b] {
+  --checkbox-color: var(--checkbox-deferred);
+  --checkbox-border-color: var(--checkbox-deferred);
+  --checkbox-marker-color: transparent;
+  --checklist-done-decoration: none;
+}
+
+input[type=checkbox][data-task=b]:checked,
+li[data-task=b] > input[type=checkbox]:checked,
+li[data-task=b] > p > input[type=checkbox]:checked {
+  background-color: unset;
+  background: unset;
+}
+input[type=checkbox][data-task=b]:checked::after,
+li[data-task=b] > input[type=checkbox]:checked::after,
+li[data-task=b] > p > input[type=checkbox]:checked::after {
+  transform: none;
+  -webkit-mask-image: none;
+  background: unset;
+  position: absolute;
+  text-align: center;
+  font-weight: var(--font-normal);
+  font-size: calc(var(--checkbox-size) - 2px);
+  font-family: var(--font-monospace);
+  line-height: var(--checkbox-size);
+  left: 50%;
+  margin-left: calc(-1 * var(--checkbox-size) / 2);
+  color: var(--checkbox-color);
+  content: "🧱";
+  display: block;
+}
+
 div[data-task=R],
 li.task-list-item[data-task=R],
 li.task-list-item[data-task=R] > p {
@@ -259,7 +302,7 @@ div[data-task="?"],
 li.task-list-item[data-task="?"],
 li.task-list-item[data-task="?"] > p {
   color: var(--text-normal);
-  font-weight: var(--font-bold);
+  font-weight: var(--font-normal);
   text-decoration: none;
 }
 
@@ -287,7 +330,7 @@ li[data-task="?"] > p > input[type=checkbox]:checked::after {
   background: unset;
   position: absolute;
   text-align: center;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-normal);
   font-size: calc(var(--checkbox-size) - 2px);
   font-family: var(--font-monospace);
   line-height: var(--checkbox-size);
