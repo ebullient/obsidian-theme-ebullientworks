@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 1.0.3. A dark and light theme for Obsidian.
+Ebullientworks 1.1.0. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -3010,4 +3010,9 @@ body {
 .markdown-rendered.word-wrap table.table-view-table.dataview tbody > tr > td {
   word-wrap: normal;
   word-break: normal;
+}
+
+.markdown-source-view.mod-cm6 .bases-embed .edit-block-button,
+.markdown-source-view.mod-cm6 .cm-lang-base .edit-block-button {
+  right: calc(var(--size-2-2) + 0.125rem);
 }
