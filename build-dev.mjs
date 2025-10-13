@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { copyFileSync, existsSync, readFileSync } from 'fs';
+import { copyFileSync, existsSync, readFileSync, statSync } from 'fs';
 import chokidar  from 'chokidar';
 
 const devTargets = path.resolve('./.dev-target.json');
@@ -29,12 +29,20 @@ try {
       return;
     } else if (Array.isArray(targets)) {
         targets.forEach((t) => {
-            console.log(`copy ${key} to ${t}`);
-            copyFileSync(f, path.resolve(t));
+            const resolvedTarget = path.resolve(t);
+            const destPath = existsSync(resolvedTarget) && statSync(resolvedTarget).isDirectory()
+              ? path.join(resolvedTarget, key)
+              : resolvedTarget;
+            console.log(`copy ${key} to ${destPath}`);
+            copyFileSync(f, destPath);
         })
     } else {
-        console.log(`copy ${key} to ${targets}`);
-        copyFileSync(f, path.resolve(targets));
+        const resolvedTarget = path.resolve(targets);
+        const destPath = existsSync(resolvedTarget) && statSync(resolvedTarget).isDirectory()
+          ? path.join(resolvedTarget, key)
+          : resolvedTarget;
+        console.log(`copy ${key} to ${destPath}`);
+        copyFileSync(f, destPath);
     }
   });
 } catch (err) {
