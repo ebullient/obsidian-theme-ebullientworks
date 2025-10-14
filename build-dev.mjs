@@ -19,12 +19,10 @@ try {
       stabilityThreshold: 2000,
       pollInterval: 100
     }
-  }).on('change', (f, stats) => {
-    const key = path.basename(f);
+  }).on('change', (f) => {
+    const key = path.relative(distDir, f);
+    console.log(`🚀 ${key} changed`);
     const targets = data[key];
-    if (stats) {
-      console.log(`File ${f} changed size to ${stats.size}`);
-    }
     if (targets === undefined) {
       return;
     } else if (Array.isArray(targets)) {
