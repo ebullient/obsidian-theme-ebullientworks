@@ -25,11 +25,13 @@ div {
     margin-left: 1rem;
     margin-top: 1rem;
   }
+
   &[alt~='float-left'] {
     float: left;
     margin-right: 1rem;
     margin-top: 1rem;
   }
+
   // Use an anchor tag: ![Image](image.jpg#portrait)
   &[src$="#portrait"] {
     float: right;
@@ -37,11 +39,13 @@ div {
     width: 12.5rem;
     height: 12.5rem;
   }
+
   &[src$="#callout"] {
     float: right;
     margin-left: 0.3125rem;
     width: 50%;
   }
+
   &[src$="#small-right"] {
     float: right;
     margin-left: 0.3125rem;
@@ -49,20 +53,20 @@ div {
   }
 }
 
-// Naked embeds
-.markdown-embed.internal-embed[alt="invisible-embed"] {
-  @include invisibleEmbed;
-}
-
 .markdown-embed {
   border-radius: var(--radius-l);
   position: relative;
+
+  &.internal-embed[alt="invisible-embed"] {
+    @include invisibleEmbed;
+    width: 100%;
+  }
 
   .markdown-embed-content {
     max-height: unset;
     overflow: unset;
 
-    > .markdown-preview-view {
+    >.markdown-preview-view {
       // no scroll
       overflow-y: unset;
     }
@@ -70,8 +74,9 @@ div {
 }
 
 .inline-embed .markdown-embed-content {
-  .markdown-rendered div > ul,
-  .markdown-rendered div > ol {
+
+  .markdown-rendered div>ul,
+  .markdown-rendered div>ol {
     display: inline-block;
     margin-block-start: 0;
   }
@@ -81,9 +86,11 @@ li .internal-embed {
   blockquote {
     margin: 0;
   }
+
   p {
     margin-bottom: 0;
   }
+
   .markdown-embed-content {
     padding-right: 12px;
   }
@@ -92,17 +99,20 @@ li .internal-embed {
 // Hide the embedded header and use other styling to create uniform padding
 .ebullientworks-hide-embedded-heading {
   .markdown-embed {
+
     .markdown-embed-title,
     .mod-header {
       display: none;
     }
-    div.markdown-preview-section > div {
-      > h1[data-heading]:first-of-type,
-      > h2[data-heading]:first-of-type,
-      > h3[data-heading]:first-of-type,
-      > h4[data-heading]:first-of-type,
-      > h5[data-heading]:first-of-type,
-      > h6[data-heading]:first-of-type {
+
+    div.markdown-preview-section>div {
+
+      >h1[data-heading]:first-of-type,
+      >h2[data-heading]:first-of-type,
+      >h3[data-heading]:first-of-type,
+      >h4[data-heading]:first-of-type,
+      >h5[data-heading]:first-of-type,
+      >h6[data-heading]:first-of-type {
         display: none;
       }
     }
