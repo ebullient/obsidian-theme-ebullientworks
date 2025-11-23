@@ -21,9 +21,6 @@ Some light styling has also been applied for the following community plugins:
 
 - [Admonition](https://github.com/valentine195/obsidian-admonition)
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
-- [Day Planner](https://github.com/lynchjames/obsidian-day-planner)
-- [Timelines](https://github.com/George-debug/obsidian-timeline)
-- [Tracker](https://github.com/pyrochlore/obsidian-tracker)
 
 This theme is compatible with custom task snippets from the [Snippetor](https://github.com/ebullient/obsidian-snippetor).
 
