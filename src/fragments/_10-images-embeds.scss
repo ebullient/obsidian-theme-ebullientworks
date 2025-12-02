@@ -105,14 +105,13 @@ li .internal-embed {
       display: none;
     }
 
-    div.markdown-preview-section>div {
-
-      >h1[data-heading]:first-of-type,
-      >h2[data-heading]:first-of-type,
-      >h3[data-heading]:first-of-type,
-      >h4[data-heading]:first-of-type,
-      >h5[data-heading]:first-of-type,
-      >h6[data-heading]:first-of-type {
+    div.markdown-preview-section {
+      div.mod-header + div>h1[data-heading],
+      div.mod-header + div>h2[data-heading],
+      div.mod-header + div>h3[data-heading],
+      div.mod-header + div>h4[data-heading],
+      div.mod-header + div>h5[data-heading],
+      div.mod-header + div>h6[data-heading] {
         display: none;
       }
     }
