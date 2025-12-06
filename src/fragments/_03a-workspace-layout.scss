@@ -96,22 +96,10 @@ body:not(.is-mobile).is-hidden-frameless {
   }
 }
 
-// Floating sidedock
-body:not(.is-mobile) .mod-left-split.is-floating {
-  left: calc(var(--ribbon-width));
-}
-body:not(.is-mobile) .mod-right-split.is-floating {
-  right: 0;
-}
-body.is-mobile .workspace-drawer-header-icon.sync-status-icon {
-  background-color: var(--background-primary);
-}
-
 // Put view actions on the left side of the view title
 .ebullientworks-reverse-view-header-actions {
   .popover.hover-editor .popover-content .workspace-leaf-content .view-header,
   .workspace-tabs .view-header {
-    margin: 0;
     > .view-header-icon {
       order: 0;
     }
@@ -246,45 +234,6 @@ body.is-tablet .view-header .view-action,
     .view-header-title-container::after {
       display: none;
     }
-  }
-}
-
-
-// Sync status icon
-:is(.is-mobile, .is-phone) {
-  .workspace:not(:has(.workspace-drawer-backdrop)) {
-    .workspace-drawer.mod-right {
-      display: flex !important;
-      overflow: visible;
-      left: 100%;
-
-      .workspace-drawer-inner {
-        overflow: visible;
-      }
-    }
-    .view-actions {
-      padding-right: 32px;
-
-      &:is(.is-phone) {
-        padding-right: 23px;
-      }
-    }
-  }
-}
-
-.is-phone {
-  .sync-status-icon {
-    position: absolute;
-    top: 0.5rem;
-    left: calc(-1 * 3.25rem);
-  }
-}
-
-.is-tablet {
-  .sync-status-icon {
-    position: absolute;
-    top: 2.3rem;
-    left: calc(-1 * 3.25rem);
   }
 }
 
