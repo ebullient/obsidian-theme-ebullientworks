@@ -117,7 +117,6 @@ body:not(.ebullientworks-nix-heading-marker) {
 .cm-s-obsidian {
   .cm-header.cm-inline-code {
     font-weight: var(--font-extralight);
-    font-weight: normal;
     font-variant-caps: normal;
   }
 
@@ -192,7 +191,7 @@ h5 a.tag,
 h6 a.tag {
   font-variant-caps: normal;
   font-weight: var(--font-extralight);
-  font-size: 75% !important;
+  font-size: 75%;
   padding: 0;
   background-color: transparent;
   border: none;
