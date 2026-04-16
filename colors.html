@@ -1,243 +1,348 @@
 <html>
 <head>
   <title>ebullientworks theme colors</title>
+  <style>
+    :root {
+      --pink-50:  oklch(0.319 0.06 2.735);
+      --pink-100: oklch(0.398 0.075 2.735);
+      --pink-200: oklch(0.476 0.09 2.735);
+      --pink-300: oklch(0.555 0.104 2.735);
+      --pink-500: oklch(0.634 0.119 2.735);
+      --pink-700: oklch(0.713 0.09 2.735);
+      --pink-800: oklch(0.792 0.06 2.735);
+      --pink-900: oklch(0.871 0.034 2.735);
+      --pink-950: oklch(0.95 0.012 2.735);
+
+      --red-50:  oklch(0.174 0.046 24.111);
+      --red-100: oklch(0.271 0.072 24.111);
+      --red-200: oklch(0.368 0.098 24.111);
+      --red-300: oklch(0.465 0.123 24.111);
+      --red-500: oklch(0.562 0.149 24.111);
+      --red-700: oklch(0.659 0.149 24.111);
+      --red-800: oklch(0.756 0.096 24.111);
+      --red-900: oklch(0.853 0.052 24.111);
+      --red-950: oklch(0.95 0.016 24.111);
+
+      --orange-50:  oklch(0.316 0.056 39.413);
+      --orange-100: oklch(0.395 0.07 39.413);
+      --orange-200: oklch(0.474 0.084 39.413);
+      --orange-300: oklch(0.554 0.098 39.413);
+      --orange-500: oklch(0.633 0.112 39.413);
+      --orange-700: oklch(0.712 0.103 39.413);
+      --orange-800: oklch(0.791 0.069 39.413);
+      --orange-900: oklch(0.871 0.04 39.413);
+      --orange-950: oklch(0.95 0.014 39.413);
+
+      --yellow-50:     oklch(0.451 0.056 83.018);
+      --yellow-100:    oklch(0.513 0.064 83.018);
+      --yellow-200:    oklch(0.576 0.071 83.018);
+      --yellow-300:    oklch(0.638 0.079 83.018);
+      --yellow-500:    oklch(0.701 0.087 83.018);
+      --yellow-700:    oklch(0.763 0.095 83.018);
+      --yellow-800:    oklch(0.825 0.102 83.018);
+      --yellow-900:    oklch(0.888 0.069 83.018);
+      --yellow-950:    oklch(0.95 0.03 83.018);
+      --yellow-bright: oklch(0.9855 0.0098 87.47);
+
+      --green-50:  oklch(0.149 0.014 150.52);
+      --green-100: oklch(0.249 0.023 150.52);
+      --green-200: oklch(0.349 0.032 150.52);
+      --green-300: oklch(0.449 0.041 150.52);
+      --green-500: oklch(0.549 0.051 150.52);
+      --green-700: oklch(0.649 0.06 150.52);
+      --green-800: oklch(0.749 0.069 150.52);
+      --green-900: oklch(0.849 0.078 150.52);
+      --green-950: oklch(0.949 0.029 150.52);
+
+      --cyan-50:  oklch(0.295 0.042 195.119);
+      --cyan-100: oklch(0.377 0.054 195.119);
+      --cyan-200: oklch(0.459 0.065 195.119);
+      --cyan-300: oklch(0.541 0.077 195.119);
+      --cyan-500: oklch(0.623 0.089 195.119);
+      --cyan-700: oklch(0.704 0.1 195.119);
+      --cyan-800: oklch(0.786 0.112 195.119);
+      --cyan-900: oklch(0.868 0.123 195.119);
+      --cyan-950: oklch(0.95 0.063 195.119);
+
+      --blue-50:  oklch(0.305 0.037 249.507);
+      --blue-100: oklch(0.386 0.046 249.507);
+      --blue-200: oklch(0.467 0.056 249.507);
+      --blue-300: oklch(0.547 0.066 249.507);
+      --blue-500: oklch(0.628 0.076 249.507);
+      --blue-700: oklch(0.708 0.068 249.507);
+      --blue-800: oklch(0.789 0.048 249.507);
+      --blue-900: oklch(0.869 0.029 249.507);
+      --blue-950: oklch(0.95 0.011 249.507);
+
+      --purple-50:  oklch(0.164 0.02 332.854);
+      --purple-100: oklch(0.263 0.031 332.854);
+      --purple-200: oklch(0.361 0.043 332.854);
+      --purple-300: oklch(0.459 0.055 332.854);
+      --purple-500: oklch(0.557 0.067 332.854);
+      --purple-700: oklch(0.655 0.078 332.854);
+      --purple-800: oklch(0.754 0.061 332.854);
+      --purple-900: oklch(0.852 0.033 332.854);
+      --purple-950: oklch(0.95 0.01 332.854);
+
+      --gray-light-8: #fafafa;
+      --gray-light-7: #f8f8f8;
+      --gray-light-6: #f5f5f5;
+      --gray-light-5: #f1f1f1;
+      --gray-light-4: #ebebeb;
+      --gray-light-3: #e3e3e3;
+      --gray-light-2: #dbdbdb;
+      --gray-light-1: #cdcdcd;
+      --gray:         #b8b8b8;
+      --gray-dark-1:  #a0a0a0;
+      --gray-dark-2:  #898989;
+      --gray-dark-3:  #737373;
+      --gray-dark-4:  #5d5d5d;
+      --gray-dark-5:  #484848;
+      --gray-dark-6:  #3f3f3f;
+      --gray-dark-7:  #2f2f2f;
+      --gray-dark-75: #272727;
+      --gray-dark-8:  #212121;
+      --gray-dark-85: #1e1e1e;
+      --gray-dark-9:  #1b1b1b;
+      --gray-dark-10: #070707;
+    }
+
+    body { font-family: monospace; font-size: 13px; }
+    table { border-collapse: collapse; margin-bottom: 2em; }
+    td { padding: 2px 8px; }
+    td.swatch { width: 8em; }
+    .label { color: #444; }
+    h2 { margin-bottom: 0.25em; }
+    .section-header { background: #eee; font-weight: bold; }
+  </style>
 </head>
 <body>
+
 <h2>Gray scale</h2>
 <table>
-<tr><td style="color: rgb(248, 248, 248)">gray-light-7</td>
-    <td style="background-color: rgb(248, 248, 248)">gray-light-7</td>
-    <td>--gray-light-7: rgb(248, 248, 248)</td>
-    </tr>
-<tr><td style="color: rgb(245, 245, 245)">gray-light-6</td>
-    <td style="background-color: rgb(245, 245, 245)">gray-light-6</td>
-    <td>--gray-light-6: rgb(245, 245, 245)</td>
-    </tr>
-<tr><td style="color: rgb(241, 241, 241)">gray-light-5</td>
-    <td style="background-color: rgb(241, 241, 241)">gray-light-5</td>
-    <td>--gray-light-5: rgb(241, 241, 241)</td>
-    </tr>
-<tr><td style="color: rgb(235, 235, 235)">gray-light-4</td>
-    <td style="background-color: rgb(235, 235, 235)">gray-light-4</td>
-    <td>--gray-light-4: rgb(235, 235, 235)</td>
-    </tr>
-<tr><td style="color: rgb(227, 227, 227)">gray-light-3</td>
-    <td style="background-color: rgb(227, 227, 227)">gray-light-3</td>
-    <td>--gray-light-3: rgb(227, 227, 227)</td>
-    </tr>
-<tr><td style="color: rgb(217, 217, 217)">gray-light-2</td>
-    <td style="background-color: rgb(217, 217, 217)">gray-light-2</td>
-    <td>--gray-light-2: rgb(217, 217, 217)</td>
-    </tr>
-<tr><td style="color: rgb(203, 203, 203)">gray-light-1</td>
-    <td style="background-color: rgb(203, 203, 203)">gray-light-1</td>
-    <td>--gray-light-1: rgb(203, 203, 203)</td>
-    </tr>
-<tr><td style="color: rgb(183, 183, 183)">gray</td>
-    <td style="background-color: rgb(183, 183, 183)">gray</td>
-    <td>--gray: rgb(183, 183, 183)</td>
-    </tr>
-<tr><td style="color: rgb(159, 159, 159)">gray-dark-1</td>
-    <td style="background-color: rgb(159, 159, 159)">gray-dark-1</td>
-    <td>--gray-dark-1: rgb(159, 159, 159)</td>
-    </tr>
-<tr><td style="color: rgb(137, 137, 137)">gray-dark-2</td>
-    <td style="background-color: rgb(137, 137, 137)">gray-dark-2</td>
-    <td>--gray-dark-2: rgb(137, 137, 137)</td>
-    </tr>
-<tr><td style="color: rgb(115, 115, 115)">gray-dark-3</td>
-    <td style="background-color: rgb(115, 115, 115)">gray-dark-3</td>
-    <td>--gray-dark-3: rgb(115, 115, 115)</td>
-    </tr>
-<tr><td style="color: rgb(93, 93, 93)">gray-dark-4</td>
-    <td style="background-color: rgb(93, 93, 93)">gray-dark-4</td>
-    <td>--gray-dark-4: rgb(93, 93, 93)</td>
-    </tr>
-<tr><td style="color: rgb(77, 77, 77)">gray-dark-5</td>
-    <td style="background-color: rgb(77, 77, 77)">gray-dark-5</td>
-    <td>--gray-dark-5: rgb(77, 77, 77)</td>
-    </tr>
-<tr><td style="color: rgb(63, 63, 63)">gray-dark-6</td>
-    <td style="background-color: rgb(63, 63, 63)">gray-dark-6</td>
-    <td>--gray-dark-6: rgb(63, 63, 63)</td>
-    </tr>
-<tr><td style="color: rgb(49, 49, 49)">gray-dark-7</td>
-    <td style="background-color: rgb(49, 49, 49)">gray-dark-7</td>
-    <td>--gray-dark-7: rgb(49, 49, 49)</td>
-    </tr>
-<tr><td style="color: rgb(33, 33, 33)">gray-dark-8</td>
-    <td style="background-color: rgb(33, 33, 33)">gray-dark-8</td>
-    <td>--gray-dark-8: rgb(33, 33, 33)</td>
-    </tr>
-<tr><td style="color: rgb(7, 7, 7)">gray-dark-9</td>
-    <td style="background-color: rgb(7, 7, 7)">gray-dark-9</td>
-    <td>--gray-dark-9: rgb(7, 7, 7)</td>
-    </tr>
+  <tr><td class="swatch" style="background:var(--gray-light-8)"></td><td class="label">--gray-light-8</td><td>#fafafa</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-7)"></td><td class="label">--gray-light-7</td><td>#f8f8f8</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-6)"></td><td class="label">--gray-light-6</td><td>#f5f5f5</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-5)"></td><td class="label">--gray-light-5</td><td>#f1f1f1</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-4)"></td><td class="label">--gray-light-4</td><td>#ebebeb</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-3)"></td><td class="label">--gray-light-3</td><td>#e3e3e3</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-2)"></td><td class="label">--gray-light-2</td><td>#dbdbdb</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-light-1)"></td><td class="label">--gray-light-1</td><td>#cdcdcd</td></tr>
+  <tr><td class="swatch" style="background:var(--gray)"></td>        <td class="label">--gray</td>        <td>#b8b8b8</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-1)"></td> <td class="label">--gray-dark-1</td> <td>#a0a0a0</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-2)"></td> <td class="label">--gray-dark-2</td> <td>#898989</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-3)"></td> <td class="label">--gray-dark-3</td> <td>#737373</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-4)"></td> <td class="label">--gray-dark-4</td> <td>#5d5d5d</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-5)"></td> <td class="label">--gray-dark-5</td> <td>#484848</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-6)"></td> <td class="label">--gray-dark-6</td> <td>#3f3f3f</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-7)"></td> <td class="label">--gray-dark-7</td> <td>#2f2f2f</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-75)"></td><td class="label">--gray-dark-75</td><td>#272727</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-8)"></td> <td class="label">--gray-dark-8</td> <td>#212121</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-85)"></td><td class="label">--gray-dark-85</td><td>#1e1e1e</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-9)"></td> <td class="label">--gray-dark-9</td> <td>#1b1b1b</td></tr>
+  <tr><td class="swatch" style="background:var(--gray-dark-10)"></td><td class="label">--gray-dark-10</td><td>#070707</td></tr>
 </table>
 
 <h2>Colors</h2>
+<p>Aliases: 0=950, 1=900, 2=800, 3=700, 4=500, 5=300, 6=200. Dark theme uses lower numbers; light theme uses higher numbers.</p>
 
 <table>
-<tr><td style="color: rgb(255, 232, 185)">yellow-bright</td>
-    <td style="background-color: rgb(255, 232, 185)">yellow-bright</td>
-    <td>--yellow-bright: 255, 232, 185</td>
-    </tr>
-<tr><td style="color: rgb(255, 216, 99)">yellow-1</td>
-    <td style="background-color: rgb(255, 216, 99)">yellow-1</td>
-    <td>--yellow-1: rgb(255, 216, 99)</td>
-    </tr>
-<tr><td style="color: rgb(255, 196, 19)">yellow-2</td>
-    <td style="background-color: rgb(255, 196, 19)">yellow-2</td>
-    <td>--yellow-2: rgb(255, 196, 19)</td>
-    </tr>
-<tr><td style="color: rgb(234, 175, 0)">yellow-3</td>
-    <td style="background-color: rgb(234, 175, 0)">yellow-3</td>
-    <td>--yellow-3: rgb(234, 175, 0)</td>
-    </tr>
-<tr><td style="color: rgb(204, 153, 0)">yellow-4</td>
-    <td style="background-color: rgb(204, 153, 0)">yellow-4</td>
-    <td>--yellow-4: rgb(204, 153, 0)</td>
-    </tr>
-<tr><td style="color: rgb(211, 222, 214)">green-0</td>
-    <td style="background-color: rgb(211, 222, 214)">green-0</td>
-    <td>--green-0: rgb(211, 222, 214)</td>
-    </tr>
-<tr><td style="color: rgb(194, 209, 198)">green-1</td>
-    <td style="background-color: rgb(194, 209, 198)">green-1</td>
-    <td>--green-1: rgb(194, 209, 198)</td>
-    </tr>
-<tr><td style="color: rgb(169, 190, 174)">green-2</td>
-    <td style="background-color: rgb(169, 190, 174)">green-2</td>
-    <td>--green-2: rgb(169, 190, 174)</td>
-    </tr>
-<tr><td style="color: rgb(139, 167, 145)">green-3</td>
-    <td style="background-color: rgb(139, 167, 145)">green-3</td>
-    <td>--green-3: rgb(139, 167, 145)</td>
-    </tr>
-<tr><td style="color: rgb(92, 122, 99)">green-4</td>
-    <td style="background-color: rgb(92, 122, 99)">green-4</td>
-    <td>--green-4: rgb(92, 122, 99)</td>
-    </tr>
-<tr><td style="color: rgb(57, 76, 62)">green-5</td>
-    <td style="background-color: rgb(57, 76, 62)">green-5</td>
-    <td>--green-5: rgb(57, 76, 62)</td>
-    </tr>
-<tr><td style="color: rgb(38, 50, 41)">green-6</td>
-    <td style="background-color: rgb(38, 50, 41)">green-6</td>
-    <td>--green-6: rgb(38, 50, 41)</td>
-    </tr>
-<tr><td style="color: rgb(195, 226, 224)">teal-0</td>
-    <td style="background-color: rgb(195, 226, 224)">teal-0</td>
-    <td>--teal-0: rgb(195, 226, 224)</td>
-    </tr>
-<tr><td style="color: rgb(169, 213, 211)">teal-1</td>
-    <td style="background-color: rgb(169, 213, 211)">teal-1</td>
-    <td>--teal-1: rgb(169, 213, 211)</td>
-    </tr>
-<tr><td style="color: rgb(134, 196, 193)">teal-2</td>
-    <td style="background-color: rgb(134, 196, 193)">teal-2</td>
-    <td>--teal-2: rgb(134, 196, 193)</td>
-    </tr>
-<tr><td style="color: rgb(89, 174, 170)">teal-3</td>
-    <td style="background-color: rgb(89, 174, 170)">teal-3</td>
-    <td>--teal-3: rgb(89, 174, 170)</td>
-    </tr>
-<tr><td style="color: rgb(61, 126, 123)">teal-4</td>
-    <td style="background-color: rgb(61, 126, 123)">teal-4</td>
-    <td>--teal-4: rgb(61, 126, 123)</td>
-    </tr>
-<tr><td style="color: rgb(38, 78, 76)">teal-5</td>
-    <td style="background-color: rgb(38, 78, 76)">teal-5</td>
-    <td>--teal-5: rgb(38, 78, 76)</td>
-    </tr>
-<tr><td style="color: rgb(25, 51, 50)">teal-6</td>
-    <td style="background-color: rgb(25, 51, 50)">teal-6</td>
-    <td>--teal-6: rgb(25, 51, 50)</td>
-    </tr>
-<tr><td style="color: rgb(202, 222, 239)">blue-0</td>
-    <td style="background-color: rgb(202, 222, 239)">blue-0</td>
-    <td>--blue-0: rgb(202, 222, 239)</td>
-    </tr>
-<tr><td style="color: rgb(180, 209, 232)">blue-1</td>
-    <td style="background-color: rgb(180, 209, 232)">blue-1</td>
-    <td>--blue-1: rgb(180, 209, 232)</td>
-    </tr>
-<tr><td style="color: rgb(148, 189, 223)">blue-2</td>
-    <td style="background-color: rgb(148, 189, 223)">blue-2</td>
-    <td>--blue-2: rgb(148, 189, 223)</td>
-    </tr>
-<tr><td style="color: rgb(111, 166, 211)">blue-3</td>
-    <td style="background-color: rgb(111, 166, 211)">blue-3</td>
-    <td>--blue-3: rgb(111, 166, 211)</td>
-    </tr>
-<tr><td style="color: rgb(53, 120, 175)">blue-4</td>
-    <td style="background-color: rgb(53, 120, 175)">blue-4</td>
-    <td>--blue-4: rgb(53, 120, 175)</td>
-    </tr>
-<tr><td style="color: rgb(33, 75, 109)">blue-5</td>
-    <td style="background-color: rgb(33, 75, 109)">blue-5</td>
-    <td>--blue-5: rgb(33, 75, 109)</td>
-    </tr>
-<tr><td style="color: rgb(22, 49, 72)">blue-6</td>
-    <td style="background-color: rgb(22, 49, 72)">blue-6</td>
-    <td>--blue-6: rgb(22, 49, 72)</td>
-    </tr>
-<tr><td style="color: rgb(227, 216, 225)">purple-0</td>
-    <td style="background-color: rgb(227, 216, 225)">purple-0</td>
-    <td>--purple-0: rgb(227, 216, 225)</td>
-    </tr>
-<tr><td style="color: rgb(216, 201, 213)">purple-1</td>
-    <td style="background-color: rgb(216, 201, 213)">purple-1</td>
-    <td>--purple-1: rgb(216, 201, 213)</td>
-    </tr>
-<tr><td style="color: rgb(199, 178, 195)">purple-2</td>
-    <td style="background-color: rgb(199, 178, 195)">purple-2</td>
-    <td>--purple-2: rgb(199, 178, 195)</td>
-    </tr>
-<tr><td style="color: rgb(180, 152, 175)">purple-3</td>
-    <td style="background-color: rgb(180, 152, 175)">purple-3</td>
-    <td>--purple-3: rgb(180, 152, 175)</td>
-    </tr>
-<tr><td style="color: rgb(142, 103, 135)">purple-4</td>
-    <td style="background-color: rgb(142, 103, 135)">purple-4</td>
-    <td>--purple-4: rgb(142, 103, 135)</td>
-    </tr>
-<tr><td style="color: rgb(88, 64, 84)">purple-5</td>
-    <td style="background-color: rgb(88, 64, 84)">purple-5</td>
-    <td>--purple-5: rgb(88, 64, 84)</td>
-    </tr>
-<tr><td style="color: rgb(57, 42, 55)">purple-6</td>
-    <td style="background-color: rgb(57, 42, 55)">purple-6</td>
-    <td>--purple-6: rgb(57, 42, 55)</td>
-    </tr>
-<tr><td style="color: rgb(239, 213, 220)">pink-0</td>
-    <td style="background-color: rgb(239, 213, 220)">pink-0</td>
-    <td>--pink-0: rgb(239, 213, 220)</td>
-    </tr>
-<tr><td style="color: rgb(232, 196, 206)">pink-1</td>
-    <td style="background-color: rgb(232, 196, 206)">pink-1</td>
-    <td>--pink-1: rgb(232, 196, 206)</td>
-    </tr>
-<tr><td style="color: rgb(223, 171, 185)">pink-2</td>
-    <td style="background-color: rgb(223, 171, 185)">pink-2</td>
-    <td>--pink-2: rgb(223, 171, 185)</td>
-    </tr>
-<tr><td style="color: rgb(211, 141, 160)">pink-3</td>
-    <td style="background-color: rgb(211, 141, 160)">pink-3</td>
-    <td>--pink-3: rgb(211, 141, 160)</td>
-    </tr>
-<tr><td style="color: rgb(187, 79, 108)">pink-4</td>
-    <td style="background-color: rgb(187, 79, 108)">pink-4</td>
-    <td>--pink-4: rgb(187, 79, 108)</td>
-    </tr>
-<tr><td style="color: rgb(120, 46, 66)">pink-5</td>
-    <td style="background-color: rgb(120, 46, 66)">pink-5</td>
-    <td>--pink-5: rgb(120, 46, 66)</td>
-    </tr>
-<tr><td style="color: rgb(79, 31, 44)">pink-6</td>
-    <td style="background-color: rgb(79, 31, 44)">pink-6</td>
-    <td>--pink-6: rgb(79, 31, 44)</td>
-    </tr>
+  <tr class="section-header"><td colspan="3">Pink — hue 2.7</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-50)"></td> <td class="label">--pink-50</td> <td>oklch(0.319 0.06 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-100)"></td><td class="label">--pink-100</td><td>oklch(0.398 0.075 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-200)"></td><td class="label">--pink-200 / --pink-6</td><td>oklch(0.476 0.09 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-300)"></td><td class="label">--pink-300 / --pink-5</td><td>oklch(0.555 0.104 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-500)"></td><td class="label">--pink-500 / --pink-4</td><td>oklch(0.634 0.119 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-700)"></td><td class="label">--pink-700 / --pink-3</td><td>oklch(0.713 0.09 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-800)"></td><td class="label">--pink-800 / --pink-2</td><td>oklch(0.792 0.06 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-900)"></td><td class="label">--pink-900 / --pink-1</td><td>oklch(0.871 0.034 2.735)</td></tr>
+  <tr><td class="swatch" style="background:var(--pink-950)"></td><td class="label">--pink-950 / --pink-0</td><td>oklch(0.95 0.012 2.735)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Red — hue 24.1</td></tr>
+  <tr><td class="swatch" style="background:var(--red-50)"></td> <td class="label">--red-50</td> <td>oklch(0.174 0.046 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-100)"></td><td class="label">--red-100</td><td>oklch(0.271 0.072 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-200)"></td><td class="label">--red-200 / --red-6</td><td>oklch(0.368 0.098 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-300)"></td><td class="label">--red-300 / --red-5</td><td>oklch(0.465 0.123 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-500)"></td><td class="label">--red-500 / --red-4</td><td>oklch(0.562 0.149 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-700)"></td><td class="label">--red-700 / --red-3</td><td>oklch(0.659 0.149 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-800)"></td><td class="label">--red-800 / --red-2</td><td>oklch(0.756 0.096 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-900)"></td><td class="label">--red-900 / --red-1</td><td>oklch(0.853 0.052 24.111)</td></tr>
+  <tr><td class="swatch" style="background:var(--red-950)"></td><td class="label">--red-950 / --red-0</td><td>oklch(0.95 0.016 24.111)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Orange — hue 39.4</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-50)"></td> <td class="label">--orange-50</td> <td>oklch(0.316 0.056 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-100)"></td><td class="label">--orange-100</td><td>oklch(0.395 0.07 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-200)"></td><td class="label">--orange-200 / --orange-6</td><td>oklch(0.474 0.084 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-300)"></td><td class="label">--orange-300 / --orange-5</td><td>oklch(0.554 0.098 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-500)"></td><td class="label">--orange-500 / --orange-4</td><td>oklch(0.633 0.112 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-700)"></td><td class="label">--orange-700 / --orange-3</td><td>oklch(0.712 0.103 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-800)"></td><td class="label">--orange-800 / --orange-2</td><td>oklch(0.791 0.069 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-900)"></td><td class="label">--orange-900 / --orange-1</td><td>oklch(0.871 0.04 39.413)</td></tr>
+  <tr><td class="swatch" style="background:var(--orange-950)"></td><td class="label">--orange-950 / --orange-0</td><td>oklch(0.95 0.014 39.413)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Yellow — hue 83.0</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-50)"></td>    <td class="label">--yellow-50</td>    <td>oklch(0.451 0.056 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-100)"></td>   <td class="label">--yellow-100</td>   <td>oklch(0.513 0.064 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-200)"></td>   <td class="label">--yellow-200</td>           <td>oklch(0.576 0.071 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-300)"></td>   <td class="label">--yellow-300 / --yellow-5</td><td>oklch(0.638 0.079 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-500)"></td>   <td class="label">--yellow-500 / --yellow-4</td><td>oklch(0.701 0.087 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-700)"></td>   <td class="label">--yellow-700 / --yellow-3</td><td>oklch(0.763 0.095 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-800)"></td>   <td class="label">--yellow-800 / --yellow-2</td><td>oklch(0.825 0.102 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-900)"></td>   <td class="label">--yellow-900 / --yellow-1</td><td>oklch(0.888 0.069 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-950)"></td>   <td class="label">--yellow-950 / --yellow-0</td><td>oklch(0.95 0.03 83.018)</td></tr>
+  <tr><td class="swatch" style="background:var(--yellow-bright)"></td><td class="label">--yellow-bright</td><td>oklch(0.9855 0.0098 87.47)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Green — hue 150.5</td></tr>
+  <tr><td class="swatch" style="background:var(--green-50)"></td> <td class="label">--green-50</td> <td>oklch(0.149 0.014 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-100)"></td><td class="label">--green-100</td><td>oklch(0.249 0.023 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-200)"></td><td class="label">--green-200 / --green-6</td><td>oklch(0.349 0.032 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-300)"></td><td class="label">--green-300 / --green-5</td><td>oklch(0.449 0.041 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-500)"></td><td class="label">--green-500 / --green-4</td><td>oklch(0.549 0.051 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-700)"></td><td class="label">--green-700 / --green-3</td><td>oklch(0.649 0.06 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-800)"></td><td class="label">--green-800 / --green-2</td><td>oklch(0.749 0.069 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-900)"></td><td class="label">--green-900 / --green-1</td><td>oklch(0.849 0.078 150.52)</td></tr>
+  <tr><td class="swatch" style="background:var(--green-950)"></td><td class="label">--green-950 / --green-0</td><td>oklch(0.949 0.029 150.52)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Cyan — hue 195.1</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-50)"></td> <td class="label">--cyan-50</td> <td>oklch(0.295 0.042 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-100)"></td><td class="label">--cyan-100</td><td>oklch(0.377 0.054 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-200)"></td><td class="label">--cyan-200 / --cyan-6</td><td>oklch(0.459 0.065 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-300)"></td><td class="label">--cyan-300 / --cyan-5</td><td>oklch(0.541 0.077 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-500)"></td><td class="label">--cyan-500 / --cyan-4</td><td>oklch(0.623 0.089 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-700)"></td><td class="label">--cyan-700 / --cyan-3</td><td>oklch(0.704 0.1 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-800)"></td><td class="label">--cyan-800 / --cyan-2</td><td>oklch(0.786 0.112 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-900)"></td><td class="label">--cyan-900 / --cyan-1</td><td>oklch(0.868 0.123 195.119)</td></tr>
+  <tr><td class="swatch" style="background:var(--cyan-950)"></td><td class="label">--cyan-950 / --cyan-0</td><td>oklch(0.95 0.063 195.119)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Blue — hue 249.5</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-50)"></td> <td class="label">--blue-50</td> <td>oklch(0.305 0.037 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-100)"></td><td class="label">--blue-100</td><td>oklch(0.386 0.046 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-200)"></td><td class="label">--blue-200 / --blue-6</td><td>oklch(0.467 0.056 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-300)"></td><td class="label">--blue-300 / --blue-5</td><td>oklch(0.547 0.066 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-500)"></td><td class="label">--blue-500 / --blue-4</td><td>oklch(0.628 0.076 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-700)"></td><td class="label">--blue-700 / --blue-3</td><td>oklch(0.708 0.068 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-800)"></td><td class="label">--blue-800 / --blue-2</td><td>oklch(0.789 0.048 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-900)"></td><td class="label">--blue-900 / --blue-1</td><td>oklch(0.869 0.029 249.507)</td></tr>
+  <tr><td class="swatch" style="background:var(--blue-950)"></td><td class="label">--blue-950 / --blue-0</td><td>oklch(0.95 0.011 249.507)</td></tr>
+
+  <tr class="section-header"><td colspan="3">Purple — hue 332.9</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-50)"></td> <td class="label">--purple-50</td> <td>oklch(0.164 0.02 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-100)"></td><td class="label">--purple-100</td><td>oklch(0.263 0.031 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-200)"></td><td class="label">--purple-200 / --purple-6</td><td>oklch(0.361 0.043 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-300)"></td><td class="label">--purple-300 / --purple-5</td><td>oklch(0.459 0.055 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-500)"></td><td class="label">--purple-500 / --purple-4</td><td>oklch(0.557 0.067 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-700)"></td><td class="label">--purple-700 / --purple-3</td><td>oklch(0.655 0.078 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-800)"></td><td class="label">--purple-800 / --purple-2</td><td>oklch(0.754 0.061 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-900)"></td><td class="label">--purple-900 / --purple-1</td><td>oklch(0.852 0.033 332.854)</td></tr>
+  <tr><td class="swatch" style="background:var(--purple-950)"></td><td class="label">--purple-950 / --purple-0</td><td>oklch(0.95 0.01 332.854)</td></tr>
+</table>
+
+<h2>Side by side</h2>
+<table>
+  <tr>
+    <th>level</th>
+    <th>pink</th><th>red</th><th>orange</th><th>yellow</th>
+    <th>green</th><th>cyan</th><th>blue</th><th>purple</th>
+  </tr>
+  <tr>
+    <td>50</td>
+    <td class="swatch" style="background:var(--pink-50)"></td>
+    <td class="swatch" style="background:var(--red-50)"></td>
+    <td class="swatch" style="background:var(--orange-50)"></td>
+    <td class="swatch" style="background:var(--yellow-50)"></td>
+    <td class="swatch" style="background:var(--green-50)"></td>
+    <td class="swatch" style="background:var(--cyan-50)"></td>
+    <td class="swatch" style="background:var(--blue-50)"></td>
+    <td class="swatch" style="background:var(--purple-50)"></td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td class="swatch" style="background:var(--pink-100)"></td>
+    <td class="swatch" style="background:var(--red-100)"></td>
+    <td class="swatch" style="background:var(--orange-100)"></td>
+    <td class="swatch" style="background:var(--yellow-100)"></td>
+    <td class="swatch" style="background:var(--green-100)"></td>
+    <td class="swatch" style="background:var(--cyan-100)"></td>
+    <td class="swatch" style="background:var(--blue-100)"></td>
+    <td class="swatch" style="background:var(--purple-100)"></td>
+  </tr>
+  <tr>
+    <td>200 / -6</td>
+    <td class="swatch" style="background:var(--pink-200)"></td>
+    <td class="swatch" style="background:var(--red-200)"></td>
+    <td class="swatch" style="background:var(--orange-200)"></td>
+    <td class="swatch" style="background:var(--yellow-200)"></td>
+    <td class="swatch" style="background:var(--green-200)"></td>
+    <td class="swatch" style="background:var(--cyan-200)"></td>
+    <td class="swatch" style="background:var(--blue-200)"></td>
+    <td class="swatch" style="background:var(--purple-200)"></td>
+  </tr>
+  <tr>
+    <td>300 / -5</td>
+    <td class="swatch" style="background:var(--pink-300)"></td>
+    <td class="swatch" style="background:var(--red-300)"></td>
+    <td class="swatch" style="background:var(--orange-300)"></td>
+    <td class="swatch" style="background:var(--yellow-300)"></td>
+    <td class="swatch" style="background:var(--green-300)"></td>
+    <td class="swatch" style="background:var(--cyan-300)"></td>
+    <td class="swatch" style="background:var(--blue-300)"></td>
+    <td class="swatch" style="background:var(--purple-300)"></td>
+  </tr>
+  <tr>
+    <td>500 / -4</td>
+    <td class="swatch" style="background:var(--pink-500)"></td>
+    <td class="swatch" style="background:var(--red-500)"></td>
+    <td class="swatch" style="background:var(--orange-500)"></td>
+    <td class="swatch" style="background:var(--yellow-500)"></td>
+    <td class="swatch" style="background:var(--green-500)"></td>
+    <td class="swatch" style="background:var(--cyan-500)"></td>
+    <td class="swatch" style="background:var(--blue-500)"></td>
+    <td class="swatch" style="background:var(--purple-500)"></td>
+  </tr>
+  <tr>
+    <td>700 / -3</td>
+    <td class="swatch" style="background:var(--pink-700)"></td>
+    <td class="swatch" style="background:var(--red-700)"></td>
+    <td class="swatch" style="background:var(--orange-700)"></td>
+    <td class="swatch" style="background:var(--yellow-700)"></td>
+    <td class="swatch" style="background:var(--green-700)"></td>
+    <td class="swatch" style="background:var(--cyan-700)"></td>
+    <td class="swatch" style="background:var(--blue-700)"></td>
+    <td class="swatch" style="background:var(--purple-700)"></td>
+  </tr>
+  <tr>
+    <td>800 / -2</td>
+    <td class="swatch" style="background:var(--pink-800)"></td>
+    <td class="swatch" style="background:var(--red-800)"></td>
+    <td class="swatch" style="background:var(--orange-800)"></td>
+    <td class="swatch" style="background:var(--yellow-800)"></td>
+    <td class="swatch" style="background:var(--green-800)"></td>
+    <td class="swatch" style="background:var(--cyan-800)"></td>
+    <td class="swatch" style="background:var(--blue-800)"></td>
+    <td class="swatch" style="background:var(--purple-800)"></td>
+  </tr>
+  <tr>
+    <td>900 / -1</td>
+    <td class="swatch" style="background:var(--pink-900)"></td>
+    <td class="swatch" style="background:var(--red-900)"></td>
+    <td class="swatch" style="background:var(--orange-900)"></td>
+    <td class="swatch" style="background:var(--yellow-900)"></td>
+    <td class="swatch" style="background:var(--green-900)"></td>
+    <td class="swatch" style="background:var(--cyan-900)"></td>
+    <td class="swatch" style="background:var(--blue-900)"></td>
+    <td class="swatch" style="background:var(--purple-900)"></td>
+  </tr>
+  <tr>
+    <td>950 / -0</td>
+    <td class="swatch" style="background:var(--pink-950)"></td>
+    <td class="swatch" style="background:var(--red-950)"></td>
+    <td class="swatch" style="background:var(--orange-950)"></td>
+    <td class="swatch" style="background:var(--yellow-950)"></td>
+    <td class="swatch" style="background:var(--green-950)"></td>
+    <td class="swatch" style="background:var(--cyan-950)"></td>
+    <td class="swatch" style="background:var(--blue-950)"></td>
+    <td class="swatch" style="background:var(--purple-950)"></td>
+  </tr>
 </table>
 
 </body>
