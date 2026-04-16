@@ -8,42 +8,42 @@ body {
   --callout-border-width: 0 0.05rem 0 0.1rem;
   --blockquote-border-thickness: 0.05rem;
 
-  --ebw-callout-warning: 234, 175, 0; // yellow-3
-  --ebw-callout-success: 139, 167, 145; // green-3
+  --ebw-callout-warning: var(--yellow-3);
+  --ebw-callout-success: var(--green-3);
 
-  --ebw-callout-note: 148, 189, 223; // blue-2
-  --ebw-callout-info: 111, 166, 211; // blue-3
-  --ebw-callout-quote: 53, 120, 175; // blue-4
+  --ebw-callout-note: var(--blue-2);
+  --ebw-callout-info: var(--blue-3);
+  --ebw-callout-quote: var(--blue-4);
 
-  --ebw-callout-tip: 134, 196, 193; // cyan-2
-  --ebw-callout-question: 89, 174, 170; // cyan-3
-  --ebw-callout-chat: 61, 126, 123; // cyan-4
+  --ebw-callout-tip: var(--cyan-2);
+  --ebw-callout-question: var(--cyan-3);
+  --ebw-callout-chat: var(--cyan-4);
 
-  --ebw-callout-abstract: 199, 178, 195; // purple-2
-  --ebw-callout-bug: 180, 152, 175; // purple-3
-  --ebw-callout-example: 142, 103, 135; // purple-4
+  --ebw-callout-abstract: var(--purple-2);
+  --ebw-callout-bug: var(--purple-3);
+  --ebw-callout-example: var(--purple-4);
 
-  --ebw-callout-danger: 230, 133, 132; // red-3
-  --ebw-callout-failure: 211, 141, 159; // pink-3
+  --ebw-callout-danger: var(--red-3);
+  --ebw-callout-failure: var(--pink-3);
 
-  --ebw-callout-reference: 183, 183, 183; // gray
-  --ebw-callout-toc: 235, 235, 235; // gray-light-4
+  --ebw-callout-reference: var(--gray);
+  --ebw-callout-toc: var(--gray-light-4);
 
   --blockquote-border-color: var(--secondary-accent-4);
 }
 
 .theme-light {
   --blockquote-border-color: var(--secondary-accent-2);
-  --ebw-callout-toc: 159, 159, 159; // gray-dark-1
-  --ebw-callout-reference: 137, 137, 137; // gray-dark-2
-  --ebw-callout-success: 92, 122, 99; // green-4
+  --ebw-callout-toc: var(--gray-dark-1);
+  --ebw-callout-reference: var(--gray-dark-2);
+  --ebw-callout-success: var(--green-4);
 
-  --ebw-callout-note: 33, 75, 109; // blue-5
-  --ebw-callout-abstract: 88, 64, 84; // purple-5
-  --ebw-callout-info: 53, 119, 174; // blue-4
-  --ebw-callout-tip: 61, 126, 123; // cyan-4
+  --ebw-callout-note: var(--blue-5);
+  --ebw-callout-abstract: var(--purple-5);
+  --ebw-callout-info: var(--blue-4);
+  --ebw-callout-tip: var(--cyan-4);
 
-  --ebw-callout-danger: 167, 92, 112; // pink-4
+  --ebw-callout-danger: var(--pink-4);
 }
 
 // Callout Color Types

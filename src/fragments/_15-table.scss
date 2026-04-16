@@ -13,16 +13,16 @@ body {
   --table-header-background: var(--primary-accent-5);
   --ebw-table-header-alt: var(--primary-accent-4);
   --ebw-row-alt: rgba(0, 0, 0, .2);
-  --ebw-row-alt-hover: rgba(var(--primary-accent-4-rgb), .2);
+  --ebw-row-alt-hover: color-mix(in oklch, var(--primary-accent-4) 20%, transparent);
 }
 .theme-light {
   --table-header-color: var(--gray-dark-7);
   --table-header-background: var(--primary-accent-1);
   --table-header-border-color: var(--primary-accent-3);
   --table-header-weight: var(--font-semibold);
-  --ebw-table-header-alt: rgba(var(--primary-accent-4-rgb), .4);
+  --ebw-table-header-alt: color-mix(in oklch, var(--primary-accent-4) 40%, transparent);
   --ebw-row-alt: rgba(0, 0, 0, .05);
-  --ebw-row-alt-hover: rgba(var(--primary-accent-4-rgb), .05);
+  --ebw-row-alt-hover: color-mix(in oklch, var(--primary-accent-4) 5%, transparent);
 }
 .markdown-rendered table.table-view-table.dataview {
   > thead {

@@ -12,12 +12,9 @@
   --background-modifier-border-hover: black;
   --background-modifier-border-focus: var(--gray-dark-10);
 
-  --background-modifier-error-rgb: var(--red-5-rgb);           //  Ctrl F Search Background
-  --background-modifier-error: var(--red-5);           //  with text-on-accent / Delete Screen Button
-  --background-modifier-error-hover: var(--red-4);
+  --background-modifier-error-hover: var(--red-4);            //  intentionally lighter than --color-red
 
-  --background-modifier-success-rgb: var(--green-5-rgb);     // Publish Upload Success Background
-  --background-modifier-success:     var(--green-5);         // Publish Upload Success Background
+  // --background-modifier-error/success/error-rgb derived from --color-red/green
 
   --background-modifier-warning: var(--yellow-4);            //  Warning Background
   --background-modifier-warning-hover: var(--yellow-3);
@@ -42,24 +39,20 @@
   --text-muted: var(--gray);                           //  Text darker for sidebar, toggles, inactive, tags, etc
   --text-faint: var(--gray-dark-1);                    //  Link brackets color
 
-  --text-error: var(--red-3);
-  --text-success: var(--green-3);
+  // --text-error/success derived from --color-red/green
 
   --text-highlight-fg: var(--gray-dark-7);
   --text-highlight-bg: var(--primary-accent-2);
-  --text-highlight-bg-rgb: var(--primary-accent-2-rgb);
-  --text-selection: rgba(var(--primary-accent-4-rgb), 0.2);
-  --text-selection-active: rgba(var(--primary-accent-4-rgb), 0.01);
+  --text-selection: color-mix(in oklch, var(--primary-accent-4) 20%, transparent);
+  --text-selection-active: color-mix(in oklch, var(--primary-accent-4) 1%, transparent);
 
   .is-flashing {
     --text-highlight-fg: var(--text-normal);
-    --text-highlight-bg: rgba(var(--primary-accent-4-rgb), 0.15);
-    --text-highlight-bg-rgb: var(--primary-accent-4-rgb);
+    --text-highlight-bg: color-mix(in oklch, var(--primary-accent-4) 15%, transparent);
 
     mark {
       --text-highlight-fg: var(--gray-dark-7);
       --text-highlight-bg: var(--primary-accent-2);
-      --text-highlight-bg-rgb: var(--primary-accent-2-rgb);
     }
   }
 

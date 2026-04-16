@@ -12,12 +12,9 @@
     --background-modifier-border-hover: var(--gray-light-2);
     --background-modifier-border-focus: var(--gray);
 
-    --background-modifier-error-rgb: var(--red-4-rgb);           //  Ctrl F Search Background
-    --background-modifier-error: var(--red-4);           //  with text-on-accent / Delete Screen Button
-    --background-modifier-error-hover: var(--red-3);
+    --background-modifier-error-hover: var(--red-3);            //  intentionally lighter than --color-red
 
-    --background-modifier-success-rgb: var(--green-4-rgb);     // Publish Upload Success Background
-    --background-modifier-success:     var(--green-4);         // Publish Upload Success Background
+    // --background-modifier-error/success/error-rgb derived from --color-red/green
 
     --background-modifier-warning: var(--yellow-3);            //  Warning Background
     --background-modifier-warning-hover: var(--yellow-4);
@@ -49,13 +46,11 @@
     --text-accent: var(--primary-accent-4);                   // Links
     --text-accent-hover: var(--primary-accent-5);
 
-    --text-success: var(--green-4);
-    --text-error: var(--red-4);
+    // --text-error/success derived from --color-red/green
 
     --text-highlight-fg: var(--gray-dark-7);
-    --text-highlight-bg-rgb: var(--primary-accent-4-rgb);
-    --text-highlight-bg: rgba(var(--text-highlight-bg-rgb), 0.2);
-    --text-selection: rgba(var(--secondary-accent-4-rgb), 0.2);
+    --text-highlight-bg: color-mix(in oklch, var(--primary-accent-4) 20%, transparent);
+    --text-selection: color-mix(in oklch, var(--secondary-accent-4) 20%, transparent);
 
     --interactive-hover: var(--primary-accent-1);         // Button hover text; pin
     --interactive-normal: var(--background-primary-alt);

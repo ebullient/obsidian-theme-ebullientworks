@@ -104,7 +104,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: var(--ebw-header-font);
-  background-color: rgba(var(--secondary-accent-4-rgb), 0.1);
+  background-color: color-mix(in oklch, var(--secondary-accent-4) 10%, transparent);
 
   &:before {
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
