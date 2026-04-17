@@ -1,8 +1,10 @@
 .theme-dark {
   --code-normal: var(--blue-2);
+  --code-background: color-mix(in oklch, var(--background-primary) 90%, black);
 }
 .theme-light {
   --code-normal: var(--blue-4);
+  --code-background: color-mix(in oklch, var(--background-primary) 98%, black);
 }
 kbd {
   padding: 0.1em 0.25em;
@@ -11,4 +13,19 @@ kbd {
 
 .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
   padding: unset;
+}
+
+// Copy button and language flair
+@media (hover: hover) {
+  .markdown-rendered pre:hover .copy-code-button,
+  .markdown-source-view.mod-cm6 .cm-code-block-widget:hover .copy-code-button {
+    background-color: color-mix(in oklch, var(--secondary-accent-4) 20%, transparent);
+    &:hover {
+      background-color: color-mix(in oklch, var(--secondary-accent-4) 40%, transparent);
+    }
+  }
+}
+
+.markdown-source-view.mod-cm6 .cm-code-block-widget .code-block-flair {
+  color: var(--secondary-accent-4);
 }

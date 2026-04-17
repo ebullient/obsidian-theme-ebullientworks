@@ -1,0 +1,15 @@
+// Slider, caret, and other UI controls
+
+body {
+  --caret-color: var(--text-accent);
+}
+
+.theme-dark {
+  --slider-track-background:   var(--gray-dark-5);
+  --slider-thumb-border-color: var(--secondary-accent-4);
+}
+
+.theme-light {
+  --slider-track-background:   var(--gray-light-3);
+  --slider-thumb-border-color: var(--secondary-accent-3);
+}

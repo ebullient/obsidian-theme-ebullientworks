@@ -1,0 +1,11 @@
+// Search panel icon and clear button
+
+.theme-dark {
+  --search-icon-color:         var(--secondary-accent-4);
+  --search-clear-button-color: var(--gray-dark-2);
+}
+
+.theme-light {
+  --search-icon-color:         var(--secondary-accent-3);
+  --search-clear-button-color: var(--gray-dark-1);
+}

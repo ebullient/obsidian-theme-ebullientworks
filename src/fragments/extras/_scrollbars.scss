@@ -1,0 +1,37 @@
+// Scrollbars applied unconditionally (source gates behind body.styled-scrollbars
+// which current Obsidian does not apply)
+
+.theme-dark {
+  --scrollbar-thumb-bg:        var(--gray-dark-5);
+  --scrollbar-active-thumb-bg: var(--primary-accent-4);
+}
+
+.theme-light {
+  --scrollbar-thumb-bg:        var(--gray-light-3);
+  --scrollbar-active-thumb-bg: var(--primary-accent-3);
+}
+
+// Webkit scrollbars
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border-radius: var(--radius-s);
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-active-thumb-bg);
+}
+
+// Firefox
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) transparent;
+  }
+}

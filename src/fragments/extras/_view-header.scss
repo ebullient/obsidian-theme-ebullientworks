@@ -1,0 +1,18 @@
+// View header / file title styling
+
+body {
+  --file-header-font:        var(--ebw-header-font);
+  --file-header-font-size:   var(--font-ui-small);
+  --file-header-font-weight: 500;
+  --file-header-justify:     flex-start;  // source default: center
+}
+
+.theme-dark {
+  --file-header-background:  transparent;
+  --file-header-border:      1px solid transparent;
+}
+
+.theme-light {
+  --file-header-background:  transparent;
+  --file-header-border:      1px solid transparent;
+}

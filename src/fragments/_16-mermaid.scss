@@ -1,27 +1,111 @@
-// Mermaid Core
+// Mermaid theming - full dark/light variable sets
 
+.theme-dark {
+  --mermaid-sequence-actor-bg:     var(--primary-accent-5);
+  --mermaid-sequence-actor-border: var(--primary-accent-3);
+  --mermaid-sequence-actor-fg:     var(--text-on-accent);
+  --mermaid-node-bg:               var(--secondary-accent-5);
+  --mermaid-node-border:           var(--secondary-accent-3);
+  --mermaid-cluster-bg:            color-mix(in oklch, var(--background-secondary) 90%, var(--secondary-accent-5));
+  --mermaid-cluster-border:        var(--secondary-accent-4);
+  --mermaid-edge-label-bg:         var(--background-secondary);
+  --mermaid-edge-label-fg:         var(--text-muted);
+  --mermaid-line-color:            var(--secondary-accent-4);
+}
+
+.theme-light {
+  --mermaid-sequence-actor-bg:     var(--primary-accent-1);
+  --mermaid-sequence-actor-border: var(--primary-accent-3);
+  --mermaid-sequence-actor-fg:     var(--text-on-accent);
+  --mermaid-node-bg:               var(--secondary-accent-1);
+  --mermaid-node-border:           var(--secondary-accent-3);
+  --mermaid-cluster-bg:            color-mix(in oklch, var(--background-secondary) 90%, var(--secondary-accent-3));
+  --mermaid-cluster-border:        var(--secondary-accent-3);
+  --mermaid-edge-label-bg:         var(--background-secondary);
+  --mermaid-edge-label-fg:         var(--text-muted);
+  --mermaid-line-color:            var(--secondary-accent-3);
+}
+
+// Flowchart / general nodes
 .mermaid {
   font-family: var(--font-mermaid);
-  fill: red;
 
-  & .actor {
-      stroke: var(--background-modifier-border);
-      fill: var(--background-secondary);
+  // Node shapes (rect, rounded, stadium, etc.)
+  .node rect,
+  .node circle,
+  .node ellipse,
+  .node polygon,
+  .node path {
+    fill:   var(--mermaid-node-bg);
+    stroke: var(--mermaid-node-border);
   }
 
-  & text.actor>tspan {
-    fill: var(--text-normal);
+  // Node text (rendered as inline styles by Mermaid - target directly)
+  .nodeLabel,
+  .label {
+    color: var(--text-normal);
+  }
+
+  // Edge labels
+  .edgeLabel {
+    background-color: var(--mermaid-edge-label-bg);
+    color:            var(--mermaid-edge-label-fg);
+
+    .label {
+      color: var(--mermaid-edge-label-fg);
+    }
+  }
+
+  // Edges / lines
+  .edgePath .path,
+  .flowchart-link {
+    stroke: var(--mermaid-line-color);
+  }
+
+  // Clusters / subgraphs
+  .cluster rect {
+    fill:   var(--mermaid-cluster-bg);
+    stroke: var(--mermaid-cluster-border);
+  }
+  .cluster-label {
+    color: var(--text-muted);
+  }
+
+  // Sequence diagram actors
+  & .actor {
+    stroke: var(--mermaid-sequence-actor-border);
+    fill:   var(--mermaid-sequence-actor-bg);
+  }
+
+  & text.actor > tspan {
+    fill:   var(--mermaid-sequence-actor-fg);
     stroke: none;
   }
-}
-.mermaid .statediagram {
 
+  // Sequence activation boxes
+  .activation0,
+  .activation1,
+  .activation2 {
+    fill:   var(--mermaid-node-bg);
+    stroke: var(--mermaid-node-border);
+  }
+
+  // Sequence loop / alt boxes
+  .loopLine {
+    stroke: var(--mermaid-line-color);
+    fill:   var(--mermaid-cluster-bg);
+  }
+}
+
+// State diagrams
+.mermaid .statediagram {
   & .nodelabel {
-    color: red;
+    color: var(--text-normal);
   }
 
   & .edgeLabel {
-    background-color: black;
+    background-color: var(--mermaid-edge-label-bg);
     text-align: left;
+    color: var(--mermaid-edge-label-fg);
   }
 }

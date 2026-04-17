@@ -58,6 +58,7 @@ body {
 }
 
 h1,
+.inline-title,
 .cm-line:not(.HyperMD-codeblock) .cm-header-1,
 .HyperMD-list-line .cm-header-1,
 .markdown-rendered h1 {
@@ -100,14 +101,16 @@ body:not(.ebullientworks-nix-heading-marker) {
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    .inline-title {
       --ebw-collapse-icon-width: -28px;
       @include before-header-one;
     }
   }
 
   .is-live-preview {
-    .HyperMD-header {
+    .HyperMD-header,
+    .inline-title {
       --ebw-collapse-icon-width: -26px;
       @include before-header-one;
     }
@@ -157,14 +160,14 @@ body:not(.ebullientworks-nix-tags) {
   --tag-background-hover: transparent;
   --tag-padding-x: 0;
 
-  .theme-dark & {
+  &.theme-dark {
     --tag-color: var(--color-accent-2);
-    --tag-color-hover: var(--tag-3);
+    --tag-color-hover: var(--primary-accent-3);
   }
 
-  .theme-light & {
+  &.theme-light {
     --tag-color: var(--color-accent);
-    --tag-color-hover: var(--tag-4);
+    --tag-color-hover: var(--primary-accent-4);
   }
 }
 
@@ -173,13 +176,11 @@ body:not(.ebullientworks-nix-tags) {
   color: var(--tag-color);
 }
 
-.editor .cl-hashtag,
 .markdown-source-view.mod-cm6 .cm-hashtag,
 .cm-s-obsidian .cm-formatting.cm-hashtag,
 .cm-s-obsidian .cm-quote.cm-hashtag,
 .cm-s-obsidian .cm-hmd-codeblock.cm-hashtag,
-a.tag,
-.editor .cl-hashtag {
+a.tag {
   @include tags-reg;
 }
 

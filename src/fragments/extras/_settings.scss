@@ -1,0 +1,23 @@
+// Settings modal styling
+
+.theme-dark {
+  --settings-background:         var(--background-secondary);
+  --setting-group-heading-color: var(--secondary-accent-4);
+
+  .modal.mod-settings .vertical-tab-nav-item.is-active {
+    background-color: color-mix(in oklch, var(--primary-accent-4) 18%, transparent);
+
+    .vertical-tab-nav-item-icon { color: var(--secondary-accent-3); }
+  }
+}
+
+.theme-light {
+  --settings-background:         var(--background-secondary);
+  --setting-group-heading-color: var(--secondary-accent-3);
+
+  .modal.mod-settings .vertical-tab-nav-item.is-active {
+    background-color: color-mix(in oklch, var(--primary-accent-3) 18%, transparent);
+
+    .vertical-tab-nav-item-icon { color: var(--secondary-accent-4); }
+  }
+}

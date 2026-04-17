@@ -11,6 +11,9 @@ body {
 .theme-dark {
   --table-header-color: var(--text-on-accent);
   --table-header-background: var(--primary-accent-5);
+  --table-header-border-color: var(--primary-accent-3);
+  --table-header-weight: var(--font-semibold);
+  --table-selection: color-mix(in oklch, var(--primary-accent-4) 15%, transparent);
   --ebw-table-header-alt: var(--primary-accent-4);
   --ebw-row-alt: rgba(0, 0, 0, .2);
   --ebw-row-alt-hover: color-mix(in oklch, var(--primary-accent-4) 20%, transparent);
@@ -20,6 +23,7 @@ body {
   --table-header-background: var(--primary-accent-1);
   --table-header-border-color: var(--primary-accent-3);
   --table-header-weight: var(--font-semibold);
+  --table-selection: color-mix(in oklch, var(--primary-accent-4) 10%, transparent);
   --ebw-table-header-alt: color-mix(in oklch, var(--primary-accent-4) 40%, transparent);
   --ebw-row-alt: rgba(0, 0, 0, .05);
   --ebw-row-alt-hover: color-mix(in oklch, var(--primary-accent-4) 5%, transparent);

@@ -1,0 +1,6 @@
+// Canvas dot grid color
+// Canvas node colors (--canvas-color-1 through -6) are already palette-mapped
+// via --color-*-rgb tokens in _03-core-theme-dark/light.scss
+
+.theme-dark  { --canvas-dot-pattern: var(--gray-dark-6);  }
+.theme-light { --canvas-dot-pattern: var(--gray-light-4); }

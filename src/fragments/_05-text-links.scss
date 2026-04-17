@@ -212,7 +212,7 @@ strong a:hover {
 
 
 // Collapse external links / markdown links in edit mode
-body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
+body:not(.ebullientworks-show-edit-mode-external-links) .markdown-source-view.mod-cm6 {
   div.cm-line:not(.cm-active) {
     > .cm-string.cm-url {
       text-decoration: none;
@@ -235,13 +235,6 @@ body:not(.ebullientworks-show-edit-mode-links) .markdown-source-view.mod-cm6 {
 .markdown-preview-view mark,
 .markdown-rendered mark {
   color: var(--text-highlight-fg);
-}
-
-div.CodeMirror.cm-s-obsidian span.cm-highlight.CodeMirror-selectedtext {
-  --text-selection: var(--text-highlight-bg-active);
-}
-.ebw-test-select {
-  background-color: var(--text-selection);
 }
 
 // DATAVIEW TASK Skip decorations on dataview task list item indicators

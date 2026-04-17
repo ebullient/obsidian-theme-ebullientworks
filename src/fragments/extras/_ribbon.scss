@@ -1,0 +1,9 @@
+// Ribbon icon colors scoped to the ribbon strip
+// (ribbon background already wired to --titlebar-background in _03a)
+
+.workspace-ribbon {
+  --icon-color:         var(--text-faint);
+  --icon-color-hover:   var(--text-normal);
+  --icon-color-active:  var(--primary-accent-4);
+  --icon-color-focused: var(--text-normal);
+}

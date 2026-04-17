@@ -1,0 +1,41 @@
+// File tree nav + tag pane theming
+
+.theme-dark {
+  --nav-item-color:                     var(--gray-dark-1);
+  --nav-item-color-hover:               var(--gray-light-1);
+  --nav-item-color-active:              var(--gray-light-2);
+  --nav-item-color-selected:            var(--text-on-accent);
+  --nav-item-background-selected:       var(--secondary-accent-5);
+  --nav-collapse-icon-color:            var(--gray-dark-3);
+  --nav-collapse-icon-color-collapsed:  var(--secondary-accent-4);
+  --nav-indentation-guide-color:        rgba(var(--cyan-4-rgb), 0.18);
+  --nav-indentation-guide-color-active: rgba(var(--cyan-4-rgb), 0.45);
+  --nav-heading-color:                  var(--secondary-accent-4);
+  --nav-heading-color-hover:            var(--secondary-accent-5);
+  --nav-heading-color-collapsed:        var(--gray-dark-3);
+
+  // Tag pane
+  --nav-tag-color:                      var(--secondary-accent-4);
+  --nav-tag-color-hover:                var(--secondary-accent-3);
+  --nav-tag-color-active:               var(--secondary-accent-2);
+}
+
+.theme-light {
+  --nav-item-color:                     var(--gray-dark-4);
+  --nav-item-color-hover:               var(--gray-dark-6);
+  --nav-item-color-active:              var(--gray-dark-7);
+  --nav-item-color-selected:            var(--text-on-accent);
+  --nav-item-background-selected:       var(--secondary-accent-3);
+  --nav-collapse-icon-color:            var(--gray-dark-1);
+  --nav-collapse-icon-color-collapsed:  var(--secondary-accent-3);
+  --nav-indentation-guide-color:        rgba(var(--cyan-4-rgb), 0.25);
+  --nav-indentation-guide-color-active: rgba(var(--cyan-4-rgb), 0.55);
+  --nav-heading-color:                  var(--secondary-accent-3);
+  --nav-heading-color-hover:            var(--secondary-accent-4);
+  --nav-heading-color-collapsed:        var(--gray-dark-1);
+
+  // Tag pane
+  --nav-tag-color:                      var(--secondary-accent-3);
+  --nav-tag-color-hover:                var(--secondary-accent-4);
+  --nav-tag-color-active:               var(--secondary-accent-5);
+}

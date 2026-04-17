@@ -3,3 +3,30 @@
 .markdown-source-view.mod-cm6 .cm-lang-base .edit-block-button {
   right: calc(var(--size-2-2) + .125rem)
 }
+
+.theme-dark {
+  --bases-table-header-color:      var(--secondary-accent-3);
+  --bases-table-header-weight:     var(--font-semibold);
+  --bases-table-header-background: color-mix(in oklch, var(--secondary-accent-4) 8%, var(--background-primary));
+  --bases-embed-border-color:      var(--secondary-accent-5);
+  --bases-embed-border-width:      var(--border-width);
+}
+
+.theme-light {
+  --bases-table-header-color:      var(--secondary-accent-4);
+  --bases-table-header-weight:     var(--font-semibold);
+  --bases-table-header-background: color-mix(in oklch, var(--secondary-accent-3) 8%, var(--background-primary));
+  --bases-embed-border-color:      var(--secondary-accent-3);
+  --bases-embed-border-width:      var(--border-width);
+}
+
+// Group heading property label
+.bases-view .bases-group-heading {
+  color: var(--secondary-accent-4);
+}
+
+// Active cell focus ring
+.bases-view .bases-cell:focus-within {
+  .theme-dark & { outline-color: var(--primary-accent-3); }
+  .theme-light & { outline-color: var(--primary-accent-4); }
+}

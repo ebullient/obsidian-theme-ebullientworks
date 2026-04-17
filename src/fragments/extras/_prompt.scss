@@ -1,0 +1,25 @@
+// Quick switcher and command palette styling
+
+.theme-dark {
+  --prompt-background:   var(--background-secondary);
+  --prompt-border-color: var(--secondary-accent-5);
+
+  .prompt .suggestion-item.is-selected {
+    background-color: color-mix(in oklch, var(--primary-accent-4) 18%, transparent);
+  }
+  .prompt .suggestion-highlight {
+    color: var(--primary-accent-2);
+  }
+}
+
+.theme-light {
+  --prompt-background:   var(--background-secondary);
+  --prompt-border-color: var(--secondary-accent-3);
+
+  .prompt .suggestion-item.is-selected {
+    background-color: color-mix(in oklch, var(--primary-accent-3) 18%, transparent);
+  }
+  .prompt .suggestion-highlight {
+    color: var(--primary-accent-5);
+  }
+}

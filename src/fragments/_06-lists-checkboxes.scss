@@ -28,7 +28,7 @@ body:not(.ebullientworks-nix-checkbox) {
   @include checkboxes.list;
 }
 
-.mobile {
+.is-mobile {
   .markdown-preview-view {
     ol,
     ul {
