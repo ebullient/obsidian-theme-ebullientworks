@@ -142,9 +142,9 @@ body:not(.is-focused) {
     }
     .view-header {
       --text-normal: var(--text-faint);
-      --header-height: calc(var(--icon-s) + var(--size-2-4));
+      --header-height: calc(var(--icon-s) + var(--size-4-2));
       align-items: center;
-      gap: var(--size-2-4);
+      gap: var(--size-4-2);
     }
     .view-header-title {
       line-height: var(--icon-s);
@@ -225,7 +225,7 @@ body.is-tablet .view-header .view-action,
       border-top: 1px solid var(--ebw-he-title-border);
     }
     .view-header {
-      --header-height: calc(var(--icon-s) + var(--size-2-4));
+      --header-height: calc(var(--icon-s) + var(--size-4-2));
       align-items: center;
     }
     .view-header-title {

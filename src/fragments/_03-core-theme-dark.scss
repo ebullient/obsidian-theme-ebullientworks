@@ -16,6 +16,7 @@
 
   // --background-modifier-error/success/error-rgb derived from --color-red/green
 
+  --background-modifier-error: var(--red-4);
   --background-modifier-warning: var(--yellow-4);            //  Warning Background
   --background-modifier-warning-hover: var(--yellow-3);
   --background-modifier-info: var(--blue-5);
@@ -72,8 +73,8 @@
   --ebw-alpha4: rgba(0, 0, 0, 0.4);
 
   // Color Spectrum
-  --color-red-rgb: var(--red-2-rgb);
-  --color-red: var(--red-2);
+  --color-red-rgb: var(--red-4-rgb);
+  --color-red: var(--red-4);
   --color-orange-rgb: var(--orange-2-rgb);
   --color-orange: var(--orange-2);
   --color-yellow-rgb: var(--yellow-2-rgb);

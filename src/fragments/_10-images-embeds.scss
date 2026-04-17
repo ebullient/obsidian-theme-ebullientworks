@@ -8,8 +8,8 @@
 
 body {
   --ebw-embed-border-color: var(--gray-dark-7);
-  --embed-border-left: 0.0625rem solid var(--ebw-embed-border-color);
-  --embed-border-right: 0.0625rem solid var(--ebw-embed-border-color);
+  --embed-border-start: 0.0625rem solid var(--ebw-embed-border-color);
+  --embed-border-end: none;
   --embed-padding: var(--size-2-1) var(--size-4-2);
 }
 

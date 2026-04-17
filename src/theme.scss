@@ -26,5 +26,16 @@
 //@use 'fragments/13-timelines' as *;
 @use 'fragments/14-frontmatter' as *;
 @use 'fragments/15-table' as *;
-// @use 'fragments/16-mermaid' as *;
+@use 'fragments/16-mermaid' as *;
 @use 'fragments/17-bases' as *;
+
+@use 'fragments/extras/tree-nav' as *;
+@use 'fragments/extras/view-header' as *;
+@use 'fragments/extras/canvas' as *;
+@use 'fragments/extras/search' as *;
+@use 'fragments/extras/controls' as *;
+@use 'fragments/extras/scrollbars' as *;
+@use 'fragments/extras/ribbon' as *;
+@use 'fragments/extras/prompt' as *;
+@use 'fragments/extras/menus' as *;
+@use 'fragments/extras/settings' as *;

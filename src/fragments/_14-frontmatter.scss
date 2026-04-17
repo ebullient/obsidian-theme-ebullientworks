@@ -1,58 +1,7 @@
 .ebullientworks-floating-frontmatter,
 .ebullientworks-floating-frontmatter.is-mobile {
   .markdown-rendered {
-    pre.frontmatter {
-      float: right;
-      position: absolute;
-      right: .15em;
-      top: .65rem;
-      width: 2rem;
-      height: 2rem;
-      overflow: hidden;
-      border: none !important;
-      background-color: transparent;
-
-      code {
-        visibility: hidden;
-      }
-
-      .mod-failed {
-        position: absolute;
-        .mod-error {
-          visibility: hidden;
-        }
-        &:hover .mod-error {
-          visibility: visible;
-        }
-      }
-
-      &::before {
-        content: "✧";
-        font-size: 20px;
-        color: var(--primary-accent-3);
-        float: right;
-      }
-      &:not(:hover) > button.copy-code-button {
-        display: none;
-      }
-      &:hover {
-        border: 1px solid var(--background-modifier-border);
-        background-color: var(--background-secondary);
-        filter: drop-shadow(-.1rem .1rem .1rem var(--background-secondary-alt));
-        width: 60%;
-        min-width: 200px;
-        height: unset;
-        z-index: 3;
-
-        code {
-          visibility: visible;
-          background-color: var(---background-secondary);
-        }
-      }
-    }
-
-    .metadata-container,
-    .frontmatter-container {
+    .metadata-container {
       float: right;
       position: absolute;
       right: .6rem;
@@ -64,9 +13,7 @@
       background-color: transparent;
 
       .metadata-properties-heading,
-      .metadata-content,
-      .frontmatter-container-header,
-      .frontmatter-section {
+      .metadata-content {
         visibility: hidden;
       }
       &::before {
@@ -77,9 +24,7 @@
       }
       &:hover {
         .metadata-properties-heading,
-        .frontmatter-container-header,
-        .metadata-content,
-        .frontmatter-section {
+        .metadata-content {
           visibility: visible;
         }
         .frontmatter-collapse-indicator {
@@ -88,22 +33,6 @@
       }
     }
 
-    .frontmatter-container:hover {
-      border: 1px solid var(--background-modifier-border);
-      background-color: var(--background-primary-alt);
-      filter: drop-shadow(-.1rem .1rem .1rem var(--background-modifier-border));
-      width: 50%;
-      min-width: 200px;
-      height: unset;
-      z-index: 3;
-
-      .frontmatter-container-header {
-        padding: var(--size-4-2) var(--size-4-2) 0 var(--size-4-2);
-      }
-      .frontmatter-section {
-        padding: 0 var(--size-4-2) var(--size-2-1) var(--size-4-2);
-      }
-    }
     .metadata-container:hover {
       border: 1px solid var(--background-modifier-border);
       background-color: var(--background-primary-alt);
