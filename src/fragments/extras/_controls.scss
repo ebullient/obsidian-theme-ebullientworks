@@ -7,9 +7,29 @@ body {
 .theme-dark {
   --slider-track-background:   var(--gray-dark-5);
   --slider-thumb-border-color: var(--secondary-accent-4);
+  --dropdown-background:       var(--gray-dark-5);
+
+  button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive) {
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+
+    @media (hover: hover) {
+      &:hover { background-color: var(--gray-dark-5); }
+    }
+  }
 }
 
 .theme-light {
   --slider-track-background:   var(--gray-light-3);
   --slider-thumb-border-color: var(--secondary-accent-3);
+  --dropdown-background:       var(--gray-light-5);
+
+  button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive) {
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+
+    @media (hover: hover) {
+      &:hover { background-color: var(--gray-light-4); }
+    }
+  }
 }
