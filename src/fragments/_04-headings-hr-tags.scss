@@ -79,13 +79,16 @@ h1,
   &:not(:has(.collapse-indicator))::before {
     @include section-icon;
   }
+
   .collapse-indicator {
     opacity: 1;
     visibility: hidden;
     margin-left: var(--ebw-collapse-icon-width);
+
     &:hover {
       visibility: visible;
     }
+
     &:after {
       @include section-icon;
     }
@@ -94,8 +97,10 @@ h1,
 
 // Mark headers as sections §
 body:not(.ebullientworks-nix-heading-marker) {
+
   .markdown-rendered,
   .print {
+
     h1,
     h2,
     h3,
@@ -109,6 +114,7 @@ body:not(.ebullientworks-nix-heading-marker) {
   }
 
   .is-live-preview {
+
     .HyperMD-header,
     .inline-title {
       --ebw-collapse-icon-width: -26px;
@@ -124,7 +130,7 @@ body:not(.ebullientworks-nix-heading-marker) {
   }
 
   .cm-line:not(.HyperMD-codeblock) .cm-header.cm-inline-code {
-    font-size: 65% !important;
+    font-size: 65% !important;  // app.css uses an !important for font size
   }
 
   .cm-header-1.cm-hmd-codeblock:not(.cm-inline-code) {
@@ -151,8 +157,6 @@ body:not(.ebullientworks-nix-heading-marker) {
     color: var(--h6-color);
   }
 }
-
-
 
 /* Tag formatting */
 body:not(.ebullientworks-nix-tags) {
@@ -209,22 +213,28 @@ h6 a.tag {
     border-radius: unset;
   }
 
-  .cm-line:not(.HyperMD-codeblock) .cm-header.cm-hashtag {
-    font-size: 65% !important;
-  }
+  .cm-line:not(.HyperMD-codeblock) {
 
-  .cm-header-1.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-  .cm-header-2.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-  .cm-header-3.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-  .cm-header-4.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-  .cm-header-5.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code),
-  .cm-header-6.cm-hmd-codeblock.cm-hashtag:not(.cm-inline-code) {
-    color: var(--tag-color);
+    .cm-header-1,
+    .cm-header-2,
+    .cm-header-3,
+    .cm-header-4,
+    .cm-header-5,
+    .cm-header-6 {
+      &.cm-hashtag.cm-meta {
+        font-size: 65% !important; // app.css uses an !important for font size
+
+        &.cm-hmd-codeblock:not(.cm-inline-code) {
+          color: var(--tag-color);
+        }
+      }
+    }
   }
 }
 
 /* HR tags */
-.workspace > .workspace-split.mod-root {
+.workspace>.workspace-split.mod-root {
+
   .markdown-rendered hr,
   hr:not(.workspace-leaf-resize-handle) {
     border: none;
@@ -234,9 +244,7 @@ h6 a.tag {
     text-align: center;
     height: 2px;
     margin: 0;
-    margin-block: calc(
-      (var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing)
-    );
+    margin-block: calc((var(--font-text-size, 1rem) * var(--line-height-normal) - var(--hr-thickness)) / 2 + var(--p-spacing));
 
     &::after {
       background: var(--background-primary);

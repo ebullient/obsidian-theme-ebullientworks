@@ -13,6 +13,11 @@ body {
     background-color: var(--interactive-normal);
     color: var(--text-normal);
 
+    &.mod-cta {
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
+    }
+
     @media (hover: hover) {
       &:hover { background-color: var(--gray-dark-5); }
     }
@@ -27,6 +32,11 @@ body {
   button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive) {
     background-color: var(--interactive-normal);
     color: var(--text-normal);
+
+    &.mod-cta {
+      background-color: var(--interactive-accent);
+      color: var(--text-on-accent);
+    }
 
     @media (hover: hover) {
       &:hover { background-color: var(--gray-light-4); }
