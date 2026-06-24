@@ -83,7 +83,7 @@ a {
       text-decoration-line: line-through;
       text-decoration-thickness: var(--link-decoration-thickness);
     }
-    &.cm-strikethrough:has(.cm-underline):not(:has(.is-unresolved)):after {
+    &.cm-strikethrough .cm-underline:not(.is-unresolved):after {
       content: ' \27B9';
       font-size: .8rem;
       opacity: .5;
@@ -101,17 +101,11 @@ a {
       text-decoration: none;
     }
     // consistent link decorations
-    &:not(:has(.is-unresolved)),
-    &.cm-em:not(:has(.is-unresolved)),
-    &.cm-strong:not(:has(.is-unresolved)),
-    &.cm-em.cm-strong:not(:has(.is-unresolved)) {
+    .cm-underline:not(.is-unresolved) {
       text-decoration-line: var(--link-decoration);
       text-decoration-color: var(--ebw-link-underline);
     }
-    &:has(.is-unresolved),
-    &.cm-em:has(.is-unresolved),
-    &.cm-strong:has(.is-unresolved),
-    &.cm-em.cm-strong:has(.is-unresolved) {
+    .cm-underline.is-unresolved {
       text-decoration-line: var(--link-decoration);
       text-decoration-color: var(--ebw-link-underline);
       text-decoration-style: var(--link-unresolved-decoration-style);
@@ -127,7 +121,7 @@ a {
     opacity: unset;
   }
   // Unmatched bare links are .. super strange for formatting in source mode/live preview.
-  .cm-line:has(.cm-url):not(:has(.cm-link)) .cm-url:not(.cm-link) {
+  .cm-line .cm-url:not(.cm-link) {
     color: var(--text-normal);
     font-weight: normal;
     font-style: normal;
