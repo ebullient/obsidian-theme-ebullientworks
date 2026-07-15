@@ -53,7 +53,7 @@
     --text-selection: color-mix(in oklch, var(--secondary-accent-4) 20%, transparent);
 
     --interactive-hover: var(--primary-accent-1);         // Button hover text; pin
-    --interactive-normal: var(--background-primary-alt);
+    --interactive-normal: var(--background-secondary-alt);
 
     // Text on accent should work as foreground for all interactive accent elements
     --text-on-accent: var(--gray-light-8);                // Program Title bar text
