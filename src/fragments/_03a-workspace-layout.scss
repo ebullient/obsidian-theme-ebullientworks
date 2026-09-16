@@ -257,7 +257,8 @@ button.mod-warning,
   background-color: var(--background-modifier-warning);
   color: var(--modifier-text);
 }
-button.mod-destructive {
+button.mod-destructive,
+button.mod-destructive:not(.clickable-icon) {
   background-color: var(--background-modifier-error);
   color: var(--modifier-text);
 }
