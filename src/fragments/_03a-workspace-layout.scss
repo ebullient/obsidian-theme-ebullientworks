@@ -252,6 +252,12 @@ body.is-tablet .view-header .view-action,
 .message.mod-info {
   background-color: var(--background-modifier-info);
 }
+.checkbox-container {
+  background-color: var(--interactive-disabled);
+  &.is-enabled {
+    background-color: var(--interactive-toggle);
+  }
+}
 button.mod-warning,
 .message.mod-warning {
   background-color: var(--background-modifier-warning);
@@ -262,12 +268,7 @@ button.mod-destructive:not(.clickable-icon) {
   background-color: var(--background-modifier-error);
   color: var(--modifier-text);
 }
-.checkbox-container {
-  background-color: var(--interactive-disabled);
-  &.is-enabled {
-    background-color: var(--interactive-toggle);
-  }
-}
+
 @media (hover: hover) {
   button.mod-warning:hover {
     background-color: var(--background-modifier-warning-hover);

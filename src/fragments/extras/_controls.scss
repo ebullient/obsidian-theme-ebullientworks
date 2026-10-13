@@ -13,13 +13,17 @@ body {
     background-color: var(--interactive-normal);
     color: var(--text-normal);
 
+    &:hover {
+      background-color: var(--gray-dark-4);
+    }
+
     &.mod-cta {
       background-color: var(--interactive-accent);
       color: var(--text-on-accent);
-    }
 
-    @media (hover: hover) {
-      &:hover { background-color: var(--gray-dark-5); }
+      &:hover {
+        background-color: var(--primary-accent-4);
+      }
     }
   }
 }
@@ -29,17 +33,25 @@ body {
   --slider-thumb-border-color: var(--secondary-accent-3);
   --dropdown-background:       var(--gray-light-5);
 
+  button.mod-destructive:hover {
+    color: var(--text-on-accent);
+  }
+
   button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive) {
     background-color: var(--interactive-normal);
     color: var(--text-normal);
 
+    &:hover {
+      background-color: var(--gray-light-2);
+    }
+
     &.mod-cta {
       background-color: var(--interactive-accent);
       color: var(--text-on-accent);
-    }
 
-    @media (hover: hover) {
-      &:hover { background-color: var(--gray-light-3); }
+      &:hover {
+        background-color: var(--primary-accent-5);
+      }
     }
   }
 }

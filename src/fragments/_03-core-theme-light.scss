@@ -12,7 +12,7 @@
     --background-modifier-border-hover: var(--gray-light-2);
     --background-modifier-border-focus: var(--gray);
 
-    --background-modifier-error-hover: var(--red-3);            //  intentionally lighter than --color-red
+    --background-modifier-error-hover: var(--red-5);
 
     // --background-modifier-error/success/error-rgb derived from --color-red/green
 
@@ -97,13 +97,5 @@
     .notice {
         background-color: var(--background-modifier-form-field);
         color: var(--text-normal);
-    }
-
-    @media (hover: hover) {
-        button.mod-cta:hover,
-        button.mod-destructive:hover {
-            --modifier-text: var(--gray-dark-8);
-            color: var(--modifier-text);
-        }
     }
 }
