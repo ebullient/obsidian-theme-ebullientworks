@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Ebullientworks 2.0.2. A dark and light theme for Obsidian.
+Ebullientworks 2.0.3. A dark and light theme for Obsidian.
 
 https://github.com/ebullient/obsidian-theme-ebullientworks
 */
@@ -602,7 +602,7 @@ body {
   --background-modifier-border: var(--gray-dark-9);
   --background-modifier-border-hover: black;
   --background-modifier-border-focus: var(--gray-dark-10);
-  --background-modifier-error-hover: var(--red-4);
+  --background-modifier-error-hover: var(--red-5);
   --background-modifier-error: var(--red-4);
   --background-modifier-warning: var(--yellow-4);
   --background-modifier-warning-hover: var(--yellow-3);
@@ -695,7 +695,7 @@ body {
   --background-modifier-border: var(--gray-light-1);
   --background-modifier-border-hover: var(--gray-light-2);
   --background-modifier-border-focus: var(--gray);
-  --background-modifier-error-hover: var(--red-3);
+  --background-modifier-error-hover: var(--red-5);
   --background-modifier-warning: var(--yellow-3);
   --background-modifier-warning-hover: var(--yellow-4);
   --background-modifier-info: var(--blue-4);
@@ -753,13 +753,6 @@ body {
 .theme-light .notice {
   background-color: var(--background-modifier-form-field);
   color: var(--text-normal);
-}
-@media (hover: hover) {
-  .theme-light button.mod-cta:hover,
-  .theme-light button.mod-destructive:hover {
-    --modifier-text: var(--gray-dark-8);
-    color: var(--modifier-text);
-  }
 }
 
 .theme-dark {
@@ -1006,6 +999,13 @@ body.is-tablet .view-header .view-action,
   background-color: var(--background-modifier-info);
 }
 
+.checkbox-container {
+  background-color: var(--interactive-disabled);
+}
+.checkbox-container.is-enabled {
+  background-color: var(--interactive-toggle);
+}
+
 button.mod-warning,
 .message.mod-warning {
   background-color: var(--background-modifier-warning);
@@ -1016,13 +1016,6 @@ button.mod-destructive,
 button.mod-destructive:not(.clickable-icon) {
   background-color: var(--background-modifier-error);
   color: var(--modifier-text);
-}
-
-.checkbox-container {
-  background-color: var(--interactive-disabled);
-}
-.checkbox-container.is-enabled {
-  background-color: var(--interactive-toggle);
 }
 
 @media (hover: hover) {
@@ -3022,14 +3015,15 @@ body {
   background-color: var(--interactive-normal);
   color: var(--text-normal);
 }
+.theme-dark button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive):hover {
+  background-color: var(--gray-dark-4);
+}
 .theme-dark button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive).mod-cta {
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);
 }
-@media (hover: hover) {
-  .theme-dark button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive):hover {
-    background-color: var(--gray-dark-5);
-  }
+.theme-dark button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive).mod-cta:hover {
+  background-color: var(--primary-accent-4);
 }
 
 .theme-light {
@@ -3037,18 +3031,22 @@ body {
   --slider-thumb-border-color: var(--secondary-accent-3);
   --dropdown-background: var(--gray-light-5);
 }
+.theme-light button.mod-destructive:hover {
+  color: var(--text-on-accent);
+}
 .theme-light button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive) {
   background-color: var(--interactive-normal);
   color: var(--text-normal);
+}
+.theme-light button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive):hover {
+  background-color: var(--gray-light-2);
 }
 .theme-light button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive).mod-cta {
   background-color: var(--interactive-accent);
   color: var(--text-on-accent);
 }
-@media (hover: hover) {
-  .theme-light button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive):hover {
-    background-color: var(--gray-light-3);
-  }
+.theme-light button:not(.clickable-icon):not(.mod-warning):not(.mod-destructive).mod-cta:hover {
+  background-color: var(--primary-accent-5);
 }
 
 .theme-dark {
